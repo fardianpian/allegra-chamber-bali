@@ -49,6 +49,27 @@ install` regeneration), and a malformed `FTP_SERVER` secret (`ftp://undefined@..
   don't need any config on Cloudflare Pages, both are automatic.
 - Created the `allegra` subdomain itself (before the above) via direct Hostinger API calls —
   DNS auto-provisioned, confirmed resolvable, no hPanel manual clicking needed for that step.
+- **Site is fully live with real business data — WhatsApp, Instagram, and the contact form all
+  work end-to-end in production now.** Owner filled real values into `.env.example` directly
+  (real WhatsApp number, real Instagram URL) — caught and explained that `.env.example` is never
+  read by Astro/Vite at build time (only `.env` or actual platform env vars are), so editing it
+  alone does nothing; created a local untracked `.env` with the real values for local dev/build
+  parity, and the owner separately added the same variables as Cloudflare Pages **Production**
+  environment variables (`PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_INSTAGRAM`, `PUBLIC_SITE_URL`,
+  `PUBLIC_CONTACT_EMAIL`, `PUBLIC_WEB3FORMS_KEY` as plain text, since they're all `PUBLIC_`-
+  prefixed and get inlined into the client bundle regardless of Cloudflare's "Secret" vs.
+  "Plain text" toggle — that toggle only affects dashboard visibility, not what ships in the
+  static output). **Found a real credential leak while reviewing the edit:** `PUBLIC_WEB3FORMS_KEY`
+  in the tracked `.env.example` held a real Web3Forms access key (owner-confirmed), present since
+  the repo's very first commit — `.env.example` is meant to hold placeholder values only, real
+  ones belong in the gitignored `.env`. Fixed by replacing it with a generic placeholder in
+  `.env.example` and committing that fix; owner separately rotated the key on web3forms.com and
+  used the **new** key as the Cloudflare env var (confirmed the old key is no longer the one
+  live — `/contact`'s rendered `access_key` field now matches the new value, not the leaked one).
+  Triggered a redeploy (empty commit, since env var changes alone don't auto-redeploy) and
+  verified via `curl` against the live custom domain: WhatsApp CTAs all link to the real number,
+  Instagram footer link is real, and the contact form's hidden `access_key` field matches the
+  rotated key — not just that the build succeeded.
 
 ## Status as of 2026-06-18
 
@@ -312,24 +333,34 @@ var(--color-taupe)` directly, and per CSS Cascade Layers spec, unlayered rules a
   2026-06-18, see above. **Piano video is still pending** (owner has it, hasn't sent it yet) — no
   video player component exists anywhere in the codebase yet (only `AudioSample.astro` for
   `<audio>`), so wiring that in will need a new component, not just an asset drop-in.
-- WhatsApp business number, Instagram handle, Web3Forms account — needed in `.env` / Cloudflare
-  Pages build env vars before going live (see `.env.example`). `ContactForm.astro` is wired up
-  and ready, just needs `PUBLIC_WEB3FORMS_KEY` to actually deliver.
+- ~~WhatsApp business number, Instagram handle, Web3Forms account~~ — resolved 2026-06-19, see
+  above. Real values are live; the only remaining gap is an actual end-to-end functional test
+  (see Next steps #1).
   ~~Hostinger FTP credentials~~ — no longer needed, hosting moved to Cloudflare Pages
   (2026-06-19), git push deploys automatically.
 
 ## Next steps (priority order)
 
-1. Set `PUBLIC_WEB3FORMS_KEY` (real key from web3forms.com) and `PUBLIC_WHATSAPP_NUMBER` (real
-   business number) as Cloudflare Pages build environment variables — currently the only two
-   things blocking the contact form and every WhatsApp CTA from actually working in production.
-2. Re-run the full Lighthouse mobile audit once real photography/content replaces placeholders —
-   it's clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
+1. **Run an actual end-to-end functional smoke test before pointing real clients at the site** —
+   everything verified so far is curl/HTML-level (right values render), not a real submission.
+   Submit a real test inquiry through `/contact` and confirm it actually arrives in the owner's
+   inbox via Web3Forms, and tap a WhatsApp CTA on an actual phone to confirm the deep link opens
+   a chat with the pre-filled message as expected.
+2. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+   embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
+   format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
+   changes the component shape.
+3. **Content depth**: real venue names, real testimonials (with permission), and event
+   photography for the non-piano venue types (beach/chapel/ballroom — only cliffside/garden have
+   real photos so far). All still owner-supplied, don't invent.
+4. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
+   clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-3. Clean up the manual-deploy leftovers on the old Hostinger document root
-   (`domains/indonesiaistimewastudio.id/public_html/allegra/`) — the `test.html` probe file and
-   any stray files from the one-time zip upload are now orphaned (DNS no longer points there) but
-   still sitting on Hostinger; safe to delete whenever convenient, not urgent.
+5. Housekeeping, no urgency: delete the orphaned manual-deploy leftovers on the old Hostinger
+   document root (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any
+   stray files from the one-time zip upload; DNS no longer points there so nothing serves them,
+   but they're still taking up space), and optionally remove the now-unused `FTP_*` GitHub
+   Secrets on the repo (harmless to leave, just dead weight).
 
 ## SEO
 
