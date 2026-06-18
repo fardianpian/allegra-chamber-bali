@@ -3,6 +3,53 @@
 > Living document — update this file at the end of each work session so the next session (or next
 > person) can pick up without re-deriving context. Keep "Next Steps" in priority order.
 
+## Status as of 2026-06-19
+
+### Done
+
+- **Hosting migrated from Hostinger-FTP to Cloudflare Pages.** The original plan
+  (`.github/workflows/deploy.yml`, GitHub Actions → `npm ci`/`npm run build` → FTP upload to the
+  Hostinger sub-domain document root) never reached a working state in CI: Hostinger blocks
+  GitHub Actions' runner IPs on FTP port 21 (`Error: Timeout (control socket)` — confirmed by
+  testing the same host:port from a residential IP, which connected fine, vs. the GH Actions
+  runner, which timed out), and ports 990 (implicit FTPS) / 22 (SFTP) are closed entirely on this
+  Hostinger plan regardless of source IP — there was no protocol fallback available. Two earlier,
+  real CI bugs were found and fixed along the way before this dead end (kept fixed, still valid):
+  an incomplete `package-lock.json` missing top-level `@emnapi/core`/`@emnapi/runtime` entries
+  (cross-platform `optionalDependencies` resolution bug — macOS-generated lockfile didn't fully
+  resolve under Linux `npm ci`; fixed with a full `rm -rf node_modules package-lock.json && npm
+install` regeneration), and a malformed `FTP_SERVER` secret (`ftp://undefined@...`, a glitchy
+  hPanel UI copy artifact) corrected to the plain hostname.
+  As an immediate stop-gap, did one manual deploy: `npm run build` → zip `dist/` → upload via
+  Hostinger hPanel File Manager → extract. (Hit one nested-folder bug this way too — hPanel's
+  extract created an `allegra-deploy/` subfolder instead of flattening into the target directory,
+  so the site briefly 404'd/showed Hostinger's default placeholder until the files were moved up
+  a level.) That confirmed the site renders correctly, but wasn't sustainable for "ongoing content
+  updates happen in a Claude Code session" — every update would have meant a manual zip/upload
+  cycle. Decided with the owner to switch the **hosting** layer to **Cloudflare Pages** instead
+  (domain registration, DNS zone, and email stay on Hostinger — only the `allegra` subdomain's
+  hosting target changed): created project `allegra-chamber-bali` git-connected to
+  `fardianpian/allegra-chamber-bali` (`main` branch, build `npm run build`, output `dist`) via the
+  Cloudflare dashboard (the Claude Code Cloudflare MCP integration's OAuth session is read-only —
+  it can list/inspect Pages projects and domains but cannot create projects or add custom domains;
+  those two steps needed the owner to click through the dashboard once, including adding this repo
+  to the Cloudflare GitHub App's repository allowlist, since it was previously scoped to "only
+  selected repositories" for a different project). Repointed the `allegra` DNS record at Hostinger
+  from an `ALIAS` (Hostinger's own CDN) to a `CNAME` → `allegra-chamber-bali.pages.dev` via the
+  Hostinger DNS API (delete old record + create CNAME, explicitly scoped to just that one record
+  — not a zone-wide overwrite, to avoid touching MX/email or other subdomains). Verified end to
+  end: push to `main` → Cloudflare auto-builds and deploys in under a minute, confirmed via the
+  Pages API (`GET .../deployments`) and `curl` against both the `*.pages.dev` URL and the final
+  custom domain once its SSL cert finished issuing. Disabled the old workflow (moved out of
+  `.github/workflows/`, then deleted once confirmed unnecessary — git history has it if ever
+  needed) and updated `CLAUDE.md`'s locked hosting decision + Stack & Hosting section to match.
+  Also retired `public/.htaccess` (Apache/LiteSpeed-only, inert on Cloudflare's edge) in favor of
+  a native `public/_headers` file carrying over just the still-relevant parts (security headers,
+  cache-control for `/_astro/*`, `/images/*`, `/audio/*`) — HTTPS redirect and the custom 404 page
+  don't need any config on Cloudflare Pages, both are automatic.
+- Created the `allegra` subdomain itself (before the above) via direct Hostinger API calls —
+  DNS auto-provisioned, confirmed resolvable, no hPanel manual clicking needed for that step.
+
 ## Status as of 2026-06-18
 
 ### Done
@@ -265,18 +312,24 @@ var(--color-taupe)` directly, and per CSS Cascade Layers spec, unlayered rules a
   2026-06-18, see above. **Piano video is still pending** (owner has it, hasn't sent it yet) — no
   video player component exists anywhere in the codebase yet (only `AudioSample.astro` for
   `<audio>`), so wiring that in will need a new component, not just an asset drop-in.
-- WhatsApp business number, Instagram handle, Hostinger FTP credentials, Web3Forms account —
-  needed in `.env` / GitHub Secrets before going live (see `.env.example`). `ContactForm.astro` is
-  wired up and ready, just needs `PUBLIC_WEB3FORMS_KEY` to actually deliver.
+- WhatsApp business number, Instagram handle, Web3Forms account — needed in `.env` / Cloudflare
+  Pages build env vars before going live (see `.env.example`). `ContactForm.astro` is wired up
+  and ready, just needs `PUBLIC_WEB3FORMS_KEY` to actually deliver.
+  ~~Hostinger FTP credentials~~ — no longer needed, hosting moved to Cloudflare Pages
+  (2026-06-19), git push deploys automatically.
 
 ## Next steps (priority order)
 
-1. Review `.github/workflows/deploy.yml` once real Hostinger FTP secrets exist — currently builds
-   with only `PUBLIC_WEB3FORMS_KEY` + `PUBLIC_SITE_URL` env, should add the other `PUBLIC_*` vars
-   from `.env.example` (WhatsApp number, contact email, Instagram) once known.
+1. Set `PUBLIC_WEB3FORMS_KEY` (real key from web3forms.com) and `PUBLIC_WHATSAPP_NUMBER` (real
+   business number) as Cloudflare Pages build environment variables — currently the only two
+   things blocking the contact form and every WhatsApp CTA from actually working in production.
 2. Re-run the full Lighthouse mobile audit once real photography/content replaces placeholders —
    it's clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
+3. Clean up the manual-deploy leftovers on the old Hostinger document root
+   (`domains/indonesiaistimewastudio.id/public_html/allegra/`) — the `test.html` probe file and
+   any stray files from the one-time zip upload are now orphaned (DNS no longer points there) but
+   still sitting on Hostinger; safe to delete whenever convenient, not urgent.
 
 ## SEO
 
