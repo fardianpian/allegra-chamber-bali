@@ -12,7 +12,14 @@ Languages: **English (primary) + Indonesian (secondary)**.
 ## Confirmed decisions (locked)
 
 - Sub-domain (final): `allegra.indonesiaistimewastudio.id`
-- Hosting: Hostinger Shared/Premium/Business → **static-only (Astro SSG)**. No Node SSR, no serverless.
+- Hosting (revised 2026-06-18): **Cloudflare Pages**, git-connected to `fardianpian/allegra-chamber-bali`
+  (push to `main` → auto build & deploy). Domain registration, DNS zone, and email
+  (`allegra@indonesiaistimewastudio.id`) stay on **Hostinger** — only the `allegra` subdomain's
+  DNS record was changed to a CNAME pointing at `allegra-chamber-bali.pages.dev`. Switched away
+  from the original Hostinger-FTP plan because Hostinger blocks GitHub Actions' runner IPs on
+  port 21 (confirmed via direct port testing), and ports 990/22 are closed entirely on that
+  hosting plan — no working CI deploy path existed under the old setup. Still **static-only
+  (Astro SSG)**. No Node SSR, no serverless.
 - Languages: English default + Indonesian (`/id/`) with hreflang.
 - Formations offered (5): Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble.
   Piano is a flagship offering — solo piano is a Solo option, and a "Piano +" upgrade
@@ -43,10 +50,12 @@ Languages: **English (primary) + Indonesian (secondary)**.
 ## Stack & Hosting (CRITICAL)
 
 - Astro 5 with `output: 'static'`. TailwindCSS v4. MDX content collections.
-- Deploy target: HOSTINGER shared hosting (LiteSpeed/Apache), NOT Vercel/Node SSR.
-- Build in GitHub Actions, upload `dist/` via FTP to the subdomain document root.
+- Deploy target: **Cloudflare Pages** (git-connected), NOT Vercel, NOT Node SSR.
+  Build command `npm run build`, output dir `dist`. `.github/workflows/deploy.yml` (the old
+  Hostinger-FTP workflow) is disabled — Cloudflare's own git integration builds and deploys
+  on every push to `main`, no GitHub Actions step needed for deploy.
 - Forms via Web3Forms/Formspree (no Node backend). WhatsApp deep-link is the primary CTA.
-- Clean URLs, HTTPS redirect, custom 404, cache headers via `.htaccess`.
+- Clean URLs, HTTPS redirect, custom 404.
 - Bilingual EN (default) + ID (`/id/`) with hreflang.
 
 ## Sitemap (v1)
@@ -61,7 +70,7 @@ Languages: **English (primary) + Indonesian (secondary)**.
 4. Every UI change: run `npm run lint && npm run build`.
 5. JSON-LD: MusicGroup + LocalBusiness (home), FAQPage (faq), BreadcrumbList.
 6. Conventional commits (feat:, fix:, design:, chore:).
-7. No SSR, no serverless. Everything must work as static files on Hostinger.
+7. No SSR, no serverless. Everything must work as static files served by Cloudflare Pages.
 8. Optimize all images (AVIF/WebP, lazy). Gallery must not block LCP.
 9. Do NOT invent prices, stats, testimonials, or venue names — use placeholders marked TODO until the owner provides real data.
 10. `src/i18n/ui.ts` is large — `Read` the specific line range before `Edit`ing it; editing without reading that exact range first will be rejected.
