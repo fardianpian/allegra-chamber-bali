@@ -15,7 +15,10 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # Pinned to match the npm version (11.x) that generated package-lock.json —
+          # Node 20's bundled npm 10.x can't fully resolve this lockfile's optionalDependencies
+          # and fails `npm ci` with spurious "Missing: X from lock file" errors.
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
