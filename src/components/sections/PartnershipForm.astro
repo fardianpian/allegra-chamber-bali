@@ -1,0 +1,105 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import WhatsAppCTA from '../media/WhatsAppCTA.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { site } from '../../lib/site'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const page = t('forPlannersPage')
+const thankYouPath = lang === 'en' ? '/thank-you' : '/id/thank-you'
+const redirectUrl = new URL(thankYouPath, site.url).toString()
+
+const fieldClass =
+	'mt-1 w-full border-b border-ink/25 bg-transparent px-0 py-2.5 text-ink placeholder:text-ink/30 focus:border-gold focus:outline-none'
+const labelClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
+
+const roleOptions = [
+	{ value: 'planner', label: page.formRoleOptions.planner },
+	{ value: 'venue', label: page.formRoleOptions.venue },
+	{ value: 'vendor', label: page.formRoleOptions.vendor },
+	{ value: 'other', label: page.formRoleOptions.other },
+]
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading heading={page.formHeading} subhead={page.formSubhead} />
+
+		<div class="mt-10 grid gap-14 lg:grid-cols-[1.2fr_1fr]">
+			<form class="reveal grid gap-6" action="https://api.web3forms.com/submit" method="POST">
+				<input type="hidden" name="access_key" value={site.web3formsKey} />
+				<input type="hidden" name="subject" value="New partnership inquiry — Allegra Chamber Bali" />
+				<input type="hidden" name="redirect" value={redirectUrl} />
+				<input
+					type="checkbox"
+					name="botcheck"
+					class="hidden"
+					style="display:none"
+					tabindex="-1"
+					autocomplete="off"
+				/>
+
+				<div class="grid gap-6 sm:grid-cols-2">
+					<label class={labelClass}>
+						{page.formName}
+						<input type="text" name="name" required class={fieldClass} />
+					</label>
+					<label class={labelClass}>
+						{page.formCompany}
+						<input type="text" name="company" required class={fieldClass} />
+					</label>
+				</div>
+
+				<div class="grid gap-6 sm:grid-cols-2">
+					<label class={labelClass}>
+						{page.formEmail}
+						<input type="email" name="email" required class={fieldClass} />
+					</label>
+					<label class={labelClass}>
+						{page.formPhone}
+						<input type="tel" name="phone" class={fieldClass} />
+					</label>
+				</div>
+
+				<label class={labelClass}>
+					{page.formRole}
+					<select name="role" class={fieldClass}>
+						{roleOptions.map((opt) => <option value={opt.value}>{opt.label}</option>)}
+					</select>
+				</label>
+
+				<label class={labelClass}>
+					{page.formMessage}
+					<textarea name="message" rows="4" class={fieldClass}></textarea>
+				</label>
+
+				<button
+					type="submit"
+					class="inline-flex items-center justify-center gap-2 bg-ink px-7 py-3.5 text-sm uppercase tracking-[0.08em] text-ivory transition-colors duration-300 hover:bg-gold hover:text-ink"
+				>
+					{page.formSubmit}
+				</button>
+
+				<p class="text-xs text-taupe">{page.formNote}</p>
+			</form>
+
+			<div
+				class="reveal flex flex-col gap-6 border-t border-ink/10 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0"
+			>
+				<p class="eyebrow">{page.orDivider}</p>
+				<WhatsAppCTA message={page.whatsappMessage} label={page.whatsappLabel} variant="outline" />
+				<a
+					href={`mailto:${site.contactEmail}`}
+					class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold"
+				>
+					{page.emailLabel} → {site.contactEmail}
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

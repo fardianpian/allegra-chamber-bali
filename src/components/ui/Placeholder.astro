@@ -1,0 +1,28 @@
+---
+// Tasteful stand-in for real photography until the owner supplies assets.
+// Renders a warm gradient swatch instead of fake stock photos — see CLAUDE.md
+// rule "Do NOT invent... use placeholders marked TODO".
+interface Props {
+	ratio?: string // e.g. "4/5", "16/9", "1/1"
+	class?: string
+	label?: string
+}
+const { ratio = '4/5', class: className = '', label = 'Photo placeholder' } = Astro.props
+---
+
+<div
+	class:list={[
+		'relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-sage/25 via-taupe/20 to-ivory',
+		className,
+	]}
+	style={`aspect-ratio: ${ratio};`}
+>
+	<svg class="h-8 w-8 text-ink/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">
+		<rect x="3" y="6" width="18" height="13" rx="1.5"></rect>
+		<circle cx="12" cy="12.5" r="3.25"></circle>
+		<path d="M8 6l1.2-2h5.6L16 6"></path>
+	</svg>
+	<span class="absolute bottom-2 left-2 text-[0.625rem] uppercase tracking-[0.12em] text-ink/40">
+		{label}
+	</span>
+</div>

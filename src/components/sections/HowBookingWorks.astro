@@ -1,0 +1,36 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const booking = t('booking')
+---
+
+<section class="section bg-sage text-ivory">
+	<div class="container-max">
+		<SectionHeading
+			align="center"
+			tone="ivory"
+			eyebrow={booking.eyebrow}
+			heading={booking.heading}
+			class="text-center"
+		/>
+
+		<div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+			{
+				booking.steps.map((step) => (
+					<div class="reveal">
+						<p class="font-display text-3xl text-gold">{step.step}</p>
+						<p class="mt-3 font-display text-xl">{step.title}</p>
+						<p class="mt-2 text-sm text-ivory/75">{step.blurb}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

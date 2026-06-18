@@ -1,0 +1,32 @@
+{
+	"name": "allegra-chamber-bali",
+	"type": "module",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Allegra Chamber Bali — live chamber/string ensemble for weddings in Bali. Static Astro site deployed to Hostinger.",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "prettier --check . && astro check",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.9.0",
+		"@astrojs/mdx": "^4.0.0",
+		"@astrojs/sitemap": "^3.2.0",
+		"@fontsource/cormorant-garamond": "^5.0.0",
+		"@fontsource/inter": "^5.0.0",
+		"astro": "^5.0.0",
+		"sharp": "^0.33.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.0.0",
+		"prettier": "^3.3.0",
+		"prettier-plugin-astro": "^0.14.0",
+		"tailwindcss": "^4.0.0",
+		"typescript": "^5.6.0"
+	},
+	"//": "Versions are starting hints for Claude Code; run npm install and adjust to latest stable as needed."
+}

@@ -1,0 +1,33 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const gallery = t('gallery')
+const galleryHref = lang === 'en' ? '/gallery' : '/id/gallery'
+const ratios = ['4/5', '1/1', '4/5', '1/1', '4/5', '1/1']
+---
+
+<section class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading align="center" eyebrow={gallery.eyebrow} heading={gallery.heading} class="text-center" />
+
+		<div class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+			{ratios.map((ratio) => <Placeholder ratio={ratio} class="reveal" label="" />)}
+		</div>
+
+		<p class="reveal mt-6 text-center text-xs text-taupe">{gallery.placeholderNote}</p>
+
+		<div class="reveal mt-8 text-center">
+			<a href={galleryHref} class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">
+				{gallery.cta} →
+			</a>
+		</div>
+	</div>
+</section>

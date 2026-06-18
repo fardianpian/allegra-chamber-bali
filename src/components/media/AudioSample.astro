@@ -1,0 +1,25 @@
+---
+interface Props {
+	title: string
+	composer?: string
+	src?: string
+	class?: string
+}
+const { title, composer, src, class: className = '' } = Astro.props
+---
+
+<div class:list={['flex items-center justify-between gap-4 border-b border-ink/10 py-4', className]}>
+	<div>
+		<p class="font-display text-lg">{title}</p>
+		{composer && <p class="text-sm text-taupe">{composer}</p>}
+	</div>
+	{
+		src ? (
+			<audio controls preload="none" class="h-9 w-44 md:w-56">
+				<source src={src} type="audio/mpeg" />
+			</audio>
+		) : (
+			<span class="text-xs uppercase tracking-[0.1em] text-taupe">Sample coming soon</span>
+		)
+	}
+</div>

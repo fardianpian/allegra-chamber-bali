@@ -1,0 +1,27 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro'
+import Button from '../ui/Button.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const planners = t('planners')
+const forPlannersHref = lang === 'en' ? '/for-planners' : '/id/for-planners'
+---
+
+<section class="section bg-ivory">
+	<div
+		class="container-max flex flex-col items-start gap-8 border border-ink/10 p-10 md:flex-row md:items-center md:justify-between md:p-14"
+	>
+		<div class="reveal max-w-xl">
+			<Eyebrow>{planners.eyebrow}</Eyebrow>
+			<h2 class="mt-3 text-3xl md:text-4xl">{planners.heading}</h2>
+			<p class="mt-4 text-taupe">{planners.blurb}</p>
+		</div>
+		<Button href={forPlannersHref} variant="outline" class="reveal shrink-0">{planners.cta}</Button>
+	</div>
+</section>

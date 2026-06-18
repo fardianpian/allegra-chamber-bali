@@ -1,0 +1,55 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const formations = t('formations')
+const packagesHref = lang === 'en' ? '/packages' : '/id/packages'
+---
+
+<section class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading
+			align="center"
+			eyebrow={formations.eyebrow}
+			heading={formations.heading}
+			subhead={formations.subhead}
+			class="text-center"
+		/>
+
+		<div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+			{
+				formations.items.map((item, i) => (
+					<a
+						href={`${packagesHref}#${item.formation}`}
+						class="reveal group relative block overflow-hidden"
+						style={`transition-delay: ${i * 60}ms`}
+					>
+						<Placeholder
+							ratio="3/4"
+							class="h-full w-full transition-transform duration-500 group-hover:scale-105"
+							label=""
+						/>
+						<div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+						<div class="absolute inset-x-0 bottom-0 p-5 text-ivory">
+							<p class="text-xs uppercase tracking-[0.12em] text-ivory/70">{item.tagline}</p>
+							<p class="mt-1 font-display text-2xl">{item.name}</p>
+						</div>
+					</a>
+				))
+			}
+		</div>
+
+		<div class="reveal mt-10 text-center">
+			<a href={packagesHref} class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">
+				{formations.cta} →
+			</a>
+		</div>
+	</div>
+</section>

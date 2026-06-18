@@ -1,0 +1,39 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const page = t('forPlannersPage')
+---
+
+<section class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading
+			align="center"
+			heading={page.downloadsHeading}
+			subhead={page.downloadsSubhead}
+			class="text-center"
+		/>
+
+		<div class="reveal mx-auto mt-10 max-w-xl divide-y divide-ink/10 border-y border-ink/10">
+			{
+				page.downloads.map((item) => (
+					<div class="flex items-center justify-between gap-4 py-4">
+						<div>
+							<p class="font-display text-lg">{item.name}</p>
+							<p class="text-xs uppercase tracking-[0.1em] text-taupe">{item.format}</p>
+						</div>
+						<span class="text-xs uppercase tracking-[0.1em] text-taupe">{page.downloadComingSoon}</span>
+					</div>
+				))
+			}
+		</div>
+
+		<p class="reveal mt-6 text-center text-xs text-taupe">{page.downloadsNote}</p>
+	</div>
+</section>

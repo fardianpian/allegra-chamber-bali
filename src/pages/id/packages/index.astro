@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import PageHeader from '../../../components/sections/PageHeader.astro'
+import PackagesList from '../../../components/sections/PackagesList.astro'
+import FinalCTA from '../../../components/sections/FinalCTA.astro'
+import { useTranslations } from '../../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../../lib/jsonld'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const pkg = t('packagesPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${pkg.heading} — Allegra Chamber Bali`}
+	description={pkg.subhead}
+	path="/id/packages"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.packages, path: '/id/packages' }])}
+	ogImage="/images/og-packages-piano.jpg"
+>
+	<PageHeader eyebrow={pkg.eyebrow} heading={pkg.heading} subhead={pkg.subhead} />
+	<PackagesList lang={lang} />
+	<FinalCTA lang={lang} />
+</BaseLayout>

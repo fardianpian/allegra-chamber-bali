@@ -1,0 +1,105 @@
+---
+import { useTranslations, getLocalizedPath } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import WhatsAppCTA from '../media/WhatsAppCTA.astro'
+import Logo from '../ui/Logo.astro'
+
+interface Props {
+	lang: Lang
+	path: string
+}
+const { lang, path } = Astro.props
+const t = useTranslations(lang)
+const nav = t('nav')
+const home = lang === 'en' ? '/' : '/id'
+const prefix = lang === 'en' ? '' : '/id'
+
+const links = [
+	{ href: `${prefix}/repertoire`, label: nav.repertoire },
+	{ href: `${prefix}/packages`, label: nav.packages },
+	{ href: `${prefix}/gallery`, label: nav.gallery },
+	{ href: `${prefix}/about`, label: nav.about },
+	{ href: `${prefix}/for-planners`, label: nav.forPlanners },
+	{ href: `${prefix}/faq`, label: nav.faq },
+	{ href: `${prefix}/contact`, label: nav.contact },
+]
+
+const otherLang: Lang = lang === 'en' ? 'id' : 'en'
+const otherLangHref = getLocalizedPath(path, otherLang)
+const whatsappMessage = t('whatsappMessage')
+---
+
+<header class="sticky top-0 z-50 border-b border-ink/10 bg-ivory/95 backdrop-blur-sm">
+	<div class="container-max flex h-20 items-center justify-between">
+		<a href={home}><Logo size="sm" /></a>
+
+		<nav class="hidden items-center gap-6 xl:flex" aria-label="Primary">
+			{
+				links.map((link) => (
+					<a
+						href={link.href}
+						class="text-xs uppercase tracking-[0.12em] text-ink/80 transition-colors hover:text-gold"
+					>
+						{link.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<div class="hidden items-center gap-5 xl:flex">
+			<a
+				href={otherLangHref}
+				class="text-xs uppercase tracking-[0.12em] text-ink/60 hover:text-gold"
+				aria-label="Switch language"
+			>
+				{lang === 'en' ? 'ID' : 'EN'}
+			</a>
+			<WhatsAppCTA
+				message={whatsappMessage}
+				label={nav.checkDate}
+				variant="outline"
+				class="px-5 py-2.5 text-xs"
+			/>
+		</div>
+
+		<button
+			id="menu-toggle"
+			type="button"
+			class="flex h-10 w-10 items-center justify-center xl:hidden"
+			aria-label="Toggle menu"
+			aria-expanded="false"
+			aria-controls="mobile-menu"
+		>
+			<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+				<path d="M4 7h16M4 12h16M4 17h16"></path>
+			</svg>
+		</button>
+	</div>
+
+	<div id="mobile-menu" class="hidden flex-col border-t border-ink/10 bg-ivory xl:hidden" data-state="closed">
+		<nav class="container-max flex flex-col gap-4 py-6" aria-label="Mobile">
+			{
+				links.map((link) => (
+					<a href={link.href} class="text-sm uppercase tracking-[0.1em] text-ink/80 hover:text-gold">
+						{link.label}
+					</a>
+				))
+			}
+			<a href={otherLangHref} class="text-sm uppercase tracking-[0.1em] text-ink/60 hover:text-gold">
+				{lang === 'en' ? 'Switch to Indonesian' : 'Switch to English'}
+			</a>
+			<WhatsAppCTA message={whatsappMessage} label={nav.checkDate} variant="primary" class="mt-2 w-full" />
+		</nav>
+	</div>
+</header>
+
+<script>
+	const toggle = document.getElementById('menu-toggle')
+	const menu = document.getElementById('mobile-menu')
+	toggle?.addEventListener('click', () => {
+		const isOpen = menu?.classList.contains('flex')
+		menu?.classList.toggle('hidden', isOpen)
+		menu?.classList.toggle('flex', !isOpen)
+		toggle.setAttribute('aria-expanded', String(!isOpen))
+	})
+</script>

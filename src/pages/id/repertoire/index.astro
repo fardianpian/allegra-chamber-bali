@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import PageHeader from '../../../components/sections/PageHeader.astro'
+import RepertoireList from '../../../components/sections/RepertoireList.astro'
+import { useTranslations } from '../../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../../lib/jsonld'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const repertoire = t('repertoirePage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${repertoire.heading} — Allegra Chamber Bali`}
+	description={repertoire.subhead}
+	path="/id/repertoire"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.repertoire, path: '/id/repertoire' }])}
+>
+	<PageHeader eyebrow={repertoire.eyebrow} heading={repertoire.heading} subhead={repertoire.subhead} />
+	<RepertoireList lang={lang} />
+</BaseLayout>

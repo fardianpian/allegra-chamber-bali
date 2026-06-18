@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/sections/Hero.astro'
+import TrustStrip from '../components/sections/TrustStrip.astro'
+import Formations from '../components/sections/Formations.astro'
+import FeaturedAudio from '../components/sections/FeaturedAudio.astro'
+import Moments from '../components/sections/Moments.astro'
+import HowBookingWorks from '../components/sections/HowBookingWorks.astro'
+import Testimonials from '../components/sections/Testimonials.astro'
+import GalleryPreview from '../components/sections/GalleryPreview.astro'
+import ForPlannersStrip from '../components/sections/ForPlannersStrip.astro'
+import FinalCTA from '../components/sections/FinalCTA.astro'
+import { useTranslations } from '../i18n/utils'
+import { getHomeJsonLd } from '../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const meta = t('meta')
+---
+
+<BaseLayout
+	lang={lang}
+	title={meta.title}
+	description={meta.description}
+	path="/"
+	jsonLd={getHomeJsonLd(lang)}
+>
+	<Hero lang={lang} />
+	<TrustStrip lang={lang} />
+	<Formations lang={lang} />
+	<FeaturedAudio lang={lang} />
+	<Moments lang={lang} />
+	<HowBookingWorks lang={lang} />
+	<Testimonials lang={lang} />
+	<GalleryPreview lang={lang} />
+	<ForPlannersStrip lang={lang} />
+	<FinalCTA lang={lang} />
+</BaseLayout>

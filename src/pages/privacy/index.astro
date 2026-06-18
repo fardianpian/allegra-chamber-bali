@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import PrivacyContent from '../../components/sections/PrivacyContent.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const privacy = t('privacyPage')
+---
+
+<BaseLayout
+	lang={lang}
+	title={privacy.title}
+	description={privacy.description}
+	path="/privacy"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: privacy.heading, path: '/privacy' }])}
+>
+	<PageHeader eyebrow={privacy.eyebrow} heading={privacy.heading} subhead={privacy.subhead} />
+	<PrivacyContent lang={lang} />
+</BaseLayout>

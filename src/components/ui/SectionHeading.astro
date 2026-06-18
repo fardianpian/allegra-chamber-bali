@@ -1,0 +1,31 @@
+---
+import Eyebrow from './Eyebrow.astro'
+
+interface Props {
+	eyebrow?: string
+	heading: string
+	subhead?: string
+	align?: 'left' | 'center'
+	class?: string
+	tone?: 'ink' | 'ivory'
+	level?: 'h1' | 'h2'
+}
+const {
+	eyebrow,
+	heading,
+	subhead,
+	align = 'left',
+	class: className = '',
+	tone = 'ink',
+	level = 'h2',
+} = Astro.props
+const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
+const subTone = tone === 'ivory' ? 'text-ivory/80' : 'text-taupe'
+const Heading = level
+---
+
+<div class:list={['reveal max-w-2xl', alignClass, className]}>
+	{eyebrow && <Eyebrow class={tone === 'ivory' ? 'text-ivory/70' : ''}>{eyebrow}</Eyebrow>}
+	<Heading class="mt-3 text-4xl md:text-5xl">{heading}</Heading>
+	{subhead && <p class:list={['mt-4 text-lg', subTone]}>{subhead}</p>}
+</div>

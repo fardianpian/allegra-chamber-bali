@@ -1,0 +1,40 @@
+---
+// Single global error page — Apache's ErrorDocument 404 (public/.htaccess) always serves this
+// one path regardless of locale, so it carries both EN (primary) and ID (secondary) copy rather
+// than picking a language via routing like the rest of the site.
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Button from '../components/ui/Button.astro'
+import WhatsAppCTA from '../components/media/WhatsAppCTA.astro'
+import Eyebrow from '../components/ui/Eyebrow.astro'
+import { useTranslations } from '../i18n/utils'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const whatsappMessage = t('whatsappMessage')
+---
+
+<BaseLayout
+	lang={lang}
+	title="Page Not Found — Allegra Chamber Bali"
+	description="The page you're looking for couldn't be found."
+	path="/404"
+	noindex
+>
+	<section class="section flex min-h-[60vh] items-center bg-ivory">
+		<div class="container-max reveal flex flex-col items-center text-center">
+			<Eyebrow>404</Eyebrow>
+			<h1 class="mt-3 max-w-2xl text-4xl md:text-5xl">Page Not Found</h1>
+			<p class="mt-4 max-w-xl text-taupe">
+				We couldn't find the page you were looking for — it may have moved, or the link might be outdated.
+			</p>
+			<p class="mt-2 max-w-xl text-sm text-taupe italic">
+				Halaman yang Anda cari tidak ditemukan — mungkin sudah dipindahkan atau tautannya sudah tidak berlaku.
+			</p>
+			<div class="mt-8 flex flex-wrap justify-center gap-4">
+				<Button href="/" variant="primary">Back to Home</Button>
+				<Button href="/packages" variant="outline">View Packages</Button>
+				<WhatsAppCTA message={whatsappMessage} label="Message Us on WhatsApp" variant="gold" />
+			</div>
+		</div>
+	</section>
+</BaseLayout>

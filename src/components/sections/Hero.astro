@@ -1,0 +1,35 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro'
+import Button from '../ui/Button.astro'
+import WhatsAppCTA from '../media/WhatsAppCTA.astro'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const hero = t('hero')
+const whatsappMessage = t('whatsappMessage')
+---
+
+<section class="relative flex min-h-[88vh] items-end overflow-hidden">
+	<Placeholder
+		ratio="auto"
+		class="absolute inset-0 h-full w-full"
+		label="Hero photo placeholder — TODO: real Bali wedding photography"
+	/>
+	<div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-ink/10"></div>
+
+	<div class="container-max relative z-10 pb-20 pt-36 text-ivory">
+		<Eyebrow class="reveal text-ivory/80">{hero.eyebrow}</Eyebrow>
+		<h1 class="reveal mt-4 max-w-3xl text-6xl md:text-7xl lg:text-8xl">{hero.title}</h1>
+		<p class="reveal mt-6 max-w-xl text-lg text-ivory/85 md:text-xl">{hero.subhead}</p>
+		<div class="reveal mt-9 flex flex-wrap gap-4">
+			<WhatsAppCTA message={whatsappMessage} label={hero.ctaPrimary} variant="gold" />
+			<Button href="#featured-audio" variant="ghost">{hero.ctaSecondary}</Button>
+		</div>
+	</div>
+</section>

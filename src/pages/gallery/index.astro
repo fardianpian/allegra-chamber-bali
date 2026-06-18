@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import GalleryGrid from '../../components/sections/GalleryGrid.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const gallery = t('galleryPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={gallery.title}
+	description={gallery.description}
+	path="/gallery"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.gallery, path: '/gallery' }])}
+>
+	<PageHeader eyebrow={gallery.eyebrow} heading={gallery.heading} subhead={gallery.subhead} />
+	<GalleryGrid lang={lang} />
+</BaseLayout>

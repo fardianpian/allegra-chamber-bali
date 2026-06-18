@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import ContactForm from '../../components/sections/ContactForm.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const contact = t('contactPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${contact.heading} — Allegra Chamber Bali`}
+	description={contact.subhead}
+	path="/contact"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.contact, path: '/contact' }])}
+>
+	<PageHeader eyebrow={contact.eyebrow} heading={contact.heading} subhead={contact.subhead} />
+	<ContactForm lang={lang} />
+</BaseLayout>

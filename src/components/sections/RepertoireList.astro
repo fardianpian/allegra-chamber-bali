@@ -1,0 +1,107 @@
+---
+import { getCollection } from 'astro:content'
+import AudioSample from '../media/AudioSample.astro'
+import Button from '../ui/Button.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const repertoire = t('repertoirePage')
+const contactHref = lang === 'en' ? '/contact' : '/id/contact'
+
+const moments = ['processional', 'signing', 'recessional', 'cocktail', 'reception'] as const
+const genres = ['classical', 'pop', 'film', 'indonesian'] as const
+
+const allSongs = await getCollection('repertoire')
+const songs = allSongs.sort((a, b) => a.data.order - b.data.order)
+
+const filterBtnBase =
+	'filter-btn px-4 py-2 text-xs uppercase tracking-[0.1em] border border-ink/20 text-ink/70 transition-colors hover:border-gold hover:text-ink data-[active=true]:bg-ink data-[active=true]:text-ivory data-[active=true]:border-ink'
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<div class="reveal flex flex-col gap-4">
+			<div class="flex flex-wrap gap-2" data-filter-group="moment">
+				<button type="button" class={filterBtnBase} data-filter-value="all" data-active="true">
+					{repertoire.filterAll}
+				</button>
+				{
+					moments.map((m) => (
+						<button type="button" class={filterBtnBase} data-filter-value={m} data-active="false">
+							{repertoire.momentLabels[m]}
+						</button>
+					))
+				}
+			</div>
+			<div class="flex flex-wrap gap-2" data-filter-group="genre">
+				<button type="button" class={filterBtnBase} data-filter-value="all" data-active="true">
+					{repertoire.filterAll}
+				</button>
+				{
+					genres.map((g) => (
+						<button type="button" class={filterBtnBase} data-filter-value={g} data-active="false">
+							{repertoire.genreLabels[g]}
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+		<div class="reveal mx-auto mt-10 max-w-2xl" id="song-list">
+			{
+				songs.map((song) => (
+					<div class="song-row" data-moment={song.data.moment} data-genre={song.data.genre}>
+						<AudioSample title={song.data.title} composer={song.data.composer} src={song.data.audioSample} />
+					</div>
+				))
+			}
+		</div>
+		<p class="reveal mx-auto mt-6 max-w-2xl text-center text-sm text-taupe" id="no-results" hidden>
+			{repertoire.noResults}
+		</p>
+		<p class="reveal mx-auto mt-4 max-w-2xl text-center text-xs text-taupe">{repertoire.placeholderNote}</p>
+
+		<div class="reveal mt-12 flex flex-col items-center gap-3 border-t border-ink/10 pt-10 text-center">
+			<p class="text-ink/80">{repertoire.customNote}</p>
+			<Button href={contactHref} variant="outline">{repertoire.customCta}</Button>
+		</div>
+	</div>
+</section>
+
+<script>
+	const groups = document.querySelectorAll<HTMLElement>('[data-filter-group]')
+	const rows = document.querySelectorAll<HTMLElement>('.song-row')
+	const noResults = document.getElementById('no-results')
+	const selected: Record<string, string> = { moment: 'all', genre: 'all' }
+
+	function applyFilters() {
+		let visibleCount = 0
+		rows.forEach((row) => {
+			const matchesMoment = selected.moment === 'all' || row.dataset.moment === selected.moment
+			const matchesGenre = selected.genre === 'all' || row.dataset.genre === selected.genre
+			const visible = matchesMoment && matchesGenre
+			row.hidden = !visible
+			if (visible) visibleCount++
+		})
+		if (noResults) noResults.hidden = visibleCount > 0
+	}
+
+	groups.forEach((group) => {
+		const groupName = group.dataset.filterGroup
+		if (!groupName) return
+		group.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((btn) => {
+			btn.addEventListener('click', () => {
+				selected[groupName] = btn.dataset.filterValue || 'all'
+				group.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((b) => {
+					b.dataset.active = String(b === btn)
+				})
+				applyFilters()
+			})
+		})
+	})
+</script>

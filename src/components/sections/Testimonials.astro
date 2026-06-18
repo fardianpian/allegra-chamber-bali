@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content'
+import SectionHeading from '../ui/SectionHeading.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const testimonials = t('testimonials')
+
+const all = await getCollection('testimonials')
+const items = all.sort((a, b) => a.data.order - b.data.order).slice(0, 3)
+---
+
+<section class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading
+			align="center"
+			eyebrow={testimonials.eyebrow}
+			heading={testimonials.heading}
+			class="text-center"
+		/>
+
+		<div class="mt-12 grid gap-10 md:grid-cols-3">
+			{
+				items.map((item) => (
+					<figure class="reveal border-t border-gold/40 pt-6">
+						<blockquote class="font-display text-xl italic text-ink/90">“{item.data.quote}”</blockquote>
+						<figcaption class="mt-4 text-sm text-taupe">
+							{item.data.couple}
+							{item.data.venue && <> · {item.data.venue}</>}
+						</figcaption>
+					</figure>
+				))
+			}
+		</div>
+		<p class="reveal mt-8 text-center text-xs text-taupe">{testimonials.placeholderNote}</p>
+	</div>
+</section>

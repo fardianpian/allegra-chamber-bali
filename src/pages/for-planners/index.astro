@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import PlannerValueProps from '../../components/sections/PlannerValueProps.astro'
+import PlannerDownloads from '../../components/sections/PlannerDownloads.astro'
+import PartnershipForm from '../../components/sections/PartnershipForm.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const page = t('forPlannersPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={page.title}
+	description={page.description}
+	path="/for-planners"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.forPlanners, path: '/for-planners' }])}
+>
+	<PageHeader eyebrow={page.eyebrow} heading={page.heading} subhead={page.subhead} />
+	<PlannerValueProps lang={lang} />
+	<PlannerDownloads lang={lang} />
+	<PartnershipForm lang={lang} />
+</BaseLayout>

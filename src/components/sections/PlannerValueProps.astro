@@ -1,0 +1,28 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const page = t('forPlannersPage')
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading align="center" heading={page.valuePropsHeading} class="text-center" />
+		<div class="mt-10 grid gap-8 sm:grid-cols-3">
+			{
+				page.valueProps.map((item) => (
+					<div class="reveal border-t border-gold/40 pt-5 text-center">
+						<p class="font-display text-2xl">{item.name}</p>
+						<p class="mt-2 text-sm text-taupe">{item.blurb}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

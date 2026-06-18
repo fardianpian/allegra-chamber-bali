@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import AboutStory from '../../components/sections/AboutStory.astro'
+import MusicianProfiles from '../../components/sections/MusicianProfiles.astro'
+import StudioConnection from '../../components/sections/StudioConnection.astro'
+import FinalCTA from '../../components/sections/FinalCTA.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const about = t('aboutPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={about.title}
+	description={about.description}
+	path="/about"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.about, path: '/about' }])}
+>
+	<PageHeader eyebrow={about.eyebrow} heading={about.heading} subhead={about.subhead} />
+	<AboutStory lang={lang} />
+	<MusicianProfiles lang={lang} />
+	<StudioConnection lang={lang} />
+	<FinalCTA lang={lang} />
+</BaseLayout>

@@ -1,0 +1,122 @@
+/* Allegra Chamber Bali — design tokens & base styles (TailwindCSS v4) */
+@import 'tailwindcss';
+
+/* Self-hosted fonts (install via @fontsource and import in BaseLayout) */
+
+@theme {
+	/* Color palette — romantic luxury */
+	--color-ivory: #f7f3ec; /* background */
+	--color-ink: #1e1c19; /* foreground / charcoal */
+	--color-gold: #c2a36b; /* champagne gold accent */
+	--color-sage: #3e5247; /* deep sage / emerald depth */
+	--color-taupe: #6d665c; /* warm taupe muted — darkened from the sampled #9c9183 for WCAG AA text contrast (4.5:1) on ivory */
+
+	/* Semantic aliases */
+	--color-bg: var(--color-ivory);
+	--color-fg: var(--color-ink);
+	--color-accent: var(--color-gold);
+
+	/* Typography */
+	--font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+	--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+	/* Spacing rhythm */
+	--section-gap: clamp(4rem, 8vw, 7.5rem); /* 64–120px between sections */
+	--reading-max: 720px;
+	--content-max: 1280px;
+}
+
+:root {
+	color-scheme: light;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--color-bg);
+	color: var(--color-fg);
+	font-family: var(--font-body);
+	font-size: 1.0625rem; /* ~17px */
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	line-height: 1.1;
+}
+
+/* Eyebrow / section label. In @layer components so Tailwind utility classes
+   (e.g. text-ivory/70 on dark sections) can override the default color —
+   unlayered rules always win over layered ones regardless of source order,
+   which silently broke every dark-background eyebrow before this was layered. */
+@layer components {
+	.eyebrow {
+		font-family: var(--font-body);
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: 0.75rem;
+		color: var(--color-taupe);
+	}
+}
+
+/* Subtle fade-in on scroll — respect reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+	.reveal {
+		opacity: 0;
+		transform: translateY(12px);
+		transition:
+			opacity 300ms ease-out,
+			transform 300ms ease-out;
+	}
+	.reveal.is-visible {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* Accessibility: visible skip-to-content link on focus */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	background: var(--color-ink);
+	color: var(--color-ivory);
+	padding: 0.75rem 1.25rem;
+	font-size: 0.875rem;
+	letter-spacing: 0.05em;
+}
+.skip-link:focus {
+	left: 1rem;
+	top: 1rem;
+}
+
+/* Visible focus ring for keyboard nav */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+	outline: 2px solid var(--color-gold);
+	outline-offset: 2px;
+}
+
+/* Shared layout primitives */
+.container-max {
+	max-width: var(--content-max);
+	margin-inline: auto;
+	padding-inline: 1.5rem;
+}
+.reading {
+	max-width: var(--reading-max);
+}
+.section {
+	padding-block: var(--section-gap);
+}

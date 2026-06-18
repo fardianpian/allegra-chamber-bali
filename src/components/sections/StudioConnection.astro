@@ -1,0 +1,19 @@
+---
+import Eyebrow from '../ui/Eyebrow.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const about = t('aboutPage')
+---
+
+<section class="section bg-ink text-ivory">
+	<div class="container-max reveal flex flex-col items-center text-center">
+		<Eyebrow class="text-ivory/70">{about.studioHeading}</Eyebrow>
+		<p class="mt-4 max-w-xl text-ivory/85">{about.studioParagraph}</p>
+	</div>
+</section>

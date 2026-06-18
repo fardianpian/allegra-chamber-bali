@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content'
+import SectionHeading from '../ui/SectionHeading.astro'
+import AudioSample from '../media/AudioSample.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const featured = t('featured')
+const repertoireHref = lang === 'en' ? '/repertoire' : '/id/repertoire'
+
+const allSongs = await getCollection('repertoire')
+const songs = allSongs.filter((s) => s.data.featured).sort((a, b) => a.data.order - b.data.order)
+---
+
+<section id="featured-audio" class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading
+			align="center"
+			eyebrow={featured.eyebrow}
+			heading={featured.heading}
+			subhead={featured.subhead}
+			class="text-center"
+		/>
+
+		<div class="reveal mx-auto mt-10 max-w-2xl">
+			{
+				songs.map((song) => (
+					<AudioSample title={song.data.title} composer={song.data.composer} src={song.data.audioSample} />
+				))
+			}
+			<p class="mt-4 text-center text-xs text-taupe">{featured.placeholderNote}</p>
+		</div>
+
+		<div class="reveal mt-8 text-center">
+			<a href={repertoireHref} class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">
+				{featured.cta} →
+			</a>
+		</div>
+	</div>
+</section>

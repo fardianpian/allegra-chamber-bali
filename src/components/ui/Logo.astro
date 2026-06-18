@@ -1,0 +1,28 @@
+---
+// Brand wordmark lockup. Colors measured from the source logo file.
+// Subtitle kept in font-display (serif) per owner preference, even though the
+// source logo file renders it in sans — see chat decision before reverting.
+interface Props {
+	tone?: 'ink' | 'ivory'
+	size?: 'sm' | 'md' | 'lg'
+	class?: string
+}
+const { tone = 'ink', size = 'sm', class: className = '' } = Astro.props
+
+const wordmarkColor = tone === 'ivory' ? 'text-ivory' : 'text-ink'
+const subtitleColor = tone === 'ivory' ? 'text-ivory/60' : 'text-taupe'
+
+const sizes = {
+	sm: { wordmark: 'text-xl', subtitle: 'text-xs' },
+	md: { wordmark: 'text-2xl', subtitle: 'text-xs mt-1' },
+	lg: { wordmark: 'text-4xl md:text-5xl', subtitle: 'text-sm mt-2' },
+}
+const s = sizes[size]
+---
+
+<span class:list={['inline-block leading-none', className]}>
+	<span class:list={['font-display block', s.wordmark, wordmarkColor]}>Allegra</span>
+	<span class:list={['font-display block uppercase tracking-[0.2em]', s.subtitle, subtitleColor]}
+		>Chamber Bali</span
+	>
+</span>

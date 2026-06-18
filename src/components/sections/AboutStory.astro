@@ -1,0 +1,39 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const about = t('aboutPage')
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max grid gap-12 md:grid-cols-2 md:items-center">
+		<Placeholder ratio="4/5" class="reveal" label="Ensemble photo placeholder" />
+		<div>
+			<SectionHeading heading={about.storyHeading} />
+			<div class="reveal mt-6 flex flex-col gap-4 text-ink/85">
+				{about.storyParagraphs.map((p) => <p>{p}</p>)}
+			</div>
+		</div>
+	</div>
+
+	<div class="container-max mt-20">
+		<SectionHeading align="center" heading={about.philosophyHeading} class="text-center" />
+		<div class="mt-10 grid gap-8 sm:grid-cols-3">
+			{
+				about.philosophy.map((item) => (
+					<div class="reveal border-t border-gold/40 pt-5 text-center">
+						<p class="font-display text-2xl">{item.name}</p>
+						<p class="mt-2 text-sm text-taupe">{item.blurb}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

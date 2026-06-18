@@ -1,0 +1,34 @@
+# build output
+dist/
+.output/
+.vercel/
+.netlify/
+
+# deps
+node_modules/
+.pnp
+.pnp.js
+
+# env
+.env
+.env.*
+!.env.example
+
+# astro
+.astro/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Claude Code local session state
+.claude/

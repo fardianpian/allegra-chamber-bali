@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import piano1 from '../../assets/gallery/piano-cliffside-daytime.jpg'
+import piano2 from '../../assets/gallery/piano-garden-reception-night.jpg'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const gallery = t('galleryPage')
+
+const types = ['cliffside', 'beach', 'garden', 'chapel', 'ballroom'] as const
+const ratios = ['4/5', '1/1', '3/4', '1/1'] as const
+// Two real wedding pianist photos so far (owner-supplied, 2026-06-18) — the rest stay
+// placeholder tiles (CLAUDE.md §9) until more event photography is confirmed for use.
+const realPhotos: Partial<Record<(typeof types)[number], { src: typeof piano1; alt: string }>> = {
+	cliffside: { src: piano1, alt: 'Cliffside ceremony with live wedding pianist, Bali' },
+	garden: { src: piano2, alt: 'Garden reception with live wedding pianist, Bali' },
+}
+const tiles = types.flatMap((type) =>
+	Array.from({ length: 4 }, (_, i) => ({
+		type,
+		ratio: ratios[i % ratios.length],
+		photo: i === 0 ? realPhotos[type] : undefined,
+	})),
+)
+
+const filterBtnBase =
+	'filter-btn px-4 py-2 text-xs uppercase tracking-[0.1em] border border-ink/20 text-ink/70 transition-colors hover:border-gold hover:text-ink data-[active=true]:bg-ink data-[active=true]:text-ivory data-[active=true]:border-ink'
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<div class="reveal flex flex-wrap gap-2" data-filter-group="type">
+			<button type="button" class={filterBtnBase} data-filter-value="all" data-active="true">
+				{gallery.filterAll}
+			</button>
+			{
+				types.map((type) => (
+					<button type="button" class={filterBtnBase} data-filter-value={type} data-active="false">
+						{gallery.typeLabels[type]}
+					</button>
+				))
+			}
+		</div>
+
+		<div class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4" id="gallery-grid">
+			{
+				tiles.map((tile) => (
+					<div class="gallery-tile reveal" data-type={tile.type}>
+						{tile.photo ? (
+							<Image
+								src={tile.photo.src}
+								alt={tile.photo.alt}
+								width={800}
+								height={1000}
+								loading="lazy"
+								class="aspect-[4/5] w-full object-cover"
+							/>
+						) : (
+							<Placeholder ratio={tile.ratio} label={gallery.typeLabels[tile.type]} />
+						)}
+					</div>
+				))
+			}
+		</div>
+		<p class="reveal mt-6 text-center text-sm text-taupe" id="no-results" hidden>{gallery.noResults}</p>
+		<p class="reveal mt-6 text-center text-xs text-taupe">{gallery.placeholderNote}</p>
+	</div>
+</section>
+
+<script>
+	const group = document.querySelector<HTMLElement>('[data-filter-group="type"]')
+	const tiles = document.querySelectorAll<HTMLElement>('.gallery-tile')
+	const noResults = document.getElementById('no-results')
+
+	group?.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const value = btn.dataset.filterValue || 'all'
+			group.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((b) => {
+				b.dataset.active = String(b === btn)
+			})
+
+			let visibleCount = 0
+			tiles.forEach((tile) => {
+				const visible = value === 'all' || tile.dataset.type === value
+				tile.hidden = !visible
+				if (visible) visibleCount++
+			})
+			if (noResults) noResults.hidden = visibleCount > 0
+		})
+	})
+</script>

@@ -1,0 +1,31 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import Placeholder from '../ui/Placeholder.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const moments = t('moments')
+---
+
+<section class="section bg-ivory">
+	<div class="container-max">
+		<SectionHeading align="center" eyebrow={moments.eyebrow} heading={moments.heading} class="text-center" />
+
+		<div class="mt-12 grid gap-8 sm:grid-cols-3">
+			{
+				moments.items.map((item) => (
+					<div class="reveal">
+						<Placeholder ratio="4/3" label="" />
+						<p class="mt-5 font-display text-2xl">{item.name}</p>
+						<p class="mt-2 text-taupe">{item.blurb}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

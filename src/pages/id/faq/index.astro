@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import PageHeader from '../../../components/sections/PageHeader.astro'
+import FaqList from '../../../components/sections/FaqList.astro'
+import FinalCTA from '../../../components/sections/FinalCTA.astro'
+import { useTranslations } from '../../../i18n/utils'
+import { getBreadcrumbJsonLd, getFaqJsonLd } from '../../../lib/jsonld'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const faq = t('faqPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={faq.title}
+	description={faq.description}
+	path="/id/faq"
+	jsonLd={[getBreadcrumbJsonLd(lang, [{ name: nav.faq, path: '/id/faq' }]), getFaqJsonLd(faq.items)]}
+>
+	<PageHeader eyebrow={faq.eyebrow} heading={faq.heading} subhead={faq.subhead} />
+	<FaqList lang={lang} />
+	<FinalCTA lang={lang} />
+</BaseLayout>

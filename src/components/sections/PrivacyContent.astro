@@ -1,0 +1,44 @@
+---
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const privacy = t('privacyPage')
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<div class="reveal mx-auto max-w-2xl">
+			<p class="text-ink/80">{privacy.intro}</p>
+
+			<div class="mt-10 flex flex-col gap-10">
+				{
+					privacy.sections.map((section) => (
+						<div>
+							<h2 class="text-2xl">{section.heading}</h2>
+							{section.type === 'list' ? (
+								<ul class="mt-3 list-disc space-y-2 pl-5 text-ink/80">
+									{section.items.map((item) => (
+										<li>{item}</li>
+									))}
+								</ul>
+							) : (
+								<div class="mt-3 space-y-3 text-ink/80">
+									{section.items.map((item) => (
+										<p>{item}</p>
+									))}
+								</div>
+							)}
+						</div>
+					))
+				}
+			</div>
+
+			<p class="mt-12 border-t border-ink/10 pt-6 text-sm text-taupe">{privacy.legalNote}</p>
+		</div>
+	</div>
+</section>
