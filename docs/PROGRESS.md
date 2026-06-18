@@ -334,29 +334,26 @@ var(--color-taupe)` directly, and per CSS Cascade Layers spec, unlayered rules a
   video player component exists anywhere in the codebase yet (only `AudioSample.astro` for
   `<audio>`), so wiring that in will need a new component, not just an asset drop-in.
 - ~~WhatsApp business number, Instagram handle, Web3Forms account~~ — resolved 2026-06-19, see
-  above. Real values are live; the only remaining gap is an actual end-to-end functional test
-  (see Next steps #1).
+  above. Real values are live and end-to-end functional (owner manually tested both: a real
+  `/contact` submission arrived via Web3Forms, and the WhatsApp CTA opened a chat with the
+  pre-filled message on a real phone — automated Playwright testing of the form itself got
+  blocked by Web3Forms' Cloudflare anti-bot challenge, so this needed a real human test instead).
   ~~Hostinger FTP credentials~~ — no longer needed, hosting moved to Cloudflare Pages
   (2026-06-19), git push deploys automatically.
 
 ## Next steps (priority order)
 
-1. **Run an actual end-to-end functional smoke test before pointing real clients at the site** —
-   everything verified so far is curl/HTML-level (right values render), not a real submission.
-   Submit a real test inquiry through `/contact` and confirm it actually arrives in the owner's
-   inbox via Web3Forms, and tap a WhatsApp CTA on an actual phone to confirm the deep link opens
-   a chat with the pre-filled message as expected.
-2. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+1. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
    changes the component shape.
-3. **Content depth**: real venue names, real testimonials (with permission), and event
+2. **Content depth**: real venue names, real testimonials (with permission), and event
    photography for the non-piano venue types (beach/chapel/ballroom — only cliffside/garden have
    real photos so far). All still owner-supplied, don't invent.
-4. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
+3. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
    clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-5. Housekeeping, no urgency: delete the orphaned manual-deploy leftovers on the old Hostinger
+4. Housekeeping, no urgency: delete the orphaned manual-deploy leftovers on the old Hostinger
    document root (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any
    stray files from the one-time zip upload; DNS no longer points there so nothing serves them,
    but they're still taking up space), and optionally remove the now-unused `FTP_*` GitHub
