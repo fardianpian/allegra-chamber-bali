@@ -105,7 +105,7 @@ export const ui = {
 				},
 				{
 					name: 'Reception',
-					blurb: 'From first dance to the last song, arranged for strings.',
+					blurb: 'From first dance to the last song, arranged for strings and piano.',
 				},
 			],
 		},
@@ -363,7 +363,7 @@ export const ui = {
 				{
 					question: 'Should we book a trio or a string quartet?',
 					answer:
-						"A trio suits a smaller, more intimate ceremony or a tighter budget, while a string quartet gives a fuller, more layered sound that fills larger venues and longer reception sets. If you're unsure, tell us your guest count and venue and we'll recommend a formation.",
+						"A trio suits a smaller, more intimate ceremony, while a string quartet gives a fuller, more layered sound that fills larger venues and longer reception sets. If you're unsure, tell us your guest count and venue and we'll recommend a formation.",
 				},
 				{
 					question: 'Can you perform at outdoor or cliffside venues in Bali?',
@@ -431,7 +431,7 @@ export const ui = {
 					items: [
 						'Web3Forms: our contact and partnership forms are processed by Web3Forms, a third-party form delivery service, which forwards your submission to our email. See their privacy policy for how they handle data in transit.',
 						"WhatsApp (Meta): messages sent via our WhatsApp link are handled according to WhatsApp's own privacy policy, not ours.",
-						'Hosting: this website is hosted on Hostinger — standard server logs (e.g. IP address, browser type) may be retained briefly for security purposes.',
+						'Hosting: this website is hosted on Cloudflare Pages — standard server logs (e.g. IP address, browser type) may be retained briefly for security purposes. Domain registration, DNS, and email remain with Hostinger.',
 						'TODO: update this section if/when analytics (e.g. Plausible or GA4) is enabled — see .env.example.',
 					],
 				},
@@ -586,7 +586,7 @@ export const ui = {
 				},
 				{
 					name: 'Resepsi',
-					blurb: 'Dari first dance hingga lagu terakhir, diaransemen untuk strings.',
+					blurb: 'Dari first dance hingga lagu terakhir, diaransemen untuk strings dan piano.',
 				},
 			],
 		},
@@ -847,7 +847,7 @@ export const ui = {
 				{
 					question: 'Sebaiknya pilih trio atau string quartet?',
 					answer:
-						'Trio cocok untuk upacara yang lebih intim atau budget yang lebih ketat, sementara string quartet memberikan suara yang lebih penuh dan berlapis untuk venue besar dan set resepsi yang lebih panjang. Jika belum yakin, beri tahu kami jumlah tamu dan venue Anda dan kami akan merekomendasikan formasi.',
+						'Trio cocok untuk upacara yang lebih intim, sementara string quartet memberikan suara yang lebih penuh dan berlapis untuk venue besar dan set resepsi yang lebih panjang. Jika belum yakin, beri tahu kami jumlah tamu dan venue Anda dan kami akan merekomendasikan formasi.',
 				},
 				{
 					question: 'Apakah bisa tampil di venue outdoor atau cliffside di Bali?',
@@ -916,7 +916,7 @@ export const ui = {
 					items: [
 						'Web3Forms: form kontak dan partnership kami diproses oleh Web3Forms, layanan pengiriman form pihak ketiga, yang meneruskan submission Anda ke email kami. Lihat kebijakan privasi mereka untuk cara mereka menangani data saat transit.',
 						'WhatsApp (Meta): pesan yang dikirim via tautan WhatsApp kami ditangani sesuai kebijakan privasi WhatsApp sendiri, bukan kebijakan kami.',
-						'Hosting: website ini dihosting di Hostinger — log server standar (misalnya alamat IP, jenis browser) mungkin disimpan sebentar untuk keperluan keamanan.',
+						'Hosting: website ini dihosting di Cloudflare Pages — log server standar (misalnya alamat IP, jenis browser) mungkin disimpan sebentar untuk keperluan keamanan. Registrasi domain, DNS, dan email kami tetap berada di Hostinger.',
 						'TODO: perbarui bagian ini jika/saat analytics (misalnya Plausible atau GA4) diaktifkan — lihat .env.example.',
 					],
 				},
