@@ -40,7 +40,7 @@ export const ui = {
 				{
 					formation: 'solo',
 					name: 'Solo',
-					tagline: 'Violin, Cello, or Piano',
+					tagline: 'Violin, Cello, or Wedding Pianist',
 					blurb: 'Intimate strings or solo piano for vow exchanges and small ceremonies.',
 				},
 				{

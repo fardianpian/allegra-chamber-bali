@@ -106,7 +106,57 @@ pianis pernikahan, piano pernikahan bali, pianis bali, sewa pianis pernikahan, l
 pernikahan) **mengembalikan array kosong total** — bukan sebagian "no data", tapi nol baris untuk
 semuanya. Ini memperkuat temuan §8: permintaan pencarian berbahasa Indonesia untuk kategori
 vendor musik pernikahan nyaris tidak ada, kini terkonfirmasi berlaku juga untuk piano secara
-spesifik.
+spesifik. **Re-cek 2026-06-19:** "pianis pernikahan" diuji ulang via `keyword_suggestions`
+(bukan `keyword_overview`) — tetap nol baris. Temuan konsisten lintas metode.
+
+### 3.0.1 Update riset 2026-06-19 — perluasan cluster piano (long-tail, "near me", cost-intent)
+
+> Riset lanjutan atas permintaan owner untuk memperdalam fokus kata kunci "piano"/"pianist".
+> Sumber: `dataforseo_labs_google_keyword_suggestions` (seed "wedding pianist" & "piano wedding",
+> US+AU), `dataforseo_labs_google_related_keywords` (seed "wedding pianist", depth 3, US), dan
+> `dataforseo_labs_bulk_keyword_difficulty` untuk shortlist. Seed broad "pianist" (tanpa kata
+> "wedding") terbukti **dominan noise** — top volume yang muncul adalah film "The Pianist" (2002),
+> "virtual pianist" (software), dan job-seeking content ("pianist salary", "church pianist jobs")
+> — dikonfirmasi ulang sebagai metode yang harus dihindari, sesuai catatan §1.
+
+**A. Cluster "hire/near me" (commercial intent, belum ada di §3.0 versi awal):**
+
+| Keyword                  | Vol US | KD US   | Intent     | Catatan                                                  |
+| ------------------------ | ------ | ------- | ---------- | -------------------------------------------------------- |
+| pianist to hire          | 210    | no data | commercial | dari related_keywords, belum tercatat sebelumnya         |
+| wedding pianist near me  | 140    | **6**   | commercial | KD terukur rendah — kandidat kuat                        |
+| pianist for hire near me | 110    | no data | commercial | volume cukup, kompetisi MEDIUM                           |
+| wedding piano player(s)  | 720    | no data | commercial | satu cluster dengan "wedding pianist" (lihat catatan §1) |
+| piano player for wedding | 720    | no data | commercial | sama cluster — pakai sebagai variasi anchor/copy natural |
+
+**B. Cluster cost-intent (volume kecil tapi niat booking sangat jelas):**
+
+| Keyword                                     | Vol US             | KD US   | Intent        |
+| ------------------------------------------- | ------------------ | ------- | ------------- |
+| wedding pianist rates/prices/price/fee/cost | 90 (masing-masing) | no data | commercial    |
+| cost of pianist for wedding                 | 90                 | no data | commercial    |
+| how much does a wedding pianist cost        | 40                 | no data | informational |
+| hire pianist for wedding                    | 30                 | **3**   | transactional |
+| hire a pianist for wedding                  | 30                 | no data | transactional |
+
+**C. Sinyal pasar internasional baru:** "wedding pianist singapore" muncul di hasil suggestion
+(KD **39** — kompetisi nyata, bukan no-data seperti kota lain) dan beberapa kota Australia
+(Sydney, Melbourne, vol 10 masing-masing, AU locale). Singapore adalah pasar sumber wisatawan
+destination-wedding yang relevan secara geografis untuk Bali, tapi KD 39 terlalu tinggi untuk
+dikejar sebagai keyword halaman saat domain authority masih nol — **catat sebagai sinyal
+audience, bukan target SEO v1**.
+
+**D. Noise besar yang harus dihindari (volume tinggi, intent tidak relevan):** cluster "wedding
+songs/sheet music for piano" (mis. "wedding songs piano", "piano wedding march sheet music") —
+vol 590–1000/bulan, tapi intent-nya pemain piano amatir mencari partitur untuk dimainkan sendiri,
+**bukan** orang yang mencari vendor untuk disewa. Jangan menargetkan cluster ini meski volumenya
+terlihat menarik — sudah dikonfirmasi via field `search_intent_info` (mayoritas informational/
+transactional-ke-sheet-music, bukan transactional-ke-booking).
+
+**Implikasi terhadap §4 (prioritas):** tambahkan "wedding pianist near me" (KD 6) dan "hire
+pianist for wedding" (KD 3, sudah ada) ke baris "kejar dulu" — keduanya layak jadi secondary
+keyword FAQ/Packages. "pianist to hire" dan "pianist for hire near me" (no data KD, volume
+sedang) masuk kategori "coba, evaluasi via GSC" bukan "kejar pasti" karena KD belum terukur.
 
 ### 3.1 Cluster "Wedding Musician / Ceremony Musician" — prioritas tertinggi
 
@@ -241,17 +291,36 @@ diperkuat scraping struktur halaman via Firecrawl.
 | **Adinda Laksmi** (sites.google.com/view/baliviolinist)                       | Solo violinist, Google Sites                                                         | Website sangat minim (1 halaman Google Sites gratis), tapi tetap rank #1 untuk "bali wedding violinist" — menunjukkan bar SEO di niche ini rendah                             |
 | **Anna Edelweiss / santoriniviolinist.com**                                   | Solo violinist internasional (basis Santorini, menyasar Bali sebagai pasar sekunder) | Landing page tunggal "/bali-wedding-violinist" — strategi 1 halaman per kota, tidak ada kedalaman konten lain                                                                 |
 
+### Kompetitor piano-spesifik baru (ditemukan 2026-06-19, via SERP real-time untuk "wedding pianist bali" / "piano wedding bali")
+
+| Kompetitor                                                               | Bentuk                                              | Posisi SERP                                                     | Kelemahan struktural                                                                                                                                                                                                                                |
+| ------------------------------------------------------------------------ | --------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Bali Entertainment Agency** — `/hire-a-pianist-for-a-wedding-in-bali/` | Halaman piano khusus wedding, agency multi-kategori | #6 untuk "wedding pianist bali" (US SERP)                       | H1+H2 lengkap ("Why Hire a Pianist", "Choosing the Right Pianist", dst.), tapi **tanpa formasi/paket terstruktur**, tanpa repertoire, tanpa kredensial musisi bernama — model "agency yang mem-booking freelancer", bukan ensemble dengan identitas |
+| **Bali Entertainment Agency** — `/bali-pianists/`                        | Halaman kategori "pianists" generik                 | #8 untuk "piano wedding bali"                                   | Sama — copy generik "diverse talent pool", tidak spesifik wedding, tidak ada nama musisi/foto asli yang terverifikasi                                                                                                                               |
+| **Bridestory** — listing "Rose Mystica" (Harp, Piano, Cello Trio)        | Marketplace vendor listing                          | #5 untuk "piano wedding bali"                                   | Harga publik (IDR 4.000.000–26.000.000) tapi tanpa halaman/struktur SEO sendiri — bergantung sepenuhnya pada algoritma marketplace Bridestory                                                                                                       |
+| **Magical Bali Wedding** — `/vendors/live-ceremony-music/`               | Wedding planner, halaman vendor tipis               | #8 untuk "wedding pianist bali", #10 untuk "piano wedding bali" | Tetap 1 paragraf generik yang menyebut piano sebagai 1 dari 5 instrumen — sudah dicatat di tabel utama di atas, dikonfirmasi masih belum diperdalam                                                                                                 |
+
+**Mengapa ini penting:** temuan ini merevisi Gap #2 di bawah — bukan "tidak ada kompetitor yang
+menargetkan cluster piano", melainkan **ada satu kompetitor (Bali Entertainment Agency) yang
+sudah membuat halaman piano khusus dan berhasil masuk page 1** untuk kedua query Bali+piano yang
+diuji. Namun halamannya tetap generik (model agency, tanpa nama ensemble/musisi, tanpa
+breakdown formasi, tanpa repertoire) — gap diferensiasi Allegra (ensemble bernama, struktur
+multi-halaman, kredensial konservatori) tetap valid dan bisa langsung dipakai untuk
+mengungguli kualitas konten, hanya targetnya kini lebih konkret: kalahkan dua halaman spesifik
+ini di SERP, bukan sekadar "tidak ada yang menargetkan."
+
 ### Gap yang bisa direbut Allegra
 
-1. **Tidak ada satu pun kompetitor dengan website terstruktur penuh** (multi-halaman: packages,
+1. **Tidak ada kompetitor dengan website terstruktur penuh** (multi-halaman: packages,
    repertoire, gallery, FAQ, contact dengan JSON-LD) — semua kompetitor adalah Instagram-only,
-   halaman vendor 1 paragraf di situs planner lain, atau Google Sites gratis. Struktur Astro
+   halaman vendor 1 paragraf di situs planner lain, halaman agency generik tanpa identitas
+   ensemble (lihat tabel piano-spesifik di atas), atau Google Sites gratis. Struktur Astro
    multi-halaman Allegra (5 formasi terpisah, daftar repertoire lengkap, galeri per-venue) sudah
    secara struktural lebih dalam daripada semua kompetitor yang ditemukan.
-2. **Tidak ada kompetitor yang menargetkan cluster "musician for wedding ceremony"** secara
-   spesifik — semua kompetitor menulis copy generik "live music" atau "string quartet" tanpa
-   variasi keyword. Membuka ruang untuk Allegra menjadi yang pertama menstrukturkan halaman di
-   sekitar cluster bervolume tertinggi ini.
+2. **Satu kompetitor (Bali Entertainment Agency) sudah menargetkan piano+Bali secara spesifik**
+   dan rank page-1 — bukan lagi "ruang kosong", tapi halamannya dangkal (model agency generik,
+   tanpa nama ensemble, tanpa formasi/repertoire). Allegra unggul lewat kedalaman konten dan
+   identitas brand yang jelas, bukan lewat keunikan ide.
 3. **Tidak ada kompetitor dengan breakdown formasi + harga yang jelas** (meski Allegra masih
    `TODO` untuk harga riil per CLAUDE.md §9) — begitu harga diisi, halaman Packages Allegra akan
    menjadi salah satu yang paling lengkap di niche ini.
@@ -385,6 +454,20 @@ direvisi bersama owner.
   murni body copy upsell di blok Duo/Trio/Quartet (sudah ditulis) — jangan jadikan H2, jangan
   jadikan anchor internal link, karena §3.0 mengonfirmasi nol permintaan pencarian untuk frasa
   kombinasi itu.
+- **Status audit 2026-06-19 — sebagian sudah jalan, satu gap konkret tersisa:** `packagesPage.title`
+  dan `.description` di `src/i18n/ui.ts` (baris ~80–82) **sudah** memuat "wedding pianist" — ini
+  sudah sesuai rekomendasi. **Gap yang masih terbuka:** tagline formation-card Solo di homepage
+  (`src/i18n/ui.ts` baris ~43, field `home.formations.items[0].tagline`) masih berbunyi
+  `'Violin, Cello, or Piano'` — belum literal "Wedding Pianist". Rekomendasi: ubah jadi
+  `'Violin, Cello, or Wedding Pianist'` agar varian KD-1 tertangkap di tempat pertama calon
+  pasangan membaca formasi (homepage), bukan hanya di title/meta Packages. Terapkan paralel di
+  blok ID (`'Biola, Cello, atau Piano'` → tetap pertimbangkan equivalent ID, ingat §8: tidak ada
+  volume pencarian ID untuk piano, jadi perubahan ini murni untuk konsistensi UX, bukan SEO ID).
+- **Kompetitor piano baru (lihat §5):** Bali Entertainment Agency rank page-1 untuk "wedding
+  pianist bali" dan "piano wedding bali" dengan halaman generik tanpa nama ensemble/repertoire.
+  Begitu foto/bio musisi piano asli tersedia dari owner, prioritaskan menyebut nama/kredensial
+  pianis di blok Solo (About atau Packages) — kredensial bernama adalah satu hal yang halaman
+  agency tersebut tidak punya dan tidak bisa ditiru tanpa identitas brand.
 
 ### Evaluasi pasca-launch via Google Search Console (jangan diputuskan sekarang, butuh data nyata)
 
