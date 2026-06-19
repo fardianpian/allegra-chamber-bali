@@ -347,17 +347,33 @@ var(--color-taupe)` directly, and per CSS Cascade Layers spec, unlayered rules a
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
    changes the component shape.
-2. **Content depth**: real venue names, real testimonials (with permission), and event
-   photography for the non-piano venue types (beach/chapel/ballroom — only cliffside/garden have
-   real photos so far). All still owner-supplied, don't invent.
-3. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
+2. **Content depth**: real testimonials (with permission) are still pending — `Testimonials.astro`
+   on home stays commented out of `src/pages/index.astro` + `src/pages/id/index.astro` rather than
+   showing placeholder/TODO text to visitors (2026-06-19, owner direction — no visible "TODO" copy
+   on any live page). Re-enable its import + render line once real, permission-cleared quotes
+   land. `MusicianProfiles.astro` on `/about` is done — reworked from 4 generic "TODO — Musician
+   Name" placeholder cards into a real 2-person "Managed By" section (`aboutPage.team` in
+   `src/i18n/ui.ts`): Fardian (Producer & Music Industry Professional) and Yessica Yosia Virginia
+   Simanjuntak (Composer & Music Director), real studio photos in `src/assets/about/`. Also still
+   needed: event photography for the non-piano venue types (beach/chapel/ballroom — only
+   cliffside/garden have real photos so far). All owner-supplied,
+   don't invent.
+3. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
+   "have this reviewed by a lawyer" TODO note (2026-06-19, same visible-TODO cleanup) — but the
+   underlying task is still real and unresolved. Have the policy reviewed by a qualified lawyer;
+   it's currently a good-faith draft, not legal advice. Also update its "Third-Party Services"
+   section once analytics (e.g. Plausible or GA4 — see `.env.example`) is actually enabled.
+4. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
    clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-4. Housekeeping, no urgency: delete the orphaned manual-deploy leftovers on the old Hostinger
-   document root (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any
-   stray files from the one-time zip upload; DNS no longer points there so nothing serves them,
-   but they're still taking up space), and optionally remove the now-unused `FTP_*` GitHub
-   Secrets on the repo (harmless to leave, just dead weight).
+5. Housekeeping, no urgency:
+   - ~~Remove the now-unused `FTP_*` GitHub Secrets~~ — done 2026-06-19 (`gh secret delete` for
+     `FTP_PASSWORD`/`FTP_SERVER`/`FTP_SERVER_DIR`/`FTP_USERNAME`, confirmed `gh secret list` empty).
+   - Still open: delete the orphaned manual-deploy leftovers on the old Hostinger document root
+     (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any stray files
+     from the one-time zip upload; DNS no longer points there so nothing serves them, but they're
+     still taking up space). Owner chose to skip this for now (2026-06-19) rather than hand over a
+     Hostinger API token — do via hPanel File Manager manually whenever convenient, low priority.
 
 ## SEO
 

@@ -29,7 +29,6 @@ export const ui = {
 		trust: {
 			eyebrow: 'Trusted By',
 			heading: 'As performed at',
-			note: 'TODO: replace with real venue names once confirmed by the owner.',
 		},
 		formations: {
 			eyebrow: 'The Ensemble',
@@ -74,7 +73,6 @@ export const ui = {
 			heading: 'Featured Repertoire',
 			subhead: 'A short selection from our ceremony and reception sets.',
 			cta: 'Browse full repertoire',
-			placeholderNote: 'TODO: replace with real audio/video samples from the owner.',
 		},
 		packagesPage: {
 			title: 'String Quartet for Hire — Wedding Ensemble Packages — Allegra Chamber Bali',
@@ -96,14 +94,17 @@ export const ui = {
 			heading: 'One ensemble, every part of the day',
 			items: [
 				{
+					moment: 'ceremony',
 					name: 'Ceremony',
 					blurb: 'Processional, signing, and recessional — the music that carries your vows.',
 				},
 				{
+					moment: 'cocktail',
 					name: 'Cocktail Hour',
 					blurb: 'Warm, conversational sets while you celebrate with your guests.',
 				},
 				{
+					moment: 'reception',
 					name: 'Reception',
 					blurb: 'From first dance to the last song, arranged for strings and piano.',
 				},
@@ -227,7 +228,6 @@ export const ui = {
 				indonesian: 'Indonesian',
 			},
 			noResults: 'No songs match this filter yet — ask us for a custom arrangement.',
-			placeholderNote: 'TODO: replace with real audio samples once available from the owner.',
 			customNote: "Don't see your song? We take custom arrangement requests.",
 			customCta: 'Request a custom arrangement',
 		},
@@ -237,8 +237,7 @@ export const ui = {
 				'See live wedding ceremony musician performances across Bali — browse the gallery by venue type, from cliffside ceremonies to ballroom receptions.',
 			eyebrow: 'Documentation',
 			heading: 'Live Wedding Performances Across Bali',
-			subhead:
-				'Live wedding ceremony performances across Bali, browsed by venue type — a few real photos are in, and the rest are placeholders until more event photography is confirmed.',
+			subhead: 'Live wedding ceremony performances across Bali, browsed by venue type.',
 			filterAll: 'All',
 			typeLabels: {
 				cliffside: 'Cliffside',
@@ -248,7 +247,6 @@ export const ui = {
 				ballroom: 'Ballroom',
 			},
 			noResults: 'No photos in this category yet.',
-			placeholderNote: 'TODO: replace the remaining placeholder tiles with real event photography.',
 		},
 		aboutPage: {
 			title: 'Conservatory-Trained Wedding Musicians in Bali — Allegra Chamber Bali',
@@ -275,9 +273,18 @@ export const ui = {
 					blurb: 'Quiet setup, punctual arrival, and a sound that never competes with the moment.',
 				},
 			],
-			musiciansHeading: 'The Musicians',
-			musiciansSubhead: "Conservatory-trained players from Bali's classical music community.",
-			musiciansNote: 'TODO: replace with real musician names, photos, and bios once confirmed by the owner.',
+			team: {
+				heading: 'Managed By',
+				subhead: 'The people behind every Allegra performance.',
+				members: [
+					{ person: 'fardian', name: 'Fardian', role: 'Producer & Music Industry Professional' },
+					{
+						person: 'yessica',
+						name: 'Yessica Yosia Virginia Simanjuntak',
+						role: 'Composer & Music Director',
+					},
+				],
+			},
 			studioHeading: 'Part of Indonesia Istimewa Studio',
 			studioParagraph:
 				'Allegra Chamber Bali is a chamber-music ensemble under Indonesia Istimewa Studio, bringing the same standard of craft and care to live wedding music across Bali.',
@@ -293,7 +300,7 @@ export const ui = {
 			valuePropsHeading: 'Why Wedding Organizers in Bali Trust Allegra',
 			valueProps: [
 				{
-					name: 'Reliable & On Time',
+					name: 'Reliable',
 					blurb:
 						'Early arrival, quiet setup, and a tested run-of-show — booked once, never a surprise on the day.',
 				},
@@ -316,9 +323,12 @@ export const ui = {
 				{ name: 'Repertoire Sheet', format: 'PDF' },
 				{ name: 'High-Res Logo Pack', format: 'ZIP' },
 			],
-			downloadComingSoon: 'Coming soon',
+			downloadComingSoon: 'On request',
 			downloadsNote:
-				'TODO: owner to supply the tech rider + stage plot PDF and logo pack (see docs/BRIEF.md §17) — downloads will activate once the files are uploaded to /press.',
+				'These documents are available on request — message us on WhatsApp and we’ll send them over.',
+			downloadsCta: 'Request via WhatsApp',
+			downloadsWhatsappMessage:
+				'Hi Allegra Chamber Bali, could you send me the tech rider, stage plot, and repertoire sheet?',
 			formHeading: 'Partnership & Preferred Vendor Inquiry',
 			formSubhead:
 				"Tell us about your company and how you'd like to work together — we'll follow up within 1–2 business days.",
@@ -433,7 +443,6 @@ export const ui = {
 						'Web3Forms: our contact and partnership forms are processed by Web3Forms, a third-party form delivery service, which forwards your submission to our email. See their privacy policy for how they handle data in transit.',
 						"WhatsApp (Meta): messages sent via our WhatsApp link are handled according to WhatsApp's own privacy policy, not ours.",
 						'Hosting: this website is hosted on Cloudflare Pages — standard server logs (e.g. IP address, browser type) may be retained briefly for security purposes. Domain registration, DNS, and email remain with Hostinger.',
-						'TODO: update this section if/when analytics (e.g. Plausible or GA4) is enabled — see .env.example.',
 					],
 				},
 				{
@@ -479,8 +488,6 @@ export const ui = {
 					],
 				},
 			],
-			legalNote:
-				'TODO: have this policy reviewed by a qualified lawyer before launch — this is a good-faith draft based on the data this site actually collects, not legal advice.',
 		},
 	},
 	id: {
@@ -511,7 +518,6 @@ export const ui = {
 		trust: {
 			eyebrow: 'Dipercaya Oleh',
 			heading: 'Pernah tampil di',
-			note: 'TODO: ganti dengan nama venue asli setelah dikonfirmasi owner.',
 		},
 		formations: {
 			eyebrow: 'Ensemble Kami',
@@ -556,7 +562,6 @@ export const ui = {
 			heading: 'Repertoar Pilihan',
 			subhead: 'Sebagian kecil dari rangkaian set upacara dan resepsi kami.',
 			cta: 'Lihat semua repertoar',
-			placeholderNote: 'TODO: ganti dengan sample audio/video asli dari owner.',
 		},
 		packagesPage: {
 			title: 'Formasi & Paket String Quartet — Allegra Chamber Bali',
@@ -578,14 +583,17 @@ export const ui = {
 			heading: 'Satu ensemble, setiap bagian hari Anda',
 			items: [
 				{
+					moment: 'ceremony',
 					name: 'Upacara',
 					blurb: 'Processional, signing, dan recessional — musik yang mengiringi ucapan janji Anda.',
 				},
 				{
+					moment: 'cocktail',
 					name: 'Cocktail Hour',
 					blurb: 'Set hangat dan santai saat Anda merayakan bersama tamu.',
 				},
 				{
+					moment: 'reception',
 					name: 'Resepsi',
 					blurb: 'Dari first dance hingga lagu terakhir, diaransemen untuk strings dan piano.',
 				},
@@ -708,7 +716,6 @@ export const ui = {
 				indonesian: 'Indonesia',
 			},
 			noResults: 'Belum ada lagu yang cocok dengan filter ini — minta aransemen khusus dari kami.',
-			placeholderNote: 'TODO: ganti dengan sample audio asli setelah tersedia dari owner.',
 			customNote: 'Tidak menemukan lagu Anda? Kami menerima permintaan aransemen khusus.',
 			customCta: 'Minta aransemen khusus',
 		},
@@ -718,8 +725,7 @@ export const ui = {
 				'Lihat dokumentasi penampilan musik live kami di pernikahan-pernikahan Bali — jelajahi galeri berdasarkan tipe venue.',
 			eyebrow: 'Dokumentasi',
 			heading: 'Galeri Lengkap',
-			subhead:
-				'Jelajahi berdasarkan tipe venue — beberapa foto asli sudah masuk, sisanya masih placeholder hingga foto event lain dikonfirmasi.',
+			subhead: 'Jelajahi penampilan musik live di pernikahan-pernikahan Bali, berdasarkan tipe venue.',
 			filterAll: 'Semua',
 			typeLabels: {
 				cliffside: 'Tebing',
@@ -729,7 +735,6 @@ export const ui = {
 				ballroom: 'Ballroom',
 			},
 			noResults: 'Belum ada foto di kategori ini.',
-			placeholderNote: 'TODO: ganti placeholder yang tersisa dengan foto event asli.',
 		},
 		aboutPage: {
 			title: 'Musisi Pernikahan Terlatih Konservatori di Bali — Allegra Chamber Bali',
@@ -759,9 +764,18 @@ export const ui = {
 					blurb: 'Setup yang tenang, kedatangan tepat waktu, dan suara yang tidak pernah mengalahkan momen.',
 				},
 			],
-			musiciansHeading: 'Para Musisi',
-			musiciansSubhead: 'Pemain terlatih konservatori dari komunitas musik klasik Bali.',
-			musiciansNote: 'TODO: ganti dengan nama, foto, dan bio musisi asli setelah dikonfirmasi owner.',
+			team: {
+				heading: 'Dikelola Oleh',
+				subhead: 'Tim di balik setiap penampilan Allegra.',
+				members: [
+					{ person: 'fardian', name: 'Fardian', role: 'Produser & Profesional Industri Musik' },
+					{
+						person: 'yessica',
+						name: 'Yessica Yosia Virginia Simanjuntak',
+						role: 'Komposer & Music Director',
+					},
+				],
+			},
 			studioHeading: 'Bagian dari Indonesia Istimewa Studio',
 			studioParagraph:
 				'Allegra Chamber Bali adalah ensemble musik chamber di bawah Indonesia Istimewa Studio, membawa standar kualitas dan perhatian yang sama untuk musik pernikahan live di seluruh Bali.',
@@ -777,7 +791,7 @@ export const ui = {
 			valuePropsHeading: 'Mengapa Wedding Organizer di Bali Mempercayai Allegra',
 			valueProps: [
 				{
-					name: 'Andal & Tepat Waktu',
+					name: 'Andal',
 					blurb:
 						'Datang lebih awal, setup yang tenang, dan run-of-show yang sudah teruji — sekali booking, tidak ada kejutan di hari H.',
 				},
@@ -801,9 +815,12 @@ export const ui = {
 				{ name: 'Repertoire Sheet', format: 'PDF' },
 				{ name: 'Paket Logo Resolusi Tinggi', format: 'ZIP' },
 			],
-			downloadComingSoon: 'Segera tersedia',
+			downloadComingSoon: 'Sesuai permintaan',
 			downloadsNote:
-				'TODO: owner perlu menyediakan PDF tech rider + stage plot dan paket logo (lihat docs/BRIEF.md §17) — unduhan akan aktif setelah file diunggah ke /press.',
+				'Dokumen ini tersedia sesuai permintaan — hubungi kami via WhatsApp dan kami akan kirimkan.',
+			downloadsCta: 'Minta via WhatsApp',
+			downloadsWhatsappMessage:
+				'Hai Allegra Chamber Bali, boleh kirimkan tech rider, stage plot, dan repertoire sheet?',
 			formHeading: 'Pertanyaan Partnership & Preferred Vendor',
 			formSubhead:
 				'Ceritakan tentang perusahaan Anda dan bagaimana Anda ingin bekerja sama — kami akan follow up dalam 1–2 hari kerja.',
@@ -919,7 +936,6 @@ export const ui = {
 						'Web3Forms: form kontak dan partnership kami diproses oleh Web3Forms, layanan pengiriman form pihak ketiga, yang meneruskan submission Anda ke email kami. Lihat kebijakan privasi mereka untuk cara mereka menangani data saat transit.',
 						'WhatsApp (Meta): pesan yang dikirim via tautan WhatsApp kami ditangani sesuai kebijakan privasi WhatsApp sendiri, bukan kebijakan kami.',
 						'Hosting: website ini dihosting di Cloudflare Pages — log server standar (misalnya alamat IP, jenis browser) mungkin disimpan sebentar untuk keperluan keamanan. Registrasi domain, DNS, dan email kami tetap berada di Hostinger.',
-						'TODO: perbarui bagian ini jika/saat analytics (misalnya Plausible atau GA4) diaktifkan — lihat .env.example.',
 					],
 				},
 				{
@@ -965,8 +981,6 @@ export const ui = {
 					],
 				},
 			],
-			legalNote:
-				'TODO: minta kebijakan ini direview oleh pengacara sebelum launch — ini draf good-faith berdasarkan data yang benar-benar dikumpulkan website ini, bukan nasihat hukum.',
 		},
 	},
 } as const

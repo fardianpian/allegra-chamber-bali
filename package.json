@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.0.0",
 	"private": true,
-	"description": "Allegra Chamber Bali — live chamber/string ensemble for weddings in Bali. Static Astro site deployed to Hostinger.",
+	"description": "Allegra Chamber Bali — live chamber/piano & string ensemble for weddings in Bali. Static Astro site deployed to Cloudflare Pages.",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
