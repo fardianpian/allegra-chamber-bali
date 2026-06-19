@@ -46,10 +46,12 @@ const formationOptions = [
 			<div class="grid gap-6 sm:grid-cols-2">
 				<label class={labelClass}>
 					{contact.formName}
+					<span class="text-gold" aria-hidden="true">*</span>
 					<input type="text" name="name" required class={fieldClass} />
 				</label>
 				<label class={labelClass}>
 					{contact.formEmail}
+					<span class="text-gold" aria-hidden="true">*</span>
 					<input type="email" name="email" required class={fieldClass} />
 				</label>
 			</div>

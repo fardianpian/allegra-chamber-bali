@@ -30,18 +30,30 @@ const tiles = types.flatMap((type) =>
 )
 
 const filterBtnBase =
-	'filter-btn px-4 py-2 text-xs uppercase tracking-[0.1em] border border-ink/20 text-ink/70 transition-colors hover:border-gold hover:text-ink data-[active=true]:bg-ink data-[active=true]:text-ivory data-[active=true]:border-ink'
+	'filter-btn px-4 py-3.5 text-xs uppercase tracking-[0.1em] border border-ink/20 text-ink/70 transition-colors hover:border-gold hover:text-ink data-[active=true]:bg-ink data-[active=true]:text-ivory data-[active=true]:border-ink'
 ---
 
 <section class="section bg-ivory pt-0">
 	<div class="container-max">
 		<div class="reveal flex flex-wrap gap-2" data-filter-group="type">
-			<button type="button" class={filterBtnBase} data-filter-value="all" data-active="true">
+			<button
+				type="button"
+				class={filterBtnBase}
+				data-filter-value="all"
+				data-active="true"
+				aria-pressed="true"
+			>
 				{gallery.filterAll}
 			</button>
 			{
 				types.map((type) => (
-					<button type="button" class={filterBtnBase} data-filter-value={type} data-active="false">
+					<button
+						type="button"
+						class={filterBtnBase}
+						data-filter-value={type}
+						data-active="false"
+						aria-pressed="false"
+					>
 						{gallery.typeLabels[type]}
 					</button>
 				))
@@ -68,7 +80,9 @@ const filterBtnBase =
 				))
 			}
 		</div>
-		<p class="reveal mt-6 text-center text-sm text-taupe" id="no-results" hidden>{gallery.noResults}</p>
+		<p class="reveal mt-6 text-center text-sm text-taupe" id="no-results" hidden aria-live="polite">
+			{gallery.noResults}
+		</p>
 		<p class="reveal mt-6 text-center text-xs text-taupe">{gallery.placeholderNote}</p>
 	</div>
 </section>
@@ -82,7 +96,9 @@ const filterBtnBase =
 		btn.addEventListener('click', () => {
 			const value = btn.dataset.filterValue || 'all'
 			group.querySelectorAll<HTMLButtonElement>('.filter-btn').forEach((b) => {
-				b.dataset.active = String(b === btn)
+				const isActive = b === btn
+				b.dataset.active = String(isActive)
+				b.setAttribute('aria-pressed', String(isActive))
 			})
 
 			let visibleCount = 0

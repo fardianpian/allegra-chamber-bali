@@ -47,10 +47,12 @@ const roleOptions = [
 				<div class="grid gap-6 sm:grid-cols-2">
 					<label class={labelClass}>
 						{page.formName}
+						<span class="text-gold" aria-hidden="true">*</span>
 						<input type="text" name="name" required class={fieldClass} />
 					</label>
 					<label class={labelClass}>
 						{page.formCompany}
+						<span class="text-gold" aria-hidden="true">*</span>
 						<input type="text" name="company" required class={fieldClass} />
 					</label>
 				</div>
@@ -58,6 +60,7 @@ const roleOptions = [
 				<div class="grid gap-6 sm:grid-cols-2">
 					<label class={labelClass}>
 						{page.formEmail}
+						<span class="text-gold" aria-hidden="true">*</span>
 						<input type="email" name="email" required class={fieldClass} />
 					</label>
 					<label class={labelClass}>

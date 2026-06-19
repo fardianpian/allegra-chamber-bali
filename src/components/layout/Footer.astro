@@ -36,11 +36,11 @@ const links = [
 
 		<div>
 			<p class="eyebrow text-ivory/50">{footer.quickLinks}</p>
-			<ul class="mt-4 space-y-2">
+			<ul class="mt-2">
 				{
 					links.map((link) => (
 						<li>
-							<a href={link.href} class="text-sm text-ivory/80 hover:text-gold">
+							<a href={link.href} class="block py-2 text-sm text-ivory/80 hover:text-gold">
 								{link.label}
 							</a>
 						</li>
@@ -51,11 +51,16 @@ const links = [
 
 		<div>
 			<p class="eyebrow text-ivory/50">{footer.contact}</p>
-			<ul class="mt-4 space-y-2 text-sm text-ivory/80">
-				<li><a href={`mailto:${site.contactEmail}`} class="hover:text-gold">{site.contactEmail}</a></li>
+			<ul class="mt-2 text-sm text-ivory/80">
 				<li>
-					<a href={site.instagram} target="_blank" rel="noopener noreferrer" class="hover:text-gold"
-						>Instagram</a
+					<a href={`mailto:${site.contactEmail}`} class="block py-2 hover:text-gold">{site.contactEmail}</a>
+				</li>
+				<li>
+					<a
+						href={site.instagram}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="block py-2 hover:text-gold">Instagram</a
 					>
 				</li>
 			</ul>

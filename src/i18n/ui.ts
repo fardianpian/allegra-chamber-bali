@@ -193,7 +193,8 @@ export const ui = {
 			orDivider: 'or reach us directly',
 			whatsappLabel: 'Message on WhatsApp',
 			emailLabel: 'Email us',
-			formNote: 'TODO: connect PUBLIC_WEB3FORMS_KEY before launch — form will not deliver until then.',
+			formNote:
+				'We typically reply within 1–2 business days — for a faster response, message us on WhatsApp.',
 		},
 		thankYou: {
 			eyebrow: 'Thank You',
@@ -339,7 +340,7 @@ export const ui = {
 			emailLabel: 'Email us',
 			whatsappMessage:
 				"Hi Allegra Chamber Bali, I'm a wedding planner/venue and I'd like to discuss a partnership.",
-			formNote: 'TODO: connect PUBLIC_WEB3FORMS_KEY before launch — form will not deliver until then.',
+			formNote: 'Your details are used only to respond to this inquiry.',
 		},
 		faqPage: {
 			title: 'Wedding Music FAQ — String Quartet Cost & Booking in Bali — Allegra Chamber Bali',
@@ -674,7 +675,8 @@ export const ui = {
 			orDivider: 'atau hubungi kami langsung',
 			whatsappLabel: 'Kirim Pesan via WhatsApp',
 			emailLabel: 'Email kami',
-			formNote: 'TODO: hubungkan PUBLIC_WEB3FORMS_KEY sebelum launch — form belum bisa terkirim sebelum itu.',
+			formNote:
+				'Kami biasanya membalas dalam 1–2 hari kerja — untuk respons lebih cepat, hubungi kami via WhatsApp.',
 		},
 		thankYou: {
 			eyebrow: 'Terima Kasih',
@@ -823,7 +825,7 @@ export const ui = {
 			emailLabel: 'Email kami',
 			whatsappMessage:
 				'Hai Allegra Chamber Bali, saya wedding planner/venue dan ingin mendiskusikan partnership.',
-			formNote: 'TODO: hubungkan PUBLIC_WEB3FORMS_KEY sebelum launch — form belum bisa terkirim sebelum itu.',
+			formNote: 'Data Anda hanya digunakan untuk merespons pertanyaan ini.',
 		},
 		faqPage: {
 			title: 'FAQ Musik Pernikahan — Biaya String Quartet & Booking di Bali — Allegra Chamber Bali',
