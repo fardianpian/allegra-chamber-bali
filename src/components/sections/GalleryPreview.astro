@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
-import Placeholder from '../ui/Placeholder.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import cliffsidePiano from '../../assets/gallery/piano-cliffside-daytime.jpg'
+import gardenPiano from '../../assets/gallery/piano-garden-reception-night.jpg'
+import soloPiano from '../../content/packages/solo-piano.jpg'
 
 interface Props {
 	lang: Lang
@@ -11,18 +14,36 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const gallery = t('gallery')
 const galleryHref = lang === 'en' ? '/gallery' : '/id/gallery'
-const ratios = ['4/5', '1/1', '4/5', '1/1', '4/5', '1/1']
+
+// Real event photos so far (cliffside + garden from the gallery page, the Solo package
+// photo). Add more tiles here as the owner confirms new event photography (CLAUDE.md §9).
+const photos = [
+	{ src: cliffsidePiano, alt: 'Cliffside ceremony with live wedding pianist, Bali' },
+	{ src: gardenPiano, alt: 'Garden reception with live wedding pianist, Bali' },
+	{ src: soloPiano, alt: 'Wedding pianist performing solo piano at a cliffside wedding ceremony in Bali' },
+]
 ---
 
 <section class="section bg-ivory">
 	<div class="container-max">
 		<SectionHeading align="center" eyebrow={gallery.eyebrow} heading={gallery.heading} class="text-center" />
 
-		<div class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-			{ratios.map((ratio) => <Placeholder ratio={ratio} class="reveal" label="" />)}
+		<div class="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
+			{
+				photos.map((photo) => (
+					<Image
+						src={photo.src}
+						alt={photo.alt}
+						width={640}
+						height={800}
+						format="avif"
+						quality={70}
+						loading="lazy"
+						class="reveal aspect-[4/5] w-full object-cover"
+					/>
+				))
+			}
 		</div>
-
-		<p class="reveal mt-6 text-center text-xs text-taupe">{gallery.placeholderNote}</p>
 
 		<div class="reveal mt-8 text-center">
 			<a href={galleryHref} class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">

@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
-import Placeholder from '../ui/Placeholder.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import ceremony from '../../assets/moments/ceremony.jpg'
+import cocktail from '../../assets/moments/cocktail-hour.jpg'
+import reception from '../../assets/moments/reception.jpg'
 
 interface Props {
 	lang: Lang
@@ -10,6 +13,8 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const moments = t('moments')
+
+const momentPhotos = { ceremony, cocktail, reception } as const
 ---
 
 <section class="section bg-ivory">
@@ -20,7 +25,16 @@ const moments = t('moments')
 			{
 				moments.items.map((item) => (
 					<div class="reveal">
-						<Placeholder ratio="4/3" label="" />
+						<Image
+							src={momentPhotos[item.moment]}
+							alt={item.name}
+							width={800}
+							height={600}
+							format="avif"
+							quality={70}
+							loading="lazy"
+							class="aspect-[4/3] w-full object-cover"
+						/>
 						<p class="mt-5 font-display text-2xl">{item.name}</p>
 						<p class="mt-2 text-taupe">{item.blurb}</p>
 					</div>

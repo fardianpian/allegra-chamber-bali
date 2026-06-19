@@ -1,10 +1,16 @@
 ---
+import { Image } from 'astro:assets'
 import Eyebrow from '../ui/Eyebrow.astro'
 import Button from '../ui/Button.astro'
 import WhatsAppCTA from '../media/WhatsAppCTA.astro'
-import Placeholder from '../ui/Placeholder.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import slide1 from '../../assets/hero/cliffside-ceremony-setup.jpg'
+import slide2 from '../../assets/hero/beachfront-wedding-setup.jpg'
+import slide3 from '../../assets/hero/glass-chapel-wedding-venue.jpg'
+import slide4 from '../../assets/hero/ballroom-reception-setup.jpg'
+import slide5 from '../../assets/hero/reception-table-setup.jpg'
+import slide6 from '../../assets/hero/violinist-hands-wedding.jpg'
 
 interface Props {
 	lang: Lang
@@ -13,19 +19,38 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const hero = t('hero')
 const whatsappMessage = t('whatsappMessage')
+
+// Decorative slideshow — the H1/subhead already convey the content, so slides use
+// alt="" rather than competing descriptions for screen readers.
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6]
+const SLOT_SECONDS = 6
+const CYCLE_SECONDS = slides.length * SLOT_SECONDS
 ---
 
 <section class="relative flex min-h-[88vh] items-end overflow-hidden">
-	<Placeholder
-		ratio="auto"
-		class="absolute inset-0 h-full w-full"
-		label="Hero photo placeholder — TODO: real Bali wedding photography"
-	/>
-	<div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/25 to-ink/10"></div>
+	<div class="absolute inset-0 h-full w-full" style={`--hero-cycle: ${CYCLE_SECONDS}s`}>
+		{
+			slides.map((slide, i) => (
+				<Image
+					src={slide}
+					alt=""
+					width={1920}
+					height={1080}
+					format="avif"
+					quality={70}
+					loading={i === 0 ? 'eager' : 'lazy'}
+					fetchpriority={i === 0 ? 'high' : 'auto'}
+					class="hero-slide absolute inset-0 h-full w-full object-cover"
+					style={`animation-delay: ${i * SLOT_SECONDS}s`}
+				/>
+			))
+		}
+	</div>
+	<div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/15"></div>
 
 	<div class="container-max relative z-10 pb-20 pt-36 text-ivory">
 		<Eyebrow class="reveal text-ivory/80">{hero.eyebrow}</Eyebrow>
-		<h1 class="reveal mt-4 max-w-3xl text-6xl md:text-7xl lg:text-8xl">{hero.title}</h1>
+		<h1 class="reveal mt-4 max-w-3xl text-6xl md:text-7xl lg:max-w-none lg:text-8xl">{hero.title}</h1>
 		<p class="reveal mt-6 max-w-xl text-lg text-ivory/85 md:text-xl">{hero.subhead}</p>
 		<div class="reveal mt-9 flex flex-wrap gap-4">
 			<WhatsAppCTA message={whatsappMessage} label={hero.ctaPrimary} variant="gold" />
@@ -33,3 +58,40 @@ const whatsappMessage = t('whatsappMessage')
 		</div>
 	</div>
 </section>
+
+<style>
+	/* Static fallback: first slide visible, rest hidden — also the reduced-motion state. */
+	.hero-slide {
+		opacity: 0;
+	}
+	.hero-slide:first-child {
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.hero-slide {
+			animation: hero-fade var(--hero-cycle) infinite;
+		}
+		.hero-slide:first-child {
+			opacity: 0;
+		}
+	}
+
+	/* Same keyframes for every slide; animation-delay (set inline per slide) staggers
+	   each one's turn since they all share one cycle length. */
+	@keyframes hero-fade {
+		0%,
+		100% {
+			opacity: 0;
+		}
+		2% {
+			opacity: 1;
+		}
+		14% {
+			opacity: 1;
+		}
+		16% {
+			opacity: 0;
+		}
+	}
+</style>

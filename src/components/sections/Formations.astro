@@ -1,8 +1,13 @@
 ---
+import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
-import Placeholder from '../ui/Placeholder.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import solo from '../../assets/formations/solo.jpg'
+import duo from '../../assets/formations/duo.jpg'
+import trio from '../../assets/formations/trio.jpg'
+import quartet from '../../assets/formations/quartet.jpg'
+import largeEnsemble from '../../assets/formations/large-ensemble.jpg'
 
 interface Props {
 	lang: Lang
@@ -11,6 +16,14 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const formations = t('formations')
 const packagesHref = lang === 'en' ? '/packages' : '/id/packages'
+
+const formationPhotos = {
+	solo,
+	duo,
+	trio,
+	quartet,
+	'large-ensemble': largeEnsemble,
+} as const
 ---
 
 <section class="section bg-ivory">
@@ -31,10 +44,15 @@ const packagesHref = lang === 'en' ? '/packages' : '/id/packages'
 						class="reveal group relative block overflow-hidden"
 						style={`transition-delay: ${i * 60}ms`}
 					>
-						<Placeholder
-							ratio="3/4"
-							class="h-full w-full transition-transform duration-500 group-hover:scale-105"
-							label=""
+						<Image
+							src={formationPhotos[item.formation]}
+							alt={item.name}
+							width={448}
+							height={600}
+							format="avif"
+							quality={70}
+							loading="lazy"
+							class="aspect-[3/4] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 						/>
 						<div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
 						<div class="absolute inset-x-0 bottom-0 p-5 text-ivory">
