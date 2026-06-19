@@ -1,5 +1,6 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro'
+import WhatsAppCTA from '../media/WhatsAppCTA.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
 
@@ -34,6 +35,9 @@ const page = t('forPlannersPage')
 			}
 		</div>
 
-		<p class="reveal mt-6 text-center text-xs text-taupe">{page.downloadsNote}</p>
+		<p class="reveal mt-6 text-center text-sm text-taupe">{page.downloadsNote}</p>
+		<div class="reveal mt-5 flex justify-center">
+			<WhatsAppCTA message={page.downloadsWhatsappMessage} label={page.downloadsCta} variant="outline" />
+		</div>
 	</div>
 </section>

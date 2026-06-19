@@ -6,7 +6,7 @@ import Formations from '../../components/sections/Formations.astro'
 import FeaturedAudio from '../../components/sections/FeaturedAudio.astro'
 import Moments from '../../components/sections/Moments.astro'
 import HowBookingWorks from '../../components/sections/HowBookingWorks.astro'
-import Testimonials from '../../components/sections/Testimonials.astro'
+// import Testimonials from '../../components/sections/Testimonials.astro' // TODO: re-enable once real testimonials are in
 import GalleryPreview from '../../components/sections/GalleryPreview.astro'
 import ForPlannersStrip from '../../components/sections/ForPlannersStrip.astro'
 import FinalCTA from '../../components/sections/FinalCTA.astro'
@@ -31,7 +31,7 @@ const meta = t('meta')
 	<FeaturedAudio lang={lang} />
 	<Moments lang={lang} />
 	<HowBookingWorks lang={lang} />
-	<Testimonials lang={lang} />
+	{/* Testimonials hidden until real, permission-cleared quotes are available */}
 	<GalleryPreview lang={lang} />
 	<ForPlannersStrip lang={lang} />
 	<FinalCTA lang={lang} />
