@@ -1,11 +1,11 @@
 ---
-title: Air on the G String
-composer: Johann Sebastian Bach
-moment: signing
+title: 'Air on the G String'
+composer: 'Johann Sebastian Bach'
+moment: processional
 genre: classical
 featured: true
-order: 2
+order: 1
 # audioSample: /audio/air-on-the-g-string-sample.mp3   # TODO: add real sample
 ---
 
-A gentle, lyrical choice for the signing of the register. <!-- TODO: replace with the real repertoire list. -->
+A serene arrangement from Bach's Orchestral Suite No. 3 (BWV 1068) — a graceful choice for the bridal procession.
