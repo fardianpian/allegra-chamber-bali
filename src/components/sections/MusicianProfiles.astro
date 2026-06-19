@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
-import Placeholder from '../ui/Placeholder.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import fardian from '../../assets/about/fardian.jpg'
+import yessica from '../../assets/about/yessica.jpg'
 
 interface Props {
 	lang: Lang
@@ -11,32 +13,37 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const about = t('aboutPage')
 
-// No real musician names/photos/bios confirmed yet (CLAUDE.md §9) — fixed count of
-// placeholder cards until the owner provides real ones.
-const placeholderCount = 4
+const photos = { fardian, yessica } as const
 ---
 
 <section class="section bg-ivory pt-0">
 	<div class="container-max">
 		<SectionHeading
 			align="center"
-			heading={about.musiciansHeading}
-			subhead={about.musiciansSubhead}
+			heading={about.team.heading}
+			subhead={about.team.subhead}
 			class="text-center"
 		/>
 
-		<div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+		<div class="mx-auto mt-12 grid max-w-2xl gap-8 sm:grid-cols-2">
 			{
-				Array.from({ length: placeholderCount }).map((_, i) => (
+				about.team.members.map((member, i) => (
 					<div class="reveal text-center" style={`transition-delay: ${i * 60}ms`}>
-						<Placeholder ratio="1/1" class="mx-auto" label="" />
-						<p class="mt-4 font-display text-lg">TODO — Musician Name</p>
-						<p class="mt-1 text-sm text-taupe">TODO: instrument, training, experience</p>
+						<Image
+							src={photos[member.person]}
+							alt={member.name}
+							width={480}
+							height={480}
+							format="avif"
+							quality={70}
+							loading="lazy"
+							class="mx-auto aspect-square w-full max-w-xs object-cover"
+						/>
+						<p class="mt-4 font-display text-lg">{member.name}</p>
+						<p class="mt-1 text-sm text-taupe">{member.role}</p>
 					</div>
 				))
 			}
 		</div>
-
-		<p class="reveal mt-8 text-center text-xs text-taupe">{about.musiciansNote}</p>
 	</div>
 </section>

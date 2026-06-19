@@ -6,8 +6,6 @@ idealFor:
   - Intimate ceremonies
   - Vow exchanges
   - Cliffside elopements
-image: ./solo-piano.jpg
-imageAlt: Wedding pianist performing solo piano at a cliffside wedding ceremony in Bali
 order: 1
 ---
 
