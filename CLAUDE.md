@@ -4,10 +4,38 @@
 
 ## Brand
 
-Allegra Chamber Bali — live chamber/string ensemble for weddings in Bali.
+Allegra Chamber Bali — live chamber/ piano & string ensemble for weddings in Bali.
 Sub-brand of Indonesia Istimewa Studio. Audience: couples (mostly international
 destination weddings), wedding planners, venues, event organizers.
 Languages: **English (primary) + Indonesian (secondary)**.
+
+## Brand Voice
+
+- Tone/vocabulary/approved-copy source of truth: `.claude/brand-voice-guidelines.md`
+  (generated 2026-06-19 from Notion). **Read it before writing any user-facing copy**
+  (hero, About, packages, FAQ, social captions).
+- Authority split: this CLAUDE.md wins for technical/visual facts (hex codes, hosting,
+  stack); the guidelines file wins for tone/vocabulary/approved copy. The Notion brand-voice
+  database is the upstream source but has known-stale fields (old Taupe hex, old
+  Hostinger-FTP hosting) — don't pull those two facts from Notion, use this file instead.
+- Piano is a flagship instrument across all formations, not an add-on — see "Signature
+  Sound" rule in the guidelines file before describing any formation as "just a string
+  quartet."
+
+## Marketing Context
+
+- `.agents/product-marketing.md` is the shared context file all 45 installed marketing skills
+  (`.claude/skills/`) read before doing any work — update it instead of re-explaining project
+  context inside individual skill conversations.
+- Authority split: this CLAUDE.md + `.claude/brand-voice-guidelines.md` remain the source of
+  truth; `.agents/product-marketing.md` is a derived summary for the skills pack — when either
+  authoritative file changes, update `.agents/product-marketing.md` to match.
+- Several installed skills assume a SaaS product with accounts/subscriptions and are
+  low-priority for this one-time-booking business (`paywalls`, `onboarding`, `signup`,
+  `churn-prevention`, `revops`, `aso`) — see the Applicability Notes callout in
+  `.agents/product-marketing.md`.
+- No ESP/CRM exists yet — WhatsApp is the only live comms channel, so output from `emails`/`sms`
+  skills is draft-only until an ESP/CRM is chosen.
 
 ## Confirmed decisions (locked)
 
@@ -16,10 +44,9 @@ Languages: **English (primary) + Indonesian (secondary)**.
   (push to `main` → auto build & deploy). Domain registration, DNS zone, and email
   (`allegra@indonesiaistimewastudio.id`) stay on **Hostinger** — only the `allegra` subdomain's
   DNS record was changed to a CNAME pointing at `allegra-chamber-bali.pages.dev`. Switched away
-  from the original Hostinger-FTP plan because Hostinger blocks GitHub Actions' runner IPs on
-  port 21 (confirmed via direct port testing), and ports 990/22 are closed entirely on that
-  hosting plan — no working CI deploy path existed under the old setup. Still **static-only
-  (Astro SSG)**. No Node SSR, no serverless.
+  from the original Hostinger-FTP plan because it had no working CI deploy path (Hostinger
+  blocked GitHub Actions' runner IPs on every available FTP/FTPS/SFTP port) — full incident
+  history in `docs/PROGRESS.md`. Still **static-only (Astro SSG)**. No Node SSR, no serverless.
 - Languages: English default + Indonesian (`/id/`) with hreflang.
 - Formations offered (5): Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble.
   Piano is a flagship offering — solo piano is a Solo option, and a "Piano +" upgrade
@@ -71,11 +98,35 @@ Languages: **English (primary) + Indonesian (secondary)**.
 5. JSON-LD: MusicGroup + LocalBusiness (home), FAQPage (faq), BreadcrumbList.
 6. Conventional commits (feat:, fix:, design:, chore:).
 7. No SSR, no serverless. Everything must work as static files served by Cloudflare Pages.
-8. Optimize all images (AVIF/WebP, lazy). Gallery must not block LCP.
-9. Do NOT invent prices, stats, testimonials, or venue names — use placeholders marked TODO until the owner provides real data.
+8. Optimize all images (AVIF/WebP, lazy). Gallery must not block LCP. `astro:assets`
+   `<Image>` needs explicit `format="avif" quality={70}` props — it does not convert
+   format automatically.
+9. Do NOT invent prices, stats, testimonials, or venue names. If real content isn't
+   available yet, comment out the section's import + render line (e.g. Testimonials) rather
+   than rendering a literal "TODO" string — visitors must never see "TODO" on the live site.
+   `TODO` is still fine inside code comments / YAML frontmatter comments, just never in
+   rendered copy.
 10. `src/i18n/ui.ts` is large — `Read` the specific line range before `Edit`ing it; editing without reading that exact range first will be rejected.
 11. After hand-editing markdown tables in `docs/*.md`, run `npx prettier --write <file>` — `npm run lint` runs `prettier --check .` repo-wide and will fail on unformatted tables.
 12. If `astro check`/`build` prints "Duplicate id ... found" right after you edit a content-collection file (e.g. `src/content/packages/*.md`), it's a stale content-layer cache, not a real duplicate — rerun once before investigating.
+13. Before writing/editing any user-facing copy, check `.claude/brand-voice-guidelines.md` for
+    tone, vocabulary (use/avoid), and reusable Approved Copy blocks — don't freelance the voice.
+14. When attaching images to an enumerated `i18n/ui.ts` items array (formations, moments,
+    team members, etc.), add a literal-typed id field to each item (e.g. `formation`,
+    `moment`, `person`) and key the image-lookup object off that field — not off array
+    order, which silently breaks if items get reordered or filtered.
+15. Never pre-rotate a source photo with `sips -r <deg>` before importing it. Astro's image
+    pipeline (Sharp) auto-orients from EXIF on build; a `sips` rotation can leave the EXIF
+    `orientation` tag intact, causing a double-rotation that's invisible in Preview/Read but
+    wrong in the built output. Check first with
+    `node -e "require('sharp')('file.jpg').metadata().then(console.log)"` — if `orientation`
+    is already set, let the build handle it, or pre-fix with `sharp(file).rotate().toFile(out)`
+    (auto-orients and clears the tag) instead of `sips`.
+16. `.container-max` (`margin-inline:auto`, unlayered CSS) breaks if it's ever used as a
+    direct child of a `flex` container — the auto margins shrink-and-center it instead of
+    letting it stretch, and no Tailwind utility class can override this (cascade-layers
+    priority). Use plain `w-full` + padding utilities instead of `.container-max` inside any
+    JS-toggled flex layout (e.g. the mobile nav menu).
 
 ## Open questions (confirm with owner before finalizing copy)
 
