@@ -1,0 +1,21 @@
+{
+	"target": "baliweddingsolutions.com",
+	"location": "Indonesia",
+	"pulled": "2026-06-21",
+	"organic": {
+		"count_ranked_keywords_top100": 85,
+		"etv": 2984.819,
+		"estimated_paid_traffic_cost": 1797.905,
+		"position_distribution": {
+			"pos_1": 7,
+			"pos_2_3": 6,
+			"pos_4_10": 29,
+			"pos_11_20": 20,
+			"pos_21_30": 9,
+			"pos_31_40": 10,
+			"pos_41_50": 2,
+			"pos_51_60": 2
+		}
+	},
+	"note": "Much stronger organic footprint than Bali Entertainment Agency (85 ranked keywords vs 9; far higher ETV). Top-15-by-volume keywords sampled contain zero string/quartet/piano/chamber/violin/cello terms — site's organic strength comes from its core wedding-planning/venue business, not the music sub-page. The /music/ page itself is marked noindex in its meta robots tag and hasn't been content-updated since 2019."
+}

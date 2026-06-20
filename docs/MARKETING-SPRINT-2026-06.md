@@ -10,6 +10,31 @@
 > Bali: What to Expect", target keyword "wedding pianist" KD 1). Ini mengubah beberapa asumsi di
 > bawah (lihat bagian "Konteks yang membatasi scope" dan Hari 5) — sprint sekarang punya aset
 > konten nyata untuk dipromosikan, bukan cuma optimasi meta tag.
+>
+> **Update 2026-06-21 (malam): Competitor gap analysis.** 5 kompetitor diprofilkan via skill
+> `competitor-profiling` (Sundaram String, Moira Ensembles, Bali Entertainment Agency, Bali
+> Wedding Solutions, DIVO Music/Orchestra) — hasil lengkap di `competitor-profiles/` (`_summary.md`
+>
+> - 1 file per kompetitor). Temuan inti: **tidak ada kompetitor yang menggabungkan "spesialis
+>   chamber Bali" + website yang benar-benar ranking di Google** — 2 boutique act (Sundaram, Moira)
+>   yang positioning-nya paling mirip Allegra sama sekali tidak punya website; 2 kompetitor yang
+>   punya website nyata (Bali Entertainment Agency, Bali Wedding Solutions) adalah generalis yang
+>   halaman musiknya tidak ranking untuk keyword musik sama sekali. Ini memvalidasi ulang (dari sisi
+>   kompetitor, bukan cuma keyword data) temuan `SEO-STRATEGY.md` §3.0 bahwa "wedding pianist" KD 1
+>   masih genuinely terbuka. Rencana aksi untuk sesi berikutnya (belum dieksekusi):
+>
+> 1. **Perkuat Hari 5 (SEO on-page + Journal)** di atas dengan eksplisit menarget "wedding pianist
+>    Bali" dan "wedding string quartet Bali" di title/meta `/packages` dan artikel Journal terbaru
+>    — pakai skill `content-strategy` lalu `seo-audit` untuk verifikasi, bukan asumsi sudah cukup.
+> 2. **Schema reinforcement** (skill `schema`): pastikan halaman yang menarget 2 keyword di atas
+>    punya `MusicGroup`/`FAQPage` JSON-LD lengkap — tidak satu pun kompetitor melakukan ini, jadi
+>    ini pembeda murah untuk AI Overview/rich result.
+> 3. **Testimoni nyata** masih tertahan izin owner (lihat `docs/PROGRESS.md` Next steps #3) — begitu
+>    izin didapat, ini satu-satunya pembeda yang langsung menutup gap kepercayaan vs DIVO (88
+>    review, satu-satunya kompetitor dengan review nyata sama sekali).
+> 4. **Paid ads** (skill `ads`) dicatat sebagai opsi lebih cepat-tapi-berbayar kalau timeline
+>    organik (~2-3 bulan) dianggap terlalu lambat — di luar scope sprint ini ("full organik, tidak
+>    ada budget iklan", lihat baris 3), jangan dieksekusi tanpa keputusan owner soal budget.
 
 ## Aset baru sejak plan ini ditulis
 

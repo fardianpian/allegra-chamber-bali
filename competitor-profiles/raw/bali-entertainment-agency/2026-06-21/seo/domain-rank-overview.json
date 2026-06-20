@@ -1,0 +1,36 @@
+{
+	"target": "balientertainmentagency.com",
+	"location": "Indonesia",
+	"pulled": "2026-06-21",
+	"organic": {
+		"count_ranked_keywords_top100": 9,
+		"etv": 24.031,
+		"estimated_paid_traffic_cost": 8.329,
+		"position_distribution": {
+			"pos_11_20": 1,
+			"pos_21_30": 1,
+			"pos_31_40": 3,
+			"pos_41_50": 2,
+			"pos_51_60": 1,
+			"pos_71_80": 1
+		}
+	},
+	"top_15_keywords_by_volume": [
+		"wedding venues (vol 5400, rank 56)",
+		"dancer bali (vol 1600, rank 14)",
+		"pole bali (vol 1600, rank 43)",
+		"venues to get married near me (vol 1000, rank 51)",
+		"bali event organizer (vol 590, rank 39)",
+		"destination for wedding (vol 590, rank 62)",
+		"event organizer bali (vol 590, rank 53)",
+		"event organizer in bali (vol 590, rank 54)",
+		"emcee wedding (vol 480, rank 54)",
+		"guitarist near me (vol 480, rank 50)",
+		"wedding emcee (vol 480, rank 42)",
+		"djs bali (vol 390, rank 27)",
+		"party private (vol 390, rank 61)",
+		"private party (vol 390, rank 53)",
+		"bands in bali (vol 320, rank 34)"
+	],
+	"note": "Zero piano/pianist/music/string/quartet keywords appear in the top 15 by volume despite a dedicated /pianists-for-wedding-bali/ page existing on-site — that page is not driving meaningful organic traffic yet. Overall organic footprint is very thin (only 9 keywords ranked in top 100 across the entire domain)."
+}
