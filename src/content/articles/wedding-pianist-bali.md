@@ -66,6 +66,10 @@ is played live in the room. For outdoor venues (cliffside, beach, or garden cere
 common across Bali), we just need shade for the musician and a flat, stable surface for the piano
 or keyboard; let us know your venue when you inquire and we'll confirm what's needed.
 
+Still weighing live music against other options, or unsure which formation fits your venue? Our
+[live music planning guide](/journal/live-music-bali-wedding-guide/) walks through booking
+timing, formation choice, and outdoor venue logistics in more depth.
+
 Ready to talk through your ceremony? Message us on WhatsApp with your date, venue, and whether
 you're picturing solo piano or piano alongside strings — we'll help you choose a formation from
 there.
