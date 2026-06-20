@@ -87,9 +87,30 @@ Languages: **English (primary) + Indonesian (secondary)**.
 - Clean URLs, HTTPS redirect, custom 404.
 - Bilingual EN (default) + ID (`/id/`) with hreflang.
 
-## Sitemap (v1)
+## Sitemap (v2)
 
-/, /repertoire, /packages, /gallery, /about, /for-planners, /faq, /contact, /thank-you, /privacy, /404
+/, /repertoire, /packages, /gallery, /about, /for-planners, /faq, /journal, /journal/[slug],
+/contact, /thank-you, /privacy, /404
+
+`/journal` (added 2026-06-21) is the SEO/GEO/AEO content hub — an Astro content collection
+(`src/content/articles/`), not a hand-built page per article. See "Journal / Article Content"
+below before writing or planning any article.
+
+## Journal / Article Content
+
+- Writing guide + SEO/GEO/AEO checklist + content pillars + skill-delegation table:
+  `.claude/article-seo-geo-aeo-guidelines.md`. **Read it before drafting, editing, or planning
+  any `/journal` article** — pillar choice, on-page SEO, and AEO/FAQ structure all live there.
+- Collection schema: `src/content/config.ts` → `articles`. One markdown file per article in
+  `src/content/articles/`; `pillar` must be one of the 4 enum values defined in the schema and
+  guide — don't invent a 5th pillar ad hoc.
+- EN is the only real write target for now — `docs/SEO-STRATEGY.md` confirms ID search demand
+  is near-zero. `/id/journal/[slug]` pages exist for hreflang/structural parity and currently
+  render the same EN article body with translated page chrome (same convention as
+  `packages` — see `PackagesList.astro`), not a true ID translation. Add a real ID translation
+  file only if the owner specifically wants one.
+- Per-article FAQ entries (frontmatter `faq` field) render on-page **and** as `FAQPage` JSON-LD
+  — this is the primary AEO mechanism, don't skip it.
 
 ## Work Rules
 
@@ -135,10 +156,11 @@ Languages: **English (primary) + Indonesian (secondary)**.
 - Default per-session reads: this file (automatic) + only the "Status as of"/"Next steps"
   section of `docs/PROGRESS.md` (kept short on purpose). Do NOT read `docs/PROGRESS-ARCHIVE.md`,
   `docs/BRIEF.md`, `docs/SEO-STRATEGY.md`, `docs/system-design.md`,
-  `.agents/product-marketing.md`, or `.claude/brand-voice-guidelines.md` at session start —
-  read them on-demand, only when the task actually needs them (writing copy →
-  brand-voice-guidelines; marketing-skill work → product-marketing.md; debugging a past
-  incident/CI history → PROGRESS-ARCHIVE.md).
+  `.agents/product-marketing.md`, `.claude/brand-voice-guidelines.md`, or
+  `.claude/article-seo-geo-aeo-guidelines.md` at session start — read them on-demand, only when
+  the task actually needs them (writing copy → brand-voice-guidelines; marketing-skill work →
+  product-marketing.md; debugging a past incident/CI history → PROGRESS-ARCHIVE.md; any
+  `/journal` article work → article-seo-geo-aeo-guidelines.md).
 - For any large file whose location is already known, `Read` a targeted `offset`/`limit` range
   instead of the whole file — same principle as rule #10 for `src/i18n/ui.ts`, generalized to
   every large file in the repo.

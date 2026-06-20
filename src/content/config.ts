@@ -53,4 +53,32 @@ const venues = defineCollection({
 	}),
 })
 
-export const collections = { repertoire, packages, testimonials, venues }
+// Journal articles — SEO/GEO/AEO content. Pillars defined in
+// .claude/article-seo-geo-aeo-guidelines.md; pick one per article, don't invent new pillars
+// ad hoc. EN is the primary write target (ID demand is near-zero per docs/SEO-STRATEGY.md) —
+// add an `id` translation file for a slug only once it actually exists.
+const articles = defineCollection({
+	type: 'content',
+	schema: z.object({
+		title: z.string(), // <title> tag — keep close to 50-60 chars
+		description: z.string(), // meta description — 150-160 chars
+		excerpt: z.string(), // short teaser for listing cards
+		pillar: z.enum(['planning', 'piano-repertoire', 'bali-venues', 'for-planners']),
+		targetKeyword: z.string().optional(), // primary keyword from SEO-STRATEGY.md, for traceability
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		ogImage: z.string().optional(), // path under /public/images/, same convention as other pages
+		draft: z.boolean().default(false),
+		// AEO: short, direct Q&A pairs rendered on-page + as FAQPage JSON-LD per article.
+		faq: z
+			.array(
+				z.object({
+					question: z.string(),
+					answer: z.string(),
+				}),
+			)
+			.optional(),
+	}),
+})
+
+export const collections = { repertoire, packages, testimonials, venues, articles }

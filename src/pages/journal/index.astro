@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import JournalList from '../../components/sections/JournalList.astro'
+import FinalCTA from '../../components/sections/FinalCTA.astro'
+import { useTranslations } from '../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../lib/jsonld'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const journal = t('journalPage')
+const nav = t('nav')
+---
+
+<BaseLayout
+	lang={lang}
+	title={journal.title}
+	description={journal.description}
+	path="/journal"
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.journal, path: '/journal' }])}
+>
+	<PageHeader eyebrow={journal.eyebrow} heading={journal.heading} subhead={journal.subhead} />
+	<JournalList lang={lang} />
+	<FinalCTA lang={lang} />
+</BaseLayout>

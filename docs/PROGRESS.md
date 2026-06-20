@@ -7,20 +7,35 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
-## Status as of 2026-06-19
+## Status as of 2026-06-21
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
-and the Web3Forms contact form all work in production. All 11 pages (EN+ID) are built and pass
-Lighthouse mobile 100/100/100/100. No pricing is shown anywhere (intentional, owner direction).
-Full history → `docs/PROGRESS-ARCHIVE.md`.
+and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
+owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
+
+**2026-06-21 — Journal/article system shipped.** New `/journal` content hub (EN +
+`/id/journal` structural twin) for SEO/GEO/AEO content: `articles` content collection
+(`src/content/config.ts`), listing page with pillar filter (`JournalList.astro`), article detail
+template with per-article FAQ block + `Article`/`FAQPage`/`BreadcrumbList` JSON-LD
+(`getArticleJsonLd` in `lib/jsonld.ts`). Nav updated (Header + Footer). One seed article live:
+"Wedding Pianist in Bali: What to Expect" (`src/content/articles/wedding-pianist-bali.md`),
+targeting the best-opportunity keyword from `SEO-STRATEGY.md` §3.0 ("wedding pianist", KD 1).
+Writing guide + 4 content pillars + skill-delegation pipeline: see
+`.claude/article-seo-geo-aeo-guidelines.md` (also linked from `CLAUDE.md` § Journal / Article
+Content). `npm run lint && npm run build` both clean (25 pages); verified visually via Playwright
+screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+1. **Write more Journal articles** using `.claude/article-seo-geo-aeo-guidelines.md` — only 1 of
+   the 4 pillars (Piano & Repertoire) has an article so far. Planning and For-Planners/B2B pillars
+   are good next picks (ties into the outreach work in
+   `docs/MARKETING-SPRINT-2026-06.md`).
+2. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
    changes the component shape.
-2. **Content depth**: real testimonials (with permission) are still pending — `Testimonials.astro`
+3. **Content depth**: real testimonials (with permission) are still pending — `Testimonials.astro`
    on home stays commented out of `src/pages/index.astro` + `src/pages/id/index.astro` rather than
    showing placeholder/TODO text to visitors (2026-06-19, owner direction — no visible "TODO" copy
    on any live page). Re-enable its import + render line once real, permission-cleared quotes
@@ -31,15 +46,15 @@ Full history → `docs/PROGRESS-ARCHIVE.md`.
    needed: event photography for the non-piano venue types (beach/chapel/ballroom — only
    cliffside/garden have real photos so far). All owner-supplied,
    don't invent.
-3. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
+4. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
    "have this reviewed by a lawyer" TODO note (2026-06-19, same visible-TODO cleanup) — but the
    underlying task is still real and unresolved. Have the policy reviewed by a qualified lawyer;
    it's currently a good-faith draft, not legal advice. Also update its "Third-Party Services"
    section once analytics (e.g. Plausible or GA4 — see `.env.example`) is actually enabled.
-4. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
+5. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
    clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-5. Housekeeping, no urgency:
+6. Housekeeping, no urgency:
    - ~~Remove the now-unused `FTP_*` GitHub Secrets~~ — done 2026-06-19 (`gh secret delete` for
      `FTP_PASSWORD`/`FTP_SERVER`/`FTP_SERVER_DIR`/`FTP_USERNAME`, confirmed `gh secret list` empty).
    - Still open: delete the orphaned manual-deploy leftovers on the old Hostinger document root

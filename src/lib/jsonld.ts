@@ -54,6 +54,47 @@ export function getFaqJsonLd(items: readonly { question: string; answer: string 
 	}
 }
 
+/** Article JSON-LD for Journal posts — GEO/AEO citability signal (author, dates, publisher). */
+export function getArticleJsonLd(
+	lang: Lang,
+	article: {
+		title: string
+		description: string
+		path: string
+		pubDate: Date
+		updatedDate?: Date
+		ogImage?: string
+	},
+) {
+	const url = new URL(withTrailingSlash(article.path), site.url).toString()
+	const imageUrl = article.ogImage
+		? new URL(article.ogImage, site.url).toString()
+		: new URL('/images/og-default.jpg', site.url).toString()
+
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: article.title,
+		description: article.description,
+		image: imageUrl,
+		datePublished: article.pubDate.toISOString(),
+		dateModified: (article.updatedDate ?? article.pubDate).toISOString(),
+		inLanguage: lang,
+		mainEntityOfPage: url,
+		author: {
+			'@type': 'Organization',
+			name: 'Allegra Chamber Bali',
+			url: site.url,
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'Allegra Chamber Bali',
+			url: site.url,
+			sameAs: [site.instagram],
+		},
+	}
+}
+
 /** BreadcrumbList JSON-LD for inner pages, per CLAUDE.md §5. */
 export function getBreadcrumbJsonLd(lang: Lang, items: { name: string; path: string }[]) {
 	const home = lang === 'en' ? '/' : '/id'

@@ -110,6 +110,53 @@ select:focus-visible {
 	outline-offset: 2px;
 }
 
+/* Long-form Journal article body (rendered Markdown/MDX content). */
+@layer components {
+	.prose-article h2 {
+		margin-top: 2.5rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.75rem;
+	}
+	.prose-article h3 {
+		margin-top: 2rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.375rem;
+	}
+	.prose-article p {
+		margin-top: 1rem;
+	}
+	.prose-article ul,
+	.prose-article ol {
+		margin-top: 1rem;
+		padding-left: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+	.prose-article ul {
+		list-style: disc;
+	}
+	.prose-article ol {
+		list-style: decimal;
+	}
+	.prose-article a {
+		color: var(--color-ink);
+		text-decoration: underline;
+		text-decoration-color: var(--color-gold);
+		text-underline-offset: 3px;
+	}
+	.prose-article a:hover {
+		color: var(--color-gold);
+	}
+	.prose-article blockquote {
+		margin-top: 1.5rem;
+		border-left: 2px solid var(--color-gold);
+		padding-left: 1.25rem;
+		font-style: italic;
+		color: var(--color-taupe);
+	}
+}
+
 /* Shared layout primitives */
 .container-max {
 	max-width: var(--content-max);
