@@ -31,4 +31,5 @@ Thumbs.db
 !.vscode/extensions.json
 
 # Claude Code local session state
-.claude/
+.claude/*
+!.claude/skills/
