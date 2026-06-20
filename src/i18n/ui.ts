@@ -19,10 +19,10 @@ export const ui = {
 			checkDate: 'Check Your Date',
 		},
 		hero: {
-			eyebrow: 'Live Chamber Music · Bali Weddings',
+			eyebrow: 'Live Piano & Strings · Bali Weddings',
 			title: 'Allegra Chamber Bali',
 			subhead:
-				'Conservatory-trained musicians performing live chamber music for weddings across Bali — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
+				'Conservatory-trained musicians performing live piano and chamber strings for weddings across Bali — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
 			ctaPrimary: 'Check Your Date',
 			ctaSecondary: 'Listen & Watch',
 		},
@@ -508,10 +508,10 @@ export const ui = {
 			checkDate: 'Cek Tanggal Anda',
 		},
 		hero: {
-			eyebrow: 'Musik Chamber Live · Pernikahan Bali',
+			eyebrow: 'Piano & Gesek Live · Pernikahan Bali',
 			title: 'Allegra Chamber Bali',
 			subhead:
-				'Musisi terlatih membawakan musik live untuk pernikahan di seluruh Bali — dari upacara intim di tebing hingga string quartet untuk resepsi, diaransemen khusus untuk momen Anda.',
+				'Musisi terlatih membawakan musik piano dan gesek secara live untuk pernikahan di seluruh Bali — dari upacara intim di tebing hingga string quartet untuk resepsi, diaransemen khusus untuk momen Anda.',
 			ctaPrimary: 'Cek Tanggal Anda',
 			ctaSecondary: 'Dengar & Tonton',
 		},
