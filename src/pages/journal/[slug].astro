@@ -24,9 +24,9 @@ const dateFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month:
 const jsonLd = [
 	getBreadcrumbJsonLd(lang, [
 		{ name: nav.journal, path: '/journal' },
-		{ name: article.data.title, path },
+		{ name: article.data.heading, path },
 	]),
-	getArticleJsonLd(lang, { ...article.data, path }),
+	getArticleJsonLd(lang, { ...article.data, title: article.data.heading, path }),
 	...(article.data.faq?.length ? [getFaqJsonLd(article.data.faq)] : []),
 ]
 ---
@@ -45,7 +45,7 @@ const jsonLd = [
 				{journal.backToJournal}
 			</a>
 			<p class="reveal eyebrow mt-6 text-taupe">{journal.pillarLabels[article.data.pillar]}</p>
-			<h1 class="reveal mt-2 text-4xl md:text-5xl">{article.data.title}</h1>
+			<h1 class="reveal mt-2 text-4xl md:text-5xl">{article.data.heading}</h1>
 			<p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-taupe">
 				{journal.publishedLabel}
 				{dateFormatter.format(article.data.pubDate)}
@@ -83,7 +83,7 @@ const jsonLd = [
 				<h2 class="text-xl">{journal.ctaHeading}</h2>
 				<p class="text-ink/80">{journal.ctaNote}</p>
 				<WhatsAppCTA
-					message={`Hi Allegra Chamber Bali, I read "${article.data.title}" and have a question about booking.`}
+					message={`Hi Allegra Chamber Bali, I read "${article.data.heading}" and have a question about booking.`}
 					label={nav.checkDate}
 					variant="primary"
 				/>

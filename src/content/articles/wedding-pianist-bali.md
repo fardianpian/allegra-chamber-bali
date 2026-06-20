@@ -1,10 +1,12 @@
 ---
 title: 'Wedding Pianist in Bali: What to Expect — Allegra Chamber Bali'
-description: 'Considering a wedding pianist for your Bali ceremony? Here is what a live piano performance actually covers, how it differs from a string quartet, and how to bring piano into any formation.'
+heading: 'Wedding Pianist in Bali: What to Expect'
+description: 'What does a wedding pianist play at a Bali wedding ceremony? What to expect, how it compares to a string quartet, and how to add piano to any formation.'
 excerpt: 'What a live wedding pianist actually covers on the day, how it differs from a string quartet, and how to bring piano into any formation.'
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding pianist'
 pubDate: 2026-06-22
+ogImage: '/images/og-packages-piano.jpg'
 faq:
   - question: 'Can I book just a pianist for my wedding ceremony in Bali?'
     answer: 'Yes — Solo Piano is one of our Solo formation options alongside violin and cello, not a lesser alternative. It covers a full ceremony on its own: prelude, processional, signing, and recessional.'

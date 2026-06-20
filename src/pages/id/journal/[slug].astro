@@ -24,9 +24,9 @@ const dateFormatter = new Intl.DateTimeFormat('id-ID', { year: 'numeric', month:
 const jsonLd = [
 	getBreadcrumbJsonLd(lang, [
 		{ name: nav.journal, path: '/id/journal' },
-		{ name: article.data.title, path },
+		{ name: article.data.heading, path },
 	]),
-	getArticleJsonLd(lang, { ...article.data, path }),
+	getArticleJsonLd(lang, { ...article.data, title: article.data.heading, path }),
 	...(article.data.faq?.length ? [getFaqJsonLd(article.data.faq)] : []),
 ]
 ---
@@ -38,6 +38,7 @@ const jsonLd = [
 	path={path}
 	ogImage={article.data.ogImage}
 	jsonLd={jsonLd}
+	noindex
 >
 	<article class="section bg-ivory pt-32 md:pt-40">
 		<div class="container-max max-w-2xl">
@@ -45,7 +46,7 @@ const jsonLd = [
 				{journal.backToJournal}
 			</a>
 			<p class="reveal eyebrow mt-6 text-taupe">{journal.pillarLabels[article.data.pillar]}</p>
-			<h1 class="reveal mt-2 text-4xl md:text-5xl">{article.data.title}</h1>
+			<h1 class="reveal mt-2 text-4xl md:text-5xl">{article.data.heading}</h1>
 			<p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-taupe">
 				{journal.publishedLabel}
 				{dateFormatter.format(article.data.pubDate)}
@@ -83,7 +84,7 @@ const jsonLd = [
 				<h2 class="text-xl">{journal.ctaHeading}</h2>
 				<p class="text-ink/80">{journal.ctaNote}</p>
 				<WhatsAppCTA
-					message={`Hi Allegra Chamber Bali, saya baca "${article.data.title}" dan ingin bertanya soal booking.`}
+					message={`Hi Allegra Chamber Bali, saya baca "${article.data.heading}" dan ingin bertanya soal booking.`}
 					label={nav.checkDate}
 					variant="primary"
 				/>

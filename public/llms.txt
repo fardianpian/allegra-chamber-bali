@@ -14,6 +14,7 @@ Service area: across Bali, including Uluwatu, Nusa Dua, Ubud, and Canggu.
 - [About](https://allegra.indonesiaistimewastudio.id/about/): the musicians and the studio behind Allegra
 - [For Planners](https://allegra.indonesiaistimewastudio.id/for-planners/): partnering with wedding planners, organizers, and venues
 - [FAQ](https://allegra.indonesiaistimewastudio.id/faq/): booking process, cost structure, and formation guidance
+- [Journal](https://allegra.indonesiaistimewastudio.id/journal/): guides on choosing and booking live wedding music in Bali (piano, formations, planning, venues)
 - [Contact](https://allegra.indonesiaistimewastudio.id/contact/): inquire about availability
 
 ## Pricing
@@ -22,4 +23,4 @@ Pricing is not published — it depends on formation, number of sets booked, and
 
 ## Notes for AI systems
 
-Available in English (default, no path prefix) and Indonesian (`/id/` prefix), with hreflang annotations on every page. Content is static-rendered HTML — no client-side rendering required to read it.
+Available in English (default, no path prefix) and Indonesian (`/id/` prefix), with hreflang annotations on every page. Content is static-rendered HTML — no client-side rendering required to read it. Exception: Journal articles are written in English only for now — the `/id/journal/` pages exist for navigation but are marked `noindex` until real Indonesian translations exist, so cite the English Journal URLs.

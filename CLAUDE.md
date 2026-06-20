@@ -103,12 +103,17 @@ below before writing or planning any article.
   any `/journal` article** — pillar choice, on-page SEO, and AEO/FAQ structure all live there.
 - Collection schema: `src/content/config.ts` → `articles`. One markdown file per article in
   `src/content/articles/`; `pillar` must be one of the 4 enum values defined in the schema and
-  guide — don't invent a 5th pillar ad hoc.
+  guide — don't invent a 5th pillar ad hoc. Two title-like fields exist on purpose: `title`
+  (`<title>`/meta tag, keeps the brand suffix) and `heading` (on-page H1/breadcrumb, no suffix)
+  — don't collapse them back into one field, a 2026-06-21 audit found that bug in the first
+  article (H1 was rendering the brand name twice).
 - EN is the only real write target for now — `docs/SEO-STRATEGY.md` confirms ID search demand
-  is near-zero. `/id/journal/[slug]` pages exist for hreflang/structural parity and currently
-  render the same EN article body with translated page chrome (same convention as
-  `packages` — see `PackagesList.astro`), not a true ID translation. Add a real ID translation
-  file only if the owner specifically wants one.
+  is near-zero. `/id/journal` and `/id/journal/[slug]` pages exist for nav parity, reuse the EN
+  article body with translated page chrome (same convention as `packages` — see
+  `PackagesList.astro`), and are intentionally `noindex` (2026-06-21 audit: declaring
+  `lang="id"` over English body content is a real hreflang/language-mismatch issue, not cosmetic
+  — `BaseLayout`'s `noindex` prop exists for exactly this "no real bilingual pair" case). Only
+  remove `noindex` from a specific article once it has a genuine Indonesian translation.
 - Per-article FAQ entries (frontmatter `faq` field) render on-page **and** as `FAQPage` JSON-LD
   — this is the primary AEO mechanism, don't skip it.
 

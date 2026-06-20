@@ -21,6 +21,9 @@ export default defineConfig({
 				defaultLocale: 'en',
 				locales: { en: 'en', id: 'id' },
 			},
+			// /id/journal* pages are noindex (English body under lang="id" — see
+			// .claude/article-seo-geo-aeo-guidelines.md), so they shouldn't be in the sitemap either.
+			filter: (page) => !page.includes('/id/journal'),
 		}),
 	],
 	vite: {

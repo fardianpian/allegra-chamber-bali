@@ -60,8 +60,9 @@ const venues = defineCollection({
 const articles = defineCollection({
 	type: 'content',
 	schema: z.object({
-		title: z.string(), // <title> tag — keep close to 50-60 chars
-		description: z.string(), // meta description — 150-160 chars
+		title: z.string(), // <title> tag ONLY — includes the " — Allegra Chamber Bali" suffix
+		heading: z.string(), // on-page H1 / breadcrumb / card heading — no brand suffix (audit 2026-06-21: don't reuse `title` here, it doubled the brand name in <h1>)
+		description: z.string(), // meta description — 150-160 chars, hard limit (audit 2026-06-21 found a 189-char description)
 		excerpt: z.string(), // short teaser for listing cards
 		pillar: z.enum(['planning', 'piano-repertoire', 'bali-venues', 'for-planners']),
 		targetKeyword: z.string().optional(), // primary keyword from SEO-STRATEGY.md, for traceability
