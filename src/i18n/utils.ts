@@ -1,5 +1,6 @@
 import { ui } from './ui'
 import { defaultLang, type Lang } from './languages'
+import { withTrailingSlash } from '../lib/site'
 
 export function getLangFromUrl(url: URL): Lang {
 	const [, maybeLang] = url.pathname.split('/')
@@ -10,7 +11,8 @@ export function getLangFromUrl(url: URL): Lang {
 /** Swaps the locale segment of a path while keeping the rest of the route. */
 export function getLocalizedPath(path: string, lang: Lang): string {
 	const stripped = path.replace(/^\/(en|id)(\/|$)/, '/')
-	return lang === defaultLang ? stripped : `/id${stripped}`.replace(/\/$/, '') || '/id'
+	if (lang === defaultLang) return withTrailingSlash(stripped)
+	return stripped === '/' ? '/id/' : withTrailingSlash(`/id${stripped}`)
 }
 
 export function useTranslations(lang: Lang) {

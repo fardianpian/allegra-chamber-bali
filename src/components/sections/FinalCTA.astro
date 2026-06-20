@@ -12,7 +12,7 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const finalCta = t('finalCta')
 const whatsappMessage = t('whatsappMessage')
-const contactHref = lang === 'en' ? '/contact' : '/id/contact'
+const contactHref = lang === 'en' ? '/contact/' : '/id/contact/'
 ---
 
 <section class="section bg-ink text-ivory">

@@ -13,7 +13,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const gallery = t('gallery')
-const galleryHref = lang === 'en' ? '/gallery' : '/id/gallery'
+const galleryHref = lang === 'en' ? '/gallery/' : '/id/gallery/'
 
 // Real event photos so far (cliffside + garden from the gallery page, the Solo package
 // photo). Add more tiles here as the owner confirms new event photography (CLAUDE.md §9).

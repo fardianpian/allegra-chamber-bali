@@ -11,7 +11,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const repertoire = t('repertoirePage')
-const contactHref = lang === 'en' ? '/contact' : '/id/contact'
+const contactHref = lang === 'en' ? '/contact/' : '/id/contact/'
 
 const moments = ['processional', 'signing', 'recessional', 'cocktail', 'reception'] as const
 const genres = ['classical', 'pop', 'film', 'indonesian'] as const

@@ -11,7 +11,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const page = t('forPlannersPage')
-const thankYouPath = lang === 'en' ? '/thank-you' : '/id/thank-you'
+const thankYouPath = lang === 'en' ? '/thank-you/' : '/id/thank-you/'
 const redirectUrl = new URL(thankYouPath, site.url).toString()
 
 const fieldClass =
@@ -42,6 +42,8 @@ const roleOptions = [
 					style="display:none"
 					tabindex="-1"
 					autocomplete="off"
+					aria-hidden="true"
+					aria-label="Leave this field blank"
 				/>
 
 				<div class="grid gap-6 sm:grid-cols-2">

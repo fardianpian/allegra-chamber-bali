@@ -12,17 +12,17 @@ const t = useTranslations(lang)
 const nav = t('nav')
 const footer = t('footer')
 const prefix = lang === 'en' ? '' : '/id'
-const home = lang === 'en' ? '/' : '/id'
+const home = lang === 'en' ? '/' : '/id/'
 const year = new Date().getFullYear()
 
 const links = [
-	{ href: `${prefix}/repertoire`, label: nav.repertoire },
-	{ href: `${prefix}/packages`, label: nav.packages },
-	{ href: `${prefix}/gallery`, label: nav.gallery },
-	{ href: `${prefix}/about`, label: nav.about },
-	{ href: `${prefix}/for-planners`, label: nav.forPlanners },
-	{ href: `${prefix}/faq`, label: nav.faq },
-	{ href: `${prefix}/contact`, label: nav.contact },
+	{ href: `${prefix}/repertoire/`, label: nav.repertoire },
+	{ href: `${prefix}/packages/`, label: nav.packages },
+	{ href: `${prefix}/gallery/`, label: nav.gallery },
+	{ href: `${prefix}/about/`, label: nav.about },
+	{ href: `${prefix}/for-planners/`, label: nav.forPlanners },
+	{ href: `${prefix}/faq/`, label: nav.faq },
+	{ href: `${prefix}/contact/`, label: nav.contact },
 ]
 ---
 
@@ -71,6 +71,6 @@ const links = [
 		class="container-max flex flex-col gap-2 border-t border-ivory/10 py-6 text-xs text-ivory/50 md:flex-row md:justify-between"
 	>
 		<p>&copy; {year} Allegra Chamber Bali. {footer.rights}</p>
-		<a href={`${prefix}/privacy`} class="hover:text-gold">{footer.privacyLink}</a>
+		<a href={`${prefix}/privacy/`} class="hover:text-gold">{footer.privacyLink}</a>
 	</div>
 </footer>

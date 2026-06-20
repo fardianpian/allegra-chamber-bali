@@ -5,7 +5,7 @@ export const ui = {
 		meta: {
 			title: 'Wedding Musicians & String Quartet for Hire in Bali — Allegra Chamber Bali',
 			description:
-				'Wedding musicians and a live string quartet for hire across Bali — conservatory-trained players performing chamber music from an intimate cliffside ceremony to a full reception.',
+				'Wedding musicians and a live string quartet for hire across Bali — conservatory-trained players, from an intimate cliffside ceremony to a full reception.',
 		},
 		nav: {
 			home: 'Home',
@@ -77,7 +77,7 @@ export const ui = {
 		packagesPage: {
 			title: 'String Quartet for Hire — Wedding Ensemble Packages — Allegra Chamber Bali',
 			description:
-				'Hire a string quartet, trio, duo, or solo wedding pianist for your Bali wedding — five ensemble packages built around your ceremony and reception. Check availability today.',
+				'Hire a string quartet, trio, duo, or solo wedding pianist for your Bali wedding — five ensemble formations built around your ceremony and reception.',
 			eyebrow: 'Packages',
 			heading: 'String Quartet & Wedding Ensemble Packages',
 			subhead:
@@ -353,9 +353,9 @@ export const ui = {
 			formNote: 'Your details are used only to respond to this inquiry.',
 		},
 		faqPage: {
-			title: 'Wedding Music FAQ — String Quartet Cost & Booking in Bali — Allegra Chamber Bali',
+			title: 'Wedding Music FAQ — Cost & Booking in Bali — Allegra Chamber Bali',
 			description:
-				'Answers to the most common questions about hiring a string quartet or wedding musician in Bali — cost, performance length, trio vs. quartet, repertoire requests, and how booking works.',
+				'Answers to common questions about hiring a string quartet or wedding musician in Bali — cost, performance length, and how booking works.',
 			eyebrow: 'FAQ',
 			heading: 'Frequently Asked Questions',
 			subhead:
@@ -781,7 +781,7 @@ export const ui = {
 				'Allegra Chamber Bali adalah ensemble musik chamber di bawah Indonesia Istimewa Studio, membawa standar kualitas dan perhatian yang sama untuk musik pernikahan live di seluruh Bali.',
 		},
 		forPlannersPage: {
-			title: 'Wedding Planner Bali — Allegra Chamber Bali',
+			title: 'Mitra Wedding Planner & Venue di Bali — Allegra Chamber Bali',
 			description:
 				'Dipercaya oleh wedding planner dan wedding organizer di Bali — tech rider, stage plot, dan repertoire sheet siap diminta. Bermitra dengan Allegra Chamber Bali.',
 			eyebrow: 'Untuk Planner & Venue',
@@ -845,9 +845,9 @@ export const ui = {
 			formNote: 'Data Anda hanya digunakan untuk merespons pertanyaan ini.',
 		},
 		faqPage: {
-			title: 'FAQ Musik Pernikahan — Biaya String Quartet & Booking di Bali — Allegra Chamber Bali',
+			title: 'FAQ Musik Pernikahan — Biaya & Booking di Bali — Allegra Chamber Bali',
 			description:
-				'Jawaban untuk pertanyaan paling umum soal menyewa string quartet atau musisi pernikahan di Bali — biaya, durasi penampilan, trio vs quartet, permintaan repertoar, dan cara booking.',
+				'Jawaban pertanyaan umum soal menyewa string quartet atau musisi pernikahan di Bali — biaya, durasi penampilan, dan cara booking.',
 			eyebrow: 'FAQ',
 			heading: 'Pertanyaan yang Sering Diajukan',
 			subhead:

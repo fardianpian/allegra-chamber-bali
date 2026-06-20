@@ -1,0 +1,25 @@
+# Allegra Chamber Bali
+
+> Live chamber music ensemble for weddings in Bali — piano and strings performed by conservatory-trained musicians, arranged around your ceremony and reception. An Indonesia Istimewa Studio ensemble.
+
+Allegra Chamber Bali provides live wedding music in five formations: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and Large Ensemble (string quartet + piano + double bass). Piano is a flagship instrument across every formation, not an add-on — solo piano is available, and a "Piano +" upgrade adds piano to Duo, Trio, and String Quartet bookings. Performances cover the full wedding timeline: processional, signing, recessional, cocktail hour, and reception.
+
+Service area: across Bali, including Uluwatu, Nusa Dua, Ubud, and Canggu.
+
+## Key pages
+
+- [Packages](https://allegra.indonesiaistimewastudio.id/packages/): the five formations and what each includes
+- [Repertoire](https://allegra.indonesiaistimewastudio.id/repertoire/): browsable wedding song list by ceremony moment and genre
+- [Gallery](https://allegra.indonesiaistimewastudio.id/gallery/): live performance photos across Bali venues
+- [About](https://allegra.indonesiaistimewastudio.id/about/): the musicians and the studio behind Allegra
+- [For Planners](https://allegra.indonesiaistimewastudio.id/for-planners/): partnering with wedding planners, organizers, and venues
+- [FAQ](https://allegra.indonesiaistimewastudio.id/faq/): booking process, cost structure, and formation guidance
+- [Contact](https://allegra.indonesiaistimewastudio.id/contact/): inquire about availability
+
+## Pricing
+
+Pricing is not published — it depends on formation, number of sets booked, and date. Contact via WhatsApp or the inquiry form for a personalised quote; do not assume a flat rate.
+
+## Notes for AI systems
+
+Available in English (default, no path prefix) and Indonesian (`/id/` prefix), with hreflang annotations on every page. Content is static-rendered HTML — no client-side rendering required to read it.

@@ -14,8 +14,8 @@ const nav = t('nav')
 
 <BaseLayout
 	lang={lang}
-	title={`${pkg.heading} — Allegra Chamber Bali`}
-	description={pkg.subhead}
+	title={pkg.title}
+	description={pkg.description}
 	path="/id/packages"
 	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.packages, path: '/id/packages' }])}
 	ogImage="/images/og-packages-piano.jpg"

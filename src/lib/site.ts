@@ -12,3 +12,9 @@ export const site = {
 export function waLink(message: string): string {
 	return `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(message)}`
 }
+
+/** Ensures a path ends with `/` (root "/" is left as-is) — the build emits directory-style
+ * `/page/index.html`, so an internal link missing the trailing slash costs a 308 redirect hop. */
+export function withTrailingSlash(path: string): string {
+	return path === '/' || path.endsWith('/') ? path : `${path}/`
+}

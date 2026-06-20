@@ -10,7 +10,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const planners = t('planners')
-const forPlannersHref = lang === 'en' ? '/for-planners' : '/id/for-planners'
+const forPlannersHref = lang === 'en' ? '/for-planners/' : '/id/for-planners/'
 ---
 
 <section class="section bg-ivory">

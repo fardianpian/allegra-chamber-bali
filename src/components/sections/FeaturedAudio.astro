@@ -11,7 +11,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const featured = t('featured')
-const repertoireHref = lang === 'en' ? '/repertoire' : '/id/repertoire'
+const repertoireHref = lang === 'en' ? '/repertoire/' : '/id/repertoire/'
 
 const allSongs = await getCollection('repertoire')
 const songs = allSongs.filter((s) => s.data.featured).sort((a, b) => a.data.order - b.data.order)

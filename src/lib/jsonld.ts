@@ -1,9 +1,9 @@
-import { site } from './site'
+import { site, withTrailingSlash } from './site'
 import type { Lang } from '../i18n/languages'
 
 /** MusicGroup + LocalBusiness JSON-LD for the homepage, per CLAUDE.md §5. */
 export function getHomeJsonLd(lang: Lang) {
-	const path = lang === 'en' ? '/' : '/id'
+	const path = lang === 'en' ? '/' : '/id/'
 	const url = new URL(path, site.url).toString()
 	const description =
 		lang === 'en'
@@ -67,7 +67,7 @@ export function getBreadcrumbJsonLd(lang: Lang, items: { name: string; path: str
 			'@type': 'ListItem',
 			position: i + 1,
 			name: crumb.name,
-			item: new URL(crumb.path, site.url).toString(),
+			item: new URL(withTrailingSlash(crumb.path), site.url).toString(),
 		})),
 	}
 }

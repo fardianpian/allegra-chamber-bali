@@ -13,8 +13,8 @@ const nav = t('nav')
 
 <BaseLayout
 	lang={lang}
-	title={`${repertoire.heading} — Allegra Chamber Bali`}
-	description={repertoire.subhead}
+	title={repertoire.title}
+	description={repertoire.description}
 	path="/id/repertoire"
 	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.repertoire, path: '/id/repertoire' }])}
 >

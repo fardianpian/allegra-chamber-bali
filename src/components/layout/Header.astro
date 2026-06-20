@@ -11,17 +11,17 @@ interface Props {
 const { lang, path } = Astro.props
 const t = useTranslations(lang)
 const nav = t('nav')
-const home = lang === 'en' ? '/' : '/id'
+const home = lang === 'en' ? '/' : '/id/'
 const prefix = lang === 'en' ? '' : '/id'
 
 const links = [
-	{ href: `${prefix}/repertoire`, label: nav.repertoire },
-	{ href: `${prefix}/packages`, label: nav.packages },
-	{ href: `${prefix}/gallery`, label: nav.gallery },
-	{ href: `${prefix}/about`, label: nav.about },
-	{ href: `${prefix}/for-planners`, label: nav.forPlanners },
-	{ href: `${prefix}/faq`, label: nav.faq },
-	{ href: `${prefix}/contact`, label: nav.contact },
+	{ href: `${prefix}/repertoire/`, label: nav.repertoire },
+	{ href: `${prefix}/packages/`, label: nav.packages },
+	{ href: `${prefix}/gallery/`, label: nav.gallery },
+	{ href: `${prefix}/about/`, label: nav.about },
+	{ href: `${prefix}/for-planners/`, label: nav.forPlanners },
+	{ href: `${prefix}/faq/`, label: nav.faq },
+	{ href: `${prefix}/contact/`, label: nav.contact },
 ]
 
 const otherLang: Lang = lang === 'en' ? 'id' : 'en'
@@ -50,7 +50,7 @@ const whatsappMessage = t('whatsappMessage')
 			<a
 				href={otherLangHref}
 				class="text-xs uppercase tracking-[0.12em] text-ink/60 hover:text-gold"
-				aria-label="Switch language"
+				aria-label={`Switch language to ${lang === 'en' ? 'ID' : 'EN'}`}
 			>
 				{lang === 'en' ? 'ID' : 'EN'}
 			</a>

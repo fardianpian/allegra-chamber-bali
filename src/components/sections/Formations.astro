@@ -15,7 +15,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const formations = t('formations')
-const packagesHref = lang === 'en' ? '/packages' : '/id/packages'
+const packagesHref = lang === 'en' ? '/packages/' : '/id/packages/'
 
 const formationPhotos = {
 	solo,
@@ -46,7 +46,7 @@ const formationPhotos = {
 					>
 						<Image
 							src={formationPhotos[item.formation]}
-							alt={item.name}
+							alt=""
 							width={448}
 							height={600}
 							format="avif"
