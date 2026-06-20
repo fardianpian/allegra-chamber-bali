@@ -7,11 +7,25 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
-## Status as of 2026-06-21
+## Status as of 2026-06-23
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
+
+**2026-06-23 — Second Journal article shipped (`planning` pillar).** "How to Plan Live Music for
+a Bali Wedding" (`src/content/articles/live-music-bali-wedding-guide.md`), targeting "musician for
+wedding ceremony" (US vol 3600, KD 4 — Pillar 1 anchor from `SEO-STRATEGY.md` §3.1). Ran the full
+skill-delegation pipeline end to end (content-strategy → copywriting → ai-seo → seo-audit → schema
+→ copy-editing) plus fresh DataForSEO SERP/competitor research specifically for this article (not
+just reused the 2026-06-18 SEO-STRATEGY.md research): confirmed no competitor (Silaen Music, LOVA
+Band Bali, Bali Wedding Solutions, FixTheMusic, La Puja) publishes planning-guide content, only
+vendor listing pages — real content gap. ai-seo pass caught and fixed two near-miss fabricated
+claims before publish (an invented "June–September/December peak season" specific, and an
+unverified "most requested" popularity claim) — neither sourced anywhere in the repo, both
+softened to match only what's actually confirmed. Added inbound link from the first article
+(`wedding-pianist-bali.md`) per the cross-link requirement. `npm run lint && npm run build` clean
+(27 pages). Pushed to `main` → Cloudflare Pages auto-deploy triggered.
 
 **2026-06-21 — Journal/article system shipped.** New `/journal` content hub (EN +
 `/id/journal` structural twin) for SEO/GEO/AEO content: `articles` content collection
@@ -27,9 +41,9 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **Write more Journal articles** using `.claude/article-seo-geo-aeo-guidelines.md` — only 1 of
-   the 4 pillars (Piano & Repertoire) has an article so far. Planning and For-Planners/B2B pillars
-   are good next picks (ties into the outreach work in
+1. **Write more Journal articles** using `.claude/article-seo-geo-aeo-guidelines.md` — 2 of the 4
+   pillars now have an article (Piano & Repertoire, Planning). Bali Venues and
+   For-Planners/B2B pillars are good next picks (ties into the outreach work in
    `docs/MARKETING-SPRINT-2026-06.md`).
 2. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
