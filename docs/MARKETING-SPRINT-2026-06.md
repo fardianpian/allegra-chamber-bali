@@ -4,13 +4,28 @@
 > Dua fokus: **(A) Visibility organik** (SEO on-page, social, directory) dan **(B) Outreach B2B**
 > ke wedding planner/venue. Dibuat 2026-06-21, mengacu pada `docs/SEO-STRATEGY.md`,
 > `.agents/product-marketing.md`, dan `.claude/brand-voice-guidelines.md`.
+>
+> **Update 2026-06-21 (sore, sama hari plan ini ditulis):** fitur **Journal** (`/journal`) sudah
+> dibangun dan live — content hub SEO/GEO/AEO dengan 1 artikel pertama ("Wedding Pianist in
+> Bali: What to Expect", target keyword "wedding pianist" KD 1). Ini mengubah beberapa asumsi di
+> bawah (lihat bagian "Konteks yang membatasi scope" dan Hari 5) — sprint sekarang punya aset
+> konten nyata untuk dipromosikan, bukan cuma optimasi meta tag.
+
+## Aset baru sejak plan ini ditulis
+
+- **`/journal`** — live, 1 artikel: `/journal/wedding-pianist-bali/` (EN) +
+  `/id/journal/wedding-pianist-bali/` (twin struktural ID).
+- Panduan menulis artikel + 4 pilar konten + tabel delegasi skill:
+  `.claude/article-seo-geo-aeo-guidelines.md`. Pilar `for-planners` paling relevan untuk
+  mendukung outreach B2B sprint ini — belum ada artikelnya, jadi ini kandidat kuat untuk ditulis
+  selama 9 hari ini (lihat Hari 5 yang sudah diperbarui).
 
 ## Konteks yang membatasi scope (penting, jangan dilewat)
 
-- Tidak ada blog di sitemap (`/`, `/repertoire`, `/packages`, `/gallery`, `/about`,
-  `/for-planners`, `/faq`, `/contact`, `/thank-you`, `/privacy`, `/404`). Jadi kerja "SEO" sprint
-  ini = optimasi on-page (meta tag, copy existing page) — **bukan** bikin konten blog baru.
-  Kalau nanti mau bangun content engine jangka panjang, itu inisiatif terpisah pasca-sprint ini.
+- `/journal` sekarang ada (dibangun 2026-06-21, lihat "Aset baru" di atas) — jadi kerja "SEO"
+  sprint ini tidak lagi terbatas ke optimasi on-page saja, menulis 1 artikel Journal baru juga
+  masuk scope yang realistis (lihat Hari 5). Tetap jangan menulis artikel di luar 4 pilar yang
+  sudah ditetapkan di `.claude/article-seo-geo-aeo-guidelines.md`.
 - Testimoni nyata, foto venue beach/chapel/ballroom belum ada (masih nunggu owner) — jangan
   dipromosikan di caption/outreach seolah sudah ada. Yang sudah di tangan: 1 foto/video pianis
   dengan izin pakai.
@@ -26,14 +41,15 @@
 Bukan target booking (terlalu awal untuk dipatok), tapi target aktivitas yang bisa dihitung di
 Hari 9:
 
-| Metrik                                       | Target                                      |
-| -------------------------------------------- | ------------------------------------------- |
-| Pesan outreach terkirim ke planner/venue     | ≥ 12                                        |
-| Balasan/respon dari outreach                 | catat saja, tanpa target — baseline pertama |
-| Listing directory live                       | ≥ 3                                         |
-| Post Instagram terbit                        | ≥ 3                                         |
-| Google Business Profile                      | live & terverifikasi                        |
-| Inbound WhatsApp inquiry baru selama periode | catat saja — baseline pertama               |
+| Metrik                                                                 | Target                                      |
+| ---------------------------------------------------------------------- | ------------------------------------------- |
+| Pesan outreach terkirim ke planner/venue                               | ≥ 12                                        |
+| Balasan/respon dari outreach                                           | catat saja, tanpa target — baseline pertama |
+| Listing directory live                                                 | ≥ 3                                         |
+| Post Instagram terbit                                                  | ≥ 3                                         |
+| Google Business Profile                                                | live & terverifikasi                        |
+| Artikel Journal baru ditulis (pilar `for-planners` atau `bali-venues`) | ≥ 1                                         |
+| Inbound WhatsApp inquiry baru selama periode                           | catat saja — baseline pertama               |
 
 ## Kalender harian (Senin 22 — Selasa 30 Juni)
 
@@ -51,7 +67,8 @@ Hari 9:
 - Pakai template pesan outreach B2B (di bawah) — sesuaikan 1-2 kalimat pembuka per target kalau
   ada koneksi personal.
 - Siapkan link yang akan dikirim: `/for-planners` (EN) — halaman ini sudah ada dan dibangun untuk
-  audiens ini.
+  audiens ini. Kalau artikel Journal pilar `for-planners` sudah ditulis (lihat Hari 5), pakai
+  link itu sebagai pendukung tambahan, bukan pengganti `/for-planners`.
 
 **Hari 3 — Rabu 24 Juni: Outreach gelombang 1 + directory #1**
 
@@ -66,19 +83,23 @@ Hari 9:
 - Terbitkan post #1 (rekomendasi: foto/video pianis yang sudah ada izin pakai — asset paling
   kuat yang dimiliki saat ini).
 
-**Hari 5 — Jumat 26 Juni: SEO on-page**
+**Hari 5 — Jumat 26 Juni: SEO on-page + Journal**
 
-- Selipkan keyword "wedding pianist" (KD 1, opportunity terbaik di `SEO-STRATEGY.md` §3.0) ke
-  copy Packages (blok Solo Piano) dan title/meta description halaman terkait — bukan halaman
-  baru, hanya penyesuaian copy + `<title>`/meta yang sudah ada.
+- Link artikel Journal yang sudah live (`/journal/wedding-pianist-bali/`) dari blok Solo Piano di
+  halaman Packages — internal link ini juga jadi syarat checklist SEO di
+  `.claude/article-seo-geo-aeo-guidelines.md`.
 - Cek title tag & meta description Home + Packages sudah memuat klaster "musician for wedding
   ceremony" (head term, bukan "string quartet").
+- Tulis 1 artikel Journal baru untuk pilar `for-planners` (mendukung outreach B2B minggu ini —
+  topik usulan: "What to Ask a Live Music Vendor Before You Book Them" atau "Tech Rider Basics
+  for Live Chamber Music at Weddings"). Ikuti pipeline delegasi skill di panduan — jangan
+  freelance satu draft langsung jadi.
 
 **Hari 6 — Sabtu 27 Juni: Outreach gelombang 2 + post #2**
 
 - Kirim 5–6 pesan outreach lanjutan ke sisa daftar prospek.
-- Terbitkan post #2 (rekomendasi: behind-the-scenes/ensemble formation, bukan venue — venue
-  fotonya masih terbatas ke cliffside/garden).
+- Terbitkan post #2 — pakai ide caption #5 (Journal launch) karena artikel for-planners baru
+  terbit kemarin (Hari 5), masih relevan untuk dipromosikan segera.
 
 **Hari 7 — Minggu 28 Juni: Buffer & balas respon**
 
@@ -186,8 +207,12 @@ allegra.indonesiaistimewastudio.id/for-planners — happy to send our repertoire
    > Arranged around your story."
 
 4. **For-planners angle** (cross-post ke audiens B2B):
+
    > "Tech rider ready, repertoire sheet on request. Planning a wedding with live music? Let's
    > talk logistics."
+
+5. **Journal launch** (pakai setelah Hari 4, promosikan artikel yang sudah live):
+   > "New on the Journal: what to actually expect from a wedding pianist in Bali — link in bio."
 
 Hashtag minimal (brand voice: "minimal hashtags") — cukup 3-5: `#BaliWedding`
 `#LiveWeddingMusic` `#BaliWeddingMusician` + nama area jika foto spesifik (`#UluwatuWedding`,
@@ -216,5 +241,6 @@ yang paling tinggi dampak lokal-SEO-nya karena nempel langsung ke local search i
 ## Setelah sprint berakhir
 
 Update `docs/PROGRESS.md` § Next steps dengan: hasil tally metrik + 2-3 prioritas Juli (mis.
-lanjut outreach ke sisa daftar prospek, evaluasi apakah perlu content engine/blog kalau SEO
-on-page belum cukup, follow-up planner yang merespons).
+lanjut outreach ke sisa daftar prospek, tulis 2 artikel Journal yang masih kosong — pilar
+`planning` dan `bali-venues` — pakai `.claude/article-seo-geo-aeo-guidelines.md`, follow-up
+planner yang merespons).
