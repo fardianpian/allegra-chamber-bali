@@ -6,19 +6,25 @@
 
 **Tujuan dokumen:** brief eksekusi end-to-end untuk membangun website **Allegra Chamber Bali** — jasa
 grup musik / ansambel (string & chamber ensemble) untuk pernikahan di Bali. Target deploy: sub-domain
-di bawah `indonesiaistimewastudio.id`, hosting Hostinger.
+di bawah `indonesiaistimewastudio.id`, hosting Cloudflare Pages.
+
+> **Catatan staleness (2026-06-20):** dokumen ini brief asli dari Notion, ditulis sebelum migrasi
+> hosting dari rencana Hostinger-FTP ke Cloudflare Pages (2026-06-18, lihat `CLAUDE.md` § Confirmed
+> decisions). Referensi Hostinger/FTP/`.htaccess` di bawah sudah diperbarui ke Cloudflare Pages;
+> untuk keputusan & fakta teknis terkini, `CLAUDE.md` selalu menang kalau ada perbedaan.
 
 ## Ringkasan
 
 - **Brand:** Allegra Chamber Bali — live chamber/string ensemble untuk wedding ceremony, cocktail hour,
   dan reception di Bali.
 - **Sub-domain target:** `allegra.indonesiaistimewastudio.id`.
-- **Hosting:** Hostinger (shared/LiteSpeed) → situs harus static (SSG), bukan Vercel/Node runtime.
+- **Hosting:** Cloudflare Pages (git-connected, auto build & deploy on push to `main`) → situs harus
+  static (SSG), bukan Node SSR/serverless.
 - **Audiens utama:** pasangan destination wedding (mayoritas internasional + domestik premium), wedding
   organizer/planner, venue (hotel/resort/villa), event organizer.
 - **Bahasa:** English primary + Bahasa Indonesia secondary.
-- **Stack:** Astro 5 (static output) + TypeScript + TailwindCSS v4, deploy ke Hostinger via FTP
-  (build di GitHub Actions, upload `dist/`).
+- **Stack:** Astro 5 (static output) + TypeScript + TailwindCSS v4, deploy ke Cloudflare Pages
+  (git-connected, build command `npm run build`, output dir `dist`).
 
 ## 1. Project Overview
 
@@ -55,10 +61,10 @@ Tampilkan koneksi halus ke Indonesia Istimewa Studio (footer + 1 baris di About)
 4. Venue (hotel/resort/villa) — cliffside, beach, garden, chapel.
 5. Event organizer non-wedding (gala dinner, corporate) — secondary.
 
-## 5. Tech Stack (Hostinger)
+## 5. Tech Stack (Cloudflare Pages)
 
-- **Hostinger ≠ Vercel** — shared hosting menjalankan Apache/LiteSpeed + PHP, bukan Node SSR. Situs
-  harus static (SSG), build jadi HTML/CSS/JS lalu upload ke document root sub-domain.
+- **Cloudflare Pages ≠ Vercel/Node SSR** — situs harus static (SSG); Cloudflare's git integration
+  builds `dist/` and deploys it to its edge on every push to `main`, no GitHub Actions step needed.
 - Framework: Astro 5.x, `output: 'static'`.
 - Styling: TailwindCSS v4 + design tokens custom.
 - Typography: `@fontsource` self-hosted (hindari render-blocking Google Fonts).
@@ -67,8 +73,11 @@ Tampilkan koneksi halus ke Indonesia Istimewa Studio (footer + 1 baris di About)
 - Forms: Web3Forms atau Formspree. WhatsApp deep-link tetap CTA utama.
 - Audio/Video: embed YouTube/Vimeo + SoundCloud (lazy facade). Hindari self-host video besar.
 - Analytics: Plausible (cookieless) atau GA4.
-- Deployment: sub-domain dibuat di hPanel → build di GitHub Actions → deploy `dist/` via FTP/SFTP.
-  SSL via free Let's Encrypt Hostinger. Clean URLs & redirect via `.htaccess`.
+- Deployment: Cloudflare Pages project git-connected to the repo (`main` branch, build
+  `npm run build`, output `dist`) — auto build & deploy on every push, SSL automatic. DNS/domain
+  registration/email stay on Hostinger; only the `allegra` subdomain's DNS record points at
+  Cloudflare via CNAME. Clean URLs/HTTPS redirect/custom 404 are automatic on Cloudflare Pages;
+  remaining headers (security, cache-control) live in `public/_headers`, not `.htaccess`.
 
 ## 6. Design Direction
 
@@ -76,33 +85,15 @@ Romantic luxury, terang, lapang, refined — bukan glossy/loud, bukan boho murah
 wedding luxury (Magnolia Rouge, Once Wed), string quartet premium internasional, hospitality Bali kelas
 atas (Alila, COMO, Six Senses). Foto dokumentasi pertunjukan & venue Bali = hero; UI = bingkai.
 
-**Color Palette:**
-
-- Background: Warm Ivory `#F7F3EC`
-- Foreground/ink: Charcoal `#1E1C19`
-- Accent 1 (primary): Champagne Gold `#C2A36B`
-- Accent 2 (depth): Deep Sage/Emerald `#3E5247`
-- Muted: Warm Taupe `#9C9183`
-- Rule 80/15/5: 80% ivory/charcoal, 15% taupe/sage, 5% gold accent.
-
-**Typography:**
-
-- Display/H1–H2: Cormorant Garamond atau Playfair Display.
-- H3–H4/eyebrow: sans uppercase small-caps untuk label section.
-- Body: Inter 16–18px, leading 1.6, max width 65ch.
-- Accent/pull-quote: serif italic untuk testimoni & tagline.
-
-**Layout:** grid 12 kolom desktop, gutter 24px, reading column max 720px, max content 1280px. White
-space lega (96–120px antar section). 1 section = 1 fokus. Mobile-first; breakpoints 375/768/1280/1536.
-
-**Motion:** fade-in on scroll (300ms ease-out, 12px lift). No parallax, no scroll-hijack. Hormati
-`prefers-reduced-motion`.
-
-**Imagery:** foto wedding real di venue Bali, tone warm natural, golden hour. Hindari stok generik.
+**Color Palette, Typography, Layout, Motion, Imagery:** sumber kebenaran terkini ada di `CLAUDE.md`
+§ Aesthetic (token teknis: hex, ukuran, breakpoint) dan `docs/system-design.md` (ekstrak siap pakai
+untuk Canva/Figma/slide) — jangan dikopi ulang di sini karena bisa basi. Catatan taupe: hex lama
+`#9C9183` (sampling logo) sudah deprecated sejak 2026-06-18 (kontras gagal WCAG AA), nilai terkini
+`#6D665C` — lihat rationale di `CLAUDE.md`.
 
 > **Update sesi 2026-06-17:** brand logo asli (file dari owner) sudah dikonfirmasi final — lihat
-> `docs/PROGRESS.md` § Keputusan Terkonfirmasi untuk detail font/warna yang sudah diverifikasi cocok
-> dengan token di atas.
+> `docs/PROGRESS-ARCHIVE.md` § Status as of 2026-06-18 untuk detail font/warna yang sudah
+> diverifikasi cocok dengan token di `CLAUDE.md`.
 
 ## 7. Sitemap & Page Structure
 
@@ -186,7 +177,8 @@ WhatsApp button (deep-link pre-fill), email, Instagram. Response time \<24 jam. 
 - SEO essentials: meta per halaman, OG image, JSON-LD `LocalBusiness`/`MusicGroup` + `FAQPage` +
   `BreadcrumbList`.
 - Sitemap.xml + robots.txt auto-generate.
-- `.htaccess`: clean URL, force HTTPS, redirect non-www, custom 404, cache headers.
+- Clean URL, force HTTPS, custom 404 — otomatis di Cloudflare Pages, tidak perlu config. Cache
+  headers via `public/_headers`.
 - Cookie/consent ringan bila pakai GA4.
 
 ## 10. Performance & Accessibility
@@ -215,17 +207,20 @@ wedding bali`, `chamber ensemble bali wedding`, `string quartet uluwatu/ubud/nus
 akustik pernikahan bali`. Local SEO: Google Business Profile (kategori "Wedding Service"/"Live
 Music"). Schema: `MusicGroup` + `LocalBusiness` (homepage), `FAQPage` (faq), `BreadcrumbList`.
 
-## 12. Deployment Workflow — Hostinger
+## 12. Deployment Workflow — Cloudflare Pages
 
-**A. Setup sub-domain (manual, user):** hPanel → Domains → Subdomains → `allegra` → catat document
-root → aktifkan free SSL.
+**A. Setup project (selesai, lihat `docs/PROGRESS-ARCHIVE.md` § Status as of 2026-06-19):**
+Cloudflare Pages project git-connected ke `fardianpian/allegra-chamber-bali` (`main`, build
+`npm run build`, output `dist`). DNS `allegra` di Hostinger di-CNAME ke `allegra-chamber-bali.pages.dev`.
 
-**B. Build & deploy (GitHub Actions → FTP):** `npm ci` → `npm run build` → upload `dist/` via FTP/SFTP
-(`SamKirkland/FTP-Deploy-Action`), kredensial dari GitHub Secrets.
+**B. Build & deploy:** otomatis — push ke `main` trigger build & deploy Cloudflare, tidak ada step
+GitHub Actions terpisah untuk deploy.
 
-**C. `.htaccess`:** force HTTPS, clean URLs, custom 404, cache headers.
+**C. Headers/redirects:** HTTPS force, clean URLs, custom 404 otomatis di Cloudflare Pages; cache
+headers via `public/_headers`.
 
-**D. Forms:** daftar Web3Forms/Formspree, access key sebagai env saat build.
+**D. Forms:** daftar Web3Forms/Formspree, access key sebagai Cloudflare Pages environment variable
+(`PUBLIC_WEB3FORMS_KEY`).
 
 **E. Verifikasi:** SSL aktif, semua halaman ter-serve, form terkirim + auto-reply, sitemap submit ke
 Google Search Console.
@@ -242,16 +237,17 @@ Google Search Console.
 - [ ] CLS \<0.05, LCP \<2.0s, INP \<200ms.
 - [ ] JSON-LD valid (MusicGroup + LocalBusiness, FAQPage).
 - [ ] Sitemap.xml + robots.txt + hreflang EN/ID terpasang & submit ke GSC.
-- [ ] `.htaccess`: HTTPS force, custom 404, cache headers aktif.
+- [ ] HTTPS force, custom 404, cache headers (`public/_headers`) aktif.
 - [ ] WCAG 2.1 AA pass.
-- [ ] GitHub Actions build + FTP deploy ke Hostinger berjalan otomatis.
+- [ ] Push ke `main` trigger build + deploy otomatis di Cloudflare Pages.
 
 ## 17. Aset yang Harus Disiapkan User (Manual)
 
-- [ ] Kredensial FTP Hostinger (GitHub Secrets).
+- [x] ~~Kredensial FTP Hostinger~~ — tidak diperlukan lagi, hosting Cloudflare Pages git-connected
+      (lihat `CLAUDE.md` § Confirmed decisions).
 - [ ] Akun Web3Forms/Formspree + Plausible/GA4.
 - [ ] Logo Allegra Chamber Bali (SVG primary + mono) — **selesai dikonfirmasi 2026-06-17**, lihat
-      `docs/PROGRESS.md`.
+      `docs/PROGRESS-ARCHIVE.md`.
 - [ ] Foto dokumentasi wedding real di venue Bali (min 1920px) — izin pakai dari klien/WO.
 - [ ] Foto musisi + portrait ensemble.
 - [ ] Audio sample 4–8 lagu, versi pendek MP3.
@@ -266,20 +262,16 @@ Google Search Console.
 
 ## 21. Keputusan Terkonfirmasi & Pertanyaan Tersisa
 
-**✅ Locked:**
-
-- Sub-domain final: `allegra.indonesiaistimewastudio.id`.
-- Hosting: static-only (Astro SSG), build di GitHub Actions, deploy `dist/` via FTP.
-- Bahasa: English primary + Indonesian secondary (default EN, toggle ID, hreflang).
-- Formasi: Solo, Duo, Trio, String Quartet, Large Ensemble (5 formasi).
-- **Large Ensemble** (dikonfirmasi 2026-06-17): string quartet + piano + double bass (6 musisi) — TBC,
-  tunggu sign-off final owner sebelum publish.
-- **Logo brand** (dikonfirmasi final 2026-06-17): lihat `docs/PROGRESS.md`.
-- **Piano = produk unggulan** (dikonfirmasi 2026-06-18): Solo kini termasuk opsi piano solo;
-  Duo/Trio/String Quartet masing-masing punya upsell "Piano +" sebagai body copy, bukan
-  halaman/keyword terpisah (data riset: `docs/SEO-STRATEGY.md` §3.0).
+**✅ Locked:** lihat `CLAUDE.md` § Confirmed decisions (locked) — daftar otoritatif & terkini, jangan
+dikopi ulang di sini karena bisa basi (contoh: list di atas sebelumnya masih bilang hosting FTP dan
+Large Ensemble "TBC" — keduanya sudah final per `CLAUDE.md`). Ringkasan super-singkat: sub-domain
+`allegra.indonesiaistimewastudio.id`, hosting Cloudflare Pages, EN primary + ID secondary, 5 formasi
+dengan piano sebagai produk unggulan di semua formasi, Large Ensemble = quartet + piano + double bass
+(final, bukan lagi TBC), logo final per `docs/PROGRESS-ARCHIVE.md`.
 
 **❓ Masih terbuka (jangan mengarang):**
 
-1. Harga & travel fee per formasi/area + kebijakan deposit.
+1. Harga & travel fee per formasi/area + kebijakan deposit — owner memilih (2026-06-18) untuk
+   disembunyikan dari UI sampai ada angka real, bukan ditampilkan sebagai placeholder. Lihat
+   `CLAUDE.md` § Confirmed decisions / Open questions.
 2. Aset audio/video & foto wedding — ketersediaan + izin pakai.

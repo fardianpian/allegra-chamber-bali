@@ -1,6 +1,8 @@
 # Project: allegra.indonesiaistimewastudio.id
 
-> Persistent context for Claude Code. Read this first, then `docs/BRIEF.md` for the full spec.
+> Persistent context for Claude Code. Read this first. `docs/BRIEF.md` has the full original
+> spec (sitemap detail, acceptance criteria, asset checklist) — read it only on-demand, see
+> § Session Workflow (Token Discipline) below.
 
 ## Brand
 
@@ -46,7 +48,7 @@ Languages: **English (primary) + Indonesian (secondary)**.
   DNS record was changed to a CNAME pointing at `allegra-chamber-bali.pages.dev`. Switched away
   from the original Hostinger-FTP plan because it had no working CI deploy path (Hostinger
   blocked GitHub Actions' runner IPs on every available FTP/FTPS/SFTP port) — full incident
-  history in `docs/PROGRESS.md`. Still **static-only (Astro SSG)**. No Node SSR, no serverless.
+  history in `docs/PROGRESS-ARCHIVE.md`. Still **static-only (Astro SSG)**. No Node SSR, no serverless.
 - Languages: English default + Indonesian (`/id/`) with hreflang.
 - Formations offered (5): Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble.
   Piano is a flagship offering — solo piano is a Solo option, and a "Piano +" upgrade
@@ -128,6 +130,22 @@ Languages: **English (primary) + Indonesian (secondary)**.
     priority). Use plain `w-full` + padding utilities instead of `.container-max` inside any
     JS-toggled flex layout (e.g. the mobile nav menu).
 
+## Session Workflow (Token Discipline)
+
+- Default per-session reads: this file (automatic) + only the "Status as of"/"Next steps"
+  section of `docs/PROGRESS.md` (kept short on purpose). Do NOT read `docs/PROGRESS-ARCHIVE.md`,
+  `docs/BRIEF.md`, `docs/SEO-STRATEGY.md`, `docs/system-design.md`,
+  `.agents/product-marketing.md`, or `.claude/brand-voice-guidelines.md` at session start —
+  read them on-demand, only when the task actually needs them (writing copy →
+  brand-voice-guidelines; marketing-skill work → product-marketing.md; debugging a past
+  incident/CI history → PROGRESS-ARCHIVE.md).
+- For any large file whose location is already known, `Read` a targeted `offset`/`limit` range
+  instead of the whole file — same principle as rule #10 for `src/i18n/ui.ts`, generalized to
+  every large file in the repo.
+- Prefer direct `Read`/`Grep`/`Bash` for a lookup in one known file/location. Reserve
+  Explore/general-purpose subagents for genuinely broad or ambiguous searches across many
+  files/unknown locations — not as the default for every task.
+
 ## Open questions (confirm with owner before finalizing copy)
 
 - Pricing per formation + travel fee per Bali area + deposit policy — owner decided (2026-06-18)
@@ -135,4 +153,5 @@ Languages: **English (primary) + Indonesian (secondary)**.
   re-add a price field/column/TODO string anywhere until the owner gives real numbers.
 - Brand visual: existing logo/palette/font, or use the proposal above?
 - Audio/video + wedding photos availability + usage permission from clients/planners. Piano
-  player photo/video is the one exception already in hand (2026-06-18) — see `docs/PROGRESS.md`.
+  player photo/video is the one exception already in hand (2026-06-18) — see
+  `docs/PROGRESS-ARCHIVE.md`.
