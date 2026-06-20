@@ -2,7 +2,7 @@
 
 The 12-month outlook in every plan (Section 10) describes a trajectory. This doc names the shape of that trajectory honestly — what real SaaS growth looks like, when to expect plateaus, and how to plan for the next leg of growth before the current one stalls.
 
-Excerpted and adapted from *Founding Marketing* by Corey Haines.
+Excerpted and adapted from _Founding Marketing_ by Corey Haines.
 
 ## The long, slow SaaS ramp of death
 
@@ -13,6 +13,7 @@ Pitch decks show hockey sticks. Real growth shows a series of S-curves — each 
 The hardest milestone. Every customer is a hard-won victory. Typical time: **6–12 months.** Most companies pivot the product multiple times during this phase.
 
 What it requires:
+
 - Runway long enough to keep experimenting until something clicks
 - A financial cushion or additional income sources (often the difference between success and shutdown)
 - Tolerance for ambiguity — the product positioning, the pricing, and the channel can all still be wrong at this stage
@@ -37,7 +38,7 @@ This is the phase where the marketing plan's 90-day roadmap (Section 9) starts c
 
 The myth: successful SaaS companies grow exponentially, doubling revenue month over month like clockwork.
 
-The reality: two distinct patterns, often combining at scale to *look* exponential when zoomed out.
+The reality: two distinct patterns, often combining at scale to _look_ exponential when zoomed out.
 
 ### Pattern 1 — Linear growth
 
@@ -48,6 +49,7 @@ Less sexy than exponential. Far more sustainable. Crucially, **plannable**: when
 ### Pattern 2 — Step-function growth
 
 Periods of plateau followed by sudden jumps. Jumps aren't random — they're triggered by specific events:
+
 - Breaking into a new market segment (e.g., enterprise after starting SMB)
 - Launching a major product expansion (new feature line, new tier)
 - Cracking a new marketing channel that compounds
@@ -71,6 +73,7 @@ The secret to sustained growth isn't one perfect channel. It's orchestrating mul
 ### Channel S-curves
 
 Every marketing channel has its own lifecycle:
+
 - **SEO** — 6–12 months to mature; once it does, steady leads for years. Marathon runner.
 - **Paid ads** — quick wins; diminishing returns as you scale.
 - **Content marketing** — slow to start, compounds beautifully over time.
@@ -114,16 +117,16 @@ This is the operational thesis behind the AARRR mapping (Sections 4–8) and the
 
 For companies that have crossed $1M ARR and raised institutional capital, the VC benchmark is:
 
-| Year | Multiple | Cumulative ARR (from $1M) |
-|---|---|---|
-| Year 0 | — | $1M |
-| Year +1 | 3× | $3M |
-| Year +2 | 3× | $9M |
-| Year +3 | 2× | $18M |
-| Year +4 | 2× | $36M |
-| Year +5 | 2× | $72M |
-| Year +6 | 2× | $144M |
-| Year +7 | 2× | $288M |
+| Year    | Multiple | Cumulative ARR (from $1M) |
+| ------- | -------- | ------------------------- |
+| Year 0  | —        | $1M                       |
+| Year +1 | 3×       | $3M                       |
+| Year +2 | 3×       | $9M                       |
+| Year +3 | 2×       | $18M                      |
+| Year +4 | 2×       | $36M                      |
+| Year +5 | 2×       | $72M                      |
+| Year +6 | 2×       | $144M                     |
+| Year +7 | 2×       | $288M                     |
 
 Most companies don't hit this. Useful regardless — anchoring the 12-month outlook against this benchmark forces the plan to either (a) match it and show how, or (b) explicitly defend choosing a slower trajectory.
 
@@ -131,18 +134,18 @@ For non-VC-backed (bootstrapped, founder-funded, profit-focused) companies, this
 
 ## How this informs the plan
 
-| Section | What to include |
-|---|---|
-| **3 (Current state)** | Where the company is on each S-curve (channel maturity, product maturity, market saturation). Name the current phase ($0–10K / $10K–100K / $100K–1M / $1M+). |
-| **4 (Acquisition)** | Current channels + their position on the S-curve (early / mature / plateauing). Next channel investment with rationale. |
-| **5–8 (AARRR)** | Each section names the binding constraint at the current phase. For Phase 2 companies, Activation is usually the leverage point. For Phase 3, Retention + Referral compound the existing growth. |
-| **9 (90-day roadmap)** | Linear-pattern moves dominate (predictable additions). Step-function setups (the build-up to a launch, an enterprise tier, a new market segment) live here. |
-| **10 (12-month outlook)** | Sequence channel S-curves, product S-curves, market S-curves. If VC-backed Series A+, anchor against 3-3-2-2-2. If not, name the linear or step-function targets. |
-| **13 (Measurement)** | The north-star metric reflects the current phase (Phase 1 is usually pure new-signup; Phase 3 is usually expansion ARR or NRR). |
+| Section                   | What to include                                                                                                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **3 (Current state)**     | Where the company is on each S-curve (channel maturity, product maturity, market saturation). Name the current phase ($0–10K / $10K–100K / $100K–1M / $1M+).                                     |
+| **4 (Acquisition)**       | Current channels + their position on the S-curve (early / mature / plateauing). Next channel investment with rationale.                                                                          |
+| **5–8 (AARRR)**           | Each section names the binding constraint at the current phase. For Phase 2 companies, Activation is usually the leverage point. For Phase 3, Retention + Referral compound the existing growth. |
+| **9 (90-day roadmap)**    | Linear-pattern moves dominate (predictable additions). Step-function setups (the build-up to a launch, an enterprise tier, a new market segment) live here.                                      |
+| **10 (12-month outlook)** | Sequence channel S-curves, product S-curves, market S-curves. If VC-backed Series A+, anchor against 3-3-2-2-2. If not, name the linear or step-function targets.                                |
+| **13 (Measurement)**      | The north-star metric reflects the current phase (Phase 1 is usually pure new-signup; Phase 3 is usually expansion ARR or NRR).                                                                  |
 
 ## Operational guidance for the planner
 
 - **Don't promise exponential.** If the plan implies doubling every month, the founder will use it against you in 90 days. Linear + step-function is honest.
 - **Name the binding constraint.** Phase 1 binding constraint is finding any channel that works. Phase 2 is funding the team. Phase 3 is breaking the ceiling on whichever channel got you here.
 - **Plateaus aren't failures.** They're the moment between two S-curves. The plan should anticipate them and stage the next move.
-- **Don't conflate "growth" with "growth rate."** A company adding $20K MRR each month for 24 months has built a remarkable machine. The fact that the *percentage* growth rate declines as the base grows is arithmetic, not failure.
+- **Don't conflate "growth" with "growth rate."** A company adding $20K MRR each month for 24 months has built a remarkable machine. The fact that the _percentage_ growth rate declines as the base grows is arithmetic, not failure.

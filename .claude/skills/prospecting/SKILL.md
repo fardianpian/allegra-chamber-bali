@@ -18,15 +18,16 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 
 Prospecting motions differ enough that the workflow forks at intake. Pick **one** branch based on who the user is selling to:
 
-| Branch | Sell to | What "qualified" looks like | Primary sources |
-|--------|---------|----------------------------|----------------|
-| **SaaS** | Other SaaS companies / digital businesses | ICP fit + tech stack match + growth signals (funding, hiring, product velocity) | LinkedIn, BuiltWith, Crunchbase, Apollo, Clay, Clearbit, ProductHunt |
-| **B2B** | Non-SaaS B2B (services, manufacturers, enterprises, mid-market) | Industry + size + geographic fit + buying signals (trigger events, vendor changes) | Apollo, ZoomInfo, Clay, Clearbit, LinkedIn Sales Nav, industry directories |
-| **Local SMB** | Local small businesses (shops, gyms, restaurants, clinics, salons, services) | Active business + website status + proximity + decision-maker access | Google Maps, Yelp, local directories, Facebook, business websites |
+| Branch        | Sell to                                                                      | What "qualified" looks like                                                        | Primary sources                                                            |
+| ------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **SaaS**      | Other SaaS companies / digital businesses                                    | ICP fit + tech stack match + growth signals (funding, hiring, product velocity)    | LinkedIn, BuiltWith, Crunchbase, Apollo, Clay, Clearbit, ProductHunt       |
+| **B2B**       | Non-SaaS B2B (services, manufacturers, enterprises, mid-market)              | Industry + size + geographic fit + buying signals (trigger events, vendor changes) | Apollo, ZoomInfo, Clay, Clearbit, LinkedIn Sales Nav, industry directories |
+| **Local SMB** | Local small businesses (shops, gyms, restaurants, clinics, salons, services) | Active business + website status + proximity + decision-maker access               | Google Maps, Yelp, local directories, Facebook, business websites          |
 
 If the user describes a hybrid motion (e.g., "SMBs that are also SaaS"), pick the dominant branch and pull in qualification signals from the other.
 
 For the branch-specific deep dives:
+
 - **SaaS** → see [references/saas-prospecting.md](references/saas-prospecting.md)
 - **B2B** → see [references/b2b-prospecting.md](references/b2b-prospecting.md)
 - **Local SMB** → see [references/local-prospecting.md](references/local-prospecting.md)
@@ -63,6 +64,7 @@ If the user's list quality bar is high, smaller is better. 25 verified leads bea
 Score every candidate against the ICP checklist. Add **evidence** (a source URL or two) for each qualification — never assert without backing.
 
 **Confidence levels** (used across all branches):
+
 - **High**: confirmed by at least two independent sources or official business page
 - **Medium**: one credible source plus consistent search evidence
 - **Low**: incomplete or ambiguous evidence — flag what remains uncertain
@@ -73,11 +75,11 @@ For email contacts (B2B / SaaS branches), **always verify deliverability before 
 
 Apply this rubric across all branches:
 
-| Score | Definition |
-|-------|------------|
-| **Hot** | Strong ICP fit + clear buying signal + decision-maker accessible + verified contact |
-| **Warm** | ICP fit + softer or older signal + contact verifiable |
-| **Cold** | Loose ICP fit OR no clear signal OR contact unverified |
+| Score    | Definition                                                                            |
+| -------- | ------------------------------------------------------------------------------------- |
+| **Hot**  | Strong ICP fit + clear buying signal + decision-maker accessible + verified contact   |
+| **Warm** | ICP fit + softer or older signal + contact verifiable                                 |
+| **Cold** | Loose ICP fit OR no clear signal OR contact unverified                                |
 | **Skip** | Disqualifier hit (out of ICP, closed business, duplicate, irrelevant, low confidence) |
 
 Branch-specific signals refine the scoring — see each reference file. Default ratio target: ~20% Hot, ~30% Warm, rest Cold/Skip.
@@ -89,6 +91,7 @@ Default to a markdown table in chat. Switch to CSV when the list is >25 rows or 
 After the table, always add **"Top outreach targets"** — the top 3–5 hot leads with one sentence each on why this lead should be reached out to first.
 
 Columns vary by branch (see reference files), but every lead sheet includes:
+
 - score, business/company name, contact (where applicable), why-it's-a-prospect, source(s), confidence, last verified date
 
 ---
@@ -126,20 +129,20 @@ If missing, ask once, then infer reasonable defaults and continue:
 
 Full breakdown in [references/data-sources.md](references/data-sources.md). Quick picks:
 
-| If the user has access to... | Use it for |
-|------------------------------|------------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery |
-| **Clay** | Multi-source enrichment, waterfall lookups, custom scoring |
-| **Clearbit** | Email-to-company and company enrichment |
-| **ZoomInfo** | Enterprise B2B contact + intent data |
-| **Hunter or Snov** | Email pattern guessing and verification |
-| **Truelist** | Email deliverability validation (before adding to outreach list) |
-| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping) |
-| **BuiltWith / Wappalyzer** | Tech stack qualification (SaaS branch) |
-| **Crunchbase** | Funding signals (SaaS branch) |
-| **GitHub** | Stargazers / forks of competitor or adjacent repos (dev-tool SaaS branch) |
-| **Google Maps + browser** | Local SMB discovery |
-| **Firecrawl / Browserbase** | Programmatic extraction from individual prospect websites — never from platforms |
+| If the user has access to... | Use it for                                                                       |
+| ---------------------------- | -------------------------------------------------------------------------------- |
+| **Apollo**                   | B2B / SaaS firmographic + contact discovery                                      |
+| **Clay**                     | Multi-source enrichment, waterfall lookups, custom scoring                       |
+| **Clearbit**                 | Email-to-company and company enrichment                                          |
+| **ZoomInfo**                 | Enterprise B2B contact + intent data                                             |
+| **Hunter or Snov**           | Email pattern guessing and verification                                          |
+| **Truelist**                 | Email deliverability validation (before adding to outreach list)                 |
+| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping)                                     |
+| **BuiltWith / Wappalyzer**   | Tech stack qualification (SaaS branch)                                           |
+| **Crunchbase**               | Funding signals (SaaS branch)                                                    |
+| **GitHub**                   | Stargazers / forks of competitor or adjacent repos (dev-tool SaaS branch)        |
+| **Google Maps + browser**    | Local SMB discovery                                                              |
+| **Firecrawl / Browserbase**  | Programmatic extraction from individual prospect websites — never from platforms |
 
 **If the user has no enrichment tools**: lean on browser-assisted research with public sources — company website, About page, LinkedIn company page, news mentions. Slower but works.
 
@@ -228,20 +231,20 @@ score,business,category,area,distance_km,website_status,website_url,social_urls,
 
 For implementation, see the [tools registry](../../tools/REGISTRY.md). Key prospecting tools:
 
-| Tool | Best For | MCP | Guide |
-|------|----------|:---:|-------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery | - | [apollo.md](../../tools/integrations/apollo.md) |
-| **Clay** | Multi-source enrichment + waterfall | ✓ | [clay.md](../../tools/integrations/clay.md) |
-| **Clearbit** | Email-to-company enrichment | - | [clearbit.md](../../tools/integrations/clearbit.md) |
-| **ZoomInfo** | Enterprise B2B contact + intent | ✓ | [zoominfo.md](../../tools/integrations/zoominfo.md) |
-| **Hunter** | Email pattern + verification | - | [hunter.md](../../tools/integrations/hunter.md) |
-| **Snov** | Email finder + verifier | - | [snov.md](../../tools/integrations/snov.md) |
-| **Truelist** | Email deliverability validation | - | [truelist.md](../../tools/integrations/truelist.md) |
-| **Outreach** | Sales engagement (post-list) | ✓ | [outreach.md](../../tools/integrations/outreach.md) |
-| **RB2B** | Visitor identification (warm intent) | - | [rb2b.md](../../tools/integrations/rb2b.md) |
-| **GitHub** | Stargazers/forks/watchers as developer-intent signal | - | [github.md](../../tools/integrations/github.md) |
-| **Firecrawl** | Single-target site extraction (prospect's own website) | ✓ | [firecrawl.md](../../tools/integrations/firecrawl.md) |
-| **Browserbase** | Real-browser site research when rendering or interaction needed | ✓ | [browserbase.md](../../tools/integrations/browserbase.md) |
+| Tool            | Best For                                                        | MCP | Guide                                                     |
+| --------------- | --------------------------------------------------------------- | :-: | --------------------------------------------------------- |
+| **Apollo**      | B2B / SaaS firmographic + contact discovery                     |  -  | [apollo.md](../../tools/integrations/apollo.md)           |
+| **Clay**        | Multi-source enrichment + waterfall                             |  ✓  | [clay.md](../../tools/integrations/clay.md)               |
+| **Clearbit**    | Email-to-company enrichment                                     |  -  | [clearbit.md](../../tools/integrations/clearbit.md)       |
+| **ZoomInfo**    | Enterprise B2B contact + intent                                 |  ✓  | [zoominfo.md](../../tools/integrations/zoominfo.md)       |
+| **Hunter**      | Email pattern + verification                                    |  -  | [hunter.md](../../tools/integrations/hunter.md)           |
+| **Snov**        | Email finder + verifier                                         |  -  | [snov.md](../../tools/integrations/snov.md)               |
+| **Truelist**    | Email deliverability validation                                 |  -  | [truelist.md](../../tools/integrations/truelist.md)       |
+| **Outreach**    | Sales engagement (post-list)                                    |  ✓  | [outreach.md](../../tools/integrations/outreach.md)       |
+| **RB2B**        | Visitor identification (warm intent)                            |  -  | [rb2b.md](../../tools/integrations/rb2b.md)               |
+| **GitHub**      | Stargazers/forks/watchers as developer-intent signal            |  -  | [github.md](../../tools/integrations/github.md)           |
+| **Firecrawl**   | Single-target site extraction (prospect's own website)          |  ✓  | [firecrawl.md](../../tools/integrations/firecrawl.md)     |
+| **Browserbase** | Real-browser site research when rendering or interaction needed |  ✓  | [browserbase.md](../../tools/integrations/browserbase.md) |
 
 ---
 

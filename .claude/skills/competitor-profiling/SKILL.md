@@ -28,15 +28,19 @@ If the user provides URLs and context is available, proceed without asking.
 ## Core Principles
 
 ### 1. Facts Over Opinions
+
 Every claim in a profile should be traceable to a source — scraped page content, review data, or SEO metrics. Label inferences clearly.
 
 ### 2. Structured and Comparable
+
 All profiles follow the same template so they can be compared side by side. Consistency matters more than completeness on any single profile.
 
 ### 3. Current Data
+
 Profiles are snapshots. Always include the date generated. Flag anything that looks stale (e.g., "pricing page last updated 2023").
 
 ### 4. Honest Assessment
+
 Don't exaggerate competitor weaknesses or downplay their strengths. Accurate profiles are useful profiles.
 
 ---
@@ -87,6 +91,7 @@ firecrawl_map → competitor URL
 ```
 
 From the map, identify and prioritize these page types:
+
 - Homepage
 - Pricing page
 - Features / product pages
@@ -108,19 +113,20 @@ Save each result to `competitor-profiles/raw/<competitor-slug>/<YYYY-MM-DD>/scra
 
 Extract from each page:
 
-| Page | What to Extract |
-|------|----------------|
-| **Homepage** | Headline, subheadline, value proposition, primary CTA, social proof claims, target audience signals |
-| **Pricing** | Tiers, prices, feature breakdown per tier, billing options, free tier/trial details, enterprise pricing signals |
-| **Features** | Feature categories, key capabilities, how they describe each feature, screenshots/demo signals |
-| **About** | Founding story, team size, funding, mission statement, headquarters |
-| **Customers** | Named customers, logos, industries served, case study themes |
-| **Integrations** | Integration count, key integrations, categories |
-| **Changelog** | Release velocity, recent focus areas, product direction signals |
+| Page             | What to Extract                                                                                                 |
+| ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Homepage**     | Headline, subheadline, value proposition, primary CTA, social proof claims, target audience signals             |
+| **Pricing**      | Tiers, prices, feature breakdown per tier, billing options, free tier/trial details, enterprise pricing signals |
+| **Features**     | Feature categories, key capabilities, how they describe each feature, screenshots/demo signals                  |
+| **About**        | Founding story, team size, funding, mission statement, headquarters                                             |
+| **Customers**    | Named customers, logos, industries served, case study themes                                                    |
+| **Integrations** | Integration count, key integrations, categories                                                                 |
+| **Changelog**    | Release velocity, recent focus areas, product direction signals                                                 |
 
 #### Step 3: Scrape competitor reviews (optional but high-value)
 
 Use **Firecrawl Scrape** or **Firecrawl Search** to find:
+
 - G2 reviews page for the competitor
 - Capterra reviews page
 - Product Hunt launch page
@@ -137,38 +143,45 @@ Use DataForSEO MCP tools to gather quantitative competitive intelligence. Save e
 #### Domain Authority & Backlinks
 
 Use **backlinks_summary** to get:
+
 - Domain rank / authority score
 - Total backlinks
 - Referring domains count
 - Spam score
 
 Use **backlinks_referring_domains** for:
+
 - Top referring domains (quality signals)
 - Link acquisition patterns
 
 #### Keyword & Traffic Intelligence
 
 Use **dataforseo_labs_google_ranked_keywords** to get:
+
 - Total organic keywords ranking
 - Keywords in top 3, top 10, top 100
 - Estimated organic traffic
 
 Use **dataforseo_labs_google_domain_rank_overview** for:
+
 - Domain-level organic metrics
 - Estimated traffic value
 - Top keywords by traffic
 
 Use **dataforseo_labs_google_keywords_for_site** to discover:
+
 - What keywords they target
 - Content gaps vs. your site
 
 #### Competitive Positioning Data
 
 Use **dataforseo_labs_google_competitors_domain** to find:
+
 - Their closest organic competitors (may reveal competitors you haven't considered)
 - Market overlap data
 
 Use **dataforseo_labs_google_relevant_pages** to find:
+
 - Their highest-traffic pages
 - Content that drives the most organic value
 
@@ -203,17 +216,17 @@ Each profile follows this structure:
 
 ## At a Glance
 
-| Metric | Value |
-|--------|-------|
-| Tagline | [from homepage] |
-| Founded | [year] |
-| Headquarters | [location] |
-| Team size | [estimate] |
-| Funding | [if known] |
-| Domain rank | [from DataForSEO] |
-| Est. organic traffic | [monthly] |
-| Referring domains | [count] |
-| Organic keywords | [count] |
+| Metric               | Value             |
+| -------------------- | ----------------- |
+| Tagline              | [from homepage]   |
+| Founded              | [year]            |
+| Headquarters         | [location]        |
+| Team size            | [estimate]        |
+| Funding              | [if known]        |
+| Domain rank          | [from DataForSEO] |
+| Est. organic traffic | [monthly]         |
+| Referring domains    | [count]           |
+| Organic keywords     | [count]           |
 
 ---
 
@@ -226,6 +239,7 @@ Each profile follows this structure:
 **Positioning angle**: [how they position — e.g., "simplicity-first," "enterprise-grade," "all-in-one"]
 
 **Key messaging themes**:
+
 - [theme 1 — with source page]
 - [theme 2]
 - [theme 3]
@@ -235,29 +249,33 @@ Each profile follows this structure:
 ## Product & Features
 
 ### Core capabilities
+
 - [capability 1] — [brief description from their site]
 - [capability 2]
 - ...
 
 ### Notable differentiators
+
 - [what they emphasize as unique]
 
 ### Integrations
+
 - [count] integrations
 - Key: [list top 5-10]
 
 ### Product direction signals
+
 - [based on changelog / recent feature releases]
 
 ---
 
 ## Pricing
 
-| Tier | Price | Key Inclusions |
-|------|-------|---------------|
+| Tier           | Price   | Key Inclusions    |
+| -------------- | ------- | ----------------- |
 | [Free/Starter] | [price] | [what's included] |
-| [Pro/Growth] | [price] | [what's included] |
-| [Enterprise] | [price] | [what's included] |
+| [Pro/Growth]   | [price] | [what's included] |
+| [Enterprise]   | [price] | [what's included] |
 
 **Billing**: [monthly/annual, discount for annual]
 **Free trial**: [yes/no, duration]
@@ -271,6 +289,7 @@ Each profile follows this structure:
 **Industries**: [primary industries served]
 **Case study themes**: [what outcomes they highlight]
 **Review ratings**:
+
 - G2: [rating] ([count] reviews)
 - Capterra: [rating] ([count] reviews)
 
@@ -279,21 +298,25 @@ Each profile follows this structure:
 ## SEO & Content Strategy
 
 **Organic strength**:
+
 - Estimated monthly organic traffic: [number]
 - Organic keywords (top 10): [count]
 - Organic traffic value: $[estimated]
 
 **Top organic pages** (by estimated traffic):
+
 1. [page URL] — [keyword] — [est. traffic]
 2. [page URL] — [keyword] — [est. traffic]
 3. [page URL] — [keyword] — [est. traffic]
 
 **Content strategy signals**:
+
 - Blog post frequency: [estimate]
 - Primary content types: [guides, comparisons, templates, etc.]
 - Content focus areas: [topics they invest in]
 
 **Backlink profile**:
+
 - Referring domains: [count]
 - Top referring sites: [list 5]
 - Link acquisition pattern: [growing/stable/declining]
@@ -303,11 +326,13 @@ Each profile follows this structure:
 ## Strengths & Weaknesses
 
 ### Strengths
+
 - [strength 1 — with evidence source]
 - [strength 2]
 - [strength 3]
 
 ### Weaknesses
+
 - [weakness 1 — with evidence source]
 - [weakness 2]
 - [weakness 3]
@@ -351,12 +376,14 @@ After profiling all competitors, generate a `competitor-profiles/_summary.md` th
 ## Quick Scan vs. Deep Profile
 
 ### Quick Scan (faster, lower cost)
+
 - Scrape: homepage + pricing page only
 - SEO: domain rank overview + ranked keywords summary
 - Skip: reviews, technology stack, backlink details
 - Output: abbreviated profile (At a Glance + Positioning + Pricing + SEO summary)
 
 ### Deep Profile (comprehensive)
+
 - Scrape: all key pages + review sites
 - SEO: full backlink analysis + keyword intelligence + competitor discovery
 - Include: technology stack, content strategy analysis, review mining

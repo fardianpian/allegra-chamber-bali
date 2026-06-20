@@ -28,6 +28,7 @@ Invoke this skill when:
 ```
 
 Examples:
+
 - `/marketing-plan quietude.app`
 - `/marketing-plan acme-saas`
 - `/marketing-plan` (will prompt for client name)
@@ -47,6 +48,7 @@ Use the embedded 17-section current-state rubric (`references/current-state-rubr
 ### Phase 2 — REVIEW (walk through each of 13 sections interactively)
 
 Present each section's draft in chat. For each section you can:
+
 - Approve as-is ("good," "next")
 - Adjust ("change X to Y")
 - Add observations ("also mention Z")
@@ -108,7 +110,7 @@ The plan is **opinionated about which skills serve which stages.** Full mapping 
 
 ## The marketing operations stack
 
-This is the differentiator of an fCMO-style plan vs. a generic marketing plan. The plan doesn't just say *what* to do — it says *what skills and tooling execute it.*
+This is the differentiator of an fCMO-style plan vs. a generic marketing plan. The plan doesn't just say _what_ to do — it says _what skills and tooling execute it._
 
 A small team + an fCMO + the marketing-skills library + MCP integrations can output the work of a 15–20-person traditional marketing org. The plan must show this stack explicitly, AARRR-stage by AARRR-stage.
 
@@ -119,6 +121,7 @@ Full mapping in `references/ops-stack-mapping.md`.
 Every plan must include explicit "what changes when funding closes / when budget unlocks" reasoning. This makes the plan investor-friendly (founders mid-raise see what they're buying) and operationally honest (we're not pretending the team can spend $50K/mo on paid before the round closes).
 
 Standard tiers in `references/funding-stage-unlocks.md`:
+
 - **Pre-seed / bootstrapped** — $0–$2K/mo total marketing spend; organic only
 - **Seed close** — $5–$15K/mo paid test budget; first marketing hire
 - **Seed deployment** — $20–$50K/mo paid; second marketing hire
@@ -129,7 +132,7 @@ Use these as anchors. Adjust for category (consumer apps and ecommerce can spend
 
 ## Setting the budget scientifically
 
-The funding-stage anchors above tell you *what's in the ballpark*. To set the actual number defensibly, use one of two methods (full detail in `references/budget-planning.md`):
+The funding-stage anchors above tell you _what's in the ballpark_. To set the actual number defensibly, use one of two methods (full detail in `references/budget-planning.md`):
 
 1. **Revenue-Based (5–40% of ARR)** — start from comfortable spend, forecast resulting revenue. Best when historical CAC data exists.
 2. **Goal-Based** — reverse-engineer the budget from the revenue target. Formula: `[(New ARR / (ARPC × 12)) × CAC] / annual retention rate`. Best for fundraising or when the goal is fixed.
@@ -173,6 +176,7 @@ If you can't confirm any of these in INIT, list them in Section 13's "Open decis
 ## Common client-type variations
 
 Plan structure stays consistent. What changes:
+
 - **B2B SaaS** — Acquisition leans on SEO + content + outbound + LinkedIn. Activation = signup + product trial. Retention = product engagement + CSM motion. Referral = customer advocacy. Revenue = expansion / NRR.
 - **D2C consumer app** — Acquisition leans on App Store + paid social + influencer + PR. Activation = onboarding + first session + paywall. Retention = lifecycle email + push. Referral = sharing mechanics. Revenue = subscription + upsell.
 - **Hardware-led** — Acquisition leans on PR + retail + Amazon + Shopify SEO. Activation = unboxing + setup + first use. Retention = software companion + community. Referral = gifting + reviews. Revenue = blended LTV hardware + accessories + subscription.
@@ -186,16 +190,18 @@ Detail in `references/client-types.md`.
 What separates a good plan from a generic one:
 
 **Good plan signals:**
+
 - Every move names the AARRR stage it serves
 - Every recommendation is anchored in real client data (their actual budget, their actual team, their actual current channels)
 - The 90-day roadmap has owners, not just actions
 - The funding-stage section explains what changes when the next round closes
 - The ops stack section names specific skills + MCPs per move
-- The idea bank shows what we're *not* doing and why (skipped ideas with rationale)
+- The idea bank shows what we're _not_ doing and why (skipped ideas with rationale)
 - The exec summary can stand alone — could be lifted into an investor update
 - Open decisions are explicit, not glossed over
 
 **Failure modes to avoid:**
+
 - Listing tactics without sequencing
 - Recommending things the team can't execute at current size
 - Pretending paid budget exists before the round closes

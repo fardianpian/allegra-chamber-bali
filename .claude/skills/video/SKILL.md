@@ -17,17 +17,20 @@ If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or 
 Gather this context (ask if not provided):
 
 ### 1. Video Goal
+
 - What type of video? (Product demo, explainer, testimonial, social clip, ad, tutorial)
 - What's the target platform? (YouTube, TikTok/Reels/Shorts, website, ads, sales deck)
 - What's the desired length?
 
 ### 2. Production Approach
+
 - Do you need a human presenter? (AI avatar vs. voiceover vs. screen recording)
 - Do you have existing footage or assets? (Screenshots, logos, product UI)
 - Do you need generated footage? (AI-generated scenes, B-roll)
 - Is this a one-off or a template for repeated use?
 
 ### 3. Technical Context
+
 - What's your tech stack? (Node.js, Python, etc.)
 - Do you have API keys for any video tools?
 - Budget constraints? (Some tools charge per minute of video)
@@ -38,12 +41,12 @@ Gather this context (ask if not provided):
 
 Pick the right tool for the job:
 
-| Approach | Best For | Tools | When to Use |
-|----------|----------|-------|-------------|
-| **Programmatic** | Templated, data-driven, batch video | Remotion, Hyperframes | Product updates, personalized videos, recurring content |
-| **AI Generation** | Original footage from text/image prompts | Veo 3, Sora 2, Runway, Kling, Seedance | B-roll, hero shots, creative visuals you can't film |
-| **AI Avatars** | Talking-head presenter without filming | HeyGen, Synthesia | Explainers, tutorials, multilingual content |
-| **Editing/Repurposing** | Cutting long-form into short clips | Descript, Opus Clip, CapCut | Podcast/webinar → social clips |
+| Approach                | Best For                                 | Tools                                  | When to Use                                             |
+| ----------------------- | ---------------------------------------- | -------------------------------------- | ------------------------------------------------------- |
+| **Programmatic**        | Templated, data-driven, batch video      | Remotion, Hyperframes                  | Product updates, personalized videos, recurring content |
+| **AI Generation**       | Original footage from text/image prompts | Veo 3, Sora 2, Runway, Kling, Seedance | B-roll, hero shots, creative visuals you can't film     |
+| **AI Avatars**          | Talking-head presenter without filming   | HeyGen, Synthesia                      | Explainers, tutorials, multilingual content             |
+| **Editing/Repurposing** | Cutting long-form into short clips       | Descript, Opus Clip, CapCut            | Podcast/webinar → social clips                          |
 
 ---
 
@@ -62,18 +65,18 @@ npm install hyperframes
 **Key concept:** Each frame is an HTML document. Compose frames into a timeline, render to MP4.
 
 ```typescript
-import { render } from "hyperframes";
+import { render } from 'hyperframes'
 
 await render({
-  frames: [
-    { html: "<h1>Welcome to Acme</h1>", duration: 3 },
-    { html: "<h2>Here's what we built</h2>", duration: 3 },
-    { html: "<p>Try it free →</p>", duration: 2 },
-  ],
-  output: "intro.mp4",
-  width: 1080,
-  height: 1920, // 9:16 for vertical
-});
+	frames: [
+		{ html: '<h1>Welcome to Acme</h1>', duration: 3 },
+		{ html: "<h2>Here's what we built</h2>", duration: 3 },
+		{ html: '<p>Try it free →</p>', duration: 2 },
+	],
+	output: 'intro.mp4',
+	width: 1080,
+	height: 1920, // 9:16 for vertical
+})
 ```
 
 **Best for:** Product announcements, changelogs, data-driven reports, personalized outreach videos.
@@ -91,34 +94,32 @@ npx create-video@latest
 **Key concept:** React components are frames. Props drive content. Render locally or via Remotion Lambda (AWS) for scale.
 
 ```tsx
-export const ProductDemo: React.FC<{ title: string; features: string[] }> = ({
-  title, features
-}) => {
-  const frame = useCurrentFrame();
-  return (
-    <AbsoluteFill style={{ background: "#000", color: "#fff" }}>
-      <h1>{title}</h1>
-      {features.map((f, i) => (
-        <Sequence from={i * 30} key={i}>
-          <p>{f}</p>
-        </Sequence>
-      ))}
-    </AbsoluteFill>
-  );
-};
+export const ProductDemo: React.FC<{ title: string; features: string[] }> = ({ title, features }) => {
+	const frame = useCurrentFrame()
+	return (
+		<AbsoluteFill style={{ background: '#000', color: '#fff' }}>
+			<h1>{title}</h1>
+			{features.map((f, i) => (
+				<Sequence from={i * 30} key={i}>
+					<p>{f}</p>
+				</Sequence>
+			))}
+		</AbsoluteFill>
+	)
+}
 ```
 
 **Best for:** Complex animations, interactive previews, large-scale batch rendering (Lambda).
 
 ### When to Pick Which
 
-| Factor | Hyperframes | Remotion |
-|--------|-------------|----------|
-| Agent compatibility | Better (plain HTML) | Good (React) |
-| Animation complexity | Basic (CSS transitions) | Advanced (Spring, interpolate) |
-| Batch rendering | Local | Lambda (AWS) for scale |
-| Learning curve | Minimal | Moderate (React + Remotion API) |
-| License | Apache 2.0 | Company license for commercial use |
+| Factor               | Hyperframes             | Remotion                           |
+| -------------------- | ----------------------- | ---------------------------------- |
+| Agent compatibility  | Better (plain HTML)     | Good (React)                       |
+| Animation complexity | Basic (CSS transitions) | Advanced (Spring, interpolate)     |
+| Batch rendering      | Local                   | Lambda (AWS) for scale             |
+| Learning curve       | Minimal                 | Moderate (React + Remotion API)    |
+| License              | Apache 2.0              | Company license for commercial use |
 
 ---
 
@@ -128,18 +129,19 @@ Generate original footage from text or image prompts. Use for B-roll, hero visua
 
 ### Model Comparison
 
-| Model | Resolution | Max Duration | Best For | Cost |
-|-------|-----------|-------------|----------|------|
-| **Veo 3** (Google) | Up to 1080p (4K varies) | Variable | Top overall quality, synced audio | API-based |
-| **Sora 2** (OpenAI) | Up to 1080p | Up to ~20 sec | Cinematic + synced audio, ChatGPT/API integration | API + ChatGPT |
-| **Runway Gen-4** | Up to 4K | ~10 sec/gen | Motion control, temporal consistency, edit-style workflows | $12-76/mo |
-| **Kling 2.5/3.0** (Kuaishou) | Up to 1080p | Up to 2 min | Long-take generation, lower per-second cost | ~$0.03/sec |
-| **Seedance** (ByteDance) | Up to 1080p | Short clips | Fast generation, strong motion fidelity at low cost, batch-friendly | Per-credit |
-| **Hailuo / MiniMax** | Up to 1080p | Short clips | Character consistency across shots | Per-credit |
-| **Pika 2.x** | 1080p | Short clips | Quick effects, image-to-video, lower bar to entry | Per-credit |
-| **Hunyuan Video / Wan 2** | 720p–1080p | Variable | Open-source self-hosted; full control, no API fees | Free (GPU) |
+| Model                        | Resolution              | Max Duration  | Best For                                                            | Cost          |
+| ---------------------------- | ----------------------- | ------------- | ------------------------------------------------------------------- | ------------- |
+| **Veo 3** (Google)           | Up to 1080p (4K varies) | Variable      | Top overall quality, synced audio                                   | API-based     |
+| **Sora 2** (OpenAI)          | Up to 1080p             | Up to ~20 sec | Cinematic + synced audio, ChatGPT/API integration                   | API + ChatGPT |
+| **Runway Gen-4**             | Up to 4K                | ~10 sec/gen   | Motion control, temporal consistency, edit-style workflows          | $12-76/mo     |
+| **Kling 2.5/3.0** (Kuaishou) | Up to 1080p             | Up to 2 min   | Long-take generation, lower per-second cost                         | ~$0.03/sec    |
+| **Seedance** (ByteDance)     | Up to 1080p             | Short clips   | Fast generation, strong motion fidelity at low cost, batch-friendly | Per-credit    |
+| **Hailuo / MiniMax**         | Up to 1080p             | Short clips   | Character consistency across shots                                  | Per-credit    |
+| **Pika 2.x**                 | 1080p                   | Short clips   | Quick effects, image-to-video, lower bar to entry                   | Per-credit    |
+| **Hunyuan Video / Wan 2**    | 720p–1080p              | Variable      | Open-source self-hosted; full control, no API fees                  | Free (GPU)    |
 
 **Quick picks**:
+
 - **Highest quality + audio**: Veo 3 or Sora 2
 - **Batch / volume / cost**: Kling, Seedance
 - **Character consistency across multiple shots**: Hailuo
@@ -159,6 +161,7 @@ cinematic color grading, 4K
 ```
 
 **Common mistakes:**
+
 - Too vague ("a person working") — add specifics
 - Ignoring camera movement — specify dolly, pan, static
 - Forgetting style — "cinematic," "documentary," "commercial"
@@ -168,13 +171,13 @@ cinematic color grading, 4K
 
 ### When to Use AI Generation vs. Stock
 
-| Use Case | AI Generation | Stock Footage |
-|----------|:---:|:---:|
-| Exact scene you imagined | Yes | Rarely matches |
-| Consistent style across clips | Yes | Hard to match |
-| Recognizable real locations | No (hallucinations) | Yes |
-| Specific products/brands | No (use programmatic) | No |
-| Quick B-roll | Either works | Faster |
+| Use Case                      |     AI Generation     | Stock Footage  |
+| ----------------------------- | :-------------------: | :------------: |
+| Exact scene you imagined      |          Yes          | Rarely matches |
+| Consistent style across clips |          Yes          | Hard to match  |
+| Recognizable real locations   |  No (hallucinations)  |      Yes       |
+| Specific products/brands      | No (use programmatic) |       No       |
+| Quick B-roll                  |     Either works      |     Faster     |
 
 ---
 
@@ -188,11 +191,11 @@ Best lip-sync and micro-expressions. 230+ avatars, 140+ languages.
 
 **Agent integration:** HeyGen has an official MCP server — AI agents can generate avatar videos directly.
 
-| Plan | Videos | Duration |
-|------|--------|----------|
-| Free | 3/mo | 3 min max |
-| Creator | Unlimited | 5 min |
-| Business | Unlimited | 20 min |
+| Plan     | Videos    | Duration  |
+| -------- | --------- | --------- |
+| Free     | 3/mo      | 3 min max |
+| Creator  | Unlimited | 5 min     |
+| Business | Unlimited | 20 min    |
 
 Check [heygen.com/pricing](https://www.heygen.com/pricing) for current prices.
 
@@ -208,14 +211,14 @@ Full-body avatars with expressive body language. Built-in script generation from
 
 ### When to Use Avatars vs. Other Approaches
 
-| Scenario | Use Avatar | Use Instead |
-|----------|:---:|-------------|
-| Recurring content (weekly updates) | Yes | — |
-| Multilingual versions | Yes | — |
-| Personalized outreach at scale | Yes | — |
-| Authentic founder content | No | Film yourself |
-| Product UI walkthrough | No | Screen recording |
-| Creative/artistic video | No | AI generation |
+| Scenario                           | Use Avatar | Use Instead      |
+| ---------------------------------- | :--------: | ---------------- |
+| Recurring content (weekly updates) |    Yes     | —                |
+| Multilingual versions              |    Yes     | —                |
+| Personalized outreach at scale     |    Yes     | —                |
+| Authentic founder content          |     No     | Film yourself    |
+| Product UI walkthrough             |     No     | Screen recording |
+| Creative/artistic video            |     No     | AI generation    |
 
 ---
 
@@ -223,12 +226,12 @@ Full-body avatars with expressive body language. Built-in script generation from
 
 Turn existing content into multiple video formats.
 
-| Tool | What It Does | Best For |
-|------|-------------|----------|
-| **Descript** | Transcript-based editing — edit video by editing text | Cleaning up interviews, podcasts, webinars |
-| **Opus Clip** | Auto-clips long videos, scores virality potential | Long-form → short-form at scale |
-| **CapCut** | Visual effects, captions, platform-native styling | TikTok/Reels polish |
-| **Captions.ai** | Auto-captions, eye contact correction, AI dubbing | Solo talking-head content |
+| Tool            | What It Does                                          | Best For                                   |
+| --------------- | ----------------------------------------------------- | ------------------------------------------ |
+| **Descript**    | Transcript-based editing — edit video by editing text | Cleaning up interviews, podcasts, webinars |
+| **Opus Clip**   | Auto-clips long videos, scores virality potential     | Long-form → short-form at scale            |
+| **CapCut**      | Visual effects, captions, platform-native styling     | TikTok/Reels polish                        |
+| **Captions.ai** | Auto-captions, eye contact correction, AI dubbing     | Solo talking-head content                  |
 
 ### Repurposing Workflow
 
@@ -294,6 +297,7 @@ Output: Ready-to-publish video
 ```
 
 **What makes this agent-native:**
+
 - Hyperframes uses HTML — any coding agent can generate it
 - HeyGen MCP server — agents call it directly
 - Video model APIs — standard HTTP requests
@@ -325,12 +329,12 @@ Output: Ready-to-publish video
 
 ## Tool Integrations
 
-| Tool | Type | MCP | Guide |
-|------|------|:---:|-------|
-| **HeyGen** | AI avatars | Yes | [heygen.md](../../tools/integrations/heygen.md) |
-| **Hyperframes** | Programmatic video | - | [hyperframes.md](../../tools/integrations/hyperframes.md) |
-| **Remotion** | Programmatic video | - | [remotion.dev](https://www.remotion.dev/docs) |
-| **Runway** | AI generation | - | [runwayml.com/docs](https://docs.dev.runwayml.com) |
+| Tool            | Type               | MCP | Guide                                                     |
+| --------------- | ------------------ | :-: | --------------------------------------------------------- |
+| **HeyGen**      | AI avatars         | Yes | [heygen.md](../../tools/integrations/heygen.md)           |
+| **Hyperframes** | Programmatic video |  -  | [hyperframes.md](../../tools/integrations/hyperframes.md) |
+| **Remotion**    | Programmatic video |  -  | [remotion.dev](https://www.remotion.dev/docs)             |
+| **Runway**      | AI generation      |  -  | [runwayml.com/docs](https://docs.dev.runwayml.com)        |
 
 ---
 

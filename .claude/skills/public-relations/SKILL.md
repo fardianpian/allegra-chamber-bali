@@ -43,12 +43,12 @@ PR is not a substitute for distribution. It's a multiplier for it.
 
 Four modes. Most teams over-index on one. Run at least three.
 
-| Mode | What it is | Effort | Speed to coverage |
-|------|------------|--------|-------------------|
-| **Reactive (newsjacking)** | Inject your POV into trending news | Low–medium | Hours to days |
-| **Proactive (pitching)** | Build a media list, pitch original stories | High | 2–8 weeks |
-| **Inbound (press requests)** | Respond to journalist queries on HARO/Qwoted/Featured | Low | Days to weeks |
-| **Owned (press page + media kit)** | Make it easy for journalists to find you | One-time setup | N/A |
+| Mode                               | What it is                                            | Effort         | Speed to coverage |
+| ---------------------------------- | ----------------------------------------------------- | -------------- | ----------------- |
+| **Reactive (newsjacking)**         | Inject your POV into trending news                    | Low–medium     | Hours to days     |
+| **Proactive (pitching)**           | Build a media list, pitch original stories            | High           | 2–8 weeks         |
+| **Inbound (press requests)**       | Respond to journalist queries on HARO/Qwoted/Featured | Low            | Days to weeks     |
+| **Owned (press page + media kit)** | Make it easy for journalists to find you              | One-time setup | N/A               |
 
 **For the reactive newsjacking workflow** — see [references/newsjacking.md](references/newsjacking.md)
 
@@ -65,6 +65,7 @@ Four modes. Most teams over-index on one. Run at least three.
 Set this up once. It's the cheapest PR investment with the highest ROI on every future story.
 
 **Press page (`/press` or `/newsroom`) should include:**
+
 - One-paragraph company description (copy/paste ready)
 - Founder bios with headshots (high-res, downloadable)
 - Logo pack (SVG + PNG, light + dark, with usage guidelines)
@@ -76,7 +77,7 @@ Set this up once. It's the cheapest PR investment with the highest ROI on every 
 
 **One sentence at the top:** "For interview requests or assets, email press@yourcompany.com — we respond within 24 hours."
 
-Then *actually* respond within 24 hours.
+Then _actually_ respond within 24 hours.
 
 ---
 
@@ -100,14 +101,14 @@ If any answer is no, don't send.
 
 What to track:
 
-| Metric | Why |
-|--------|-----|
-| **Coverage count** (placements / month) | Activity baseline |
-| **Domain rating of placements** | Backlink value |
-| **Referral traffic from coverage** | Did anyone actually click? |
-| **Brand search lift** | Did people search you after reading? |
-| **AI citation rate** (ChatGPT, Perplexity quote your brand?) | The new measurement that matters |
-| **Sales conversations citing the article** | The only one that matters for revenue |
+| Metric                                                       | Why                                   |
+| ------------------------------------------------------------ | ------------------------------------- |
+| **Coverage count** (placements / month)                      | Activity baseline                     |
+| **Domain rating of placements**                              | Backlink value                        |
+| **Referral traffic from coverage**                           | Did anyone actually click?            |
+| **Brand search lift**                                        | Did people search you after reading?  |
+| **AI citation rate** (ChatGPT, Perplexity quote your brand?) | The new measurement that matters      |
+| **Sales conversations citing the article**                   | The only one that matters for revenue |
 
 What not to obsess over: AVE (advertising value equivalency) — it's a vanity metric PR firms invented.
 
@@ -116,16 +117,21 @@ What not to obsess over: AVE (advertising value equivalency) — it's a vanity m
 ## Common Workflows
 
 ### "Help me newsjack [trending story]"
+
 Go to [newsjacking.md](references/newsjacking.md), run the scoring rubric, draft 2–3 angles, pick the best, draft the pitch.
 
 ### "Find journalists who cover [beat]"
+
 Go to [journalist-pitching.md](references/journalist-pitching.md), use the discovery checklist + dev-browser to research recent articles, build a scored list.
 
 ### "What's worth pitching this week?"
+
 Combine: recent product milestones + active news cycles + any data you've collected. Score each potential story by the quality bar above.
 
 ### "Respond to this HARO query"
+
 Go to [press-platforms.md](references/press-platforms.md), use the response template, keep it under 200 words.
 
 ### "Build my press page"
+
 Use the checklist above. Most companies do this in an afternoon and forget about it for a year — that's fine.
