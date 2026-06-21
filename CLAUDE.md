@@ -166,6 +166,22 @@ below before writing or planning any article.
     720px, unlayered, defined right after `.container-max` in `global.css`) is the class that
     actually overrides it by cascade source-order — just confirm with the owner first, since
     narrowing the column is a visible width change, not just a bugfix.
+18. No Playwright devDependency in `package.json` — for ad-hoc visual verification of a UI
+    change (dev server + screenshot), reuse the cached install instead of `npm install`ing one:
+    find the module via `find ~/.npm/_npx -maxdepth 3 -iname playwright`, find a full Chromium
+    binary via `find ~/Library/Caches/ms-playwright -iname "*.app"` and pass it as
+    `executablePath` (the cached `headless_shell` build is often missing/stale and
+    `chromium.launch()` fails without an explicit path). Pass `reducedMotion: 'reduce'` to
+    `newContext()`, or full-page screenshots come out faded below the fold (`.reveal` elements
+    are `opacity:0` until their `IntersectionObserver` fires on real scroll).
+19. Web3Forms' submit endpoint (`api.web3forms.com/submit`) sits behind Cloudflare
+    bot-protection that blocks headless/automated submissions with a "Verify you are human"
+    challenge — don't try to end-to-end test real form delivery via Playwright; have the owner
+    submit a real test from an actual browser and confirm the email arrives instead.
+20. DNS resolving correctly for a domain's mail (MX/SPF via `dig MX <domain>`) does NOT mean a
+    specific mailbox on it was ever created or is receiving mail — that only proves the domain's
+    mail routing exists. The only real test for whether a `PUBLIC_CONTACT_EMAIL`/Web3Forms
+    delivery address is live is a real form submission + inbox check.
 
 ## Session Workflow (Token Discipline)
 
