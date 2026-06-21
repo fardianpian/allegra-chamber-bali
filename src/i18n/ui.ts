@@ -3,7 +3,7 @@
 export const ui = {
 	en: {
 		meta: {
-			title: 'Wedding Musicians & String Quartet for Hire in Bali — Allegra Chamber Bali',
+			title: 'Wedding Musicians & String Quartet — Allegra Chamber Bali',
 			description:
 				'Wedding musicians and a live string quartet for hire across Bali — conservatory-trained players, from an intimate cliffside ceremony to a full reception.',
 		},
@@ -22,6 +22,7 @@ export const ui = {
 		hero: {
 			eyebrow: 'Live Piano & Strings · Bali Weddings',
 			title: 'Allegra Chamber Bali',
+			titleTagline: 'Wedding Musicians & String Quartet',
 			subhead:
 				'Conservatory-trained musicians performing live piano and chamber strings for weddings across Bali — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
 			ctaPrimary: 'Check Your Date',
@@ -76,11 +77,11 @@ export const ui = {
 			cta: 'Browse full repertoire',
 		},
 		packagesPage: {
-			title: 'String Quartet for Hire — Wedding Ensemble Packages — Allegra Chamber Bali',
+			title: 'Wedding Pianist & String Quartet for Hire — Allegra Chamber Bali',
 			description:
 				'Hire a string quartet, trio, duo, or solo wedding pianist for your Bali wedding — five ensemble formations built around your ceremony and reception.',
 			eyebrow: 'Packages',
-			heading: 'String Quartet & Wedding Ensemble Packages',
+			heading: 'Wedding Pianist & String Quartet Packages',
 			subhead:
 				'Hire a string quartet, trio, duo, or solo wedding pianist — five ensemble packages built around your ceremony, cocktail hour, and reception, not the other way around.',
 			idealForLabel: 'Ideal for',
@@ -535,6 +536,7 @@ export const ui = {
 		hero: {
 			eyebrow: 'Piano & Gesek Live · Pernikahan Bali',
 			title: 'Allegra Chamber Bali',
+			titleTagline: 'Musisi Pernikahan & Kuartet Gesek',
 			subhead:
 				'Musisi terlatih membawakan musik piano dan gesek secara live untuk pernikahan di seluruh Bali — dari upacara intim di tebing hingga string quartet untuk resepsi, diaransemen khusus untuk momen Anda.',
 			ctaPrimary: 'Cek Tanggal Anda',
