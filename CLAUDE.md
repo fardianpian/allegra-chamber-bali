@@ -155,18 +155,17 @@ below before writing or planning any article.
     letting it stretch, and no Tailwind utility class can override this (cascade-layers
     priority). Use plain `w-full` + padding utilities instead of `.container-max` inside any
     JS-toggled flex layout (e.g. the mobile nav menu).
-17. Same cascade-layers root cause as #16 also breaks `.container-max` combined with a Tailwind
+17. Same cascade-layers root cause as #16 also affects `.container-max` combined with a Tailwind
     `max-w-*` utility (e.g. `max-w-2xl`) on the same element — `.container-max`'s own
     `max-width: var(--content-max)` (1280px, unlayered) always wins over a layered Tailwind
-    utility regardless of class order, so the element silently never narrows (found 2026-06-22:
-    the Journal article body was rendering at full 1280px instead of the intended narrow reading
-    column, which is also why its FAQ heading looked stuck at the page's left edge instead of
-    appearing centered). For a narrower reading-width column, use the existing `.reading` class
-    (`max-width: var(--reading-max)`, 720px) instead — it's also unlayered and defined right
-    after `.container-max` in `global.css`, so by cascade source-order it correctly overrides:
-    `class="container-max reading"`. `/journal/[slug].astro` (+ `/id/` twin) use this pattern —
-    keep any future long-form/article-style template on the same `container-max reading` pattern,
-    not `container-max max-w-*`.
+    utility regardless of class order, so the element silently never narrows to the `max-w-*`
+    value (found 2026-06-22 on the Journal article body, `container-max max-w-2xl`). This is
+    **intentional/accepted as-is** on `/journal/[slug].astro` (+ `/id/` twin) — the owner wants
+    the wide article column kept, so don't "fix" it by swapping in `.reading` again. If a true
+    narrow reading column is ever wanted elsewhere, `.reading` (`max-width: var(--reading-max)`,
+    720px, unlayered, defined right after `.container-max` in `global.css`) is the class that
+    actually overrides it by cascade source-order — just confirm with the owner first, since
+    narrowing the column is a visible width change, not just a bugfix.
 
 ## Session Workflow (Token Discipline)
 
