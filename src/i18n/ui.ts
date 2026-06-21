@@ -331,6 +331,7 @@ export const ui = {
 			downloadsCta: 'Request via WhatsApp',
 			downloadsWhatsappMessage:
 				'Hi Allegra Chamber Bali, could you send me the tech rider, stage plot, and repertoire sheet?',
+			relatedArticleLabel: 'Read: What to Ask a Live Music Vendor Before You Book Them',
 			formHeading: 'Partnership & Preferred Vendor Inquiry',
 			formSubhead:
 				"Tell us about your company and how you'd like to work together — we'll follow up within 1–2 business days.",
@@ -848,6 +849,7 @@ export const ui = {
 			downloadsCta: 'Minta via WhatsApp',
 			downloadsWhatsappMessage:
 				'Hai Allegra Chamber Bali, boleh kirimkan tech rider, stage plot, dan repertoire sheet?',
+			relatedArticleLabel: 'Baca: What to Ask a Live Music Vendor Before You Book Them',
 			formHeading: 'Pertanyaan Partnership & Preferred Vendor',
 			formSubhead:
 				'Ceritakan tentang perusahaan Anda dan bagaimana Anda ingin bekerja sama — kami akan follow up dalam 1–2 hari kerja.',

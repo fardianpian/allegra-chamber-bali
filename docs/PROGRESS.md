@@ -7,11 +7,43 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
-## Status as of 2026-06-23
+## Status as of 2026-06-25
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
+
+**2026-06-25 — Competitor-gap action plan items 1-2 executed; all 4 Journal pillars now have an
+article.** Closes out the `docs/MARKETING-SPRINT-2026-06.md` competitor-gap plan from 2026-06-21:
+
+- **On-page targeting fix**: cross-checked the plan's literal "wedding pianist Bali" / "wedding
+  string quartet Bali" targets against `docs/SEO-STRATEGY.md` and found those exact geo-suffixed
+  phrases return zero search data — the validated opportunities are `wedding pianist` (KD 1) and
+  the `string quartet` cluster, with "Bali" carried by the brand name itself. Updated Home title
+  (dropped redundant "in Bali", now 57 char) and `/packages` title + H1 (now explicitly include
+  "Wedding Pianist", was missing entirely — 64 char). Added a keyword-rich tagline inside the Home
+  `<h1>` (previously brand-name-only) without touching the Approved Copy hero subhead.
+- **Journal markdown audit**: benchmarked `/journal` rendering against an external markdown-styling
+  reference. Found a real bug — the two tables already live in
+  `live-music-bali-wedding-guide.md` had zero CSS (unreadable on mobile) — fixed table/th/td
+  styling plus `hr`/`h4` (neither had any style), reusing only existing Allegra tokens.
+- **2 new Journal articles**, filling the last 2 empty pillars (`for-planners`, `bali-venues`),
+  full skill-delegation pipeline (content-strategy → copywriting → ai-seo → seo-audit → schema →
+  copy-editing) for both:
+  - `live-music-vendor-questions.md` (`for-planners`) — "What to Ask a Live Music Vendor Before
+    You Book Them," a planner-vetting checklist built from confirmed `/for-planners` facts (tech
+    rider on request, 24h response, outdoor logistics). Net-new keyword bet, not in
+    `SEO-STRATEGY.md`. Inbound link added from `/for-planners` (`PlannerDownloads.astro`).
+  - `cliffside-wedding-uluwatu.md` (`bali-venues`) — "Cliffside Wedding Live Music in Uluwatu,"
+    built around the 3 real confirmed cliffside venue credits already in the trust strip (Alila
+    Villas Uluwatu, Bvlgari Resort Bali, Stone Villas Uluwatu) — a genuine differentiator per
+    `competitor-profiles/_summary.md` (4 of 5 competitors have zero reviews/credits). New OG image
+    (`public/images/og-cliffside-uluwatu.jpg`, copied from the existing real hero photo, not
+    generated). Inbound link added from `live-music-bali-wedding-guide.md`'s outdoor-logistics
+    section.
+  - ai-seo pass caught a vague unconfirmed claim ("Most couples time...") in 2 spots and a missing
+    forward-CTA in the hook — both fixed before publish.
+- `npm run lint && npm run build` clean (31 pages, 4 Journal articles × EN + `/id/` twin).
 
 **2026-06-23 — Second Journal article shipped (`planning` pillar).** "How to Plan Live Music for
 a Bali Wedding" (`src/content/articles/live-music-bali-wedding-guide.md`), targeting "musician for
@@ -41,16 +73,15 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **Execute the competitor-gap action plan** (added 2026-06-21) — see
-   `docs/MARKETING-SPRINT-2026-06.md` § "Update 2026-06-21 (malam): Competitor gap analysis" for
-   the 4-item plan, and `competitor-profiles/_summary.md` for the underlying research (5
-   competitors profiled — none combine "Bali chamber specialist" with a website that actually
-   ranks for music keywords). Start with item 1 (explicit "wedding pianist Bali" / "wedding
-   string quartet Bali" targeting on `/packages` + Journal via `content-strategy` → `seo-audit`).
-2. **Write more Journal articles** using `.claude/article-seo-geo-aeo-guidelines.md` — 2 of the 4
-   pillars now have an article (Piano & Repertoire, Planning). Bali Venues and
-   For-Planners/B2B pillars are good next picks (ties into the outreach work in
-   `docs/MARKETING-SPRINT-2026-06.md`).
+1. **Competitor-gap action plan items 1-2 are done** (2026-06-25, see above) — all 4 Journal
+   pillars now have an article, and `/packages` + Home target the validated "wedding pianist" /
+   "string quartet" keywords. Remaining items from the plan: item 3 (real testimonials, blocked on
+   owner permission — see #4 below) and item 4 (paid ads, explicitly out of scope per
+   `docs/MARKETING-SPRINT-2026-06.md` until the owner decides on a budget).
+2. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
+   of 2026-06-22) — Google Business Profile setup, outreach to the planner/venue prospect list,
+   and directory submissions are still pending and don't require Claude Code (manual owner
+   actions, or ask explicitly if drafting outreach copy is wanted).
 3. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that

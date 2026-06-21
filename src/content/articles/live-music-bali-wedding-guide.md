@@ -90,4 +90,7 @@ cliffside ceremony at golden hour needs shade for the musicians and a flat, stab
 instruments more than it needs amplification; a beachfront setup needs the same, plus a plan for
 wind. Garden ceremonies usually have the easiest setup, with natural shade and level ground already
 in place, while a chapel or covered structure removes most weather variables entirely. Tell us your
-venue type when you inquire and we'll confirm exactly what's needed.
+venue type when you inquire and we'll confirm exactly what's needed. If your ceremony is set on a
+clifftop, see our
+[guide to live music for a cliffside wedding in Uluwatu](/journal/cliffside-wedding-uluwatu/) for
+formation guidance and the venues we've performed at in the area.
