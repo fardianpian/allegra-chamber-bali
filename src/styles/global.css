@@ -47,7 +47,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	font-family: var(--font-display);
 	font-weight: 500;
 	letter-spacing: -0.01em;
@@ -122,6 +123,11 @@ select:focus-visible {
 		margin-bottom: 0.5rem;
 		font-size: 1.375rem;
 	}
+	.prose-article h4 {
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-size: 1.125rem;
+	}
 	.prose-article p {
 		margin-top: 1rem;
 	}
@@ -154,6 +160,40 @@ select:focus-visible {
 		padding-left: 1.25rem;
 		font-style: italic;
 		color: var(--color-taupe);
+	}
+	.prose-article hr {
+		margin-block: 2.5rem;
+		margin-inline: 0;
+		width: 3rem;
+		height: 2px;
+		border: none;
+		background: var(--color-gold);
+	}
+	/* display:block on <table> makes the whole table a scrollable container on
+	   narrow viewports — <tr>/<td>/<th> keep their UA-default table display, so
+	   columns still align, they just no longer force the page itself to overflow. */
+	.prose-article table {
+		display: block;
+		margin-top: 1.5rem;
+		max-width: 100%;
+		overflow-x: auto;
+		font-size: 0.9375rem;
+	}
+	.prose-article th,
+	.prose-article td {
+		padding: 0.6rem 1.5rem 0.6rem 0;
+		text-align: left;
+		vertical-align: top;
+		border-bottom: 1px solid rgba(30, 28, 25, 0.1);
+		white-space: normal;
+	}
+	.prose-article thead th {
+		font-family: var(--font-display);
+		font-weight: 500;
+		border-bottom: 2px solid var(--color-gold);
+	}
+	.prose-article tbody tr:last-child td {
+		border-bottom: none;
 	}
 }
 
