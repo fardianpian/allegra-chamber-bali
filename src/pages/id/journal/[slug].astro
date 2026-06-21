@@ -42,7 +42,7 @@ const jsonLd = [
 	noindex
 >
 	<article class="section bg-ivory pt-32 md:pt-40">
-		<div class="container-max max-w-2xl">
+		<div class="container-max reading">
 			<a href="/id/journal/" class="reveal text-xs uppercase tracking-[0.1em] text-taupe hover:text-gold">
 				{journal.backToJournal}
 			</a>
@@ -68,7 +68,7 @@ const jsonLd = [
 			{
 				article.data.faq?.length ? (
 					<div class="reveal mt-14 border-t border-ink/10 pt-10">
-						<h2 class="text-2xl">{journal.faqHeading}</h2>
+						<h2 class="text-center text-2xl">{journal.faqHeading}</h2>
 						<div class="mt-6">
 							<FaqAccordion items={article.data.faq} />
 						</div>

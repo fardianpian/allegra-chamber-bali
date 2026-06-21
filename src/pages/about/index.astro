@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PageHeader from '../../components/sections/PageHeader.astro'
 import AboutStory from '../../components/sections/AboutStory.astro'
-import MusicianProfiles from '../../components/sections/MusicianProfiles.astro'
+// import MusicianProfiles from '../../components/sections/MusicianProfiles.astro' // TODO: re-enable when ready to show "Managed By" again
 import StudioConnection from '../../components/sections/StudioConnection.astro'
 import FinalCTA from '../../components/sections/FinalCTA.astro'
 import { useTranslations } from '../../i18n/utils'
@@ -23,7 +23,7 @@ const nav = t('nav')
 >
 	<PageHeader eyebrow={about.eyebrow} heading={about.heading} subhead={about.subhead} />
 	<AboutStory lang={lang} />
-	<MusicianProfiles lang={lang} />
+	{/* "Managed By" team section hidden per owner request 2026-06-22 */}
 	<StudioConnection lang={lang} />
 	<FinalCTA lang={lang} />
 </BaseLayout>

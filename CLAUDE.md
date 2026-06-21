@@ -155,6 +155,18 @@ below before writing or planning any article.
     letting it stretch, and no Tailwind utility class can override this (cascade-layers
     priority). Use plain `w-full` + padding utilities instead of `.container-max` inside any
     JS-toggled flex layout (e.g. the mobile nav menu).
+17. Same cascade-layers root cause as #16 also breaks `.container-max` combined with a Tailwind
+    `max-w-*` utility (e.g. `max-w-2xl`) on the same element — `.container-max`'s own
+    `max-width: var(--content-max)` (1280px, unlayered) always wins over a layered Tailwind
+    utility regardless of class order, so the element silently never narrows (found 2026-06-22:
+    the Journal article body was rendering at full 1280px instead of the intended narrow reading
+    column, which is also why its FAQ heading looked stuck at the page's left edge instead of
+    appearing centered). For a narrower reading-width column, use the existing `.reading` class
+    (`max-width: var(--reading-max)`, 720px) instead — it's also unlayered and defined right
+    after `.container-max` in `global.css`, so by cascade source-order it correctly overrides:
+    `class="container-max reading"`. `/journal/[slug].astro` (+ `/id/` twin) use this pattern —
+    keep any future long-form/article-style template on the same `container-max reading` pattern,
+    not `container-max max-w-*`.
 
 ## Session Workflow (Token Discipline)
 
