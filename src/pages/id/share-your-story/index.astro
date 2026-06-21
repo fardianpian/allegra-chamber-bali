@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import PageHeader from '../../../components/sections/PageHeader.astro'
+import TestimonialForm from '../../../components/sections/TestimonialForm.astro'
+import { useTranslations } from '../../../i18n/utils'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const form = t('testimonialFormPage')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${form.heading} — Allegra Chamber Bali`}
+	description={form.subhead}
+	path="/id/share-your-story"
+	noindex
+>
+	<PageHeader eyebrow={form.eyebrow} heading={form.heading} subhead={form.subhead} />
+	<TestimonialForm lang={lang} />
+</BaseLayout>

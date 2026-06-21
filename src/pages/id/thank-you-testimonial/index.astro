@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import Button from '../../../components/ui/Button.astro'
+import WhatsAppCTA from '../../../components/media/WhatsAppCTA.astro'
+import Eyebrow from '../../../components/ui/Eyebrow.astro'
+import { useTranslations } from '../../../i18n/utils'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const thankYou = t('testimonialThankYou')
+const whatsappMessage = t('whatsappMessage')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${thankYou.heading} — Allegra Chamber Bali`}
+	description={thankYou.subhead}
+	path="/id/thank-you-testimonial"
+	noindex
+>
+	<section class="section flex min-h-[60vh] items-center bg-ivory">
+		<div class="container-max reveal flex flex-col items-center text-center">
+			<Eyebrow>{thankYou.eyebrow}</Eyebrow>
+			<h1 class="mt-3 max-w-2xl text-4xl md:text-5xl">{thankYou.heading}</h1>
+			<p class="mt-4 max-w-xl text-taupe">{thankYou.subhead}</p>
+			<div class="mt-8 flex flex-wrap justify-center gap-4">
+				<Button href="/id/" variant="outline">{thankYou.cta}</Button>
+				<WhatsAppCTA message={whatsappMessage} label={thankYou.ctaWhatsapp} variant="gold" />
+			</div>
+		</div>
+	</section>
+</BaseLayout>

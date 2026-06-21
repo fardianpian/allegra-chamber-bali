@@ -13,6 +13,32 @@ Site is fully live on Cloudflare Pages with real business data end-to-end: Whats
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
 
+**2026-06-22 — Hidden post-wedding testimonial form shipped (`/share-your-story`); Web3Forms
+delivery email switched to Gmail.** Two changes, confirmed working in production:
+
+- **New testimonial-request form**: `/share-your-story` (+ `/id/share-your-story`), built to be
+  sent directly to clients after their wedding (not in nav/footer, `noindex`, excluded from
+  `sitemap.xml` — see `astro.config.mjs` filter). New component
+  `src/components/sections/TestimonialForm.astro` (same Web3Forms pattern as `ContactForm.astro`)
+  collects couple name, wedding date, venue, formation, the testimonial text, and a **required**
+  public-display consent checkbox — the consent step is what unblocks Next-steps item #4 below
+  (real testimonials were blocked on owner permission; this form captures that permission
+  per-submission instead of needing a separate follow-up). Dedicated thank-you page
+  (`/thank-you-testimonial` + `/id/` twin) rather than reusing the generic `/thank-you` inquiry
+  copy. New i18n namespaces `testimonialFormPage` / `testimonialThankYou` in `src/i18n/ui.ts`
+  (EN+ID). Submissions still land as plain email only — the owner still hand-creates the `.md`
+  file in `src/content/testimonials/` after reviewing, same as before.
+- **Web3Forms delivery email changed from `allegra@indonesiaistimewastudio.id` to
+  `allegrachamberbali@gmail.com`**: checked DNS (MX/SPF correctly point at Hostinger mail) but
+  found zero evidence the `allegra@` mailbox itself was ever created/active (no Web3Forms mail
+  ever reached it). Owner created a fresh Web3Forms access key against the Gmail address instead
+  and confirmed receipt by testing the live `/contact` form — that's the address both `/contact`
+  and `/share-your-story` now deliver to. Updated `PUBLIC_WEB3FORMS_KEY` + `PUBLIC_CONTACT_EMAIL`
+  in `.env`, the `.env.example` template, and the `site.ts` fallback default; owner separately
+  updated the same two vars in the Cloudflare Pages dashboard and redeployed.
+- `npm run lint && npm run build` clean; verified visually via Playwright screenshots (desktop +
+  375px mobile, EN + ID) — consent-checkbox long label wraps cleanly on both locales.
+
 **2026-06-25 — Competitor-gap action plan items 1-2 executed; all 4 Journal pillars now have an
 article.** Closes out the `docs/MARKETING-SPRINT-2026-06.md` competitor-gap plan from 2026-06-21:
 
@@ -86,11 +112,13 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
    changes the component shape.
-4. **Content depth**: real testimonials (with permission) are still pending — `Testimonials.astro`
+4. **Content depth**: real testimonials are still pending, but the permission blocker is now
+   solved — `/share-your-story` (2026-06-22, see above) collects consent per-submission, so this
+   just needs the owner to send the link to past clients and wait for replies. `Testimonials.astro`
    on home stays commented out of `src/pages/index.astro` + `src/pages/id/index.astro` rather than
    showing placeholder/TODO text to visitors (2026-06-19, owner direction — no visible "TODO" copy
-   on any live page). Re-enable its import + render line once real, permission-cleared quotes
-   land. `MusicianProfiles.astro` on `/about` is done — reworked from 4 generic "TODO — Musician
+   on any live page). Re-enable its import + render line once 3+ real, consented quotes land in
+   `src/content/testimonials/`. `MusicianProfiles.astro` on `/about` is done — reworked from 4 generic "TODO — Musician
    Name" placeholder cards into a real 2-person "Managed By" section (`aboutPage.team` in
    `src/i18n/ui.ts`): Fardian (Producer & Music Industry Professional) and Yessica Yosia Virginia
    Simanjuntak (Composer & Music Director), real studio photos in `src/assets/about/`. Also still

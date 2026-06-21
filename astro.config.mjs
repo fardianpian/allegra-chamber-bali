@@ -23,7 +23,12 @@ export default defineConfig({
 			},
 			// /id/journal* pages are noindex (English body under lang="id" — see
 			// .claude/article-seo-geo-aeo-guidelines.md), so they shouldn't be in the sitemap either.
-			filter: (page) => !page.includes('/id/journal'),
+			// /share-your-story and /thank-you-testimonial are hidden testimonial-request pages
+			// sent directly to clients post-wedding — noindex and intentionally unlisted.
+			filter: (page) =>
+				!page.includes('/id/journal') &&
+				!page.includes('/share-your-story') &&
+				!page.includes('/thank-you-testimonial'),
 		}),
 	],
 	vite: {

@@ -1,0 +1,96 @@
+---
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { site } from '../../lib/site'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const form = t('testimonialFormPage')
+const thankYouPath = lang === 'en' ? '/thank-you-testimonial/' : '/id/thank-you-testimonial/'
+const redirectUrl = new URL(thankYouPath, site.url).toString()
+
+const fieldClass =
+	'mt-1 w-full border-b border-ink/25 bg-transparent px-0 py-2.5 text-ink placeholder:text-ink/30 focus:border-gold focus:outline-none'
+const labelClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
+
+const formationOptions = [
+	{ value: 'solo', label: form.formFormationOptions.solo },
+	{ value: 'duo', label: form.formFormationOptions.duo },
+	{ value: 'trio', label: form.formFormationOptions.trio },
+	{ value: 'quartet', label: form.formFormationOptions.quartet },
+	{ value: 'large-ensemble', label: form.formFormationOptions.largeEnsemble },
+	{ value: 'unsure', label: form.formFormationOptions.unsure },
+]
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<form class="reveal grid gap-6" action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="access_key" value={site.web3formsKey} />
+			<input type="hidden" name="subject" value="New testimonial submission — Allegra Chamber Bali" />
+			<input type="hidden" name="redirect" value={redirectUrl} />
+			<input
+				type="checkbox"
+				name="botcheck"
+				class="hidden"
+				style="display:none"
+				tabindex="-1"
+				autocomplete="off"
+				aria-label="Leave this field blank"
+			/>
+
+			<div class="grid gap-6 sm:grid-cols-2">
+				<label class={labelClass}>
+					{form.formCoupleName}
+					<span class="text-gold" aria-hidden="true">*</span>
+					<input type="text" name="couple_name" required class={fieldClass} />
+				</label>
+				<label class={labelClass}>
+					{form.formWeddingDate}
+					<span class="text-gold" aria-hidden="true">*</span>
+					<input type="date" name="wedding_date" required class={fieldClass} />
+				</label>
+			</div>
+
+			<div class="grid gap-6 sm:grid-cols-2">
+				<label class={labelClass}>
+					{form.formVenue}
+					<input type="text" name="venue" class={fieldClass} />
+				</label>
+				<label class={labelClass}>
+					{form.formFormation}
+					<select name="formation" class={fieldClass}>
+						{formationOptions.map((opt) => <option value={opt.value}>{opt.label}</option>)}
+					</select>
+				</label>
+			</div>
+
+			<label class={labelClass}>
+				{form.formTestimonial}
+				<span class="text-gold" aria-hidden="true">*</span>
+				<textarea name="testimonial" rows="5" required class={fieldClass}></textarea>
+			</label>
+
+			<label class="flex items-start gap-3 text-sm text-ink">
+				<input
+					type="checkbox"
+					name="consent"
+					value="yes"
+					required
+					class="mt-1 h-5 w-5 flex-shrink-0 border-ink/25 accent-gold"
+				/>
+				<span>{form.formConsent}</span>
+			</label>
+
+			<button
+				type="submit"
+				class="inline-flex items-center justify-center gap-2 bg-ink px-7 py-3.5 text-sm uppercase tracking-[0.08em] text-ivory transition-colors duration-300 hover:bg-gold hover:text-ink sm:w-fit"
+			>
+				{form.formSubmit}
+			</button>
+		</form>
+	</div>
+</section>

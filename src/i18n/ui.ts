@@ -207,6 +207,35 @@ export const ui = {
 			cta: 'Back to Home',
 			ctaWhatsapp: 'Message Us on WhatsApp Instead',
 		},
+		testimonialFormPage: {
+			eyebrow: 'Share Your Story',
+			heading: 'Thank You for Having Us',
+			subhead:
+				"It was a privilege to be part of your day. If you have a few minutes, we'd love to hear how the music felt from where you stood.",
+			formCoupleName: 'Couple / client name',
+			formWeddingDate: 'Wedding date',
+			formVenue: 'Venue / area in Bali',
+			formFormation: 'Formation we performed',
+			formFormationOptions: {
+				solo: 'Solo',
+				duo: 'Duo',
+				trio: 'Trio',
+				quartet: 'String Quartet',
+				largeEnsemble: 'Large Ensemble',
+				unsure: 'Not sure',
+			},
+			formTestimonial: 'Your testimonial',
+			formConsent:
+				'I give Allegra Chamber Bali permission to display this testimonial (name, quote, and photo if provided) on the website and social media.',
+			formSubmit: 'Share Your Story',
+		},
+		testimonialThankYou: {
+			eyebrow: 'Thank You',
+			heading: 'Thank You for Sharing Your Story',
+			subhead: "We're glad we could be part of your day, and grateful you took the time to write to us.",
+			cta: 'Back to Home',
+			ctaWhatsapp: 'Message Us on WhatsApp',
+		},
 		repertoirePage: {
 			title: 'Wedding Ceremony Music & Repertoire — Allegra Chamber Bali',
 			description:
@@ -721,6 +750,36 @@ export const ui = {
 				'Terima kasih sudah menghubungi kami — kami akan cek tanggal Anda dan follow up via email atau WhatsApp dalam 1–2 hari kerja.',
 			cta: 'Kembali ke Beranda',
 			ctaWhatsapp: 'Kirim Pesan via WhatsApp Saja',
+		},
+		testimonialFormPage: {
+			eyebrow: 'Bagikan Cerita Anda',
+			heading: 'Terima Kasih Telah Mempercayakan Hari Anda',
+			subhead:
+				'Sebuah kehormatan bisa menjadi bagian dari hari Anda. Jika punya waktu sebentar, kami ingin sekali mendengar bagaimana rasanya musik kami dari sudut pandang Anda.',
+			formCoupleName: 'Nama pasangan / klien',
+			formWeddingDate: 'Tanggal pernikahan',
+			formVenue: 'Venue / area di Bali',
+			formFormation: 'Formasi yang kami tampilkan',
+			formFormationOptions: {
+				solo: 'Solo',
+				duo: 'Duo',
+				trio: 'Trio',
+				quartet: 'String Quartet',
+				largeEnsemble: 'Large Ensemble',
+				unsure: 'Tidak yakin',
+			},
+			formTestimonial: 'Testimoni Anda',
+			formConsent:
+				'Saya memberikan izin kepada Allegra Chamber Bali untuk menampilkan testimoni ini (nama, kutipan, dan foto jika ada) di website dan media sosial.',
+			formSubmit: 'Bagikan Cerita Anda',
+		},
+		testimonialThankYou: {
+			eyebrow: 'Terima Kasih',
+			heading: 'Terima Kasih Telah Membagikan Cerita Anda',
+			subhead:
+				'Kami senang bisa menjadi bagian dari hari Anda, dan berterima kasih atas waktu yang Anda luangkan untuk menulis kepada kami.',
+			cta: 'Kembali ke Beranda',
+			ctaWhatsapp: 'Kirim Pesan via WhatsApp',
 		},
 		repertoirePage: {
 			title: 'Repertoar Musik Pernikahan — Allegra Chamber Bali',
