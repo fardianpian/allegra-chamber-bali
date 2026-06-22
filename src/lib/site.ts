@@ -6,6 +6,7 @@ export const site = {
 	contactEmail: import.meta.env.PUBLIC_CONTACT_EMAIL || 'allegrachamberbali@gmail.com',
 	instagram: import.meta.env.PUBLIC_INSTAGRAM || 'https://instagram.com',
 	web3formsKey: import.meta.env.PUBLIC_WEB3FORMS_KEY || '',
+	ga4Id: import.meta.env.PUBLIC_GA4_ID || 'G-BN64LSJGQV',
 }
 
 /** Builds a wa.me deep-link with a pre-filled message. */
