@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Allegra Chamber Bali — Pricing Guide</title>
+		<meta
+			name="description"
+			content="Pricing guide for Allegra Chamber Bali — live chamber & piano ensemble for weddings in Bali. For wedding planners, organizers, and couples."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--ivory: #f7f3ec;
+				--ink: #1e1c19;
+				--gold: #c2a36b;
+				--sage: #3e5247;
+				--taupe: #6d665c;
+				--font-display: 'Cormorant Garamond', Georgia, serif;
+				--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background: var(--ivory);
+				color: var(--ink);
+				font-family: var(--font-body);
+				font-size: 16px;
+				line-height: 1.65;
+				-webkit-font-smoothing: antialiased;
+			}
+
+			.sheet {
+				max-width: 760px;
+				margin: 0 auto;
+				padding: 4rem 2rem 5rem;
+			}
+
+			h1,
+			h2,
+			h3 {
+				font-family: var(--font-display);
+				font-weight: 500;
+				letter-spacing: -0.01em;
+				line-height: 1.15;
+				margin: 0;
+			}
+
+			.eyebrow {
+				font-family: var(--font-body);
+				text-transform: uppercase;
+				letter-spacing: 0.18em;
+				font-size: 0.7rem;
+				color: var(--taupe);
+				font-weight: 500;
+			}
+
+			/* ---------- Header ---------- */
+			header {
+				text-align: center;
+				margin-bottom: 3rem;
+			}
+
+			.wordmark {
+				font-family: var(--font-display);
+				font-size: 2.75rem;
+				font-weight: 500;
+				color: var(--ink);
+				display: block;
+			}
+
+			.wordmark-subtitle {
+				font-family: var(--font-display);
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				font-size: 0.85rem;
+				color: var(--taupe);
+				display: block;
+				margin-top: 0.35rem;
+			}
+
+			.tagline {
+				font-style: italic;
+				color: var(--taupe);
+				font-size: 0.95rem;
+				margin-top: 0.9rem;
+			}
+
+			.rule {
+				width: 64px;
+				height: 1px;
+				background: var(--gold);
+				margin: 1.75rem auto 0;
+				border: none;
+			}
+
+			.doc-title {
+				margin-top: 2.25rem;
+			}
+
+			.doc-title h1 {
+				font-size: 1.9rem;
+			}
+
+			.doc-date {
+				font-size: 0.8rem;
+				color: var(--taupe);
+				margin-top: 0.35rem;
+			}
+
+			/* ---------- Sections ---------- */
+			section {
+				margin-top: 3.25rem;
+			}
+
+			section > .eyebrow {
+				display: block;
+				margin-bottom: 0.5rem;
+			}
+
+			section h2 {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.lede {
+				max-width: 560px;
+			}
+
+			/* ---------- Formations grid ---------- */
+			.formations {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1.5rem 2rem;
+				margin-top: 1.5rem;
+			}
+
+			.formation-card h3 {
+				font-size: 1.15rem;
+				margin-bottom: 0.3rem;
+			}
+
+			.formation-card p {
+				font-size: 0.92rem;
+				color: var(--ink);
+				margin: 0;
+			}
+
+			.formation-card .ideal-for {
+				font-size: 0.78rem;
+				color: var(--taupe);
+				margin-top: 0.4rem;
+				font-style: italic;
+			}
+
+			/* ---------- Pricing table ---------- */
+			.table-scroll {
+				overflow-x: auto;
+				-webkit-overflow-scrolling: touch;
+				margin-top: 1.5rem;
+			}
+
+			table {
+				width: 100%;
+				min-width: 560px;
+				border-collapse: collapse;
+			}
+
+			caption {
+				text-align: left;
+				font-size: 0.8rem;
+				color: var(--taupe);
+				margin-bottom: 0.75rem;
+				caption-side: top;
+			}
+
+			thead th {
+				text-align: right;
+				font-family: var(--font-body);
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				font-size: 0.68rem;
+				color: var(--taupe);
+				font-weight: 500;
+				padding: 0 0.5rem 0.6rem;
+				border-bottom: 1px solid var(--taupe);
+				white-space: nowrap;
+			}
+
+			thead th:first-child {
+				text-align: left;
+			}
+
+			tbody td {
+				padding: 0.85rem 0.5rem;
+				border-bottom: 1px solid color-mix(in srgb, var(--taupe) 25%, transparent);
+				font-size: 0.95rem;
+				white-space: nowrap;
+			}
+
+			tbody td:not(:first-child) {
+				text-align: right;
+				font-variant-numeric: tabular-nums;
+			}
+
+			tbody th {
+				text-align: left;
+				font-family: var(--font-display);
+				font-weight: 500;
+				font-size: 1.05rem;
+				padding: 0.85rem 0.5rem;
+				border-bottom: 1px solid color-mix(in srgb, var(--taupe) 25%, transparent);
+				white-space: nowrap;
+			}
+
+			.col-full {
+				font-weight: 600;
+				background: color-mix(in srgb, var(--gold) 12%, transparent);
+			}
+
+			thead th.col-full-head {
+				color: var(--ink);
+				font-weight: 600;
+			}
+
+			/* ---------- Piano+ callout ---------- */
+			.callout {
+				margin-top: 1.5rem;
+				padding: 1.25rem 1.5rem;
+				background: color-mix(in srgb, var(--sage) 7%, var(--ivory));
+				border-left: 2px solid var(--sage);
+			}
+
+			.callout h3 {
+				font-size: 1.1rem;
+				color: var(--sage);
+				margin-bottom: 0.5rem;
+			}
+
+			.callout p {
+				font-size: 0.92rem;
+				margin: 0 0 0.75rem;
+			}
+
+			.callout ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: flex;
+				gap: 1.5rem;
+				flex-wrap: wrap;
+				font-size: 0.88rem;
+			}
+
+			.callout li strong {
+				display: block;
+				font-family: var(--font-display);
+				font-size: 1.1rem;
+				color: var(--ink);
+			}
+
+			/* ---------- Notes ---------- */
+			.notes {
+				font-size: 0.85rem;
+				color: var(--taupe);
+				margin: 0;
+				padding-left: 1.1rem;
+			}
+
+			.notes li {
+				margin-bottom: 0.45rem;
+			}
+
+			/* ---------- Footer / CTA ---------- */
+			footer {
+				margin-top: 4rem;
+				padding-top: 2.5rem;
+				border-top: 1px solid color-mix(in srgb, var(--taupe) 30%, transparent);
+				text-align: center;
+			}
+
+			footer h2 {
+				font-size: 1.4rem;
+				margin-bottom: 0.75rem;
+			}
+
+			footer p {
+				font-size: 0.9rem;
+				color: var(--taupe);
+				max-width: 460px;
+				margin: 0 auto 1.5rem;
+			}
+
+			.cta-button {
+				display: inline-block;
+				background: var(--gold);
+				color: var(--ink);
+				font-family: var(--font-body);
+				font-weight: 600;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+				text-decoration: none;
+				padding: 0.85rem 2rem;
+				border-radius: 999px;
+			}
+
+			.contact-line {
+				margin-top: 1.75rem;
+				font-size: 0.85rem;
+				color: var(--taupe);
+			}
+
+			.contact-line a {
+				color: var(--ink);
+				text-decoration: none;
+				border-bottom: 1px solid var(--gold);
+			}
+
+			.fine-print {
+				margin-top: 2.5rem;
+				font-size: 0.72rem;
+				color: var(--taupe);
+				text-align: center;
+			}
+
+			@media (max-width: 560px) {
+				.sheet {
+					padding: 2.5rem 1.25rem 3.5rem;
+				}
+				.formations {
+					grid-template-columns: 1fr;
+				}
+				.wordmark {
+					font-size: 2.25rem;
+				}
+				table {
+					font-size: 0.85rem;
+				}
+			}
+
+			@media print {
+				body {
+					print-color-adjust: exact;
+					-webkit-print-color-adjust: exact;
+				}
+				.sheet {
+					padding: 1rem 0.5rem;
+				}
+				.cta-button {
+					border: 1px solid var(--ink);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sheet">
+			<header>
+				<span class="wordmark">Allegra</span>
+				<span class="wordmark-subtitle">Chamber Bali</span>
+				<p class="tagline">Live piano &amp; string ensemble for weddings in Bali</p>
+				<hr class="rule" />
+				<div class="doc-title">
+					<span class="eyebrow">For Wedding Planners &amp; Couples</span>
+					<h1>Pricing Guide</h1>
+					<p class="doc-date">Indicative pricing as of June 2026</p>
+				</div>
+			</header>
+
+			<section>
+				<p class="lede">
+					This guide outlines how Allegra Chamber Bali prices live music for weddings — by formation, and by
+					which parts of your day you'd like covered. Every wedding is different, so treat the figures below
+					as a planning reference; we confirm an exact quote once we know your date, venue, and preferred
+					formation.
+				</p>
+			</section>
+
+			<section>
+				<span class="eyebrow">The Formations</span>
+				<h2>Five Ways to Hear Allegra</h2>
+				<div class="formations">
+					<div class="formation-card">
+						<h3>Solo</h3>
+						<p>
+							A single violin, cello, or wedding pianist — the most intimate option for a vow exchange or
+							small ceremony.
+						</p>
+						<p class="ideal-for">Ideal for intimate ceremonies, vow exchanges, cliffside elopements</p>
+					</div>
+					<div class="formation-card">
+						<h3>Duo</h3>
+						<p>Two musicians, typically violin and cello, for a warmer, fuller sound than solo.</p>
+						<p class="ideal-for">Ideal for ceremony, cocktail hour</p>
+					</div>
+					<div class="formation-card">
+						<h3>Trio</h3>
+						<p>Violin, viola, and cello — full chamber colour for ceremony through cocktail hour.</p>
+						<p class="ideal-for">Ideal for ceremony, cocktail hour, smaller receptions</p>
+					</div>
+					<div class="formation-card">
+						<h3>String Quartet</h3>
+						<p>
+							The complete chamber experience — two violins, viola, and cello — for ceremony through
+							reception. Our signature formation.
+						</p>
+						<p class="ideal-for">Ideal for processional &amp; recessional, cocktail hour, reception sets</p>
+					</div>
+					<div class="formation-card">
+						<h3>Large Ensemble</h3>
+						<p>
+							String quartet plus piano and double bass (6 musicians) for a layered, statement sound. Piano is
+							included in this default lineup.
+						</p>
+						<p class="ideal-for">Ideal for grand ceremony entrances, large receptions &amp; gala dinners</p>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<span class="eyebrow">By Formation &amp; Coverage</span>
+				<h2>Pricing</h2>
+				<div class="table-scroll">
+					<table>
+						<caption>
+							All prices in IDR. Full Package is one continuous booking, priced as a bundle.
+						</caption>
+						<thead>
+							<tr>
+								<th>Formation</th>
+								<th>Ceremony Only</th>
+								<th>Cocktail Only</th>
+								<th>Dinner Only</th>
+								<th class="col-full-head">Full Package</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Solo</th>
+								<td>Rp 3,500,000</td>
+								<td>Rp 3,500,000</td>
+								<td>Rp 4,500,000</td>
+								<td class="col-full">Rp 8,000,000</td>
+							</tr>
+							<tr>
+								<th>Duo</th>
+								<td>Rp 5,000,000</td>
+								<td>Rp 5,000,000</td>
+								<td>Rp 6,000,000</td>
+								<td class="col-full">Rp 11,000,000</td>
+							</tr>
+							<tr>
+								<th>Trio</th>
+								<td>Rp 6,500,000</td>
+								<td>Rp 6,500,000</td>
+								<td>Rp 8,000,000</td>
+								<td class="col-full">Rp 14,000,000</td>
+							</tr>
+							<tr>
+								<th>String Quartet</th>
+								<td>Rp 8,000,000</td>
+								<td>Rp 8,000,000</td>
+								<td>Rp 10,000,000</td>
+								<td class="col-full">Rp 18,000,000</td>
+							</tr>
+							<tr>
+								<th>Large Ensemble</th>
+								<td>Rp 12,000,000</td>
+								<td>Rp 12,000,000</td>
+								<td>Rp 14,500,000</td>
+								<td class="col-full">Rp 26,000,000</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="doc-date" style="margin-top: 0.85rem">
+					Ceremony ≈ 45 min · Cocktail ≈ 1 hr · Dinner / Reception ≈ 1.5 hrs · Full Package ≈ 3.5 hrs
+					continuous presence
+				</p>
+			</section>
+
+			<section>
+				<div class="callout">
+					<h3>Piano + Upgrade</h3>
+					<p>
+						Add piano to Duo, Trio, or String Quartet for a fuller, more contemporary blend — piano joins the
+						strings as an additional voice in the arrangement. (Large Ensemble already includes piano in its
+						default lineup.)
+					</p>
+					<ul>
+						<li><strong>+Rp 1,500,000</strong> Ceremony / Cocktail Only</li>
+						<li><strong>+Rp 2,000,000</strong> Dinner Only</li>
+						<li><strong>+Rp 3,500,000</strong> Full Package</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<span class="eyebrow">Good to Know</span>
+				<ul class="notes">
+					<li>
+						Prices shown are indicative as of the date of this guide — final quote is confirmed once your date
+						and venue are checked.
+					</li>
+					<li>
+						A travel fee may apply depending on venue area in Bali; this is included in your personalised
+						quote.
+					</li>
+					<li>A deposit is required to confirm your booking date — details are provided with your quote.</li>
+					<li>USD equivalent available on request, at the exchange rate current on your inquiry date.</li>
+				</ul>
+			</section>
+
+			<footer>
+				<h2>Check Your Date</h2>
+				<p>
+					Send us your wedding date, venue, and preferred formation, and we'll follow up with a personalised
+					quote.
+				</p>
+				<a
+					class="cta-button"
+					href="https://wa.me/6285708247611?text=Hi%20Allegra%20Chamber%20Bali%2C%20I%E2%80%99d%20like%20a%20quote%20for%20my%20wedding%20date."
+					>Check Your Date on WhatsApp</a
+				>
+				<p class="contact-line">
+					<a href="https://wa.me/6285708247611">+62 857-0824-7611</a> ·
+					<a href="mailto:allegrachamberbali@gmail.com">allegrachamberbali@gmail.com</a> ·
+					<a href="https://allegra.indonesiaistimewastudio.id">allegra.indonesiaistimewastudio.id</a>
+				</p>
+			</footer>
+
+			<p class="fine-print">Allegra Chamber Bali — a sub-brand of Indonesia Istimewa Studio</p>
+		</div>
+	</body>
+</html>

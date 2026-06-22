@@ -99,20 +99,39 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **Competitor-gap action plan items 1-2 are done** (2026-06-25, see above) — all 4 Journal
+1. **`docs/PRICING-STRATEGY.md` added (2026-06-23), revised same day to anchor to Bali market
+   data instead of Singapore/HK/US** — competitor research now includes real Bridestory
+   marketplace pricing (SugarCoustic Trio/Quartet store SKUs, IDR — stale 2020 listing but real
+   local evidence) cross-checked against the Luxima Bali wedding-budget guide; the price matrix
+   is now IDR-denominated and anchored to that Bali evidence (Solo Full Package ≈ the documented
+   USD 500 Bali floor; Quartet ≈ 2.5–3x the local generic-band floor, not a Singapore-level
+   price). Status: **draft, internal B2B-quoting use only, not owner-approved, not for the live
+   site**. Still needs: owner's real musician day-rate, travel-fee-per-zone (still TBC per
+   `CLAUDE.md`), and a sign-off decision on whether/when to ever lift the site-wide pricing hide.
+   **`docs/Allegra-Chamber-Bali-Pricing.html` added same day, revised same day to IDR** —
+   standalone, on-brand client/WO/EO-facing pricing sheet built from that same matrix (single
+   self-contained HTML file, Google Fonts CDN, brand color/type tokens from `global.css`, reuses
+   approved `src/content/packages/*.md` formation copy; tagline corrected to "Live piano & string
+   ensemble for weddings in Bali" to match the approved vocabulary order in
+   `.claude/brand-voice-guidelines.md`). Lives in `docs/` (outside `src/`, never built into
+   `dist/`) so it stays off the live site by construction — send it manually via WhatsApp/email
+   on request, same pattern already planned for the `/for-planners` downloads. English only for
+   now; ask the owner before treating the embedded prices as final-enough to send to a real
+   client.
+2. **Competitor-gap action plan items 1-2 are done** (2026-06-25, see above) — all 4 Journal
    pillars now have an article, and `/packages` + Home target the validated "wedding pianist" /
    "string quartet" keywords. Remaining items from the plan: item 3 (real testimonials, blocked on
    owner permission — see #4 below) and item 4 (paid ads, explicitly out of scope per
    `docs/MARKETING-SPRINT-2026-06.md` until the owner decides on a budget).
-2. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
+3. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
    of 2026-06-22) — Google Business Profile setup, outreach to the planner/venue prospect list,
    and directory submissions are still pending and don't require Claude Code (manual owner
    actions, or ask explicitly if drafting outreach copy is wanted).
-3. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+4. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
    changes the component shape.
-4. **Content depth**: real testimonials are still pending, but the permission blocker is now
+5. **Content depth**: real testimonials are still pending, but the permission blocker is now
    solved — `/share-your-story` (2026-06-22, see above) collects consent per-submission, so this
    just needs the owner to send the link to past clients and wait for replies. `Testimonials.astro`
    on home stays commented out of `src/pages/index.astro` + `src/pages/id/index.astro` rather than
@@ -125,15 +144,15 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    needed: event photography for the non-piano venue types (beach/chapel/ballroom — only
    cliffside/garden have real photos so far). All owner-supplied,
    don't invent.
-5. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
+6. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
    "have this reviewed by a lawyer" TODO note (2026-06-19, same visible-TODO cleanup) — but the
    underlying task is still real and unresolved. Have the policy reviewed by a qualified lawyer;
    it's currently a good-faith draft, not legal advice. Also update its "Third-Party Services"
    section once analytics (e.g. Plausible or GA4 — see `.env.example`) is actually enabled.
-6. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
+7. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
    clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
    `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-7. Housekeeping, no urgency:
+8. Housekeeping, no urgency:
    - ~~Remove the now-unused `FTP_*` GitHub Secrets~~ — done 2026-06-19 (`gh secret delete` for
      `FTP_PASSWORD`/`FTP_SERVER`/`FTP_SERVER_DIR`/`FTP_USERNAME`, confirmed `gh secret list` empty).
    - Still open: delete the orphaned manual-deploy leftovers on the old Hostinger document root
