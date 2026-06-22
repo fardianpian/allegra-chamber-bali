@@ -481,7 +481,7 @@ export const ui = {
 					heading: 'Cookies',
 					type: 'paragraphs',
 					items: [
-						"This website does not currently use cookies or tracking scripts beyond what's needed to load the page.",
+						'Google Analytics (GA4): we use Google Analytics to understand how visitors use this site — for example, which pages are viewed. This sets cookies and sends anonymized usage data to Google. See Google’s privacy policy for how they handle this data. We do not use any other tracking or advertising scripts.',
 					],
 				},
 				{
@@ -1030,7 +1030,7 @@ export const ui = {
 					heading: 'Cookies',
 					type: 'paragraphs',
 					items: [
-						'Website ini saat ini tidak menggunakan cookies atau script tracking di luar yang dibutuhkan untuk memuat halaman.',
+						'Google Analytics (GA4): kami menggunakan Google Analytics untuk memahami bagaimana pengunjung menggunakan website ini — misalnya, halaman mana yang dilihat. Ini menyimpan cookies dan mengirim data penggunaan yang dianonimkan ke Google. Lihat kebijakan privasi Google untuk cara mereka menangani data ini. Kami tidak menggunakan script tracking atau iklan lainnya.',
 					],
 				},
 				{

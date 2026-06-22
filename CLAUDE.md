@@ -182,6 +182,19 @@ below before writing or planning any article.
     specific mailbox on it was ever created or is receiving mail — that only proves the domain's
     mail routing exists. The only real test for whether a `PUBLIC_CONTACT_EMAIL`/Web3Forms
     delivery address is live is a real form submission + inbox check.
+21. Astro's `define:vars` directive wraps an inline `<script>`'s body in an IIFE to scope the
+    injected variables — any `function` declared inside (e.g. the GA4/gtag.js stub
+    `function gtag(){dataLayer.push(arguments)}`) becomes local to that IIFE, never `window.gtag`.
+    `gtag.js` still loads and silently drains the `js`/`config` commands already queued in
+    `window.dataLayer` (so `Tag Assistant` reports the tag as "found" and Realtime can show a
+    stale debug hit), but it never fires the actual `page_view` collect request — found
+    2026-06-22, confirmed via Playwright that `typeof window.gtag` was `undefined` and zero
+    `google-analytics.com/g/collect` requests fired even from a real (non-headless-flagged)
+    browser context. Fix: use `set:html={`...`}` with the value template-interpolated into the
+    string at build time instead of `define:vars` — this emits the literal, unwrapped Google
+    snippet (`BaseLayout.astro`'s GA4 tag is the reference implementation). Don't reach for
+    `define:vars` on any inline script that defines top-level functions meant to be callable
+    globally (GA4, GTM, any other vendor snippet using the global-stub-function pattern).
 
 ## Session Workflow (Token Discipline)
 
