@@ -1,5 +1,5 @@
 ---
-title: 'Million Dreams'
+title: 'A Million Dreams'
 composer: 'P!nk'
 moment: reception
 genre: pop
