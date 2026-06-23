@@ -69,3 +69,7 @@ months ahead, especially during peak wedding season, so an early hold protects t
 before every other detail is settled. Pricing isn't published, since it depends on formation,
 sets, and travel area; we'll follow up with a personalised quote once you reach out with your
 client's date and venue.
+
+Once that's confirmed, the next thing to know is how the working relationship actually runs —
+see [Working With a Live Ensemble: A Logistics Guide for Wedding Planners in Bali](/journal/vendor-partnership-logistics-bali/)
+for what happens between booking and the wedding day.

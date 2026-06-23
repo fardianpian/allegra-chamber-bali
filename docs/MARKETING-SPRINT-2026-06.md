@@ -261,6 +261,45 @@ ranking organik** untuk keyword inti niche ini — jadi submit ke sana dinilai s
 traffic langsung + backlink**, bukan SEO ranking play. Google Business Profile (Hari 1) tetap
 yang paling tinggi dampak lokal-SEO-nya karena nempel langsung ke local search intent.
 
+## Tracker directory submission (draf, 2026-06-23 — belum disubmit)
+
+> Disusun pakai skill `directory-submissions`, tapi katalognya generic SaaS (Product Hunt, G2, MCP
+> registry) — tidak relevan untuk wedding vendor, jadi daftar di bawah disusun manual dari
+> pengetahuan domain wedding-industry + 3 directory yang sudah dicatat di atas. **Verifikasi ulang
+> URL/proses tiap baris sebelum submit** — belum di-cek-live satu per satu.
+>
+> Blurb listing: pakai **persis** kalimat Approved Copy di bagian "Blurb pendek" di atas, di semua
+> directory di bawah — brand voice sudah final, jangan diparafrase per-platform (beda dari rule
+> default skill `directory-submissions` yang menyarankan variasi positioning per tier; di niche ini
+> konsistensi suara lebih penting daripada variasi). Hanya panjang/tagline yang boleh disesuaikan
+> kalau field-nya punya limit karakter ketat.
+
+| #   | Nama                                                            | Kategori                                                                         | Prioritas | Kebutuhan submit                                                                                                   | Status                    |
+| --- | --------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------- |
+| 1   | **Google Business Profile**                                     | Local SEO (bukan directory pihak ketiga, tapi wajib paling dulu)                 | Tertinggi | Akun Google bisnis, kategori "Live entertainment"/"Wedding service", area layanan Bali                             | Belum (Sprint Hari 1)     |
+| 2   | Bing Places for Business                                        | Local SEO baseline                                                               | Tinggi    | Akun Microsoft, sinkron data sama dengan GBP (NAP konsisten)                                                       | Belum                     |
+| 3   | Bridestory                                                      | Marketplace vendor wedding Indonesia terbesar                                    | Tinggi    | Akun vendor, foto/portfolio, deskripsi                                                                             | Belum                     |
+| 4   | Hello Bali Wedding                                              | Directory vendor wedding Bali-spesifik                                           | Tinggi    | Form submit / akun vendor                                                                                          | Belum                     |
+| 5   | The Bali Bride                                                  | Blog + directory vendor wedding Bali (audiens destination wedding internasional) | Tinggi    | Cek halaman "list your business"/contact, biasanya manual review                                                   | Belum                     |
+| 6   | Easy Weddings (AU)                                              | Directory wedding terbesar Australia                                             | Sedang    | Akun vendor, relevan karena AU adalah salah satu locale dengan volume keyword tervalidasi (`docs/SEO-STRATEGY.md`) | Belum                     |
+| 7   | WeddingWire                                                     | Directory wedding global/US, listing gratis dasar tersedia                       | Sedang    | Akun vendor, kategori "Bali" + "Musicians"                                                                         | Belum                     |
+| 8   | The Knot                                                        | Directory wedding global/US, pasangan WeddingWire                                | Sedang    | Akun vendor                                                                                                        | Belum                     |
+| 9   | Yelp for Business                                               | Local business baseline, NAP consistency                                         | Sedang    | Klaim listing kalau sudah ada otomatis, atau buat baru                                                             | Belum                     |
+| 10  | Facebook Business Page (kategori "Musician/band" + lokasi Bali) | Discovery surface, bukan backlink SEO murni tapi link profil dofollow            | Sedang    | Sudah ada Instagram — pastikan FB Page juga ada & link 2 arah                                                      | Cek dulu apakah sudah ada |
+| 11  | Here Comes The Guide                                            | Directory wedding vendor niche musisi/entertainment (US-leaning)                 | Rendah    | Akun vendor, kategori "Ceremony Musicians"                                                                         | Belum                     |
+| 12  | Hotfrog / Manta (local business generic)                        | Local business directory generic, DR sedang                                      | Rendah    | Form submit cepat, dampak kecil tapi gratis & cepat                                                                | Belum                     |
+
+**Urutan eksekusi yang disarankan** (selaras sprint Hari 1, 3, 8):
+
+1. Google Business Profile + Bing Places dulu (Hari 1) — fondasi local SEO, dampak terbesar.
+2. Bridestory + Hello Bali Wedding (Hari 3, sudah di kalender) — directory niche Bali paling relevan.
+3. The Bali Bride + Easy Weddings (Hari 8, slot directory #2-3) — perluas ke audiens AU/destination wedding.
+4. Sisanya (WeddingWire, The Knot, Yelp, Here Comes The Guide, Hotfrog/Manta) — rolling setelah sprint, tidak perlu dikejar dalam 9 hari ini.
+
+**Catatan:** baris #3-#9 di atas BUTUH akun/login milik owner (kadang dengan email bisnis,
+kadang dengan verifikasi telepon) — Claude Code tidak bisa mengeksekusi submission-nya sendiri,
+hanya menyiapkan daftar + blurb ini.
+
 ---
 
 ## Setelah sprint berakhir
