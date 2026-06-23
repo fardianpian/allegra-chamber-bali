@@ -107,13 +107,19 @@ below before writing or planning any article.
   (`<title>`/meta tag, keeps the brand suffix) and `heading` (on-page H1/breadcrumb, no suffix)
   — don't collapse them back into one field, a 2026-06-21 audit found that bug in the first
   article (H1 was rendering the brand name twice).
-- EN is the only real write target for now — `docs/SEO-STRATEGY.md` confirms ID search demand
-  is near-zero. `/id/journal` and `/id/journal/[slug]` pages exist for nav parity, reuse the EN
-  article body with translated page chrome (same convention as `packages` — see
-  `PackagesList.astro`), and are intentionally `noindex` (2026-06-21 audit: declaring
-  `lang="id"` over English body content is a real hreflang/language-mismatch issue, not cosmetic
-  — `BaseLayout`'s `noindex` prop exists for exactly this "no real bilingual pair" case). Only
-  remove `noindex` from a specific article once it has a genuine Indonesian translation.
+- EN is the primary write target — `docs/SEO-STRATEGY.md` confirms ID search demand is
+  near-zero, so a translation's SEO value is hreflang/UX completeness and trust for
+  Indonesian-speaking couples/families, not direct ID-locale search traffic. As of 2026-06-23
+  (owner request), every published article has a genuine Indonesian translation at
+  `src/content/articles/id/<slug>.md` (same `articles` collection/schema, nested folder so its
+  `slug` is `id/<slug>`) — `src/pages/id/journal/[slug].astro` renders that translation and is
+  indexable when one exists. For a **new** article, write the `id/<slug>.md` translation as part
+  of publishing it, not as a later task — until that file exists, the page falls back to the EN
+  body under `noindex` (2026-06-21 audit: declaring `lang="id"` over English body content is a
+  real hreflang/language-mismatch issue, not cosmetic — `BaseLayout`'s `noindex` prop exists for
+  exactly this "no real bilingual pair" case). `astro.config.mjs`'s sitemap filter reads the
+  `id/` translation folder directly, so an un-translated slug is automatically kept out of the
+  sitemap until its translation file is added.
 - Per-article FAQ entries (frontmatter `faq` field) render on-page **and** as `FAQPage` JSON-LD
   — this is the primary AEO mechanism, don't skip it.
 

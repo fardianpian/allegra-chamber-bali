@@ -8,13 +8,25 @@ import { useTranslations } from '../../../i18n/utils'
 import { getBreadcrumbJsonLd, getArticleJsonLd, getFaqJsonLd } from '../../../lib/jsonld'
 
 export async function getStaticPaths() {
-	const articles = await getCollection('articles', ({ data }) => !data.draft)
-	return articles.map((article) => ({ params: { slug: article.slug }, props: { article } }))
+	const enArticles = await getCollection(
+		'articles',
+		({ data, slug }) => !data.draft && !slug.startsWith('id/'),
+	)
+	const idArticles = await getCollection('articles', ({ slug }) => slug.startsWith('id/'))
+	const idMap = new Map(idArticles.map((a) => [a.slug.replace(/^id\//, ''), a]))
+	return enArticles.map((article) => ({
+		params: { slug: article.slug },
+		props: { article, translated: idMap.get(article.slug) },
+	}))
 }
 
 const lang = 'id'
-const { article } = Astro.props
-const { Content } = await render(article)
+const { article, translated } = Astro.props
+// Genuine Indonesian translation when one exists at src/content/articles/id/<slug>.md;
+// otherwise fall back to the English source (noindexed, see CLAUDE.md Journal section).
+const source = translated ?? article
+const isTranslated = Boolean(translated)
+const { Content } = await render(source)
 const t = useTranslations(lang)
 const journal = t('journalPage')
 const nav = t('nav')
@@ -25,37 +37,37 @@ const dateFormatter = new Intl.DateTimeFormat('id-ID', { year: 'numeric', month:
 const jsonLd = [
 	getBreadcrumbJsonLd(lang, [
 		{ name: nav.journal, path: '/id/journal' },
-		{ name: article.data.heading, path },
+		{ name: source.data.heading, path },
 	]),
-	getArticleJsonLd(lang, { ...article.data, title: article.data.heading, path }),
-	...(article.data.faq?.length ? [getFaqJsonLd(article.data.faq)] : []),
+	getArticleJsonLd(lang, { ...source.data, title: source.data.heading, path }),
+	...(source.data.faq?.length ? [getFaqJsonLd(source.data.faq)] : []),
 ]
 ---
 
 <BaseLayout
 	lang={lang}
-	title={article.data.title}
-	description={article.data.description}
+	title={source.data.title}
+	description={source.data.description}
 	path={path}
-	ogImage={article.data.ogImage}
+	ogImage={source.data.ogImage}
 	jsonLd={jsonLd}
-	noindex
+	noindex={!isTranslated}
 >
 	<article class="section bg-ivory pt-32 md:pt-40">
 		<div class="container-max max-w-2xl">
 			<a href="/id/journal/" class="reveal text-xs uppercase tracking-[0.1em] text-taupe hover:text-gold">
 				{journal.backToJournal}
 			</a>
-			<p class="reveal eyebrow mt-6 text-taupe">{journal.pillarLabels[article.data.pillar]}</p>
-			<h1 class="reveal mt-2 text-4xl md:text-5xl">{article.data.heading}</h1>
+			<p class="reveal eyebrow mt-6 text-taupe">{journal.pillarLabels[source.data.pillar]}</p>
+			<h1 class="reveal mt-2 text-4xl md:text-5xl">{source.data.heading}</h1>
 			<p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-taupe">
 				{journal.publishedLabel}
-				{dateFormatter.format(article.data.pubDate)}
+				{dateFormatter.format(source.data.pubDate)}
 				{
-					article.data.updatedDate && (
+					source.data.updatedDate && (
 						<>
 							{' '}
-							· {journal.updatedLabel} {dateFormatter.format(article.data.updatedDate)}
+							· {journal.updatedLabel} {dateFormatter.format(source.data.updatedDate)}
 						</>
 					)
 				}
@@ -66,11 +78,11 @@ const jsonLd = [
 			</div>
 
 			{
-				article.data.faq?.length ? (
+				source.data.faq?.length ? (
 					<div class="reveal mt-14 border-t border-ink/10 pt-10">
 						<h2 class="text-center text-2xl">{journal.faqHeading}</h2>
 						<div class="mt-6">
-							<FaqAccordion items={article.data.faq} />
+							<FaqAccordion items={source.data.faq} />
 						</div>
 					</div>
 				) : null
@@ -80,7 +92,7 @@ const jsonLd = [
 				<h2 class="text-xl">{journal.ctaHeading}</h2>
 				<p class="text-ink/80">{journal.ctaNote}</p>
 				<WhatsAppCTA
-					message={`Hi Allegra Chamber Bali, saya baca "${article.data.heading}" dan ingin bertanya soal booking.`}
+					message={`Hi Allegra Chamber Bali, saya baca "${source.data.heading}" dan ingin bertanya soal booking.`}
 					label={nav.checkDate}
 					variant="primary"
 				/>

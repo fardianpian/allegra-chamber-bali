@@ -18,7 +18,6 @@ const nav = t('nav')
 	description={journal.description}
 	path="/id/journal"
 	jsonLd={getBreadcrumbJsonLd(lang, [{ name: nav.journal, path: '/id/journal' }])}
-	noindex
 >
 	<PageHeader eyebrow={journal.eyebrow} heading={journal.heading} subhead={journal.subhead} />
 	<JournalList lang={lang} />

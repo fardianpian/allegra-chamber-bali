@@ -13,6 +13,23 @@ Site is fully live on Cloudflare Pages with real business data end-to-end: Whats
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
 
+**2026-06-23 — Genuine Indonesian translations added for all 5 Journal articles (owner
+request), reversing the EN-only/noindex default.** Each article now has a real translation at
+`src/content/articles/id/<slug>.md` (full frontmatter + body, internal links repointed to
+`/id/...`), built following `.claude/brand-voice-guidelines.md` ID vocabulary.
+`src/pages/id/journal/[slug].astro` renders the translation and drops `noindex` when one exists,
+falling back to the EN body (still `noindex`) only for a future article that hasn't been
+translated yet. `JournalList.astro` now shows the translated heading/excerpt on the `/id/journal`
+listing. `astro.config.mjs`'s sitemap filter reads the `id/` translation folder directly
+(`fs.readdirSync`) instead of blanket-excluding `/id/journal`, so only un-translated slugs stay
+out of the sitemap. Per `docs/SEO-STRATEGY.md`, ID search demand for this category is still
+near-zero — the translation's value is hreflang/UX completeness and trust for Indonesian-speaking
+couples/families, not new ID-locale search traffic. `npm run lint && npm run build` clean;
+verified via built HTML that `noindex` is gone, hreflang pairs are correct, and internal `/id/...`
+links resolve. Updated `CLAUDE.md`, `.claude/article-seo-geo-aeo-guidelines.md`, and
+`src/content/config.ts` comments to describe the new `id/<slug>.md` convention — write it for
+every new article going forward, as part of publishing, not as a later task.
+
 **2026-06-22 — Hidden post-wedding testimonial form shipped (`/share-your-story`); Web3Forms
 delivery email switched to Gmail.** Two changes, confirmed working in production:
 

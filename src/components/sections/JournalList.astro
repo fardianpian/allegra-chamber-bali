@@ -14,7 +14,19 @@ const prefix = lang === 'en' ? '' : '/id'
 const pillars = ['planning', 'piano-repertoire', 'bali-venues', 'for-planners'] as const
 
 const all = await getCollection('articles', ({ data }) => !data.draft)
-const articles = all.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const enArticles = all.filter((a) => !a.slug.startsWith('id/'))
+const idTranslations = new Map(
+	all.filter((a) => a.slug.startsWith('id/')).map((a) => [a.slug.replace(/^id\//, ''), a]),
+)
+
+// On the ID listing, show the genuine translation's heading/excerpt/pillar when one exists
+// (src/content/articles/id/<slug>.md); otherwise fall back to the EN entry.
+const articles = enArticles
+	.map((enArticle) => {
+		const translated = lang === 'id' ? idTranslations.get(enArticle.slug) : undefined
+		return { slug: enArticle.slug, data: (translated ?? enArticle).data }
+	})
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 
 const dateFormatter = new Intl.DateTimeFormat(lang === 'en' ? 'en-US' : 'id-ID', {
 	year: 'numeric',

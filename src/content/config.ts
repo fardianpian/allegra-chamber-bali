@@ -55,8 +55,13 @@ const venues = defineCollection({
 
 // Journal articles — SEO/GEO/AEO content. Pillars defined in
 // .claude/article-seo-geo-aeo-guidelines.md; pick one per article, don't invent new pillars
-// ad hoc. EN is the primary write target (ID demand is near-zero per docs/SEO-STRATEGY.md) —
-// add an `id` translation file for a slug only once it actually exists.
+// ad hoc. EN is the primary write target (ID search demand is near-zero per
+// docs/SEO-STRATEGY.md — the ID translation's SEO value is hreflang/UX completeness and trust
+// for Indonesian-speaking couples/families, not direct ID-locale search traffic). A genuine
+// Indonesian translation lives at `id/<slug>.md` (same schema, nested folder, so its `slug` is
+// `id/<slug>`) — `src/pages/id/journal/[slug].astro` renders it (indexable) when present and
+// falls back to the EN body (noindexed) when it isn't. Add one for every new article as part of
+// publishing it, not as a later task.
 const articles = defineCollection({
 	type: 'content',
 	schema: z.object({
