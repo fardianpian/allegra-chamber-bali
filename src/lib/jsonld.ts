@@ -27,6 +27,7 @@ export function getHomeJsonLd(lang: Lang) {
 			url,
 			description,
 			email: site.contactEmail,
+			telephone: `+${site.whatsappNumber}`,
 			areaServed: 'Bali, Indonesia',
 			address: {
 				'@type': 'PostalAddress',

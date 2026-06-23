@@ -3,9 +3,9 @@
 export const ui = {
 	en: {
 		meta: {
-			title: 'Wedding Musicians & String Quartet — Allegra Chamber Bali',
+			title: 'Wedding Musicians for Hire in Bali — Allegra Chamber Bali',
 			description:
-				'Wedding musicians and a live string quartet for hire across Bali — conservatory-trained players, from an intimate cliffside ceremony to a full reception.',
+				'Wedding musicians and a live string quartet for hire across Bali — from an intimate ceremony to a full reception. Check your date today.',
 		},
 		nav: {
 			home: 'Home',
@@ -22,9 +22,9 @@ export const ui = {
 		hero: {
 			eyebrow: 'Live Piano & Strings · Bali Weddings',
 			title: 'Allegra Chamber Bali',
-			titleTagline: 'Wedding Musicians & String Quartet',
+			titleTagline: 'Wedding Musicians for Hire in Bali',
 			subhead:
-				'Conservatory-trained musicians performing live piano and chamber strings for weddings across Bali — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
+				'Conservatory-trained wedding musicians performing live piano and chamber strings across Bali — from an intimate Uluwatu cliffside ceremony to a full string quartet reception, arranged around your story.',
 			ctaPrimary: 'Check Your Date',
 			ctaSecondary: 'Listen & Watch',
 		},
@@ -35,13 +35,15 @@ export const ui = {
 		formations: {
 			eyebrow: 'The Ensemble',
 			heading: 'What We Play',
-			subhead: 'Five formations, one standard of musicianship — choose the sound that fits your moment.',
-			cta: 'View packages',
+			subhead:
+				'Five wedding ensemble formations — from solo piano to a full string quartet for hire — choose the sound that fits your moment.',
+			cta: 'View string quartet packages',
+			aboutCta: 'Meet our musicians',
 			items: [
 				{
 					formation: 'solo',
 					name: 'Solo',
-					tagline: 'Violin, Cello, or Wedding Pianist',
+					tagline: 'Violin, Cello, or Classical Wedding Pianist',
 					blurb: 'Intimate strings or solo piano for vow exchanges and small ceremonies.',
 				},
 				{
@@ -73,7 +75,8 @@ export const ui = {
 		featured: {
 			eyebrow: 'Listen & Watch',
 			heading: 'Featured Repertoire',
-			subhead: 'A short selection from our ceremony and reception sets.',
+			subhead:
+				'A short selection of classical wedding pianist repertoire, from Bach to contemporary arrangements, for ceremony and reception.',
 			cta: 'Browse full repertoire',
 		},
 		packagesPage: {
@@ -581,6 +584,7 @@ export const ui = {
 			heading: 'Formasi yang Kami Tawarkan',
 			subhead: 'Lima formasi, satu standar musikalitas — pilih suara yang sesuai dengan momen Anda.',
 			cta: 'Lihat paket',
+			aboutCta: 'Kenali musisi kami',
 			items: [
 				{
 					formation: 'solo',
