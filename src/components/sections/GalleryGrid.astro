@@ -5,6 +5,13 @@ import type { Lang } from '../../i18n/languages'
 import piano1 from '../../assets/gallery/piano-cliffside-daytime.jpg'
 import piano2 from '../../assets/gallery/piano-garden-reception-night.jpg'
 import soloPiano from '../../content/packages/solo-piano.jpg'
+import ensemblePortrait from '../../assets/gallery/string-ensemble-musicians-wedding-bali.jpg'
+import pianistBeach from '../../assets/gallery/wedding-pianist-beachfront-sunset-bali.png'
+import grandPianoCliffside from '../../assets/gallery/grand-piano-cliffside-wedding-ceremony-bali.png'
+import pianistGardenPathway from '../../assets/gallery/wedding-pianist-garden-pathway-sunset-bali.png'
+import quartetGarden from '../../assets/gallery/string-quartet-garden-ceremony-bali.jpg'
+import receptionSetup from '../../assets/gallery/wedding-reception-setup-string-lights-bali.jpg'
+import quartetCello from '../../assets/gallery/string-quartet-cello-garden-ceremony-bali.jpg'
 
 interface Props {
 	lang: Lang
@@ -16,8 +23,9 @@ const gallery = t('galleryPage')
 // Filter tags kept for all venue types the owner books, even ones without a photo yet —
 // clicking an empty tag shows the "no photos yet" message until new documentation comes in.
 const types = ['cliffside', 'beach', 'garden', 'chapel', 'ballroom'] as const
-// Real event photos so far (owner-supplied, 2026-06-18 + the Solo package photo). Add more
-// tiles here (with the matching `type`) as the owner confirms new event photography (CLAUDE.md §9).
+// Real event photos so far (owner-supplied, 2026-06-18 + 2026-06-24 batches, plus the Solo
+// package photo). Add more tiles here (with the matching `type`) as the owner confirms new
+// event photography (CLAUDE.md §9).
 const tiles = [
 	{ type: 'cliffside', src: piano1, alt: 'Cliffside ceremony with live wedding pianist, Bali' },
 	{ type: 'garden', src: piano2, alt: 'Garden reception with live wedding pianist, Bali' },
@@ -26,6 +34,33 @@ const tiles = [
 		src: soloPiano,
 		alt: 'Wedding pianist performing solo piano at a cliffside wedding ceremony in Bali',
 	},
+	{
+		type: 'garden',
+		src: ensemblePortrait,
+		alt: 'Allegra Chamber Bali string ensemble musicians at a garden wedding venue in Bali',
+	},
+	{ type: 'beach', src: pianistBeach, alt: 'Wedding pianist performing beachfront at sunset in Bali' },
+	{
+		type: 'cliffside',
+		src: grandPianoCliffside,
+		alt: 'Grand piano set up for a cliffside wedding ceremony in Bali at sunset',
+	},
+	{
+		type: 'garden',
+		src: pianistGardenPathway,
+		alt: 'Wedding pianist performing in a garden pathway at sunset in Bali',
+	},
+	{
+		type: 'garden',
+		src: quartetGarden,
+		alt: 'Live string quartet performing at a garden wedding ceremony in Bali',
+	},
+	{
+		type: 'garden',
+		src: receptionSetup,
+		alt: 'Wedding reception setup with string lights and floral decor in Bali',
+	},
+	{ type: 'garden', src: quartetCello, alt: 'String quartet with cello performing at a Bali garden wedding' },
 ] as const
 
 const filterBtnBase =
