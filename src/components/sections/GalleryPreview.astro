@@ -3,15 +3,8 @@ import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
-import cliffsidePiano from '../../assets/gallery/piano-cliffside-daytime.jpg'
-import gardenPiano from '../../assets/gallery/piano-garden-reception-night.jpg'
-import soloPiano from '../../content/packages/solo-piano.jpg'
 import ensemblePortrait from '../../assets/gallery/string-ensemble-musicians-wedding-bali.jpg'
-import pianistBeach from '../../assets/gallery/wedding-pianist-beachfront-sunset-bali.png'
 import grandPianoCliffside from '../../assets/gallery/grand-piano-cliffside-wedding-ceremony-bali.png'
-import pianistGardenPathway from '../../assets/gallery/wedding-pianist-garden-pathway-sunset-bali.png'
-import quartetGarden from '../../assets/gallery/string-quartet-garden-ceremony-bali.jpg'
-import receptionSetup from '../../assets/gallery/wedding-reception-setup-string-lights-bali.jpg'
 import quartetCello from '../../assets/gallery/string-quartet-cello-garden-ceremony-bali.jpg'
 
 interface Props {
@@ -22,53 +15,35 @@ const t = useTranslations(lang)
 const gallery = t('gallery')
 const galleryHref = lang === 'en' ? '/gallery/' : '/id/gallery/'
 
-// Real event photos (owner-supplied, 2026-06-18 + 2026-06-24 batches, plus the Solo package
-// photo) — same set as the full Gallery page. Add more slides here as new event photography
-// is confirmed by the owner (CLAUDE.md §9). Auto-rotating slideshow, same accessible
-// CSS-keyframe technique as Hero.astro: static fallback shows the first slide, animation only
-// runs when the visitor hasn't requested reduced motion.
-const slides = [
-	{ src: cliffsidePiano, alt: 'Cliffside ceremony with live wedding pianist, Bali' },
+// Static 3-photo teaser (same sizing as before the 2026-06-25 slideshow experiment, which made
+// tiles too large) — refreshed to the latest owner-supplied batch (2026-06-24). Full set lives
+// on /gallery; this section is just a teaser, not the whole documentation.
+const photos = [
 	{
 		src: ensemblePortrait,
 		alt: 'Allegra Chamber Bali string ensemble musicians at a garden wedding venue in Bali',
 	},
-	{ src: pianistBeach, alt: 'Wedding pianist performing beachfront at sunset in Bali' },
-	{ src: gardenPiano, alt: 'Garden reception with live wedding pianist, Bali' },
 	{ src: grandPianoCliffside, alt: 'Grand piano set up for a cliffside wedding ceremony in Bali at sunset' },
-	{ src: quartetGarden, alt: 'Live string quartet performing at a garden wedding ceremony in Bali' },
-	{ src: pianistGardenPathway, alt: 'Wedding pianist performing in a garden pathway at sunset in Bali' },
-	{ src: receptionSetup, alt: 'Wedding reception setup with string lights and floral decor in Bali' },
 	{ src: quartetCello, alt: 'String quartet with cello performing at a Bali garden wedding' },
-	{
-		src: soloPiano,
-		alt: 'Wedding pianist performing solo piano at a cliffside wedding ceremony in Bali',
-	},
 ]
-const SLOT_SECONDS = 5
-const CYCLE_SECONDS = slides.length * SLOT_SECONDS
 ---
 
 <section class="section bg-ivory">
 	<div class="container-max">
 		<SectionHeading align="center" eyebrow={gallery.eyebrow} heading={gallery.heading} class="text-center" />
 
-		<div
-			class="reveal relative mx-auto mt-12 aspect-[4/5] w-full max-w-md overflow-hidden sm:aspect-[16/10] sm:max-w-3xl"
-			style={`--gallery-cycle: ${CYCLE_SECONDS}s`}
-		>
+		<div class="mt-12 grid grid-cols-1 gap-3 sm:grid-cols-3">
 			{
-				slides.map((slide, i) => (
+				photos.map((photo) => (
 					<Image
-						src={slide.src}
-						alt={slide.alt}
-						width={1280}
-						height={1000}
+						src={photo.src}
+						alt={photo.alt}
+						width={640}
+						height={800}
 						format="avif"
 						quality={70}
 						loading="lazy"
-						class="gallery-slide absolute inset-0 h-full w-full object-cover"
-						style={`animation-delay: ${i * SLOT_SECONDS}s`}
+						class="reveal aspect-[4/5] w-full object-cover"
 					/>
 				))
 			}
@@ -81,42 +56,3 @@ const CYCLE_SECONDS = slides.length * SLOT_SECONDS
 		</div>
 	</div>
 </section>
-
-<style>
-	/* Static fallback: first slide visible, rest hidden — also the reduced-motion state. */
-	.gallery-slide {
-		opacity: 0;
-	}
-	.gallery-slide:first-child {
-		opacity: 1;
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		.gallery-slide {
-			animation: gallery-fade var(--gallery-cycle) infinite;
-		}
-		.gallery-slide:first-child {
-			opacity: 0;
-		}
-	}
-
-	/* Same keyframes for every slide; animation-delay (set inline per slide) staggers each
-	   one's turn since they all share one cycle length — same technique as Hero.astro. Each
-	   slide's visible window (2%-8% of the cycle) must stay inside its own slot (10% of the
-	   cycle, since 10 slides × 5s = 50s) or two slides would be visible at once. */
-	@keyframes gallery-fade {
-		0%,
-		100% {
-			opacity: 0;
-		}
-		2% {
-			opacity: 1;
-		}
-		8% {
-			opacity: 1;
-		}
-		9% {
-			opacity: 0;
-		}
-	}
-</style>

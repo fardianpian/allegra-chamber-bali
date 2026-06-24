@@ -2,9 +2,7 @@
 import { Image } from 'astro:assets'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
-import piano1 from '../../assets/gallery/piano-cliffside-daytime.jpg'
 import piano2 from '../../assets/gallery/piano-garden-reception-night.jpg'
-import soloPiano from '../../content/packages/solo-piano.jpg'
 import ensemblePortrait from '../../assets/gallery/string-ensemble-musicians-wedding-bali.jpg'
 import pianistBeach from '../../assets/gallery/wedding-pianist-beachfront-sunset-bali.png'
 import grandPianoCliffside from '../../assets/gallery/grand-piano-cliffside-wedding-ceremony-bali.png'
@@ -27,13 +25,7 @@ const types = ['cliffside', 'beach', 'garden', 'chapel', 'ballroom'] as const
 // package photo). Add more tiles here (with the matching `type`) as the owner confirms new
 // event photography (CLAUDE.md §9).
 const tiles = [
-	{ type: 'cliffside', src: piano1, alt: 'Cliffside ceremony with live wedding pianist, Bali' },
 	{ type: 'garden', src: piano2, alt: 'Garden reception with live wedding pianist, Bali' },
-	{
-		type: 'cliffside',
-		src: soloPiano,
-		alt: 'Wedding pianist performing solo piano at a cliffside wedding ceremony in Bali',
-	},
 	{
 		type: 'garden',
 		src: ensemblePortrait,
