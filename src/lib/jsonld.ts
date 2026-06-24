@@ -39,6 +39,23 @@ export function getHomeJsonLd(lang: Lang) {
 	]
 }
 
+/** VideoObject JSON-LD for an embedded YouTube video — AEO/rich-result signal. */
+export function getVideoJsonLd(
+	lang: Lang,
+	video: { videoId: string; name: string; description: string; uploadDate: string },
+) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'VideoObject',
+		name: video.name,
+		description: video.description,
+		thumbnailUrl: `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`,
+		uploadDate: video.uploadDate,
+		embedUrl: `https://www.youtube-nocookie.com/embed/${video.videoId}`,
+		inLanguage: lang,
+	}
+}
+
 /** FAQPage JSON-LD for the FAQ page, per CLAUDE.md §5. */
 export function getFaqJsonLd(items: readonly { question: string; answer: string }[]) {
 	return {

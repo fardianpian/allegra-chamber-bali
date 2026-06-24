@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/sections/Hero.astro'
 import TrustStrip from '../components/sections/TrustStrip.astro'
 import Formations from '../components/sections/Formations.astro'
+import FeaturedVideo from '../components/sections/FeaturedVideo.astro'
 import FeaturedAudio from '../components/sections/FeaturedAudio.astro'
 import Moments from '../components/sections/Moments.astro'
 import HowBookingWorks from '../components/sections/HowBookingWorks.astro'
@@ -11,11 +12,19 @@ import GalleryPreview from '../components/sections/GalleryPreview.astro'
 import ForPlannersStrip from '../components/sections/ForPlannersStrip.astro'
 import FinalCTA from '../components/sections/FinalCTA.astro'
 import { useTranslations } from '../i18n/utils'
-import { getHomeJsonLd } from '../lib/jsonld'
+import { getHomeJsonLd, getVideoJsonLd } from '../lib/jsonld'
 
 const lang = 'en'
 const t = useTranslations(lang)
 const meta = t('meta')
+const featuredVideo = t('featuredVideo')
+
+const videoJsonLd = getVideoJsonLd(lang, {
+	videoId: '_xuQy2_Uh44',
+	name: featuredVideo.heading,
+	description: featuredVideo.subhead,
+	uploadDate: '2026-06-24',
+})
 ---
 
 <BaseLayout
@@ -23,11 +32,12 @@ const meta = t('meta')
 	title={meta.title}
 	description={meta.description}
 	path="/"
-	jsonLd={getHomeJsonLd(lang)}
+	jsonLd={[...getHomeJsonLd(lang), videoJsonLd]}
 >
 	<Hero lang={lang} />
 	<TrustStrip lang={lang} />
 	<Formations lang={lang} />
+	<FeaturedVideo lang={lang} />
 	<FeaturedAudio lang={lang} />
 	<Moments lang={lang} />
 	<HowBookingWorks lang={lang} />

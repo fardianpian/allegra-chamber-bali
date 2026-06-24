@@ -1,0 +1,59 @@
+---
+interface Props {
+	videoId: string
+	title: string
+	aspect?: 'video' | 'portrait'
+	class?: string
+}
+const { videoId, title, aspect = 'video', class: className = '' } = Astro.props
+const aspectClass = aspect === 'portrait' ? 'aspect-[9/16]' : 'aspect-video'
+const thumbnailSrc = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+---
+
+<div
+	data-video-embed
+	data-video-id={videoId}
+	data-video-title={title}
+	class:list={['group relative overflow-hidden bg-ink', aspectClass, className]}
+>
+	<button
+		type="button"
+		class="absolute inset-0 h-full w-full cursor-pointer"
+		aria-label={`Play video: ${title}`}
+	>
+		<img
+			src={thumbnailSrc}
+			alt=""
+			loading="lazy"
+			class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+		/>
+		<span class="absolute inset-0 bg-ink/20 transition-colors duration-300 group-hover:bg-ink/10"></span>
+		<span
+			class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/90 text-ink shadow-lg transition-transform duration-300 group-hover:scale-110"
+		>
+			<svg viewBox="0 0 24 24" class="h-6 w-6 translate-x-[1px] fill-current" aria-hidden="true">
+				<path d="M8 5v14l11-7z"></path>
+			</svg>
+		</span>
+	</button>
+</div>
+
+<script>
+	// Click-to-load facade: the iframe (and its third-party JS) only loads after a real
+	// interaction, so the thumbnail image is the LCP/CLS-relevant element, not the embed.
+	document.querySelectorAll<HTMLElement>('[data-video-embed]').forEach((wrapper) => {
+		wrapper.querySelector('button')?.addEventListener('click', () => {
+			const videoId = wrapper.dataset.videoId
+			const title = wrapper.dataset.videoTitle ?? 'Video'
+			const iframe = document.createElement('iframe')
+			iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`
+			iframe.title = title
+			iframe.className = 'absolute inset-0 h-full w-full'
+			iframe.allow =
+				'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+			iframe.allowFullscreen = true
+			iframe.setAttribute('frameborder', '0')
+			wrapper.replaceChildren(iframe)
+		})
+	})
+</script>

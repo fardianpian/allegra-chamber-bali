@@ -1,0 +1,35 @@
+---
+import SectionHeading from '../ui/SectionHeading.astro'
+import VideoEmbed from '../media/VideoEmbed.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const video = t('featuredVideo')
+const packagesHref = lang === 'en' ? '/packages/' : '/id/packages/'
+
+// Wedding ceremony recap, Zach & Aisha at The Colours of Nur, Bali — published unlisted on
+// YouTube Shorts 2026-06-24. Update videoId if a future home-page video replaces this one.
+const videoId = '_xuQy2_Uh44'
+---
+
+<section id="featured-video" class="section bg-ivory">
+	<div class="container-max grid gap-12 md:grid-cols-2 md:items-center">
+		<div>
+			<SectionHeading eyebrow={video.eyebrow} heading={video.heading} subhead={video.subhead} />
+			<div class="reveal mt-8">
+				<a href={packagesHref} class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">
+					{video.cta} →
+				</a>
+			</div>
+		</div>
+
+		<div class="reveal mx-auto w-full max-w-xs md:max-w-sm">
+			<VideoEmbed videoId={videoId} title={video.heading} aspect="portrait" />
+		</div>
+	</div>
+</section>

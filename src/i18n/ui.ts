@@ -79,6 +79,13 @@ export const ui = {
 				'A short selection of classical wedding pianist repertoire, from Bach to contemporary arrangements, for ceremony and reception.',
 			cta: 'Browse full repertoire',
 		},
+		featuredVideo: {
+			eyebrow: 'A Recent Bali Wedding',
+			heading: 'Watch: Live Wedding Pianist & String Trio in Bali',
+			subhead:
+				"Piano and string trio performed live for Zach & Aisha's intimate ceremony at The Colours of Nur, Bali — hear how Allegra Chamber Bali sounds on the day.",
+			cta: 'View ensemble formations',
+		},
 		packagesPage: {
 			title: 'Wedding Pianist & String Quartet for Hire — Allegra Chamber Bali',
 			description:
@@ -623,6 +630,13 @@ export const ui = {
 			heading: 'Repertoar Pilihan',
 			subhead: 'Sebagian kecil dari rangkaian set upacara dan resepsi kami.',
 			cta: 'Lihat semua repertoar',
+		},
+		featuredVideo: {
+			eyebrow: 'Pernikahan Bali Terbaru',
+			heading: 'Tonton: Musik Piano & String Trio Live di Pernikahan Bali',
+			subhead:
+				'Piano dan string trio tampil langsung untuk upacara intim Zach & Aisha di The Colours of Nur, Bali — dengarkan langsung suara Allegra Chamber Bali di hari sesungguhnya.',
+			cta: 'Lihat formasi ensemble',
 		},
 		packagesPage: {
 			title: 'Formasi & Paket String Quartet — Allegra Chamber Bali',
