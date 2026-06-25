@@ -5,6 +5,10 @@
 > Claude Code tidak bisa mengirim email/DM/form sendiri. Tracker ringkas (channel + wave) juga
 > ada di `docs/MARKETING-SPRINT-2026-06.md` § "Daftar Prospek B2B"; dokumen ini adalah versi
 > lengkap dengan pesan siap-kirim per prospek.
+>
+> **Follow-up asset**: `docs/B2B-One-Pager.html` / `.pdf` — satu-pager untuk dikirim ke siapa
+> pun yang membalas (formasi, logistik/tech rider, sample repertoire — tanpa harga). Lampirkan
+> versi PDF saat ada balasan positif dari wave 1/2.
 
 ## Mengapa B2B diprioritaskan (riset demand, 2026-06-26)
 
