@@ -145,35 +145,41 @@ Hari 9:
 
 ---
 
-## Daftar Prospek B2B (hasil pencarian publik, 2026-06-21 — verifikasi ulang sebelum kontak)
+## Daftar Prospek B2B (verifikasi channel + wave selesai 2026-06-26)
 
-> Ini bukan daftar tervalidasi/relasi yang sudah ada — hasil riset web publik. Cek ulang channel
-> kontak aktif (Instagram/website) sebelum mengirim, dan prioritaskan dulu siapa pun yang owner
-> sudah kenal personal di atas daftar ini.
+> Riset awal 2026-06-21 (publik, belum diverifikasi); channel kontak konkret + skor prioritas +
+> pembagian wave dilengkapi 2026-06-26. **Rencana eksekusi lengkap (lead sheet, pesan siap-kirim
+> per prospek, dasar riset prioritas B2B-vs-direct-couple) ada di
+> `docs/B2B-OUTREACH-PLAN.md`** — tabel di bawah ini ringkasan status saja.
+>
+> Per riset demand 2026-06-26: prioritaskan B2B (planner/venue) untuk 1-2 bulan ke depan — 74%
+> couple destination wedding internasional menyewa planner, sementara SEO direct-couple butuh
+> 2-3+ bulan untuk matang. Lihat `docs/B2B-OUTREACH-PLAN.md` bagian "Mengapa B2B diprioritaskan"
+> untuk detail dan sumber.
 
 **Wedding planner (destination wedding, fokus internasional):**
 
-| Nama                                | Channel                               |
-| ----------------------------------- | ------------------------------------- |
-| Global Weddings                     | globalweddings.com.au                 |
-| The Seven Agency                    | 7.agency                              |
-| Tirtha (planner + venue group)      | tirtha.com                            |
-| Plan A — Destination Event Planners | instagram.com/plana.destinationevents |
-| Poetyque Events                     | cari via Instagram                    |
-| Hitch'd Weddings Bali               | cari via Instagram                    |
-| Avavi Bali                          | cari via Instagram                    |
-| Bali Wedding Paradise               | cari via Instagram                    |
-| The Wedding Mood                    | cari via Instagram                    |
-| Luxury Weddings Indonesia           | cari via Instagram/website            |
+| Nama                                | Channel terverifikasi (2026-06-26)                        | Confidence | Wave    | Status |
+| ----------------------------------- | --------------------------------------------------------- | ---------- | ------- | ------ |
+| Tirtha (planner + venue group)      | wedding.inquiry@tirtha.com · +62 816-4701-0120            | High       | 1       | Belum  |
+| Bali Wedding Paradise               | admin@baliweddingparadise.com · IG @baliweddingparadise   | High       | 1       | Belum  |
+| The Wedding Mood                    | IG @theweddingmood                                        | High       | 1       | Belum  |
+| Hitch'd Weddings Bali               | holla@hitchdbali.com · IG @hitchdweddings (10K followers) | High       | 1       | Belum  |
+| Global Weddings                     | globalweddings.com.au · +61 435 850 424                   | High       | 1       | Belum  |
+| The Seven Agency                    | IG @thesevenwedding                                       | Medium     | 2       | Belum  |
+| Poetyque Events                     | poetyque.com · IG @poetyque.events                        | High       | 2       | Belum  |
+| Luxury Weddings Indonesia           | luxuryweddingsindonesia.com · IG @luxuryweddingsindo      | High       | 2       | Belum  |
+| Plan A — Destination Event Planners | info@planabali.com · IG @plana.destinationevents          | High       | 2       | Belum  |
+| Avavi Bali                          | IG @avavibali_weddings                                    | Medium     | Backlog | Belum  |
 
 **Venue (cliffside/Uluwatu — selaras dengan foto yang sudah dimiliki):**
 
-| Nama                   | Channel                                   |
-| ---------------------- | ----------------------------------------- |
-| Tirtha Uluwatu         | tirtha.com/venues/tirtha-uluwatu          |
-| The Edge Bali          | theedgebali.com                           |
-| Alila Villas Uluwatu   | hyatt.com (Alila Villas Uluwatu weddings) |
-| Bali Wedding Solutions | baliweddingsolutions.com                  |
+| Nama                   | Channel terverifikasi (2026-06-26)                                                                                   | Confidence | Wave              | Status |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------- | ------ |
+| Tirtha Uluwatu         | **= "Tirtha" di tabel planner di atas** (email kontak sama persis) — jangan kirim 2x, pakai wave & channel baris itu | High       | 1 (lihat di atas) | —      |
+| The Edge Bali          | reservations@theedgebali.com · contact form theedgebali.com/contact                                                  | High       | 1                 | Belum  |
+| Alila Villas Uluwatu   | uluwatuevents@alilahotels.com · +62 361 848 2166                                                                     | High       | 2                 | Belum  |
+| Bali Wedding Solutions | contact form baliweddingsolutions.com/contact-us                                                                     | Medium     | 2                 | Belum  |
 
 ---
 
