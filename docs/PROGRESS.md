@@ -13,7 +13,21 @@ Site is fully live on Cloudflare Pages with real business data end-to-end: Whats
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
 
-**2026-06-28 — Marketing foundation sprint: 7 new docs/ files generated via parallel agent runs.**
+**2026-06-28 (session 2) — Copy audit + ID translation sync.** Seven Sweeps copy-editing audit
+applied to all EN copy updated earlier in the day; 6 additional fixes:
+
+- `hero.subhead`: "chamber strings" → "strings" (konsisten dengan meta desc, lebih hangat)
+- `formations.subhead`: hapus "for hire" (transaksional, tidak perlu di luar page title/SEO)
+- `forPlannersPage.valueProps[0].blurb`: "booked once" → "once booked" (clarity)
+- `galleryPage.subhead`: reframe dari brand claim → benefit couple ("browse by venue type to find your setting")
+- `aboutPage.description` + `aboutPage.subhead`: tambah piano sebagai flagship instrument (aturan brand voice Rule 13 — piano harus disebut di About)
+
+Setelah audit, 11 field ID yang belum tersinkron (8 dari sesi pagi + 6 dari audit ini) dimitranslasi:
+formation taglines (duo/trio/quartet), `formations.subhead`, `formations.cta`, booking step 01 title,
+`galleryPage.subhead`, `aboutPage.description/subhead`, `meta.description`, `valuePropsHeading`,
+`valueProps[0].blurb`. Build 37 halaman clean; push ke main (commit `0b3b154`).
+
+**2026-06-28 (session 1) — Marketing foundation sprint: 7 new docs/ files generated via parallel agent runs.**
 Full marketing execution layer now exists in `docs/`:
 
 - **`docs/SOCIAL-CONTENT-CALENDAR.md`** — Instagram content calendar 29 Jun–12 Jul 2026 (11 posts,
