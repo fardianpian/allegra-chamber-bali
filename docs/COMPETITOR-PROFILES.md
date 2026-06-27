@@ -29,15 +29,15 @@ curated — is **genuinely unoccupied** in this market as of June 2026.
 
 ### At a Glance
 
-| Metric | Value |
-|--------|-------|
-| Tagline | "Your Bali Wedding Band, Since 2007" |
-| Primary instrument | Voice (vocalist-led band) |
-| Ensembles | Acoustic Trio, Quintet, Full Band, Band + Sax, Band + Strings |
-| Reviews | 9 on Bridestory, 15+ named testimonials on own site |
-| Piano? | ❌ — keyboards as rhythm instrument in band, not featured |
-| Website | ✅ WordPress/Elementor, actively maintained |
-| Pricing | Not disclosed ("contact for pricing") |
+| Metric             | Value                                                         |
+| ------------------ | ------------------------------------------------------------- |
+| Tagline            | "Your Bali Wedding Band, Since 2007"                          |
+| Primary instrument | Voice (vocalist-led band)                                     |
+| Ensembles          | Acoustic Trio, Quintet, Full Band, Band + Sax, Band + Strings |
+| Reviews            | 9 on Bridestory, 15+ named testimonials on own site           |
+| Piano?             | ❌ — keyboards as rhythm instrument in band, not featured     |
+| Website            | ✅ WordPress/Elementor, actively maintained                   |
+| Pricing            | Not disclosed ("contact for pricing")                         |
 
 ### Positioning
 
@@ -83,15 +83,15 @@ volume (9 Bridestory, 15 site quotes) is the benchmark Allegra should aim to mat
 
 ### At a Glance
 
-| Metric | Value |
-|--------|-------|
-| Tagline | "The Leading Entertainment Agency in Bali" |
-| Piano page title | "Hire Pianists for Wedding in Bali" |
-| Photography | ❌ Stock images (pianist-1/2/3.jpg — unchanged since 2021) |
-| Reviews | ❌ Zero found |
-| Keyword ranking | Piano page NOT ranking for any music keyword |
-| Last modified | March 2024 |
-| Pricing | Not disclosed |
+| Metric           | Value                                                      |
+| ---------------- | ---------------------------------------------------------- |
+| Tagline          | "The Leading Entertainment Agency in Bali"                 |
+| Piano page title | "Hire Pianists for Wedding in Bali"                        |
+| Photography      | ❌ Stock images (pianist-1/2/3.jpg — unchanged since 2021) |
+| Reviews          | ❌ Zero found                                              |
+| Keyword ranking  | Piano page NOT ranking for any music keyword               |
+| Last modified    | March 2024                                                 |
+| Pricing          | Not disclosed                                              |
 
 ### Positioning
 
@@ -135,15 +135,15 @@ advantage. Check quarterly.
 
 ### At a Glance
 
-| Metric | Value |
-|--------|-------|
-| Tagline | Wedding Band & Orchestra |
-| Roster | ~50 musicians |
-| Reviews | **88 on Bridestory** — market-leading by far |
-| Pricing | ✅ Visible (IDR 6M–42M, Duo to Big Band Orchestra) |
-| Piano? | Listed as one of 15+ instruments — not flagship |
-| Own website | ❌ Bridestory-dependent |
-| Most recent review | January 2026 |
+| Metric             | Value                                              |
+| ------------------ | -------------------------------------------------- |
+| Tagline            | Wedding Band & Orchestra                           |
+| Roster             | ~50 musicians                                      |
+| Reviews            | **88 on Bridestory** — market-leading by far       |
+| Pricing            | ✅ Visible (IDR 6M–42M, Duo to Big Band Orchestra) |
+| Piano?             | Listed as one of 15+ instruments — not flagship    |
+| Own website        | ❌ Bridestory-dependent                            |
+| Most recent review | January 2026                                       |
 
 ### Positioning
 
@@ -180,22 +180,22 @@ reception. Make this explicit in all comparison-adjacent copy.
 
 ## Comparison Table — Allegra vs Top 3
 
-| | **Allegra** | **Silaen Music** | **Bali Ent. Agency** | **DIVO Music** |
-|---|---|---|---|---|
-| **Type** | Chamber ensemble | Vocal/acoustic band | Talent agency | Production house |
-| **Base** | Bali ✅ | Bali ✅ | Bali ✅ | Jakarta (flies in) ❌ |
-| **Piano flagship** | ✅ | ❌ (keyboard in band) | Page exists, not ranking | 1 of 15+ instruments |
-| **String specialists** | ✅ Core formation | Add-on only | 1 of ~20 categories | Yes, not core |
-| **Formations** | 5 (Solo → Large Ensemble) | 5 (Trio → Full Band) | Roster-dependent | Duo → Orchestra |
-| **Own indexed website** | ✅ | ✅ | ✅ (weak) | ❌ (Bridestory only) |
-| **SEO content** | ✅ 4 journal articles | ❌ | ❌ | ❌ |
-| **Real testimonials** | ❌ (form just launched) | ✅ 9 Bridestory + 15 site | ❌ | ✅ 88 Bridestory |
-| **Real venue credits** | ✅ Alila, Bvlgari, Stone Villas | ✅ Alila, Bulgari, Ayana | ❌ | Multiple cities |
-| **Pricing visible** | ❌ (intentional) | ❌ | ❌ | ✅ IDR 6M–42M |
-| **Structured data / FAQs** | ✅ FAQPage JSON-LD | ❌ | ❌ | ❌ |
-| **Classical repertoire** | ✅ | ❌ (pop/R&B covers) | "Various styles" | 20+ genres (covers) |
-| **Custom arrangements** | ✅ | ✅ covers | "Special requests" | ✅ |
-| **Bilingual EN/ID** | ✅ | EN only | EN only | EN + ID |
+|                            | **Allegra**                     | **Silaen Music**          | **Bali Ent. Agency**     | **DIVO Music**        |
+| -------------------------- | ------------------------------- | ------------------------- | ------------------------ | --------------------- |
+| **Type**                   | Chamber ensemble                | Vocal/acoustic band       | Talent agency            | Production house      |
+| **Base**                   | Bali ✅                         | Bali ✅                   | Bali ✅                  | Jakarta (flies in) ❌ |
+| **Piano flagship**         | ✅                              | ❌ (keyboard in band)     | Page exists, not ranking | 1 of 15+ instruments  |
+| **String specialists**     | ✅ Core formation               | Add-on only               | 1 of ~20 categories      | Yes, not core         |
+| **Formations**             | 5 (Solo → Large Ensemble)       | 5 (Trio → Full Band)      | Roster-dependent         | Duo → Orchestra       |
+| **Own indexed website**    | ✅                              | ✅                        | ✅ (weak)                | ❌ (Bridestory only)  |
+| **SEO content**            | ✅ 4 journal articles           | ❌                        | ❌                       | ❌                    |
+| **Real testimonials**      | ❌ (form just launched)         | ✅ 9 Bridestory + 15 site | ❌                       | ✅ 88 Bridestory      |
+| **Real venue credits**     | ✅ Alila, Bvlgari, Stone Villas | ✅ Alila, Bulgari, Ayana  | ❌                       | Multiple cities       |
+| **Pricing visible**        | ❌ (intentional)                | ❌                        | ❌                       | ✅ IDR 6M–42M         |
+| **Structured data / FAQs** | ✅ FAQPage JSON-LD              | ❌                        | ❌                       | ❌                    |
+| **Classical repertoire**   | ✅                              | ❌ (pop/R&B covers)       | "Various styles"         | 20+ genres (covers)   |
+| **Custom arrangements**    | ✅                              | ✅ covers                 | "Special requests"       | ✅                    |
+| **Bilingual EN/ID**        | ✅                              | EN only                   | EN only                  | EN + ID               |
 
 ---
 
@@ -210,6 +210,7 @@ atmosphere," "your favourite songs"). None positions the product as classical ch
 none of them are.
 
 **Copy direction:**
+
 > "We don't do vocals or drums. Just piano and strings, precisely arranged for each moment of
 > your ceremony. Solo piano for the procession. Strings for the vow exchange. A six-piece
 > chamber ensemble for the first dance — if you want it."
@@ -227,6 +228,7 @@ DIVO's 50-piece orchestra is impressive but requires full logistics coordination
 (travel, accommodation, PA system transport, different time zones for communication).
 
 **Copy direction:**
+
 > "Based in Bali. We rehearse here, perform here, and know the clifftop stages, outdoor
 > acoustics, and 6 PM wind conditions at Uluwatu venues — not from a briefing document, but from
 > experience."
@@ -245,6 +247,7 @@ Allegra's differentiator is that the couple's chosen song is **arranged for clas
 instrumentation** — not just played in the original key by a vocalist.
 
 **Copy direction:**
+
 > "The difference isn't the song. It's hearing your song the way it was never played before —
 > arranged for piano, violin, and cello. That's what couples remember when they watch it back."
 
@@ -258,18 +261,19 @@ angle for editorial PR.
 
 Based on fresh competitor scan + SEO-STRATEGY.md:
 
-| Gap | Why it's open | Allegra status |
-|-----|--------------|----------------|
-| "wedding pianist Bali" | BEA has page, not ranking | ✅ Article live, position 6.7 |
-| "string quartet for wedding ceremony" | Zero competitor content | ⚠️ Not yet targeted explicitly |
-| "live music cliffside wedding Uluwatu" | No competitor content exists | ✅ Article live (`cliffside-wedding-uluwatu`) |
-| "what to ask wedding music vendor" | Nobody wrote this | ✅ Article live (`live-music-vendor-questions`) |
-| "chamber music wedding Bali" | Completely open | ❌ No article yet |
-| "how much does wedding music cost Bali" | Zero competitor answers this | ❌ Pricing hidden — but FAQ entry possible |
-| "wedding musician for hire Bali" | Generic results, no specialist content | ❌ No article yet |
-| "piano strings wedding ceremony" | Zero content anywhere | ❌ No article yet |
+| Gap                                     | Why it's open                          | Allegra status                                  |
+| --------------------------------------- | -------------------------------------- | ----------------------------------------------- |
+| "wedding pianist Bali"                  | BEA has page, not ranking              | ✅ Article live, position 6.7                   |
+| "string quartet for wedding ceremony"   | Zero competitor content                | ⚠️ Not yet targeted explicitly                  |
+| "live music cliffside wedding Uluwatu"  | No competitor content exists           | ✅ Article live (`cliffside-wedding-uluwatu`)   |
+| "what to ask wedding music vendor"      | Nobody wrote this                      | ✅ Article live (`live-music-vendor-questions`) |
+| "chamber music wedding Bali"            | Completely open                        | ❌ No article yet                               |
+| "how much does wedding music cost Bali" | Zero competitor answers this           | ❌ Pricing hidden — but FAQ entry possible      |
+| "wedding musician for hire Bali"        | Generic results, no specialist content | ❌ No article yet                               |
+| "piano strings wedding ceremony"        | Zero content anywhere                  | ❌ No article yet                               |
 
 **Recommended next articles** (by priority):
+
 1. "Chamber Music vs. Wedding Band: Which is Right for Your Bali Ceremony?" — exploits Attack Angle 1, targets middle-funnel couples comparing options
 2. "How Much Does Wedding Music Cost in Bali?" — FAQ-format, AEO-first, can answer carefully without revealing Allegra's own prices
 

@@ -6,15 +6,15 @@
 
 ## Readiness Assessment
 
-| Item | Status |
-|------|--------|
-| Site live, real venue credits | ✅ Alila Villas Uluwatu, Bvlgari Resort, Stone Villas |
-| Real photos (cliffside, garden, pianist) | ✅ |
-| Demo video | ⚠️ Pending owner |
-| Press contact email | ✅ allegrachamberbali@gmail.com |
-| Press page `/press` on site | ❌ **Build first before any pitch** |
-| Styled shoot | ❌ Required for Tier A editorial |
-| Real couple willing to speak on record | ❌ Waiting on testimonial form replies |
+| Item                                     | Status                                                |
+| ---------------------------------------- | ----------------------------------------------------- |
+| Site live, real venue credits            | ✅ Alila Villas Uluwatu, Bvlgari Resort, Stone Villas |
+| Real photos (cliffside, garden, pianist) | ✅                                                    |
+| Demo video                               | ⚠️ Pending owner                                      |
+| Press contact email                      | ✅ allegrachamberbali@gmail.com                       |
+| Press page `/press` on site              | ❌ **Build first before any pitch**                   |
+| Styled shoot                             | ❌ Required for Tier A editorial                      |
+| Real couple willing to speak on record   | ❌ Waiting on testimonial form replies                |
 
 **Verdict:** Ready for Tier C (local/Indonesian press) now. Tier A (international wedding editorial) needs styled shoot + at least one real-wedding couple.
 
@@ -24,38 +24,38 @@
 
 ### Tier A — International Wedding Editorial (Styled Shoot Required)
 
-| # | Publication | Pitch Type |
-|---|------------|-----------|
-| 1 | **Junebug Weddings** | Styled shoot submission |
-| 2 | **The Lane** (Australia — massive Bali coverage) | Real wedding feature / styled shoot |
-| 3 | **Green Wedding Shoes** | Styled shoot + real wedding |
-| 4 | **Rock My Wedding** (UK — big Bali destination market) | Real wedding feature |
-| 5 | **Magnolia Rouge** (fine-art, matches Allegra's aesthetic exactly) | Styled shoot |
+| #   | Publication                                                        | Pitch Type                          |
+| --- | ------------------------------------------------------------------ | ----------------------------------- |
+| 1   | **Junebug Weddings**                                               | Styled shoot submission             |
+| 2   | **The Lane** (Australia — massive Bali coverage)                   | Real wedding feature / styled shoot |
+| 3   | **Green Wedding Shoes**                                            | Styled shoot + real wedding         |
+| 4   | **Rock My Wedding** (UK — big Bali destination market)             | Real wedding feature                |
+| 5   | **Magnolia Rouge** (fine-art, matches Allegra's aesthetic exactly) | Styled shoot                        |
 
 ### Tier B — Lifestyle / Travel Press (Pitchable Now with Angle 2)
 
-| # | Publication | Angle |
-|---|------------|-------|
-| 6 | **Condé Nast Traveller** | Destination Bali vendor mention / trend piece |
-| 7 | **Harper's Bazaar Indonesia** | Feature pitch |
-| 8 | **Tatler Asia** | HK/SG luxury wedding feature |
-| 9 | **Brides.com** | Round-up contribution |
+| #   | Publication                   | Angle                                         |
+| --- | ----------------------------- | --------------------------------------------- |
+| 6   | **Condé Nast Traveller**      | Destination Bali vendor mention / trend piece |
+| 7   | **Harper's Bazaar Indonesia** | Feature pitch                                 |
+| 8   | **Tatler Asia**               | HK/SG luxury wedding feature                  |
+| 9   | **Brides.com**                | Round-up contribution                         |
 
 ### Tier C — Local/Regional (Quickest to Land, Pitch Now)
 
-| # | Publication | Notes |
-|---|------------|-------|
-| 10 | **The Jakarta Post** | English-language Indonesia, Bali arts/culture beat |
-| 11 | **NOW! Bali** (nowbali.co.id) | Luxury Bali lifestyle, weddings regular beat |
-| 12 | **Bali Advertiser** | English expat/tourism press |
-| 13 | **Kompas Lifestyle** | Major ID newspaper (pitch in Bahasa Indonesia) |
-| 14 | **DEWI Magazine** | Indonesian luxury lifestyle |
+| #   | Publication                   | Notes                                              |
+| --- | ----------------------------- | -------------------------------------------------- |
+| 10  | **The Jakarta Post**          | English-language Indonesia, Bali arts/culture beat |
+| 11  | **NOW! Bali** (nowbali.co.id) | Luxury Bali lifestyle, weddings regular beat       |
+| 12  | **Bali Advertiser**           | English expat/tourism press                        |
+| 13  | **Kompas Lifestyle**          | Major ID newspaper (pitch in Bahasa Indonesia)     |
+| 14  | **DEWI Magazine**             | Indonesian luxury lifestyle                        |
 
 ### Tier D — Podcast (Longer Term)
 
-| # | Target |
-|---|--------|
-| 15 | **The Wedding Biz** / destination wedding podcasts — rare Bali/Indonesia guests = differentiation |
+| #   | Target                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------- |
+| 15  | **The Wedding Biz** / destination wedding podcasts — rare Bali/Indonesia guests = differentiation |
 
 ---
 
@@ -106,15 +106,15 @@
 
 Requirements to submit to Junebug Weddings / The Lane / Green Wedding Shoes:
 
-| Element | Status |
-|---------|--------|
-| Venue (cliffside or garden) | ⚠️ Negotiate trade with Alila or a villa |
-| Editorial photographer (published on Junebug/The Lane) | ❌ Find first |
-| Florals stylist | ❌ |
-| Model couple | ❌ Models work for styled shoots |
-| Allegra ensemble performing | ✅ Core differentiator |
-| 50–80 hi-res images | Flows from above |
-| Video 15–30s | ⚠️ Pending owner video |
+| Element                                                | Status                                   |
+| ------------------------------------------------------ | ---------------------------------------- |
+| Venue (cliffside or garden)                            | ⚠️ Negotiate trade with Alila or a villa |
+| Editorial photographer (published on Junebug/The Lane) | ❌ Find first                            |
+| Florals stylist                                        | ❌                                       |
+| Model couple                                           | ❌ Models work for styled shoots         |
+| Allegra ensemble performing                            | ✅ Core differentiator                   |
+| 50–80 hi-res images                                    | Flows from above                         |
+| Video 15–30s                                           | ⚠️ Pending owner video                   |
 
 **Approach:** Identify a Bali photographer already published on Junebug or The Lane → propose trade (they get editorial credit + images, Allegra gets music credit + exposure) → shoot at Alila Villas Uluwatu → submit to Junebug first, then The Lane + GWS.
 
@@ -127,6 +127,7 @@ allegra.indonesiaistimewastudio.id/press
 ```
 
 Contents:
+
 - One-paragraph description (reuse GEO copy from `docs/DIRECTORY-SUBMISSIONS-PLAN.md`)
 - Owner bio + headshot
 - Logo pack download link

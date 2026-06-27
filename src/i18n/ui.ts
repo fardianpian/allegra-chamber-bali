@@ -5,7 +5,7 @@ export const ui = {
 		meta: {
 			title: 'Wedding Musicians for Hire in Bali — Allegra Chamber Bali',
 			description:
-				'Wedding musicians and a live string quartet for hire across Bali — from an intimate ceremony to a full reception. Check your date today.',
+				'Live piano and strings for Bali weddings — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
 		},
 		nav: {
 			home: 'Home',
@@ -37,7 +37,7 @@ export const ui = {
 			heading: 'What We Play',
 			subhead:
 				'Five wedding ensemble formations — from solo piano to a full string quartet for hire — choose the sound that fits your moment.',
-			cta: 'View string quartet packages',
+			cta: 'View packages & formations',
 			aboutCta: 'Meet our musicians',
 			items: [
 				{
@@ -49,19 +49,19 @@ export const ui = {
 				{
 					formation: 'duo',
 					name: 'Duo',
-					tagline: 'Two voices, one line',
+					tagline: 'Violin & cello, in conversation',
 					blurb: 'A warmer, fuller sound for ceremony and cocktail hour.',
 				},
 				{
 					formation: 'trio',
 					name: 'Trio',
-					tagline: 'Violin, viola, cello',
+					tagline: 'Three strings, full range',
 					blurb: 'Full chamber colour for ceremony through cocktail hour.',
 				},
 				{
 					formation: 'quartet',
 					name: 'String Quartet',
-					tagline: 'The classic four',
+					tagline: 'The timeless chamber formation',
 					blurb: 'The complete chamber experience, from ceremony through reception.',
 				},
 				{
@@ -128,7 +128,7 @@ export const ui = {
 			steps: [
 				{
 					step: '01',
-					title: 'Inquire your date',
+					title: 'Share your date',
 					blurb: 'Send your date, venue, and the moments you need music for.',
 				},
 				{
@@ -278,7 +278,8 @@ export const ui = {
 				'See live wedding ceremony musician performances across Bali — browse the gallery by venue type, from cliffside ceremonies to ballroom receptions.',
 			eyebrow: 'Documentation',
 			heading: 'Live Wedding Performances Across Bali',
-			subhead: 'Live wedding ceremony performances across Bali, browsed by venue type.',
+			subhead:
+				'Cliffside ceremonies in Uluwatu, garden settings in Ubud, and ballroom receptions — Allegra has performed across them all.',
 			filterAll: 'All',
 			typeLabels: {
 				cliffside: 'Cliffside',
@@ -338,7 +339,7 @@ export const ui = {
 			heading: 'Partnering with Wedding Planners & Organizers in Bali',
 			subhead:
 				'From an intimate elopement to a full destination wedding in Bali, we work directly with wedding planners, organizers, and venues to keep the music one less thing to worry about.',
-			valuePropsHeading: 'Why Wedding Organizers in Bali Trust Allegra',
+			valuePropsHeading: 'What Planners Can Count On',
 			valueProps: [
 				{
 					name: 'Reliable',
