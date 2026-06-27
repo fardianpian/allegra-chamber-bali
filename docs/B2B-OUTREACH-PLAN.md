@@ -228,18 +228,203 @@ WhatsApp: +62 857-0824-7611
 
 ## Wave 2 — Hari 6 sprint (27 Juni)
 
-Pesan belum di-draft per-prospek (opener personalisasi opsional, bisa disusun saat wave 1 sudah
-terkirim) — pakai template standar dari `docs/MARKETING-SPRINT-2026-06.md` § "Template pesan
-outreach B2B" langsung kalau waktu terbatas.
+Pesan siap-kirim per prospek — personalisasi sudah di-embed di opener masing-masing. Isi
+`[Name]` dan `[Owner name]` sebelum kirim (sama seperti wave 1).
 
-| #   | Target                              | Channel                                                         | Catatan                                                          |
-| --- | ----------------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------- |
-| 1   | The Seven Agency                    | DM IG @thesevenwedding                                          | Akun besar/aktif, established sejak 2008                         |
-| 2   | Poetyque Events                     | Email via poetyque.com atau DM IG @poetyque.events              | Luxury, internasional (5 benua, 17 negara)                       |
-| 3   | Luxury Weddings Indonesia           | DM IG @luxuryweddingsindo atau form luxuryweddingsindonesia.com | 300+ luxury wedding Bali sejak 2015                              |
-| 4   | Alila Villas Uluwatu                | Email uluwatuevents@alilahotels.com                             | Resort besar — proses approval kemungkinan lebih lambat          |
-| 5   | Bali Wedding Solutions              | Contact form baliweddingsolutions.com/contact-us                | Tidak ada email langsung ditemukan — respon mungkin lebih lambat |
-| 6   | Plan A — Destination Event Planners | Email info@planabali.com atau DM IG @plana.destinationevents    | Bali based, est. 2012, available worldwide                       |
+### 1. The Seven Agency
+
+**Channel:** DM Instagram — @thesevenwedding
+
+```
+Hi! 2,000+ couples is a lot of ceremony logistics to have coordinated well — wanted to
+introduce Allegra Chamber Bali as a live music option for yours. We're a piano & strings
+ensemble here in Bali performing ceremonies and receptions for destination weddings, solo
+through to a 6-piece formation. We come with a stage plot, tech rider, and repertoire sheet
+already prepared — planner info: allegra.indonesiaistimewastudio.id/for-planners. Would love
+to connect for this season.
+```
+
+### 2. Poetyque Events
+
+**Channel:** Email (via poetyque.com contact) atau DM IG @poetyque.events
+
+```
+Subject: Live chamber ensemble for Poetyque couples — Allegra Chamber Bali
+
+Hi [Name],
+
+Couples coordinating from 17 different countries usually have the same ask for their Bali
+music vendor: clear documentation upfront, no surprises on the day.
+
+I'm reaching out from Allegra Chamber Bali, a live chamber ensemble (piano & strings) based
+in Bali, performing ceremonies and receptions for destination weddings — solo through to a
+6-piece formation with piano, strings, and double bass.
+
+We work directly with planners on logistics: stage plot, tech rider, and a repertoire sheet
+built around each couple's own songs. If it's useful: https://allegra.indonesiaistimewastudio.id/for-planners
+
+Happy to share our repertoire list or connect for any couples you're coordinating this season.
+
+Best,
+[Owner name]
+Allegra Chamber Bali
+WhatsApp: +62 857-0824-7611
+```
+
+### 3. Luxury Weddings Indonesia
+
+**Channel:** DM Instagram — @luxuryweddingsindo (atau form luxuryweddingsindonesia.com)
+
+```
+Hi! With 300+ luxury weddings in Bali since 2015, you'd know better than most what ceremony
+music can make or break on the day. Wanted to introduce Allegra Chamber Bali to your vendor
+network — live piano & strings ensemble for destination wedding ceremonies and receptions,
+solo through to a 6-piece formation. We come with stage plot, tech rider, and custom
+arrangements ready. Planner info: allegra.indonesiaistimewastudio.id/for-planners — happy
+to connect for any couples this season.
+```
+
+### 4. Alila Villas Uluwatu
+
+**Channel:** Email — uluwatuevents@alilahotels.com
+
+```
+Subject: Live chamber ensemble — familiar with your venue — Allegra Chamber Bali
+
+Hi [Name],
+
+We've performed at Alila Villas Uluwatu and know the clifftop setting well — stage
+positioning, acoustic setup, and ceremony logistics for that space specifically.
+
+Reaching out from Allegra Chamber Bali, a live chamber ensemble (piano & strings) performing
+destination wedding ceremonies and receptions across Bali — solo through to a 6-piece
+formation with piano, strings, and double bass.
+
+In case it's useful to have on file for couples asking about live music, our planner page has
+the logistics detail: https://allegra.indonesiaistimewastudio.id/for-planners
+
+Happy to share our repertoire list or connect directly.
+
+Best,
+[Owner name]
+Allegra Chamber Bali
+WhatsApp: +62 857-0824-7611
+```
+
+### 5. Bali Wedding Solutions
+
+**Channel:** Contact form — baliweddingsolutions.com/contact-us
+
+```
+Subject: Live chamber ensemble for your couples — Allegra Chamber Bali
+
+Hi,
+
+Reaching out from Allegra Chamber Bali — a live chamber ensemble (piano & strings)
+performing ceremonies and receptions for destination weddings in Bali, solo through to a
+6-piece formation with piano, strings, and double bass.
+
+We work directly with planners and venues on logistics: stage plot, tech rider, repertoire
+sheet. Planner-facing info: https://allegra.indonesiaistimewastudio.id/for-planners
+
+If you have couples looking for live music this season, happy to connect — or reach us
+directly on WhatsApp: +62 857-0824-7611.
+
+[Owner name]
+Allegra Chamber Bali
+```
+
+### 6. Plan A — Destination Event Planners
+
+**Channel:** Email — info@planabali.com (atau DM IG @plana.destinationevents)
+
+```
+Subject: Live chamber ensemble for Plan A couples — Allegra Chamber Bali
+
+Hi [Name],
+
+Fourteen years of destination events in Bali is a long time to build a vendor list you can
+rely on — wanted to introduce Allegra Chamber Bali in case live chamber music isn't already
+covered.
+
+I'm reaching out from Allegra Chamber Bali, a live piano & strings ensemble based in Bali,
+performing ceremonies and receptions for destination weddings — solo through to a 6-piece
+formation with piano, strings, and double bass.
+
+We work directly with planners on logistics: stage plot, tech rider, and a repertoire sheet
+built around the couple's own songs. Planner info: https://allegra.indonesiaistimewastudio.id/for-planners
+
+Happy to share our repertoire list or connect for any couples you're working with this season.
+
+Best,
+[Owner name]
+Allegra Chamber Bali
+WhatsApp: +62 857-0824-7611
+```
+
+---
+
+## Follow-up template (7 hari setelah wave terkirim, belum ada balasan)
+
+Satu follow-up saja — friendly, tidak pushy. Ganti `[Venue/Agency Name]`, `[Name]`,
+`[Owner name]`.
+
+**Email:**
+
+```
+Subject: Re: Live chamber ensemble for [Venue/Agency Name] couples
+
+Hi [Name],
+
+Wanted to follow up briefly on my note last week about Allegra Chamber Bali — live piano
+& strings for wedding ceremonies and receptions in Bali.
+
+If the timing isn't right or you're already covered for live music, no worries at all. If
+you do have couples asking about it, our planner page is the quickest way to see what we
+offer: https://allegra.indonesiaistimewastudio.id/for-planners
+
+Happy to send our repertoire sheet directly too — just reply here or reach me on WhatsApp:
++62 857-0824-7611.
+
+[Owner name]
+Allegra Chamber Bali
+```
+
+**DM Instagram (versi singkat):**
+
+```
+Hi again! Just following up on my note about Allegra Chamber Bali — no pressure at all, just
+wanted to make sure it didn't get buried. Planner info's here if useful:
+allegra.indonesiaistimewastudio.id/for-planners
+```
+
+---
+
+## Reply-to-positive-response template
+
+Untuk dipakai saat planner/venue membalas dengan ketertarikan. Bridge ke langkah selanjutnya:
+repertoire sheet + WhatsApp call.
+
+```
+Hi [Name],
+
+Great to hear from you — thank you for getting back to me.
+
+I'll send our repertoire sheet right away [lampirkan PDF]. It covers classical, contemporary,
+and custom arrangements — and yes, we can work from a couple's own song if they want
+something personal for the ceremony or first dance.
+
+A quick WhatsApp call is usually the easiest next step to match the right formation to the
+couple's setup and venue: +62 857-0824-7611. I'm also happy to answer anything by message
+if that's easier for you.
+
+To start: what does the couple's current brief look like — ceremony only, or ceremony and
+reception?
+
+[Owner name]
+Allegra Chamber Bali
+WhatsApp: +62 857-0824-7611
+```
 
 ---
 
@@ -253,15 +438,18 @@ outreach B2B" langsung kalau waktu terbatas.
 
 ## Checklist eksekusi (manual, owner)
 
-Untuk tiap target wave 1, lalu wave 2:
+Wave 1 (6 target) dan Wave 2 (6 target) keduanya sudah punya pesan siap-kirim per prospek.
 
-1. Salin pesan siap-kirim (wave 1) atau template standar + opener singkat (wave 2) di atas.
+1. Salin pesan dari wave yang relevan di atas.
 2. Isi `[Name]` dan `[Owner name]` sebelum kirim.
 3. Kirim via channel yang tercantum.
 4. Catat tanggal kirim + respon di tabel tracker `docs/MARKETING-SPRINT-2026-06.md` § "Daftar
    Prospek B2B" (kolom Status) — update "Belum" → "Terkirim [tanggal]" → "Respon: ..." sesuai
    perkembangan.
-5. Follow-up yang merespons masuk ke prioritas Juli (lihat `docs/PROGRESS.md` § Next steps).
+5. Kalau tidak ada balasan setelah 7 hari: kirim follow-up (template § "Follow-up template" di atas).
+6. Kalau ada balasan positif: gunakan template § "Reply-to-positive-response" di atas, lampirkan
+   repertoire sheet PDF.
+7. Follow-up yang lanjut ke percakapan masuk ke prioritas Juli (lihat `docs/PROGRESS.md` § Next steps).
 
 ## Open questions
 

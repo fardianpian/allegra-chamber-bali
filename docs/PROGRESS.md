@@ -7,11 +7,52 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
-## Status as of 2026-06-25
+## Status as of 2026-06-28
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
+
+**2026-06-28 — Marketing foundation sprint: 7 new docs/ files generated via parallel agent runs.**
+Full marketing execution layer now exists in `docs/`:
+
+- **`docs/SOCIAL-CONTENT-CALENDAR.md`** — Instagram content calendar 29 Jun–12 Jul 2026 (11 posts,
+  14 days), 10 captions ready to post, hashtag sets, execution notes. Piano flagship Reels
+  prioritized for 29 Jun & 3 Jul using existing video asset.
+- **`docs/B2B-OUTREACH-PLAN.md`** (updated) — Wave 2 added: 6 personalized cold-email/DM drafts
+  for named prospects (The Seven Agency, Poetyque Events, Luxury Weddings Indonesia, Alila Villas
+  Uluwatu, Bali Wedding Solutions, Plan A) + 7-day follow-up template + reply-to-positive-response
+  template. All brand voice rules observed; no prices, logistics-first CTAs.
+- **`docs/DIRECTORY-SUBMISSIONS-PLAN.md`** — 26 directories across 6 tiers (A=Wedding Platforms,
+  B=Local/Indonesia, C=Music Vendor, D=Review Platforms on hold, E=GEO/AI Citation, F=Music
+  Profiles). SaaS-default directory list fully replaced with wedding-service equivalents. Positioning
+  copy in 5 variants ready to paste. Tracker CSV included.
+- **`docs/PR-PLAN.md`** — 15 media targets across 4 tiers (Tier A=Junebug/The Lane/GWS, needs
+  styled shoot; Tier C=Jakarta Post/NOW! Bali/Bali Advertiser, pitchable now). 2 pitch drafts
+  (Angle 1: human/emotion story; Angle 2: cliffside logistics). Styled shoot strategy to unlock
+  Tier A. 3-month PR calendar Jul–Sep 2026. `/press` page flagged as prerequisite to build.
+- **`docs/COMMUNITY-MARKETING-PLAN.md`** — 15 target communities (Tier 1: wedding planner FB groups;
+  Tier 2: r/weddingplanning, r/Bali, destination wedding FB groups; Tier 3: Bali expat/vendor
+  networks). 5 ready-to-use engagement templates. 30-day calendar: Week 1 = observe only, no
+  posting; value-first rule enforced throughout.
+- **`docs/CUSTOMER-RESEARCH.md`** (updated 2026-06-28 with real digital research) — Mode 2
+  digital watering hole: Reddit r/weddingplanning + r/BigBudgetBrides, WeddingWire string quartet
+  reviews, TikTok/Instagram wedding musician pages. 6 verified themes with verbatim quotes:
+  (1) "Worth every penny" — price anxiety resolves post-ceremony; (2) "Guests can't stop talking
+  about it" — social validation is the real JTBD; (3) Custom arrangement IS the product;
+  (4) Ceremony/cocktail ≠ reception (separate buying decisions); (5) Planners value reliability
+  over romance; (6) "Timeless" is the aesthetic buying reason. 2 full JTBD personas (couple +
+  planner), VOC quote bank, 7-gap research backlog pending first real testimonials.
+- **`docs/COMPETITOR-PROFILES.md`** (completed 2026-06-28) — 3 deep profiles from fresh
+  Firecrawl scrapes: Silaen Music (co-existence, different product, 9 reviews benchmark),
+  Bali Entertainment Agency (Allegra already outranks their pianist page at position 6.7),
+  DIVO Music (88 reviews benchmark, Jakarta fly-in). 3 attack angles, comparison table,
+  8 open keyword gaps, quarterly monitoring checklist.
+
+**GSC audit finding (2026-06-28):** `live-music-bali-wedding-guide` (highest-value article, KD 4
+vol 3600) has zero impressions — not yet indexed. Needs manual Request Indexing in GSC UI.
+`wedding-pianist-bali` already at position 6.7 with 12% CTR (above average for a 1-week-old
+article). GA4 token expired (`invalid_grant`) — re-auth needed before next analytics session.
 
 **2026-06-23 — Genuine Indonesian translations added for all 5 Journal articles (owner
 request), reversing the EN-only/noindex default.** Each article now has a real translation at
@@ -141,9 +182,14 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    owner permission — see #4 below) and item 4 (paid ads, explicitly out of scope per
    `docs/MARKETING-SPRINT-2026-06.md` until the owner decides on a budget).
 3. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
-   of 2026-06-22) — Google Business Profile setup, outreach to the planner/venue prospect list,
-   and directory submissions are still pending and don't require Claude Code (manual owner
-   actions, or ask explicitly if drafting outreach copy is wanted).
+   of 2026-06-22). All execution assets now exist — owner action required:
+   - **Google Business Profile setup** (highest leverage, 30 min — brief at `docs/GOOGLE-BUSINESS-PROFILE-BRIEF.md`)
+   - **Directory submissions** — start with Bridestory + LinkedIn Company Page + Crunchbase (see `docs/DIRECTORY-SUBMISSIONS-PLAN.md`, Week 1 batch)
+   - **B2B outreach Wave 2** — 6 draft emails/DMs ready in `docs/B2B-OUTREACH-PLAN.md`
+   - **Community engagement** — join 5 planner FB groups this week, observe only (see `docs/COMMUNITY-MARKETING-PLAN.md`)
+   - **PR: pitch Angle 2** to The Jakarta Post + NOW! Bali (Tier C, no styled shoot needed — see `docs/PR-PLAN.md`)
+   - **Request Indexing** in GSC UI for `live-music-bali-wedding-guide` (zero impressions, critical)
+   - **Build `/press` page** before any PR pitch (2–3h dev, prerequisite for all media outreach)
 4. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
    format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
