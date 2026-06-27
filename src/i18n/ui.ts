@@ -560,7 +560,7 @@ export const ui = {
 		meta: {
 			title: 'Allegra Chamber Bali — Musik Live untuk Pernikahan di Bali',
 			description:
-				'Musisi terlatih membawakan musik live chamber dan string untuk pernikahan di seluruh Bali — dari upacara intim di tebing hingga string quartet untuk resepsi.',
+				'Piano dan gesek live untuk pernikahan di Bali — dari upacara intim di tebing Uluwatu hingga resepsi string quartet, diaransemen mengikuti cerita Anda.',
 		},
 		nav: {
 			home: 'Beranda',
@@ -590,8 +590,9 @@ export const ui = {
 		formations: {
 			eyebrow: 'Ensemble Kami',
 			heading: 'Formasi yang Kami Tawarkan',
-			subhead: 'Lima formasi, satu standar musikalitas — pilih suara yang sesuai dengan momen Anda.',
-			cta: 'Lihat paket',
+			subhead:
+				'Lima formasi ensemble pernikahan — dari solo piano hingga string quartet lengkap — pilih suara yang sesuai dengan momen Anda.',
+			cta: 'Lihat paket & formasi',
 			aboutCta: 'Kenali musisi kami',
 			items: [
 				{
@@ -603,19 +604,19 @@ export const ui = {
 				{
 					formation: 'duo',
 					name: 'Duo',
-					tagline: 'Dua suara, satu garis melodi',
+					tagline: 'Biola & cello, saling berdialog',
 					blurb: 'Suara yang lebih hangat dan penuh untuk upacara dan cocktail hour.',
 				},
 				{
 					formation: 'trio',
 					name: 'Trio',
-					tagline: 'Biola, viola, cello',
+					tagline: 'Tiga gesek, jangkauan penuh',
 					blurb: 'Warna chamber penuh untuk upacara hingga cocktail hour.',
 				},
 				{
 					formation: 'quartet',
 					name: 'String Quartet',
-					tagline: 'Formasi klasik berempat',
+					tagline: 'Formasi chamber yang abadi',
 					blurb: 'Pengalaman chamber lengkap, dari upacara hingga resepsi.',
 				},
 				{
@@ -681,7 +682,7 @@ export const ui = {
 			steps: [
 				{
 					step: '01',
-					title: 'Tanyakan tanggal Anda',
+					title: 'Ceritakan tanggal Anda',
 					blurb: 'Kirim tanggal, venue, dan momen yang butuh musik.',
 				},
 				{
@@ -831,7 +832,8 @@ export const ui = {
 				'Lihat dokumentasi penampilan musik live kami di pernikahan-pernikahan Bali — jelajahi galeri berdasarkan tipe venue.',
 			eyebrow: 'Dokumentasi',
 			heading: 'Galeri Lengkap',
-			subhead: 'Jelajahi penampilan musik live di pernikahan-pernikahan Bali, berdasarkan tipe venue.',
+			subhead:
+				'Upacara tebing di Uluwatu, taman di Ubud, dan resepsi ballroom — jelajahi berdasarkan tipe venue untuk menemukan setting yang mirip dengan Anda.',
 			filterAll: 'Semua',
 			typeLabels: {
 				cliffside: 'Tebing',
@@ -845,11 +847,11 @@ export const ui = {
 		aboutPage: {
 			title: 'Musisi Pernikahan Terlatih Konservatori di Bali — Allegra Chamber Bali',
 			description:
-				'Kenali Allegra, ensemble chamber dan string quartet terlatih konservatori di Bali — musik live dan tailored untuk setiap upacara.',
+				'Kenali Allegra, ensemble piano dan string terlatih konservatori di Bali — musik chamber live dan tailored untuk setiap upacara.',
 			eyebrow: 'Tentang',
 			heading: 'Cerita Kami',
 			subhead:
-				'Live, tailored, refined — musik chamber yang dibangun mengikuti momen Anda, bukan playlist baku.',
+				'Ensemble piano dan string terlatih konservatori — musik live dan tailored yang dibangun mengikuti momen Anda, bukan playlist baku.',
 			storyHeading: 'Mengapa Allegra',
 			storyParagraphs: [
 				'Allegra Chamber Bali dibentuk berdasarkan satu gagasan: musik di pernikahan Anda harus terasa dipersembahkan untuk Anda, bukan sekadar diputar. Setiap set diaransemen mengikuti urutan upacara, venue, dan lagu-lagu yang bermakna bagi cerita Anda.',
@@ -894,12 +896,12 @@ export const ui = {
 			heading: 'Bermitra dengan Wedding Planner & Organizer di Bali',
 			subhead:
 				'Dari elopement intim hingga destination wedding penuh di Bali, kami bekerja langsung dengan wedding planner, organizer, dan venue agar musik menjadi satu hal lebih sedikit yang perlu dipikirkan.',
-			valuePropsHeading: 'Mengapa Wedding Organizer di Bali Mempercayai Allegra',
+			valuePropsHeading: 'Yang Bisa Planner Andalkan dari Kami',
 			valueProps: [
 				{
 					name: 'Andal',
 					blurb:
-						'Datang lebih awal, setup yang tenang, dan run-of-show yang sudah teruji — sekali booking, tidak ada kejutan di hari H.',
+						'Datang lebih awal, setup yang tenang, dan run-of-show yang sudah teruji — setelah booking, tidak ada kejutan di hari H.',
 				},
 				{
 					name: 'Tech Rider Lengkap',
