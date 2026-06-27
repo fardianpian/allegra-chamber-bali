@@ -24,7 +24,7 @@ export const ui = {
 			title: 'Allegra Chamber Bali',
 			titleTagline: 'Wedding Musicians for Hire in Bali',
 			subhead:
-				'Conservatory-trained wedding musicians performing live piano and chamber strings across Bali — from an intimate Uluwatu cliffside ceremony to a full string quartet reception, arranged around your story.',
+				'Conservatory-trained wedding musicians performing live piano and strings across Bali — from an intimate Uluwatu cliffside ceremony to a full string quartet reception, arranged around your story.',
 			ctaPrimary: 'Check Your Date',
 			ctaSecondary: 'Listen & Watch',
 		},
@@ -36,7 +36,7 @@ export const ui = {
 			eyebrow: 'The Ensemble',
 			heading: 'What We Play',
 			subhead:
-				'Five wedding ensemble formations — from solo piano to a full string quartet for hire — choose the sound that fits your moment.',
+				'Five wedding ensemble formations — from solo piano to a full string quartet — choose the sound that fits your moment.',
 			cta: 'View packages & formations',
 			aboutCta: 'Meet our musicians',
 			items: [
@@ -279,7 +279,7 @@ export const ui = {
 			eyebrow: 'Documentation',
 			heading: 'Live Wedding Performances Across Bali',
 			subhead:
-				'Cliffside ceremonies in Uluwatu, garden settings in Ubud, and ballroom receptions — Allegra has performed across them all.',
+				'Cliffside ceremonies in Uluwatu, garden settings in Ubud, and ballroom receptions — browse by venue type to find your setting.',
 			filterAll: 'All',
 			typeLabels: {
 				cliffside: 'Cliffside',
@@ -293,11 +293,11 @@ export const ui = {
 		aboutPage: {
 			title: 'Conservatory-Trained Wedding Musicians in Bali — Allegra Chamber Bali',
 			description:
-				'Meet Allegra, a conservatory-trained chamber ensemble and wedding string quartet based in Bali — live, tailored music for every ceremony.',
+				'Meet Allegra, a conservatory-trained piano and string ensemble based in Bali — live, tailored chamber music for every ceremony.',
 			eyebrow: 'About',
 			heading: 'A Conservatory-Trained Chamber Ensemble in Bali',
 			subhead:
-				'A conservatory-trained chamber ensemble and wedding string quartet — live, tailored music built around your moment, not a fixed playlist.',
+				'A conservatory-trained piano and string ensemble — live, tailored music built around your moment, not a fixed playlist.',
 			storyHeading: 'Why Allegra',
 			storyParagraphs: [
 				'Allegra Chamber Bali was formed around one idea: that the music at your wedding should feel performed for you, not played at you. Every set is arranged around your ceremony order, your venue, and the songs that matter to your story.',
@@ -344,7 +344,7 @@ export const ui = {
 				{
 					name: 'Reliable',
 					blurb:
-						'Early arrival, quiet setup, and a tested run-of-show — booked once, never a surprise on the day.',
+						'Early arrival, quiet setup, and a tested run-of-show — once booked, never a surprise on the day.',
 				},
 				{
 					name: 'Full Tech Rider Ready',
