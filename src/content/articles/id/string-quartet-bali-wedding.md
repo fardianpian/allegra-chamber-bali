@@ -58,13 +58,13 @@ yang bermakna dalam cerita Anda.
 
 Tidak setiap upacara memerlukan empat instrumen. Berikut perbandingan formasi Allegra:
 
-| Formasi | Instrumen | Cocok untuk |
-|---|---|---|
-| Solo | Violin, cello, atau piano | Upacara sangat intim; venue indoor kecil |
-| Duo | 2 instrumen | Upacara intim hingga menengah; repertoar fleksibel |
-| Trio | 3 instrumen | Upacara menengah; lebih penuh dari duo tanpa kuartet penuh |
-| **Kuartet Gesek** | 2 violin, viola, cello | Upacara lebih besar; venue tebing dan taman; cakupan sepanjang hari |
-| Piano + Kuartet | 5 instrumen | Kekayaan kamar maksimal; suara resepsi besar |
+| Formasi           | Instrumen                 | Cocok untuk                                                         |
+| ----------------- | ------------------------- | ------------------------------------------------------------------- |
+| Solo              | Violin, cello, atau piano | Upacara sangat intim; venue indoor kecil                            |
+| Duo               | 2 instrumen               | Upacara intim hingga menengah; repertoar fleksibel                  |
+| Trio              | 3 instrumen               | Upacara menengah; lebih penuh dari duo tanpa kuartet penuh          |
+| **Kuartet Gesek** | 2 violin, viola, cello    | Upacara lebih besar; venue tebing dan taman; cakupan sepanjang hari |
+| Piano + Kuartet   | 5 instrumen               | Kekayaan kamar maksimal; suara resepsi besar                        |
 
 Kuartet gesek cocok untuk pasangan yang menginginkan suara musik kamar yang lengkap dan seimbang —
 bukan hanya satu garis melodi tetapi empat suara yang bekerja bersama. Jika venue Anda sangat

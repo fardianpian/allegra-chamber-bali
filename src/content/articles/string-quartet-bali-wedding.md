@@ -58,13 +58,13 @@ of a song that means something to your story.
 
 Not every ceremony needs four instruments. Here is how Allegra's formations compare:
 
-| Formation | Instruments | Suits |
-|---|---|---|
-| Solo | Violin, cello, or piano | Very intimate ceremonies; small indoor venues |
-| Duo | 2 instruments | Intimate to mid-size ceremonies; flexible repertoire |
-| Trio | 3 instruments | Mid-size ceremonies; fuller than a duo without the full quartet |
+| Formation          | Instruments             | Suits                                                            |
+| ------------------ | ----------------------- | ---------------------------------------------------------------- |
+| Solo               | Violin, cello, or piano | Very intimate ceremonies; small indoor venues                    |
+| Duo                | 2 instruments           | Intimate to mid-size ceremonies; flexible repertoire             |
+| Trio               | 3 instruments           | Mid-size ceremonies; fuller than a duo without the full quartet  |
 | **String Quartet** | 2 violins, viola, cello | Larger ceremonies; clifftop and garden venues; full-day coverage |
-| Piano + Quartet | 5 instruments | Maximum chamber richness; large reception sound |
+| Piano + Quartet    | 5 instruments           | Maximum chamber richness; large reception sound                  |
 
 A string quartet suits couples who want a full, balanced chamber-music sound — not just one
 melodic line but four voices working together. If your venue is very small or your ceremony is

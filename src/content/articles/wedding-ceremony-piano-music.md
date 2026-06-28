@@ -26,12 +26,12 @@ Most couples know they want live piano at their ceremony — but are less sure w
 
 A full ceremony piano set covers four distinct moments:
 
-| Ceremony Moment | What the Pianist Plays | Typical Duration |
-|---|---|---|
-| **Prelude** | A quiet repertoire set as guests arrive and are seated | 10–15 min |
-| **Processional** | One or two chosen pieces as the bridal party and couple enter | 3–5 min |
-| **Ceremony music** | Soft background during vow exchange, unity ceremony, or signing | 2–5 min |
-| **Recessional** | One piece as the couple exits — often brighter or more celebratory in tone | 1–2 min |
+| Ceremony Moment    | What the Pianist Plays                                                     | Typical Duration |
+| ------------------ | -------------------------------------------------------------------------- | ---------------- |
+| **Prelude**        | A quiet repertoire set as guests arrive and are seated                     | 10–15 min        |
+| **Processional**   | One or two chosen pieces as the bridal party and couple enter              | 3–5 min          |
+| **Ceremony music** | Soft background during vow exchange, unity ceremony, or signing            | 2–5 min          |
+| **Recessional**    | One piece as the couple exits — often brighter or more celebratory in tone | 1–2 min          |
 
 The prelude is the longest section and the one couples most often overlook. It sets the atmosphere before a word is spoken. A pianist playing quietly as guests find their seats creates a different feeling to silence, or to a speaker playlist — the room settles in a different way.
 
@@ -53,7 +53,7 @@ Wedding ceremony piano music falls into three categories, and all three can coex
 - Satie — Gymnopédie No. 1
 - Bach — Jesu, Joy of Man's Desiring
 
-**Contemporary arrangements** — modern pop or film music arranged for solo piano. Pieces like *A Thousand Years*, *All of Me*, or themes from a film that matters to your story often work naturally when arranged to suit the quieter, acoustic character of a ceremony.
+**Contemporary arrangements** — modern pop or film music arranged for solo piano. Pieces like _A Thousand Years_, _All of Me_, or themes from a film that matters to your story often work naturally when arranged to suit the quieter, acoustic character of a ceremony.
 
 **Your own song** — a piece specific to your relationship. This is what couples most often request on inquiry: a first-dance song, something from a place that matters to you, or a piece with a particular memory attached. Custom arrangements are taken on with enough notice and confirmed at booking.
 

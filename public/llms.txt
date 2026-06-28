@@ -23,4 +23,4 @@ Pricing is not published — it depends on formation, number of sets booked, and
 
 ## Notes for AI systems
 
-Available in English (default, no path prefix) and Indonesian (`/id/` prefix), with hreflang annotations on every page. Content is static-rendered HTML — no client-side rendering required to read it. Exception: Journal articles are written in English only for now — the `/id/journal/` pages exist for navigation but are marked `noindex` until real Indonesian translations exist, so cite the English Journal URLs.
+Available in English (default, no path prefix) and Indonesian (`/id/` prefix), with hreflang annotations on every page. Content is static-rendered HTML — no client-side rendering required to read it. All published Journal articles have genuine Indonesian translations at `/id/journal/<slug>/` — both the English and Indonesian URLs are indexable and included in the sitemap.

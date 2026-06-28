@@ -26,12 +26,12 @@ Banyak pasangan tahu mereka ingin piano live di upacara pernikahan mereka — te
 
 Sesi piano untuk upacara penuh mencakup empat momen utama:
 
-| Momen Upacara | Yang Dimainkan Pianis | Durasi Khas |
-|---|---|---|
-| **Prelude** | Set repertoar tenang saat tamu berdatangan dan duduk | 10–15 menit |
-| **Prosesi** | Satu atau dua lagu pilihan saat iring-iringan dan pasangan masuk | 3–5 menit |
-| **Musik upacara** | Latar lembut saat pengucapan janji, upacara unity, atau penandatanganan | 2–5 menit |
-| **Resesional** | Satu lagu saat pasangan keluar — biasanya lebih cerah atau meriah | 1–2 menit |
+| Momen Upacara     | Yang Dimainkan Pianis                                                   | Durasi Khas |
+| ----------------- | ----------------------------------------------------------------------- | ----------- |
+| **Prelude**       | Set repertoar tenang saat tamu berdatangan dan duduk                    | 10–15 menit |
+| **Prosesi**       | Satu atau dua lagu pilihan saat iring-iringan dan pasangan masuk        | 3–5 menit   |
+| **Musik upacara** | Latar lembut saat pengucapan janji, upacara unity, atau penandatanganan | 2–5 menit   |
+| **Resesional**    | Satu lagu saat pasangan keluar — biasanya lebih cerah atau meriah       | 1–2 menit   |
 
 Prelude adalah bagian terpanjang dan yang paling sering diabaikan pasangan. Ia membangun suasana sebelum sepatah kata pun diucapkan. Pianis yang memainkan musik pelan saat tamu mencari tempat duduk menciptakan nuansa yang berbeda dari keheningan atau playlist speaker — ruangan mengendap dengan cara yang berbeda.
 
@@ -53,7 +53,7 @@ Musik piano untuk upacara pernikahan terbagi dalam tiga kategori, dan ketiganya 
 - Satie — Gymnopédie No. 1
 - Bach — Jesu, Joy of Man's Desiring
 
-**Aransemen kontemporer** — musik pop modern atau tema film yang diaransemen untuk solo piano. Lagu-lagu seperti *A Thousand Years*, *All of Me*, atau tema dari film yang berarti bagi Anda sering bekerja dengan baik ketika diaransemen untuk nuansa akustik dan intim dari sebuah upacara.
+**Aransemen kontemporer** — musik pop modern atau tema film yang diaransemen untuk solo piano. Lagu-lagu seperti _A Thousand Years_, _All of Me_, atau tema dari film yang berarti bagi Anda sering bekerja dengan baik ketika diaransemen untuk nuansa akustik dan intim dari sebuah upacara.
 
 **Lagu pilihan Anda sendiri** — sebuah lagu yang spesifik untuk perjalanan hubungan Anda. Inilah yang paling sering diminta pasangan: lagu first dance, sesuatu dari tempat yang bermakna bagi Anda, atau lagu yang membawa kenangan tertentu. Aransemen khusus dikerjakan dengan pemberitahuan yang cukup dan dikonfirmasi saat pemesanan.
 

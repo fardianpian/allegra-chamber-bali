@@ -10,12 +10,17 @@ export function getHomeJsonLd(lang: Lang) {
 			? 'Live chamber and string ensemble performing at weddings across Bali — solo, duo, trio, string quartet, and large ensemble formations.'
 			: 'Ensemble chamber dan string live untuk pernikahan di seluruh Bali — formasi solo, duo, trio, string quartet, dan large ensemble.'
 
+	const image = new URL('/images/og-cliffside-uluwatu.jpg', site.url).toString()
+	const logo = new URL('/favicon.svg', site.url).toString()
+
 	return [
 		{
 			'@context': 'https://schema.org',
 			'@type': 'MusicGroup',
 			name: 'Allegra Chamber Bali',
 			url,
+			image,
+			logo,
 			genre: ['Classical', 'Chamber Music', 'Wedding Music'],
 			description,
 			sameAs: [site.instagram],
@@ -23,8 +28,11 @@ export function getHomeJsonLd(lang: Lang) {
 		{
 			'@context': 'https://schema.org',
 			'@type': 'LocalBusiness',
+			'@id': url,
 			name: 'Allegra Chamber Bali',
 			url,
+			image,
+			logo,
 			description,
 			email: site.contactEmail,
 			telephone: `+${site.whatsappNumber}`,
@@ -87,7 +95,7 @@ export function getArticleJsonLd(
 	const url = new URL(withTrailingSlash(article.path), site.url).toString()
 	const imageUrl = article.ogImage
 		? new URL(article.ogImage, site.url).toString()
-		: new URL('/images/og-default.jpg', site.url).toString()
+		: new URL('/images/og-cliffside-uluwatu.jpg', site.url).toString()
 
 	return {
 		'@context': 'https://schema.org',
