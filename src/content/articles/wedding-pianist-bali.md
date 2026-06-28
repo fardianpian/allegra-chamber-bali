@@ -66,6 +66,8 @@ is played live in the room. For outdoor venues (cliffside, beach, or garden cere
 common across Bali), we just need shade for the musician and a flat, stable surface for the piano
 or keyboard; let us know your venue when you inquire and we'll confirm what's needed.
 
+Want to know exactly what a pianist plays at each moment — prelude, processional, signing, and recessional? Our [ceremony music guide](/journal/wedding-ceremony-piano-music/) covers what goes where and how to choose the right music for each part of the day.
+
 Still weighing live music against other options, or unsure which formation fits your venue? Our
 [live music planning guide](/journal/live-music-bali-wedding-guide/) walks through booking
 timing, formation choice, and outdoor venue logistics in more depth.

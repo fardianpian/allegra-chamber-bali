@@ -63,10 +63,20 @@ Full marketing execution layer now exists in `docs/`:
   DIVO Music (88 reviews benchmark, Jakarta fly-in). 3 attack angles, comparison table,
   8 open keyword gaps, quarterly monitoring checklist.
 
-**GSC audit finding (2026-06-28):** `live-music-bali-wedding-guide` (highest-value article, KD 4
-vol 3600) has zero impressions — not yet indexed. Needs manual Request Indexing in GSC UI.
-`wedding-pianist-bali` already at position 6.7 with 12% CTR (above average for a 1-week-old
-article). GA4 token expired (`invalid_grant`) — re-auth needed before next analytics session.
+**GSC audit finding (2026-06-28, updated 2026-06-28 session 3):** Full URL inspection via GSC API
+reveals **only the homepage is indexed** (crawled 2026-06-21). All 5 EN articles + 5 ID
+translations + /journal, /packages, /about are "URL is unknown to Google" — never crawled.
+Sitemap `allegra.../sitemap-index.xml` is valid (downloaded 2026-06-27, 32 URLs), but Google
+hasn't worked through the crawl queue yet for this new, low-authority site. **Action required
+(owner):** manually Request Indexing in GSC URL Inspection tool for these URLs in priority order
+(~10 requests/day limit): All 8 EN URLs requested 2026-06-28 ✅:
+(1) `/journal/live-music-bali-wedding-guide`, (2) `/journal/wedding-pianist-bali`,
+(3) `/journal/string-quartet-bali-wedding`, (4) `/journal/cliffside-wedding-uluwatu`,
+(5) `/journal/live-music-vendor-questions`, (6) `/journal/vendor-partnership-logistics-bali`,
+(7) `/packages`, (8) `/about` — Day 2 (2026-06-29): request `/id/` versions of all 6 articles. GA4 token expired (`invalid_grant`) — re-auth needed before
+next analytics session.
+
+**Google Business Profile (2026-06-28):** "Allegra Chamber Bali" GBP created by owner ✅.
 
 **2026-06-23 — Genuine Indonesian translations added for all 5 Journal articles (owner
 request), reversing the EN-only/noindex default.** Each article now has a real translation at
@@ -197,7 +207,8 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    `docs/MARKETING-SPRINT-2026-06.md` until the owner decides on a budget).
 3. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
    of 2026-06-22). All execution assets now exist — owner action required:
-   - **Google Business Profile setup** (highest leverage, 30 min — brief at `docs/GOOGLE-BUSINESS-PROFILE-BRIEF.md`)
+   - **Google Business Profile setup** ✅ DONE (2026-06-28) — "Allegra Chamber Bali" GBP created
+   - **Request Indexing in GSC** (URGENT) — see GSC audit note above; do day-1 batch today
    - **Directory submissions** — start with Bridestory + LinkedIn Company Page + Crunchbase (see `docs/DIRECTORY-SUBMISSIONS-PLAN.md`, Week 1 batch)
    - **B2B outreach Wave 2** — 6 draft emails/DMs ready in `docs/B2B-OUTREACH-PLAN.md`
    - **Community engagement** — join 5 planner FB groups this week, observe only (see `docs/COMMUNITY-MARKETING-PLAN.md`)
