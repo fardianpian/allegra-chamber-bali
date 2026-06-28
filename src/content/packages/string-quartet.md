@@ -17,5 +17,9 @@ to your favourite songs arranged for strings during the reception.
 Looking for a richer, more contemporary colour? Piano + Quartet swaps piano in alongside
 the strings.
 
+Want to understand how a string quartet compares to other formations before you decide?
+Our [string quartet wedding guide](/journal/string-quartet-bali-wedding/) walks through
+sound, venue types, and what to expect on the day.
+
 <!-- Pricing intentionally hidden on the live site per owner direction (2026-06-18) until real
 figures are ready — see docs/PROGRESS.md. Do not invent pricing. -->
