@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/sections/Hero.astro'
-import TrustStrip from '../components/sections/TrustStrip.astro'
+// import TrustStrip from '../components/sections/TrustStrip.astro' // hidden until real partner logos are available
 import Formations from '../components/sections/Formations.astro'
 import FeaturedVideo from '../components/sections/FeaturedVideo.astro'
 import FeaturedAudio from '../components/sections/FeaturedAudio.astro'
@@ -35,7 +35,7 @@ const videoJsonLd = getVideoJsonLd(lang, {
 	jsonLd={[...getHomeJsonLd(lang), videoJsonLd]}
 >
 	<Hero lang={lang} />
-	<TrustStrip lang={lang} />
+	{/* <TrustStrip lang={lang} /> */}
 	<Formations lang={lang} />
 	<FeaturedVideo lang={lang} />
 	<FeaturedAudio lang={lang} />
