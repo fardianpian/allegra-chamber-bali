@@ -17,16 +17,29 @@ Laporan ini bersifat informatif — owner yang menentukan tindak lanjut secara m
 
 ### Bagian A — SEO & Indexing
 
-**A1. GSC Performance (7 hari terakhir):**
-Gunakan `mcp__google-search-console__get_performance_overview` dengan:
-- siteUrl: `sc-domain:indonesiaistimewastudio.id`
-- startDate: 7 hari lalu
-- endDate: hari ini
-- Ekstrak: total clicks, total impressions, avg CTR, avg position
-- Top 5 halaman by clicks
+**A1. Organic Performance (7 hari terakhir):**
+
+Cek dulu tool apa yang tersedia di environment ini — GSC/GA4 TIDAK terhubung di cloud
+routine run (hanya Slack, Semrush, Ahrefs, Firecrawl yang terhubung), jadi ini kondisi
+normal/permanen untuk run terjadwal, bukan error transient yang perlu di-retry:
+
+- **Jika `mcp__google-search-console__get_performance_overview` tersedia** (run lokal):
+  gunakan dengan siteUrl `sc-domain:indonesiaistimewastudio.id`, startDate 7 hari lalu,
+  endDate hari ini. Ekstrak: total clicks, total impressions, avg CTR, avg position,
+  top 5 halaman by clicks.
+- **Jika tidak tersedia** (cloud routine run): gunakan `semrush organic_research` untuk
+  domain `allegra.indonesiaistimewastudio.id` (estimasi traffic organik + top keywords)
+  dan `mcp__claude_ai_Ahrefs__site-explorer-metrics` untuk metrik traffic tambahan.
+  Tandai hasil di laporan sebagai "estimasi (Semrush/Ahrefs, bukan data GSC langsung)".
 
 **A2. Indexing Status:**
-Gunakan `mcp__google-search-console__batch_url_inspection` untuk cek URL-URL berikut:
+
+Bagian ini HANYA bisa dijalankan jika `mcp__google-search-console__batch_url_inspection`
+tersedia (run lokal). Jika tidak tersedia (cloud routine run): **skip bagian ini**, catat
+"Indexing: N/A — GSC tidak tersedia di cloud environment, cek manual saat sesi lokal
+berikutnya" di laporan. Jangan menebak angka indexing dari sumber lain.
+
+Jika GSC tersedia, cek URL-URL berikut:
 ```
 https://allegra.indonesiaistimewastudio.id/
 https://allegra.indonesiaistimewastudio.id/journal/wedding-pianist-bali
@@ -52,13 +65,16 @@ Tambahkan URL artikel baru yang mungkin sudah ditambahkan sejak run terakhir
 
 Hitung: berapa URL yang Indexed vs Not Indexed vs Crawled-not-indexed.
 
-**A3. GA4 Traffic (7 hari terakhir):**
-Gunakan `mcp__google-analytics__run_report` dengan property `542419294`:
-- Dimensions: `pagePath`, `sessionDefaultChannelGroup`
-- Metrics: `sessions`, `bounceRate`, `averageSessionDuration`, `engagedSessions`
-- dateRange: 7 hari terakhir
+**A3. Traffic (7 hari terakhir):**
 
-Ekstrak: total sessions, top 5 halaman by sessions, traffic sources breakdown.
+- **Jika `mcp__google-analytics__run_report` tersedia** (run lokal): gunakan dengan
+  property `542419294` — Dimensions: `pagePath`, `sessionDefaultChannelGroup`;
+  Metrics: `sessions`, `bounceRate`, `averageSessionDuration`, `engagedSessions`;
+  dateRange: 7 hari terakhir. Ekstrak: total sessions, top 5 halaman by sessions,
+  traffic sources breakdown.
+- **Jika tidak tersedia** (cloud routine run): gunakan `semrush overview_research` atau
+  `mcp__claude_ai_Ahrefs__site-explorer-metrics` untuk estimasi traffic & top pages.
+  Tandai sebagai "estimasi (Semrush/Ahrefs, bukan data GA4 langsung)".
 
 ### Bagian B — Technical Health
 
@@ -187,8 +203,12 @@ Detail: `docs/AUDIT-LOG.md` | `docs/PROGRESS.md`
 
 ## Error Handling
 
-- Jika GSC MCP gagal: log "GSC unavailable", lanjutkan ke bagian berikutnya
-- Jika GA4 MCP gagal: log "GA4 unavailable", lanjutkan
+- GSC/GA4 tidak terhubung di cloud routine run adalah kondisi normal/permanen (lihat A1–A3
+  di atas) — langsung pakai jalur substitusi Semrush/Ahrefs, jangan retry GSC/GA4 atau
+  anggap ini error yang perlu dilaporkan.
+- Jika Semrush/Ahrefs MCP gagal (bukan sekadar tidak tersedia, tapi error saat dipanggil):
+  log "traffic data unavailable this run", tandai section terkait sebagai "N/A (tool error)",
+  lanjutkan ke bagian berikutnya — jangan hentikan seluruh audit.
 - Jika build gagal: TETAP lanjutkan laporan, tandai sebagai ❌ Error di semua output
   dan kirim Slack alert tambahan:
   ```
@@ -197,6 +217,8 @@ Detail: `docs/AUDIT-LOG.md` | `docs/PROGRESS.md`
   Error: <pesan error>
   ```
 - Jika Slack MCP gagal: simpan laporan ke docs, log error, lanjutkan
+- Prinsip umum: laporan yang PARSIAL (dengan section ditandai N/A) harus tetap sampai ke
+  Slack. Jangan biarkan satu section gagal membuat seluruh run diam-diam tidak mengirim apa pun.
 
 ## Catatan
 

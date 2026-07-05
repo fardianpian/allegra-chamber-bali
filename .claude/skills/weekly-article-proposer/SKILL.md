@@ -46,15 +46,17 @@ Generate 2–3 kandidat topik untuk pillar prioritas.
 
 ### Step 4: Keyword Data Nyata
 
-Untuk setiap kandidat, gunakan DataForSEO atau Ahrefs MCP untuk mendapatkan:
-- Search volume (global + US)
-- Keyword Difficulty (KD)
-- CPC estimasi
+Untuk setiap kandidat, ambil search volume (global + US), Keyword Difficulty (KD), dan
+CPC estimasi. Tool yang dipakai tergantung environment — DataForSEO TIDAK terhubung di
+cloud routine run (hanya Slack, Ahrefs, Semrush, Firecrawl yang terhubung), jadi ini
+kondisi normal/permanen untuk run terjadwal, bukan error transient:
 
-Tools yang tersedia:
-- `mcp__dataforseo__dataforseo_labs_google_keyword_overview`
-- `mcp__dataforseo__kw_data_google_ads_search_volume`
-- `mcp__claude_ai_Ahrefs__keywords-explorer-overview`
+- **Jika DataForSEO tersedia** (run lokal): gunakan
+  `mcp__dataforseo__dataforseo_labs_google_keyword_overview` atau
+  `mcp__dataforseo__kw_data_google_ads_search_volume`.
+- **Jika tidak tersedia** (cloud routine run): gunakan
+  `mcp__claude_ai_Ahrefs__keywords-explorer-overview` atau Semrush `keyword_research`
+  sebagai pengganti utama.
 
 ### Step 5: Pilih Kandidat Terbaik
 
