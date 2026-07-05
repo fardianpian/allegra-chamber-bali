@@ -229,6 +229,12 @@ Detail: `docs/AUDIT-LOG.md` | `docs/PROGRESS.md`
 - Jika Semrush/Ahrefs MCP gagal (bukan sekadar tidak tersedia, tapi error saat dipanggil):
   log "traffic data unavailable this run", tandai section terkait sebagai "N/A (tool error)",
   lanjutkan ke bagian berikutnya — jangan hentikan seluruh audit.
+- Jika `git push origin main` (Bagian D3) gagal (mis. 403/proxy block — dikonfirmasi
+  terjadi di cloud routine environment 2026-07-05): tetap kirim ringkasan ke Slack
+  (Bagian E) tapi tambahkan baris eksplisit "⚠️ Laporan belum tersimpan ke
+  docs/AUDIT-LOG.md/PROGRESS.md di repo (git push gagal, commit lokal: <hash>) — perlu
+  commit manual dari sesi lokal." Jangan anggap run ini gagal total (Slack tetap
+  terkirim), tapi jangan diam-diam kehilangan datanya juga.
 - Jika build gagal: TETAP lanjutkan laporan, tandai sebagai ❌ Error di semua output
   dan kirim Slack alert tambahan:
   ```

@@ -126,6 +126,30 @@ keywordDifficulty: <number>
 <1-2 kalimat kenapa topik ini dipilih minggu ini>
 ```
 
+### Step 7b: Commit dan Push
+
+Proposal HARUS di-push ke `main` — tanpa langkah ini, file hanya ada di sandbox
+sementara run ini dan akan hilang begitu sandbox dibuang, sehingga
+`weekly-article-publisher` (Senin 09:00 WIB) tidak akan pernah menemukannya.
+
+```bash
+cd /Users/fardian.fp/Claude/Project/allegra-chamber-bali
+git add docs/article-proposals/pending-YYYY-MM-DD.md
+git commit -m "docs: add article proposal YYYY-MM-DD"
+git push origin main
+```
+
+Jika push gagal (mis. 403/proxy block — dikonfirmasi terjadi di cloud routine
+environment 2026-07-05): tetap lanjut ke Step 8 (kirim Slack), tapi tambahkan baris
+peringatan eksplisit di pesan:
+
+```
+⚠️ File proposal BELUM tersimpan ke repo (git push gagal). Publisher Senin tidak
+akan menemukan file ini kecuali di-commit manual dari sesi lokal.
+```
+
+Jangan biarkan kegagalan push membuat run berhenti atau terlihat sukses penuh.
+
 ### Step 8: Kirim Pesan Slack
 
 Gunakan `mcp__claude_ai_Slack__slack_send_message` ke channel `#allegra-updates`.
@@ -168,11 +192,14 @@ Log ke stdout: "Proposal terkirim ke Slack #allegra-updates — [slug]"
 
 - Jika DataForSEO/Ahrefs gagal: lanjutkan dengan estimasi dari SEO-STRATEGY.md, tandai
   di proposal sebagai "volume: estimated (API unavailable)"
-- Jika Slack MCP gagal: simpan proposal ke file, log error ke stdout, jangan crash
+- Jika git push gagal (lihat Step 7b): JANGAN anggap run ini sukses penuh — proposal
+  hanya ada di sandbox sementara, next session perlu commit manual
+- Jika Slack MCP gagal: simpan proposal ke file (dan tetap coba push, Step 7b), log
+  error ke stdout, jangan crash
 - Jika semua artikel sudah menutup semua pillar (sangat jarang): pilih topik
   "long-tail cluster" tambahan dari SEO-STRATEGY.md §4+
 
 ## Output Akhir
 
-- File: `docs/article-proposals/pending-YYYY-MM-DD.md`
+- File: `docs/article-proposals/pending-YYYY-MM-DD.md`, ter-commit dan ter-push ke `main`
 - Pesan Slack terkirim ke `#allegra-updates`
