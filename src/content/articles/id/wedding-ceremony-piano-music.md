@@ -35,6 +35,8 @@ Sesi piano untuk upacara penuh mencakup empat momen utama:
 
 Prelude adalah bagian terpanjang dan yang paling sering diabaikan pasangan. Ia membangun suasana sebelum sepatah kata pun diucapkan. Pianis yang memainkan musik pelan saat tamu mencari tempat duduk menciptakan nuansa yang berbeda dari keheningan atau playlist speaker — ruangan mengendap dengan cara yang berbeda.
 
+Memilih lagu untuk prosesi dan resesional biasanya menjadi keputusan yang lebih sulit — [panduan lagu prosesi dan resesional](/id/journal/wedding-processional-recessional-songs/) kami membahas pilihan lagu nyata untuk kedua momen tersebut.
+
 ## Berapa Banyak Musik yang Dibutuhkan Satu Upacara?
 
 Untuk upacara standar, Anda membutuhkan setidaknya empat hingga enam lagu: set prelude dua atau tiga lagu, satu lagu prosesi, musik latar opsional selama upacara berlangsung, dan satu resesional. Jika iring-iringan pengantin dan pasangan masuk dengan lagu berbeda, tambahkan satu lagu lagi.

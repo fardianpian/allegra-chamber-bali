@@ -35,6 +35,8 @@ A full ceremony piano set covers four distinct moments:
 
 The prelude is the longest section and the one couples most often overlook. It sets the atmosphere before a word is spoken. A pianist playing quietly as guests find their seats creates a different feeling to silence, or to a speaker playlist — the room settles in a different way.
 
+Choosing what to play for the entrance and exit is usually the harder decision — our [processional and recessional song guide](/journal/wedding-processional-recessional-songs/) covers real piece options for both moments.
+
 ## How Much Music Does a Ceremony Need?
 
 For a standard ceremony, you need four to six pieces as a minimum: a prelude set of two or three pieces, one processional, optional background music during the ceremony itself, and a recessional. If the bridal party and the couple enter to different music, add one more.
