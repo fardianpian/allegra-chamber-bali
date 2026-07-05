@@ -7,6 +7,36 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Weekly Audit — 2026-07-05
+
+**Catatan insiden:** run terjadwal pertama `weekly-health-audit` (Minggu 08:00 WIB) gagal
+silent — `SKILL.md` hardcode tool GSC/GA4/DataForSEO yang tidak terhubung di environment
+cloud routine. Fix sudah di-push ke `main` (`9ebd8d9`) sebelum run `allegra-article-proposer`
+malam ini; audit di bawah dijalankan manual untuk mengisi laporan minggu ini dan
+memverifikasi fix. Detail lengkap: `docs/AUDIT-LOG.md`.
+
+**GSC 7 hari:** 5 clicks | 605 impressions | 0.83% CTR | pos avg 11.2
+**Indexing:** 15/18 URL terindex — naik besar dari catatan 2026-06-28 ("hanya homepage").
+2 halaman ID (`live-music-bali-wedding-guide`, `live-music-vendor-questions`) masih
+"Excluded by noindex" di GSC karena crawl terakhir Google tertanggal sebelum fix
+noindex 2026-06-23 — perlu Request Indexing ulang manual. 1 halaman EN
+(`live-music-bali-wedding-guide`) berstatus "Discovered - currently not indexed".
+**GA4 7 hari:** 13 sessions | 7 engaged | top: `/` lalu `/id/` dan halaman journal
+**Build:** ✅ Clean (0 error, 0 warning)
+**SEO Score:** N/A (Lighthouse/CWV tidak dijalankan siklus ini, butuh browser tooling) —
+robots.txt & sitemap OK (200), redirect trailing-slash bersih (single-hop 308, bukan bug)
+**Content gap:** Pillar `bali-venues` — 1 artikel (target minimum: 3)
+**Top rekomendasi:**
+
+- Request Indexing ulang di GSC untuk 2 URL ID yang masih ke-cache sebagai noindex
+  (`/id/journal/live-music-bali-wedding-guide/`, `/id/journal/live-music-vendor-questions/`)
+- Tulis 2-3 artikel baru untuk pillar `bali-venues` (kandidat: beachfront venue, garden
+  venue, ballroom/indoor venue — angle tipe venue, bukan nama area/kota, karena
+  `docs/SEO-STRATEGY.md` §3.4 sudah konfirmasi tidak ada demand pencarian untuk
+  "[area] wedding venue/musician" per kota Bali)
+- Pantau apakah `allegra-article-proposer` (19:00 WIB malam ini) berjalan sukses pasca-fix —
+  ini akan jadi eksekusi otomatis nyata pertama sejak setup 2026-06-29
+
 ## Status as of 2026-06-28
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
