@@ -93,4 +93,7 @@ in place, while a chapel or covered structure removes most weather variables ent
 venue type when you inquire and we'll confirm exactly what's needed. If your ceremony is set on a
 clifftop, see our
 [guide to live music for a cliffside wedding in Uluwatu](/journal/cliffside-wedding-uluwatu/) for
-formation guidance and the venues we've performed at in the area.
+formation guidance and the venues we've performed at in the area. Planning a garden ceremony
+instead? See our
+[guide to garden wedding ceremony music](/journal/garden-wedding-ceremony-music-bali/) for
+formation choice, acoustics, and the rain backup plan.

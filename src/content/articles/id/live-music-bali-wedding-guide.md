@@ -94,4 +94,7 @@ mudah, dengan peneduh alami dan tanah yang sudah rata, sementara kapel atau stru
 menghilangkan hampir semua variabel cuaca. Beri tahu kami jenis venue Anda saat menghubungi, dan
 kami akan memastikan apa yang dibutuhkan. Jika upacara Anda berlangsung di atas tebing, lihat
 [panduan musik live untuk pernikahan di tebing Uluwatu](/id/journal/cliffside-wedding-uluwatu/)
-kami untuk panduan formasi dan venue tempat kami pernah tampil di sana.
+kami untuk panduan formasi dan venue tempat kami pernah tampil di sana. Merencanakan upacara di
+taman? Lihat
+[panduan musik upacara pernikahan di taman](/id/journal/garden-wedding-ceremony-music-bali/) kami
+untuk pemilihan formasi, akustik, dan rencana cadangan hujan.
