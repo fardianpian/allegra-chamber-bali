@@ -28,19 +28,23 @@ Gunakan `mcp__claude_ai_Slack__slack_search_public_and_private` atau
 channel `#allegra-updates`.
 
 Cari reply setelah timestamp proposal dikirim (Minggu malam) yang mengandung:
+
 - "setuju", "oke", "ok", "approved", "lanjut", "yes", "go", "go ahead"
 
 ### Step 3a: JIKA ADA APPROVAL
 
 Baca file proposal `docs/article-proposals/pending-YYYY-MM-DD.md` untuk mendapatkan:
+
 - `slug`, `title`, `heading`, `targetKeyword`, `pillar`, outline, FAQ kandidat
 
 **Baca konteks wajib sebelum menulis:**
+
 1. `.claude/brand-voice-guidelines.md` — tone, vocabulary, approved copy blocks
 2. `.claude/article-seo-geo-aeo-guidelines.md` — struktur artikel, AEO rules
 3. `CLAUDE.md` §"Journal / Article Content" — schema rules, dual-title requirement
 
 **Tulis artikel EN:**
+
 - Ikuti struktur: hook (40–60 kata, Problem→Solution→CTA), lalu H2 sebagai pertanyaan nyata
 - Setiap H2 buka dengan 1–2 kalimat direct answer sebelum elaborasi
 - Internal links: outbound ke `/packages`, `/repertoire`, `/for-planners`
@@ -51,19 +55,23 @@ Baca file proposal `docs/article-proposals/pending-YYYY-MM-DD.md` untuk mendapat
 - Simpan ke `src/content/articles/<slug>.md`
 
 **Tulis terjemahan ID:**
+
 - Terjemahan genuine, bukan transliteration — sesuaikan tone untuk pembaca Indonesia
 - Frontmatter identik kecuali `title`, `heading`, `description`, `excerpt`, `faq` (semua dalam Bahasa Indonesia)
 - `slug` frontmatter tidak perlu diubah (Astro ambil dari path)
 - Simpan ke `src/content/articles/id/<slug>.md`
 
 **Validasi build:**
+
 ```bash
 cd /Users/fardian.fp/Claude/Project/allegra-chamber-bali
 npm run lint && npm run build
 ```
+
 Jika ada error → kirim Slack alert dengan pesan error, stop (jangan push).
 
 **Git commit dan push:**
+
 ```bash
 git add src/content/articles/<slug>.md src/content/articles/id/<slug>.md
 git commit -m "feat(journal): add <slug> article (EN + ID)"
@@ -76,6 +84,7 @@ menjadi `docs/article-proposals/published-YYYY-MM-DD.md`.
 Update frontmatter: `status: published`, tambah `publishedAt: YYYY-MM-DD`.
 
 **Commit docs update:**
+
 ```bash
 git add docs/article-proposals/published-YYYY-MM-DD.md
 git commit -m "docs: mark article proposal as published YYYY-MM-DD"
@@ -83,6 +92,7 @@ git push origin main
 ```
 
 **Kirim Slack konfirmasi:**
+
 ```
 ✅ *Artikel Baru Live!* — Allegra Chamber Bali
 
@@ -108,6 +118,7 @@ git push origin main
 ```
 
 Kirim Slack notifikasi:
+
 ```
 ⏸️ *Artikel Minggu Ini Ditunda* — Allegra Chamber Bali
 

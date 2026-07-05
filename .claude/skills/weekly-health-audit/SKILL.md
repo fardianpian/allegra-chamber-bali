@@ -39,27 +39,36 @@ tersedia (run lokal). Jika tidak tersedia (cloud routine run): **skip bagian ini
 "Indexing: N/A — GSC tidak tersedia di cloud environment, cek manual saat sesi lokal
 berikutnya" di laporan. Jangan menebak angka indexing dari sumber lain.
 
-Jika GSC tersedia, cek URL-URL berikut:
+Jika GSC tersedia, cek URL-URL berikut. **Gunakan trailing slash** (mis. `/packages/`,
+bukan `/packages`) — Astro static build canonically menyajikan versi dengan trailing
+slash dan me-redirect (308) versi tanpa slash ke situ; mengecek versi tanpa slash membuat
+`batch_url_inspection` melaporkan status "Redirect error" yang salah (bukan bug situs,
+cuma false positive dari URL yang salah bentuk — dikonfirmasi via `curl -sIL` 2026-07-05).
+**Batch maksimal 10 URL per panggilan** (limit API) — pecah daftar 18 URL di bawah jadi
+2 batch:
+
 ```
 https://allegra.indonesiaistimewastudio.id/
-https://allegra.indonesiaistimewastudio.id/journal/wedding-pianist-bali
-https://allegra.indonesiaistimewastudio.id/journal/live-music-bali-wedding-guide
-https://allegra.indonesiaistimewastudio.id/journal/string-quartet-bali-wedding
-https://allegra.indonesiaistimewastudio.id/journal/cliffside-wedding-uluwatu
-https://allegra.indonesiaistimewastudio.id/journal/live-music-vendor-questions
-https://allegra.indonesiaistimewastudio.id/journal/vendor-partnership-logistics-bali
-https://allegra.indonesiaistimewastudio.id/journal/wedding-ceremony-piano-music
-https://allegra.indonesiaistimewastudio.id/id/journal/wedding-pianist-bali
-https://allegra.indonesiaistimewastudio.id/id/journal/live-music-bali-wedding-guide
-https://allegra.indonesiaistimewastudio.id/id/journal/string-quartet-bali-wedding
-https://allegra.indonesiaistimewastudio.id/id/journal/cliffside-wedding-uluwatu
-https://allegra.indonesiaistimewastudio.id/id/journal/live-music-vendor-questions
-https://allegra.indonesiaistimewastudio.id/id/journal/vendor-partnership-logistics-bali
-https://allegra.indonesiaistimewastudio.id/id/journal/wedding-ceremony-piano-music
-https://allegra.indonesiaistimewastudio.id/packages
-https://allegra.indonesiaistimewastudio.id/about
-https://allegra.indonesiaistimewastudio.id/faq
+https://allegra.indonesiaistimewastudio.id/journal/wedding-pianist-bali/
+https://allegra.indonesiaistimewastudio.id/journal/live-music-bali-wedding-guide/
+https://allegra.indonesiaistimewastudio.id/journal/string-quartet-bali-wedding/
+https://allegra.indonesiaistimewastudio.id/journal/cliffside-wedding-uluwatu/
+https://allegra.indonesiaistimewastudio.id/journal/live-music-vendor-questions/
+https://allegra.indonesiaistimewastudio.id/journal/vendor-partnership-logistics-bali/
+https://allegra.indonesiaistimewastudio.id/journal/wedding-ceremony-piano-music/
+https://allegra.indonesiaistimewastudio.id/packages/
+https://allegra.indonesiaistimewastudio.id/about/
+--- batch 2 ---
+https://allegra.indonesiaistimewastudio.id/id/journal/wedding-pianist-bali/
+https://allegra.indonesiaistimewastudio.id/id/journal/live-music-bali-wedding-guide/
+https://allegra.indonesiaistimewastudio.id/id/journal/string-quartet-bali-wedding/
+https://allegra.indonesiaistimewastudio.id/id/journal/cliffside-wedding-uluwatu/
+https://allegra.indonesiaistimewastudio.id/id/journal/live-music-vendor-questions/
+https://allegra.indonesiaistimewastudio.id/id/journal/vendor-partnership-logistics-bali/
+https://allegra.indonesiaistimewastudio.id/id/journal/wedding-ceremony-piano-music/
+https://allegra.indonesiaistimewastudio.id/faq/
 ```
+
 Tambahkan URL artikel baru yang mungkin sudah ditambahkan sejak run terakhir
 (baca `src/content/articles/` untuk daftar terbaru).
 
@@ -79,10 +88,12 @@ Hitung: berapa URL yang Indexed vs Not Indexed vs Crawled-not-indexed.
 ### Bagian B — Technical Health
 
 **B1. Build check:**
+
 ```bash
 cd /Users/fardian.fp/Claude/Project/allegra-chamber-bali
 npm run lint && npm run build
 ```
+
 Catat: ✅ Clean atau ❌ Error (sertakan pesan error singkat jika ada).
 
 **B2. SEO Audit (skill):**
@@ -102,8 +113,9 @@ Baca semua file di `src/content/articles/` (exclude `id/` subdirektori).
 Hitung artikel per pillar dari frontmatter `pillar` field.
 
 Dari 4 pillar yang valid:
+
 - `planning` — Wedding Music Planning
-- `piano-repertoire` — Piano & Repertoire  
+- `piano-repertoire` — Piano & Repertoire
 - `bali-venues` — Bali Ceremony & Venue Guides
 - `for-planners` — For Wedding Planners & Venues
 
@@ -127,6 +139,7 @@ Tambahkan section baru di awal (setelah header) atau di akhir "Next steps" secti
 **SEO Score:** <score atau "N/A">
 **Content gap:** Pillar `<pillar>` — X artikel (target minimum: 3)
 **Top rekomendasi:**
+
 - <rekomendasi 1>
 - <rekomendasi 2>
 - <rekomendasi 3>
@@ -142,6 +155,7 @@ File ini khusus audit — format lebih detail:
 ## Audit: YYYY-MM-DD
 
 ### GSC Performance
+
 - Clicks (7d): X
 - Impressions (7d): X
 - Avg CTR: X%
@@ -149,31 +163,37 @@ File ini khusus audit — format lebih detail:
 - Top pages: ...
 
 ### Indexing Status
+
 - Indexed: X/Y
 - Not indexed: (list URL)
 - Crawled-not-indexed: (list URL jika ada)
 
 ### GA4 Traffic
+
 - Sessions (7d): X
 - Top channel: X
 - Top pages: ...
 
 ### Technical
+
 - Build: ✅/❌
 - SEO Audit: <ringkasan>
 - audit-website: <ringkasan atau "not run">
 
 ### Content
+
 - Artikel per pillar: planning(X), piano-repertoire(X), bali-venues(X), for-planners(X)
 - Pillar paling kosong: <pillar>
 - Kandidat topik minggu depan: <list>
 
 ### Action Items (untuk owner)
+
 - [ ] <item 1>
 - [ ] <item 2>
 ```
 
 **D3. Git commit:**
+
 ```bash
 git add docs/PROGRESS.md docs/AUDIT-LOG.md
 git commit -m "docs: weekly audit report YYYY-MM-DD"

@@ -30,6 +30,7 @@ Buat daftar: pillar apa saja yang sudah punya artikel dan berapa.
 ### Step 2: Identifikasi Gap Pillar
 
 Dari 4 pillar yang valid:
+
 - `planning` — Wedding Music Planning
 - `piano-repertoire` — Piano & Repertoire
 - `bali-venues` — Bali Ceremony & Venue Guides
@@ -61,6 +62,7 @@ kondisi normal/permanen untuk run terjadwal, bukan error transient:
 ### Step 5: Pilih Kandidat Terbaik
 
 Kriteria seleksi:
+
 - KD rendah (< 30 ideal, < 50 masih oke)
 - Volume realistis (tidak 0, tidak terlalu head term)
 - Belum ada artikel dengan keyword serupa di `src/content/articles/`
@@ -69,6 +71,7 @@ Kriteria seleksi:
 ### Step 6: Generate Proposal
 
 Buat konten proposal:
+
 - `title`: judul lengkap untuk `<title>` tag (include "— Allegra Chamber Bali")
 - `heading`: H1 on-page (tanpa brand suffix)
 - `targetKeyword`: keyword utama yang dipilih
