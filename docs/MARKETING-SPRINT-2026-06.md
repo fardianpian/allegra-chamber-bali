@@ -159,27 +159,27 @@ Hari 9:
 
 **Wedding planner (destination wedding, fokus internasional):**
 
-| Nama                                | Channel terverifikasi (2026-06-26)                        | Confidence | Wave    | Status |
-| ----------------------------------- | --------------------------------------------------------- | ---------- | ------- | ------ |
-| Tirtha (planner + venue group)      | wedding.inquiry@tirtha.com · +62 816-4701-0120            | High       | 1       | Belum  |
-| Bali Wedding Paradise               | admin@baliweddingparadise.com · IG @baliweddingparadise   | High       | 1       | Belum  |
-| The Wedding Mood                    | IG @theweddingmood                                        | High       | 1       | Belum  |
-| Hitch'd Weddings Bali               | holla@hitchdbali.com · IG @hitchdweddings (10K followers) | High       | 1       | Belum  |
-| Global Weddings                     | globalweddings.com.au · +61 435 850 424                   | High       | 1       | Belum  |
-| The Seven Agency                    | IG @thesevenwedding                                       | Medium     | 2       | Belum  |
-| Poetyque Events                     | poetyque.com · IG @poetyque.events                        | High       | 2       | Belum  |
-| Luxury Weddings Indonesia           | luxuryweddingsindonesia.com · IG @luxuryweddingsindo      | High       | 2       | Belum  |
-| Plan A — Destination Event Planners | info@planabali.com · IG @plana.destinationevents          | High       | 2       | Belum  |
-| Avavi Bali                          | IG @avavibali_weddings                                    | Medium     | Backlog | Belum  |
+| Nama                                | Channel terverifikasi (2026-06-26)                        | Confidence | Wave    | Status          |
+| ----------------------------------- | --------------------------------------------------------- | ---------- | ------- | --------------- |
+| Tirtha (planner + venue group)      | wedding.inquiry@tirtha.com · +62 816-4701-0120            | High       | 1       | Terkirim 29 Jun |
+| Bali Wedding Paradise               | admin@baliweddingparadise.com · IG @baliweddingparadise   | High       | 1       | Terkirim 29 Jun |
+| The Wedding Mood                    | IG @theweddingmood                                        | High       | 1       | Belum           |
+| Hitch'd Weddings Bali               | holla@hitchdbali.com · IG @hitchdweddings (10K followers) | High       | 1       | Belum           |
+| Global Weddings                     | globalweddings.com.au · +61 435 850 424                   | High       | 1       | Kirim hari ini  |
+| The Seven Agency                    | IG @thesevenwedding                                       | Medium     | 2       | Belum           |
+| Poetyque Events                     | poetyque.com · IG @poetyque.events                        | High       | 2       | Belum           |
+| Luxury Weddings Indonesia           | luxuryweddingsindonesia.com · IG @luxuryweddingsindo      | High       | 2       | Belum           |
+| Plan A — Destination Event Planners | info@planabali.com · IG @plana.destinationevents          | High       | 2       | Belum           |
+| Avavi Bali                          | IG @avavibali_weddings                                    | Medium     | Backlog | Belum           |
 
 **Venue (cliffside/Uluwatu — selaras dengan foto yang sudah dimiliki):**
 
-| Nama                   | Channel terverifikasi (2026-06-26)                                                                                   | Confidence | Wave              | Status |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------- | ------ |
-| Tirtha Uluwatu         | **= "Tirtha" di tabel planner di atas** (email kontak sama persis) — jangan kirim 2x, pakai wave & channel baris itu | High       | 1 (lihat di atas) | —      |
-| The Edge Bali          | reservations@theedgebali.com · contact form theedgebali.com/contact                                                  | High       | 1                 | Belum  |
-| Alila Villas Uluwatu   | uluwatuevents@alilahotels.com · +62 361 848 2166                                                                     | High       | 2                 | Belum  |
-| Bali Wedding Solutions | contact form baliweddingsolutions.com/contact-us                                                                     | Medium     | 2                 | Belum  |
+| Nama                   | Channel terverifikasi (2026-06-26)                                                                                   | Confidence | Wave              | Status         |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------- | -------------- |
+| Tirtha Uluwatu         | **= "Tirtha" di tabel planner di atas** (email kontak sama persis) — jangan kirim 2x, pakai wave & channel baris itu | High       | 1 (lihat di atas) | —              |
+| The Edge Bali          | reservations@theedgebali.com · contact form theedgebali.com/contact                                                  | High       | 1                 | Kirim hari ini |
+| Alila Villas Uluwatu   | uluwatuevents@alilahotels.com · +62 361 848 2166                                                                     | High       | 2                 | Belum          |
+| Bali Wedding Solutions | contact form baliweddingsolutions.com/contact-us                                                                     | Medium     | 2                 | Belum          |
 
 ---
 
