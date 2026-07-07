@@ -10,6 +10,7 @@ import pianistGardenPathway from '../../assets/gallery/wedding-pianist-garden-pa
 import quartetGarden from '../../assets/gallery/string-quartet-garden-ceremony-bali.jpg'
 import receptionSetup from '../../assets/gallery/wedding-reception-setup-string-lights-bali.jpg'
 import quartetCello from '../../assets/gallery/string-quartet-cello-garden-ceremony-bali.jpg'
+import pianistGardenDaytime from '../../assets/gallery/pianist-garden-daytime-white-piano-bali.jpg'
 
 interface Props {
 	lang: Lang
@@ -21,9 +22,9 @@ const gallery = t('galleryPage')
 // Filter tags kept for all venue types the owner books, even ones without a photo yet —
 // clicking an empty tag shows the "no photos yet" message until new documentation comes in.
 const types = ['cliffside', 'beach', 'garden', 'chapel', 'ballroom'] as const
-// Real event photos so far (owner-supplied, 2026-06-18 + 2026-06-24 batches, plus the Solo
-// package photo). Add more tiles here (with the matching `type`) as the owner confirms new
-// event photography (CLAUDE.md §9).
+// Real event photos so far (owner-supplied, 2026-06-18 + 2026-06-24 + 2026-07-07 batches,
+// plus the Solo package photo). Add more tiles here (with the matching `type`) as the owner
+// confirms new event photography (CLAUDE.md §9).
 const tiles = [
 	{ type: 'garden', src: piano2, alt: 'Garden reception with live wedding pianist, Bali' },
 	{
@@ -53,6 +54,11 @@ const tiles = [
 		alt: 'Wedding reception setup with string lights and floral decor in Bali',
 	},
 	{ type: 'garden', src: quartetCello, alt: 'String quartet with cello performing at a Bali garden wedding' },
+	{
+		type: 'garden',
+		src: pianistGardenDaytime,
+		alt: 'Wedding pianist performing on a white grand piano in a garden setting in Bali',
+	},
 ] as const
 
 const filterBtnBase =
