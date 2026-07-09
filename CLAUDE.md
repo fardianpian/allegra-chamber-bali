@@ -55,9 +55,12 @@ Languages: **English (primary) + Indonesian (secondary)**.
   (Piano + Duo/Trio/Quartet) is sellable as an add-on within Duo/Trio/Quartet (Large Ensemble
   already includes piano in its default composition). Sold as on-page upsell copy within
   `/packages`, not as a separate keyword/page — see `docs/SEO-STRATEGY.md` §3.0 for why.
-- Large Ensemble composition (confirmed 2026-06-18, no longer TBC): string quartet + piano +
-  double bass (6 musicians). Piano must stay in the default/first-presented lineup; the exact
-  instrumentation is customisable per client on request.
+- Large Ensemble composition (revised 2026-07-09, supersedes the 2026-06-18 6-musician figure):
+  starts from **8 musicians** (strings + piano) and can expand further on request — e.g. a fuller
+  lineup of 4 violins, 2 violas, 2 cellos, double bass, and piano. Piano must stay in the
+  default/first-presented lineup; the exact instrumentation is customisable per client on request.
+  `docs/PRICING-STRATEGY.md` and `docs/BRIEF.md` still show the old 6-musician figure/pricing —
+  not yet reconciled with this revision, needs an owner pricing pass before those are updated.
 - Pricing is intentionally **not displayed** anywhere on the live site (owner direction,
   2026-06-18) until real figures exist — no price field, column, or "TODO" placeholder text.
   `packages/*.md` has no `priceFrom`; don't reintroduce one without the owner's real numbers.

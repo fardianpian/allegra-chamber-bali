@@ -94,8 +94,9 @@ exists anywhere in this repo's docs. Do not invent Bali wedding-vendor competito
   piano holds the harmony and rhythm, violin and cello carry the melody)
 - Conservatory-trained musicians
 - Custom arrangements of the couple's own song (Unforgettable)
-- 5 fixed formations from Solo to Large Ensemble (Large Ensemble = string quartet + piano +
-  double bass, 6 musicians) — a clear, curated range without ad-hoc customization risk
+- 5 fixed formations from Solo to Large Ensemble (Large Ensemble starts from 8 musicians —
+  strings + piano, expandable e.g. to 4 violins/2 violas/2 cellos/double bass/piano — revised
+  2026-07-09, see CLAUDE.md) — a clear, curated range without ad-hoc customization risk
 
 **How we do it differently:** Arranged around the couple's story rather than a generic
 repertoire-only booking; bilingual (EN/ID) service for both international and local couples.
@@ -139,11 +140,11 @@ world-class/best-in-Bali, DJ-vs-live hype, AI-cliché openers ("in today's fast-
 
 **Glossary:**
 
-| Term           | Meaning                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
-| Formation      | One of the 5 fixed lineups: Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble       |
-| Piano +        | Piano-upgrade upsell sellable on Duo/Trio/Quartet                                                      |
-| Large Ensemble | String quartet + piano + double bass (6 musicians) — piano stays in the default/first-presented lineup |
+| Term           | Meaning                                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Formation      | One of the 5 fixed lineups: Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble                     |
+| Piano +        | Piano-upgrade upsell sellable on Duo/Trio/Quartet                                                                    |
+| Large Ensemble | Starts from 8 musicians (strings + piano), expandable on request — piano stays in the default/first-presented lineup |
 
 ## Brand Voice
 

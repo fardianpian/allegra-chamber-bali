@@ -67,7 +67,7 @@ export const ui = {
 				{
 					formation: 'large-ensemble',
 					name: 'Large Ensemble',
-					tagline: 'Quartet + Piano + Double Bass',
+					tagline: 'From 8 Musicians, Fully Customisable',
 					blurb: 'A grand, layered sound for a statement ceremony or reception.',
 				},
 			],
@@ -622,7 +622,7 @@ export const ui = {
 				{
 					formation: 'large-ensemble',
 					name: 'Large Ensemble',
-					tagline: 'Quartet + Piano + Double Bass',
+					tagline: 'Mulai dari 8 Musisi, Dapat Disesuaikan',
 					blurb: 'Suara megah dan berlapis untuk upacara atau resepsi yang berkesan.',
 				},
 			],
