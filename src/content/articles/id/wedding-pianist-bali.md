@@ -11,9 +11,9 @@ faq:
   - question: 'Bisakah saya memesan hanya pianis untuk upacara pernikahan saya di Bali?'
     answer: 'Bisa — Solo Piano adalah salah satu opsi formasi Solo kami, setara dengan violin dan cello, bukan alternatif yang lebih sederhana. Pianis dapat membawakan seluruh rangkaian upacara: prelude, prosesi, pemberkatan/akad, dan resesi.'
   - question: 'Apakah pianis solo sudah cukup, atau saya tetap butuh string?'
-    answer: 'Solo piano cocok untuk upacara intim dengan ukuran apa pun — piano sendiri sudah membawakan harmoni sekaligus melodi. Jika Anda menginginkan suara yang lebih penuh untuk venue besar atau sesi resepsi yang lebih panjang, piano bisa dipadukan dengan string sebagai Duo, Trio, atau String Quartet melalui upgrade "Piano +".'
+    answer: 'Solo piano cocok untuk upacara intim dengan ukuran apa pun — piano sendiri sudah membawakan harmoni sekaligus melodi. Jika Anda menginginkan suara yang lebih penuh untuk venue besar atau sesi resepsi yang lebih panjang, piano bisa dipadukan dengan string sebagai Duo, Trio, atau String Quartet — piano sudah termasuk secara standar dalam formasi-formasi tersebut, bukan upgrade terpisah.'
   - question: 'Bisakah pianis pernikahan juga bermain saat cocktail hour dan resepsi?'
-    answer: 'Bisa. Pianis yang sama dapat melanjutkan dari upacara ke sesi cocktail hour dan resepsi, atau Anda bisa memesan piano sebagai bagian dari formasi Large Ensemble kami (kuartet gesek, piano, dan double bass) untuk sepanjang hari.'
+    answer: 'Bisa. Pianis yang sama dapat melanjutkan dari upacara ke sesi cocktail hour dan resepsi, atau Anda bisa memesan piano sebagai bagian dari formasi Large Ensemble kami (4 biola, 2 viola, 2 cello, double bass, dan piano — 10 musisi secara default) untuk sepanjang hari.'
   - question: 'Berapa biaya pianis pernikahan di Bali?'
     answer: 'Biaya bergantung pada formasi, jumlah sesi, dan tanggal Anda, sehingga kami tidak mempublikasikan tarif tetap. Kirim pesan ke WhatsApp kami dengan tanggal dan venue Anda, dan kami akan mengirimkan penawaran yang dipersonalisasi.'
 ---
@@ -53,10 +53,11 @@ merekomendasikan formasi yang sesuai.
 Piano tidak harus berdiri sendiri. Piano adalah instrumen unggulan di setiap formasi Allegra, bukan
 tambahan opsional:
 
-- **Piano +** tersedia sebagai upgrade dalam paket Duo, Trio, dan String Quartet kami — piano
-  membawakan harmoni dan ritme, sementara violin dan cello membawakan melodi.
-- **Large Ensemble** kami — kuartet gesek, piano, dan double bass — sudah menyertakan piano dalam
-  susunan default-nya, untuk pasangan yang ingin suara paling penuh sepanjang upacara dan resepsi.
+- Piano **sudah termasuk secara standar**, bukan upgrade berbayar, dalam paket Duo, Trio, dan
+  String Quartet kami — piano membawakan harmoni dan ritme, sementara string membawakan melodi.
+- **Large Ensemble** kami — 4 biola, 2 viola, 2 cello, double bass, dan piano (10 musisi secara
+  default) — sudah menyertakan piano dalam susunan default-nya, untuk pasangan yang ingin suara
+  paling penuh sepanjang upacara dan resepsi.
 
 Artinya, memilih pianis pernikahan tidak menutup kemungkinan untuk menambahkan string nanti, dan
 memilih string pun tidak berarti meninggalkan piano — keduanya dirancang untuk saling melengkapi.

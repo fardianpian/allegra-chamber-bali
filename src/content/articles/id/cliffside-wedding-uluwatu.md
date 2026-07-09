@@ -15,7 +15,7 @@ faq:
   - question: 'Apakah Allegra Chamber Bali pernah tampil di venue tebing di Uluwatu sebelumnya?'
     answer: 'Ya — Alila Villas Uluwatu, Bvlgari Resort Bali, dan Stone Villas Uluwatu termasuk venue tebing yang pernah kami tampil di area tersebut.'
   - question: 'Bisakah piano menjadi bagian dari ansambel upacara di tebing?'
-    answer: 'Bisa — piano adalah instrumen unggulan di setiap formasi Allegra, bukan tambahan. Piano tersedia sebagai opsi Solo, sebagai upgrade "Piano +" dalam Duo, Trio, dan String Quartet, dan sudah menjadi bagian dari susunan default Large Ensemble.'
+    answer: 'Bisa — piano adalah instrumen unggulan di setiap formasi Allegra, bukan tambahan. Piano tersedia sebagai opsi Solo, sudah termasuk secara standar dalam Duo, Trio, dan String Quartet, dan sudah menjadi bagian dari susunan default Large Ensemble.'
   - question: 'Jam berapa yang paling cocok untuk upacara pernikahan di tebing di Bali?'
     answer: 'Golden hour, saat cahaya di atas laut paling lembut, adalah pilihan umum untuk upacara di atas tebing — beri tahu kami waktu upacara yang Anda inginkan saat menghubungi, dan kami akan menyusun programnya menyesuaikan waktu tersebut.'
 ---
@@ -39,11 +39,11 @@ yang asing bagi kami; ini hanyalah standar dasar untuk setiap pemesanan di atas 
 
 Bergantung pada jumlah tamu dan seberapa terbuka setting tersebut, lebih dari sekadar fakta bahwa
 lokasinya di tebing. Solo atau Duo terdengar jelas dengan latar langit dan laut terbuka untuk
-upacara bergaya elopement yang intim, sementara String Quartet atau Large Ensemble kami — kuartet
-gesek, piano, dan double bass — mengisi ruang tebing yang lebih besar atau bertahan sepanjang
-resepsi yang lebih panjang. Piano juga menjadi bagian unggulan dari setiap formasi di sini,
-tersedia sebagai opsi Solo atau sebagai upgrade "Piano +" dalam Duo, Trio, dan String Quartet —
-bukan instrumen yang kami anggap opsional.
+upacara bergaya elopement yang intim, sementara String Quartet atau Large Ensemble kami — 4 biola,
+2 viola, 2 cello, double bass, dan piano (10 musisi secara default) — mengisi ruang tebing yang
+lebih besar atau bertahan sepanjang resepsi yang lebih panjang. Piano juga menjadi bagian unggulan
+dari setiap formasi di sini, tersedia sebagai opsi Solo dan sudah termasuk secara standar dalam
+Duo, Trio, dan String Quartet — bukan instrumen yang kami anggap opsional.
 
 ## Menata Suara dan Instrumen di Atas Tebing
 

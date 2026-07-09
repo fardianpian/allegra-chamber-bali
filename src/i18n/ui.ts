@@ -49,26 +49,27 @@ export const ui = {
 				{
 					formation: 'duo',
 					name: 'Duo',
-					tagline: 'Violin & cello, in conversation',
-					blurb: 'A warmer, fuller sound for ceremony and cocktail hour.',
+					tagline: 'Violin, cello & piano, in conversation',
+					blurb: 'A warmer, fuller sound for ceremony and cocktail hour — piano included as standard.',
 				},
 				{
 					formation: 'trio',
 					name: 'Trio',
-					tagline: 'Three strings, full range',
-					blurb: 'Full chamber colour for ceremony through cocktail hour.',
+					tagline: 'Three strings & piano, full range',
+					blurb: 'Full chamber colour for ceremony through cocktail hour — piano included as standard.',
 				},
 				{
 					formation: 'quartet',
 					name: 'String Quartet',
-					tagline: 'The timeless chamber formation',
-					blurb: 'The complete chamber experience, from ceremony through reception.',
+					tagline: 'The timeless chamber formation, piano included',
+					blurb:
+						'The complete chamber experience, from ceremony through reception — piano included as standard.',
 				},
 				{
 					formation: 'large-ensemble',
 					name: 'Large Ensemble',
-					tagline: 'Quartet + Piano + Double Bass',
-					blurb: 'A grand, layered sound for a statement ceremony or reception.',
+					tagline: '4 Violins, 2 Violas, 2 Cellos, Double Bass & Piano',
+					blurb: 'A grand, layered sound for a statement ceremony or reception — 10 musicians by default.',
 				},
 			],
 		},
@@ -432,7 +433,7 @@ export const ui = {
 				{
 					question: 'Do you offer a wedding pianist as a solo option?',
 					answer:
-						'Yes — piano is one of our most requested solo settings alongside violin and cello, and a "Piano +" upgrade is available within our Duo, Trio, and String Quartet packages. See Packages for details.',
+						"Yes — piano is one of our most requested solo settings alongside violin and cello, and it's included as standard (not a paid upgrade) in our Duo, Trio, String Quartet, and Large Ensemble formations. See Packages for details.",
 				},
 				{
 					question: 'How far in advance should we book, and is a deposit required?',
@@ -604,26 +605,30 @@ export const ui = {
 				{
 					formation: 'duo',
 					name: 'Duo',
-					tagline: 'Biola & cello, saling berdialog',
-					blurb: 'Suara yang lebih hangat dan penuh untuk upacara dan cocktail hour.',
+					tagline: 'Biola, cello & piano, saling berdialog',
+					blurb:
+						'Suara yang lebih hangat dan penuh untuk upacara dan cocktail hour — piano sudah termasuk secara standar.',
 				},
 				{
 					formation: 'trio',
 					name: 'Trio',
-					tagline: 'Tiga gesek, jangkauan penuh',
-					blurb: 'Warna chamber penuh untuk upacara hingga cocktail hour.',
+					tagline: 'Tiga gesek & piano, jangkauan penuh',
+					blurb:
+						'Warna chamber penuh untuk upacara hingga cocktail hour — piano sudah termasuk secara standar.',
 				},
 				{
 					formation: 'quartet',
 					name: 'String Quartet',
-					tagline: 'Formasi chamber yang abadi',
-					blurb: 'Pengalaman chamber lengkap, dari upacara hingga resepsi.',
+					tagline: 'Formasi chamber yang abadi, piano sudah termasuk',
+					blurb:
+						'Pengalaman chamber lengkap, dari upacara hingga resepsi — piano sudah termasuk secara standar.',
 				},
 				{
 					formation: 'large-ensemble',
 					name: 'Large Ensemble',
-					tagline: 'Quartet + Piano + Double Bass',
-					blurb: 'Suara megah dan berlapis untuk upacara atau resepsi yang berkesan.',
+					tagline: '4 Biola, 2 Viola, 2 Cello, Double Bass & Piano',
+					blurb:
+						'Suara megah dan berlapis untuk upacara atau resepsi yang berkesan — 10 musisi secara default.',
 				},
 			],
 		},
@@ -990,7 +995,7 @@ export const ui = {
 				{
 					question: 'Apakah ada opsi wedding pianist solo?',
 					answer:
-						'Ya — piano adalah salah satu setting solo yang paling banyak diminta selain violin dan cello, dan upgrade "Piano +" tersedia dalam paket Duo, Trio, dan String Quartet kami. Lihat halaman Paket untuk detailnya.',
+						'Ya — piano adalah salah satu setting solo yang paling banyak diminta selain violin dan cello, dan sudah termasuk secara standar (bukan upgrade berbayar) dalam formasi Duo, Trio, String Quartet, dan Large Ensemble kami. Lihat halaman Paket untuk detailnya.',
 				},
 				{
 					question: 'Berapa lama sebelumnya kami harus booking, dan apakah perlu deposit?',

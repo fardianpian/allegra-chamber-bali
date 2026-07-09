@@ -11,9 +11,9 @@ faq:
   - question: 'Can I book just a pianist for my wedding ceremony in Bali?'
     answer: 'Yes — Solo Piano is one of our Solo formation options alongside violin and cello, not a lesser alternative. It covers a full ceremony on its own: prelude, processional, signing, and recessional.'
   - question: 'Is a solo pianist enough, or do I need strings as well?'
-    answer: 'Solo piano works well for an intimate ceremony of any size — piano alone carries both harmony and melody. If you want a fuller sound for a larger venue or a longer reception set, piano pairs with strings as a Duo, Trio, or String Quartet through our "Piano +" upgrade.'
+    answer: 'Solo piano works well for an intimate ceremony of any size — piano alone carries both harmony and melody. If you want a fuller sound for a larger venue or a longer reception set, piano pairs with strings as a Duo, Trio, or String Quartet — piano is included as standard in those formations, not a separate upgrade.'
   - question: 'Can a wedding pianist also play during cocktail hour and reception?'
-    answer: 'Yes. The same pianist can move from ceremony into cocktail hour and reception sets, or you can book piano as part of our Large Ensemble formation (string quartet, piano, and double bass) for the full day.'
+    answer: 'Yes. The same pianist can move from ceremony into cocktail hour and reception sets, or you can book piano as part of our Large Ensemble formation (4 violins, 2 violas, 2 cellos, double bass, and piano — 10 musicians by default) for the full day.'
   - question: 'How much does a wedding pianist cost in Bali?'
     answer: "Pricing depends on the formation, number of sets, and your date, so we don't publish a flat rate. Message us on WhatsApp with your date and venue and we'll follow up with a personalised quote."
 ---
@@ -51,10 +51,11 @@ unsure, tell us your venue and ceremony size and we'll recommend a formation.
 Piano doesn't have to stand alone. It's a flagship instrument across every Allegra formation, not
 an optional add-on:
 
-- **Piano +** is available as an upgrade within our Duo, Trio, and String Quartet packages — piano
-  holds the harmony and rhythm while violin and cello carry the melody.
-- Our **Large Ensemble** — string quartet, piano, and double bass — already includes piano in its
-  default lineup, for couples who want the fullest sound across ceremony and reception.
+- Piano is **included as standard**, not a paid upgrade, within our Duo, Trio, and String Quartet
+  packages — piano holds the harmony and rhythm while the strings carry the melody.
+- Our **Large Ensemble** — 4 violins, 2 violas, 2 cellos, double bass, and piano (10 musicians by
+  default) — already includes piano in its default lineup, for couples who want the fullest sound
+  across ceremony and reception.
 
 This means choosing a wedding pianist doesn't lock you out of strings later, and choosing strings
 doesn't mean leaving piano out — the two are designed to work together.

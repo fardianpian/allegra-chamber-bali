@@ -15,7 +15,7 @@ faq:
   - question: 'Has Allegra Chamber Bali performed at cliffside venues in Uluwatu before?'
     answer: "Yes — Alila Villas Uluwatu, Bvlgari Resort Bali, and Stone Villas Uluwatu are among the cliffside venues we've performed at in the area."
   - question: 'Can piano be part of a cliffside ceremony ensemble?'
-    answer: 'Yes — piano is a flagship instrument across every Allegra formation, not an add-on. It''s available as a Solo option, as a "Piano +" upgrade within Duo, Trio, and String Quartet, and is already part of the default Large Ensemble lineup.'
+    answer: "Yes — piano is a flagship instrument across every Allegra formation, not an add-on. It's available as a Solo option, included as standard within Duo, Trio, and String Quartet, and is already part of the default Large Ensemble lineup."
   - question: 'What time of day works best for a cliffside wedding ceremony in Bali?'
     answer: "Golden hour, when the light over the ocean is softest, is a common choice for a clifftop ceremony — tell us your preferred ceremony time when you inquire and we'll plan the program around it."
 ---
@@ -38,10 +38,11 @@ it's simply the baseline for any clifftop booking.
 
 It depends on your guest count and how exposed the setting is, more than on the cliffside setting
 itself. A Solo or Duo reads clearly against open sky and ocean for an intimate elopement-style
-ceremony, while a String Quartet or our Large Ensemble — string quartet, piano, and double bass —
-fills a larger clifftop space or carries through a longer reception. Piano is a flagship part of
-every formation here too, available as a Solo option or as a "Piano +" upgrade within Duo, Trio,
-and String Quartet, not an instrument we treat as optional.
+ceremony, while a String Quartet or our Large Ensemble — 4 violins, 2 violas, 2 cellos, double
+bass, and piano (10 musicians by default) — fills a larger clifftop space or carries through a
+longer reception. Piano is a flagship part of every formation here too, available as a Solo option
+and included as standard within Duo, Trio, and String Quartet, not an instrument we treat as
+optional.
 
 ## Setting Up Sound and Instruments on a Clifftop
 

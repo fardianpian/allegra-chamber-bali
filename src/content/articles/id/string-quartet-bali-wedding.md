@@ -1,7 +1,7 @@
 ---
 title: 'Kuartet Gesek untuk Pernikahan di Bali — Allegra Chamber Bali'
 heading: 'Kuartet Gesek untuk Pernikahan di Bali'
-description: 'Semua yang perlu diketahui pasangan tentang memesan kuartet gesek untuk pernikahan di Bali — suara, opsi formasi, upgrade Piano +, dan apa yang bisa diharapkan.'
+description: 'Semua yang perlu diketahui pasangan tentang memesan kuartet gesek untuk pernikahan di Bali — suara, opsi formasi, piano sudah termasuk standar, dan apa yang bisa diharapkan.'
 excerpt: 'Seperti apa suara kuartet gesek live dalam upacara di Bali, perbandingannya dengan formasi yang lebih kecil, dan kapan perlu menambahkan piano.'
 pillar: 'planning'
 targetKeyword: 'string quartet bali wedding'
@@ -9,11 +9,11 @@ pubDate: 2026-06-28
 ogImage: '/images/og-cliffside-uluwatu.jpg'
 faq:
   - question: 'Instrumen apa saja yang ada dalam kuartet gesek?'
-    answer: 'Kuartet gesek terdiri dari dua violin, satu viola, dan satu cello — empat suara yang mencakup rentang harmoni penuh sebuah ansambel kamar, dimainkan tanpa amplifikasi di sebagian besar venue indoor dan outdoor tertutup di Bali.'
+    answer: 'Kuartet gesek tradisional terdiri dari dua violin, satu viola, dan satu cello — empat suara yang mencakup rentang harmoni penuh sebuah ansambel kamar, dimainkan tanpa amplifikasi di sebagian besar venue indoor dan outdoor tertutup di Bali. Di Allegra Chamber Bali, formasi String Quartet kami menambahkan piano sebagai suara kelima, sudah termasuk secara standar.'
   - question: 'Apakah kuartet gesek cocok untuk upacara pernikahan outdoor di Bali?'
     answer: 'Ya, dengan persiapan yang tepat. Untuk venue di tebing dan taman, kami memerlukan area teduh dan permukaan rata untuk para musisi. Venue pantai membutuhkan perencanaan ekstra terkait angin dan kelembapan — beri tahu kami jenis venue Anda lebih awal agar kami bisa memastikan kebutuhannya.'
-  - question: 'Bisakah saya menambahkan piano ke kuartet gesek untuk pernikahan di Bali?'
-    answer: 'Bisa — upgrade Piano + kami menambahkan piano di samping kuartet gesek. String membawakan melodi sementara piano membawakan harmoni dan ritme, menciptakan suara yang lebih kaya. Large Ensemble kami (kuartet gesek, piano, dan double bass) adalah opsi paling lengkap untuk cakupan sepanjang hari.'
+  - question: 'Apakah piano sudah termasuk dalam pemesanan kuartet gesek, atau terpisah?'
+    answer: 'Piano sudah termasuk secara standar bersama kuartet gesek, bukan upgrade terpisah. String membawakan melodi sementara piano membawakan harmoni dan ritme, menciptakan suara yang lebih kaya. Large Ensemble kami (4 biola, 2 viola, 2 cello, double bass, dan piano — 10 musisi secara default) adalah opsi paling lengkap untuk cakupan sepanjang hari.'
   - question: 'Apa yang dimainkan kuartet gesek dalam upacara pernikahan?'
     answer: 'Kuartet gesek dapat membawakan seluruh rangkaian upacara: musik prelude saat tamu tiba, prosesi, musik saat pemberkatan atau pertukaran sumpah, dan resesi. Formasi yang sama dapat dilanjutkan ke sesi cocktail hour dan resepsi.'
   - question: 'Bagaimana perbandingan kuartet gesek dengan musisi solo untuk pernikahan?'
@@ -25,8 +25,8 @@ bermuara pada satu pertanyaan: seberapa besar suara yang benar-benar dibutuhkan 
 Kuartet gesek adalah salah satu jawaban paling serbaguna — empat instrumen yang terasa intim
 dalam upacara kecil sekaligus bertenaga dalam resepsi penuh, tanpa memerlukan amplifikasi di
 sebagian besar venue Bali. Panduan ini membahas apa yang bisa diharapkan dari kuartet gesek live,
-perbandingannya dengan formasi yang lebih kecil, dan apakah upgrade Piano + cocok untuk venue dan
-hari pernikahan Anda.
+perbandingannya dengan formasi yang lebih kecil, dan bagaimana piano — sudah termasuk secara
+standar, bukan upgrade terpisah — melengkapi suaranya.
 
 ## Seperti Apa Suara Kuartet Gesek
 
@@ -58,34 +58,34 @@ yang bermakna dalam cerita Anda.
 
 Tidak setiap upacara memerlukan empat instrumen. Berikut perbandingan formasi Allegra:
 
-| Formasi           | Instrumen                 | Cocok untuk                                                         |
-| ----------------- | ------------------------- | ------------------------------------------------------------------- |
-| Solo              | Violin, cello, atau piano | Upacara sangat intim; venue indoor kecil                            |
-| Duo               | 2 instrumen               | Upacara intim hingga menengah; repertoar fleksibel                  |
-| Trio              | 3 instrumen               | Upacara menengah; lebih penuh dari duo tanpa kuartet penuh          |
-| **Kuartet Gesek** | 2 violin, viola, cello    | Upacara lebih besar; venue tebing dan taman; cakupan sepanjang hari |
-| Piano + Kuartet   | 5 instrumen               | Kekayaan kamar maksimal; suara resepsi besar                        |
+| Formasi           | Instrumen                                          | Cocok untuk                                                         |
+| ----------------- | -------------------------------------------------- | ------------------------------------------------------------------- |
+| Solo              | Violin, cello, atau piano                          | Upacara sangat intim; venue indoor kecil                            |
+| Duo               | Violin, cello & piano (3, piano sudah termasuk)    | Upacara intim hingga menengah; repertoar fleksibel                  |
+| Trio              | + viola (4, piano sudah termasuk)                  | Upacara menengah; lebih penuh dari duo tanpa kuartet penuh          |
+| **Kuartet Gesek** | 2 violin, viola, cello & piano (5, piano termasuk) | Upacara lebih besar; venue tebing dan taman; cakupan sepanjang hari |
+| Large Ensemble    | String, double bass & piano (10 secara default)    | Kekayaan kamar maksimal; suara resepsi besar                        |
 
 Kuartet gesek cocok untuk pasangan yang menginginkan suara musik kamar yang lengkap dan seimbang —
-bukan hanya satu garis melodi tetapi empat suara yang bekerja bersama. Jika venue Anda sangat
+bukan hanya satu garis melodi tetapi string dan piano yang bekerja bersama. Jika venue Anda sangat
 kecil atau upacara sangat intim, formasi Duo atau Solo mungkin terasa lebih proporsional. Jika
-Anda menginginkan suara paling lengkap sepanjang hari, Piano + Kuartet atau Large Ensemble kami
-membawanya lebih jauh.
+Anda menginginkan suara paling lengkap sepanjang hari, Large Ensemble kami membawanya lebih jauh.
 
-## Piano + Kuartet Gesek: Upgrade yang Layak Dipertimbangkan
+## Mengapa Piano Sudah Termasuk Standar dalam String Quartet Kami
 
-Piano adalah instrumen unggulan di Allegra Chamber Bali — bukan ekstra opsional. Jika Anda
-menginginkan suara yang lebih kaya dari kuartet gesek saja, upgrade **Piano +** kami menambahkan
-piano ke dalam formasi: string membawakan melodi sementara piano membawakan harmoni dan ritme di
+Piano adalah instrumen unggulan di Allegra Chamber Bali — bukan ekstra opsional, dan bukan upgrade
+berbayar terpisah pada String Quartet kami. Setiap pemesanan String Quartet sudah menyertakan
+piano secara standar: string membawakan melodi sementara piano membawakan harmoni dan ritme di
 bawahnya, menambahkan lapisan yang tidak bisa direplikasi ansambel tanpa piano.
 
 Untuk pasangan yang menginginkan suara paling lengkap — dari prosesi upacara hingga resepsi akhir
-malam — **Large Ensemble** kami (kuartet gesek, piano, dan double bass) adalah formasi terlengkap.
-Instrumentasi juga dapat dikustomisasi sesuai permintaan jika Anda memiliki suara tertentu dalam
-pikiran.
+malam — **Large Ensemble** kami (4 biola, 2 viola, 2 cello, double bass, dan piano — 10 musisi
+secara default) adalah formasi terlengkap, dan dapat diperluas lagi atau dikustomisasi sesuai
+permintaan.
 
-Jika tidak yakin apakah Piano + tepat untuk venue Anda, beri tahu kami tentang ruang dan jumlah
-tamu saat menghubungi, dan kami akan merekomendasikan formasi yang sesuai.
+Jika tidak yakin apakah String Quartet atau Large Ensemble yang tepat untuk venue Anda, beri tahu
+kami tentang ruang dan jumlah tamu saat menghubungi, dan kami akan merekomendasikan formasi yang
+sesuai.
 
 ## Apakah Kuartet Gesek Tepat untuk Venue Bali Anda?
 

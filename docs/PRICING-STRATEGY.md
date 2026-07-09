@@ -186,3 +186,255 @@ musician on stage):
 
 _Research conducted 2026-06-23 via Firecrawl web search/scrape. All figures current as of that
 date; re-verify before relying on this for a live quote._
+
+## 7. 2026-07-09 Revision — Piano Bundled by Default, No Full Package, 10-Piece Large Ensemble
+
+**Status: still DRAFT, still not owner-approved on the actual figures** — this revision changes the
+_structure_ of the pricing (owner-directed, see below) and re-derives §4's numbers accordingly. It
+does not resolve §5's open items (real musician day-rates, travel fee, deposit policy) — those
+remain outstanding.
+
+### 7.1 What changed (owner direction, 2026-07-09)
+
+1. **Full Package removed** — `docs/Allegra-Chamber-Bali-Pricing.html` no longer offers a bundled
+   ceremony+cocktail+dinner package; only the three individual segments (Ceremony / Cocktail /
+   Dinner) are priced.
+2. **Large Ensemble redefined from 6 to 10 musicians, default composition**: 4 violins, 2 violas,
+   2 cellos, 1 double bass, 1 piano. Additional musicians beyond 10 are billed per musician on
+   request. This directly changes CLAUDE.md's 2026-06-18 "confirmed decision" of quartet + piano +
+   double bass (6 musicians) — see §7.4, not yet reconciled site-wide.
+3. **Piano is now bundled as standard (not a paid upsell) into Duo, Trio, and String Quartet**, in
+   addition to Large Ensemble which already included it. This retires the old "Piano + Upgrade"
+   add-on for those three formations — its price delta is folded into the new base price instead
+   (see §7.3). Solo is unaffected (piano was already one of the three Solo instrument choices).
+
+### 7.2 New competitor research (2026-07-09, international-client angle)
+
+Prior research (§2) covered generic Bali market + Singapore/HK/US benchmarks. This pass
+specifically targeted vendors serving **international/destination-wedding clients** in Bali.
+Conducted via live web search (WebSearch/firecrawl); every fact below is source-linked.
+
+- **New Bali vendors found:** Bossamusika (bossamusika.com) — luxury live-music agency naming
+  Alila Uluwatu and Four Seasons Jimbaran Bay as resort associations, quote-only, no public
+  pricing. Silaen Music (silaenmusic.com) — Bali wedding band with an optional violin/cello
+  add-on, no public pricing. A Hong Kong wedding blog documents Moira Ensembles (string quartet)
+  performing at an actual Six Senses Uluwatu wedding alongside Silaen Music — real confirmation a
+  Bali chamber-ensemble vendor has served a five-star international resort, but no price disclosed
+  (theweddingcohk.com/old-world-elegance-at-six-senses-bali).
+- **Resort-bundled precedent:** Alila Uluwatu's own wedding packages (via baliweddingsolutions.com)
+  include "Trio musicians to accompany the ceremony procession" as a standard inclusion at every
+  package tier — evidence international-facing Bali resorts already expect/bundle live chamber
+  music, not that it's an optional extra.
+- **Piano-bundled-by-default market check:** only one precedent found anywhere — Dario Music
+  (Jakarta, Bridestory) bundles 1 vocalist + 4 strings + 1 piano + sound system as a single
+  package line item. No Bali-based string quartet/chamber vendor found bundles piano by default;
+  everywhere else (Meraki Singapore, Riverside Ensembles AU, Vivace Live US) piano is quote-only/
+  optional-add. **Conclusion: piano-included-as-standard remains a genuine, rare differentiator
+  for Allegra in the Bali market**, not something to hide — it's defensible as a value story, not
+  just a cost increase.
+- **Large-ensemble scaling comps:** Bali pop-band-plus-strings acts (baliweddingprices.com) price
+  a 10-piece at ~US$1,750 and a 12-piece at ~US$2,000 (Djampiro & String Section / Mini Orchestra)
+  — not classical chamber ensembles, but a useful sanity ceiling: Allegra's new 10-piece Large
+  Ensemble (Rp 18,000,000 Ceremony/Cocktail ≈ USD 1,100, Rp 22,500,000 Dinner ≈ USD 1,380) sits
+  believably under/near that band's full-event price for a single segment, appropriate for a
+  higher-prestige classical formation without over-pricing past the local ceiling.
+- **No Bali vendor publishes a per-extra-musician rate.** International comps do (Meraki
+  Singapore's $300/musician-first-hour formula, reconfirmed; Sienna Quartet US ~$237/musician/hr
+  octet-vs-quartet delta) — these validate that per-musician scaling pricing is a normal industry
+  pattern, but none are Bali-anchored, so §7.3's rate is derived internally (below), not copied.
+- **Terms/technical-rider patterns found:** UK/US quartets typically bill overtime per 30 min
+  (£120/Sienna ~$280) and are unplugged-by-default (amplification arranged separately); no
+  Bali-specific overtime or technical-rider figures exist publicly anywhere. No vendor, Bali or
+  international, was found publishing an explicit acoustic-vs-electric-piano policy — this is a
+  real gap, and Allegra publishing one (see the pricing sheet's "Good to Know" section) is ahead of
+  the market, not behind it.
+
+Full source list: bossamusika.com/wedding-live-music-bali, silaenmusic.com,
+theweddingcohk.com/old-world-elegance-at-six-senses-bali, baliweddingsolutions.com/alila-uluwatu,
+baliweddingsolutions.com/music, bridestory.com/dario-music, merakistringquartet.com/pricing-plans,
+riversideensembles.com.au/price-guide, vivacelive.com/weddings,
+baliweddingprices.com/best-live-wedding-bands-in-bali, siennaquartet.com/pricing,
+theweddingstringquartet.com/terms-and-conditions.
+
+### 7.3 New pricing derivation — per-musician formula
+
+Re-deriving from §4.1's existing anchors rather than inventing new figures: the old string-only
+progression (Solo→Duo→Trio→Quartet) already implied a consistent **~Rp 1,500,000 per additional
+musician** for Ceremony/Cocktail and **~Rp 1,500,000–2,000,000** for Dinner — and the old "Piano +"
+add-on (+Rp 1,500,000 Ceremony/Cocktail, +Rp 2,000,000 Dinner) matched that same per-musician rate
+almost exactly. That consistency is the basis for this revision: **piano bundling and Large
+Ensemble scaling both reuse the identical, already-established per-musician rate** rather than
+introducing new numbers.
+
+| Formation      | Musicians (piano incl.)              | Ceremony Only | Cocktail Only | Dinner Only   | Derivation                                |
+| -------------- | ------------------------------------ | ------------- | ------------- | ------------- | ----------------------------------------- |
+| Solo           | 1                                    | Rp 3,500,000  | Rp 3,500,000  | Rp 4,500,000  | Unchanged from §4.1                       |
+| Duo            | 3 (violin, cello, piano)             | Rp 6,500,000  | Rp 6,500,000  | Rp 8,000,000  | Old Duo + old Piano+ delta                |
+| Trio           | 4 (+viola)                           | Rp 8,000,000  | Rp 8,000,000  | Rp 10,000,000 | Old Trio + old Piano+ delta               |
+| String Quartet | 5 (+2nd violin)                      | Rp 9,500,000  | Rp 9,500,000  | Rp 12,000,000 | Old Quartet + old Piano+ delta            |
+| Large Ensemble | 10 (4 vln, 2 vla, 2 vc, bass, piano) | Rp 18,000,000 | Rp 18,000,000 | Rp 22,500,000 | Old 6-piece Large + 4 × per-musician rate |
+
+**Sanity check:** Duo+piano (3 musicians) lands exactly on old Trio's price (3 musicians,
+no piano) — Rp 6,500,000 both. Trio+piano (4 musicians) lands exactly on old Quartet's price (4
+musicians) — Rp 8,000,000 both. Same-headcount formations converging on the same price, regardless
+of whether the extra voice is a string or piano, is the internal consistency check that makes this
+formula defensible as "the same rate for every additional performer," not an arbitrary piano
+surcharge.
+
+**Additional musicians beyond Large Ensemble's default 10:** priced at the same rate —
+**+Rp 1,500,000/musician** (Ceremony/Cocktail), **+Rp 2,000,000/musician** (Dinner) — published on
+the client-facing pricing sheet as "Scaling Up the Large Ensemble."
+
+**Still not real cost data.** This is a transparent, internally-consistent re-derivation of
+§4.1's existing (already-flagged-draft) anchors — it is not sourced from Allegra's actual musician
+day-rates, which remain unknown (§5, item 1, still open).
+
+### 7.4 Reconciled site-wide (2026-07-09, same session)
+
+Owner confirmed (via AskUserQuestion) that the new formation/piano structure should propagate
+beyond the pricing doc, not stay doc-only. Updated the same day: `CLAUDE.md` Confirmed decisions
+(Large Ensemble composition + Piano+ → piano-included-standard), `.claude/brand-voice-guidelines.md`
+Signature Sound section, `src/i18n/ui.ts` (EN+ID — formation taglines/blurbs, sitewide FAQ), all 4
+`src/content/packages/*.md` formation files, and 12 `/journal` article files (6 EN + their 6 ID
+translations) that had substantial "Piano +" upgrade copy — including
+`string-quartet-bali-wedding.md`'s dedicated "Piano + String Quartet" section, rewritten as "Why
+Piano Comes Standard." Care was taken to keep the _generic_ musical definition of "string quartet"
+(2 violins, viola, cello) factually correct in FAQ/AEO content — Allegra's piano-bundling is stated
+as a booking-specific fact layered on top of that definition, not a redefinition of the term
+itself. `npm run lint && npm run build` clean after every batch (0 errors).
+
+## 8. 2026-07-09 Revision (same day, second pass) — Final Pricing, Flat Scaling Rate
+
+Owner reviewed the restructured pricing sheet and requested a second round of changes, applied
+directly to `docs/Allegra-Chamber-Bali-Pricing.html` (not yet reflected back into §4's matrix
+below — treat this section as the current source of truth for those specific fields):
+
+1. **Pricing is now stated as final, not indicative.** The header ("Indicative pricing as of July
+   2026" → "Final pricing as of July 2026"), the intro lede, and the footer CTA were all reworded
+   to drop "planning reference" / "confirm an exact quote" framing — the figures in the table are
+   what a couple is quoted, subject only to date availability. (Deposit/travel-fee bullets still
+   say "confirmed with your quote" — left as-is, not explicitly flagged by the owner in this pass.)
+2. **Large Ensemble overage rate simplified to a flat Rp 2,500,000 per musician, per session** —
+   replaces the old differentiated rate (+Rp 1,500,000 Ceremony/Cocktail, +Rp 2,000,000 Dinner)
+   derived in §7.3. This is an owner-supplied real number, not a re-derived estimate like the rest
+   of this document — treat it as more authoritative than the §7.3 formula it replaces.
+3. **Electric piano amplification explicitly excluded**, clarified as falling under "sound system"
+   (which Allegra already didn't provide) rather than something bundled with the piano itself. The
+   piano/acoustic-piano bullet and the sound-system bullet were both reworded so the two no longer
+   contradict each other (previously implied the piano came pre-amplified).
+4. **USD-equivalent-on-request bullet removed entirely** (owner direction, no reason recorded).
+
+**Still open:** deposit %, travel-fee amounts by zone, and overtime rate remain unset — the Rp
+2,500,000/musician scaling rate is the only owner-confirmed real figure to date; everything else
+Rp-denominated in this document is still the researched/derived estimate from §7.3, pending the
+owner's real cost figures per §5.
+
+## 9. 2026-07-09 Revision (same day, third pass) — Gap/Clarity Audit
+
+Owner asked for a 2026-relevance + gap/confusion audit of the pricing sheet. Live web checks
+(current, not from the 2026-06-23/07-09 research batches): USD/IDR spot rate is **~Rp 18,100/USD**
+(xe.com, exchange-rates.org, checked 2026-07-09) — the ~16,300 figure used earlier in this doc for
+illustrative USD conversions is stale; re-derive from ~18,100 if a USD reference is ever needed
+again. Also checked a Bridestory listing (Archipelagio Music, Bali) showing a 4-piece string
+quartet + 2000W sound system at **IDR 18,000,000** — but the listing's own metadata dates it to
+**2020** and the product is marked "Not Available," so it's not current-market evidence, only a
+weak historical signal (a 2020, no-piano, PA-bundled quartet already priced at what Allegra's 2026
+Large Ensemble Ceremony/Cocktail tier charges) worth keeping in mind, not acting on.
+
+Six gaps were identified; five were fixed directly in `docs/Allegra-Chamber-Bali-Pricing.html`
+(owner explicitly deferred the sixth, multi-session bundling, as a business decision, not a copy
+gap):
+
+1. **"Final pricing" contradicted the travel-fee/deposit/overtime bullets**, which still said
+   "confirmed with your quote" — reads as though the price isn't actually final. Fixed: the
+   "final" bullet now explicitly scopes itself to formation+coverage price and points to
+   travel/deposit/overtime as separate; those three bullets dropped "quote" language in favor of
+   "confirmed separately once we know your venue/booking details."
+2. _(Skipped — Full Package removal / no multi-segment discount is a business decision, not a
+   copy gap. Still worth the owner's attention: most real weddings book more than one segment.)_
+3. **The flat Rp 2,500,000/musician Large Ensemble scaling rate is ~39% above the base 10-piece
+   lineup's implied per-musician cost for Ceremony/Cocktail** (Rp 18,000,000 ÷ 10 = Rp 1,800,000)
+   and only ~11% above Dinner's implied per-musician cost (Rp 22,500,000 ÷ 10 = Rp 2,250,000) —
+   defensible (last-minute/custom scaling costing more than the standard lineup is normal), but
+   unexplained. Fixed: added "arranged individually for your event" / "a flat, on-request rate
+   across all coverage types" / "reflecting custom arrangement" to the callout and the Good to
+   Know bullet — framing only, no new numeric claim.
+4. **Wording mismatch**: the "Scaling Up" callout said "additional **string** musicians" but the
+   Good to Know bullet just said "additional musicians," which could read as covering a 2nd
+   piano/bass at the same rate. Fixed: Good to Know bullet now also says "additional string
+   musicians."
+5. **Ceremony (≈45 min) and Cocktail (≈1 hr) are priced identically per formation** with no stated
+   reason — inherited from the original §4.1 design, not introduced this session, but flagged
+   since the owner asked specifically for confusion points. Fixed: added a Good to Know bullet
+   explaining a shorter Ceremony needs the same setup/travel/precision-timing overhead as a full
+   Cocktail hour.
+6. _(Not a copy fix)_ Reiterated to the owner that every Rp figure in the pricing table except the
+   flat scaling rate is still the researched/derived estimate from §7.3, not Allegra's real cost
+   data — internally consistent and market-plausible, but not independently validated against
+   actual musician day-rates.
+
+**Same-day follow-up (owner review pass 4):** owner removed the standalone travel-fee bullet from
+`docs/Allegra-Chamber-Bali-Pricing.html` entirely (reason not recorded — travel fee itself is
+still an open item per `CLAUDE.md` § Open questions, this only removed the doc's mention of it).
+The "final pricing" bullet's "Travel fee, deposit, and overtime (see below)" pointer was trimmed to
+just "Deposit and overtime" so it no longer references a bullet that's been removed.
+
+## 10. 2026-07-09 Revision (same day, fifth pass) — Real Musician Honor Data + Cocktail Price Fix
+
+**First real cost input from the owner** (all prior Rp figures in this document were
+researched/derived estimates, explicitly flagged as such — this is the first genuine correction).
+Delivered outside this doc as a chat report/artifact (an internal financial audit, not published
+anywhere in the repo) before this file was updated.
+
+### 10.1 Real musician honor (owner-supplied 2026-07-09)
+
+Flat rate per musician, per session — **not** differentiated by instrument (no separate
+piano/double-bass premium, unlike this document's earlier estimates in §9's predecessor draft):
+
+| Session  | Honor per musician |
+| -------- | ------------------ |
+| Ceremony | Rp 1,000,000       |
+| Cocktail | Rp 1,500,000       |
+| Dinner   | Rp 1,500,000       |
+
+Applying this (headcount × rate) against the live price table found gross margins were healthy
+almost everywhere (Ceremony 44–71%, Dinner 33–67% across all formations) — **except Cocktail**,
+which shares Dinner's higher honor rate (Rp 1,500,000/musician) but was priced identically to the
+cheaper Ceremony segment. That mismatch made Cocktail the thinnest-margin segment in every
+formation, most acutely for **Large Ensemble (net margin ~1.7% after an assumed 15% management
+allocation) and String Quartet (~6%)** — both flagged as needing a price correction; Solo (~42%),
+Duo (~16%), and Trio (~10%) were left alone as still adequately healthy.
+
+### 10.2 Owner decision: raise Cocktail Only for String Quartet and Large Ensemble
+
+Owner asked whether raising price was viable given Allegra is a **new brand but with experienced
+musicians** — reasoning agreed: brand newness is an awareness/trust problem (addressed by
+portfolio, credentials, testimonials — see [[project_testimonial_form]]), not a price-ceiling
+problem, and this specific fix carries unusually low risk because (a) pricing is never published
+publicly — every quote is personal, so there's no visible "old price" being walked back, (b) the
+increase is narrow (2 of 5 formations, one segment only) and small in absolute terms relative to
+booking value, and (c) it corrects an internal inconsistency (Cocktail = Ceremony price despite
+Dinner-level staffing cost) rather than asserting new "premium brand" pricing power. Owner approved
+with the instruction to raise only what needed it, by a small amount, within the previously
+recommended Rp 500,000–1,000,000 range.
+
+**Applied: +Rp 1,000,000 to Cocktail Only, top of the recommended range, for both flagged
+formations** — a uniform, round-number, easy-to-explain adjustment:
+
+| Formation      | Cocktail Only (was) | Cocktail Only (now) | Net margin (was → now, @ 15% mgmt) |
+| -------------- | ------------------- | ------------------- | ---------------------------------- |
+| String Quartet | Rp 9,500,000        | Rp 10,500,000       | ~6% → ~14%                         |
+| Large Ensemble | Rp 18,000,000       | Rp 19,000,000       | ~1.7% → ~6%                        |
+
+Solo, Duo, Trio, and every formation's Ceremony/Dinner price are **unchanged**. This also means
+Ceremony and Cocktail are no longer priced identically for these two formations — the "Good to
+Know" bullet explaining Ceremony=Cocktail parity was updated to scope that claim to Solo/Duo/Trio
+only, with a client-facing (not internal-margin) rationale for why String Quartet/Large Ensemble
+now differ: added coordination for a larger ensemble in a mingling/background setting.
+
+### 10.3 Still open
+
+The 15% management allocation and any target net-margin figure remain the author's assumption, not
+owner-confirmed — §10.1's honor data only replaces the _musician-cost_ side of the model. Large
+Ensemble Cocktail's margin, while no longer critical, is still the thinnest segment in the table
+(~6%) — worth another look once real management-overhead figures are available.

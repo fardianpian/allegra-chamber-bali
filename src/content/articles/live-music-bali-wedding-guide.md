@@ -54,17 +54,17 @@ Your venue and guest count narrow the formation before you need to think about r
 formations scale from an intimate solo to a full ensemble, with piano available as a flagship option
 at every size, not an add-on.
 
-| Formation                                      | Best Fits                                            | Typical Setting                           |
-| ---------------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
-| Solo (Violin, Cello, or Piano)                 | Small, intimate ceremonies                           | Garden gazebo, chapel, intimate cliffside |
-| Duo                                            | Slightly larger ceremony or a cocktail-hour set      | Villa lawn, smaller reception             |
-| Trio                                           | Mid-size ceremony wanting a fuller sound             | Garden or beach ceremony, cocktail hour   |
-| String Quartet                                 | Larger ceremony or reception wanting a layered sound | Cliffside, ballroom, larger garden venues |
-| Large Ensemble (Quartet + Piano + Double Bass) | Full coverage across cocktail hour and dinner        | Ballroom or large outdoor reception       |
+| Formation                                                               | Best Fits                                            | Typical Setting                           |
+| ----------------------------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------- |
+| Solo (Violin, Cello, or Piano)                                          | Small, intimate ceremonies                           | Garden gazebo, chapel, intimate cliffside |
+| Duo                                                                     | Slightly larger ceremony or a cocktail-hour set      | Villa lawn, smaller reception             |
+| Trio                                                                    | Mid-size ceremony wanting a fuller sound             | Garden or beach ceremony, cocktail hour   |
+| String Quartet                                                          | Larger ceremony or reception wanting a layered sound | Cliffside, ballroom, larger garden venues |
+| Large Ensemble (strings, double bass & piano — 10 musicians by default) | Full coverage across cocktail hour and dinner        | Ballroom or large outdoor reception       |
 
-A "Piano +" upgrade is available on Duo, Trio, and String Quartet if you want piano alongside
-strings rather than choosing between them. See [Packages](/packages/) for the full breakdown of
-each formation.
+Piano is included as standard in our Duo, Trio, and String Quartet formations — not a separate
+upgrade — so you get piano alongside strings without an extra step. See [Packages](/packages/) for
+the full breakdown of each formation.
 
 ## What Shapes the Cost of Live Wedding Music
 

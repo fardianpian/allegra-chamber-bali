@@ -51,13 +51,17 @@ Languages: **English (primary) + Indonesian (secondary)**.
   history in `docs/PROGRESS-ARCHIVE.md`. Still **static-only (Astro SSG)**. No Node SSR, no serverless.
 - Languages: English default + Indonesian (`/id/`) with hreflang.
 - Formations offered (5): Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble.
-  Piano is a flagship offering — solo piano is a Solo option, and a "Piano +" upgrade
-  (Piano + Duo/Trio/Quartet) is sellable as an add-on within Duo/Trio/Quartet (Large Ensemble
-  already includes piano in its default composition). Sold as on-page upsell copy within
-  `/packages`, not as a separate keyword/page — see `docs/SEO-STRATEGY.md` §3.0 for why.
-- Large Ensemble composition (confirmed 2026-06-18, no longer TBC): string quartet + piano +
-  double bass (6 musicians). Piano must stay in the default/first-presented lineup; the exact
-  instrumentation is customisable per client on request.
+  Piano is a flagship offering — solo piano is a Solo option, and (revised 2026-07-09, supersedes
+  the original "Piano +" upsell model) piano is now **included as standard, not a paid add-on**,
+  in Duo (violin + cello + piano, 3 musicians), Trio (+ viola, 4 musicians), and String Quartet
+  (+ 2nd violin, 5 musicians) — Large Ensemble already included piano by default. `/packages` copy
+  should describe piano as bundled into these formations, not as a separate "Piano +" upsell line.
+  See `docs/PRICING-STRATEGY.md` §7 for the pricing derivation behind this change.
+- Large Ensemble composition (revised 2026-07-09, supersedes the 2026-06-18 6-musician version):
+  **4 violins, 2 violas, 2 cellos, double bass, and piano — 10 musicians by default.** Piano must
+  stay in the default/first-presented lineup; the exact instrumentation is customisable per client
+  on request, and additional musicians beyond the default 10 are available at a per-musician rate
+  (see the client-facing pricing sheet, `docs/Allegra-Chamber-Bali-Pricing.html`).
 - Pricing is intentionally **not displayed** anywhere on the live site (owner direction,
   2026-06-18) until real figures exist — no price field, column, or "TODO" placeholder text.
   `packages/*.md` has no `priceFrom`; don't reintroduce one without the owner's real numbers.

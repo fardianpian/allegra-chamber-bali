@@ -37,7 +37,8 @@ this is unusual for us — a garden lawn is one of the settings we play most oft
 It depends on your guest count and how far your seating stretches from the musicians, not on the
 fact that it's outdoors. A Solo or Duo suits an intimate garden ceremony with close seating, a
 Trio or String Quartet fills a wider lawn or a longer program comfortably, and our Large
-Ensemble — string quartet, piano, and double bass — carries through a larger garden reception.
+Ensemble — 4 violins, 2 violas, 2 cellos, double bass, and piano (10 musicians by default) —
+carries through a larger garden reception.
 Tell us your expected guest count and the shape of your garden layout when you inquire, and we'll
 recommend a formation sized to it.
 
@@ -57,17 +58,17 @@ There's no single right answer — it comes down to the sound and footprint you 
 ceremony. Piano is a flagship option in every formation we offer, not a strings-only afterthought,
 so the real choice is how you want it used:
 
-| Formation                                      | Best fit for a garden ceremony                                                                                   |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Solo Piano                                     | An intimate ceremony where piano alone carries the processional, vows, and recessional                           |
-| Solo Strings (violin or cello)                 | A quiet, close-seated garden ceremony with a single melodic line                                                 |
-| Duo / Trio + "Piano +" upgrade                 | Piano holding harmony and rhythm while violin and cello carry melody — a fuller sound for a mid-size garden lawn |
-| String Quartet + "Piano +" upgrade             | The fullest chamber sound for a wider garden layout or a ceremony moving straight into a longer reception        |
-| Large Ensemble (quartet + piano + double bass) | A garden reception with dancing or a longer live-music program after the ceremony                                |
+| Formation                                                    | Best fit for a garden ceremony                                                                                   |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Solo Piano                                                   | An intimate ceremony where piano alone carries the processional, vows, and recessional                           |
+| Solo Strings (violin or cello)                               | A quiet, close-seated garden ceremony with a single melodic line                                                 |
+| Duo (violin, cello & piano)                                  | Piano holding harmony and rhythm while violin and cello carry melody — a fuller sound for a mid-size garden lawn |
+| Trio / String Quartet (piano included)                       | The fullest chamber sound for a wider garden layout or a ceremony moving straight into a longer reception        |
+| Large Ensemble (strings, double bass & piano — 10 musicians) | A garden reception with dancing or a longer live-music program after the ceremony                                |
 
-If you're drawn to piano's warmth but also want strings carrying the melody, the "Piano +" upgrade
-on Duo, Trio, or String Quartet is built for exactly that — you don't have to choose one instrument
-over the other.
+If you're drawn to piano's warmth but also want strings carrying the melody, our Duo, Trio, and
+String Quartet formations are built for exactly that — piano is included as standard, so you don't
+have to choose one instrument over the other.
 
 ## What's the Backup Plan If It Rains During a Garden Ceremony?
 

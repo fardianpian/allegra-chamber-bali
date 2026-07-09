@@ -55,17 +55,17 @@ Venue dan jumlah tamu Anda mempersempit pilihan formasi sebelum Anda perlu memik
 Lima formasi kami berskala dari solo yang intim hingga ansambel penuh, dengan piano tersedia
 sebagai opsi unggulan di setiap ukuran, bukan tambahan.
 
-| Formasi                                        | Paling Cocok Untuk                                          | Setting Umum                             |
-| ---------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------- |
-| Solo (Violin, Cello, atau Piano)               | Upacara kecil dan intim                                     | Gazebo taman, kapel, tebing yang intim   |
-| Duo                                            | Upacara sedikit lebih besar atau sesi cocktail hour         | Halaman vila, resepsi lebih kecil        |
-| Trio                                           | Upacara menengah yang menginginkan suara lebih penuh        | Upacara taman atau pantai, cocktail hour |
-| String Quartet                                 | Upacara atau resepsi besar yang menginginkan suara berlapis | Tebing, ballroom, venue taman besar      |
-| Large Ensemble (Quartet + Piano + Double Bass) | Cakupan penuh sepanjang cocktail hour dan makan malam       | Ballroom atau resepsi outdoor besar      |
+| Formasi                                                                 | Paling Cocok Untuk                                          | Setting Umum                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------- | ---------------------------------------- |
+| Solo (Violin, Cello, atau Piano)                                        | Upacara kecil dan intim                                     | Gazebo taman, kapel, tebing yang intim   |
+| Duo                                                                     | Upacara sedikit lebih besar atau sesi cocktail hour         | Halaman vila, resepsi lebih kecil        |
+| Trio                                                                    | Upacara menengah yang menginginkan suara lebih penuh        | Upacara taman atau pantai, cocktail hour |
+| String Quartet                                                          | Upacara atau resepsi besar yang menginginkan suara berlapis | Tebing, ballroom, venue taman besar      |
+| Large Ensemble (string, double bass & piano — 10 musisi secara default) | Cakupan penuh sepanjang cocktail hour dan makan malam       | Ballroom atau resepsi outdoor besar      |
 
-Upgrade "Piano +" tersedia untuk Duo, Trio, dan String Quartet jika Anda menginginkan piano
-bersama string tanpa harus memilih salah satu. Lihat [Paket](/id/packages/) untuk rincian lengkap
-setiap formasi.
+Piano sudah termasuk secara standar dalam formasi Duo, Trio, dan String Quartet kami — bukan
+upgrade terpisah — jadi Anda mendapatkan piano bersama string tanpa langkah tambahan. Lihat
+[Paket](/id/packages/) untuk rincian lengkap setiap formasi.
 
 ## Apa yang Memengaruhi Biaya Musik Pernikahan Live
 

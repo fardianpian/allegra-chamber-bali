@@ -39,8 +39,8 @@ kami tampilkan di Bali.
 Ini bergantung pada jumlah tamu dan seberapa jauh tempat duduk membentang dari musisi, bukan pada
 fakta bahwa acaranya outdoor. Solo atau Duo cocok untuk upacara taman yang intim dengan tempat
 duduk berdekatan, Trio atau String Quartet mengisi lawn yang lebih luas atau program yang lebih
-panjang dengan nyaman, dan Large Ensemble kami — string quartet, piano, dan double bass — mengisi
-resepsi taman yang lebih besar. Beri tahu kami perkiraan jumlah tamu dan bentuk layout taman Anda
+panjang dengan nyaman, dan Large Ensemble kami — 4 biola, 2 viola, 2 cello, double bass, dan
+piano (10 musisi secara default) — mengisi resepsi taman yang lebih besar. Beri tahu kami perkiraan jumlah tamu dan bentuk layout taman Anda
 saat menghubungi, dan kami akan merekomendasikan formasi yang sesuai.
 
 ## Apakah Akustik Outdoor Mengubah Suara Piano atau String?
@@ -61,17 +61,17 @@ inginkan untuk upacara Anda. Piano adalah opsi unggulan di setiap formasi yang k
 sekadar tambahan di luar string, sehingga pilihan sebenarnya adalah bagaimana Anda ingin piano
 digunakan:
 
-| Formasi                                        | Paling cocok untuk upacara di taman                                                                                                     |
-| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Solo Piano                                     | Upacara intim di mana piano sendirian membawakan prosesi, janji nikah, dan resesi                                                       |
-| Solo String (biola atau cello)                 | Upacara taman yang tenang dengan tempat duduk berdekatan dan satu garis melodi                                                          |
-| Duo / Trio + upgrade "Piano +"                 | Piano memegang harmoni dan ritme sementara biola dan cello membawakan melodi — suara yang lebih penuh untuk lawn taman berukuran sedang |
-| String Quartet + upgrade "Piano +"             | Suara chamber paling penuh untuk layout taman yang lebih luas atau upacara yang langsung berlanjut ke resepsi yang lebih panjang        |
-| Large Ensemble (quartet + piano + double bass) | Resepsi taman dengan dansa atau program musik live yang lebih panjang setelah upacara                                                   |
+| Formasi                                                  | Paling cocok untuk upacara di taman                                                                                                     |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Solo Piano                                               | Upacara intim di mana piano sendirian membawakan prosesi, janji nikah, dan resesi                                                       |
+| Solo String (biola atau cello)                           | Upacara taman yang tenang dengan tempat duduk berdekatan dan satu garis melodi                                                          |
+| Duo (biola, cello & piano)                               | Piano memegang harmoni dan ritme sementara biola dan cello membawakan melodi — suara yang lebih penuh untuk lawn taman berukuran sedang |
+| Trio / String Quartet (piano sudah termasuk)             | Suara chamber paling penuh untuk layout taman yang lebih luas atau upacara yang langsung berlanjut ke resepsi yang lebih panjang        |
+| Large Ensemble (string, double bass & piano — 10 musisi) | Resepsi taman dengan dansa atau program musik live yang lebih panjang setelah upacara                                                   |
 
-Jika Anda menyukai kehangatan piano tapi juga ingin string membawakan melodi, upgrade "Piano +"
-pada Duo, Trio, atau String Quartet dibuat justru untuk itu — Anda tidak perlu memilih salah satu
-instrumen saja.
+Jika Anda menyukai kehangatan piano tapi juga ingin string membawakan melodi, formasi Duo, Trio,
+dan String Quartet kami dibuat justru untuk itu — piano sudah termasuk secara standar, jadi Anda
+tidak perlu memilih salah satu instrumen saja.
 
 ## Bagaimana Rencana Cadangan Jika Hujan Turun Saat Upacara di Taman?
 

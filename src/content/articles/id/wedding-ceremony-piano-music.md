@@ -17,7 +17,7 @@ faq:
   - question: 'Apakah solo piano cukup untuk upacara outdoor di Bali?'
     answer: 'Ya, dengan pengeras suara. Untuk venue outdoor — tebing, pantai, atau taman — keyboard dengan amplifier berkualitas dapat mengisi ruang dengan baik di sebagian besar lokasi upacara. Kami akan mengonfirmasi kebutuhan teknis setelah Anda menyampaikan venue Anda.'
   - question: 'Apa perbedaan pianis pernikahan dengan string quartet untuk musik upacara?'
-    answer: 'Pianis memainkan harmoni dan melodi sekaligus dalam satu instrumen — pilihan yang intim dan fleksibel untuk upacara berbagai ukuran. String quartet menghadirkan empat suara independen dengan bunyi yang lebih penuh dan berlapis, cocok untuk venue yang lebih besar. Piano dan gesek juga bisa dikombinasikan — formasi Duo, Trio, dan Kuartet kami masing-masing tersedia dengan opsi Piano +.'
+    answer: 'Pianis memainkan harmoni dan melodi sekaligus dalam satu instrumen — pilihan yang intim dan fleksibel untuk upacara berbagai ukuran. String quartet menghadirkan empat suara independen dengan bunyi yang lebih penuh dan berlapis, cocok untuk venue yang lebih besar. Piano dan gesek juga bisa dikombinasikan — piano sudah termasuk secara standar dalam formasi Duo, Trio, dan String Quartet kami, bukan opsi terpisah.'
 ---
 
 Banyak pasangan tahu mereka ingin piano live di upacara pernikahan mereka — tetapi belum yakin apa saja yang sebenarnya dicakupnya. Seorang pianis tidak hanya memainkan prosesi: musik dimulai bahkan sebelum upacara berlangsung, dan terus mengalir hingga momen Anda berjalan keluar bersama. Setiap momen memiliki perannya masing-masing, dan memahami hal ini akan memudahkan Anda menyusun program yang terasa disengaja, bukan sekadar dikumpulkan di menit-menit terakhir.
@@ -68,8 +68,8 @@ Seorang pianis solo mencakup seluruh rentang harmoni dan melodi upacara dalam sa
 Perbedaan praktisnya:
 
 - **Solo piano** lebih tenang dan intim — cocok untuk taman atau venue indoor yang lebih kecil, atau pasangan yang menginginkan musik yang terasa personal, bukan megah.
-- **Piano + biola atau cello** (formasi Duo) mengisi ruang lebih besar tanpa banyak pengeras suara, cocok untuk upacara berukuran sedang atau setting outdoor beratap.
-- **Piano + Trio atau String Quartet** memberikan bunyi berlapis yang paling penuh, sesuai untuk venue tebing atau ballroom yang lebih besar di mana ruang itu sendiri menuntut lebih.
+- **Duo (biola, cello & piano)** mengisi ruang lebih besar tanpa banyak pengeras suara, cocok untuk upacara berukuran sedang atau setting outdoor beratap.
+- **Trio atau String Quartet (piano sudah termasuk)** memberikan bunyi berlapis yang paling penuh, sesuai untuk venue tebing atau ballroom yang lebih besar di mana ruang itu sendiri menuntut lebih.
 
 Piano tersedia sebagai instrumen unggulan di semua formasi Allegra — bukan sebagai tambahan opsional pada ensemble gesek. [Halaman paket](/packages/) kami menunjukkan bagaimana setiap formasi dibangun dan untuk upacara seperti apa ia paling tepat.
 

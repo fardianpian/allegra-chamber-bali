@@ -17,7 +17,7 @@ faq:
   - question: 'Is a solo pianist enough for an outdoor ceremony in Bali?'
     answer: 'Yes, with sound reinforcement. For outdoor venues — cliffside, beach, or garden — a keyboard with a quality amplifier carries clearly across most ceremony spaces. We confirm the setup when you share your venue.'
   - question: 'What is the difference between a wedding pianist and a string quartet for ceremony music?'
-    answer: 'A pianist covers both harmony and melody on one instrument, making it an intimate and flexible choice for any ceremony size. A string quartet brings four independent voices and a fuller, layered sound suited to larger venues. Piano and strings can also be combined — our Duo, Trio, and Quartet formations each offer a Piano + upgrade.'
+    answer: 'A pianist covers both harmony and melody on one instrument, making it an intimate and flexible choice for any ceremony size. A string quartet brings four independent voices and a fuller, layered sound suited to larger venues. Piano and strings can also be combined — piano is included as standard in our Duo, Trio, and String Quartet formations, not a separate upgrade.'
 ---
 
 Most couples know they want live piano at their ceremony — but are less sure what it actually covers. A pianist plays more than the processional: the music begins before the ceremony starts and carries through to the moment you walk out together. Each moment has a different role, and knowing what those roles are makes it much easier to plan a program that feels deliberate rather than assembled at the last minute.
@@ -68,8 +68,8 @@ A solo pianist covers the full harmonic and melodic range of a ceremony on one i
 The practical difference:
 
 - **Solo piano** is quieter and more intimate — well suited to a garden or smaller indoor venue, or a couple who want the music to feel personal rather than grand.
-- **Piano + violin or cello** (Duo formation) fills more space without heavy sound reinforcement, suited to a mid-size ceremony or a covered outdoor setting.
-- **Piano + Trio or String Quartet** gives the fullest layered sound, appropriate for larger cliffside or ballroom venues where the space itself demands more.
+- **Duo (violin, cello & piano)** fills more space without heavy sound reinforcement, suited to a mid-size ceremony or a covered outdoor setting.
+- **Trio or String Quartet (piano included)** gives the fullest layered sound, appropriate for larger cliffside or ballroom venues where the space itself demands more.
 
 Piano is available as a flagship option across every Allegra formation — not as an add-on to a strings-only ensemble. Our [packages page](/packages/) shows how each formation is built and when it suits which kind of ceremony.
 

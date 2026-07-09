@@ -33,6 +33,7 @@
 			body {
 				margin: 0;
 				padding: 0;
+				background: var(--ivory);
 			}
 
 			body {
@@ -228,17 +229,17 @@
 				white-space: nowrap;
 			}
 
-			.col-full {
-				font-weight: 600;
-				background: color-mix(in srgb, var(--gold) 12%, transparent);
+			.col-musicians {
+				text-align: center !important;
+				color: var(--taupe);
+				font-size: 0.85rem;
 			}
 
-			thead th.col-full-head {
-				color: var(--ink);
-				font-weight: 600;
+			thead th.col-musicians-head {
+				text-align: center;
 			}
 
-			/* ---------- Piano+ callout ---------- */
+			/* ---------- Callouts (Large Ensemble add-on) ---------- */
 			.callout {
 				margin-top: 1.5rem;
 				padding: 1.25rem 1.5rem;
@@ -363,64 +364,113 @@
 			}
 
 			@page {
-				size: A4;
-				margin: 13mm 12mm;
+				size: letter;
+				margin: 0;
 			}
 
 			@media print {
+				html {
+					font-size: 10pt;
+					background: var(--ivory);
+				}
 				body {
 					print-color-adjust: exact;
 					-webkit-print-color-adjust: exact;
-					font-size: 12px;
-					line-height: 1.45;
+					background: var(--ivory);
+					font-size: 10pt;
+					line-height: 1.36;
 				}
 				.sheet {
 					max-width: 100%;
-					padding: 0;
+					padding: 10mm 13mm 12mm;
+				}
+				h1,
+				h2,
+				h3 {
+					break-after: avoid;
+					page-break-after: avoid;
 				}
 				header {
-					margin-bottom: 1.1rem;
+					margin-bottom: 0.9rem;
+					break-inside: avoid;
+					page-break-inside: avoid;
 				}
 				section {
-					margin-top: 1.1rem;
+					margin-top: 0.8rem;
+				}
+				.pricing-section,
+				.notes-section {
+					break-before: page;
+					page-break-before: always;
+					margin-top: 0;
+					padding-top: 10mm;
+				}
+				.section-head {
+					break-after: avoid;
+					page-break-after: avoid;
 				}
 				.formations {
-					gap: 0.75rem 1.25rem;
-					margin-top: 0.9rem;
+					gap: 0.55rem 1.1rem;
+					margin-top: 0.7rem;
+				}
+				.formation-card {
+					break-inside: avoid;
+					page-break-inside: avoid;
 				}
 				.formation-card .ideal-for {
-					margin-top: 0.2rem;
+					margin-top: 0.15rem;
 				}
 				.table-scroll {
 					overflow: visible;
-					margin-top: 0.9rem;
+					margin-top: 0.7rem;
+					break-inside: avoid;
+					page-break-inside: avoid;
 				}
 				table {
 					min-width: 0;
 				}
+				thead {
+					display: table-header-group;
+				}
+				tbody tr {
+					break-inside: avoid;
+					page-break-inside: avoid;
+				}
 				tbody td,
 				tbody th {
-					padding: 0.5rem 0.5rem;
+					padding: 0.35rem 0.5rem;
 				}
 				.callout {
-					margin-top: 0.9rem;
-					padding: 1rem 1.25rem;
+					margin-top: 0.7rem;
+					padding: 0.7rem 1rem;
+				}
+				.callout li {
+					break-inside: avoid;
+					page-break-inside: avoid;
+				}
+				.notes {
+					margin-top: 0.5rem;
+				}
+				.notes li {
+					margin-bottom: 0.3rem;
+					break-inside: avoid;
+					page-break-inside: avoid;
 				}
 				footer {
-					margin-top: 1.25rem;
-					padding-top: 1rem;
+					margin-top: 1rem;
+					padding-top: 0.75rem;
 				}
 				footer p {
-					margin: 0 auto 0.85rem;
+					margin: 0 auto 0.6rem;
 				}
 				.cta-button {
-					padding: 0.6rem 1.75rem;
+					padding: 0.45rem 1.4rem;
 				}
 				.contact-line {
-					margin-top: 1rem;
+					margin-top: 0.7rem;
 				}
 				.fine-print {
-					margin-top: 1rem;
+					margin-top: 0.6rem;
 				}
 				.callout,
 				table,
@@ -444,16 +494,16 @@
 				<div class="doc-title">
 					<span class="eyebrow">For Wedding Planners &amp; Couples</span>
 					<h1>Pricing Guide</h1>
-					<p class="doc-date">Indicative pricing as of June 2026</p>
+					<p class="doc-date">Final pricing as of July 2026</p>
 				</div>
 			</header>
 
 			<section>
 				<p class="lede">
 					This guide outlines how Allegra Chamber Bali prices live music for weddings — by formation, and by
-					which parts of your day you'd like covered. Every wedding is different, so treat the figures below
-					as a planning reference; we confirm an exact quote once we know your date, venue, and preferred
-					formation.
+					which parts of your day you'd like covered. Piano is included as standard from Duo upward — it's
+					Allegra's flagship instrument, not a paid upgrade. The prices below are final for the formation and
+					coverage you choose — message us to check your date and lock it in.
 				</p>
 			</section>
 
@@ -471,132 +521,190 @@
 					</div>
 					<div class="formation-card">
 						<h3>Duo</h3>
-						<p>Two musicians, typically violin and cello, for a warmer, fuller sound than solo.</p>
-						<p class="ideal-for">Ideal for ceremony, cocktail hour</p>
+						<p>
+							Violin and cello, joined by piano as standard — a warmer, fuller sound than solo, with our
+							signature piano blended in from the start.
+						</p>
+						<p class="ideal-for">Ideal for ceremony, cocktail hour · 3 musicians (piano included)</p>
 					</div>
 					<div class="formation-card">
 						<h3>Trio</h3>
-						<p>Violin, viola, and cello — full chamber colour for ceremony through cocktail hour.</p>
-						<p class="ideal-for">Ideal for ceremony, cocktail hour, smaller receptions</p>
+						<p>
+							Violin, viola, cello, and piano — full chamber colour with piano included as standard, for
+							ceremony through cocktail hour.
+						</p>
+						<p class="ideal-for">
+							Ideal for ceremony, cocktail hour, smaller receptions · 4 musicians (piano included)
+						</p>
 					</div>
 					<div class="formation-card">
 						<h3>String Quartet</h3>
 						<p>
-							The complete chamber experience — two violins, viola, and cello — for ceremony through
-							reception. Our signature formation.
+							The complete chamber experience — two violins, viola, cello, and piano — for ceremony through
+							reception. Our signature formation, with piano included as standard.
 						</p>
-						<p class="ideal-for">Ideal for processional &amp; recessional, cocktail hour, reception sets</p>
+						<p class="ideal-for">
+							Ideal for processional &amp; recessional, cocktail hour, reception sets · 5 musicians (piano
+							included)
+						</p>
 					</div>
 					<div class="formation-card">
 						<h3>Large Ensemble</h3>
 						<p>
-							String quartet plus piano and double bass (6 musicians) for a layered, statement sound. Piano is
-							included in this default lineup.
+							Four violins, two violas, two cellos, double bass, and piano — our fullest formation for a
+							layered, statement sound. 10 musicians by default; scalable further on request.
 						</p>
-						<p class="ideal-for">Ideal for grand ceremony entrances, large receptions &amp; gala dinners</p>
+						<p class="ideal-for">
+							Ideal for grand ceremony entrances, large receptions &amp; gala dinners · 10 musicians (default)
+						</p>
 					</div>
 				</div>
 			</section>
 
-			<section>
+			<section class="pricing-section">
 				<span class="eyebrow">By Formation &amp; Coverage</span>
 				<h2>Pricing</h2>
 				<div class="table-scroll">
 					<table>
 						<caption>
-							All prices in IDR. Full Package is one continuous booking, priced as a bundle.
+							All prices in IDR. Piano is included as standard in Duo, Trio, String Quartet, and Large
+							Ensemble.
 						</caption>
 						<thead>
 							<tr>
 								<th>Formation</th>
+								<th class="col-musicians-head">Musicians</th>
 								<th>Ceremony Only</th>
 								<th>Cocktail Only</th>
 								<th>Dinner Only</th>
-								<th class="col-full-head">Full Package</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th>Solo</th>
+								<td class="col-musicians">1</td>
 								<td>Rp 3,500,000</td>
 								<td>Rp 3,500,000</td>
 								<td>Rp 4,500,000</td>
-								<td class="col-full">Rp 8,000,000</td>
 							</tr>
 							<tr>
 								<th>Duo</th>
-								<td>Rp 5,000,000</td>
-								<td>Rp 5,000,000</td>
-								<td>Rp 6,000,000</td>
-								<td class="col-full">Rp 11,000,000</td>
+								<td class="col-musicians">3</td>
+								<td>Rp 6,500,000</td>
+								<td>Rp 6,500,000</td>
+								<td>Rp 8,000,000</td>
 							</tr>
 							<tr>
 								<th>Trio</th>
-								<td>Rp 6,500,000</td>
-								<td>Rp 6,500,000</td>
-								<td>Rp 8,000,000</td>
-								<td class="col-full">Rp 14,000,000</td>
-							</tr>
-							<tr>
-								<th>String Quartet</th>
+								<td class="col-musicians">4</td>
 								<td>Rp 8,000,000</td>
 								<td>Rp 8,000,000</td>
 								<td>Rp 10,000,000</td>
-								<td class="col-full">Rp 18,000,000</td>
+							</tr>
+							<tr>
+								<th>String Quartet</th>
+								<td class="col-musicians">5</td>
+								<td>Rp 9,500,000</td>
+								<td>Rp 10,500,000</td>
+								<td>Rp 12,000,000</td>
 							</tr>
 							<tr>
 								<th>Large Ensemble</th>
-								<td>Rp 12,000,000</td>
-								<td>Rp 12,000,000</td>
-								<td>Rp 14,500,000</td>
-								<td class="col-full">Rp 26,000,000</td>
+								<td class="col-musicians">10</td>
+								<td>Rp 18,000,000</td>
+								<td>Rp 19,000,000</td>
+								<td>Rp 22,500,000</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<p class="doc-date" style="margin-top: 0.85rem">
-					Ceremony ≈ 45 min · Cocktail ≈ 1 hr · Dinner / Reception ≈ 1.5 hrs · Full Package ≈ 3.5 hrs
-					continuous presence
+					Ceremony ≈ 45 min · Cocktail ≈ 1 hr · Dinner / Reception ≈ 1.5 hrs · Musicians column reflects
+					piano-included headcount (Solo excluded — single instrument, your choice)
 				</p>
 			</section>
 
 			<section>
 				<div class="callout">
-					<h3>Piano + Upgrade</h3>
+					<h3>Scaling Up the Large Ensemble</h3>
 					<p>
-						Add piano to Duo, Trio, or String Quartet for a fuller, more contemporary blend — piano joins the
-						strings as an additional voice in the arrangement. (Large Ensemble already includes piano in its
-						default lineup.)
+						Need a bigger sound for a grand ballroom entrance or gala dinner? Additional string musicians can
+						be added to the default 10-piece Large Ensemble lineup on request, arranged individually for your
+						event.
 					</p>
 					<ul>
-						<li><strong>+Rp 1,500,000</strong> Ceremony / Cocktail Only</li>
-						<li><strong>+Rp 2,000,000</strong> Dinner Only</li>
-						<li><strong>+Rp 3,500,000</strong> Full Package</li>
+						<li>
+							<strong>+Rp 2,500,000</strong> per musician, per session (Ceremony, Cocktail, or Dinner) — a
+							flat, on-request rate across all coverage types
+						</li>
 					</ul>
 				</div>
 			</section>
 
-			<section>
+			<section class="notes-section">
 				<span class="eyebrow">Good to Know</span>
 				<ul class="notes">
+					<li>All prices and transactions are in Indonesian Rupiah (IDR).</li>
 					<li>
-						Prices shown are indicative as of the date of this guide — final quote is confirmed once your date
-						and venue are checked.
+						Prices shown above are final for the formation and coverage listed — not estimates, subject only
+						to date availability. Deposit and overtime (see below) are separate and confirmed once your
+						booking details are set.
 					</li>
 					<li>
-						A travel fee may apply depending on venue area in Bali; this is included in your personalised
-						quote.
+						Ceremony and Cocktail Only are priced the same for Solo, Duo, and Trio — a shorter Ceremony set
+						needs the same setup, travel, and precision timing (processional, signing) as a full Cocktail
+						hour, so pricing reflects the booking as a whole, not just minutes played. For String Quartet and
+						Large Ensemble, Cocktail is priced slightly above Ceremony, reflecting the added coordination of a
+						larger ensemble in a mingling / background setting.
 					</li>
-					<li>A deposit is required to confirm your booking date — details are provided with your quote.</li>
-					<li>USD equivalent available on request, at the exchange rate current on your inquiry date.</li>
+					<li>
+						Piano is included as standard in Duo, Trio, String Quartet, and Large Ensemble — it's Allegra's
+						flagship instrument, not a paid upgrade. Solo is the only formation where you choose a single
+						instrument (violin, cello, or piano).
+					</li>
+					<li>
+						All prices include a digital/electric piano. Amplification for the piano is not included — that
+						falls under sound system, which we don't provide (see below). We do not provide an acoustic piano
+						(upright, baby grand, or grand) either — if you'd like one at your venue, we're happy to recommend
+						a piano rental vendor on request.
+					</li>
+					<li>
+						Allegra is a live-music ensemble only — we do not provide wedding planning or coordination
+						services. Please arrange these with your wedding planner or organizer.
+					</li>
+					<li>
+						Allegra does not provide a sound system / PA package, including amplification for the electric
+						piano — this is arranged separately through your venue or AV vendor. Our string instruments
+						perform acoustically; the electric piano needs a nearby power outlet, and we're happy to share our
+						technical requirements with your sound vendor on request.
+					</li>
+					<li>
+						Large Ensemble's default lineup is 4 violins, 2 violas, 2 cellos, double bass, and piano (10
+						musicians); exact instrumentation can be customised on request. Additional string musicians beyond
+						the default 10 are billed at a flat Rp 2,500,000 per musician, per session, reflecting custom
+						arrangement — see "Scaling Up" above.
+					</li>
+					<li>
+						Outdoor ceremonies need a shaded, weather-protected space for musicians and equipment — direct sun
+						and rain can damage instruments and electronics.
+					</li>
+					<li>
+						A deposit is required to confirm your booking date, and overtime beyond your booked coverage is
+						available on request subject to musician availability — both are confirmed separately once your
+						booking is set.
+					</li>
+					<li>
+						Repertoire, including your processional or first-dance song, is arranged together with you ahead
+						of the wedding.
+					</li>
 				</ul>
 			</section>
 
 			<footer>
 				<h2>Check Your Date</h2>
 				<p>
-					Send us your wedding date, venue, and preferred formation, and we'll follow up with a personalised
-					quote.
+					Send us your wedding date, venue, and preferred formation, and we'll confirm availability and the
+					next steps to lock in your booking.
 				</p>
 				<a
 					class="cta-button"
@@ -604,6 +712,7 @@
 					>Check Your Date on WhatsApp</a
 				>
 				<p class="contact-line">
+					Fardian ·
 					<a href="https://wa.me/6285708247611">+62 857-0824-7611</a> ·
 					<a href="mailto:allegrachamberbali@gmail.com">allegrachamberbali@gmail.com</a> ·
 					<a href="https://allegra.indonesiaistimewastudio.id">allegra.indonesiaistimewastudio.id</a>

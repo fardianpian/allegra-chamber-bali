@@ -7,6 +7,64 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Pricing restructure — 2026-07-09
+
+Owner-directed pricing model change, researched and propagated site-wide (not just the internal
+pricing doc — see `docs/PRICING-STRATEGY.md` §7 for full research/derivation):
+
+- **Full Package removed** from `docs/Allegra-Chamber-Bali-Pricing.html` — only Ceremony/Cocktail/
+  Dinner segment pricing remains.
+- **Large Ensemble redefined 6→10 musicians** (4 violins, 2 violas, 2 cellos, double bass, piano),
+  with a per-musician overage rate for scaling beyond 10.
+- **Piano now included as standard** (not a paid "Piano +" upsell) in Duo, Trio, and String
+  Quartet — Allegra's core "strings + piano" brand identity, now reflected in pricing.
+- Propagated to: `CLAUDE.md` confirmed decisions, `.claude/brand-voice-guidelines.md`,
+  `src/i18n/ui.ts` (EN+ID), `src/content/packages/*.md`, and all 6 affected `/journal` articles +
+  their 6 ID translations (12 files) that previously described the old Piano+/6-musician model in
+  depth (comparison tables, dedicated sections, FAQ/JSON-LD). `npm run lint && npm run build` clean
+  after every batch. New client-facing terms added (electric piano only, no wedding-planning
+  services, no sound-system package) — see the pricing HTML's "Good to Know" section.
+- **Still open, not invented:** exact deposit %, travel-fee amounts by Bali zone, and overtime rate
+  remain unset per `CLAUDE.md` § Open questions — the pricing sheet describes these qualitatively
+  ("confirmed with your quote") rather than with a fabricated figure.
+
+**Same-day follow-up revision (owner review pass):** pricing reframed from "indicative" to
+**final** (header/lede/footer reworded, no more "confirm an exact quote" language); Large
+Ensemble's scaling rate simplified to a **flat Rp 2,500,000 per musician, per session** (replaces
+the differentiated Ceremony/Cocktail-vs-Dinner rate — this is an owner-supplied real figure, not a
+derived estimate); electric-piano amplification explicitly excluded (falls under the
+already-excluded sound system, not bundled with the piano); USD-equivalent-on-request bullet
+removed entirely; added an IDR-currency bullet as the new first "Good to Know" item. Full detail in
+`docs/PRICING-STRATEGY.md` §8.
+
+**Same-day gap/2026-relevance audit (owner review pass 3):** live-checked USD/IDR (~Rp 18,100,
+up from the ~16,300 used earlier — no live-doc impact since the USD bullet was already removed,
+but worth knowing if a USD reference returns) and one Bridestory Bali quartet listing (turned out
+to be a stale 2020, delisted comp, not current evidence). Fixed 5 of 6 identified gaps directly in
+the pricing HTML: reworded "final pricing" + travel-fee/deposit/overtime bullets so they stop
+implying a pending "quote"; added a rationale for the flat Rp 2,500,000/musician scaling rate
+(~39% above the base lineup's implied per-musician cost for Ceremony/Cocktail); aligned "additional
+**string** musicians" wording between the Scaling Up callout and the Good to Know bullet; added a
+bullet explaining why Ceremony and Cocktail are priced identically despite different durations.
+Owner explicitly deferred the 6th gap (no multi-segment discount since Full Package was removed) as
+a business decision, not a copy fix — still open, see `docs/PRICING-STRATEGY.md` §9 item 2. Every
+Rp figure in the table except the flat scaling rate remains a researched/derived estimate (§7.3),
+not validated against Allegra's real cost data. Full detail in `docs/PRICING-STRATEGY.md` §9.
+
+**Same-day: first real cost data + a price increase (owner review pass 5).** Owner gave real
+musician honor (flat per musician, not per instrument): Ceremony Rp 1,000,000, Cocktail/Dinner
+Rp 1,500,000. Checked against the live price table, margins are healthy almost everywhere — except
+Cocktail, which shares Dinner's higher honor rate but was priced the same as the cheaper Ceremony
+segment, making it the thinnest segment in every formation (Large Ensemble Cocktail ~1.7% net
+margin, String Quartet ~6%). Owner asked whether raising price was viable given Allegra is a new
+brand (but with experienced musicians) — agreed it's low-risk here specifically because pricing is
+never published (every quote is personal, no visible "old price"), the fix is narrow, and it
+corrects an internal inconsistency rather than asserting new pricing power. **Applied: Cocktail
+Only +Rp 1,000,000 for String Quartet (→ Rp 10,500,000) and Large Ensemble (→ Rp 19,000,000)
+only** — Solo/Duo/Trio and all Ceremony/Dinner prices unchanged. The "Ceremony = Cocktail" parity
+bullet was rescoped to Solo/Duo/Trio, with a client-facing rationale added for why String
+Quartet/Large Ensemble now differ. Full detail in `docs/PRICING-STRATEGY.md` §10.
+
 ## Weekly Audit — 2026-07-05
 
 **Catatan insiden:** run terjadwal pertama `weekly-health-audit` (Minggu 08:00 WIB) gagal
