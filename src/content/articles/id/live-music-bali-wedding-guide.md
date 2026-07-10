@@ -97,4 +97,6 @@ kami akan memastikan apa yang dibutuhkan. Jika upacara Anda berlangsung di atas 
 kami untuk panduan formasi dan venue tempat kami pernah tampil di sana. Merencanakan upacara di
 taman? Lihat
 [panduan musik upacara pernikahan di taman](/id/journal/garden-wedding-ceremony-music-bali/) kami
-untuk pemilihan formasi, akustik, dan rencana cadangan hujan.
+untuk pemilihan formasi, akustik, dan rencana cadangan hujan. Menikah di atas pasir? Lihat
+[panduan musik upacara pernikahan di pantai di Bali](/id/journal/beach-wedding-music-bali/) kami
+untuk bagaimana angin, pasir, dan kelembapan mengubah formasi dan setup.

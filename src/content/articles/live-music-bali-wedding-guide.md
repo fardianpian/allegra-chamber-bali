@@ -96,4 +96,6 @@ clifftop, see our
 formation guidance and the venues we've performed at in the area. Planning a garden ceremony
 instead? See our
 [guide to garden wedding ceremony music](/journal/garden-wedding-ceremony-music-bali/) for
-formation choice, acoustics, and the rain backup plan.
+formation choice, acoustics, and the rain backup plan. Marrying on the sand? See our
+[guide to beach wedding ceremony music in Bali](/journal/beach-wedding-music-bali/) for how wind,
+sand, and humidity change formation and setup.
