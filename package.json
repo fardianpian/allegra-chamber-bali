@@ -10,7 +10,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"lint": "prettier --check . && astro check",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"generate:cover": "node --env-file=.env scripts/generate-cover-image.mjs"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.0",

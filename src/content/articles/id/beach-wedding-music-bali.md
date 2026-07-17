@@ -6,6 +6,7 @@ excerpt: 'Yang perlu diketahui soal musik live untuk pernikahan di pantai di Bal
 pillar: 'bali-venues'
 targetKeyword: 'beach wedding music'
 pubDate: 2026-07-10
+ogImage: '/images/og-beach-wedding-music-bali.jpg'
 faq:
   - question: 'Apakah angin di venue pantai Bali memengaruhi kualitas suara musik live?'
     answer: 'Angin lebih memengaruhi seberapa jauh suara menjangkau dibanding suara musiknya sendiri — upacara yang tenang dengan tempat duduk berdekatan jarang membutuhkan bantuan tambahan, sementara setting yang lebih berangin atau terbuka adalah titik di mana kami mulai membicarakan amplifikasi dengan Anda. Beri tahu kami venue dan jumlah tamu Anda saat menghubungi, dan kami akan mengonfirmasi apa yang dibutuhkan.'

@@ -6,7 +6,7 @@ excerpt: 'Dari prelude hingga resesional, inilah yang dimainkan pianis di setiap
 pillar: 'piano-repertoire'
 targetKeyword: 'piano upacara pernikahan'
 pubDate: 2026-06-29
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-ceremony-piano-music.jpg'
 faq:
   - question: 'Apa yang dimainkan pianis saat prosesi pengantin?'
     answer: 'Prosesi biasanya menggunakan satu lagu pilihan — seringkali lagu pasangan dalam aransemen khusus, atau karya klasik seperti Canon in D karya Pachelbel atau Clair de Lune karya Debussy — dimainkan dari saat iring-iringan masuk hingga pasangan tiba di altar.'

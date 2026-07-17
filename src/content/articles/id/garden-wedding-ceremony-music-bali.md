@@ -6,6 +6,7 @@ excerpt: 'Yang perlu diketahui soal musik live untuk upacara di taman di Bali â€
 pillar: 'bali-venues'
 targetKeyword: 'garden wedding ceremony'
 pubDate: 2026-07-06
+ogImage: '/images/og-garden-wedding-ceremony-music-bali.jpg'
 faq:
   - question: 'Bisakah string quartet tampil outdoor di taman Bali tanpa amplifikasi?'
     answer: 'Untuk upacara dengan tempat duduk yang berdekatan, bisa â€” quartet atau formasi yang lebih kecil tetap terdengar jelas di atas lawn terbuka tanpa amplifikasi. Untuk jumlah tamu yang lebih banyak atau taman dengan jarak lebih jauh antara musisi dan tempat duduk, kami akan membicarakan opsi amplifikasi dengan Anda sebelumnya.'

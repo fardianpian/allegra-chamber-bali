@@ -6,7 +6,7 @@ excerpt: 'Dari Bach hingga Vivaldi hingga lagu pilihan Anda sendiri — inilah c
 pillar: 'piano-repertoire'
 targetKeyword: 'lagu prosesi pernikahan'
 pubDate: 2026-07-06
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-processional-recessional-songs.jpg'
 faq:
   - question: 'Lagu apa yang cocok untuk berjalan di lorong pernikahan?'
     answer: "Lagu apa pun yang terasa seperti diri Anda — karya klasik seperti Air on the G String karya Bach atau Bridal Chorus karya Wagner, pilihan yang lebih hangat seperti Isn't She Lovely dari Stevie Wonder, atau aransemen khusus dari lagu yang berarti bagi perjalanan Anda. Tidak ada satu jawaban yang benar; yang tepat adalah yang sesuai dengan tempo langkah yang Anda inginkan."

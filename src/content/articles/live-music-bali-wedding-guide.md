@@ -6,7 +6,7 @@ excerpt: 'When to book, live music vs. a DJ, choosing a formation, and what shap
 pillar: 'planning'
 targetKeyword: 'musician for wedding ceremony'
 pubDate: 2026-06-23
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-live-music-bali-wedding-guide.jpg'
 faq:
   - question: 'When should live wedding music become part of our Bali wedding planning?'
     answer: 'As soon as your venue and date are confirmed. Venue layout and guest count shape which formation fits best, and popular dates can book out 6 to 12 months ahead, especially in peak season. Reaching out early secures your date even if you finalize the formation later.'

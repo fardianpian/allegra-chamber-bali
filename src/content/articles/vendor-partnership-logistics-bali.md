@@ -6,7 +6,7 @@ excerpt: 'How the working relationship with Allegra Chamber Bali runs after book
 pillar: 'for-planners'
 targetKeyword: 'vendor partnership bali'
 pubDate: 2026-06-23
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-vendor-partnership-logistics-bali.jpg'
 faq:
   - question: 'Who do we contact if something changes after the booking is confirmed?'
     answer: 'You keep the same point of contact you had before booking — every update after confirmation, from a timeline shift to a venue change, goes through that one WhatsApp thread, and we respond within 24 hours.'

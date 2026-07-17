@@ -6,7 +6,7 @@ excerpt: 'Kapan memesan, musik live vs DJ, memilih formasi, dan faktor yang meme
 pillar: 'planning'
 targetKeyword: 'musician for wedding ceremony'
 pubDate: 2026-06-23
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-live-music-bali-wedding-guide.jpg'
 faq:
   - question: 'Kapan musik pernikahan live sebaiknya mulai masuk ke dalam perencanaan pernikahan kami di Bali?'
     answer: 'Begitu venue dan tanggal Anda terkonfirmasi. Tata letak venue dan jumlah tamu menentukan formasi yang paling sesuai, dan tanggal-tanggal populer bisa penuh 6 hingga 12 bulan sebelumnya, terutama di musim ramai. Menghubungi kami lebih awal mengamankan tanggal Anda meski formasi baru difinalisasi kemudian.'

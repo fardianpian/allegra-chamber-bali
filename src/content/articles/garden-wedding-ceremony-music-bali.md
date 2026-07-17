@@ -6,6 +6,7 @@ excerpt: 'What to know about live music for a garden ceremony in Bali — format
 pillar: 'bali-venues'
 targetKeyword: 'garden wedding ceremony'
 pubDate: 2026-07-06
+ogImage: '/images/og-garden-wedding-ceremony-music-bali.jpg'
 faq:
   - question: 'Can a string quartet play outdoors in a Bali garden without amplification?'
     answer: "For a close-seated ceremony, yes — a quartet or smaller formation reads clearly across an open lawn without amplification. For a larger guest count or a garden with more distance between musicians and seating, we'll talk through amplification with you ahead of time."

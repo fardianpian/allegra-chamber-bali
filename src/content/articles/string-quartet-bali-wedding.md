@@ -6,7 +6,7 @@ excerpt: 'What a live string quartet sounds like in a Bali ceremony, how it comp
 pillar: 'planning'
 targetKeyword: 'string quartet bali wedding'
 pubDate: 2026-06-28
-ogImage: '/images/og-cliffside-uluwatu.jpg'
+ogImage: '/images/og-string-quartet-bali-wedding.jpg'
 faq:
   - question: 'What instruments are in a string quartet?'
     answer: 'A traditional string quartet is two violins, a viola, and a cello — four independent voices covering the full harmonic range of a chamber ensemble, performed without amplification in most Bali indoor and sheltered outdoor venues. At Allegra Chamber Bali, our String Quartet booking adds piano as a fifth voice, included as standard.'

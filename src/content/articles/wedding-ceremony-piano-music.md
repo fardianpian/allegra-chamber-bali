@@ -6,7 +6,7 @@ excerpt: 'From prelude to recessional, here is what a wedding pianist covers at 
 pillar: 'piano-repertoire'
 targetKeyword: 'piano wedding ceremony'
 pubDate: 2026-06-29
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-ceremony-piano-music.jpg'
 faq:
   - question: 'What does a wedding pianist play during the processional?'
     answer: "The processional is usually one chosen piece — often the couple's own song in a custom arrangement, or a classical piece such as Pachelbel's Canon or Debussy's Clair de Lune — played from the moment the bridal party enters until the couple reaches the altar."

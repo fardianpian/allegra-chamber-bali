@@ -6,7 +6,7 @@ excerpt: 'Apa yang sebenarnya dibawakan pianis pernikahan live pada hari H, beda
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding pianist'
 pubDate: 2026-06-22
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-pianist-bali.jpg'
 faq:
   - question: 'Bisakah saya memesan hanya pianis untuk upacara pernikahan saya di Bali?'
     answer: 'Bisa — Solo Piano adalah salah satu opsi formasi Solo kami, setara dengan violin dan cello, bukan alternatif yang lebih sederhana. Pianis dapat membawakan seluruh rangkaian upacara: prelude, prosesi, pemberkatan/akad, dan resesi.'

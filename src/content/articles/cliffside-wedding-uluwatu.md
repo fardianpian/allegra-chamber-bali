@@ -6,7 +6,7 @@ excerpt: 'What changes for live music at a clifftop ceremony in Uluwatu — form
 pillar: 'bali-venues'
 targetKeyword: 'live music cliffside wedding uluwatu'
 pubDate: 2026-06-25
-ogImage: '/images/og-cliffside-uluwatu.jpg'
+ogImage: '/images/og-cliffside-wedding-uluwatu.jpg'
 faq:
   - question: 'Does an open-air cliffside setting change how a live ensemble sets up?'
     answer: "It changes what the venue needs to provide, not the music itself — we just need shade for the musicians and a flat, stable surface for instruments. Tell us your venue when you inquire and we'll confirm the rest."

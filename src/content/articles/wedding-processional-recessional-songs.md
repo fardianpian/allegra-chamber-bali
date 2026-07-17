@@ -6,7 +6,7 @@ excerpt: 'From Bach to Vivaldi to your own song — here is how to choose proces
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding processional songs'
 pubDate: 2026-07-06
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-processional-recessional-songs.jpg'
 faq:
   - question: 'What song should we walk down the aisle to?'
     answer: "Any piece that feels like you — a classical standard such as Bach's Air on the G String or Wagner's Bridal Chorus, a warmer contemporary choice like Stevie Wonder's Isn't She Lovely, or a custom arrangement of a song from your own story. There is no single correct choice; the right one is the one that matches the pace you want to walk."

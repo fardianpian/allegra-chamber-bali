@@ -6,7 +6,7 @@ excerpt: 'Apa yang berubah untuk musik live pada upacara di tebing Uluwatu — p
 pillar: 'bali-venues'
 targetKeyword: 'live music cliffside wedding uluwatu'
 pubDate: 2026-06-25
-ogImage: '/images/og-cliffside-uluwatu.jpg'
+ogImage: '/images/og-cliffside-wedding-uluwatu.jpg'
 faq:
   - question: 'Apakah setting tebing yang terbuka mengubah cara ansambel live melakukan setup?'
     answer: 'Yang berubah adalah apa yang perlu disediakan venue, bukan musiknya sendiri — kami hanya memerlukan peneduh untuk musisi dan permukaan yang rata dan stabil untuk instrumen. Beri tahu kami venue Anda saat menghubungi, dan kami akan memastikan sisanya.'

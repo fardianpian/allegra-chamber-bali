@@ -6,7 +6,7 @@ excerpt: 'Seperti apa suara kuartet gesek live dalam upacara di Bali, perbanding
 pillar: 'planning'
 targetKeyword: 'string quartet bali wedding'
 pubDate: 2026-06-28
-ogImage: '/images/og-cliffside-uluwatu.jpg'
+ogImage: '/images/og-string-quartet-bali-wedding.jpg'
 faq:
   - question: 'Instrumen apa saja yang ada dalam kuartet gesek?'
     answer: 'Kuartet gesek tradisional terdiri dari dua violin, satu viola, dan satu cello — empat suara yang mencakup rentang harmoni penuh sebuah ansambel kamar, dimainkan tanpa amplifikasi di sebagian besar venue indoor dan outdoor tertutup di Bali. Di Allegra Chamber Bali, formasi String Quartet kami menambahkan piano sebagai suara kelima, sudah termasuk secara standar.'

@@ -6,7 +6,7 @@ excerpt: 'Checklist seleksi untuk wedding planner dan venue — tech rider, logi
 pillar: 'for-planners'
 targetKeyword: 'what to ask a live music vendor before booking'
 pubDate: 2026-06-24
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-live-music-vendor-questions.jpg'
 faq:
   - question: 'Apa yang harus saya tanyakan kepada vendor musik pernikahan live sebelum memesan?'
     answer: 'Tanyakan tech rider dan stage plot, bagaimana mereka menangani setup pada hari H, siapa kontak utama Anda dan seberapa cepat mereka merespons, apakah mereka bisa menyesuaikan dengan venue Anda, dan bagaimana mereka menangani permintaan lagu. Vendor yang bisa menjawab kelima hal ini dengan jelas adalah vendor yang bisa Anda andalkan untuk perencanaan.'

@@ -6,7 +6,7 @@ excerpt: 'A vetting checklist for wedding planners and venues — tech rider, se
 pillar: 'for-planners'
 targetKeyword: 'what to ask a live music vendor before booking'
 pubDate: 2026-06-24
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-live-music-vendor-questions.jpg'
 faq:
   - question: 'What should I ask a live wedding music vendor before booking them?'
     answer: 'Ask for a tech rider and stage plot, how they handle setup on the day, who your point of contact is and how fast they respond, whether they can adapt to your venue, and how they handle song requests. A vendor who can answer all five clearly is one you can plan around with confidence.'

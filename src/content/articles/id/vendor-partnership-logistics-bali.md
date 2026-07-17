@@ -6,7 +6,7 @@ excerpt: 'Bagaimana hubungan kerja dengan Allegra Chamber Bali berjalan setelah 
 pillar: 'for-planners'
 targetKeyword: 'vendor partnership bali'
 pubDate: 2026-06-23
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-vendor-partnership-logistics-bali.jpg'
 faq:
   - question: 'Siapa yang kami hubungi jika ada perubahan setelah pemesanan terkonfirmasi?'
     answer: 'Anda tetap menggunakan kontak utama yang sama seperti sebelum pemesanan — setiap pembaruan setelah konfirmasi, dari perubahan linimasa hingga perubahan venue, melalui satu thread WhatsApp yang sama, dan kami merespons dalam 24 jam.'

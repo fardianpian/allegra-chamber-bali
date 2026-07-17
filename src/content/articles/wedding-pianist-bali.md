@@ -6,7 +6,7 @@ excerpt: 'What a live wedding pianist actually covers on the day, how it differs
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding pianist'
 pubDate: 2026-06-22
-ogImage: '/images/og-packages-piano.jpg'
+ogImage: '/images/og-wedding-pianist-bali.jpg'
 faq:
   - question: 'Can I book just a pianist for my wedding ceremony in Bali?'
     answer: 'Yes — Solo Piano is one of our Solo formation options alongside violin and cello, not a lesser alternative. It covers a full ceremony on its own: prelude, processional, signing, and recessional.'

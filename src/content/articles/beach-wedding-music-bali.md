@@ -6,6 +6,7 @@ excerpt: 'What to know about live music for a beach wedding in Bali — wind and
 pillar: 'bali-venues'
 targetKeyword: 'beach wedding music'
 pubDate: 2026-07-10
+ogImage: '/images/og-beach-wedding-music-bali.jpg'
 faq:
   - question: 'Does wind at a Bali beach venue affect how live music sounds?'
     answer: "It affects how far sound carries more than how the music itself sounds — a calm, close-seated ceremony rarely needs help, while a windier or more exposed setting is where we start the amplification conversation with you. Tell us your venue and guest count when you inquire and we'll confirm what's needed."
