@@ -73,6 +73,21 @@ const jsonLd = [
 				}
 			</p>
 
+			{
+				source.data.ogImage && (
+					<img
+						src={source.data.ogImage}
+						alt=""
+						width="1200"
+						height="630"
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+						class="reveal mt-8 aspect-[1200/630] w-full rounded-sm object-cover"
+					/>
+				)
+			}
+
 			<div class="reveal prose-article mt-10 leading-relaxed text-ink/85">
 				<Content />
 			</div>
