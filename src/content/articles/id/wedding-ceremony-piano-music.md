@@ -33,7 +33,7 @@ Sesi piano untuk upacara penuh mencakup empat momen utama:
 | **Musik upacara** | Latar lembut saat pengucapan janji, upacara unity, atau penandatanganan | 2–5 menit   |
 | **Resesional**    | Satu lagu saat pasangan keluar — biasanya lebih cerah atau meriah       | 1–2 menit   |
 
-Prelude adalah bagian terpanjang dan yang paling sering diabaikan pasangan. Ia membangun suasana sebelum sepatah kata pun diucapkan. Pianis yang memainkan musik pelan saat tamu mencari tempat duduk menciptakan nuansa yang berbeda dari keheningan atau playlist speaker — ruangan mengendap dengan cara yang berbeda.
+Prelude adalah bagian terpanjang dan yang paling sering diabaikan pasangan. Ia membangun suasana sebelum sepatah kata pun diucapkan. Pianis yang memainkan musik pelan saat tamu mencari tempat duduk menciptakan nuansa yang berbeda dari keheningan atau playlist speaker — ruangan mengendap dengan cara yang berbeda. [Panduan musik prelude](/id/journal/wedding-prelude-music/) kami membahas lebih dalam soal durasi dan pemilihan lagu untuk bagian upacara ini.
 
 Memilih lagu untuk prosesi dan resesional biasanya menjadi keputusan yang lebih sulit — [panduan lagu prosesi dan resesional](/id/journal/wedding-processional-recessional-songs/) kami membahas pilihan lagu nyata untuk kedua momen tersebut.
 

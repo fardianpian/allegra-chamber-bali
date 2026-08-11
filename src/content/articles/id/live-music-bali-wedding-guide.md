@@ -47,7 +47,9 @@ pernikahan di Bali memesan keduanya, membagi hari di antara keduanya dibanding m
 | Paling cocok | Upacara, cocktail hour, sesi resepsi intim        | Sesi resepsi panjang, dansa berkelanjutan |
 
 Jika upacara dan cocktail hour adalah bagian yang paling menentukan suasana hari Anda, mulailah
-dari sana dengan musik live, lalu hadirkan DJ untuk sesi resepsi yang dirancang untuk dansa.
+dari sana dengan musik live, lalu hadirkan DJ untuk sesi resepsi yang dirancang untuk dansa. Untuk
+perbandingan yang lebih lengkap, termasuk di mana posisi wedding band, lihat
+[panduan wedding band vs. DJ vs. ansambel kamar](/id/journal/wedding-band-vs-dj/) kami.
 
 ## Memilih Formasi yang Tepat untuk Venue Anda
 

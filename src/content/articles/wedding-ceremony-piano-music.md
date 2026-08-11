@@ -33,7 +33,7 @@ A full ceremony piano set covers four distinct moments:
 | **Ceremony music** | Soft background during vow exchange, unity ceremony, or signing            | 2–5 min          |
 | **Recessional**    | One piece as the couple exits — often brighter or more celebratory in tone | 1–2 min          |
 
-The prelude is the longest section and the one couples most often overlook. It sets the atmosphere before a word is spoken. A pianist playing quietly as guests find their seats creates a different feeling to silence, or to a speaker playlist — the room settles in a different way.
+The prelude is the longest section and the one couples most often overlook. It sets the atmosphere before a word is spoken. A pianist playing quietly as guests find their seats creates a different feeling to silence, or to a speaker playlist — the room settles in a different way. Our [prelude music guide](/journal/wedding-prelude-music/) covers timing and piece choice for this part of the ceremony in more depth.
 
 Choosing what to play for the entrance and exit is usually the harder decision — our [processional and recessional song guide](/journal/wedding-processional-recessional-songs/) covers real piece options for both moments.
 

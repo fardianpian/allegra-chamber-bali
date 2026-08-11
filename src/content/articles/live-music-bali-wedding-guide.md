@@ -46,7 +46,9 @@ them rather than choosing one over the other.
 | Best fit   | Ceremony, cocktail hour, intimate reception sets  | Extended reception sets, continuous dancing |
 
 If your ceremony and cocktail hour matter most to how the day feels, start there with live music,
-then bring in a DJ for the stretch of reception built for dancing.
+then bring in a DJ for the stretch of reception built for dancing. For a fuller comparison that
+also covers where a wedding band fits, see our
+[wedding band vs. DJ vs. chamber ensemble guide](/journal/wedding-band-vs-dj/).
 
 ## Choosing the Right Formation for Your Venue
 
