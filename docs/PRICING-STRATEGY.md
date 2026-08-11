@@ -438,3 +438,32 @@ The 15% management allocation and any target net-margin figure remain the author
 owner-confirmed — §10.1's honor data only replaces the _musician-cost_ side of the model. Large
 Ensemble Cocktail's margin, while no longer critical, is still the thinnest segment in the table
 (~6%) — worth another look once real management-overhead figures are available.
+
+## 11. 2026-08-11 — Wedding Organizer (WO) / Planner Commission Scheme
+
+Triggered by a real inbound inquiry (Tata, Bali For Two Wedding Planner) that asked for a
+commission scheme, which didn't exist yet. Derived from §10.1's real musician-honor data rather
+than invented.
+
+**Decision: flat 10% commission on the final invoiced booking value**, paid after the couple's
+deposit clears (not upfront) — protects Allegra's cash flow, since commission is only owed once
+the booking is genuinely confirmed and paid.
+
+- **12% for repeat partners** — WOs who bring 3+ confirmed bookings within a rolling 12 months.
+  Simple loyalty incentive, not tiered further.
+- Applies uniformly across all formations/sessions — no per-segment carve-out, to keep the offer
+  simple to communicate and administer.
+
+**Margin risk, accepted knowingly:** using §10.1's honor data, net margin (at the assumed 15%
+management allocation) ranges ~6%–56% across formation×session combinations. The two thinnest
+segments — Large Ensemble Cocktail-only (~6% net) and Trio Cocktail-only (~10% net) — would run at
+roughly break-even or a small loss if a WO referral were *exactly* a single Cocktail-only booking
+in one of those two formations at 10% commission. This is judged an acceptable edge case: real
+WO-referred bookings typically span multiple sessions (Ceremony + Cocktail + Dinner) in one
+engagement, so the blended margin across the full booking absorbs it. Not owner-validated with
+real booking-mix data yet — revisit if single-session Cocktail-only referrals in these two
+formations turn out to be common rather than rare.
+
+**Not yet decided:** whether to formalize this as a written WO partner agreement, and whether the
+15% management-allocation assumption (§10.3, still open) should be revisited given it's now also
+funding this commission.
