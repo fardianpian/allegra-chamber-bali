@@ -7,6 +7,55 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Journal automation rebuild — 2026-08-30
+
+12 new `/journal` article outlines curated from Google Trends + pillar-gap analysis (planning 3,
+piano-repertoire 3, bali-venues 3, for-planners 3 — full detail in `docs/JOURNAL-BACKLOG.md`), plus
+a rebuilt cloud routine to execute them 3x/week. Root-caused the git-push-403 bug that silently
+killed all 3 old cloud routines (`weekly-article-proposer`/`weekly-article-publisher` never
+completed a single run in their lifetime; `weekly-health-audit` ran once, 2026-07-05, and failed
+every write path — confirmed via `RemoteTrigger get_run_log` on session `cse_016ub2uYm5LvLSDU2L7oYRbt`:
+`git push` to a branch, `git push` to `main`, 3x retry, GitHub MCP `push_files`, and
+`create_or_update_file` all failed identically with `403 Resource not accessible by integration`).
+This is a GitHub App write-permission gap on this specific repo, not network flakiness or a
+main-vs-branch issue — retries never fixed it and never will.
+
+**Shipped this session** (commits `9563c75`, `a4c030c`):
+
+- `.gitignore` fix — `.claude/article-seo-geo-aeo-guidelines.md` and `.claude/brand-voice-guidelines.md`
+  were never tracked (blanket `.claude/*` ignore, only `!.claude/skills/` was negated), so a fresh
+  cloud sandbox clone never had them. Now tracked and committed (repo is public — tone/keyword
+  strategy is now visible on GitHub, no secrets involved).
+- `docs/JOURNAL-BACKLOG.md` — the 12-article backlog + the routine's only cross-run memory.
+- `.claude/skills/journal-article-publisher/SKILL.md` — replaces the old proposer/publisher pair
+  (archived to `.claude/skills/_archive/`, not deleted). Drafts EN+ID, generates a cover image
+  (best-effort, calls `scripts/generate-cover-image.mjs` directly — the `npm run generate:cover --`
+  wrapper crashes with exit code 9 in a sandbox with no `.env` file, confirmed by direct test),
+  validates `npm run lint && npm run build`, then opens a PR — never pushes straight to `main`.
+- Branch protection added on `main` (`required_pull_request_reviews.required_approving_review_count: 0`,
+  `enforce_admins: false`) — forces the routine's non-admin GitHub App credential through the PR
+  path without blocking the owner's own direct-push workflow.
+
+**Blocked — owner action required before this can run:**
+
+1. Grant the Claude Code GitHub App **Contents: Read & write** + **Pull requests: Read & write**
+   on `fardianpian/allegra-chamber-bali` specifically (GitHub → Settings → Applications →
+   Installed GitHub Apps, or the repo's own Settings → Integrations — confirm it's scoped to this
+   repo, not just others on the account).
+2. Confirm how `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` get exposed to a RemoteTrigger
+   routine run (likely an Environment-level setting in claude.ai, not visible via the
+   `RemoteTrigger` API itself) — without it, Step 4 (cover image) will keep no-op'ing gracefully,
+   which is fine but not ideal.
+
+**Next session, once #1 above is done:** verify via `RemoteTrigger run` on a minimal diagnostic
+(or re-run an existing paused trigger) + `get_run_log`, confirm a real push succeeds, THEN
+register `allegra-journal-publisher` (`RemoteTrigger create`, cron `0 1 * * 1,3,5` = 08:00 WIB
+Mon/Wed/Fri), run it once manually and review the PR before trusting the schedule.
+
+Side note, out of scope: 2 unrelated routines on this account (`open-call-pipeline-weekly`,
+`Job Search Pipeline`) store raw API keys (Apify/Jooble/SerpApi) and a Slack webhook URL directly
+in their trigger prompt text — worth moving to a safer mechanism at some point, not touched here.
+
 ## Pricing restructure — 2026-07-09
 
 Owner-directed pricing model change, researched and propagated site-wide (not just the internal
