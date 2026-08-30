@@ -6,6 +6,7 @@ excerpt: 'For a small guest list, sound matters as much as size — how Solo, Du
 pillar: 'planning'
 targetKeyword: 'intimate wedding music bali'
 pubDate: 2026-08-30
+ogImage: '/images/og-intimate-wedding-music-bali.jpg'
 faq:
   - question: 'What is the smallest formation Allegra offers?'
     answer: 'Solo — one musician on violin, cello, or piano. It is the most intimate option and suits vow exchanges and small ceremonies of any size.'

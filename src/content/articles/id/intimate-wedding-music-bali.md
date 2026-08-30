@@ -6,6 +6,7 @@ excerpt: 'Untuk daftar tamu yang kecil, kualitas suara sama pentingnya dengan uk
 pillar: 'planning'
 targetKeyword: 'musik pernikahan intim bali'
 pubDate: 2026-08-30
+ogImage: '/images/og-intimate-wedding-music-bali.jpg'
 faq:
   - question: 'Apa formasi terkecil yang ditawarkan Allegra?'
     answer: 'Solo — satu musisi dengan biola, cello, atau piano. Ini adalah pilihan paling intim dan cocok untuk pertukaran janji serta upacara dengan jumlah tamu berapa pun yang kecil.'

@@ -39,7 +39,7 @@
 
 ### Item 1 — intimate-wedding-music-bali (planning)
 
-<!-- cover image pending — jalankan manual: node scripts/generate-cover-image.mjs intimate-wedding-music-bali "a single cellist in silhouette, playing in a lush tropical garden at dusk, warm golden light" (sharp dep missing in sandbox on 2026-08-30 run) -->
+<!-- cover image added manually 2026-08-30 (public/images/og-intimate-wedding-music-bali.jpg) after the routine's own attempt failed on a fresh sandbox missing node_modules -- see SKILL.md Step 0 fix -->
 
 - **heading:** Music for an Intimate Wedding in Bali: Solo, Duo, or Trio
 - **targetKeyword:** intimate wedding music bali
