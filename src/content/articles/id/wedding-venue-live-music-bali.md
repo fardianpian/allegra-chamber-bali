@@ -6,6 +6,7 @@ excerpt: 'Pilihan venue membentuk suara upacara Anda sama besarnya dengan pemand
 pillar: 'bali-venues'
 targetKeyword: 'wedding venue live music requirements'
 pubDate: 2026-08-26
+ogImage: '/images/og-wedding-venue-live-music-bali.jpg'
 faq:
   - question: 'Apakah semua venue pernikahan di Bali mengizinkan musik live?'
     answer: 'Sebagian besar menyambut musik live akustik tanpa masalah — piano dan alat gesek cukup umum sehingga banyak venue sudah tahu cara mengakomodasinya. Suara yang diamplifikasi adalah bagian yang kebijakannya berbeda-beda: venue di tepi pantai atau dekat area pemukiman mungkin membatasi volume atau jam tertentu, sementara private estate atau resor biasanya lebih fleksibel. Tanyakan langsung ke venue, atau minta wedding planner Anda yang bertanya, alih-alih berasumsi.'

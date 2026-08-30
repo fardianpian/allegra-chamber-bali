@@ -6,6 +6,7 @@ excerpt: 'Venue choice shapes your ceremony sound as much as the view does — w
 pillar: 'bali-venues'
 targetKeyword: 'wedding venue live music requirements'
 pubDate: 2026-08-26
+ogImage: '/images/og-wedding-venue-live-music-bali.jpg'
 faq:
   - question: 'Do all wedding venues in Bali allow live music?'
     answer: 'Most welcome live acoustic music without issue — piano and strings are common enough that many venues already know how to accommodate them. Amplified sound is where policies vary: a beachfront or residential-adjacent venue may restrict volume or hours, while a private estate or resort typically has more flexibility. Ask the venue directly, or have your planner ask, rather than assuming.'

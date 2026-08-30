@@ -6,6 +6,7 @@ excerpt: 'Musik live tidak punya satu harga yang bisa dicek langsung — berikut
 pillar: 'planning'
 targetKeyword: 'how to budget for wedding music'
 pubDate: 2026-08-26
+ogImage: '/images/og-wedding-music-budget-bali.jpg'
 faq:
   - question: 'Apa yang benar-benar mengubah biaya musik live pernikahan?'
     answer: 'Terutama empat hal: berapa banyak musisi dalam formasi, seberapa besar bagian hari yang ingin Anda isi (hanya upacara, atau upacara plus cocktail hour, atau rentang yang lebih panjang), durasi penampilan, dan logistik venue. Itulah sebabnya quote disusun per pasangan alih-alih dipublikasikan sebagai tarif flat — dua pernikahan dengan formasi yang sama tetap bisa berbeda biaya tergantung cakupannya.'

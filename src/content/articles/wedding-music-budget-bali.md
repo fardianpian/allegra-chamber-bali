@@ -6,6 +6,7 @@ excerpt: "Live music doesn't have one price you can look up — here's what actu
 pillar: 'planning'
 targetKeyword: 'how to budget for wedding music'
 pubDate: 2026-08-26
+ogImage: '/images/og-wedding-music-budget-bali.jpg'
 faq:
   - question: 'What actually changes the cost of live wedding music?'
     answer: "Mainly four things: how many musicians are in the formation, how much of the day you want covered (ceremony only, versus ceremony plus cocktail hour, versus a longer stretch), performance duration, and venue logistics. That's why quotes are built per couple rather than published as a flat rate — two weddings with the same formation can still cost differently depending on scope."

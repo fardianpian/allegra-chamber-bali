@@ -457,7 +457,7 @@ the booking is genuinely confirmed and paid.
 **Margin risk, accepted knowingly:** using §10.1's honor data, net margin (at the assumed 15%
 management allocation) ranges ~6%–56% across formation×session combinations. The two thinnest
 segments — Large Ensemble Cocktail-only (~6% net) and Trio Cocktail-only (~10% net) — would run at
-roughly break-even or a small loss if a WO referral were *exactly* a single Cocktail-only booking
+roughly break-even or a small loss if a WO referral were _exactly_ a single Cocktail-only booking
 in one of those two formations at 10% commission. This is judged an acceptable edge case: real
 WO-referred bookings typically span multiple sessions (Ceremony + Cocktail + Dinner) in one
 engagement, so the blended margin across the full booking absorbs it. Not owner-validated with
