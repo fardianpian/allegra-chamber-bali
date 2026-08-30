@@ -22,7 +22,7 @@
 
 | #   | status | slug                                    | pillar           | title (working)                                                              | publishedDate |
 | --- | ------ | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
-| 1   | todo   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 |               |
+| 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
 | 2   | todo   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        |               |
 | 3   | todo   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali |               |
 | 4   | todo   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              |               |
@@ -38,6 +38,8 @@
 ## Item Details
 
 ### Item 1 — intimate-wedding-music-bali (planning)
+
+<!-- cover image pending — jalankan manual: node scripts/generate-cover-image.mjs intimate-wedding-music-bali "a single cellist in silhouette, playing in a lush tropical garden at dusk, warm golden light" (sharp dep missing in sandbox on 2026-08-30 run) -->
 
 - **heading:** Music for an Intimate Wedding in Bali: Solo, Duo, or Trio
 - **targetKeyword:** intimate wedding music bali
