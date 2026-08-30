@@ -33,3 +33,7 @@ Thumbs.db
 # Claude Code local session state
 .claude/*
 !.claude/skills/
+# Tracked on purpose: cloud routine sandboxes clone fresh from git and need these to draft
+# on-brand articles — see docs/JOURNAL-BACKLOG.md / .claude/skills/journal-article-publisher/.
+!.claude/article-seo-geo-aeo-guidelines.md
+!.claude/brand-voice-guidelines.md
