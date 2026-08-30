@@ -20,7 +20,17 @@ Topik, keyword, outline, dan rencana internal link SUDAH ditentukan di
    ```bash
    git status --short
    ```
-2. **Hard gate — jangan lewati ini.** Konfirmasi kedua file panduan ada di disk:
+2. **Install dependencies kalau sandbox fresh** (ditemukan lewat run tes 2026-08-30: sandbox baru
+   tidak punya `node_modules`, bikin Step 4 cover image dan Step 6 lint/build gagal dengan error
+   "Cannot find package" — bukan soal kredensial, cuma belum ter-install):
+   ```bash
+   test -d node_modules/.bin && ls node_modules/.bin/prettier >/dev/null 2>&1 && echo "sudah ada" || npm install
+   ```
+   Lakukan ini SEBELUM Step 4, bukan reaktif setelah Step 4/6 gagal — supaya cover image generation
+   dapat kesempatan jalan dengan benar sejak awal, bukan cuma lint/build yang tertolong. Kalau
+   `npm install` mengubah `package-lock.json`, itu wajar (normalisasi lockfile) — sertakan file itu
+   di commit Step 7 bersama file lain, jangan commit terpisah.
+3. **Hard gate — jangan lewati ini.** Konfirmasi kedua file panduan ada di disk:
    ```bash
    test -f .claude/article-seo-geo-aeo-guidelines.md && test -f .claude/brand-voice-guidelines.md
    ```
@@ -28,12 +38,12 @@ Topik, keyword, outline, dan rencana internal link SUDAH ditentukan di
    dengan jelas bahwa file panduan tidak ada di checkout ini dan routine menolak menulis draf tanpa
    itu. Jangan fallback diam-diam ke `docs/BRAND-VOICE.md` — itu file export Notion lama yang
    sebagian sudah stale, bukan sumber kebenaran (lihat CLAUDE.md § Brand Voice).
-3. Baca `docs/JOURNAL-BACKLOG.md`. Cari baris pertama dengan `status: todo` di tabel Status
+4. Baca `docs/JOURNAL-BACKLOG.md`. Cari baris pertama dengan `status: todo` di tabel Status
    (urutan dari atas = urutan prioritas).
-4. Kalau tidak ada baris `todo`: kirim Slack "Backlog `/journal` sudah habis — tidak ada artikel
+5. Kalau tidak ada baris `todo`: kirim Slack "Backlog `/journal` sudah habis — tidak ada artikel
    yang perlu dipublish run ini. Tambahkan item baru ke docs/JOURNAL-BACKLOG.md kalau mau lanjut."
    lalu **stop dengan status sukses** (ini bukan kegagalan).
-5. Cek defensif: pastikan `src/content/articles/<slug>.md` BELUM ada untuk slug item itu.
+6. Cek defensif: pastikan `src/content/articles/<slug>.md` BELUM ada untuk slug item itu.
    ```bash
    test -f src/content/articles/<slug>.md && echo "SUDAH ADA — jangan lanjut" || echo "aman, lanjut"
    ```
