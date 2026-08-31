@@ -23,7 +23,7 @@
 | #   | status | slug                                    | pillar           | title (working)                                                              | publishedDate |
 | --- | ------ | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
 | 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
-| 2   | todo   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        |               |
+| 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
 | 3   | todo   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali |               |
 | 4   | todo   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              |               |
 | 5   | todo   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                |               |
@@ -74,6 +74,8 @@
   dusk, warm golden light" (single-subject — avoid multi-figure ensemble close-ups)
 
 ### Item 2 — custom-wedding-music-arrangement (piano-repertoire)
+
+<!-- cover image pending — run manually: node scripts/generate-cover-image.mjs custom-wedding-music-arrangement "handwritten sheet music on a wooden table, a pencil and a single rose resting on top, soft natural light" -->
 
 - **heading:** From Song Request to Custom Arrangement: How Your Ceremony Music Gets Made
 - **targetKeyword:** custom wedding music arrangement
