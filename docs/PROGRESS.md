@@ -36,21 +36,33 @@ main-vs-branch issue — retries never fixed it and never will.
   `enforce_admins: false`) — forces the routine's non-admin GitHub App credential through the PR
   path without blocking the owner's own direct-push workflow.
 
-**Blocked — owner action required before this can run:**
+**Update 2026-09-01 (verified live via `RemoteTrigger get_run_log`, not just re-read from notes):**
 
-1. Grant the Claude Code GitHub App **Contents: Read & write** + **Pull requests: Read & write**
-   on `fardianpian/allegra-chamber-bali` specifically (GitHub → Settings → Applications →
-   Installed GitHub Apps, or the repo's own Settings → Integrations — confirm it's scoped to this
-   repo, not just others on the account).
-2. Confirm how `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` get exposed to a RemoteTrigger
-   routine run (likely an Environment-level setting in claude.ai, not visible via the
-   `RemoteTrigger` API itself) — without it, Step 4 (cover image) will keep no-op'ing gracefully,
-   which is fine but not ideal.
+1. ✅ **GitHub App write permission — confirmed fixed**, contradicting this doc's earlier
+   "blocked" status (owner must have granted it after the note below was written, without a
+   follow-up update here). `allegra-journal-publisher` is `enabled: true` and its first real run
+   (2026-08-31) succeeded end to end: wrote `custom-wedding-music-arrangement` EN+ID, passed
+   `npm run lint && npm run build`, pushed a branch, opened
+   [PR #4](https://github.com/fardianpian/allegra-chamber-bali/pull/4), and Cloudflare Pages'
+   preview deploy went green. **PR #4 is still open pending owner review/merge.**
+2. 🔴 **Still open, confirmed still broken by the same run log:** `CLOUDFLARE_ACCOUNT_ID` /
+   `CLOUDFLARE_API_TOKEN` are not exposed to the cloud sandbox — Step 4 (cover image) failed with
+   `Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` and no-op'd gracefully as designed (PR
+   published without `ogImage`, backlog note left for manual follow-up). No tool/API available to
+   Claude Code can read or set this — `RemoteTrigger` only manages triggers, not the
+   `environment_id` they point at (`env_015mAyGoNRRL6Na6W8wCgp5K`, shared across every routine on
+   this account). **Owner action required:** in claude.ai, open that routine's Environment
+   settings (under the automation/routine's own settings, or a dedicated "Environments" page —
+   exact current menu path not verified from here) and add both as secrets. Reuse the values
+   already in the local `.env` (`CLOUDFLARE_API_TOKEN` scoped to "Workers AI - Read" per
+   `.env.example`) rather than minting a new token, unless a sandbox-only token is preferred for
+   isolation. This is a different Cloudflare token/scope than the Pages-management one in
+   `docs/PROGRESS-ARCHIVE.md` — don't conflate the two.
 
-**Next session, once #1 above is done:** verify via `RemoteTrigger run` on a minimal diagnostic
-(or re-run an existing paused trigger) + `get_run_log`, confirm a real push succeeds, THEN
-register `allegra-journal-publisher` (`RemoteTrigger create`, cron `0 1 * * 1,3,5` = 08:00 WIB
-Mon/Wed/Fri), run it once manually and review the PR before trusting the schedule.
+**Next session:** once #2 above is done, run `allegra-journal-publisher` once manually
+(`RemoteTrigger run`) and check via `get_run_log` that Step 4 actually generates an image instead
+of no-op'ing, before trusting the Mon/Wed/Fri schedule unattended. Also merge PR #4 (or request
+changes) — it's been open since 2026-08-31.
 
 Side note, out of scope: 2 unrelated routines on this account (`open-call-pipeline-weekly`,
 `Job Search Pipeline`) store raw API keys (Apify/Jooble/SerpApi) and a Slack webhook URL directly
