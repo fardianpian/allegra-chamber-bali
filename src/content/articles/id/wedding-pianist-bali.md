@@ -34,7 +34,10 @@ penting.
 
 Setiap lagu diaransemen sebelumnya, menyesuaikan urutan upacara dan lagu-lagu yang ingin Anda
 sertakan — repertoar klasik, aransemen film atau pop, atau versi khusus dari lagu yang berarti bagi
-cerita Anda, seperti tarian pertama.
+cerita Anda, seperti tarian pertama. Untuk penjelasan lebih rinci tentang bagaimana permintaan lagu
+menjadi aransemen yang siap dibawakan — apa yang perlu Anda kirimkan dan bagaimana formasi
+memengaruhi hasilnya — lihat
+[panduan aransemen kustom kami](/id/journal/custom-wedding-music-arrangement/).
 
 ## Solo Piano atau Kuartet Gesek?
 

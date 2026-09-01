@@ -33,7 +33,9 @@ reception set, with the program built around the moments you tell us matter most
 
 Every piece is arranged in advance around your ceremony order and the songs you want included —
 classical repertoire, a film or pop arrangement, or a custom version of a song that means something
-to your story, such as a first dance.
+to your story, such as a first dance. For a closer look at how a song request becomes a finished
+arrangement — what to send and how your formation shapes the result — see our
+[custom arrangement guide](/journal/custom-wedding-music-arrangement/).
 
 ## Solo Piano or a String Quartet?
 
