@@ -1,8 +1,8 @@
 ---
-title: 'How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali'
+title: 'How Custom Wedding Music Arrangements Work — Allegra Chamber Bali'
 heading: 'From Song Request to Custom Arrangement: How Your Ceremony Music Gets Made'
 description: 'How a song request becomes a custom ceremony arrangement — what to send, how your formation shapes the sound, and what to expect before your wedding day.'
-excerpt: 'Your favourite song may not exist as sheet music for a string trio — here is how a request becomes a custom arrangement for your ceremony.'
+excerpt: 'Your favourite song may not exist as sheet music for a chamber ensemble — here is how a request becomes a custom arrangement for your ceremony.'
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
 pubDate: 2026-08-31

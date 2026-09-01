@@ -1,7 +1,7 @@
 ---
 title: 'Cara Membuat Aransemen Musik Pernikahan Kustom — Allegra Chamber Bali'
 heading: 'Dari Permintaan Lagu ke Aransemen Kustom: Bagaimana Musik Upacara Anda Dibuat'
-description: 'Bagaimana permintaan lagu menjadi aransemen upacara kustom — apa yang perlu dikirimkan, bagaimana formasi memengaruhi suara, dan apa yang bisa diharapkan sebelum hari pernikahan.'
+description: 'Bagaimana permintaan lagu menjadi aransemen upacara kustom — apa yang perlu dikirimkan, bagaimana formasi memengaruhi suara, dan kapan harus memintanya.'
 excerpt: 'Lagu favorit Anda mungkin belum tersedia dalam format ansambel gesek — begini cara permintaan menjadi aransemen kustom untuk upacara Anda.'
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
