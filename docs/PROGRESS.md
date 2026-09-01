@@ -44,7 +44,8 @@ main-vs-branch issue — retries never fixed it and never will.
    (2026-08-31) succeeded end to end: wrote `custom-wedding-music-arrangement` EN+ID, passed
    `npm run lint && npm run build`, pushed a branch, opened
    [PR #4](https://github.com/fardianpian/allegra-chamber-bali/pull/4), and Cloudflare Pages'
-   preview deploy went green. **PR #4 is still open pending owner review/merge.**
+   preview deploy went green. **PR #4 squash-merged to `main` 2026-09-01** (`c6bd8ad`) — the
+   `custom-wedding-music-arrangement` article (EN+ID) is live; branch deleted.
 2. 🔴 **Still open, confirmed still broken by the same run log:** `CLOUDFLARE_ACCOUNT_ID` /
    `CLOUDFLARE_API_TOKEN` are not exposed to the cloud sandbox — Step 4 (cover image) failed with
    `Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` and no-op'd gracefully as designed (PR
@@ -61,8 +62,9 @@ main-vs-branch issue — retries never fixed it and never will.
 
 **Next session:** once #2 above is done, run `allegra-journal-publisher` once manually
 (`RemoteTrigger run`) and check via `get_run_log` that Step 4 actually generates an image instead
-of no-op'ing, before trusting the Mon/Wed/Fri schedule unattended. Also merge PR #4 (or request
-changes) — it's been open since 2026-08-31.
+of no-op'ing, before trusting the Mon/Wed/Fri schedule unattended. Also generate the
+`custom-wedding-music-arrangement` cover image locally (command in `docs/JOURNAL-BACKLOG.md`
+Item 2) and add the resulting `ogImage` to both EN+ID frontmatter — the article merged without one.
 
 Side note, out of scope: 2 unrelated routines on this account (`open-call-pipeline-weekly`,
 `Job Search Pipeline`) store raw API keys (Apify/Jooble/SerpApi) and a Slack webhook URL directly
