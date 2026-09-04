@@ -102,3 +102,6 @@ taman? Lihat
 untuk pemilihan formasi, akustik, dan rencana cadangan hujan. Menikah di atas pasir? Lihat
 [panduan musik upacara pernikahan di pantai di Bali](/id/journal/beach-wedding-music-bali/) kami
 untuk bagaimana angin, pasir, dan kelembapan mengubah formasi dan setup.
+Memadukan elemen adat Bali dengan upacara gaya Barat? Lihat
+[panduan kami tentang musik kamar live untuk upacara pernikahan bernuansa Bali](/id/journal/balinese-wedding-ceremony-music/)
+untuk cara mengurutkan kedua bagian hari dan apa yang ditangani masing-masing.
