@@ -6,6 +6,7 @@ excerpt: 'Lagu favorit Anda mungkin belum tersedia dalam format ansambel gesek â
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
 pubDate: 2026-08-31
+ogImage: '/images/og-custom-wedding-music-arrangement.jpg'
 faq:
   - question: 'Bisakah Allegra mengaransemen lagu apa pun yang kami minta untuk upacara?'
     answer: 'Sebagian besar lagu bisa diaransemen untuk ansambel kamar â€” lagu pop, musik film, karya klasik, dan lagu kontemporer semuanya pernah kami aransemen untuk berbagai formasi. Ada yang lebih mudah ditransfer dibanding yang lain. Kirimkan nama lagu dan rekaman referensi saat menghubungi kami, dan kami akan menyampaikan dengan jujur bagaimana kami akan mendekatinya.'

@@ -6,6 +6,7 @@ excerpt: 'Your favourite song may not exist as sheet music for a chamber ensembl
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
 pubDate: 2026-08-31
+ogImage: '/images/og-custom-wedding-music-arrangement.jpg'
 faq:
   - question: 'Can Allegra arrange any song we request for our ceremony?'
     answer: 'Most songs can be arranged for a chamber ensemble — pop tracks, film scores, classical pieces, and contemporary songs have all been arranged for our formations. Some translate more naturally than others. Share the song name and a reference recording when you inquire and we will tell you honestly how we would approach it.'

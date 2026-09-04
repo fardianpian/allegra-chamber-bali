@@ -75,7 +75,7 @@
 
 ### Item 2 — custom-wedding-music-arrangement (piano-repertoire)
 
-<!-- cover image pending — run manually: node scripts/generate-cover-image.mjs custom-wedding-music-arrangement "handwritten sheet music on a wooden table, a pencil and a single rose resting on top, soft natural light" -->
+<!-- cover image generated 2026-09-04: public/images/og-custom-wedding-music-arrangement.jpg -->
 
 - **heading:** From Song Request to Custom Arrangement: How Your Ceremony Music Gets Made
 - **targetKeyword:** custom wedding music arrangement
