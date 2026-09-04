@@ -81,13 +81,35 @@ CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` error — confirms this is a stan
   intermittent, gap. **PR #5 reviewed and squash-merged to `main` 2026-09-04** (`95135ab`) — the
   `balinese-wedding-ceremony-music` article (EN+ID) is live; branch deleted.
 
-**Next session:** once the Cloudflare secrets are added (owner action, see #2 above), run
-`allegra-journal-publisher` once manually (`RemoteTrigger run`) and check via `get_run_log` that
-Step 4 actually generates an image instead of no-op'ing, before trusting the Mon/Wed/Fri schedule
-unattended. Also generate cover images locally for the two articles that merged without one
-(`custom-wedding-music-arrangement` — command in `docs/JOURNAL-BACKLOG.md` Item 2 — and, once
-PR #5 merges, `balinese-wedding-ceremony-music` — command in Item 3) and add the resulting
-`ogImage` to both EN+ID frontmatter for each.
+**Update 2026-09-04 — Cloudflare secret still blocked, cover images backfilled manually:** owner
+tried to add `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` via claude.ai's routine UI and found
+the only reachable field ("Edit rutinitas" → no env-var field at all; the account-level "Default"
+cloud environment's "Variabel lingkungan" box exists but is explicitly plaintext and shared across
+every routine on the account — the UI itself warns "jangan tambahkan rahasia atau kredensial").
+Confirmed GitHub repo secrets are a dead end too — this routine runs as a claude.ai cloud session
+that clones the repo, not a GitHub Actions workflow, so `secrets.*` in the repo is never reachable
+from it. **No safe path to provision this secret has been found yet** — don't re-suggest the
+"Default" environment box as a fix. Cover images for both articles that merged without one
+(`custom-wedding-music-arrangement`, `balinese-wedding-ceremony-music`) were generated locally
+instead (commands were in `docs/JOURNAL-BACKLOG.md` Items 2 and 3, now removed since done) and
+`ogImage` added to all 4 EN+ID frontmatter files. **Decision: stay on manual local backfill** for
+cover images until a real secret-storage mechanism is confirmed (ask Anthropic support) — don't
+keep re-attempting the routine-environment UI.
+
+**Update 2026-09-04 — auto-merge enabled, PR review gate removed (owner decision):** the routine
+no longer stops at "PR open, waiting for owner review." `.claude/skills/journal-article-publisher/SKILL.md`
+Step 6 now has a content self-review checklist (frontmatter correctness, fabrication check, link
+validity, cultural-sensitivity framing, brand voice) that runs before commit, replacing the human
+review that used to happen at PR #4/#5. New Step 9 polls the PR's CI status (Cloudflare Pages
+deploy-preview) for up to ~5 minutes after opening the PR, then self-merges (`gh pr merge --squash
+--delete-branch` or the GitHub MCP merge tool) if green — no owner action needed for the article to
+go live. If the Step 6 checklist can't be satisfied, or CI comes back red, or CI is still pending
+after the timeout, the routine leaves the PR open and alerts Slack instead of forcing a merge — the
+gate didn't disappear, it just moved from "owner reviews every PR" to "routine self-certifies
+against an explicit checklist, only escalates when something's actually wrong." **Not yet tested
+end-to-end** — next scheduled run (Mon 2026-09-07) is the first real test of Step 9; check
+`RemoteTrigger get_run_log` after it fires to confirm the merge (or the correct non-merge alert)
+actually happened as designed, don't assume it worked just because this doc says so.
 
 Side note, out of scope: 2 unrelated routines on this account (`open-call-pipeline-weekly`,
 `Job Search Pipeline`) store raw API keys (Apify/Jooble/SerpApi) and a Slack webhook URL directly

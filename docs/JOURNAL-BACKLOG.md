@@ -75,8 +75,6 @@
 
 ### Item 2 — custom-wedding-music-arrangement (piano-repertoire)
 
-<!-- cover image generated 2026-09-04: public/images/og-custom-wedding-music-arrangement.jpg -->
-
 - **heading:** From Song Request to Custom Arrangement: How Your Ceremony Music Gets Made
 - **targetKeyword:** custom wedding music arrangement
 - **description seed:** How a song request becomes a custom ceremony arrangement — what to send,
@@ -103,8 +101,6 @@
   resting on top, soft natural light" (flatlay, object only)
 
 ### Item 3 — balinese-wedding-ceremony-music (bali-venues)
-
-<!-- cover image generated 2026-09-04: public/images/og-balinese-wedding-ceremony-music.jpg -->
 
 - **heading:** Blending Traditions: Live Chamber Music for a Balinese-Influenced Wedding Ceremony
 - **targetKeyword:** balinese wedding ceremony music
