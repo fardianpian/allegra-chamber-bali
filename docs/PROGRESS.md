@@ -49,22 +49,44 @@ main-vs-branch issue — retries never fixed it and never will.
 2. 🔴 **Still open, confirmed still broken by the same run log:** `CLOUDFLARE_ACCOUNT_ID` /
    `CLOUDFLARE_API_TOKEN` are not exposed to the cloud sandbox — Step 4 (cover image) failed with
    `Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` and no-op'd gracefully as designed (PR
-   published without `ogImage`, backlog note left for manual follow-up). No tool/API available to
-   Claude Code can read or set this — `RemoteTrigger` only manages triggers, not the
-   `environment_id` they point at (`env_015mAyGoNRRL6Na6W8wCgp5K`, shared across every routine on
-   this account). **Owner action required:** in claude.ai, open that routine's Environment
-   settings (under the automation/routine's own settings, or a dedicated "Environments" page —
-   exact current menu path not verified from here) and add both as secrets. Reuse the values
-   already in the local `.env` (`CLOUDFLARE_API_TOKEN` scoped to "Workers AI - Read" per
-   `.env.example`) rather than minting a new token, unless a sandbox-only token is preferred for
-   isolation. This is a different Cloudflare token/scope than the Pages-management one in
-   `docs/PROGRESS-ARCHIVE.md` — don't conflate the two.
+   published without `ogImage`, backlog note left for manual follow-up). **Owner action
+   required:** in claude.ai, open that routine's Environment settings (under the
+   automation/routine's own settings, or a dedicated "Environments" page — exact current menu path
+   not verified from here) and add both as secrets. Reuse the values already in the local `.env`
+   (`CLOUDFLARE_API_TOKEN` scoped to "Workers AI - Read" per `.env.example`) rather than minting a
+   new token, unless a sandbox-only token is preferred for isolation. This is a different
+   Cloudflare token/scope than the Pages-management one in `docs/PROGRESS-ARCHIVE.md` — don't
+   conflate the two.
 
-**Next session:** once #2 above is done, run `allegra-journal-publisher` once manually
-(`RemoteTrigger run`) and check via `get_run_log` that Step 4 actually generates an image instead
-of no-op'ing, before trusting the Mon/Wed/Fri schedule unattended. Also generate the
-`custom-wedding-music-arrangement` cover image locally (command in `docs/JOURNAL-BACKLOG.md`
-Item 2) and add the resulting `ogImage` to both EN+ID frontmatter — the article merged without one.
+**Correction (2026-09-04):** the earlier claim above that "no tool/API available to Claude Code
+can read or set this" was checked and is not quite right — `RemoteTrigger get` on this trigger
+shows `session_request.config.environment_variables` (currently `{}`), which looks like the
+actual field the value belongs in. The real blocker isn't a missing API, it's that Claude Code is
+policy-blocked from ever entering an API key/token into any field itself, including this one —
+so this still has to be the owner's own action in the claude.ai UI, not something to route through
+a Claude Code session even if asked to.
+
+**Update 2026-09-04 (routine ran twice more since the note above, verified via
+`RemoteTrigger get_run_log`):**
+
+- **2026-09-02** run pushed a draft to branch `journal/balinese-wedding-ceremony-music` but didn't
+  finish cleanly (no PROGRESS.md note was ever written for it — caught only in retrospect from the
+  next run's git log).
+- **2026-09-04** run succeeded end to end: wrote `balinese-wedding-ceremony-music` EN+ID (Item #3,
+  `bali-venues` pillar), passed `npm run lint && npm run build` (0 errors, 61 pages), found the
+  stale 2026-09-02 branch already on remote and force-pushed over it, then opened/updated
+  [PR #5](https://github.com/fardianpian/allegra-chamber-bali/pull/5) (was already open from the
+  9/2 attempt) and notified Slack. **PR #5 still needs owner review/merge**, same as PR #4 before
+  it. Cover image failed with the identical `Missing CLOUDFLARE_ACCOUNT_ID or
+CLOUDFLARE_API_TOKEN` error — confirms this is a standing, not intermittent, gap.
+
+**Next session:** once the Cloudflare secrets are added (owner action, see #2 above), run
+`allegra-journal-publisher` once manually (`RemoteTrigger run`) and check via `get_run_log` that
+Step 4 actually generates an image instead of no-op'ing, before trusting the Mon/Wed/Fri schedule
+unattended. Also generate cover images locally for the two articles that merged without one
+(`custom-wedding-music-arrangement` — command in `docs/JOURNAL-BACKLOG.md` Item 2 — and, once
+PR #5 merges, `balinese-wedding-ceremony-music` — command in Item 3) and add the resulting
+`ogImage` to both EN+ID frontmatter for each.
 
 Side note, out of scope: 2 unrelated routines on this account (`open-call-pipeline-weekly`,
 `Job Search Pipeline`) store raw API keys (Apify/Jooble/SerpApi) and a Slack webhook URL directly
