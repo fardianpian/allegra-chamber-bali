@@ -76,9 +76,10 @@ a Claude Code session even if asked to.
   `bali-venues` pillar), passed `npm run lint && npm run build` (0 errors, 61 pages), found the
   stale 2026-09-02 branch already on remote and force-pushed over it, then opened/updated
   [PR #5](https://github.com/fardianpian/allegra-chamber-bali/pull/5) (was already open from the
-  9/2 attempt) and notified Slack. **PR #5 still needs owner review/merge**, same as PR #4 before
-  it. Cover image failed with the identical `Missing CLOUDFLARE_ACCOUNT_ID or
-CLOUDFLARE_API_TOKEN` error — confirms this is a standing, not intermittent, gap.
+  9/2 attempt) and notified Slack. Cover image failed with the identical `Missing
+  CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` error — confirms this is a standing, not
+  intermittent, gap. **PR #5 reviewed and squash-merged to `main` 2026-09-04** (`95135ab`) — the
+  `balinese-wedding-ceremony-music` article (EN+ID) is live; branch deleted.
 
 **Next session:** once the Cloudflare secrets are added (owner action, see #2 above), run
 `allegra-journal-publisher` once manually (`RemoteTrigger run`) and check via `get_run_log` that
