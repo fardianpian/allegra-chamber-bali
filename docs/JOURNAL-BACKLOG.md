@@ -104,7 +104,7 @@
 
 ### Item 3 — balinese-wedding-ceremony-music (bali-venues)
 
-<!-- cover image pending — run manually: node scripts/generate-cover-image.mjs balinese-wedding-ceremony-music "a single frangipani flower resting across violin strings, soft daylight, minimal background" -->
+<!-- cover image generated 2026-09-04: public/images/og-balinese-wedding-ceremony-music.jpg -->
 
 - **heading:** Blending Traditions: Live Chamber Music for a Balinese-Influenced Wedding Ceremony
 - **targetKeyword:** balinese wedding ceremony music

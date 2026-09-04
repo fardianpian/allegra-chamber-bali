@@ -6,6 +6,7 @@ excerpt: 'Banyak pasangan yang menikah di Bali ingin menghormati tradisi lokal s
 pillar: 'bali-venues'
 targetKeyword: 'balinese wedding ceremony music'
 pubDate: 2026-09-04
+ogImage: '/images/og-balinese-wedding-ceremony-music.jpg'
 faq:
   - question: 'Bisakah musik kamar live menjadi bagian dari upacara yang juga mencakup tradisi Bali?'
     answer: 'Bisa. Musik kamar live melingkupi bagian upacara gaya Barat dan disesuaikan waktunya dengan elemen adat oleh perencana pernikahan Anda. Kedua bagian hari tersebut diurutkan, bukan digabungkan menjadi satu segmen musik.'

@@ -6,6 +6,7 @@ excerpt: 'Many couples marrying in Bali want to honor local traditions alongside
 pillar: 'bali-venues'
 targetKeyword: 'balinese wedding ceremony music'
 pubDate: 2026-09-04
+ogImage: '/images/og-balinese-wedding-ceremony-music.jpg'
 faq:
   - question: 'Can live chamber music be part of a ceremony that also includes Balinese traditions?'
     answer: 'Yes. Live chamber music covers the Western ceremony portion and is timed around the adat elements by your planner. The two parts of the day are sequenced, not combined into a single musical segment.'
