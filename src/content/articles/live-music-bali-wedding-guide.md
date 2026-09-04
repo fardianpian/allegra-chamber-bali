@@ -101,3 +101,6 @@ instead? See our
 formation choice, acoustics, and the rain backup plan. Marrying on the sand? See our
 [guide to beach wedding ceremony music in Bali](/journal/beach-wedding-music-bali/) for how wind,
 sand, and humidity change formation and setup.
+Incorporating Balinese ceremonial elements alongside a Western-style ceremony? See our
+[guide to live chamber music for a Balinese-influenced wedding](/journal/balinese-wedding-ceremony-music/)
+for how both parts of the day are sequenced and what each side handles.

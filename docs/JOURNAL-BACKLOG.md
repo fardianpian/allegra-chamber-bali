@@ -24,7 +24,7 @@
 | --- | ------ | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
 | 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
 | 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
-| 3   | todo   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali |               |
+| 3   | done   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
 | 4   | todo   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              |               |
 | 5   | todo   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                |               |
 | 6   | todo   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                |               |
@@ -103,6 +103,8 @@
   resting on top, soft natural light" (flatlay, object only)
 
 ### Item 3 — balinese-wedding-ceremony-music (bali-venues)
+
+<!-- cover image pending — run manually: node scripts/generate-cover-image.mjs balinese-wedding-ceremony-music "a single frangipani flower resting across violin strings, soft daylight, minimal background" -->
 
 - **heading:** Blending Traditions: Live Chamber Music for a Balinese-Influenced Wedding Ceremony
 - **targetKeyword:** balinese wedding ceremony music
