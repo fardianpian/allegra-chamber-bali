@@ -25,7 +25,7 @@
 | 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
 | 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
 | 3   | done   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
-| 4   | todo   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              |               |
+| 4   | done   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
 | 5   | todo   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                |               |
 | 6   | todo   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                |               |
 | 7   | todo   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        |               |
@@ -161,6 +161,10 @@
   bullet — real specs, not a repeat of the checklist. Cross-link both directions.
 - **cover image prompt:** "a coiled XLR cable resting neatly beside a music stand, studio lighting,
   minimal composition" (technical object flatlay)
+- **cover image pending** (2026-09-07) — routine's `generate-cover-image.mjs` attempt failed:
+  `Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` (credentials not provisioned in this
+  sandbox). Run manually: `node scripts/generate-cover-image.mjs tech-rider-live-wedding-music
+"a coiled XLR cable resting neatly beside a music stand, studio lighting, minimal composition"`
 
 ### Item 5 — wedding-ceremony-song-count (planning)
 
