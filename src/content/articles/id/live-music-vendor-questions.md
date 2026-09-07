@@ -32,7 +32,9 @@ Ya, dan Anda sebaiknya memintanya sebelum mengonfirmasi ansambel live mana pun, 
 Stage plot menunjukkan posisi setiap musisi dan instrumen, sementara input list dan kebutuhan daya
 memungkinkan tim sound atau venue Anda merencanakan, bukan berimprovisasi pada hari H. Di Allegra
 Chamber Bali, dokumen-dokumen ini tersedia atas permintaan untuk setiap formasi — lihat
-[Untuk Planner](/id/for-planners/) atau hubungi kami langsung dan kami akan mengirimkannya.
+[Untuk Planner](/id/for-planners/) atau hubungi kami langsung dan kami akan mengirimkannya. Untuk
+penjelasan lebih rinci soal isi dokumen itu — kebutuhan daya, ruang, dan waktu load-in — lihat
+[Dasar-Dasar Tech Rider untuk Musik Kamar Live di Pernikahan](/id/journal/tech-rider-live-wedding-music/).
 
 ## Bagaimana Rutinitas Setup Mereka pada Hari Pernikahan?
 

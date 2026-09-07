@@ -31,7 +31,9 @@ Yes, and you should ask for one before confirming any live ensemble, not after. 
 shows where each musician and instrument sits, and an input list and power requirements let your
 sound or venue team plan around it instead of improvising on the day. At Allegra Chamber Bali,
 these documents are available on request for every formation — see [For Planners](/for-planners/)
-or message us directly and we'll send them over.
+or message us directly and we'll send them over. For a closer look at what's actually in that
+document — power, space, and load-in timing — see
+[Tech Rider Basics for Live Chamber Music at Weddings](/journal/tech-rider-live-wedding-music/).
 
 ## What's Their Setup Routine on the Wedding Day?
 
