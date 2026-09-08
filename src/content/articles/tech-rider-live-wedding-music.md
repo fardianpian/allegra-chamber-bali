@@ -6,6 +6,7 @@ excerpt: 'Power outlets, floor space, load-in timing — the technical specifics
 pillar: 'for-planners'
 targetKeyword: 'tech rider live wedding music'
 pubDate: 2026-09-07
+ogImage: '/images/og-tech-rider-live-wedding-music.jpg'
 faq:
   - question: 'Does a string quartet need more power than a solo pianist?'
     answer: 'Only if the formation includes an amplified piano or added sound reinforcement — unamplified strings need no power at all. Exact requirements vary by formation and venue, so we confirm them in your tech rider rather than quoting one fixed number for every booking.'

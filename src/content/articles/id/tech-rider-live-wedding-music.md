@@ -6,6 +6,7 @@ excerpt: 'Stopkontak listrik, ruang lantai, waktu load-in — detail teknis yang
 pillar: 'for-planners'
 targetKeyword: 'tech rider live wedding music'
 pubDate: 2026-09-07
+ogImage: '/images/og-tech-rider-live-wedding-music.jpg'
 faq:
   - question: 'Apakah string quartet membutuhkan daya lebih banyak dibanding pianis solo?'
     answer: 'Hanya jika formasinya menyertakan piano yang diamplifikasi atau penguatan suara tambahan — alat gesek tanpa amplifikasi sama sekali tidak membutuhkan listrik. Kebutuhan pasti bervariasi menurut formasi dan venue, jadi kami konfirmasi dalam tech rider Anda, bukan dengan satu angka baku untuk semua booking.'

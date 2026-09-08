@@ -161,10 +161,10 @@
   bullet — real specs, not a repeat of the checklist. Cross-link both directions.
 - **cover image prompt:** "a coiled XLR cable resting neatly beside a music stand, studio lighting,
   minimal composition" (technical object flatlay)
-- **cover image pending** (2026-09-07) — routine's `generate-cover-image.mjs` attempt failed:
-  `Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN` (credentials not provisioned in this
-  sandbox). Run manually: `node scripts/generate-cover-image.mjs tech-rider-live-wedding-music
-"a coiled XLR cable resting neatly beside a music stand, studio lighting, minimal composition"`
+- **cover image done** (2026-09-08) — routine's initial `generate-cover-image.mjs` attempt on
+  2026-09-07 failed (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not
+  provisioned in that sandbox); generated manually the next session and wired into both EN/ID
+  frontmatter as `ogImage: '/images/og-tech-rider-live-wedding-music.jpg'`.
 
 ### Item 5 — wedding-ceremony-song-count (planning)
 
