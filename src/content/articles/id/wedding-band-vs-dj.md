@@ -1,7 +1,7 @@
 ---
 title: 'Wedding Band vs. DJ vs. Ansambel Kamar: Cara Memilih — Allegra Chamber Bali'
 heading: 'Wedding Band vs. DJ vs. Ansambel Kamar: Cara Memilih'
-description: 'Perbedaan wedding band, DJ, dan ansambel kamar live dari segi suara dan setup, serta cara memadukan salah satu — atau kombinasinya — dengan pernikahan Anda di Bali.'
+description: 'Perbedaan wedding band, DJ, dan ansambel kamar live dari segi suara dan setup, serta cara memadukannya dengan pernikahan Anda di Bali.'
 excerpt: 'Bukan sekadar musik live vs. DJ — di mana posisi ansambel kamar sebagai opsi tersendiri, dan cara memadukan suara dengan setiap bagian hari pernikahan Anda.'
 pillar: 'planning'
 targetKeyword: 'wedding band vs dj'

@@ -1,7 +1,7 @@
 ---
 title: 'Memilih Venue Pernikahan untuk Musik Live di Bali — Allegra Chamber Bali'
 heading: 'Memilih Venue Pernikahan untuk Musik Live di Bali'
-description: 'Yang perlu dicek sebelum memesan venue pernikahan di Bali jika Anda menginginkan musik live — kebijakan suara, jam malam, akustik outdoor, dan akses listrik untuk musisi.'
+description: 'Yang perlu dicek sebelum memesan venue pernikahan di Bali untuk musik live — kebijakan suara, jam malam, akustik outdoor, dan akses listrik.'
 excerpt: 'Pilihan venue membentuk suara upacara Anda sama besarnya dengan pemandangannya — yang perlu ditanyakan sebelum memesan, dari kebijakan suara hingga akses listrik.'
 pillar: 'bali-venues'
 targetKeyword: 'wedding venue live music requirements'

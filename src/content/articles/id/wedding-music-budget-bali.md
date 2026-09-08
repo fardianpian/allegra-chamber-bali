@@ -1,7 +1,7 @@
 ---
 title: 'Cara Mengatur Budget Musik Live Pernikahan di Bali — Allegra Chamber Bali'
 heading: 'Cara Mengatur Budget Musik Live Pernikahan di Bali'
-description: 'Kerangka perencanaan untuk mengatur budget musik live pernikahan di Bali — apa yang benar-benar mengubah biayanya, apa yang perlu ditanyakan ke vendor, dan kapan meminta quote custom.'
+description: 'Kerangka perencanaan untuk mengatur budget musik live pernikahan di Bali — apa yang mengubah biayanya, dan kapan meminta quote custom.'
 excerpt: 'Musik live tidak punya satu harga yang bisa dicek langsung — berikut yang benar-benar mengubah biayanya, dan apa yang perlu ditanyakan sebelum meminta quote.'
 pillar: 'planning'
 targetKeyword: 'how to budget for wedding music'

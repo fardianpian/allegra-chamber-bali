@@ -126,6 +126,12 @@ below before writing or planning any article.
   sitemap until its translation file is added.
 - Per-article FAQ entries (frontmatter `faq` field) render on-page **and** as `FAQPage` JSON-LD
   — this is the primary AEO mechanism, don't skip it.
+- `description`'s 150-160 char hard limit (schema comment) has no zod length validation, so
+  `npm run lint`/`build` never catch a violation — a 2026-09-08 audit found 5 of 18 `id/`
+  translations over it while EN and prettier/build were clean. When asked to review/tidy
+  published articles, check frontmatter lengths with a small script over
+  `src/content/articles/**/*.md` (grep/regex the `description:` line), don't rely on lint passing
+  as proof.
 
 ## Work Rules
 

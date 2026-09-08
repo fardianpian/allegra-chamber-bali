@@ -1,7 +1,7 @@
 ---
 title: 'Kuartet Gesek untuk Pernikahan di Bali — Allegra Chamber Bali'
 heading: 'Kuartet Gesek untuk Pernikahan di Bali'
-description: 'Semua yang perlu diketahui pasangan tentang memesan kuartet gesek untuk pernikahan di Bali — suara, opsi formasi, piano sudah termasuk standar, dan apa yang bisa diharapkan.'
+description: 'Semua yang perlu diketahui pasangan tentang memesan kuartet gesek untuk pernikahan di Bali — suara, opsi formasi, dan piano yang sudah termasuk standar.'
 excerpt: 'Seperti apa suara kuartet gesek live dalam upacara di Bali, perbandingannya dengan formasi yang lebih kecil, dan kapan perlu menambahkan piano.'
 pillar: 'planning'
 targetKeyword: 'string quartet bali wedding'
