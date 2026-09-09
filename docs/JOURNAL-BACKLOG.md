@@ -26,7 +26,7 @@
 | 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
 | 3   | done   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
 | 4   | done   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
-| 5   | todo   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                |               |
+| 5   | done   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
 | 6   | todo   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                |               |
 | 7   | todo   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        |               |
 | 8   | todo   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali |               |
@@ -192,6 +192,10 @@
 - **inboundLinkSource:** `src/content/articles/wedding-ceremony-piano-music.md`
 - **cover image prompt:** "a single sheet of music with a violin resting on top, warm side
   lighting" (single object)
+- **cover image pending** (2026-09-09) — routine's `generate-cover-image.mjs` attempt failed
+  (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not provisioned in this
+  sandbox); run manually: `node scripts/generate-cover-image.mjs wedding-ceremony-song-count "a
+single sheet of music with a violin resting on top, warm side lighting"`
 
 ### Item 6 — cocktail-hour-wedding-piano-music (piano-repertoire)
 
