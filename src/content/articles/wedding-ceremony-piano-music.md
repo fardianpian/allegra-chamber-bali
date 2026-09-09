@@ -41,7 +41,7 @@ Choosing what to play for the entrance and exit is usually the harder decision �
 
 For a standard ceremony, you need four to six pieces as a minimum: a prelude set of two or three pieces, one processional, optional background music during the ceremony itself, and a recessional. If the bridal party and the couple enter to different music, add one more.
 
-The pieces do not all have to be different. It is common to play a variation of the same piece for the processional and recessional, or to return to a prelude piece during the signing. What matters more than the number of songs is that each moment feels considered — and that the transitions between them are planned in advance with your musician.
+The pieces do not all have to be different. It is common to play a variation of the same piece for the processional and recessional, or to return to a prelude piece during the signing. What matters more than the number of songs is that each moment feels considered — and that the transitions between them are planned in advance with your musician. For a full breakdown of exactly how many pieces to plan for, and how that count changes with formation size, see our [song count guide](/journal/wedding-ceremony-song-count/).
 
 ## Classical, Contemporary, or Your Own Song?
 
