@@ -32,7 +32,7 @@ Khusus untuk upacara, perbandingan sebenarnya bukan "band vs. DJ" melainkan "liv
 
 ## Di Mana Ansambel Kamar Cocok yang Tidak Dimiliki Band atau DJ
 
-Wedding band dan DJ sama-sama dibangun di sekitar volume dan ritme — cocok untuk bagian hari yang memang dirancang untuk dansa. Ansambel kamar dibangun dengan arah sebaliknya: keintiman, tekstur, dan suara yang mendukung obrolan alih-alih bersaing dengannya. Itulah yang membuatnya cocok secara alami untuk prelude, prosesi, pengucapan janji, penandatanganan, resesional, dan sering kali cocktail hour — rentang hari ketika tamu duduk, berdatangan, atau mengobrol, bukan berdansa. Piano menjadi bagian unggulan dari suara ini dalam formasi kami, bukan tambahan pada setup gesek semata.
+Wedding band dan DJ sama-sama dibangun di sekitar volume dan ritme — cocok untuk bagian hari yang memang dirancang untuk dansa. Ansambel kamar dibangun dengan arah sebaliknya: keintiman, tekstur, dan suara yang mendukung obrolan alih-alih bersaing dengannya. Itulah yang membuatnya cocok secara alami untuk prelude, prosesi, pengucapan janji, penandatanganan, resesional, dan sering kali cocktail hour — rentang hari ketika tamu duduk, berdatangan, atau mengobrol, bukan berdansa. Piano menjadi bagian unggulan dari suara ini dalam formasi kami, bukan tambahan pada setup gesek semata. Panduan kami tentang [musik piano cocktail hour](/id/journal/cocktail-hour-wedding-piano-music/) menjelaskan apa yang sebenarnya berubah begitu upacara selesai dan bagian hari ini dimulai.
 
 ## Membandingkan Ketiganya Secara Berdampingan
 

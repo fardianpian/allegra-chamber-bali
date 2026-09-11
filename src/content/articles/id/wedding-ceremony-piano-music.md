@@ -41,7 +41,7 @@ Memilih lagu untuk prosesi dan resesional biasanya menjadi keputusan yang lebih 
 
 Untuk upacara standar, Anda membutuhkan setidaknya empat hingga enam lagu: set prelude dua atau tiga lagu, satu lagu prosesi, musik latar opsional selama upacara berlangsung, dan satu resesional. Jika iring-iringan pengantin dan pasangan masuk dengan lagu berbeda, tambahkan satu lagu lagi.
 
-Lagu-lagu tersebut tidak harus semuanya berbeda. Umum untuk memainkan variasi dari lagu yang sama untuk prosesi dan resesional, atau kembali ke lagu prelude saat penandatanganan. Yang lebih penting dari jumlah lagu adalah bahwa setiap momen terasa dipikirkan — dan transisi antar-momen sudah direncanakan bersama musisi Anda jauh sebelum hari H.
+Lagu-lagu tersebut tidak harus semuanya berbeda. Umum untuk memainkan variasi dari lagu yang sama untuk prosesi dan resesional, atau kembali ke lagu prelude saat penandatanganan. Yang lebih penting dari jumlah lagu adalah bahwa setiap momen terasa dipikirkan — dan transisi antar-momen sudah direncanakan bersama musisi Anda jauh sebelum hari H. Untuk gambaran lengkap berapa banyak lagu yang perlu direncanakan, dan bagaimana jumlahnya berubah sesuai ukuran formasi, lihat [panduan jumlah lagu](/id/journal/wedding-ceremony-song-count/) kami.
 
 ## Repertoar Klasik, Kontemporer, atau Lagu Sendiri?
 
