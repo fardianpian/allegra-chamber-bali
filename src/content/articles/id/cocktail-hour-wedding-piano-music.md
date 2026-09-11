@@ -6,6 +6,7 @@ excerpt: 'Suasana berubah begitu tamu berpindah ke sesi cocktail — apa yang be
 pillar: 'piano-repertoire'
 targetKeyword: 'cocktail hour wedding music'
 pubDate: 2026-09-11
+ogImage: '/images/og-cocktail-hour-wedding-piano-music.jpg'
 faq:
   - question: 'Apakah musik cocktail hour sudah termasuk dalam pemesanan upacara, atau terpisah?'
     answer: 'Cocktail hour dipesan sebagai sesi tersendiri di samping upacara Anda, bukan sesuatu yang otomatis termasuk. Sebagian besar pasangan memesan musisi yang sama untuk melanjutkan langsung, dan kami memastikan cakupannya — hanya upacara, atau upacara ditambah cocktail hour — saat Anda menghubungi kami.'

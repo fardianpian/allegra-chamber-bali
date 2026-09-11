@@ -192,10 +192,10 @@
 - **inboundLinkSource:** `src/content/articles/wedding-ceremony-piano-music.md`
 - **cover image prompt:** "a single sheet of music with a violin resting on top, warm side
   lighting" (single object)
-- **cover image pending** (2026-09-09) — routine's `generate-cover-image.mjs` attempt failed
-  (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not provisioned in this
-  sandbox); run manually: `node scripts/generate-cover-image.mjs wedding-ceremony-song-count "a
-single sheet of music with a violin resting on top, warm side lighting"`
+- **cover image done** (2026-09-11) — routine's initial `generate-cover-image.mjs` attempt on
+  2026-09-09 failed (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not
+  provisioned in that sandbox); generated manually the next session and wired into both EN/ID
+  frontmatter as `ogImage: '/images/og-wedding-ceremony-song-count.jpg'`.
 
 ### Item 6 — cocktail-hour-wedding-piano-music (piano-repertoire)
 
@@ -222,10 +222,10 @@ single sheet of music with a violin resting on top, warm side lighting"`
   part of your day" — natural anchor point)
 - **cover image prompt:** "champagne glasses beside a string instrument case, soft golden hour
   light" (object still-life)
-- **cover image pending** (2026-09-11) — routine's `generate-cover-image.mjs` attempt failed
-  (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not provisioned in this
-  sandbox); run manually: `node scripts/generate-cover-image.mjs cocktail-hour-wedding-piano-music
-  "champagne glasses beside a string instrument case, soft golden hour light"`
+- **cover image done** (2026-09-11) — routine's initial `generate-cover-image.mjs` attempt on
+  2026-09-11 failed (`Missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN`, credentials not
+  provisioned in that sandbox); generated manually the same session and wired into both EN/ID
+  frontmatter as `ogImage: '/images/og-cocktail-hour-wedding-piano-music.jpg'`.
 
 ### Item 7 — villa-wedding-live-music-bali (bali-venues)
 

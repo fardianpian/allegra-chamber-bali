@@ -18,7 +18,7 @@ faq:
     answer: 'Perencana pernikahan Anda adalah koordinator utama. Mereka bekerja sama dengan juru upacara, spesialis ritual lokal, dan ansambel live untuk menyusun linimasa yang menghormati setiap bagian upacara.'
 ---
 
-Banyak pasangan yang menikah di Bali ingin menghormati tradisi adat Bali sekaligus menjalankan upacara gaya Barat — dan pertanyaan yang paling umum adalah di mana musik kamar live berperan dalam struktur itu. Allegra membawakan bagian musik kamar gaya Barat; elemen adat tradisional dikoordinasikan oleh perencana dan spesialis lokal Anda. Apa yang dijelaskan di sini membantu Anda memahami bagaimana kedua bagian itu dapat berjalan dalam satu hari.
+Banyak pasangan yang menikah di Bali ingin menghormati tradisi adat Bali sekaligus menjalankan upacara gaya Barat — dan pertanyaan yang paling umum adalah di mana musik kamar live berperan dalam struktur itu. Allegra membawakan bagian musik kamar gaya Barat, sementara perencana dan spesialis lokal Anda menangani elemen adat, sehingga Anda bisa mengurutkan kedua tradisi tanpa saling berbenturan.
 
 ## Mengapa Pasangan Memadukan Elemen Adat Bali dalam Pernikahan Destinasi
 

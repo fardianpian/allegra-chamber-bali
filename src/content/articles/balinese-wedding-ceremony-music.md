@@ -18,7 +18,7 @@ faq:
     answer: 'Your wedding planner is the central coordinator. They work with the officiant, any local ritual specialists, and the live ensemble to map a timeline that respects each part of the ceremony.'
 ---
 
-Many couples marrying in Bali want to honor local Balinese traditions alongside a Western-style ceremony — and the most common question is where live chamber music belongs in that structure. Allegra performs the Western chamber portion; traditional adat elements are coordinated by your planner and local specialists. What follows helps you understand how both parts fit in the same day.
+Many couples marrying in Bali want to honor local Balinese traditions alongside a Western-style ceremony — and the most common question is where live chamber music belongs in that structure. Allegra performs the Western chamber portion while your planner and local specialists handle the adat elements, so you can sequence both traditions without conflict.
 
 ## Why Couples Blend Balinese Elements Into a Destination Wedding
 

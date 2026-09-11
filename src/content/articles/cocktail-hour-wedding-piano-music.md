@@ -6,6 +6,7 @@ excerpt: 'The mood shifts the moment guests move to cocktails — what changes i
 pillar: 'piano-repertoire'
 targetKeyword: 'cocktail hour wedding music'
 pubDate: 2026-09-11
+ogImage: '/images/og-cocktail-hour-wedding-piano-music.jpg'
 faq:
   - question: 'Is cocktail hour music included with ceremony booking, or is it separate?'
     answer: 'Cocktail hour is booked as its own set alongside your ceremony rather than an automatic inclusion. Most couples book the same musicians to continue straight through, and we confirm the exact scope — ceremony only, or ceremony plus cocktail hour — when you inquire.'

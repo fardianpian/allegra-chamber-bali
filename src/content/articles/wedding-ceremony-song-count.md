@@ -6,6 +6,7 @@ excerpt: "From prelude to recessional, here's a practical breakdown of how many 
 pillar: 'planning'
 targetKeyword: 'how many songs for wedding ceremony'
 pubDate: 2026-09-09
+ogImage: '/images/og-wedding-ceremony-song-count.jpg'
 faq:
   - question: 'How many songs does a wedding ceremony need?'
     answer: 'Most ceremonies need four to six pieces at minimum: a prelude set of two or three, one processional, optional music during the vow exchange or signing, and one recessional. If the bridal party and the couple enter to separate pieces, add one more.'
