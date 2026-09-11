@@ -32,7 +32,7 @@ For the ceremony specifically, the real comparison is less "band vs. DJ" and mor
 
 ## Where a Chamber Ensemble Fits That a Band or DJ Doesn't
 
-A wedding band and a DJ are both built around volume and rhythm — good for the part of the day meant for dancing. A chamber ensemble is built around the opposite: intimacy, texture, and a sound that supports conversation rather than competing with it. That makes it the natural fit for the prelude, processional, vow exchange, signing, recessional, and often cocktail hour — the stretch of the day where guests are seated, arriving, or talking, not dancing. Piano is a flagship part of that sound in our formations, not an add-on to a strings-only setup.
+A wedding band and a DJ are both built around volume and rhythm — good for the part of the day meant for dancing. A chamber ensemble is built around the opposite: intimacy, texture, and a sound that supports conversation rather than competing with it. That makes it the natural fit for the prelude, processional, vow exchange, signing, recessional, and often cocktail hour — the stretch of the day where guests are seated, arriving, or talking, not dancing. Piano is a flagship part of that sound in our formations, not an add-on to a strings-only setup. Our [cocktail hour piano music guide](/journal/cocktail-hour-wedding-piano-music/) breaks down what actually changes once the ceremony ends and that stretch of the day begins.
 
 ## Comparing the Three Side by Side
 
