@@ -88,9 +88,9 @@ export const ui = {
 			cta: 'View ensemble formations',
 		},
 		packagesPage: {
-			title: 'Wedding Pianist & String Quartet for Hire — Allegra Chamber Bali',
+			title: 'String Quartet & Wedding Pianist for Hire in Bali — Allegra Chamber Bali',
 			description:
-				'Hire a string quartet, trio, duo, or solo wedding pianist for your Bali wedding — five ensemble formations built around your ceremony and reception.',
+				'Hire a string quartet or solo wedding pianist in Bali. Five live formations, piano included from Duo up, for your ceremony, cocktail hour, or reception.',
 			eyebrow: 'Packages',
 			heading: 'Wedding Pianist & String Quartet Packages',
 			subhead:
@@ -105,21 +105,32 @@ export const ui = {
 		moments: {
 			eyebrow: 'Moments We Score',
 			heading: 'One ensemble, every part of the day',
+			suitsLabel: 'Suits',
 			items: [
 				{
 					moment: 'ceremony',
 					name: 'Ceremony',
 					blurb: 'Processional, signing, and recessional — the music that carries your vows.',
+					// Formation ids mirror each src/content/packages/*.md `idealFor` list — keep in sync.
+					formations: ['solo', 'duo', 'trio', 'quartet', 'large-ensemble'],
+					guide: {
+						slug: 'wedding-processional-recessional-songs',
+						label: 'Choosing processional & recessional songs',
+					},
 				},
 				{
 					moment: 'cocktail',
 					name: 'Cocktail Hour',
 					blurb: 'Warm, conversational sets while you celebrate with your guests.',
+					formations: ['duo', 'trio', 'quartet'],
+					guide: { slug: 'cocktail-hour-wedding-piano-music', label: 'What to play at cocktail hour' },
 				},
 				{
 					moment: 'reception',
 					name: 'Reception',
 					blurb: 'From first dance to the last song, arranged for strings and piano.',
+					formations: ['trio', 'quartet', 'large-ensemble'],
+					guide: { slug: 'custom-wedding-music-arrangement', label: 'How your song gets arranged' },
 				},
 			],
 		},
@@ -333,9 +344,9 @@ export const ui = {
 				'Allegra Chamber Bali is a chamber-music ensemble under Indonesia Istimewa Studio, bringing the same standard of craft and care to live wedding music across Bali.',
 		},
 		forPlannersPage: {
-			title: 'Wedding Planner Bali — Allegra Chamber Bali',
+			title: 'Live Music Partner for Wedding Planners in Bali — Allegra Chamber Bali',
 			description:
-				'Trusted by wedding planners and organizers across Bali — full tech rider, stage plot, and repertoire sheet on request. Partner with Allegra Chamber Bali.',
+				'Live piano & strings for planners and venues in Bali — tech rider, stage plot, and repertoire sheet on request, with one contact who replies within 24 hours.',
 			eyebrow: 'For Planners & Venues',
 			heading: 'Partnering with Wedding Planners & Organizers in Bali',
 			subhead:
@@ -428,7 +439,7 @@ export const ui = {
 				{
 					question: 'Can we request specific songs or our own playlist?',
 					answer:
-						'Yes. Browse our repertoire for ideas, or send us your own song list — we arrange most requests for strings, and can take on a custom arrangement with enough notice.',
+						'Yes. Browse our repertoire for ideas, or send us your own songs — we arrange most requests for piano and strings, so your processional or first dance can be a song that is truly yours. Send them early: a custom arrangement needs a little lead time to get right.',
 				},
 				{
 					question: 'Do you offer a wedding pianist as a solo option?',
@@ -646,9 +657,9 @@ export const ui = {
 			cta: 'Lihat formasi ensemble',
 		},
 		packagesPage: {
-			title: 'Formasi & Paket String Quartet — Allegra Chamber Bali',
+			title: 'Sewa String Quartet & Pianis Pernikahan di Bali — Allegra Chamber Bali',
 			description:
-				'Lima formasi musik pernikahan — solo, duo, trio, string quartet, dan large ensemble — dibangun mengikuti upacara dan resepsi Anda di Bali.',
+				'Lima formasi musik live untuk pernikahan di Bali, piano sudah termasuk mulai dari Duo — lihat mana yang sesuai untuk upacara, cocktail hour, atau resepsi Anda.',
 			eyebrow: 'Paket',
 			heading: 'Formasi & Paket',
 			subhead:
@@ -663,21 +674,31 @@ export const ui = {
 		moments: {
 			eyebrow: 'Momen yang Kami Iringi',
 			heading: 'Satu ensemble, setiap bagian hari Anda',
+			suitsLabel: 'Cocok dengan',
 			items: [
 				{
 					moment: 'ceremony',
 					name: 'Upacara',
 					blurb: 'Processional, signing, dan recessional — musik yang mengiringi ucapan janji Anda.',
+					formations: ['solo', 'duo', 'trio', 'quartet', 'large-ensemble'],
+					guide: {
+						slug: 'wedding-processional-recessional-songs',
+						label: 'Memilih lagu processional & recessional',
+					},
 				},
 				{
 					moment: 'cocktail',
 					name: 'Cocktail Hour',
 					blurb: 'Set hangat dan santai saat Anda merayakan bersama tamu.',
+					formations: ['duo', 'trio', 'quartet'],
+					guide: { slug: 'cocktail-hour-wedding-piano-music', label: 'Musik untuk cocktail hour' },
 				},
 				{
 					moment: 'reception',
 					name: 'Resepsi',
 					blurb: 'Dari first dance hingga lagu terakhir, diaransemen untuk strings dan piano.',
+					formations: ['trio', 'quartet', 'large-ensemble'],
+					guide: { slug: 'custom-wedding-music-arrangement', label: 'Cara lagu Anda diaransemen' },
 				},
 			],
 		},
@@ -894,9 +915,9 @@ export const ui = {
 				'Allegra Chamber Bali adalah ensemble musik chamber di bawah Indonesia Istimewa Studio, membawa standar kualitas dan perhatian yang sama untuk musik pernikahan live di seluruh Bali.',
 		},
 		forPlannersPage: {
-			title: 'Mitra Wedding Planner & Venue di Bali — Allegra Chamber Bali',
+			title: 'Mitra Musik Live untuk Wedding Planner di Bali — Allegra Chamber Bali',
 			description:
-				'Dipercaya oleh wedding planner dan wedding organizer di Bali — tech rider, stage plot, dan repertoire sheet siap diminta. Bermitra dengan Allegra Chamber Bali.',
+				'Piano & gesek live untuk wedding planner dan venue di Bali: tech rider, stage plot, dan repertoire sheet siap diminta, satu kontak yang membalas dalam 24 jam.',
 			eyebrow: 'Untuk Planner & Venue',
 			heading: 'Bermitra dengan Wedding Planner & Organizer di Bali',
 			subhead:
@@ -990,7 +1011,7 @@ export const ui = {
 				{
 					question: 'Bisa minta lagu tertentu atau playlist sendiri?',
 					answer:
-						'Bisa. Jelajahi repertoar kami untuk inspirasi, atau kirim daftar lagu Anda sendiri — kami mengaransemen sebagian besar permintaan untuk string, dan bisa menerima aransemen khusus dengan pemberitahuan yang cukup.',
+						'Bisa. Jelajahi repertoar kami untuk inspirasi, atau kirim lagu pilihan Anda sendiri — kami mengaransemen sebagian besar permintaan untuk piano dan gesek, sehingga lagu processional atau tarian pertama Anda benar-benar milik Anda. Kirim lebih awal: aransemen khusus butuh sedikit waktu agar hasilnya tepat.',
 				},
 				{
 					question: 'Apakah ada opsi wedding pianist solo?',

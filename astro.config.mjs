@@ -31,11 +31,13 @@ export default defineConfig({
 			},
 			// /share-your-story and /thank-you-testimonial are hidden testimonial-request pages
 			// sent directly to clients post-wedding — noindex and intentionally unlisted.
+			// /thank-you (EN + ID) is the post-form-submit confirmation page — noindex too
+			// (GSC showed it indexed with impressions, 2026-09-14).
 			// /id/journal/<slug> is only indexable once a genuine translation exists (see
 			// translatedJournalSlugs above + src/pages/id/journal/[slug].astro's noindex logic) —
 			// keep the sitemap filter and the page's own noindex meta in sync.
 			filter: (page) => {
-				if (page.includes('/share-your-story') || page.includes('/thank-you-testimonial')) return false
+				if (page.includes('/share-your-story') || page.includes('/thank-you')) return false
 				const idJournalSlug = page.match(/\/id\/journal\/([^/]+)\/?$/)?.[1]
 				if (idJournalSlug) return translatedJournalSlugs.includes(idJournalSlug)
 				return true

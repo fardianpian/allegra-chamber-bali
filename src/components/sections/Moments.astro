@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import SectionHeading from '../ui/SectionHeading.astro'
-import { useTranslations } from '../../i18n/utils'
+import { getLocalizedPath, useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
 import ceremony from '../../assets/moments/ceremony.jpg'
 import cocktail from '../../assets/moments/cocktail-hour.jpg'
@@ -15,6 +15,11 @@ const t = useTranslations(lang)
 const moments = t('moments')
 
 const momentPhotos = { ceremony, cocktail, reception } as const
+// Keyed by formation id (not array order) so reordering the formations list can't mislabel links.
+const formationNames: Record<string, string> = Object.fromEntries(
+	t('formations').items.map((f) => [f.formation, f.name]),
+)
+const packagesPath = getLocalizedPath('/packages', lang)
 ---
 
 <section class="section bg-ivory">
@@ -24,7 +29,7 @@ const momentPhotos = { ceremony, cocktail, reception } as const
 		<div class="mt-12 grid gap-8 sm:grid-cols-3">
 			{
 				moments.items.map((item) => (
-					<div class="reveal">
+					<div class="reveal flex flex-col">
 						<Image
 							src={momentPhotos[item.moment]}
 							alt={item.name}
@@ -37,6 +42,27 @@ const momentPhotos = { ceremony, cocktail, reception } as const
 						/>
 						<h3 class="mt-5 font-display text-2xl">{item.name}</h3>
 						<p class="mt-2 text-taupe">{item.blurb}</p>
+						{/* Flex row so the template's line-break whitespace can't render as a space before each comma. */}
+						<p class="mt-4 flex flex-wrap items-baseline text-sm">
+							<span class="mr-1 text-taupe">{moments.suitsLabel}:</span>
+							{item.formations.map((formation, i) => (
+								<>
+									<a
+										href={`${packagesPath}#${formation}`}
+										class="underline decoration-gold underline-offset-2 hover:text-gold"
+									>
+										{formationNames[formation]}
+									</a>
+									{i < item.formations.length - 1 && <span class="mr-1">,</span>}
+								</>
+							))}
+						</p>
+						<a
+							href={getLocalizedPath(`/journal/${item.guide.slug}`, lang)}
+							class="mt-2 self-start text-sm underline decoration-gold underline-offset-2 hover:text-gold"
+						>
+							{item.guide.label}&nbsp;→
+						</a>
 					</div>
 				))
 			}
