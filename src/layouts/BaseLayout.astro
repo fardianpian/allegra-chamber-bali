@@ -49,6 +49,9 @@ const ogImageUrl = ogImage
 			~25% of recorded sessions (GA4 hostName audit, 2026-09-14). The `gtag` stub still exists
 			everywhere so event calls below never throw; off-production they just queue locally.
 			`whatsapp_click` fires for every wa.me link (cta_location/formation from WhatsAppCTA).
+			Internal traffic: open any page once with ?internal=1 to flag this browser (localStorage)
+			so every hit carries traffic_type=internal, which GA4's "Internal Traffic" data filter
+			excludes — IP rules don't work for the owner's rotating carrier IP. ?internal=0 clears it.
 		*/
 		}
 		<script
@@ -56,12 +59,19 @@ const ogImageUrl = ogImage
 			set:html={`window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
 			if (location.hostname === '${productionHost}') {
+				var isInternal = false;
+				try {
+					var internalParam = new URLSearchParams(location.search).get('internal');
+					if (internalParam === '1') localStorage.setItem('allegra_internal', '1');
+					if (internalParam === '0') localStorage.removeItem('allegra_internal');
+					isInternal = localStorage.getItem('allegra_internal') === '1';
+				} catch (err) {}
 				var gaScript = document.createElement('script');
 				gaScript.async = true;
 				gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}';
 				document.head.appendChild(gaScript);
 				gtag('js', new Date());
-				gtag('config', '${site.ga4Id}');
+				gtag('config', '${site.ga4Id}', isInternal ? { traffic_type: 'internal' } : {});
 			}
 			document.addEventListener('click', function (e) {
 				var link = e.target instanceof Element ? e.target.closest('a[href*="wa.me/"]') : null;
