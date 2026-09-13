@@ -37,7 +37,12 @@ const page = t('forPlannersPage')
 
 		<p class="reveal mt-6 text-center text-sm text-taupe">{page.downloadsNote}</p>
 		<div class="reveal mt-5 flex justify-center">
-			<WhatsAppCTA message={page.downloadsWhatsappMessage} label={page.downloadsCta} variant="outline" />
+			<WhatsAppCTA
+				location="planner_downloads"
+				message={page.downloadsWhatsappMessage}
+				label={page.downloadsCta}
+				variant="outline"
+			/>
 		</div>
 		<p class="reveal mt-4 text-center text-sm">
 			<a

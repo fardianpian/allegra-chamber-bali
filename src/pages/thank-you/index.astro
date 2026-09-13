@@ -25,8 +25,29 @@ const whatsappMessage = t('whatsappMessage')
 			<p class="mt-4 max-w-xl text-taupe">{thankYou.subhead}</p>
 			<div class="mt-8 flex flex-wrap justify-center gap-4">
 				<Button href="/" variant="outline">{thankYou.cta}</Button>
-				<WhatsAppCTA message={whatsappMessage} label={thankYou.ctaWhatsapp} variant="gold" />
+				<WhatsAppCTA
+					location="thank_you"
+					message={whatsappMessage}
+					label={thankYou.ctaWhatsapp}
+					variant="gold"
+				/>
 			</div>
 		</div>
 	</section>
+	{
+		/*
+		GA4 key event: only when arriving via a form redirect (?form=contact|partnership, set in
+		ContactForm/PartnershipForm) and on a fresh navigation, so direct visits and back/reload
+		don't count as leads.
+	*/
+	}
+	<script
+		is:inline
+		set:html={`(function () {
+			var formType = new URLSearchParams(location.search).get('form');
+			var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+			if (!formType || (nav && nav.type !== 'navigate')) return;
+			gtag('event', 'generate_lead', { form_type: formType });
+		})();`}
+	/>
 </BaseLayout>

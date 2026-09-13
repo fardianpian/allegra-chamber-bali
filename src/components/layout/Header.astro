@@ -56,6 +56,7 @@ const whatsappMessage = t('whatsappMessage')
 				{lang === 'en' ? 'ID' : 'EN'}
 			</a>
 			<WhatsAppCTA
+				location="header"
 				message={whatsappMessage}
 				label={nav.checkDate}
 				variant="outline"
@@ -96,7 +97,13 @@ const whatsappMessage = t('whatsappMessage')
 				>
 					{lang === 'en' ? 'Switch to Indonesian' : 'Switch to English'}
 				</a>
-				<WhatsAppCTA message={whatsappMessage} label={nav.checkDate} variant="primary" class="self-end" />
+				<WhatsAppCTA
+					location="mobile_menu"
+					message={whatsappMessage}
+					label={nav.checkDate}
+					variant="primary"
+					class="self-end"
+				/>
 			</div>
 		</nav>
 	</div>

@@ -11,7 +11,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const page = t('forPlannersPage')
-const thankYouPath = lang === 'en' ? '/thank-you/' : '/id/thank-you/'
+const thankYouPath = lang === 'en' ? '/thank-you/?form=partnership' : '/id/thank-you/?form=partnership'
 const redirectUrl = new URL(thankYouPath, site.url).toString()
 
 const fieldClass =
@@ -96,7 +96,12 @@ const roleOptions = [
 				class="reveal flex flex-col gap-6 border-t border-ink/10 pt-8 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0"
 			>
 				<p class="eyebrow">{page.orDivider}</p>
-				<WhatsAppCTA message={page.whatsappMessage} label={page.whatsappLabel} variant="outline" />
+				<WhatsAppCTA
+					location="partnership_form"
+					message={page.whatsappMessage}
+					label={page.whatsappLabel}
+					variant="outline"
+				/>
 				<a
 					href={`mailto:${site.contactEmail}`}
 					class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold"

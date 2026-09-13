@@ -26,6 +26,7 @@ const { lang, title, description, path, jsonLd, ogImage, noindex = false } = Ast
 
 const enPath = withTrailingSlash(path.replace(/^\/id(\/|$)/, '/'))
 const idPath = enPath === '/' ? '/id/' : `/id${enPath}`
+const productionHost = new URL(site.url).hostname
 const canonical = new URL(lang === 'id' ? idPath : enPath, site.url).toString()
 const ogImageUrl = ogImage
 	? new URL(ogImage, site.url).toString()
@@ -41,13 +42,35 @@ const ogImageUrl = ogImage
 		<title>{title}</title>
 		<meta name="description" content={description} />
 
-		<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}`}></script>
+		{
+			/*
+			GA4 — set:html (not define:vars) keeps `gtag` global, see CLAUDE.md rule #21.
+			gtag.js only loads on the production hostname: *.pages.dev previews and localhost were
+			~25% of recorded sessions (GA4 hostName audit, 2026-09-14). The `gtag` stub still exists
+			everywhere so event calls below never throw; off-production they just queue locally.
+			`whatsapp_click` fires for every wa.me link (cta_location/formation from WhatsAppCTA).
+		*/
+		}
 		<script
 			is:inline
 			set:html={`window.dataLayer = window.dataLayer || [];
 			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', '${site.ga4Id}');`}
+			if (location.hostname === '${productionHost}') {
+				var gaScript = document.createElement('script');
+				gaScript.async = true;
+				gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=${site.ga4Id}';
+				document.head.appendChild(gaScript);
+				gtag('js', new Date());
+				gtag('config', '${site.ga4Id}');
+			}
+			document.addEventListener('click', function (e) {
+				var link = e.target instanceof Element ? e.target.closest('a[href*="wa.me/"]') : null;
+				if (!link) return;
+				gtag('event', 'whatsapp_click', {
+					cta_location: link.getAttribute('data-cta-location') || 'other',
+					formation: link.getAttribute('data-formation') || '(none)',
+				});
+			});`}
 		/>
 		{
 			noindex ? (

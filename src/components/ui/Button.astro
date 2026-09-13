@@ -4,8 +4,10 @@ interface Props {
 	variant?: 'primary' | 'gold' | 'outline' | 'ghost'
 	class?: string
 	target?: '_blank'
+	/** Passed through to the <a> — used for analytics hooks (e.g. data-cta-location). */
+	[key: `data-${string}`]: string | undefined
 }
-const { href, variant = 'primary', class: className = '', target } = Astro.props
+const { href, variant = 'primary', class: className = '', target, ...dataAttrs } = Astro.props
 
 const base =
 	'inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm tracking-[0.08em] uppercase transition-colors duration-300'
@@ -22,6 +24,7 @@ const variants = {
 	target={target}
 	rel={target === '_blank' ? 'noopener noreferrer' : undefined}
 	class:list={[base, variants[variant], className]}
+	{...dataAttrs}
 >
 	<slot />
 </a>

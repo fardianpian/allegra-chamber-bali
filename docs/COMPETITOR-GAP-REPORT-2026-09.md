@@ -369,3 +369,76 @@ music decision?" di form (gap riset lama di `CUSTOMER-RESEARCH.md`).
 - [ ] GSC: CTR `/packages` & `/for-planners` setelah rewrite meta
 - [ ] Outlier baru di niche (vidIQ): pola F1–F5 masih berlaku?
 - [ ] Setelah GA4 re-login: event klik WA per halaman & hasil finder
+
+---
+
+## 11. Data Analitik GA4 (tambahan 2026-09-14)
+
+> Property `542419294`, 90 hari (±16 Jun – 13 Sep 2026), ditarik via GA4 Data API. Volume sangat
+> kecil, jadi semua kesimpulan di bawah bersifat **arah**, bukan signifikan secara statistik.
+
+### 11.1 Kualitas data: sekitar separuh sesi bukan calon klien
+
+| Sumber pencemar                                                        | Sesi | Bukti                                                                    |
+| ---------------------------------------------------------------------- | ---: | ------------------------------------------------------------------------ |
+| Tag GA aktif di `*.pages.dev` + `localhost`                            |   46 | Dimensi hostName: pages.dev 34, localhost 9, preview branch 3            |
+| Bot / data center (Council Bluffs, Glenview, Ashburn, Singapore 0 dtk) |  ±27 | Durasi 0–8 detik, engagement 0–6%                                        |
+| Kemungkinan internal (Makassar, Denpasar Direct desktop)               |  ±43 | Makassar 32 sesi dari 4 user; Denpasar Direct rata-rata 3,5 jam per sesi |
+| **Total tercatat**                                                     |  182 |                                                                          |
+
+Perkiraan pengunjung asli: **±40–60 sesi dalam 90 hari**. Tren mingguan naik lagi sejak minggu
+35 (24 → 12 → 27 sesi).
+
+### 11.2 Calon klien nyata yang menghubungi (klik WhatsApp)
+
+GA4 tidak punya event kustom. Klik WhatsApp hanya terbaca dari event outbound `click`. Setelah
+tes internal saat launch dibuang, tersisa **7 calon klien** yang mengklik WhatsApp:
+
+| Tanggal | Kota (perangkat)        | Sumber         | Halaman     |
+| ------- | ----------------------- | -------------- | ----------- |
+| 9 Jul   | Innisfail, AU (mobile)  | direct         | `/packages` |
+| 13 Jul  | Cambridge (mobile)      | Google organik | `/faq`      |
+| 18 Jul  | Sydney, AU (mobile)     | direct         | `/packages` |
+| 25 Agu  | London, UK (desktop)    | **ChatGPT**    | `/faq` (3x) |
+| 25 Agu  | Bury, UK (desktop)      | **ChatGPT**    | `/`         |
+| 1 Sep   | Long Beach, US (mobile) | Instagram      | `/`         |
+| 11 Sep  | Jakarta (desktop)       | Instagram      | `/`         |
+
+Tambahan yang ambigu: 3 klik dari Denpasar via Instagram (27 & 31 Agu), bisa calon klien lokal
+atau tes internal. Form kontak hanya menghasilkan **2 submit** (keduanya `/id/`: Gianyar 5 Jul,
+Singapore 6 Agu). **WhatsApp menghasilkan ±4x lebih banyak kontak dibanding form.**
+
+### 11.3 Temuan
+
+1. **Persona P1 tervalidasi.** Calon klien nyata datang dari AU, UK, dan US, persis target
+   destination wedding. 4 dari 7 memakai mobile.
+2. **ChatGPT adalah channel dengan konversi tertinggi.** Hanya 4 sesi, tapi 2 di antaranya
+   berujung klik WhatsApp. Pengunjung London menghabiskan 15 menit lalu klik WhatsApp 3x dari
+   FAQ. Investasi FAQ + schema (AEO/GEO) terbukti bekerja.
+3. **Instagram**: engagement 88% dan 2–4 klik WhatsApp dari hanya 9 post. Mendukung rekomendasi
+   konten di §7.3.
+4. **`/faq` dan `/packages` adalah halaman keputusan.** `/faq` 2 dari 5 user klik WhatsApp,
+   `/packages` ±4 dari 15 user. Homepage hanya ±6% dari 80 user. Calon klien mencari jawaban dan
+   perbandingan sebelum menghubungi, sehingga finder formasi (P1) tepat ditaruh di `/packages`.
+5. **Journal belum menghasilkan kontak.** 0 klik WhatsApp dari 20 artikel; views per artikel
+   rata-rata <10. Artikel berfungsi untuk visibilitas, belum jadi jalur konversi.
+6. **Gallery sering discroll** (38 views, 25 scroll event, halaman ke-2 paling banyak discroll)
+   tapi tanpa CTA. Bukti visual memang dicari (sesuai temuan SERP §2.1).
+7. **Trafik "direct" dari Australia** kemungkinan besar datang dari link tanpa UTM (bio IG,
+   Bridestory, WhatsApp share, PDF one-pager), jadi sumber aslinya tidak terbaca.
+
+### 11.4 Rekomendasi berbasis data (menggeser roadmap §8)
+
+| Prio        | Aksi                                                                                                                                       | Butuh owner?           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| **P0 baru** | Tag GA hanya dimuat di hostname produksi (buang 25% sesi pages.dev/localhost)                                                              | Tidak                  |
+| **P0 baru** | Event `whatsapp_click` (param `cta_location`, `formation`) + `generate_lead` di `/thank-you`; tandai sebagai key event di GA4 Admin        | Ringan (klik di Admin) |
+| **P0 baru** | UTM di semua link keluar milik sendiri: bio IG, Bridestory, one-pager PDF, signature email, WhatsApp broadcast                             | Ya (ubah link bio)     |
+| **P0 baru** | GA4 Admin: definisikan internal traffic (IP owner), aktifkan filter; data retention 14 bulan; hubungkan GSC                                | **Ya**                 |
+| P1 (tetap)  | Finder formasi di `/packages` + ringkasan 3–4 FAQ terpenting di dekat CTA `/packages`                                                      | Aturan rekomendasi     |
+| P1 naik     | AEO/GEO: perluas FAQ (harga-tanpa-angka, logistik venue, jadwal booking dari luar negeri); cek jawaban ChatGPT/Perplexity untuk kueri Bali | Tidak                  |
+| P1 naik     | CTA kontekstual di akhir `/gallery` dan artikel journal (ke `/packages` atau WhatsApp dengan pesan per artikel)                            | Tidak                  |
+| P2 (tetap)  | Konten Instagram 3x/minggu (formula F1/F2/F4). Channel dengan engagement tertinggi                                                         | Ya                     |
+
+Tanpa P0 baru di atas, dampak P1 tidak akan terukur: finder atau CTA baru tidak bisa dibuktikan
+menaikkan kontak.

@@ -21,7 +21,12 @@ const contactHref = lang === 'en' ? '/contact/' : '/id/contact/'
 		<h2 class="mt-3 max-w-2xl text-4xl md:text-5xl">{finalCta.heading}</h2>
 		<p class="mt-4 max-w-xl text-ivory/75">{finalCta.subhead}</p>
 		<div class="mt-8 flex flex-wrap justify-center gap-4">
-			<WhatsAppCTA message={whatsappMessage} label={finalCta.ctaPrimary} variant="gold" />
+			<WhatsAppCTA
+				location="final_cta"
+				message={whatsappMessage}
+				label={finalCta.ctaPrimary}
+				variant="gold"
+			/>
 			<Button href={contactHref} variant="ghost">{finalCta.ctaSecondary}</Button>
 		</div>
 	</div>

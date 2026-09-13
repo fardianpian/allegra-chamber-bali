@@ -25,7 +25,12 @@ const whatsappMessage = t('whatsappMessage')
 			<p class="mt-4 max-w-xl text-taupe">{thankYou.subhead}</p>
 			<div class="mt-8 flex flex-wrap justify-center gap-4">
 				<Button href="/" variant="outline">{thankYou.cta}</Button>
-				<WhatsAppCTA message={whatsappMessage} label={thankYou.ctaWhatsapp} variant="gold" />
+				<WhatsAppCTA
+					location="thank_you_testimonial"
+					message={whatsappMessage}
+					label={thankYou.ctaWhatsapp}
+					variant="gold"
+				/>
 			</div>
 		</div>
 	</section>

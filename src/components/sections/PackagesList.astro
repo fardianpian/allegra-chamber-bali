@@ -62,6 +62,8 @@ const rendered = await Promise.all(
 						</dl>
 
 						<WhatsAppCTA
+							location="packages_card"
+							formation={item.data.formation}
 							message={`Hi Allegra Chamber Bali, I'd like to inquire about the ${item.data.name} package for my wedding.`}
 							label={pkg.ctaInquire}
 							variant="outline"
