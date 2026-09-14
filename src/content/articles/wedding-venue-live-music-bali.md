@@ -46,7 +46,7 @@ None of these rule live music out — they change how we set up for it. Tell us 
 
 ## Does the Venue Have Power and Space for Musicians?
 
-If your formation includes a digital piano (the standard choice for most outdoor Bali ceremonies — see our [beach](/journal/beach-wedding-music-bali/) and [garden](/journal/garden-wedding-ceremony-music-bali/) venue guides for why) or any light amplification, musicians need a power source within reach of where they'll set up. They also need enough physical space near the ceremony spot — not just wherever guest chairs end — and shade or cover if the setup will sit in direct sun for an extended soundcheck and performance. Walk the exact ceremony location with these needs in mind, not only where guests will be seated.
+If your formation includes a digital piano (the standard choice for most outdoor Bali ceremonies — see our [beach](/journal/beach-wedding-music-bali/) and [garden](/journal/garden-wedding-ceremony-music-bali/) venue guides for why) or any light amplification, musicians need a power source within reach of where they'll set up. They also need enough physical space near the ceremony spot — not just wherever guest chairs end — and shade or cover if the setup will sit in direct sun for an extended soundcheck and performance. Walk the exact ceremony location with these needs in mind, not only where guests will be seated. Booking a private villa instead of a resort or chapel? See our [villa wedding guide](/journal/villa-wedding-live-music-bali/) for what to check specifically, since villa layouts vary more from property to property than a resort's usually does.
 
 ## When Should You Confirm Music Logistics With the Venue?
 

@@ -28,7 +28,7 @@
 | 4   | done   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
 | 5   | done   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
 | 6   | done   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
-| 7   | todo   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        |               |
+| 7   | done   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
 | 8   | todo   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali |               |
 | 9   | todo   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           |               |
 | 10  | todo   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      |               |
@@ -228,6 +228,12 @@
   frontmatter as `ogImage: '/images/og-cocktail-hour-wedding-piano-music.jpg'`.
 
 ### Item 7 — villa-wedding-live-music-bali (bali-venues)
+
+<!-- cover image pending — CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_API_TOKEN not provisioned in this run's
+     sandbox (2026-09-14). Run manually: node scripts/generate-cover-image.mjs
+     villa-wedding-live-music-bali "a single grand piano on an open-air villa terrace overlooking
+     tropical greenery, natural daylight" -- then add the printed ogImage path to both the EN and
+     ID frontmatter. -->
 
 - **heading:** Live Music for a Private Villa Wedding in Bali
 - **targetKeyword:** villa wedding live music bali
