@@ -237,18 +237,21 @@ robots.txt & sitemap OK (200), redirect trailing-slash bersih (single-hop 308, b
 - Pantau apakah `allegra-article-proposer` (19:00 WIB malam ini) berjalan sukses pasca-fix —
   ini akan jadi eksekusi otomatis nyata pertama sejak setup 2026-06-29
 
-## Status as of 2026-09-14
+## Status as of 2026-09-15
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
 owner direction). GA4 conversion tracking (`whatsapp_click`, `generate_lead`) is live,
 production-only, with an internal-traffic opt-out flag. The `/journal` cloud routine publishes
-3x/week via PR + self-merge (9 articles live as of this session); cover images still need a manual
+3x/week via PR + self-merge (9 articles live as of 2026-09-14); cover images still need a manual
 local backfill every time because the routine's Cloudflare secret is unreachable from claude.ai's
-routine environment UI — see the 2026-09-14 session note above. GSC indexing was 25/34 journal
-URLs as of 2026-09-08 (owner's last manual Request-Indexing pass; not re-checked this session), 9
-remaining + one unexplained live page (`journal/tech-rider-live-wedding-music/`) not present
-anywhere in git — still uninvestigated. Full history → `docs/PROGRESS-ARCHIVE.md`.
+routine environment UI — see the 2026-09-14 session note above. **GSC indexing (2026-09-15):** all
+7 journal URLs identified as not-indexed (2 stale-noindex-report, 1 crawl-backlog, 2 too-new from
+`villa-wedding-live-music-bali`, plus `tech-rider-live-wedding-music`) have had Request Indexing
+submitted via Claude in Chrome — nothing left to request, only Google's own crawl queue to wait on
+now. The earlier "unexplained live page not in git" note about `tech-rider-live-wedding-music` was
+a false alarm — it's a normal article merged via PR #6 (2026-09-07), the claim it was missing from
+git was simply checked against a stale local checkout. Full history → `docs/PROGRESS-ARCHIVE.md`.
 
 **2026-06-28 (session 2) — Copy audit + ID translation sync.** Seven Sweeps copy-editing audit
 applied to all EN copy updated earlier in the day; 6 additional fixes:
@@ -418,48 +421,36 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **GSC indexing — partly done today.** Re-checked all 9 from the 2026-09-08 snapshot: 5 had
-   resolved on their own via normal crawl, but 2 more (`villa-wedding-live-music-bali` EN+ID) were
-   freshly not-indexed since that article published today. **Request Indexing is now doable from a
-   session** (no MCP tool exists, but the owner's Google session is live in the Claude in Chrome
-   browser — drove search.google.com/search-console's URL Inspection tool directly), and 4 of 7
-   remaining URLs got it submitted this session before GSC's daily quota (~10-12/property/day)
-   kicked in. **3 left for tomorrow:**
-   `journal/villa-wedding-live-music-bali/`, `id/journal/villa-wedding-live-music-bali/`, and
-   `journal/tech-rider-live-wedding-music/` (the last one only after confirming its origin — it's
-   live in production and in the sitemap but does not exist anywhere in this repo's git history;
-   check Cloudflare Pages' deployment history for which build actually shipped it before
-   requesting more indexing for it).
-2. **Journal routine Cloudflare secret still unsolved** (open since 2026-09-04): no safe way found
+1. **Journal routine Cloudflare secret still unsolved** (open since 2026-09-04): no safe way found
    yet to expose `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` to the claude.ai cloud routine, so
    every routine-published article ships without a cover image and needs a manual local
-   `scripts/generate-cover-image.mjs` backfill (done again today for `villa-wedding-live-music-bali`).
-   Don't re-attempt the routine-environment UI as a fix — ask Anthropic support about a real
-   secret-storage mechanism instead.
-3. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
+   `scripts/generate-cover-image.mjs` backfill (done again 2026-09-14 for
+   `villa-wedding-live-music-bali`). Don't re-attempt the routine-environment UI as a fix — ask
+   Anthropic support about a real secret-storage mechanism instead.
+2. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
    before pitching any outlet (Tier C: Jakarta Post, NOW! Bali are pitchable now, no styled shoot
    needed).
-4. **Resume the B2B/organic sprint** in `docs/MARKETING-SPRINT-2026-06.md` — assets exist, none of
+3. **Resume the B2B/organic sprint** in `docs/MARKETING-SPRINT-2026-06.md` — assets exist, none of
    these owner actions are confirmed done yet: directory submissions
    (`docs/DIRECTORY-SUBMISSIONS-PLAN.md`, start with Bridestory/LinkedIn/Crunchbase), B2B outreach
    Wave 2 (`docs/B2B-OUTREACH-PLAN.md`, 6 drafts ready), community engagement
    (`docs/COMMUNITY-MARKETING-PLAN.md`, 5 planner FB groups, observe-only first week).
-5. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+4. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
    embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed format
    with the owner first (raw file vs. YouTube/Instagram/Vimeo share link).
-6. **Content depth**: real testimonials still pending — `/share-your-story` (live since 2026-06-22)
+5. **Content depth**: real testimonials still pending — `/share-your-story` (live since 2026-06-22)
    collects consent per-submission, so this just needs the owner to send the link to past clients.
    `Testimonials.astro` stays commented out of Home until 3+ real, consented quotes land in
    `src/content/testimonials/` (no placeholder/TODO copy on the live site, per `CLAUDE.md` rule 9).
    Also still needed: real event photography for non-piano venue types (beach/chapel/ballroom —
    only cliffside/garden have real photos so far). All owner-supplied, don't invent.
-7. **Legal review before launch**: the Privacy Policy (`/privacy`) is a good-faith draft, not
+6. **Legal review before launch**: the Privacy Policy (`/privacy`) is a good-faith draft, not
    reviewed by a lawyer yet. Its "Third-Party Services" section also needs updating now that GA4
    is actually live in production (shipped 2026-09-14, see Session note above).
-8. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
+7. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
    100/100/100/100 as of the last check, but real images (replacing the CSS-gradient `Placeholder`
    component) plus the new GA4 script are the two things most likely to move Performance/CLS.
-9. Housekeeping, no urgency:
+8. Housekeeping, no urgency:
    - Delete the orphaned manual-deploy leftovers on the old Hostinger document root
      (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any stray files
      from the one-time zip upload; DNS no longer points there so nothing serves them, but they're
