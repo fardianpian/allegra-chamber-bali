@@ -1,0 +1,56 @@
+---
+import { waLink } from '../../lib/site'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const message = t('whatsappMessage')
+const label = t('floatingWhatsappLabel')
+---
+
+<a
+	href={waLink(message)}
+	target="_blank"
+	rel="noopener noreferrer"
+	data-cta-location="floating_mobile"
+	data-floating-whatsapp
+	style="bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.5rem)); right: 1rem;"
+	class="fixed z-40 flex items-center gap-2 rounded-full bg-gold px-4 py-3 text-sm text-ink shadow-lg motion-safe:transition-opacity motion-safe:duration-300 hover:bg-ivory md:hidden"
+>
+	<svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+		<path
+			d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.2-1.1-3.1-2.5-.2-.3 0-.5.2-.7.2-.2.5-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.3.1 1.6 1.2 3.1 1.4 3.3.2.2 1.9 2.9 4.6 3.9 2.3.9 2.3.6 2.7.6.4 0 1.3-.5 1.5-1 .2-.5.2-1 .1-1.1-.1-.1-.3-.2-.5-.3Z"
+		></path>
+	</svg>
+	{label}
+</a>
+
+<script>
+	// Hides the floating button while any other wa.me CTA on the page (e.g. the journal
+	// article end CTA or a /packages formation card) is in view, so mobile visitors never
+	// see two WhatsApp CTAs stacked on screen at once.
+	const fab = document.querySelector<HTMLAnchorElement>('[data-floating-whatsapp]')
+	if (fab && window.matchMedia('(max-width: 767px)').matches) {
+		const otherWaLinks = Array.from(document.querySelectorAll('a[href*="wa.me/"]')).filter((el) => el !== fab)
+		if (otherWaLinks.length) {
+			const visible = new Set<Element>()
+			const observer = new IntersectionObserver(
+				(entries) => {
+					for (const entry of entries) {
+						if (entry.isIntersecting) visible.add(entry.target)
+						else visible.delete(entry.target)
+					}
+					const shouldHide = visible.size > 0
+					fab.classList.toggle('opacity-0', shouldHide)
+					fab.classList.toggle('pointer-events-none', shouldHide)
+				},
+				{ threshold: 0.3 },
+			)
+			otherWaLinks.forEach((el) => observer.observe(el))
+		}
+	}
+</script>

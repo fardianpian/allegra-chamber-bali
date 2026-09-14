@@ -8,6 +8,7 @@ import '@fontsource/inter/600.css'
 import '../styles/global.css'
 import Header from '../components/layout/Header.astro'
 import Footer from '../components/layout/Footer.astro'
+import FloatingWhatsApp from '../components/layout/FloatingWhatsApp.astro'
 import { site, withTrailingSlash } from '../lib/site'
 import type { Lang } from '../i18n/languages'
 
@@ -115,6 +116,7 @@ const ogImageUrl = ogImage
 			<slot />
 		</main>
 		<Footer lang={lang} />
+		<FloatingWhatsApp lang={lang} />
 		<script>
 			const els = document.querySelectorAll('.reveal')
 			const io = new IntersectionObserver(

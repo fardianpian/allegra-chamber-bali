@@ -238,6 +238,7 @@ export const ui = {
 			privacyLink: 'Privacy Policy',
 		},
 		whatsappMessage: "Hi Allegra Chamber Bali, I'd like to check availability for my wedding date.",
+		floatingWhatsappLabel: 'Ask on WhatsApp',
 		contactPage: {
 			eyebrow: 'Get In Touch',
 			heading: 'Tell Us About Your Day',
@@ -894,6 +895,7 @@ export const ui = {
 			privacyLink: 'Kebijakan Privasi',
 		},
 		whatsappMessage: 'Hai Allegra Chamber Bali, saya ingin cek ketersediaan untuk tanggal pernikahan saya.',
+		floatingWhatsappLabel: 'Tanya via WhatsApp',
 		contactPage: {
 			eyebrow: 'Hubungi Kami',
 			heading: 'Ceritakan Hari Anda',
