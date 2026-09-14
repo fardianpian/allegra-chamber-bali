@@ -418,12 +418,18 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **GSC indexing (owner action, do first — easy win):** 9 journal URLs still not indexed as of
-   2026-09-08 (2 stale-noindex-report, 1 too-new, 6 normal crawl backlog) — manual Request
-   Indexing needed for each, GSC API has no endpoint for this. Also investigate/clear
-   `journal/tech-rider-live-wedding-music/`, which is live in production and in the sitemap but
-   does not exist anywhere in this repo's git history — check Cloudflare Pages' deployment history
-   for which build actually shipped it.
+1. **GSC indexing — partly done today.** Re-checked all 9 from the 2026-09-08 snapshot: 5 had
+   resolved on their own via normal crawl, but 2 more (`villa-wedding-live-music-bali` EN+ID) were
+   freshly not-indexed since that article published today. **Request Indexing is now doable from a
+   session** (no MCP tool exists, but the owner's Google session is live in the Claude in Chrome
+   browser — drove search.google.com/search-console's URL Inspection tool directly), and 4 of 7
+   remaining URLs got it submitted this session before GSC's daily quota (~10-12/property/day)
+   kicked in. **3 left for tomorrow:**
+   `journal/villa-wedding-live-music-bali/`, `id/journal/villa-wedding-live-music-bali/`, and
+   `journal/tech-rider-live-wedding-music/` (the last one only after confirming its origin — it's
+   live in production and in the sitemap but does not exist anywhere in this repo's git history;
+   check Cloudflare Pages' deployment history for which build actually shipped it before
+   requesting more indexing for it).
 2. **Journal routine Cloudflare secret still unsolved** (open since 2026-09-04): no safe way found
    yet to expose `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` to the claude.ai cloud routine, so
    every routine-published article ships without a cover image and needs a manual local
