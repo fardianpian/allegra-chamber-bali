@@ -1,6 +1,9 @@
 # Customer Research — Allegra Chamber Bali
 
 > Generated: 2026-06-28 (updated with real digital research).
+> **Update 2026-09-14:** full comment-level VOC research (incl. first Bali-specific Facebook/Reddit
+> data, song-demand vs repertoire gaps, 2 new hypothesis personas) lives in
+> `docs/COMMENT-RESEARCH-2026-09.md` — read it alongside this file.
 > Skill: `customer-research` (Mode 2: Digital watering hole).
 >
 > **Sources:** Reddit r/weddingplanning, r/BigBudgetBrides (thread snippets); WeddingWire string
