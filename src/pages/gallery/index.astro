@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PageHeader from '../../components/sections/PageHeader.astro'
 import GalleryGrid from '../../components/sections/GalleryGrid.astro'
+import FinalCTA from '../../components/sections/FinalCTA.astro'
 import { useTranslations } from '../../i18n/utils'
 import { getBreadcrumbJsonLd } from '../../lib/jsonld'
 
@@ -20,4 +21,5 @@ const nav = t('nav')
 >
 	<PageHeader eyebrow={gallery.eyebrow} heading={gallery.heading} subhead={gallery.subhead} />
 	<GalleryGrid lang={lang} />
+	<FinalCTA lang={lang} />
 </BaseLayout>

@@ -15,7 +15,7 @@ faq:
   - question: 'How far in advance should we request a custom arrangement?'
     answer: 'The earlier the better. Confirming your song choices when you book — or as soon as they are settled — gives the most time for arrangement and any revisions. If your date is already close, reach out and we can discuss what is realistic for your timeline.'
   - question: 'Does a custom arrangement cost more?'
-    answer: 'We do not publish a separate rate for custom arrangements. Message us on WhatsApp with your date, venue, and the song you have in mind, and we will follow up with a personalised quote.'
+    answer: 'No. Custom arrangements of your songs are included in every booking, not charged separately. Message us on WhatsApp with your date, venue, and the song you have in mind, and we reply within 24 hours.'
 ---
 
 Most couples know which song they want for their processional long before they understand how it gets from a playlist to a live chamber ensemble. The answer is a custom arrangement — and the process is more straightforward than it might seem once you know what to send and when to ask.

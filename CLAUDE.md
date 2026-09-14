@@ -65,6 +65,18 @@ Languages: **English (primary) + Indonesian (secondary)**.
 - Pricing is intentionally **not displayed** anywhere on the live site (owner direction,
   2026-06-18) until real figures exist — no price field, column, or "TODO" placeholder text.
   `packages/*.md` has no `priceFrom`; don't reintroduce one without the owner's real numbers.
+- Service facts confirmed by owner (2026-09-14) — safe to state in copy/FAQ:
+  - **Custom arrangements of the couple's songs are included** in every booking, never a
+    separate charge.
+  - **24-hour reply** applies to every inquiry (couples and planners), not only planners.
+  - **Allegra does not bring a PA/sound system**; amplification, when needed, comes from the
+    venue's or planner's sound provider (share the tech rider in advance).
+  - **Rain plan:** musicians and instruments move to a covered, sheltered spot agreed in advance
+    with the planner/venue; safety of musicians and equipment comes first.
+  - **Formation names stay** (Solo/Duo/Trio/String Quartet/Large Ensemble); the default
+    musician count (1/3/4/5/10) is shown as a badge, sourced from `packages/*.md` `musicians`.
+  - The `/packages` formation finder (`FormationFinder.astro`) uses qualitative size rules
+    derived from `idealFor` — no numeric guest-count thresholds exist yet; don't invent any.
 - Implementation: fully by Claude Code; the owner supplies assets & accounts.
 
 ## Aesthetic

@@ -13,7 +13,7 @@ faq:
   - question: 'Is live music or a DJ better for a Bali wedding ceremony?'
     answer: 'Neither is universally better. A live ensemble suits an intimate, acoustic feel for the ceremony and cocktail hour, while a DJ covers a longer, continuous dance-floor set. Many Bali weddings book both for different parts of the day.'
   - question: 'What affects the cost of live wedding music in Bali, beyond the formation?'
-    answer: 'Number of sets booked, hours of coverage, travel distance to your venue, and any custom arrangements all factor in. Pricing depends on these details, so message us on WhatsApp with your date and formation of interest for a personalized quote.'
+    answer: 'Number of sets booked, hours of coverage, and travel distance to your venue all factor in; custom arrangements of your songs are included, not charged separately. Pricing depends on these details, so message us on WhatsApp with your date and formation of interest for a personalized quote.'
   - question: 'Can the same musicians cover both our ceremony and reception?'
     answer: "Yes. Most formations can move from ceremony into cocktail hour and reception sets, or you can book our Large Ensemble for full-day coverage. Tell us your timeline when you inquire and we'll build a program around it."
 ---

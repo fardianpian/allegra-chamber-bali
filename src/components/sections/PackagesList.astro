@@ -31,6 +31,9 @@ const rendered = await Promise.all(
 					<div>
 						<p class="eyebrow">{String(i + 1).padStart(2, '0')}</p>
 						<h2 class="mt-2 text-3xl md:text-4xl">{item.data.name}</h2>
+						<p class="mt-3 inline-block border border-ink/20 px-3 py-1 text-xs uppercase tracking-[0.1em] text-ink/80">
+							{item.data.musicians} {item.data.musicians === 1 ? pkg.musicianSingular : pkg.musicianPlural}
+						</p>
 						<p class="mt-3 text-taupe">{item.data.summary}</p>
 					</div>
 

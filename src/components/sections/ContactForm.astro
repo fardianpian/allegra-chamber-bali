@@ -81,6 +81,42 @@ const formationOptions = [
 				</label>
 			</div>
 
+			<fieldset>
+				<legend class={labelClass}>{contact.formMoments}</legend>
+				<div class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink">
+					{
+						(['ceremony', 'cocktail', 'reception'] as const).map((m) => (
+							<label class="flex items-center gap-2">
+								<input type="checkbox" name={`moment_${m}`} value="yes" class="accent-ink" />
+								{contact.formMomentOptions[m]}
+							</label>
+						))
+					}
+				</div>
+			</fieldset>
+
+			<div class="grid gap-6 sm:grid-cols-2">
+				<label class={labelClass}>
+					{contact.formGuests}
+					<input type="number" name="guest_count" min="1" inputmode="numeric" class={fieldClass} />
+				</label>
+				<label class={labelClass}>
+					{contact.formSong}
+					<input type="text" name="song_request" class={fieldClass} />
+				</label>
+			</div>
+
+			<label class={labelClass}>
+				{contact.formSource}
+				<select name="found_us" class={fieldClass}>
+					{
+						(['blank', 'google', 'ai', 'instagram', 'planner', 'friend', 'other'] as const).map((s) => (
+							<option value={s === 'blank' ? '' : s}>{contact.formSourceOptions[s]}</option>
+						))
+					}
+				</select>
+			</label>
+
 			<label class={labelClass}>
 				{contact.formMessage}
 				<textarea name="message" rows="4" class={fieldClass}></textarea>

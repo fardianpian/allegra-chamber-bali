@@ -1,0 +1,39 @@
+---
+import { useTranslations, getLocalizedPath } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const selector = t('pathSelector')
+
+// Keyed by the literal `path` id on each item (not array order) — CLAUDE.md rule #14.
+const hrefs = {
+	couple: `${getLocalizedPath('/packages', lang)}#finder`,
+	planner: getLocalizedPath('/for-planners', lang),
+} as const
+---
+
+<section class="bg-ivory pt-12 md:pt-16">
+	<div class="container-max">
+		<h2 class="reveal text-center font-display text-2xl text-ink/80 md:text-3xl">{selector.heading}</h2>
+		<div class="mt-8 grid gap-4 md:grid-cols-2">
+			{
+				selector.items.map((item) => (
+					<a
+						href={hrefs[item.path]}
+						class="reveal group flex flex-col border border-ink/15 p-6 transition-colors hover:border-gold md:p-8"
+					>
+						<h3 class="font-display text-2xl">{item.title}</h3>
+						<p class="mt-2 text-taupe">{item.blurb}</p>
+						<span class="mt-5 text-sm uppercase tracking-[0.1em] text-ink group-hover:text-gold">
+							{item.cta}&nbsp;→
+						</span>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</section>

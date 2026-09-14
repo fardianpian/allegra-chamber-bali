@@ -15,7 +15,7 @@ faq:
   - question: 'Seberapa jauh sebelumnya kami harus meminta aransemen kustom?'
     answer: 'Semakin awal semakin baik. Konfirmasikan pilihan lagu saat memesan — atau begitu sudah ditentukan — agar ada waktu cukup untuk proses aransemen dan revisi jika diperlukan. Jika tanggal Anda sudah dekat, tetap hubungi kami dan kami akan membahas apa yang realistis untuk jadwal Anda.'
   - question: 'Apakah aransemen kustom dikenakan biaya tambahan?'
-    answer: 'Kami tidak mempublikasikan tarif terpisah untuk aransemen kustom. Kirim pesan ke WhatsApp kami dengan tanggal, venue, dan lagu yang Anda inginkan, dan kami akan mengirimkan penawaran yang dipersonalisasi.'
+    answer: 'Tidak. Aransemen kustom untuk lagu Anda sudah termasuk di setiap booking, tidak dikenakan biaya terpisah. Kirim pesan ke WhatsApp kami dengan tanggal, venue, dan lagu yang Anda inginkan, dan kami membalas dalam 24 jam.'
 ---
 
 Banyak pasangan sudah tahu lagu yang mereka inginkan untuk prosesi jauh sebelum memahami bagaimana lagu itu bisa tampil secara live oleh ansambel kamar. Jawabannya adalah aransemen kustom — dan prosesnya lebih mudah dari yang terlihat, begitu Anda tahu apa yang perlu dikirimkan dan kapan harus memintanya.

@@ -1,0 +1,216 @@
+---
+import { getCollection } from 'astro:content'
+import SectionHeading from '../ui/SectionHeading.astro'
+import { useTranslations, getLocalizedPath } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { site } from '../../lib/site'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const pkg = t('packagesPage')
+const finder = pkg.finder
+
+// Keyed by formation id so the client script never depends on collection order.
+const formations = Object.fromEntries(
+	(await getCollection('packages')).map((p) => [
+		p.data.formation,
+		{ name: p.data.name, musicians: p.data.musicians, summary: p.data.summary },
+	]),
+)
+
+const clientData = {
+	formations,
+	labels: {
+		moments: finder.moments,
+		sizes: finder.sizes,
+		musicianSingular: pkg.musicianSingular,
+		musicianPlural: pkg.musicianPlural,
+		waIntro: finder.waIntro,
+		waMoments: finder.waMoments,
+		waSize: finder.waSize,
+		waFormation: finder.waFormation,
+		waSong: finder.waSong,
+	},
+	whatsappNumber: site.whatsappNumber,
+	packagesPath: getLocalizedPath('/packages', lang),
+}
+
+const optionClass =
+	'flex cursor-pointer items-center gap-3 border border-ink/15 px-4 py-3 text-sm transition-colors hover:border-gold has-[:checked]:border-ink has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-gold'
+const legendClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
+---
+
+<section id="finder" class="section scroll-mt-24 bg-ivory pt-0">
+	<div class="container-max">
+		<div class="reveal border border-ink/10 bg-white/40 p-6 md:p-10">
+			<SectionHeading eyebrow={finder.eyebrow} heading={finder.heading} subhead={finder.subhead} />
+
+			<form
+				class="formation-finder mt-8 grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-12"
+				data-finder={JSON.stringify(clientData)}
+			>
+				<div class="grid gap-8">
+					<fieldset class="grid gap-3">
+						<legend class={legendClass}>{finder.momentsLegend}</legend>
+						{
+							(['ceremony', 'cocktail', 'reception'] as const).map((m) => (
+								<label class={optionClass}>
+									<input
+										type="checkbox"
+										name="moment"
+										value={m}
+										checked={m === 'ceremony'}
+										class="accent-ink"
+									/>
+									{finder.moments[m]}
+								</label>
+							))
+						}
+					</fieldset>
+
+					<fieldset class="grid gap-3">
+						<legend class={legendClass}>{finder.sizeLegend}</legend>
+						{
+							(['intimate', 'medium', 'large'] as const).map((s) => (
+								<label class={optionClass}>
+									<input type="radio" name="size" value={s} checked={s === 'medium'} class="accent-ink" />
+									{finder.sizes[s]}
+								</label>
+							))
+						}
+					</fieldset>
+
+					<label class={legendClass}>
+						{finder.songLabel}
+						<input
+							type="text"
+							name="song"
+							maxlength="120"
+							class="mt-1 w-full border-b border-ink/25 bg-transparent px-0 py-2.5 text-base normal-case tracking-normal text-ink focus:border-gold focus:outline-none"
+						/>
+					</label>
+				</div>
+
+				<div
+					class="flex flex-col border-t border-ink/10 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0"
+					aria-live="polite"
+				>
+					<p class="eyebrow">{finder.resultEyebrow}</p>
+					<p class="mt-2 flex flex-wrap items-baseline gap-x-3">
+						<span data-result="name" class="font-display text-4xl"></span>
+						<span data-result="musicians" class="text-sm text-taupe"></span>
+					</p>
+					<p data-result="summary" class="mt-3 text-ink/80"></p>
+					<p class="mt-4 text-sm">
+						<span class="text-taupe">{finder.alternativeLabel}: </span>
+						<a
+							data-result="alternative"
+							href="#"
+							class="underline decoration-gold underline-offset-2 hover:text-gold"></a>
+					</p>
+					<div class="mt-8 flex flex-wrap items-center gap-5">
+						<a
+							data-result="whatsapp"
+							href="#"
+							target="_blank"
+							rel="noopener noreferrer"
+							data-cta-location="formation_finder"
+							class="inline-flex items-center justify-center gap-2 bg-ink px-7 py-3.5 text-sm uppercase tracking-[0.08em] text-ivory transition-colors duration-300 hover:bg-gold hover:text-ink"
+						>
+							{finder.ctaWhatsapp}
+						</a>
+						<a
+							data-result="details"
+							href="#"
+							class="text-sm uppercase tracking-[0.1em] text-ink hover:text-gold">{finder.viewDetails} →</a
+						>
+					</div>
+					<p class="mt-6 text-xs text-taupe">{finder.note}</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	type Size = 'intimate' | 'medium' | 'large'
+	type FormationId = 'solo' | 'duo' | 'trio' | 'quartet' | 'large-ensemble'
+
+	// Starting-point rules derived from each packages/*.md `idealFor` list (owner to review):
+	// ceremony-only scales Solo → Duo → Quartet; cocktail hour adds one step; a reception needs
+	// the formation built for longer sets (Trio for smaller receptions, Quartet, Large Ensemble).
+	function recommend(size: Size, moments: string[]): [FormationId, FormationId] {
+		const reception = moments.includes('reception')
+		const cocktail = moments.includes('cocktail')
+		if (size === 'intimate') {
+			if (reception) return ['trio', 'duo']
+			if (cocktail) return ['duo', 'solo']
+			return ['solo', 'duo']
+		}
+		if (size === 'medium') {
+			if (reception) return ['quartet', 'trio']
+			if (cocktail) return ['trio', 'duo']
+			return ['duo', 'trio']
+		}
+		if (reception) return ['large-ensemble', 'quartet']
+		if (cocktail) return ['quartet', 'trio']
+		return ['quartet', 'large-ensemble']
+	}
+
+	for (const form of document.querySelectorAll<HTMLFormElement>('form.formation-finder')) {
+		const data = JSON.parse(form.dataset.finder || '{}')
+		const out = (key: string) => form.querySelector<HTMLElement>(`[data-result="${key}"]`)!
+
+		const update = (track: boolean) => {
+			const fd = new FormData(form)
+			let moments = fd.getAll('moment').map(String)
+			if (moments.length === 0) moments = ['ceremony']
+			const size = (fd.get('size') || 'medium') as Size
+			const song = String(fd.get('song') || '').trim()
+			const [pick, alt] = recommend(size, moments)
+			const f = data.formations[pick]
+			const a = data.formations[alt]
+			const count = (n: number) =>
+				`${n} ${n === 1 ? data.labels.musicianSingular : data.labels.musicianPlural}`
+
+			out('name').textContent = f.name
+			out('musicians').textContent = count(f.musicians)
+			out('summary').textContent = f.summary
+			const altLink = out('alternative') as HTMLAnchorElement
+			altLink.textContent = `${a.name} (${count(a.musicians)})`
+			altLink.href = `${data.packagesPath}#${alt}`
+			;(out('details') as HTMLAnchorElement).href = `${data.packagesPath}#${pick}`
+
+			const lines = [
+				data.labels.waIntro,
+				`${data.labels.waMoments}: ${moments.map((m) => data.labels.moments[m]).join(', ')}`,
+				`${data.labels.waSize}: ${data.labels.sizes[size]}`,
+				`${data.labels.waFormation}: ${f.name}`,
+			]
+			if (song) lines.push(`${data.labels.waSong}: ${song}`)
+			const wa = out('whatsapp') as HTMLAnchorElement
+			wa.href = `https://wa.me/${data.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`
+			wa.dataset.formation = pick
+
+			// `gtag` is the global stub defined inline in BaseLayout (see CLAUDE.md rule #21).
+			const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag
+			if (track && gtag) {
+				gtag('event', 'formation_finder_result', {
+					formation: pick,
+					celebration_size: size,
+					moments: moments.join(','),
+				})
+			}
+		}
+
+		update(false)
+		form.addEventListener('change', () => update(true))
+		form.addEventListener('input', (e) => {
+			if ((e.target as HTMLInputElement).name === 'song') update(false)
+		})
+		form.addEventListener('submit', (e) => e.preventDefault())
+	}
+</script>

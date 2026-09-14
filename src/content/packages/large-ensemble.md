@@ -2,6 +2,7 @@
 name: Large Ensemble
 formation: large-ensemble
 summary: 'Our grandest formation — 4 violins, 2 violas, 2 cellos, double bass, and piano (10 musicians by default) for a layered, statement sound. Piano is included in this default lineup, and the ensemble can be scaled further or customised on request.'
+musicians: 10
 idealFor:
   - Grand ceremony entrances
   - Large receptions & gala dinners

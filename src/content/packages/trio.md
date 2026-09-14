@@ -2,6 +2,7 @@
 name: Trio
 formation: trio
 summary: Violin, viola, cello, and piano — full chamber colour for ceremony through cocktail hour, with piano included as standard.
+musicians: 4
 idealFor:
   - Ceremony
   - Cocktail hour

@@ -2,6 +2,7 @@
 name: String Quartet
 formation: quartet
 summary: The complete chamber experience — two violins, viola, cello, and piano — for ceremony through reception, with piano included as standard.
+musicians: 5
 idealFor:
   - Ceremony processional & recessional
   - Cocktail hour

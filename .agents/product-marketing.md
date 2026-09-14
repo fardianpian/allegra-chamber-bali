@@ -93,9 +93,12 @@ exists anywhere in this repo's docs. Do not invent Bali wedding-vendor competito
 - Piano as a flagship instrument across every formation, not an add-on (Signature Sound rule —
   piano holds the harmony and rhythm, violin and cello carry the melody)
 - Conservatory-trained musicians
-- Custom arrangements of the couple's own song (Unforgettable)
-- 5 fixed formations from Solo to Large Ensemble (Large Ensemble = string quartet + piano +
-  double bass, 6 musicians) — a clear, curated range without ad-hoc customization risk
+- Custom arrangements of the couple's own song (Unforgettable) — **included in every booking**,
+  never charged separately (owner, 2026-09-14)
+- 5 fixed formations from Solo to Large Ensemble (Solo 1, Duo 3, Trio 4, String Quartet 5,
+  Large Ensemble 10 musicians by default; piano included from Duo up) — a clear, curated range
+- 24-hour reply to every inquiry; no own PA/sound system (venue/planner sound provider); rain
+  plan = covered, sheltered spot agreed in advance (owner, 2026-09-14)
 
 **How we do it differently:** Arranged around the couple's story rather than a generic
 repertoire-only booking; bilingual (EN/ID) service for both international and local couples.
@@ -139,11 +142,11 @@ world-class/best-in-Bali, DJ-vs-live hype, AI-cliché openers ("in today's fast-
 
 **Glossary:**
 
-| Term           | Meaning                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------ |
-| Formation      | One of the 5 fixed lineups: Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble       |
-| Piano +        | Piano-upgrade upsell sellable on Duo/Trio/Quartet                                                      |
-| Large Ensemble | String quartet + piano + double bass (6 musicians) — piano stays in the default/first-presented lineup |
+| Term           | Meaning                                                                                                 |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| Formation      | One of the 5 fixed lineups: Solo (Violin/Cello/Piano), Duo, Trio, String Quartet, Large Ensemble        |
+| Piano +        | Retired 2026-07-09 — piano is now included as standard in Duo/Trio/Quartet, not an upsell               |
+| Large Ensemble | 4 violins, 2 violas, 2 cellos, double bass, piano (10 musicians by default) — piano stays in the lineup |
 
 ## Brand Voice
 

@@ -2,6 +2,7 @@
 name: Solo
 formation: solo
 summary: A single violin, cello, or wedding pianist — the most intimate option for a vow exchange or small ceremony.
+musicians: 1
 idealFor:
   - Intimate ceremonies
   - Vow exchanges

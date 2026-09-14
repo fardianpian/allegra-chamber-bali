@@ -23,6 +23,9 @@ const packages = defineCollection({
 			formation: z.enum(['solo', 'duo', 'trio', 'quartet', 'large-ensemble']),
 			summary: z.string(),
 			idealFor: z.array(z.string()),
+			// Default musician count, shown as a badge on /packages and home formation cards (owner
+			// decision 2026-09-14: keep formation names, add the count instead of renaming).
+			musicians: z.number().int().positive(),
 			setLength: z.string().optional(), // e.g. "2 x 45 min"
 			image: image().optional(), // real event photo, once available
 			imageAlt: z.string().optional(),

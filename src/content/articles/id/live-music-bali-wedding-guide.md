@@ -13,7 +13,7 @@ faq:
   - question: 'Musik live atau DJ, mana yang lebih baik untuk upacara pernikahan di Bali?'
     answer: 'Tidak ada yang secara mutlak lebih baik. Ansambel live cocok untuk suasana akustik dan intim selama upacara dan cocktail hour, sementara DJ menghadirkan sesi dansa yang lebih panjang dan berkelanjutan. Banyak pernikahan di Bali memesan keduanya untuk bagian hari yang berbeda.'
   - question: 'Selain formasi, apa yang memengaruhi biaya musik pernikahan live di Bali?'
-    answer: 'Jumlah sesi yang dipesan, durasi jam, jarak tempuh musisi ke venue Anda, dan aransemen khusus semuanya berpengaruh. Biaya bergantung pada detail-detail ini, jadi kirim pesan ke WhatsApp kami dengan tanggal dan formasi yang Anda minati untuk penawaran yang dipersonalisasi.'
+    answer: 'Jumlah sesi yang dipesan, durasi jam, dan jarak tempuh musisi ke venue Anda semuanya berpengaruh; aransemen khusus untuk lagu Anda sudah termasuk, tidak dikenakan biaya terpisah. Biaya bergantung pada detail-detail ini, jadi kirim pesan ke WhatsApp kami dengan tanggal dan formasi yang Anda minati untuk penawaran yang dipersonalisasi.'
   - question: 'Bisakah musisi yang sama membawakan upacara dan resepsi kami?'
     answer: 'Bisa. Sebagian besar formasi dapat melanjutkan dari upacara ke sesi cocktail hour dan resepsi, atau Anda bisa memesan Large Ensemble kami untuk cakupan sepanjang hari. Beri tahu kami linimasa Anda saat menghubungi, dan kami akan menyusun program di sekitarnya.'
 ---

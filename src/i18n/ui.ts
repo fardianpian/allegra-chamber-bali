@@ -99,8 +99,52 @@ export const ui = {
 			setLengthLabel: 'Set length',
 			setLengthTbd: 'Confirmed after inquiry',
 			ctaInquire: 'Inquire about this formation',
+			musicianSingular: 'musician',
+			musicianPlural: 'musicians',
 			pricingNote:
-				'Pricing varies by formation, travel area, and date — message us on WhatsApp or send an inquiry for a personalised quote.',
+				'Pricing varies by formation, travel area, and date, and custom arrangements of your songs are always included. Message us on WhatsApp or send an inquiry and we reply within 24 hours.',
+			finder: {
+				eyebrow: 'Find Your Formation',
+				heading: 'Which formation suits your day?',
+				subhead:
+					'Two quick questions for a starting point. We confirm the right formation for your venue when you message us.',
+				momentsLegend: 'Which moments would you like live music for?',
+				moments: { ceremony: 'Ceremony', cocktail: 'Cocktail hour', reception: 'Reception' },
+				sizeLegend: 'How would you describe your celebration?',
+				sizes: {
+					intimate: 'Intimate — close family and friends',
+					medium: 'A full guest list',
+					large: 'A grand celebration',
+				},
+				songLabel: 'A song you would love to hear (optional)',
+				resultEyebrow: 'Our suggestion',
+				alternativeLabel: 'Also worth considering',
+				viewDetails: 'See formation details',
+				ctaWhatsapp: 'Check your date with this formation',
+				note: 'A starting point, not a rule. Ceremony music matters most; cocktail hour often suits a lighter formation.',
+				waIntro: "Hi Allegra Chamber Bali, I'd like to check availability for my wedding.",
+				waMoments: 'Moments',
+				waSize: 'Celebration',
+				waFormation: 'Formation we are considering',
+				waSong: 'A song we would love',
+			},
+		},
+		pathSelector: {
+			heading: 'Where would you like to start?',
+			items: [
+				{
+					path: 'couple',
+					title: 'Planning your wedding',
+					blurb: 'Find the formation that fits your ceremony and guest list in two questions.',
+					cta: 'Find your formation',
+				},
+				{
+					path: 'planner',
+					title: 'A planner or venue',
+					blurb: 'Tech rider, stage plot, repertoire sheet, and how we work alongside your team.',
+					cta: 'For planners & venues',
+				},
+			],
 		},
 		moments: {
 			eyebrow: 'Moments We Score',
@@ -146,12 +190,12 @@ export const ui = {
 				{
 					step: '02',
 					title: 'Confirm & quote',
-					blurb: 'We check availability and send a formation and pricing quote.',
+					blurb: 'We reply within 24 hours to confirm availability, then send a formation and pricing quote.',
 				},
 				{
 					step: '03',
 					title: 'Curate repertoire',
-					blurb: 'Choose from our list or request a custom arrangement.',
+					blurb: 'Choose from our list or send your own songs — custom arrangements are included.',
 				},
 				{
 					step: '04',
@@ -181,7 +225,7 @@ export const ui = {
 		finalCta: {
 			eyebrow: 'Get In Touch',
 			heading: 'Tell Us About Your Day',
-			subhead: 'Popular dates book out 6–12 months ahead — check your date today.',
+			subhead: 'We reply within 24 hours. Popular dates book out 6–12 months ahead.',
 			ctaPrimary: 'Check Your Date on WhatsApp',
 			ctaSecondary: 'Send an inquiry',
 		},
@@ -213,19 +257,32 @@ export const ui = {
 				largeEnsemble: 'Large Ensemble',
 				unsure: 'Not sure yet',
 			},
+			formMoments: 'Moments you would like music for',
+			formMomentOptions: { ceremony: 'Ceremony', cocktail: 'Cocktail hour', reception: 'Reception' },
+			formGuests: 'Approximate guest count',
+			formSong: 'A song you would love to hear',
+			formSource: 'How did you find us?',
+			formSourceOptions: {
+				blank: 'Select one',
+				google: 'Google search',
+				ai: 'ChatGPT or another AI assistant',
+				instagram: 'Instagram',
+				planner: 'Our planner or venue',
+				friend: 'A friend or guest',
+				other: 'Other',
+			},
 			formMessage: 'Tell us about your day',
 			formSubmit: 'Send Inquiry',
 			orDivider: 'or reach us directly',
 			whatsappLabel: 'Message on WhatsApp',
 			emailLabel: 'Email us',
-			formNote:
-				'We typically reply within 1–2 business days — for a faster response, message us on WhatsApp.',
+			formNote: 'We reply within 24 hours — for the quickest conversation, message us on WhatsApp.',
 		},
 		thankYou: {
 			eyebrow: 'Thank You',
 			heading: "We've Received Your Inquiry",
 			subhead:
-				"Thank you for reaching out — we'll review your date and follow up by email or WhatsApp within 1–2 business days.",
+				"Thank you for reaching out — we'll review your date and reply by email or WhatsApp within 24 hours.",
 			cta: 'Back to Home',
 			ctaWhatsapp: 'Message Us on WhatsApp Instead',
 		},
@@ -419,7 +476,7 @@ export const ui = {
 				{
 					question: 'How much does a string quartet cost for a wedding in Bali?',
 					answer:
-						"Pricing depends on the formation (solo, duo, trio, string quartet, or large ensemble), how many sets you book, and your wedding date — we don't publish a flat rate because every ceremony and reception is arranged differently. Message us on WhatsApp or send an inquiry with your date and formation of interest, and we'll follow up with a personalised quote.",
+						"Pricing depends on the formation (solo, duo, trio, string quartet, or large ensemble), how many sets you book, and your wedding date — we don't publish a flat rate because every ceremony and reception is arranged differently. Custom arrangements of your songs are included, not charged separately. Message us on WhatsApp or send an inquiry with your date and formation of interest; we reply within 24 hours and follow up with a personalised quote.",
 				},
 				{
 					question: 'How long does a string quartet play at a wedding?',
@@ -439,7 +496,37 @@ export const ui = {
 				{
 					question: 'Can we request specific songs or our own playlist?',
 					answer:
-						'Yes. Browse our repertoire for ideas, or send us your own songs — we arrange most requests for piano and strings, so your processional or first dance can be a song that is truly yours. Send them early: a custom arrangement needs a little lead time to get right.',
+						'Yes. Browse our repertoire for ideas, or send us your own songs — we arrange most requests for piano and strings, and custom arrangements are included in every booking, so your processional or first dance can be a song that is truly yours. Send them early: an arrangement needs a little lead time to get right.',
+				},
+				{
+					question: "Can you play a song that isn't a traditional wedding song?",
+					answer:
+						"Often, yes. Pop, film, and contemporary songs can be arranged for piano and strings, and because the performance is instrumental, the melody carries the moment without the lyrics. Send us the song and a reference recording, and we'll tell you honestly how it will translate.",
+				},
+				{
+					question: 'How do the musicians know when to start and stop during the ceremony?',
+					answer:
+						'We confirm the order of your ceremony in advance — processional, vow exchange or signing, recessional — and follow cues from your planner, coordinator, or officiant on the day. Because the music is live, the musicians can extend or shorten a piece to match the pace of the walk, rather than a recording that stops mid-phrase.',
+				},
+				{
+					question: 'Do we need live music for cocktail hour as well as the ceremony?',
+					answer:
+						"Not necessarily. The ceremony is where live music matters most — it is what your guests hear in a quiet moment and what your wedding film keeps. Cocktail hour is lively and conversational, so many couples choose a lighter formation or a shorter set for it. Tell us which moments matter most to you and we'll suggest what fits.",
+				},
+				{
+					question: 'Do you bring your own sound system?',
+					answer:
+						"No, we don't bring a PA or sound system. A close-seated ceremony often needs no amplification; for larger, windier, or more open venues, sound reinforcement is arranged through your venue or planner's sound provider. We share our tech rider in advance so everything is ready before we arrive.",
+				},
+				{
+					question: 'What happens if it rains at an outdoor ceremony?',
+					answer:
+						"The safety of the musicians and their instruments comes first. Before your date, we agree on a covered, sheltered spot with your planner or venue; if rain arrives, the ensemble moves there so the performance can continue safely. Piano and string instruments can't be played in the rain, so this backup is confirmed in advance, not decided on the day.",
+				},
+				{
+					question: 'Can we plan everything with you from abroad?',
+					answer:
+						'Yes — everything can be arranged remotely. We communicate in English over WhatsApp or email, reply within 24 hours, and confirm your date, moments, and song choices in writing, so the music is settled before you arrive in Bali.',
 				},
 				{
 					question: 'Do you offer a wedding pianist as a solo option?',
@@ -459,7 +546,7 @@ export const ui = {
 				{
 					question: 'How do we check availability for our date?',
 					answer:
-						"Message us directly on WhatsApp with your date, venue, and preferred formation, or send an inquiry through our contact form — we'll confirm availability and follow up with next steps.",
+						'Message us directly on WhatsApp with your date, venue, and preferred formation, or send an inquiry through our contact form — we reply within 24 hours to confirm availability and next steps.',
 				},
 			],
 		},
@@ -668,8 +755,52 @@ export const ui = {
 			setLengthLabel: 'Durasi set',
 			setLengthTbd: 'Dikonfirmasi setelah tanya',
 			ctaInquire: 'Tanyakan formasi ini',
+			musicianSingular: 'musisi',
+			musicianPlural: 'musisi',
 			pricingNote:
-				'Harga bervariasi tergantung formasi, area travel, dan tanggal — hubungi kami via WhatsApp atau kirim pertanyaan untuk penawaran personal.',
+				'Harga bervariasi tergantung formasi, area travel, dan tanggal, dan aransemen khusus untuk lagu Anda selalu sudah termasuk. Hubungi kami via WhatsApp atau kirim pertanyaan, kami membalas dalam 24 jam.',
+			finder: {
+				eyebrow: 'Temukan Formasi Anda',
+				heading: 'Formasi mana yang cocok untuk hari Anda?',
+				subhead:
+					'Dua pertanyaan singkat sebagai titik awal. Kami akan mengonfirmasi formasi yang tepat untuk venue Anda saat Anda menghubungi kami.',
+				momentsLegend: 'Momen mana yang ingin diiringi musik live?',
+				moments: { ceremony: 'Upacara', cocktail: 'Cocktail hour', reception: 'Resepsi' },
+				sizeLegend: 'Bagaimana gambaran perayaan Anda?',
+				sizes: {
+					intimate: 'Intim — keluarga dan sahabat dekat',
+					medium: 'Daftar tamu lengkap',
+					large: 'Perayaan besar',
+				},
+				songLabel: 'Lagu yang ingin Anda dengar (opsional)',
+				resultEyebrow: 'Saran kami',
+				alternativeLabel: 'Juga layak dipertimbangkan',
+				viewDetails: 'Lihat detail formasi',
+				ctaWhatsapp: 'Cek tanggal dengan formasi ini',
+				note: 'Titik awal, bukan aturan. Musik upacara paling berarti; cocktail hour sering cocok dengan formasi yang lebih ringan.',
+				waIntro: 'Hai Allegra Chamber Bali, saya ingin cek ketersediaan untuk pernikahan saya.',
+				waMoments: 'Momen',
+				waSize: 'Perayaan',
+				waFormation: 'Formasi yang kami pertimbangkan',
+				waSong: 'Lagu yang kami inginkan',
+			},
+		},
+		pathSelector: {
+			heading: 'Mulai dari mana?',
+			items: [
+				{
+					path: 'couple',
+					title: 'Merencanakan pernikahan',
+					blurb: 'Temukan formasi yang cocok untuk upacara dan daftar tamu Anda dalam dua pertanyaan.',
+					cta: 'Temukan formasi Anda',
+				},
+				{
+					path: 'planner',
+					title: 'Planner atau venue',
+					blurb: 'Tech rider, stage plot, repertoire sheet, dan cara kami bekerja bersama tim Anda.',
+					cta: 'Untuk planner & venue',
+				},
+			],
 		},
 		moments: {
 			eyebrow: 'Momen yang Kami Iringi',
@@ -714,12 +845,13 @@ export const ui = {
 				{
 					step: '02',
 					title: 'Konfirmasi & quote',
-					blurb: 'Kami cek ketersediaan dan kirim quote formasi serta harga.',
+					blurb:
+						'Kami membalas dalam 24 jam untuk konfirmasi ketersediaan, lalu kirim quote formasi serta harga.',
 				},
 				{
 					step: '03',
 					title: 'Kurasi repertoar',
-					blurb: 'Pilih dari daftar kami atau minta aransemen khusus.',
+					blurb: 'Pilih dari daftar kami atau kirim lagu Anda sendiri — aransemen khusus sudah termasuk.',
 				},
 				{
 					step: '04',
@@ -749,7 +881,7 @@ export const ui = {
 		finalCta: {
 			eyebrow: 'Hubungi Kami',
 			heading: 'Ceritakan Hari Anda',
-			subhead: 'Tanggal favorit biasanya penuh 6–12 bulan sebelumnya — cek tanggal Anda hari ini.',
+			subhead: 'Kami membalas dalam 24 jam. Tanggal favorit biasanya penuh 6–12 bulan sebelumnya.',
 			ctaPrimary: 'Cek Tanggal via WhatsApp',
 			ctaSecondary: 'Kirim pertanyaan',
 		},
@@ -781,19 +913,32 @@ export const ui = {
 				largeEnsemble: 'Large Ensemble',
 				unsure: 'Belum yakin',
 			},
+			formMoments: 'Momen yang ingin diiringi musik',
+			formMomentOptions: { ceremony: 'Upacara', cocktail: 'Cocktail hour', reception: 'Resepsi' },
+			formGuests: 'Perkiraan jumlah tamu',
+			formSong: 'Lagu yang ingin Anda dengar',
+			formSource: 'Dari mana Anda mengenal kami?',
+			formSourceOptions: {
+				blank: 'Pilih salah satu',
+				google: 'Pencarian Google',
+				ai: 'ChatGPT atau asisten AI lain',
+				instagram: 'Instagram',
+				planner: 'Planner atau venue kami',
+				friend: 'Teman atau tamu',
+				other: 'Lainnya',
+			},
 			formMessage: 'Ceritakan tentang hari Anda',
 			formSubmit: 'Kirim Pertanyaan',
 			orDivider: 'atau hubungi kami langsung',
 			whatsappLabel: 'Kirim Pesan via WhatsApp',
 			emailLabel: 'Email kami',
-			formNote:
-				'Kami biasanya membalas dalam 1–2 hari kerja — untuk respons lebih cepat, hubungi kami via WhatsApp.',
+			formNote: 'Kami membalas dalam 24 jam — untuk percakapan tercepat, hubungi kami via WhatsApp.',
 		},
 		thankYou: {
 			eyebrow: 'Terima Kasih',
 			heading: 'Pertanyaan Anda Sudah Kami Terima',
 			subhead:
-				'Terima kasih sudah menghubungi kami — kami akan cek tanggal Anda dan follow up via email atau WhatsApp dalam 1–2 hari kerja.',
+				'Terima kasih sudah menghubungi kami — kami akan cek tanggal Anda dan membalas via email atau WhatsApp dalam 24 jam.',
 			cta: 'Kembali ke Beranda',
 			ctaWhatsapp: 'Kirim Pesan via WhatsApp Saja',
 		},
@@ -991,7 +1136,7 @@ export const ui = {
 				{
 					question: 'Berapa biaya string quartet untuk pernikahan di Bali?',
 					answer:
-						'Biaya tergantung formasi (solo, duo, trio, string quartet, atau large ensemble), jumlah set yang dibooking, dan tanggal pernikahan Anda — kami tidak mempublikasikan tarif flat karena setiap upacara dan resepsi diaransemen berbeda. Hubungi kami via WhatsApp atau kirim pertanyaan dengan tanggal dan formasi yang Anda minati, dan kami akan follow up dengan penawaran personal.',
+						'Biaya tergantung formasi (solo, duo, trio, string quartet, atau large ensemble), jumlah set yang dibooking, dan tanggal pernikahan Anda — kami tidak mempublikasikan tarif flat karena setiap upacara dan resepsi diaransemen berbeda. Aransemen khusus untuk lagu Anda sudah termasuk, tidak dikenakan biaya terpisah. Hubungi kami via WhatsApp atau kirim pertanyaan dengan tanggal dan formasi yang Anda minati; kami membalas dalam 24 jam dan follow up dengan penawaran personal.',
 				},
 				{
 					question: 'Berapa lama string quartet bermain di pernikahan?',
@@ -1011,7 +1156,37 @@ export const ui = {
 				{
 					question: 'Bisa minta lagu tertentu atau playlist sendiri?',
 					answer:
-						'Bisa. Jelajahi repertoar kami untuk inspirasi, atau kirim lagu pilihan Anda sendiri — kami mengaransemen sebagian besar permintaan untuk piano dan gesek, sehingga lagu processional atau tarian pertama Anda benar-benar milik Anda. Kirim lebih awal: aransemen khusus butuh sedikit waktu agar hasilnya tepat.',
+						'Bisa. Jelajahi repertoar kami untuk inspirasi, atau kirim lagu pilihan Anda sendiri — kami mengaransemen sebagian besar permintaan untuk piano dan gesek, dan aransemen khusus sudah termasuk di setiap booking, sehingga lagu processional atau tarian pertama Anda benar-benar milik Anda. Kirim lebih awal: aransemen butuh sedikit waktu agar hasilnya tepat.',
+				},
+				{
+					question: 'Bisa memainkan lagu yang bukan lagu pernikahan pada umumnya?',
+					answer:
+						'Sering kali bisa. Lagu pop, film, dan kontemporer bisa diaransemen untuk piano dan gesek, dan karena dibawakan secara instrumental, melodinya yang membawa momen tanpa lirik. Kirim lagu dan rekaman referensinya, dan kami akan jujur menyampaikan bagaimana hasilnya nanti.',
+				},
+				{
+					question: 'Bagaimana musisi tahu kapan mulai dan berhenti saat upacara?',
+					answer:
+						'Kami mengonfirmasi urutan upacara Anda sebelumnya — processional, pengucapan janji atau signing, recessional — dan mengikuti aba-aba dari planner, koordinator, atau pemimpin upacara di hari H. Karena musiknya live, musisi bisa memperpanjang atau mempersingkat lagu sesuai langkah rombongan, tidak seperti rekaman yang berhenti di tengah frasa.',
+				},
+				{
+					question: 'Apakah perlu musik live untuk cocktail hour selain upacara?',
+					answer:
+						'Tidak harus. Upacara adalah momen di mana musik live paling berarti — itulah yang didengar tamu dalam suasana hening dan yang tersimpan di video pernikahan Anda. Cocktail hour lebih ramai dan penuh obrolan, sehingga banyak pasangan memilih formasi yang lebih ringan atau set yang lebih singkat. Beri tahu kami momen mana yang paling penting bagi Anda dan kami akan menyarankan yang sesuai.',
+				},
+				{
+					question: 'Apakah Allegra membawa sound system sendiri?',
+					answer:
+						'Tidak, kami tidak membawa PA atau sound system. Upacara dengan tamu yang duduk dekat sering tidak butuh amplifikasi; untuk venue yang lebih besar, berangin, atau terbuka, penguat suara diatur melalui penyedia sound dari venue atau planner Anda. Kami mengirim tech rider sebelumnya agar semuanya siap sebelum kami tiba.',
+				},
+				{
+					question: 'Bagaimana jika hujan saat upacara outdoor?',
+					answer:
+						'Keselamatan musisi dan instrumennya menjadi prioritas. Sebelum hari H, kami menyepakati tempat yang teduh dan terlindung bersama planner atau venue Anda; jika hujan turun, ensemble pindah ke sana agar penampilan tetap berjalan dengan aman. Piano dan instrumen gesek tidak bisa dimainkan di bawah hujan, jadi rencana cadangan ini dikonfirmasi lebih awal, bukan diputuskan di hari H.',
+				},
+				{
+					question: 'Bisakah kami merencanakan semuanya dari luar negeri?',
+					answer:
+						'Bisa — semuanya dapat diatur dari jarak jauh. Kami berkomunikasi dalam bahasa Inggris atau Indonesia via WhatsApp atau email, membalas dalam 24 jam, dan mengonfirmasi tanggal, momen, serta pilihan lagu Anda secara tertulis, sehingga musik sudah beres sebelum Anda tiba di Bali.',
 				},
 				{
 					question: 'Apakah ada opsi wedding pianist solo?',
@@ -1031,7 +1206,7 @@ export const ui = {
 				{
 					question: 'Bagaimana cara cek ketersediaan tanggal kami?',
 					answer:
-						'Hubungi kami langsung via WhatsApp dengan tanggal, venue, dan formasi yang diinginkan, atau kirim pertanyaan lewat form kontak kami — kami akan konfirmasi ketersediaan dan follow up dengan langkah selanjutnya.',
+						'Hubungi kami langsung via WhatsApp dengan tanggal, venue, dan formasi yang diinginkan, atau kirim pertanyaan lewat form kontak kami — kami membalas dalam 24 jam untuk konfirmasi ketersediaan dan langkah selanjutnya.',
 				},
 			],
 		},
