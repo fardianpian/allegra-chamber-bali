@@ -7,6 +7,40 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Session — 2026-09-14
+
+**SEO/technical fix (`0c632fa`):** `/thank-you` (+ `/id/`) now `noindex`; `Moments.astro` cards on
+Home now link through to their matching formation; `/packages` and `/for-planners` meta
+title/description rewritten.
+
+**Research docs added:** `docs/COMPETITOR-GAP-REPORT-2026-09.md` (competitor map, standout
+content, open gaps) and `docs/COMMENT-RESEARCH-2026-09.md` (comment-level VOC research, linked
+from `docs/CUSTOMER-RESEARCH.md`).
+
+**GA4 conversion tracking shipped (`0d78e8b`, `15d4f7a`):** GA4 now loads production-only (see
+Work Rule 21's `define:vars` gotcha — `BaseLayout.astro` is the reference implementation for any
+future vendor snippet). New events: `whatsapp_click` on every WhatsApp CTA (Header, Hero,
+FinalCTA, package cards, 404, planner downloads) and `generate_lead` on both thank-you pages.
+`?internal=1` now flags a browser's own traffic as internal (persisted client-side) so the
+owner/team's own visits don't pollute GA4 — see `[[reference_ga4_gsc_properties]]`.
+
+**Journal article #9 shipped via the cloud routine, PR-reviewed and merged:** "Live Music for a
+Private Villa Wedding in Bali" (`villa-wedding-live-music-bali`, `bali-venues` pillar, EN+ID) —
+[PR #9](https://github.com/fardianpian/allegra-chamber-bali/pull/9). Cover image again failed in
+the cloud sandbox (`CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` still not reachable from the
+routine — same standing gap as the 2026-09-04 note below) and was **backfilled manually this
+session** (`scripts/generate-cover-image.mjs`, villa garden/pool-deck ensemble scene,
+`og-villa-wedding-live-music-bali.jpg`), committed separately (`ec25322`). No progress yet on a
+real secret-storage path for the routine — still manual-backfill-only per the 2026-09-04 decision.
+
+**`/packages` overhaul (`053be9f`, 29 files):** new `FormationFinder.astro` (qualitative
+size-matching, no numeric guest thresholds — none exist yet, see `CLAUDE.md` § Confirmed
+decisions) and `PathSelector.astro`; musician-count badges (1/3/4/5/10) added to every formation
+card, sourced from a new `musicians` field on `packages/*.md`; FAQ expanded with the
+owner-confirmed service facts from 2026-09-14 (custom arrangements included, 24h reply for
+everyone, no PA/sound system brought, rain-plan policy); 5 repertoire tracks given fuller detail.
+`CLAUDE.md` and `.agents/product-marketing.md` updated with the same confirmed facts.
+
 ## Journal automation rebuild — 2026-08-30
 
 12 new `/journal` article outlines curated from Google Trends + pillar-gap analysis (planning 3,
@@ -203,11 +237,18 @@ robots.txt & sitemap OK (200), redirect trailing-slash bersih (single-hop 308, b
 - Pantau apakah `allegra-article-proposer` (19:00 WIB malam ini) berjalan sukses pasca-fix —
   ini akan jadi eksekusi otomatis nyata pertama sejak setup 2026-06-29
 
-## Status as of 2026-06-28
+## Status as of 2026-09-14
 
 Site is fully live on Cloudflare Pages with real business data end-to-end: WhatsApp, Instagram,
 and the Web3Forms contact form all work in production. No pricing is shown anywhere (intentional,
-owner direction). Full history → `docs/PROGRESS-ARCHIVE.md`.
+owner direction). GA4 conversion tracking (`whatsapp_click`, `generate_lead`) is live,
+production-only, with an internal-traffic opt-out flag. The `/journal` cloud routine publishes
+3x/week via PR + self-merge (9 articles live as of this session); cover images still need a manual
+local backfill every time because the routine's Cloudflare secret is unreachable from claude.ai's
+routine environment UI — see the 2026-09-14 session note above. GSC indexing was 25/34 journal
+URLs as of 2026-09-08 (owner's last manual Request-Indexing pass; not re-checked this session), 9
+remaining + one unexplained live page (`journal/tech-rider-live-wedding-music/`) not present
+anywhere in git — still uninvestigated. Full history → `docs/PROGRESS-ARCHIVE.md`.
 
 **2026-06-28 (session 2) — Copy audit + ID translation sync.** Seven Sweeps copy-editing audit
 applied to all EN copy updated earlier in the day; 6 additional fixes:
@@ -377,73 +418,50 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **`docs/PRICING-STRATEGY.md` added (2026-06-23), revised same day to anchor to Bali market
-   data instead of Singapore/HK/US** — competitor research now includes real Bridestory
-   marketplace pricing (SugarCoustic Trio/Quartet store SKUs, IDR — stale 2020 listing but real
-   local evidence) cross-checked against the Luxima Bali wedding-budget guide; the price matrix
-   is now IDR-denominated and anchored to that Bali evidence (Solo Full Package ≈ the documented
-   USD 500 Bali floor; Quartet ≈ 2.5–3x the local generic-band floor, not a Singapore-level
-   price). Status: **draft, internal B2B-quoting use only, not owner-approved, not for the live
-   site**. Still needs: owner's real musician day-rate, travel-fee-per-zone (still TBC per
-   `CLAUDE.md`), and a sign-off decision on whether/when to ever lift the site-wide pricing hide.
-   **`docs/Allegra-Chamber-Bali-Pricing.html` added same day, revised same day to IDR** —
-   standalone, on-brand client/WO/EO-facing pricing sheet built from that same matrix (single
-   self-contained HTML file, Google Fonts CDN, brand color/type tokens from `global.css`, reuses
-   approved `src/content/packages/*.md` formation copy; tagline corrected to "Live piano & string
-   ensemble for weddings in Bali" to match the approved vocabulary order in
-   `.claude/brand-voice-guidelines.md`). Lives in `docs/` (outside `src/`, never built into
-   `dist/`) so it stays off the live site by construction — send it manually via WhatsApp/email
-   on request, same pattern already planned for the `/for-planners` downloads. English only for
-   now; ask the owner before treating the embedded prices as final-enough to send to a real
-   client.
-2. **Competitor-gap action plan items 1-2 are done** (2026-06-25, see above) — all 4 Journal
-   pillars now have an article, and `/packages` + Home target the validated "wedding pianist" /
-   "string quartet" keywords. Remaining items from the plan: item 3 (real testimonials, blocked on
-   owner permission — see #4 below) and item 4 (paid ads, explicitly out of scope per
-   `docs/MARKETING-SPRINT-2026-06.md` until the owner decides on a budget).
-3. **Resume the B2B/organic sprint calendar** in `docs/MARKETING-SPRINT-2026-06.md` (Day 1 of 9 as
-   of 2026-06-22). All execution assets now exist — owner action required:
-   - **Google Business Profile setup** ✅ DONE (2026-06-28) — "Allegra Chamber Bali" GBP created
-   - **Request Indexing in GSC** (URGENT) — see GSC audit note above; do day-1 batch today
-   - **Directory submissions** — start with Bridestory + LinkedIn Company Page + Crunchbase (see `docs/DIRECTORY-SUBMISSIONS-PLAN.md`, Week 1 batch)
-   - **B2B outreach Wave 2** — 6 draft emails/DMs ready in `docs/B2B-OUTREACH-PLAN.md`
-   - **Community engagement** — join 5 planner FB groups this week, observe only (see `docs/COMMUNITY-MARKETING-PLAN.md`)
-   - **PR: pitch Angle 2** to The Jakarta Post + NOW! Bali (Tier C, no styled shoot needed — see `docs/PR-PLAN.md`)
-   - **Request Indexing** in GSC UI for `live-music-bali-wedding-guide` (zero impressions, critical)
-   - **Build `/press` page** before any PR pitch (2–3h dev, prerequisite for all media outreach)
-4. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
-   embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed
-   format with the owner first (raw file vs. YouTube/Instagram/Vimeo share link) since that
-   changes the component shape.
-5. **Content depth**: real testimonials are still pending, but the permission blocker is now
-   solved — `/share-your-story` (2026-06-22, see above) collects consent per-submission, so this
-   just needs the owner to send the link to past clients and wait for replies. `Testimonials.astro`
-   on home stays commented out of `src/pages/index.astro` + `src/pages/id/index.astro` rather than
-   showing placeholder/TODO text to visitors (2026-06-19, owner direction — no visible "TODO" copy
-   on any live page). Re-enable its import + render line once 3+ real, consented quotes land in
-   `src/content/testimonials/`. `MusicianProfiles.astro` on `/about` is done — reworked from 4 generic "TODO — Musician
-   Name" placeholder cards into a real 2-person "Managed By" section (`aboutPage.team` in
-   `src/i18n/ui.ts`): Fardian (Producer & Music Industry Professional) and Yessica Yosia Virginia
-   Simanjuntak (Composer & Music Director), real studio photos in `src/assets/about/`. Also still
-   needed: event photography for the non-piano venue types (beach/chapel/ballroom — only
-   cliffside/garden have real photos so far). All owner-supplied,
-   don't invent.
-6. **Legal review before launch**: the Privacy Policy (`/privacy`) no longer shows a public
-   "have this reviewed by a lawyer" TODO note (2026-06-19, same visible-TODO cleanup) — but the
-   underlying task is still real and unresolved. Have the policy reviewed by a qualified lawyer;
-   it's currently a good-faith draft, not legal advice. Also update its "Third-Party Services"
-   section once analytics (e.g. Plausible or GA4 — see `.env.example`) is actually enabled.
-7. Re-run the full Lighthouse mobile audit once the above real photography/content lands — it's
-   clean at 100/100/100/100 today, but real images (vs. the lightweight CSS-gradient
-   `Placeholder` component) are the one thing that could move Performance/CLS, so verify it holds.
-8. Housekeeping, no urgency:
-   - ~~Remove the now-unused `FTP_*` GitHub Secrets~~ — done 2026-06-19 (`gh secret delete` for
-     `FTP_PASSWORD`/`FTP_SERVER`/`FTP_SERVER_DIR`/`FTP_USERNAME`, confirmed `gh secret list` empty).
-   - Still open: delete the orphaned manual-deploy leftovers on the old Hostinger document root
+1. **GSC indexing (owner action, do first — easy win):** 9 journal URLs still not indexed as of
+   2026-09-08 (2 stale-noindex-report, 1 too-new, 6 normal crawl backlog) — manual Request
+   Indexing needed for each, GSC API has no endpoint for this. Also investigate/clear
+   `journal/tech-rider-live-wedding-music/`, which is live in production and in the sitemap but
+   does not exist anywhere in this repo's git history — check Cloudflare Pages' deployment history
+   for which build actually shipped it.
+2. **Journal routine Cloudflare secret still unsolved** (open since 2026-09-04): no safe way found
+   yet to expose `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` to the claude.ai cloud routine, so
+   every routine-published article ships without a cover image and needs a manual local
+   `scripts/generate-cover-image.mjs` backfill (done again today for `villa-wedding-live-music-bali`).
+   Don't re-attempt the routine-environment UI as a fix — ask Anthropic support about a real
+   secret-storage mechanism instead.
+3. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
+   before pitching any outlet (Tier C: Jakarta Post, NOW! Bali are pitchable now, no styled shoot
+   needed).
+4. **Resume the B2B/organic sprint** in `docs/MARKETING-SPRINT-2026-06.md` — assets exist, none of
+   these owner actions are confirmed done yet: directory submissions
+   (`docs/DIRECTORY-SUBMISSIONS-PLAN.md`, start with Bridestory/LinkedIn/Crunchbase), B2B outreach
+   Wave 2 (`docs/B2B-OUTREACH-PLAN.md`, 6 drafts ready), community engagement
+   (`docs/COMMUNITY-MARKETING-PLAN.md`, 5 planner FB groups, observe-only first week).
+5. **Get the piano video from the owner** (they have it, haven't sent it yet) and build a video
+   embed component — none exists yet, only `AudioSample.astro` for `<audio>`. Decide embed format
+   with the owner first (raw file vs. YouTube/Instagram/Vimeo share link).
+6. **Content depth**: real testimonials still pending — `/share-your-story` (live since 2026-06-22)
+   collects consent per-submission, so this just needs the owner to send the link to past clients.
+   `Testimonials.astro` stays commented out of Home until 3+ real, consented quotes land in
+   `src/content/testimonials/` (no placeholder/TODO copy on the live site, per `CLAUDE.md` rule 9).
+   Also still needed: real event photography for non-piano venue types (beach/chapel/ballroom —
+   only cliffside/garden have real photos so far). All owner-supplied, don't invent.
+7. **Legal review before launch**: the Privacy Policy (`/privacy`) is a good-faith draft, not
+   reviewed by a lawyer yet. Its "Third-Party Services" section also needs updating now that GA4
+   is actually live in production (shipped 2026-09-14, see Session note above).
+8. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
+   100/100/100/100 as of the last check, but real images (replacing the CSS-gradient `Placeholder`
+   component) plus the new GA4 script are the two things most likely to move Performance/CLS.
+9. Housekeeping, no urgency:
+   - Delete the orphaned manual-deploy leftovers on the old Hostinger document root
      (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any stray files
      from the one-time zip upload; DNS no longer points there so nothing serves them, but they're
      still taking up space). Owner chose to skip this for now (2026-06-19) rather than hand over a
-     Hostinger API token — do via hPanel File Manager manually whenever convenient, low priority.
+     Hostinger API token — do via hPanel File Manager manually whenever convenient.
+   - 2 unrelated cloud routines (`open-call-pipeline-weekly`, `Job Search Pipeline`) store raw API
+     keys/webhook URLs directly in trigger prompt text (noted 2026-08-30) — worth moving to a safer
+     mechanism at some point, not this project's routine, not touched here.
 
 ## SEO
 
