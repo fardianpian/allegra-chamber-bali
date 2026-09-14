@@ -6,6 +6,7 @@ excerpt: "Private villas are one of Bali's most popular wedding settings — wha
 pillar: 'bali-venues'
 targetKeyword: 'villa wedding live music bali'
 pubDate: 2026-09-14
+ogImage: '/images/og-villa-wedding-live-music-bali.jpg'
 faq:
   - question: 'Do private villas usually have power access for musicians?'
     answer: 'Most villas have outlets somewhere on the property, but the distance from a garden or poolside ceremony spot to the nearest one varies a lot from property to property. Confirm the exact location with your villa and let us know what you find — we can plan around most placements once we know them.'
