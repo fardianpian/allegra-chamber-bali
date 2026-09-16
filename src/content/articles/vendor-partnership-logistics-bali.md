@@ -23,6 +23,10 @@ changes get handled, and what happens on the wedding day itself. This guide cove
 the working relationship from confirmation through the final handoff — so your team always knows
 what to expect next.
 
+If you're still deciding whether to recommend live music over a DJ for the ceremony itself, see
+[why Bali planners often make that call](/journal/why-planners-recommend-live-music-bali/) —
+once that's settled, here's what the working relationship looks like from here.
+
 ## Who Do You Contact After the Booking Is Confirmed?
 
 You keep the same point of contact you had before booking — confirmation doesn't hand you off to
