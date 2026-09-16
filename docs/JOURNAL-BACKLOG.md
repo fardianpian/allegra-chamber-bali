@@ -29,7 +29,7 @@
 | 5   | done   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
 | 6   | done   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
 | 7   | done   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
-| 8   | todo   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali |               |
+| 8   | done   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
 | 9   | todo   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           |               |
 | 10  | todo   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      |               |
 | 11  | todo   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   |               |
@@ -261,6 +261,12 @@
   greenery, natural daylight" (single-subject)
 
 ### Item 8 — why-planners-recommend-live-music-bali (for-planners)
+
+<!-- cover image pending — CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_API_TOKEN not provisioned in this run's
+     sandbox (2026-09-16). Run manually: node scripts/generate-cover-image.mjs
+     why-planners-recommend-live-music-bali "a violin bow resting across an open wedding planner's
+     notebook and timeline sheet, desk lighting" -- then add the printed ogImage path to both the
+     EN and ID frontmatter. -->
 
 - **heading:** Why Bali Wedding Planners Recommend Live Music Over a DJ for the Ceremony
 - **targetKeyword:** live music vs dj wedding planner

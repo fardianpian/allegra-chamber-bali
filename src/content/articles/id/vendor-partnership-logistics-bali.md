@@ -23,6 +23,10 @@ dihubungi, bagaimana perubahan ditangani, dan apa yang terjadi pada hari pernika
 Panduan ini membahas persis itu — hubungan kerja dari konfirmasi hingga handoff terakhir — sehingga
 tim Anda selalu tahu apa yang akan terjadi selanjutnya.
 
+Jika Anda masih mempertimbangkan apakah akan merekomendasikan musik live dibanding DJ untuk
+upacaranya sendiri, lihat [alasan yang biasa dipakai planner di Bali](/id/journal/why-planners-recommend-live-music-bali/)
+— setelah itu diputuskan, berikut seperti apa hubungan kerja selanjutnya.
+
 ## Siapa yang Anda Hubungi Setelah Pemesanan Terkonfirmasi?
 
 Anda tetap menggunakan kontak utama yang sama seperti sebelum pemesanan — konfirmasi tidak
