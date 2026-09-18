@@ -29,7 +29,9 @@ Start the conversation as soon as your venue and date are locked. Venue layout a
 count already point toward a formation, and popular dates book out 6 to 12 months ahead,
 especially during peak wedding season. You don't need every detail settled to reach out;
 confirming your date early secures the booking, and the exact formation, set list, and timing can
-follow once your other plans take shape.
+follow once your other plans take shape. For a closer look at booking windows, peak-season timing,
+and what to do if your date is already close, see
+[When to Book Live Wedding Musicians in Bali](/journal/when-to-book-wedding-musicians-bali/).
 
 ## Live Music or a DJ for Your Ceremony?
 
