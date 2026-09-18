@@ -30,7 +30,10 @@ Mulailah pembicaraan begitu venue dan tanggal Anda terkunci. Tata letak venue da
 tamu sudah mengarahkan ke satu formasi, dan tanggal-tanggal populer bisa penuh 6 hingga 12 bulan
 sebelumnya, terutama di musim pernikahan ramai. Anda tidak perlu menetapkan semua detail untuk
 menghubungi kami; mengonfirmasi tanggal lebih awal mengamankan pemesanan, sementara formasi,
-daftar lagu, dan waktu yang pasti bisa menyusul setelah rencana lain Anda terbentuk.
+daftar lagu, dan waktu yang pasti bisa menyusul setelah rencana lain Anda terbentuk. Untuk
+pembahasan lebih dalam soal jendela pemesanan, waktu musim ramai, dan apa yang bisa dilakukan
+kalau tanggal Anda sudah dekat, lihat
+[Kapan Harus Memesan Musisi Pernikahan Live di Bali](/id/journal/when-to-book-wedding-musicians-bali/).
 
 ## Musik Live atau DJ untuk Upacara Anda?
 
