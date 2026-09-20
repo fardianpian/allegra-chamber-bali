@@ -6,6 +6,7 @@ excerpt: 'Seberapa jauh sebelumnya Anda perlu memesan musik upacara live di Bali
 pillar: 'planning'
 targetKeyword: 'when to book wedding musicians'
 pubDate: 2026-09-18
+ogImage: '/images/og-when-to-book-wedding-musicians-bali.jpg'
 faq:
   - question: 'Seberapa jauh sebelumnya saya harus memesan musik pernikahan live di Bali?'
     answer: 'Hubungi kami begitu tanggal dan venue Anda sudah pasti. Tanggal populer di Bali bisa penuh 6 hingga 12 bulan sebelumnya, terutama saat musim pernikahan ramai, jadi menghubungi lebih awal memberi peluang terbaik untuk mendapatkan formasi pilihan pertama Anda.'

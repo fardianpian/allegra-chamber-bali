@@ -6,6 +6,7 @@ excerpt: "When a couple asks whether they really need live music for the ceremon
 pillar: 'for-planners'
 targetKeyword: 'live music vs dj wedding planner'
 pubDate: 2026-09-16
+ogImage: '/images/og-why-planners-recommend-live-music-bali.jpg'
 faq:
   - question: 'Is live music harder to coordinate than a DJ?'
     answer: 'Not meaningfully — the coordination differs rather than being harder. A live ensemble needs a confirmed formation, venue, and run-of-show in advance, then follows those cues without needing management on the day itself. A DJ needs similar advance details plus power for their own equipment. Once everything is confirmed, neither takes more day-of attention than the other.'

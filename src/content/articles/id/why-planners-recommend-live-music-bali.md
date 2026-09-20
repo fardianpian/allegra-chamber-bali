@@ -6,6 +6,7 @@ excerpt: 'Ketika pasangan bertanya apakah mereka benar-benar butuh musik live un
 pillar: 'for-planners'
 targetKeyword: 'live music vs dj wedding planner'
 pubDate: 2026-09-16
+ogImage: '/images/og-why-planners-recommend-live-music-bali.jpg'
 faq:
   - question: 'Apakah musik live lebih sulit dikoordinasikan dibanding DJ?'
     answer: 'Tidak juga secara signifikan — koordinasinya berbeda, bukan lebih sulit. Ansambel live membutuhkan formasi, venue, dan run-of-show yang sudah dikonfirmasi sebelumnya, lalu mengikuti cue tersebut tanpa perlu diarahkan pada hari H. DJ membutuhkan detail serupa di muka, ditambah akses listrik untuk peralatan mereka sendiri. Begitu semuanya dikonfirmasi, tidak ada yang membutuhkan perhatian lebih di hari H dibanding yang lain.'

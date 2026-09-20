@@ -6,6 +6,7 @@ excerpt: 'How far ahead to book live ceremony music in Bali, and what your optio
 pillar: 'planning'
 targetKeyword: 'when to book wedding musicians'
 pubDate: 2026-09-18
+ogImage: '/images/og-when-to-book-wedding-musicians-bali.jpg'
 faq:
   - question: 'How far in advance should I book live wedding music in Bali?'
     answer: 'Reach out as soon as your date and venue are confirmed. Popular dates in Bali can book out 6 to 12 months ahead, especially during peak wedding season, so an early inquiry gives you the best chance at your first-choice formation.'
