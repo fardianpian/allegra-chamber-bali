@@ -6,7 +6,7 @@ excerpt: 'Villa privat adalah salah satu setting pernikahan paling populer di Ba
 pillar: 'bali-venues'
 targetKeyword: 'villa wedding live music bali'
 pubDate: 2026-09-14
-ogImage: '/images/og-villa-wedding-live-music-bali.jpg'
+ogImage: '/images/og-villa-wedding-live-music-bali-v2.jpg'
 faq:
   - question: 'Apakah villa privat biasanya punya akses listrik untuk musisi?'
     answer: 'Sebagian besar villa punya stopkontak di suatu titik di propertinya, tapi jaraknya dari titik upacara di taman atau area kolam ke stopkontak terdekat sangat bervariasi antar properti. Konfirmasi lokasi pastinya dengan villa Anda dan beri tahu kami hasilnya — kami bisa menyesuaikan sebagian besar penempatan begitu kami tahu detailnya.'
