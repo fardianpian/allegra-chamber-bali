@@ -31,7 +31,7 @@
 | 7   | done   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
 | 8   | done   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
 | 9   | done   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
-| 10  | todo   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      |               |
+| 10  | done   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
 | 11  | todo   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   |               |
 | 12  | todo   | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
 
@@ -326,6 +326,12 @@
   invitation card, warm light" (object flatlay)
 
 ### Item 10 — classical-vs-contemporary-wedding-music (piano-repertoire)
+
+<!-- cover image pending — CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_API_TOKEN not provisioned in this run's
+     sandbox (2026-09-21). Run manually: node scripts/generate-cover-image.mjs
+     classical-vs-contemporary-wedding-music "piano keys half in warm light, half in soft shadow,
+     minimalist composition" -- then add the printed ogImage path to both the EN and ID
+     frontmatter. -->
 
 - **heading:** Classical or Contemporary: Choosing the Right Style for Your Ceremony Music
 - **targetKeyword:** classical vs contemporary wedding music

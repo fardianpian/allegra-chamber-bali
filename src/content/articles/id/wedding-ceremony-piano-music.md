@@ -59,7 +59,7 @@ Musik piano untuk upacara pernikahan terbagi dalam tiga kategori, dan ketiganya 
 
 **Lagu pilihan Anda sendiri** — sebuah lagu yang spesifik untuk perjalanan hubungan Anda. Inilah yang paling sering diminta pasangan: lagu first dance, sesuatu dari tempat yang bermakna bagi Anda, atau lagu yang membawa kenangan tertentu. Aransemen khusus dikerjakan dengan pemberitahuan yang cukup dan dikonfirmasi saat pemesanan.
 
-Pendekatan yang umum: repertoar klasik untuk prelude, aransemen kontemporer untuk prosesi, dan aransemen khusus dari lagu Anda untuk resesional. Kombinasinya sepenuhnya bisa disesuaikan.
+Pendekatan yang umum: repertoar klasik untuk prelude, aransemen kontemporer untuk prosesi, dan aransemen khusus dari lagu Anda untuk resesional. Kombinasinya sepenuhnya bisa disesuaikan — [panduan klasik vs kontemporer](/id/journal/classical-vs-contemporary-wedding-music/) kami membahas cara memutuskan di antara keduanya lebih dalam.
 
 ## Solo Piano atau Piano dengan Gesek?
 

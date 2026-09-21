@@ -59,7 +59,7 @@ Wedding ceremony piano music falls into three categories, and all three can coex
 
 **Your own song** — a piece specific to your relationship. This is what couples most often request on inquiry: a first-dance song, something from a place that matters to you, or a piece with a particular memory attached. Custom arrangements are taken on with enough notice and confirmed at booking.
 
-A common approach: classical pieces for the prelude, a contemporary arrangement for the processional, and a custom arrangement of your song for the recessional. The mix is yours to shape.
+A common approach: classical pieces for the prelude, a contemporary arrangement for the processional, and a custom arrangement of your song for the recessional. The mix is yours to shape — our [classical vs. contemporary guide](/journal/classical-vs-contemporary-wedding-music/) covers how to decide between the two in more depth.
 
 ## Solo Piano or Piano With Strings?
 
