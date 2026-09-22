@@ -6,6 +6,7 @@ excerpt: 'Classical pieces, movie themes, or a favorite pop song reimagined for 
 pillar: 'piano-repertoire'
 targetKeyword: 'classical vs contemporary wedding music'
 pubDate: 2026-09-21
+ogImage: '/images/og-classical-vs-contemporary-wedding-music.jpg'
 faq:
   - question: 'Do you only play classical music at weddings?'
     answer: 'No — our repertoire spans classical and contemporary arrangements, from Bach and Pachelbel to contemporary pop and film themes arranged for piano and strings. Most ceremonies end up mixing both across the day rather than choosing one.'

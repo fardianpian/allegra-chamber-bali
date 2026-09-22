@@ -6,6 +6,7 @@ excerpt: 'Karya klasik, tema film, atau lagu pop favorit yang diaransemen ulang 
 pillar: 'piano-repertoire'
 targetKeyword: 'classical vs contemporary wedding music'
 pubDate: 2026-09-21
+ogImage: '/images/og-classical-vs-contemporary-wedding-music.jpg'
 faq:
   - question: 'Apakah Allegra hanya membawakan musik klasik di pernikahan?'
     answer: 'Tidak — repertoar kami mencakup musik klasik maupun aransemen kontemporer, dari Bach dan Pachelbel hingga lagu pop dan tema film yang diaransemen untuk piano dan gesek. Kebanyakan upacara justru memadukan keduanya, bukan memilih salah satu.'
