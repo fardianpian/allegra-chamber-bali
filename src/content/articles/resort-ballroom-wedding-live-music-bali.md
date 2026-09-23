@@ -6,6 +6,7 @@ excerpt: "Ballrooms and resort interiors carry sound differently from Bali's out
 pillar: 'bali-venues'
 targetKeyword: 'resort wedding live music bali'
 pubDate: 2026-09-23
+ogImage: '/images/og-resort-ballroom-wedding-live-music-bali.jpg'
 faq:
   - question: 'Does indoor acoustics mean the music sounds different?'
     answer: "Indoor rooms contain and reflect sound instead of letting it dissipate into open air the way an outdoor ceremony does, so an ensemble's natural acoustic sound often carries more evenly across a ballroom. Placement in the room matters more than volume."

@@ -6,6 +6,7 @@ excerpt: 'Ballroom dan interior resort membawa suara secara berbeda dari ruang u
 pillar: 'bali-venues'
 targetKeyword: 'resort wedding live music bali'
 pubDate: 2026-09-23
+ogImage: '/images/og-resort-ballroom-wedding-live-music-bali.jpg'
 faq:
   - question: 'Apakah akustik indoor membuat musiknya terdengar berbeda?'
     answer: 'Ruang indoor menahan dan memantulkan suara alih-alih membiarkannya menyebar ke udara terbuka seperti pada upacara outdoor, jadi suara akustik alami ansambel sering terdengar lebih merata di seluruh ballroom. Penempatan di dalam ruangan lebih berpengaruh daripada volume.'
