@@ -94,6 +94,11 @@ Konfirmasi titik spesifiknya — teras, halaman, pasir — saat Anda membagikan 
 akan memberi tahu lebih awal jika ada hal lain di luar dua kebutuhan dasar itu untuk lokasi
 tersebut.
 
+Setting resort atau ballroom indoor bekerja dengan cara berbeda — akustik, penempatan setup, dan
+koordinasi dengan tim event dan AV properti semuanya berubah begitu Anda berada di dalam ruangan.
+Lihat [Musik Live untuk Pernikahan Resort atau Ballroom di Bali](/id/journal/resort-ballroom-wedding-live-music-bali/)
+untuk mengetahui apa yang berbeda saat resepsi pindah ke dalam ruangan.
+
 ## Apa yang Harus Sudah Siap Sebelum Minggu Pernikahan?
 
 Pastikan hal-hal ini sudah dikonfirmasi dengan kami sebelum minggu terakhir, sehingga tidak ada

@@ -32,7 +32,7 @@
 | 8   | done   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
 | 9   | done   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
 | 10  | done   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
-| 11  | todo   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   |               |
+| 11  | done   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
 | 12  | todo   | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
 
 ## Item Details
@@ -381,6 +381,11 @@
 - **inboundLinkSource:** `src/content/articles/vendor-partnership-logistics-bali.md`
 - **cover image prompt:** "a string instrument leaning against a ballroom chair, a chandelier
   softly blurred in the background, warm indoor lighting" (single object focus)
+- **cover image pending — jalankan manual:** `node scripts/generate-cover-image.mjs
+resort-ballroom-wedding-live-music-bali "a string instrument leaning against a ballroom chair, a
+chandelier softly blurred in the background, warm indoor lighting"` (2026-09-23 run: failed,
+  `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` not provisioned in this sandbox — `ogImage` left
+  unset in both EN and ID frontmatter)
 
 ### Item 12 — live-music-vendor-coordination-bali (for-planners)
 

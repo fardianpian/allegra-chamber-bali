@@ -89,6 +89,11 @@ outdoor and cliffside ceremonies are part of the standard setup, not an exceptio
 Confirm the specific spot — terrace, lawn, sand — when you share the venue details, and we'll tell
 you ahead of time if anything beyond those two basics is needed for that location.
 
+An indoor resort or ballroom setting works differently — acoustics, setup placement, and
+coordination with the property's own event and AV team all change once you're inside. See
+[Live Music for a Resort or Ballroom Wedding in Bali](/journal/resort-ballroom-wedding-live-music-bali/)
+for what to expect when the reception moves indoors.
+
 ## What Should You Have Ready Before the Week of the Wedding?
 
 Have these confirmed with us before the final week, so nothing is being settled at the last
