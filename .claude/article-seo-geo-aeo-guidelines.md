@@ -187,20 +187,21 @@ link to `/for-planners`. This pillar directly supports B2B outreach work (see
 
 ## Skill delegation pipeline
 
-This repo has 45 marketing skills installed (`.claude/skills/`). For Journal article production,
+This repo has 46 marketing skills installed (`.claude/skills/`). For Journal article production,
 delegate each step to the skill below rather than freelancing the whole article in one pass —
 each skill is scoped for that specific step and will apply more rigor than a single end-to-end
 draft.
 
-| Step                         | Skill              | What it does here                                                                                                                                                                | Feeds into |
-| ---------------------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 1. Topic & keyword selection | `content-strategy` | Picks a specific topic within one of the 4 pillars above, checks it's not already covered, confirms funnel stage (top/mid/bottom)                                                | Step 2     |
-| 2. Outline & first draft     | `copywriting`      | Writes the draft following the Article Structure section above + `.claude/brand-voice-guidelines.md`                                                                             | Step 3     |
-| 3. GEO/AEO pass              | `ai-seo`           | Tightens the opening paragraph for direct-answer citability, checks FAQ pairs against the AEO checklist, flags anything an LLM could misquote                                    | Step 4     |
-| 4. Technical SEO pass        | `seo-audit`        | Checks title/meta length, header hierarchy, internal linking, slug — against the SEO checklist above                                                                             | Step 5     |
-| 5. Structured data check     | `schema`           | Confirms the article's `faq` frontmatter will actually render as valid `FAQPage` JSON-LD (via `getArticleJsonLd`/`getFaqJsonLd`) and that `Article`/`BreadcrumbList` are present | Step 6     |
-| 6. Final polish              | `copy-editing`     | Tone consistency pass, trims fluff, double-checks the Avoid → Prefer vocabulary table and Hard Rules                                                                             | Publish    |
-| 7. Publish                   | — (direct)         | Save as `src/content/articles/<slug>.md`, run `npm run lint && npm run build`, spot-check `/journal/<slug>/`                                                                     | —          |
+| Step                             | Skill                        | What it does here                                                                                                                                                                               | Feeds into |
+| -------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| 0. Keyword research & clustering | `keyword-research-expansion` | Free-data keyword research (GSC + Google Autocomplete + SERP), clusters vs. existing `targetKeyword`s to avoid cannibalization, writes `docs/KEYWORD-MAP-YYYY-MM.md` + `proposed` backlog items | Step 1     |
+| 1. Topic & keyword selection     | `content-strategy`           | Picks a specific topic within one of the 4 pillars above, checks it's not already covered, confirms funnel stage (top/mid/bottom)                                                               | Step 2     |
+| 2. Outline & first draft         | `copywriting`                | Writes the draft following the Article Structure section above + `.claude/brand-voice-guidelines.md`                                                                                            | Step 3     |
+| 3. GEO/AEO pass                  | `ai-seo`                     | Tightens the opening paragraph for direct-answer citability, checks FAQ pairs against the AEO checklist, flags anything an LLM could misquote                                                   | Step 4     |
+| 4. Technical SEO pass            | `seo-audit`                  | Checks title/meta length, header hierarchy, internal linking, slug — against the SEO checklist above                                                                                            | Step 5     |
+| 5. Structured data check         | `schema`                     | Confirms the article's `faq` frontmatter will actually render as valid `FAQPage` JSON-LD (via `getArticleJsonLd`/`getFaqJsonLd`) and that `Article`/`BreadcrumbList` are present                | Step 6     |
+| 6. Final polish                  | `copy-editing`               | Tone consistency pass, trims fluff, double-checks the Avoid → Prefer vocabulary table and Hard Rules                                                                                            | Publish    |
+| 7. Publish                       | — (direct)                   | Save as `src/content/articles/<slug>.md`, run `npm run lint && npm run build`, spot-check `/journal/<slug>/`                                                                                    | —          |
 
 For a single small fix (typo, one fact correction) on a published article, skip the pipeline and
 edit directly — the pipeline is for new articles or substantial rewrites.

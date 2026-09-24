@@ -26,7 +26,7 @@ Languages: **English (primary) + Indonesian (secondary)**.
 
 ## Marketing Context
 
-- `.agents/product-marketing.md` is the shared context file all 45 installed marketing skills
+- `.agents/product-marketing.md` is the shared context file all 46 installed marketing skills
   (`.claude/skills/`) read before doing any work — update it instead of re-explaining project
   context inside individual skill conversations.
 - Authority split: this CLAUDE.md + `.claude/brand-voice-guidelines.md` remain the source of
