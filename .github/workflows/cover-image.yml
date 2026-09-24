@@ -38,7 +38,7 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # On a PR, check out the branch itself (not the merge ref) so we can push to it.
           ref: ${{ github.head_ref || github.ref }}
@@ -57,7 +57,7 @@ jobs:
         run: |
           echo "::warning::CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN repository secrets are not set — cover image skipped."
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         if: steps.scan.outputs.missing == 'true' && env.CLOUDFLARE_API_TOKEN != ''
         with:
           node-version: 22
