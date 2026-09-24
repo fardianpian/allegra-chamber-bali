@@ -365,3 +365,88 @@ item 21 layak dimajukan (dan `piano first dance songs` 10–100 bisa diperluas k
 - Kandidat § 8.4 B ditulis ke backlog sebagai **item 22–25 berstatus `proposed`**:
   `instrumental-wedding-songs`, `ubud-wedding-live-music`, `classical-wedding-ceremony-music`,
   `cello-wedding-music`. Owner mengubah `proposed` → `todo` setelah review.
+
+## 9. Peluang traffic & lead per bagian situs (2026-09-24)
+
+> Menggabungkan data Keyword Planner (§ 8) dengan GSC per halaman (2026-06-24 → 2026-09-23) dan
+> pengecekan halaman live (title, H1/H2, CTA, schema). Situs masih muda: ±31 klik organik dalam 90
+> hari, 17 di antaranya ke homepage. Angka CTR per halaman di bawah 60 impresi belum bermakna
+> statistik — dipakai sebagai petunjuk, bukan kesimpulan.
+
+### 9.1 Kondisi per halaman
+
+| Halaman                                           | GSC 90 hari (impresi · posisi · klik) | Temuan                                                                                                                                 |
+| ------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                                               | 157 · 7,2 · 17                        | Sehat. Target "wedding musicians … Bali" bervolume kecil (§ 8.2) — jangan dikejar lebih jauh                                           |
+| `/packages`                                       | 81 · 9,0 · 3                          | Title sudah memuat `wedding pianist` + `string quartet` (1K–10K). Form + 12 link WhatsApp                                              |
+| `/repertoire`                                     | 44 · 8,8 · 0                          | **Tidak ada satu pun H2/H3** — lagu hanya kartu + filter JS. **53× teks "Sample coming soon"** (semua `audioSample` masih TODO)        |
+| `/journal/wedding-ceremony-piano-music`           | 67 · 9,4 · 0                          | Sudah di halaman 1 tapi 0 klik → title/meta belum memuat `piano wedding songs` / `wedding piano music` (1K–10K)                        |
+| `/journal/wedding-processional-recessional-songs` | 48 · 25,6 · 0                         | Melayani cluster 10K–100K dengan **1.068 kata dan 6 H2**. Belum ada section order of entrance, bridal party, wedding march, exit songs |
+| `/journal/wedding-prelude-music`                  | 53 · 35,1 · 0 (ID: 55 · 9,2)          | `wedding prelude music` 1K–10K; versi ID dekat halaman 1 untuk `prelude adalah` (§ 6)                                                  |
+| `/journal/wedding-music-budget-bali`              | 43 · 9,3 · 0                          | Keyword biaya punya bid tertinggi di data (§ 8.2 #5) — halaman 1 tapi 0 klik                                                           |
+| `/for-planners`                                   | 58 · 8,3 · 0                          | Ada form + unduhan planner. Demand pencarian planner kecil — kanal utamanya outreach, bukan SEO (§ 9.4)                                |
+| `/privacy`                                        | 52 · 5,1 · 0                          | Impresi terbuang ke halaman non-komersial; tidak perlu aksi selain memastikan internal link utama tidak mengarah ke sana               |
+
+Tracking lead sudah ada: `whatsapp_click` (dengan `cta_location`), `generate_lead` di `/thank-you`,
+dan `formation_finder_result`. Testimonial masih disembunyikan (belum ada kutipan nyata).
+
+### 9.2 Traffic — urutan dampak
+
+1. **Perluas `wedding-processional-recessional-songs`** (cluster terbesar di seluruh data). Tambah H2:
+   _Songs to Walk Down the Aisle To_ (1K–10K), _Bridal Party Processional Songs_ (10K–100K),
+   _Order of Entrance for the Ceremony_ (±10 variasi 100–1K: `order of entrance wedding ceremony`,
+   `order of walking down the aisle`, `order of recessional wedding`), _The Wedding March and Its
+   Alternatives_ (`wedding march songs` 1K–10K, `non traditional wedding march` 100–1K), _Upbeat
+   Recessional and Exit Songs_ (`wedding exit songs`, `upbeat recessional songs` 1K–10K). Judul lagu
+   hanya dari `/repertoire`. Tambah FAQ baru ke `faq` frontmatter (FAQPage JSON-LD).
+2. **Beri struktur ke `/repertoire`**: H2 per momen (Processional, Signing, Recessional, Cocktail
+   Hour, Reception) yang ter-render di HTML (bukan hanya filter JS), 1–2 kalimat pengantar per
+   momen, dan sembunyikan label "Sample coming soon" sampai sampel ada. Halaman ini sudah di posisi
+   ~9; heading yang cocok dengan `wedding processional songs` / `classical music for wedding
+ceremony` / `wedding piano music` memberi Google konteks yang sekarang tidak ada.
+3. **Tulis ulang title + meta `wedding-ceremony-piano-music`** untuk `piano wedding songs` /
+   `wedding piano music` (1K–10K) dan tambah section _Piano Wedding March_ (`wedding march piano`,
+   `piano wedding march songs` 1K–10K). Halaman 1 dengan 0 klik = masalah CTR, bukan ranking.
+4. **`wedding-music-budget-bali`**: tambah H2 _What Affects the Cost of a String Quartet or Wedding
+   Pianist_ + FAQ `How much does a wedding string quartet cost in Bali?` dijawab dengan faktor biaya
+   dan ajakan minta quote — **tanpa angka** (aturan harga CLAUDE.md). Keyword: `string quartet
+wedding cost`, `wedding pianist cost`, `violinist for wedding cost` (masing-masing 100–1K).
+5. **Kandidat artikel baru — reception grand entrance**: `bride and groom entrance songs`,
+   `bridal party entrance songs`, `bridal party intro ideas` (masing-masing 1K–10K). Momen resepsi
+   yang belum punya artikel; sudut: lagu entrance dimainkan live oleh ensemble. Belum ditulis ke
+   backlog — butuh persetujuan owner.
+6. **Yang tidak disarankan (berdasarkan data):** halaman per lagu (mis. `/repertoire/canon-in-d`) —
+   kombinasi judul lagu + wedding hanya 10–100 per keyword di Keyword Planner; dan halaman lokasi
+   massal "wedding musicians <area>" — demand musisi + Bali sangat kecil.
+
+### 9.3 Lead — konversi dari traffic yang sudah ada
+
+1. **Sampel audio** untuk 5–10 lagu yang paling dicari (Canon in D, Wedding March, Bridal Chorus,
+   A Thousand Years, Perfect — semuanya muncul di data Keyword Planner). Pasangan memilih musisi
+   lewat telinga; 53 label "Sample coming soon" melemahkan halaman yang paling dekat ke keputusan.
+   Butuh rekaman dari owner.
+2. **Lead magnet "Ceremony Music Planner"** (lembar kerja lagu per momen + urutan masuk upacara),
+   dibangun dari demand `order of entrance` dan `processional song ideas` / `list of wedding
+processional songs` (100–1K). Belum ada ESP, jadi: form Web3Forms singkat (nama, email, tanggal,
+   venue opsional) → `/thank-you` dengan tautan unduh → `generate_lead` dengan `form_type` baru.
+   Tiap unduhan = kontak dengan tanggal pernikahan. Ditawarkan di artikel processional, prelude,
+   song count, dan `/repertoire`.
+3. **CTA kontekstual di tengah artikel** (sekarang hanya blok penutup "Have a date in mind?"):
+   setelah daftar lagu, satu baris "Want to hear this played live? Ask for a sample on WhatsApp"
+   memakai `WhatsAppCTA` dengan `cta_location` khusus agar bisa diukur di GA4.
+4. **Testimonial**: form `/share-your-story` sudah ada; 3 kutipan nyata cukup untuk menyalakan
+   kembali section Testimonials di homepage dan `/packages`.
+5. **GA4**: jadikan `whatsapp_click` dan `generate_lead` sebagai key event, lalu buat laporan per
+   `cta_location` untuk melihat halaman mana yang menghasilkan lead. Butuh login GA4 owner.
+
+### 9.4 Kanal di luar SEO (dibaca dari data yang sama)
+
+- Pasangan mencari **WO/planner** dan **venue**, bukan musisi: `wedding organizer bali`,
+  `bali wedding packages`, `bali wedding agency`, `bali wedding venues` (masing-masing 1K–10K) vs
+  `wedding entertainment bali` (10–100). Lead Allegra paling realistis datang **lewat planner dan
+  venue** — outreach ke WO/venue yang meranking keyword tersebut untuk jadi preferred vendor
+  (skill `prospecting` + `cold-email`), dengan `/for-planners` + unduhan tech rider sebagai
+  landasan.
+- **Google Ads search tidak disarankan saat ini**: keyword bermodifier Bali untuk musisi hanya
+  10–100/bulan; keyword generik (`wedding string quartet`) didominasi pencari yang ingin vendor lokal
+  di negaranya sendiri.
