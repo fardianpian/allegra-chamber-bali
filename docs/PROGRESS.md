@@ -421,12 +421,17 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
 
 ## Next steps (priority order)
 
-1. **Journal routine Cloudflare secret still unsolved** (open since 2026-09-04): no safe way found
-   yet to expose `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` to the claude.ai cloud routine, so
-   every routine-published article ships without a cover image and needs a manual local
-   `scripts/generate-cover-image.mjs` backfill (done again 2026-09-14 for
-   `villa-wedding-live-music-bali`). Don't re-attempt the routine-environment UI as a fix — ask
-   Anthropic support about a real secret-storage mechanism instead.
+1. **Journal cover images — owner action: add 2 GitHub Actions secrets** (fix built 2026-09-24,
+   replaces the manual-backfill workaround open since 2026-09-04). The routine still can't hold
+   the Cloudflare credentials, so cover generation moved to `.github/workflows/cover-image.yml`:
+   it runs on every `journal/<slug>` PR (and again on push to `main` as a safety net), calls
+   `scripts/backfill-cover-images.mjs` (reads each article's `cover image prompt` from
+   `docs/JOURNAL-BACKLOG.md`), and commits `public/images/og-<slug>.jpg` + `ogImage` into the PR
+   branch before the routine auto-merges (SKILL.md Step 4 + Step 9 updated to wait for it).
+   **Until the owner adds `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (same Workers AI -
+   Read values as the local `.env`) under GitHub repo → Settings → Secrets and variables →
+   Actions, the workflow only logs a warning and skips.** Verify on the next routine PR that a
+   `github-actions[bot]` cover commit appears.
 2. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
    before pitching any outlet (Tier C: Jakarta Post, NOW! Bali are pitchable now, no styled shoot
    needed).
