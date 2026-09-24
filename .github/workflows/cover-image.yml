@@ -1,0 +1,89 @@
+# Generates missing /journal cover images with Cloudflare Workers AI and commits them
+# back. The journal routine (claude.ai cloud session) has no safe place to store the
+# Cloudflare credentials, so it can't run scripts/generate-cover-image.mjs itself —
+# this workflow does it with the credentials kept as GitHub Actions secrets
+# (CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN with "Workers AI - Read").
+#
+# - pull_request: adds the cover to the routine's journal/<slug> PR before it merges.
+# - push to main: safety net for anything that still merged without a cover.
+# - workflow_dispatch: manual rerun from the Actions tab.
+#
+# This is not a deploy workflow — Cloudflare Pages' own git integration still builds
+# and deploys on every push to main.
+
+name: Cover image
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['src/content/articles/**']
+  push:
+    branches: [main]
+    paths: ['src/content/articles/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cover-image-${{ github.head_ref || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  cover:
+    # Fork PRs get no secrets and no write token — nothing useful to do there.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # On a PR, check out the branch itself (not the merge ref) so we can push to it.
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Check for articles without a cover
+        id: scan
+        run: |
+          if node scripts/backfill-cover-images.mjs --dry-run | grep -q 'missing ogImage'; then
+            echo "missing=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Every article already has an ogImage."
+          fi
+
+      - name: Check credentials
+        if: steps.scan.outputs.missing == 'true' && (env.CLOUDFLARE_ACCOUNT_ID == '' || env.CLOUDFLARE_API_TOKEN == '')
+        run: |
+          echo "::warning::CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN repository secrets are not set — cover image skipped."
+
+      - uses: actions/setup-node@v5
+        if: steps.scan.outputs.missing == 'true' && env.CLOUDFLARE_API_TOKEN != ''
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.scan.outputs.missing == 'true' && env.CLOUDFLARE_API_TOKEN != ''
+        run: npm ci
+
+      - name: Generate and wire cover images
+        if: steps.scan.outputs.missing == 'true' && env.CLOUDFLARE_API_TOKEN != ''
+        # Best-effort on PRs (a failed cover must not block the article), but a red
+        # run on main is worth seeing.
+        continue-on-error: ${{ github.event_name == 'pull_request' }}
+        run: node scripts/backfill-cover-images.mjs
+
+      - name: Commit and push
+        if: steps.scan.outputs.missing == 'true' && env.CLOUDFLARE_API_TOKEN != ''
+        run: |
+          git add public/images src/content/articles
+          if git diff --cached --quiet; then
+            echo "Nothing generated — no commit."
+            exit 0
+          fi
+          slugs=$(git diff --cached --name-only -- public/images | sed -E 's#.*/og-(.*)\.jpg#\1#' | paste -sd ',' - | sed 's/,/, /g')
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "feat(journal): add cover image for ${slugs}"
+          git push origin "HEAD:${{ github.head_ref || github.ref_name }}"

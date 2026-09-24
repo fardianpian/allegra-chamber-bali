@@ -113,6 +113,26 @@ Terjemahan genuine (bukan transliterasi kaku), schema sama persis. `pillar`, `pu
 
 ## Step 4 — Cover image (best-effort, TIDAK menghalangi publish)
 
+**Mulai 2026-09-24, cover image dibuat oleh GitHub Actions workflow
+`.github/workflows/cover-image.yml`, bukan oleh sandbox routine ini.** Sandbox claude.ai tidak
+pernah punya `CLOUDFLARE_ACCOUNT_ID`/`CLOUDFLARE_API_TOKEN` (tidak ada tempat aman menyimpannya,
+lihat `docs/PROGRESS.md`), sehingga setiap artikel dari 2026-08-30 s/d 2026-09-23 terbit tanpa cover
+dan harus di-backfill manual. Workflow itu jalan otomatis saat PR `journal/<slug>` dibuka, membaca
+`cover image prompt` item ini dari `docs/JOURNAL-BACKLOG.md`, generate gambar dengan kredensial dari
+GitHub Actions secrets, lalu commit `public/images/og-<slug>.jpg` + `ogImage` di frontmatter EN dan
+ID **langsung ke branch PR**. Karena itu:
+
+1. Cek dulu apakah kredensial kebetulan ada di sandbox ini:
+   ```bash
+   test -n "$CLOUDFLARE_ACCOUNT_ID" && test -n "$CLOUDFLARE_API_TOKEN" && echo ada || echo tidak ada
+   ```
+2. **Kalau `tidak ada` (kasus normal):** jangan jalankan script, jangan isi `ogImage`, dan **jangan
+   tulis catatan "cover image pending — jalankan manual" di backlog** — workflow yang akan
+   menambahkannya ke PR. Pastikan saja baris `- **cover image prompt:** "..."` item ini ada di
+   backlog (workflow membacanya dari situ). Lanjut ke Step 5.
+3. **Kalau `ada`:** generate lokal seperti di bawah (workflow lalu melihat `ogImage` sudah terisi
+   dan tidak melakukan apa-apa).
+
 ```bash
 node scripts/generate-cover-image.mjs <slug> "<cover image prompt dari backlog item>"
 ```
@@ -125,11 +145,9 @@ secara native, tidak butuh dotenv.
 
 - Kalau sukses: script mencetak baris `Add to article frontmatter: ogImage: '/images/og-<slug>.jpg'`
   — salin nilai itu persis ke frontmatter EN dan ID.
-- Kalau gagal (kredensial belum ter-provision di environment ini, atau error lain apa pun): jangan
-  isi `ogImage`, catat 1 baris di kolom yang relevan (tambahkan catatan singkat di bawah baris
-  item terkait di `docs/JOURNAL-BACKLOG.md`, misal "cover image pending — jalankan manual: node
-  scripts/generate-cover-image.mjs <slug> \"<prompt>\""), lalu **lanjut ke Step 5**. `ogImage`
-  opsional di schema — artikel tanpa cover image tetap valid dan tetap harus dipublish.
+- Kalau gagal (error apa pun): jangan isi `ogImage`, jangan tulis catatan pending, **lanjut ke
+  Step 5** — workflow di PR akan mencoba lagi. `ogImage` opsional di schema — artikel tanpa cover
+  image tetap valid dan tetap harus dipublish.
 
 ## Step 5 — Inbound link
 
@@ -226,14 +244,15 @@ flaky.
 Setelah push sukses, buka Pull Request (pakai GitHub MCP connector — cari tool dengan
 `ToolSearch({query: "select:mcp__github__create_pull_request"})` atau nama setara yang tersedia di
 environment ini) ke `main`, isi body PR dengan: target keyword, pillar, status cover image
-(berhasil/pending), ringkasan singkat isi artikel, dan catatan bahwa versi ID juga disertakan.
+(dibuat lokal / diserahkan ke workflow "Cover image"), ringkasan singkat isi artikel, dan catatan
+bahwa versi ID juga disertakan.
 
 **Sukses (push + PR terbuka):** kirim Slack ke `#allegra-updates`:
 
 > PR dibuka: <link PR>. Judul: "<title>". Pillar: <pillar>. Target keyword: <targetKeyword>.
-> Cover image: <berhasil / pending, lihat catatan backlog>. Lolos checklist review konten (Step
-> 6a) — menunggu status CI, akan auto-merge kalau hijau (lihat Step 9). Kalau tidak ada follow-up
-> Slack dalam ~10 menit, cek PR manual — kemungkinan CI tidak kunjung selesai.
+> Cover image: <dibuat lokal / sedang dibuat workflow "Cover image">. Lolos checklist review
+> konten (Step 6a) — menunggu status CI, akan auto-merge kalau hijau (lihat Step 9). Kalau tidak
+> ada follow-up Slack dalam ~15 menit, cek PR manual — kemungkinan CI tidak kunjung selesai.
 
 **Gagal setelah 3x retry:** kirim Slack alert berisi error persis + **draf lengkap EN+ID inline**
 (pola sama seperti Step 6) + SHA commit lokal (`git log -1 --format=%h`) untuk referensi, plus
@@ -247,11 +266,26 @@ cadangan, bukan cuma di commit lokal sandbox." Jangan ubah status backlog ke `do
 Dikerjakan di sesi yang sama, langsung setelah PR terbuka (Step 8 sukses). Ini menggantikan review
 manual owner — jangan skip atau anggap opsional.
 
-1. **Poll status check PR** (Cloudflare Pages deploy-preview) setiap ~30 detik, maksimal 10x
-   percobaan (~5 menit total). Pakai GitHub MCP connector — cari tool status/checks dengan
+1. **Poll status check PR** (Cloudflare Pages deploy-preview **dan** GitHub Actions check
+   `Cover image / cover`) setiap ~30 detik, maksimal 20x percobaan (~10 menit total — lebih lama
+   dari sebelumnya karena workflow cover image butuh ~2-3 menit lalu memicu deploy-preview ulang).
+   Pakai GitHub MCP connector — cari tool status/checks dengan
    `ToolSearch({query: "github pull request status checks"})` (nama tool bervariasi tergantung
    connector yang terpasang di environment ini), atau kalau `gh` CLI ternyata terautentikasi di
    sandbox ini, `gh pr checks <nomor-PR>` sebagai fallback.
+
+   **Selalu baca ulang head SHA PR di setiap polling** — workflow `Cover image` push commit baru
+   (`feat(journal): add cover image for <slug>`, author `github-actions[bot]`) ke branch PR, dan
+   check hijau di commit lama TIDAK berlaku untuk head baru. Syarat merge = semua check di **head
+   terbaru** sudah selesai dan hijau, dan tidak ada run `Cover image` yang masih berjalan. Jangan
+   `git push` lagi ke branch ini setelah Step 8 (commit bot bisa bentrok dengan push kamu).
+
+   Sebelum merge, cek frontmatter `src/content/articles/<slug>.md` di head terbaru (baca via GitHub
+   MCP `get_file_contents` dengan ref branch PR): kalau `ogImage` terisi → cover berhasil; kalau
+   tidak (secret belum di-set / API error — lihat log run `Cover image`) → tetap merge, cover
+   bersifat best-effort dan workflow yang sama akan mencoba lagi otomatis saat push ke `main`.
+   Laporkan status cover yang sebenarnya di Slack follow-up.
+
 2. **Kalau semua check jadi `success`/hijau sebelum timeout:**
    ```bash
    gh pr merge <nomor-PR> --squash --delete-branch
@@ -266,9 +300,9 @@ manual owner — jangan skip atau anggap opsional.
    dibiarkan terbuka untuk investigasi manual, tidak di-auto-merge." Ini kasus berbeda dari
    kegagalan Step 6b (build lokal) — build lokal sudah lolos, jadi ini kemungkinan besar masalah
    spesifik environment Cloudflare, bukan bug di kode/konten.
-4. **Kalau masih `pending` setelah 10x percobaan (timeout):** jangan merge, jangan terus polling
+4. **Kalau masih `pending` setelah 20x percobaan (timeout):** jangan merge, jangan terus polling
    tanpa batas. Kirim Slack alert: "PR <link> lolos checklist review konten, CI belum selesai
-   setelah ~5 menit — cek manual, mungkin perlu merge manual kalau CI ternyata sudah hijau." Stop
+   setelah ~10 menit — cek manual, mungkin perlu merge manual kalau CI ternyata sudah hijau." Stop
    routine dengan status sukses (artikel & PR sudah ada, cuma merge yang tertunda — bukan
    kegagalan routine).
 
