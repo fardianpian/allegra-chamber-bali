@@ -5,7 +5,7 @@ _Last updated: 2026-06-20_
 > **Applicability Notes (read before using the other 44 skills on this repo)**
 >
 > - This is a one-time-booking, local wedding-services business (live ensemble bookings), not a
->   SaaS product with accounts/subscriptions. Several of the 45 installed skills assume SaaS
+>   SaaS product with accounts/subscriptions. Several of the 46 installed skills assume SaaS
 >   mechanics and are **low priority / not applicable** here: `paywalls` (in-app upgrade
 >   screens), `onboarding` (post-signup activation), `signup` (registration flow),
 >   `churn-prevention` (subscription cancel flows), `revops` (lead routing/MQL-SQL), `aso`
