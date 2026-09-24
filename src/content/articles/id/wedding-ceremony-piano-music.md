@@ -16,7 +16,7 @@ faq:
   - question: 'Berapa lama pianis bermain di upacara pernikahan?'
     answer: 'Sesi upacara standar berlangsung sekitar 30–45 menit: prelude 10–15 menit saat tamu berdatangan, lalu upacara itu sendiri — prosesi, musik latar saat pengucapan janji atau penandatanganan, dan resesional. Sesi cocktail hour dan resepsi dipesan secara terpisah.'
   - question: 'Apakah solo piano cukup untuk upacara outdoor di Bali?'
-    answer: 'Ya, dengan pengeras suara. Untuk venue outdoor — tebing, pantai, atau taman — keyboard dengan amplifier berkualitas dapat mengisi ruang dengan baik di sebagian besar lokasi upacara. Kami akan mengonfirmasi kebutuhan teknis setelah Anda menyampaikan venue Anda.'
+    answer: 'Ya. Upacara dengan tamu yang duduk dekat sering tidak membutuhkan amplifikasi sama sekali. Untuk venue outdoor yang lebih besar, berangin, atau terbuka — tebing, pantai, atau taman — penguat suara diatur melalui penyedia sound dari venue atau planner Anda, karena kami tidak membawa PA atau sound system sendiri. Kami mengirim tech rider sebelumnya dan mengonfirmasi kebutuhan venue Anda setelah Anda menyampaikan lokasinya.'
   - question: 'Apa perbedaan pianis pernikahan dengan string quartet untuk musik upacara?'
     answer: 'Pianis memainkan harmoni dan melodi sekaligus dalam satu instrumen — pilihan yang intim dan fleksibel untuk upacara berbagai ukuran. String quartet menghadirkan empat suara independen dengan bunyi yang lebih penuh dan berlapis, cocok untuk venue yang lebih besar. Piano dan gesek juga bisa dikombinasikan — piano sudah termasuk secara standar dalam formasi Duo, Trio, dan String Quartet kami, bukan opsi terpisah.'
 ---

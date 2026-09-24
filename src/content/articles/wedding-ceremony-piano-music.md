@@ -16,7 +16,7 @@ faq:
   - question: 'How long does a pianist play at a wedding ceremony?'
     answer: 'A typical ceremony set runs 30–45 minutes: a prelude of 10–15 minutes as guests arrive, then the ceremony itself — processional, any music during the vow exchange or signing, and the recessional. Cocktail hour and reception sets are booked separately.'
   - question: 'Is a solo pianist enough for an outdoor ceremony in Bali?'
-    answer: 'Yes, with sound reinforcement. For outdoor venues — cliffside, beach, or garden — a keyboard with a quality amplifier carries clearly across most ceremony spaces. We confirm the setup when you share your venue.'
+    answer: "Yes. A close-seated ceremony often needs no amplification at all. For larger, windier, or more open outdoor venues — cliffside, beach, or garden — sound reinforcement is arranged through your venue's or planner's sound provider, since we don't bring our own PA or sound system. We share our tech rider in advance and confirm what your venue needs once you tell us where it is."
   - question: 'What is the difference between a wedding pianist and a string quartet for ceremony music?'
     answer: 'A pianist covers both harmony and melody on one instrument, making it an intimate and flexible choice for any ceremony size. A string quartet brings four independent voices and a fuller, layered sound suited to larger venues. Piano and strings can also be combined — piano is included as standard in our Duo, Trio, and String Quartet formations, not a separate upgrade.'
 ---
