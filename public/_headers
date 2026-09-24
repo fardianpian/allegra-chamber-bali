@@ -11,3 +11,9 @@
 
 /audio/*
   Cache-Control: public, max-age=2592000
+
+# Lead-magnet PDFs are reached through the /ceremony-music-planner form — keep them out of search
+# results so the download isn't bypassed from Google.
+/downloads/*
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=86400

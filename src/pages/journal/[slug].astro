@@ -4,6 +4,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import Button from '../../components/ui/Button.astro'
 import FaqAccordion from '../../components/ui/FaqAccordion.astro'
 import WhatsAppCTA from '../../components/media/WhatsAppCTA.astro'
+import CeremonyPlannerCta from '../../components/sections/CeremonyPlannerCta.astro'
+import { ceremonyPlannerArticles } from '../../lib/lead-magnets'
 import { useTranslations } from '../../i18n/utils'
 import { getBreadcrumbJsonLd, getArticleJsonLd, getFaqJsonLd } from '../../lib/jsonld'
 
@@ -78,6 +80,12 @@ const jsonLd = [
 			<div class="reveal prose-article mt-10 leading-relaxed text-ink/85">
 				<Content />
 			</div>
+
+			{
+				ceremonyPlannerArticles.has(article.slug) && (
+					<CeremonyPlannerCta lang={lang} location={`journal_${article.slug}`} class="mt-14" />
+				)
+			}
 
 			{
 				article.data.faq?.length ? (

@@ -1,0 +1,56 @@
+---
+// Body of /ceremony-music-planner (EN + ID): what's inside, a preview of page 3, and the form.
+import { Image } from 'astro:assets'
+import CeremonyPlannerForm from './CeremonyPlannerForm.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import previewEn from '../../assets/lead-magnet/ceremony-music-planner-preview.jpg'
+import previewId from '../../assets/lead-magnet/ceremony-music-planner-preview-id.jpg'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const planner = t('ceremonyPlanner')
+const preview = lang === 'id' ? previewId : previewEn
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max grid items-start gap-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-16">
+		<div class="reveal">
+			<Image
+				src={preview}
+				alt={planner.previewAlt}
+				widths={[400, 800]}
+				sizes="(min-width: 768px) 40vw, 100vw"
+				format="avif"
+				quality={70}
+				class="w-full border border-ink/10 shadow-[0_18px_40px_-24px_rgba(30,28,25,0.45)]"
+			/>
+		</div>
+
+		<div class="reveal flex flex-col gap-10">
+			<div>
+				<h2 class="text-2xl md:text-3xl">{planner.includesHeading}</h2>
+				<ul class="mt-5 grid gap-4">
+					{
+						planner.includes.map((item, i) => (
+							<li class="grid grid-cols-[2rem_1fr] gap-2 text-ink/85">
+								<span class="font-display text-2xl leading-none text-gold">{i + 1}</span>
+								<span>{item}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div class="border-t border-ink/10 pt-8">
+				<h2 class="text-2xl md:text-3xl">{planner.formHeading}</h2>
+				<div class="mt-6">
+					<CeremonyPlannerForm lang={lang} />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

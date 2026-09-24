@@ -1,0 +1,78 @@
+---
+// Ceremony Music Planner download form — Web3Forms emails the lead to the owner, then redirects to
+// the thank-you page that holds the PDF link and fires GA4 `generate_lead` (form_type=ceremony_planner).
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { site } from '../../lib/site'
+import { ceremonyPlannerThankYouPath } from '../../lib/lead-magnets'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const planner = t('ceremonyPlanner')
+const redirectUrl = new URL(`${ceremonyPlannerThankYouPath[lang]}?form=ceremony_planner`, site.url).toString()
+
+const fieldClass =
+	'mt-1 w-full border-b border-ink/25 bg-transparent px-0 py-2.5 text-ink placeholder:text-ink/30 focus:border-gold focus:outline-none'
+const labelClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
+---
+
+<form class="grid gap-6" action="https://api.web3forms.com/submit" method="POST" id="ceremony-planner-form">
+	<input type="hidden" name="access_key" value={site.web3formsKey} />
+	<input type="hidden" name="subject" value="Ceremony Music Planner download — Allegra Chamber Bali" />
+	<input type="hidden" name="redirect" value={redirectUrl} />
+	<input type="hidden" name="lead_type" value="ceremony_music_planner" />
+	<input type="hidden" name="language" value={lang} />
+	{/* Filled client-side from `?from=` (which article/page sent the visitor) — see script below. */}
+	<input type="hidden" name="source_page" value="direct" />
+	<input
+		type="checkbox"
+		name="botcheck"
+		class="hidden"
+		style="display:none"
+		tabindex="-1"
+		autocomplete="off"
+		aria-label="Leave this field blank"
+	/>
+
+	<div class="grid gap-6 sm:grid-cols-2">
+		<label class={labelClass}>
+			{planner.formName}
+			<span class="text-gold" aria-hidden="true">*</span>
+			<input type="text" name="name" required autocomplete="name" class={fieldClass} />
+		</label>
+		<label class={labelClass}>
+			{planner.formEmail}
+			<span class="text-gold" aria-hidden="true">*</span>
+			<input type="email" name="email" required autocomplete="email" class={fieldClass} />
+		</label>
+	</div>
+
+	<div class="grid gap-6 sm:grid-cols-2">
+		<label class={labelClass}>
+			{planner.formDate}
+			<input type="date" name="wedding_date" class={fieldClass} />
+		</label>
+		<label class={labelClass}>
+			{planner.formVenue}
+			<input type="text" name="venue" class={fieldClass} />
+		</label>
+	</div>
+
+	<p class="text-sm text-taupe">{planner.formNote}</p>
+
+	<button
+		type="submit"
+		class="inline-flex items-center justify-center gap-2 bg-ink px-7 py-3.5 text-sm uppercase tracking-[0.08em] text-ivory transition-colors duration-300 hover:bg-gold hover:text-ink sm:w-fit"
+	>
+		{planner.formSubmit}
+	</button>
+</form>
+
+<script>
+	const from = new URLSearchParams(location.search).get('from')
+	const field = document.querySelector<HTMLInputElement>('#ceremony-planner-form input[name="source_page"]')
+	if (from && field) field.value = from.slice(0, 80)
+</script>

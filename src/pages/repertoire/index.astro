@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PageHeader from '../../components/sections/PageHeader.astro'
 import RepertoireList from '../../components/sections/RepertoireList.astro'
+import CeremonyPlannerCta from '../../components/sections/CeremonyPlannerCta.astro'
 import { useTranslations } from '../../i18n/utils'
 import { getBreadcrumbJsonLd } from '../../lib/jsonld'
 
@@ -20,4 +21,10 @@ const nav = t('nav')
 >
 	<PageHeader eyebrow={repertoire.eyebrow} heading={repertoire.heading} subhead={repertoire.subhead} />
 	<RepertoireList lang={lang} />
+	<section class="section bg-ivory pt-0">
+		{/* Inner wrapper, not `container-max max-w-2xl`: .container-max's max-width wins (CLAUDE.md rule 17). */}
+		<div class="container-max">
+			<CeremonyPlannerCta lang={lang} location="repertoire" class="mx-auto max-w-2xl" />
+		</div>
+	</section>
 </BaseLayout>

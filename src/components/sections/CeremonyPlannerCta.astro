@@ -1,0 +1,31 @@
+---
+// Inline promo card for the Ceremony Music Planner lead magnet (journal articles, /repertoire).
+import Button from '../ui/Button.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { ceremonyPlannerPath } from '../../lib/lead-magnets'
+
+interface Props {
+	lang: Lang
+	/** Where the card sits — sent as `cta_location` so GA4 can attribute planner downloads. */
+	location: string
+	class?: string
+}
+const { lang, location, class: className = '' } = Astro.props
+const t = useTranslations(lang)
+const planner = t('ceremonyPlanner')
+const href = `${ceremonyPlannerPath[lang]}?from=${encodeURIComponent(location)}`
+---
+
+<aside
+	class:list={[
+		'reveal flex flex-col items-start gap-4 border border-gold/50 bg-sage/5 p-6 md:p-8',
+		className,
+	]}
+	aria-label={planner.ctaHeading}
+>
+	<p class="eyebrow text-taupe">{planner.ctaEyebrow}</p>
+	<h2 class="text-2xl">{planner.ctaHeading}</h2>
+	<p class="text-ink/80">{planner.ctaBody}</p>
+	<Button href={href} variant="primary" data-planner-cta={location}>{planner.ctaButton}</Button>
+</aside>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import PageHeader from '../../../components/sections/PageHeader.astro'
+import CeremonyPlannerLanding from '../../../components/sections/CeremonyPlannerLanding.astro'
+import { useTranslations } from '../../../i18n/utils'
+import { getBreadcrumbJsonLd } from '../../../lib/jsonld'
+import { ceremonyPlannerPath } from '../../../lib/lead-magnets'
+
+const lang = 'id'
+const t = useTranslations(lang)
+const planner = t('ceremonyPlanner')
+---
+
+<BaseLayout
+	lang={lang}
+	title={planner.title}
+	description={planner.description}
+	path={ceremonyPlannerPath[lang]}
+	jsonLd={getBreadcrumbJsonLd(lang, [{ name: planner.heading, path: ceremonyPlannerPath[lang] }])}
+>
+	<PageHeader eyebrow={planner.eyebrow} heading={planner.heading} subhead={planner.subhead} />
+	<CeremonyPlannerLanding lang={lang} />
+</BaseLayout>
