@@ -3,6 +3,7 @@ import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
 import { site } from '../../lib/site'
 import Logo from '../ui/Logo.astro'
+import { ceremonyPlannerPath } from '../../lib/lead-magnets'
 
 interface Props {
 	lang: Lang
@@ -24,6 +25,7 @@ const links = [
 	{ href: `${prefix}/faq/`, label: nav.faq },
 	{ href: `${prefix}/journal/`, label: nav.journal },
 	{ href: `${prefix}/contact/`, label: nav.contact },
+	{ href: `${ceremonyPlannerPath[lang]}?from=footer`, label: footer.plannerLink },
 ]
 ---
 

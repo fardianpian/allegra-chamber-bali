@@ -3,6 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro'
 import PageHeader from '../../../components/sections/PageHeader.astro'
 import JournalList from '../../../components/sections/JournalList.astro'
 import FinalCTA from '../../../components/sections/FinalCTA.astro'
+import CeremonyPlannerCta from '../../../components/sections/CeremonyPlannerCta.astro'
 import { useTranslations } from '../../../i18n/utils'
 import { getBreadcrumbJsonLd } from '../../../lib/jsonld'
 
@@ -21,5 +22,10 @@ const nav = t('nav')
 >
 	<PageHeader eyebrow={journal.eyebrow} heading={journal.heading} subhead={journal.subhead} />
 	<JournalList lang={lang} />
+	<section class="section bg-ivory pt-0">
+		<div class="container-max">
+			<CeremonyPlannerCta lang={lang} location="journal_index" class="mx-auto max-w-2xl" />
+		</div>
+	</section>
 	<FinalCTA lang={lang} />
 </BaseLayout>
