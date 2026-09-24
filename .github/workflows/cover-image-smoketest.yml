@@ -1,0 +1,30 @@
+# TEMPORARY — verifies the CLOUDFLARE_* Actions secrets work end to end.
+# Delete after one green run.
+name: Cover image smoke test
+
+on:
+  push:
+    branches: [claude/elegant-archimedes-zd6h4x]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Secrets present
+        run: |
+          test -n "$CLOUDFLARE_ACCOUNT_ID" && echo "CLOUDFLARE_ACCOUNT_ID: set (${#CLOUDFLARE_ACCOUNT_ID} chars)" || echo "CLOUDFLARE_ACCOUNT_ID: MISSING"
+          test -n "$CLOUDFLARE_API_TOKEN" && echo "CLOUDFLARE_API_TOKEN: set" || echo "CLOUDFLARE_API_TOKEN: MISSING"
+          test -n "$CLOUDFLARE_ACCOUNT_ID" && test -n "$CLOUDFLARE_API_TOKEN"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Generate a throwaway cover
+        run: |
+          node scripts/generate-cover-image.mjs smoke-test "a single violin resting on sheet music, soft window light"
+          node -e "require('sharp')('public/images/og-smoke-test.jpg').metadata().then(m => console.log('OK', m.width + 'x' + m.height, m.format))"
