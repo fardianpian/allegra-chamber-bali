@@ -23,29 +23,29 @@
 
 ## Status
 
-| #   | status   | slug                                    | pillar           | title (working)                                                              | publishedDate |
-| --- | -------- | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
-| 1   | done     | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
-| 2   | done     | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
-| 3   | done     | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
-| 4   | done     | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
-| 5   | done     | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
-| 6   | done     | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
-| 7   | done     | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
-| 8   | done     | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
-| 9   | done     | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
-| 10  | done     | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
-| 11  | done     | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
-| 12  | todo     | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
-| 13  | proposed | vow-renewal-live-music-bali             | planning         | Live Music for a Vow Renewal in Bali — Allegra Chamber Bali                  |               |
-| 14  | proposed | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
-| 15  | proposed | chapel-wedding-music-bali               | bali-venues      | Live Music for a Chapel Wedding in Bali — Allegra Chamber Bali               |               |
-| 16  | proposed | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      |               |
-| 17  | proposed | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        |               |
-| 18  | proposed | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         |               |
-| 19  | proposed | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
-| 20  | proposed | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
-| 21  | proposed | violin-wedding-songs                    | piano-repertoire | Violin Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali        |               |
+| #   | status | slug                                    | pillar           | title (working)                                                              | publishedDate |
+| --- | ------ | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
+| 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
+| 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
+| 3   | done   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
+| 4   | done   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
+| 5   | done   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
+| 6   | done   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
+| 7   | done   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
+| 8   | done   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
+| 9   | done   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
+| 10  | done   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
+| 11  | done   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
+| 12  | todo   | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
+| 13  | todo   | vow-renewal-live-music-bali             | planning         | Live Music for a Vow Renewal in Bali — Allegra Chamber Bali                  |               |
+| 14  | todo   | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
+| 15  | todo   | chapel-wedding-music-bali               | bali-venues      | Live Music for a Chapel Wedding in Bali — Allegra Chamber Bali               |               |
+| 16  | todo   | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      |               |
+| 17  | todo   | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        |               |
+| 18  | todo   | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         |               |
+| 19  | todo   | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
+| 20  | todo   | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
+| 21  | todo   | violin-wedding-songs                    | piano-repertoire | Violin Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali        |               |
 
 ## Item Details
 
@@ -428,11 +428,11 @@ chandelier softly blurred in the background, warm indoor lighting"` (2026-09-23 
   side-lighting" (timing/coordination metaphor, object only)
 
 <!-- Batch 2 (item 13–21) — sumber: docs/KEYWORD-MAP-2026-09.md (riset keyword gratis 2026-09-24:
-GSC + Google Autocomplete + SERP Firecrawl). Semua berstatus `proposed` sampai owner review. -->
+GSC + Google Autocomplete + SERP Firecrawl). Disetujui owner 2026-09-24 → `todo`. -->
 
 ### Item 13 — vow-renewal-live-music-bali (planning)
 
-<!-- Owner confirm dulu: apakah Allegra menerima vow renewal? Kalau tidak, hapus item ini. -->
+<!-- Owner confirmed 2026-09-24: Allegra accepts vow renewals. -->
 
 - **heading:** Live Music for a Vow Renewal in Bali
 - **targetKeyword:** vow renewal bali
@@ -447,7 +447,8 @@ GSC + Google Autocomplete + SERP Firecrawl). Semua berstatus `proposed` sampai o
   4. Planning the Ceremony Flow: Entrance, Vows, Exit
   5. Vow Renewals at a Villa, Beach, or Cliffside in Bali
 - **FAQ candidates:**
-  1. Q: Can we have live music for a vow renewal in Bali? A: [confirm with owner — yes if offered]
+  1. Q: Can we have live music for a vow renewal in Bali? A: yes — any formation, same as a
+     wedding ceremony.
   2. Q: Can you play the song from our original wedding? A: yes — custom arrangements are included
      in every booking.
   3. Q: What formation suits a vow renewal for just the two of us? A: Solo or Duo; piano stays in
@@ -488,8 +489,9 @@ GSC + Google Autocomplete + SERP Firecrawl). Semua berstatus `proposed` sampai o
 
 ### Item 15 — chapel-wedding-music-bali (bali-venues)
 
-<!-- Owner confirm dulu: pengalaman di chapel/gereja Katolik dan aturan musik liturgi (FAQ #2).
-Jangan sebut nama chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi. -->
+<!-- Owner confirmed 2026-09-24: church/chapel music is adapted to each church's own rules —
+no single fixed policy; don't state specific liturgical rules as fact. Jangan sebut nama
+chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi. -->
 
 - **heading:** Live Music for a Chapel Wedding in Bali
 - **targetKeyword:** chapel wedding bali
@@ -506,8 +508,8 @@ Jangan sebut nama chapel/venue spesifik sebagai tempat Allegra pernah tampil kec
 - **FAQ candidates:**
   1. Q: Do we need amplification in a chapel? A: usually not for acoustic piano and strings in a
      small chapel; Allegra doesn't bring a PA — venue/planner sound provider if needed.
-  2. Q: Can you play in a Catholic church ceremony in Bali? A: [confirm real process / liturgical
-     rules]
+  2. Q: Can you play in a Catholic church ceremony in Bali? A: yes — the repertoire is adapted to each
+     church's own music guidelines, confirmed with the church/planner in advance.
   3. Q: Is there a piano in the chapel? A: [confirm — venue piano vs. bringing a digital piano]
   4. Q: Which formation fits a small chapel? A: Solo/Duo/Trio depending on space.
 - **outboundLinkTarget:** `/packages/` and `/for-planners/`
@@ -560,7 +562,8 @@ Jangan sebut nama chapel/venue spesifik sebagai tempat Allegra pernah tampil kec
   1. Q: How many songs do we need for the signing? A: usually one or two; link song-count article.
   2. Q: Can musicians stretch a piece if the signing runs long? A: yes — reuse approved FAQ wording
      about extending/shortening live.
-  3. Q: Is signing music different in a church ceremony? A: [confirm]
+  3. Q: Is signing music different in a church ceremony? A: it can be — music is adapted to
+     each church's own guidelines.
   4. Q: Can the signing song be one of our own? A: yes, custom arrangements included.
 - **outboundLinkTarget:** `/repertoire/`
 - **inboundLinkSource:** `src/content/articles/wedding-ceremony-song-count.md` and
@@ -623,7 +626,7 @@ Jangan sebut nama chapel/venue spesifik sebagai tempat Allegra pernah tampil kec
 
 ### Item 20 — wedding-reception-dinner-music (planning)
 
-<!-- Owner confirm dulu: formasi mana yang memainkan set reception dinner. -->
+<!-- Owner confirmed 2026-09-24: any formation can play a dinner set, per client request. -->
 
 - **heading:** Live Music for Your Wedding Reception Dinner
 - **targetKeyword:** wedding dinner music
@@ -638,7 +641,8 @@ Jangan sebut nama chapel/venue spesifik sebagai tempat Allegra pernah tampil kec
   4. How Long a Dinner Set Runs
   5. From Dinner to First Dance
 - **FAQ candidates:**
-  1. Q: Do you play music during the wedding dinner? A: [confirm which formations]
+  1. Q: Do you play music during the wedding dinner? A: yes — any formation, chosen to suit
+     the couple's request and the room.
   2. Q: Will guests be able to talk over live music? A: yes — chamber music is played at
      conversational volume.
   3. Q: Can dinner music be different from ceremony music? A: yes.

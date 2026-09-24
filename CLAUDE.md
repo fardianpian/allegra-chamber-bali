@@ -73,6 +73,10 @@ Languages: **English (primary) + Indonesian (secondary)**.
     venue's or planner's sound provider (share the tech rider in advance).
   - **Rain plan:** musicians and instruments move to a covered, sheltered spot agreed in advance
     with the planner/venue; safety of musicians and equipment comes first.
+  - Confirmed 2026-09-24: **vow renewals are accepted** (same formations as a wedding);
+    **church/chapel music is adapted to each church's own rules** (no fixed liturgical policy —
+    don't state specific rules as fact); **reception dinner sets** can be played by any formation,
+    per client request.
   - **Formation names stay** (Solo/Duo/Trio/String Quartet/Large Ensemble); the default
     musician count (1/3/4/5/10) is shown as a badge, sourced from `packages/*.md` `musicians`.
   - The `/packages` formation finder (`FormationFinder.astro`) uses qualitative size rules

@@ -1,8 +1,8 @@
 # Keyword Map — 2026-09 (Journal backlog batch 2)
 
 > Uji coba pertama skill `keyword-research-expansion` (2026-09-24). Tujuan: mengisi
-> `docs/JOURNAL-BACKLOG.md` batch 2 setelah batch 1 (item 1–12) habis. Semua item baru berstatus
-> `proposed` — owner mengubahnya ke `todo` setelah review.
+> `docs/JOURNAL-BACKLOG.md` batch 2 setelah batch 1 (item 1–12) habis. Item 13–21 disetujui owner
+> 2026-09-24 (status `todo`); pertanyaan owner di § 6 sudah dijawab — lihat CLAUDE.md "Service facts".
 
 ## 1. Ringkasan Strategis
 
