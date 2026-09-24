@@ -70,7 +70,7 @@ dinner bali`, `proposal bali violin`, `acoustic band bali wedding`, `wedding vio
 ## 4. Prioritas Eksekusi
 
 Rumus default skill: `Relevansi×3 + Intent komersial×3 + Demand×2 + Feasibility×2 + Asset×1`.
-Demand maks 3 di putaran ini (belum ada impresi GSC atau ekspor Keyword Planner untuk cluster baru).
+Demand maks 3 di putaran ini (belum ada impresi GSC atau ekspor Keyword Planner untuk cluster baru). **Skor ulang dengan data Keyword Planner ada di § 8.3.**
 
 | #   | Cluster              | Rel | Int | Dem | Fea | Ast | Score | Alasan singkat                                                                                  |
 | --- | -------------------- | --- | --- | --- | --- | --- | ----: | ----------------------------------------------------------------------------------------------- |
@@ -253,3 +253,115 @@ GSC menunjukkan satu-satunya demand ID nyata bersifat definisi (`prelude adalah`
 bahasa Indonesian, seed `prelude adalah, apa itu prelude, musik pernikahan, pemain piano
 pernikahan, string quartet pernikahan`. Hasilnya untuk memperkuat artikel `/id/` existing, bukan
 membuat artikel ID terpisah.
+
+## 8. Hasil Google Keyword Planner (ekspor owner, 2026-09-24)
+
+### 8.1 Data
+
+- 6 run "Discover new keywords" (Run A–F dari § 7.2) → **3.362 keyword unik**, periode Sep 2025 –
+  Agu 2026. Disimpan sebagai UTF-8 di `docs/data/gkp-2026-09-{a-vendor,b-cost,c-repertoire,d-moments,e-venues,f-event-types}.csv`.
+- Akun tanpa kampanye aktif → ekspor hanya memberi bucket `50 / 500 / 5000 / 50000`. Dibaca sebagai
+  rentang **10–100 / 100–1K / 1K–10K / 10K–100K** per bulan. Kolom tren bulanan kosong (tidak ada
+  data musiman).
+- **Lokasi run tidak tercatat di file ekspor.** Ada keyword berbahasa Indonesia (`villa di bali untuk
+wedding`, `wedding organizer bali` 1K–10K, `harga wedding chapel di bali`) — kemungkinan Indonesia
+  ikut masuk lokasi. Angka keyword bertopik Bali bisa terangkat oleh pencari domestik. Perlu
+  konfirmasi owner (§ 8.5).
+- Daftar validasi § 7.3 **belum dijalankan** → sebagian besar `targetKeyword` artikel live belum
+  punya angka (mis. `how many songs for wedding ceremony`, `wedding band vs dj`,
+  `wedding music timeline`, `outdoor wedding rain plan`).
+
+### 8.2 Temuan utama
+
+1. **Demand "musisi + Bali" sangat kecil.** `wedding entertainment bali` 10–100, `wedding band bali`
+   10–100, `string quartet bali` tanpa data. Orang tidak mencari vendor musik Bali lewat Google dalam
+   jumlah berarti → traffic organik harus datang dari **topik repertoire/momen global** dan **topik
+   perencanaan venue Bali**, lalu diarahkan ke `/packages` dan WhatsApp.
+2. **Cluster momen upacara adalah pasar terbesar.** 18 keyword di 10K–100K, semuanya
+   processional/recessional/bridal entrance (kompetisi Rendah). Ditambah 107 keyword 1K–10K di Run D
+   (`walking down the aisle songs`, `bride entrance songs`, `wedding exit songs`,
+   `wedding prelude music`). Semua itu dilayani artikel **existing**
+   `wedding-processional-recessional-songs` dan `wedding-prelude-music` → prioritas #1 adalah
+   memperkuat keduanya, bukan menulis artikel baru.
+3. **Repertoire per instrumen: 1K–10K.** `piano wedding songs`, `violin wedding songs`,
+   `instrumental wedding songs`, `wedding piano music`, `piano songs for wedding ceremony`.
+   Kompetisi Rendah semuanya.
+4. **Vendor generik (non-Bali) 1K–10K**: `wedding string quartet`, `wedding pianist`,
+   `wedding ceremony musicians`, `string quartet for wedding ceremony`. Pencarinya kebanyakan
+   mencari vendor lokal di negaranya → nilai konversi rendah untuk Allegra. Tetap berguna sebagai
+   secondary di `/packages` dan `wedding-pianist-bali`.
+5. **Biaya**: `cost of band for wedding` 1K–10K; `string quartet wedding cost`,
+   `wedding pianist cost`, `violinist for wedding cost`, `cost of pianist for wedding`,
+   `wedding in bali cost` masing-masing 100–1K. Top-of-page bid tertinggi di seluruh data (hingga
+   ±Rp100–145rb) = intent komersial kuat. Tetap dipetakan ke `wedding-music-budget-bali` (faktor
+   biaya, **tanpa angka**).
+6. **Venue Bali 1K–10K**: `bali wedding venues`, `bali wedding locations`,
+   `wedding reception bali`, `bali wedding places`. SERP-nya meminta daftar venue — bukan ranah
+   situs musisi. Variasi area 100–1K (`uluwatu wedding venues`, `ubud wedding`,
+   `beach wedding bali`, `bali villa wedding`, `bali chapel wedding`) cocok sebagai **secondary**
+   di artikel venue existing.
+7. **Keyword planner/agency** (`bali wedding packages`, `bali wedding agency`,
+   `wedding organizer bali` 1K–10K) = intent mencari WO, bukan musisi. Relevan untuk strategi
+   kemitraan `/for-planners`, bukan konten.
+
+### 8.3 Skor ulang backlog batch 2 (Demand 3 → 4 bila ada rentang Keyword Planner)
+
+| #   | Cluster (primary)             | Rentang GKP | Rel | Int | Dem | Fea | Ast | Skor lama | Skor baru |
+| --- | ----------------------------- | ----------- | --- | --- | --- | --- | --- | --------: | --------: |
+| 13  | vow renewal bali              | 10–100      | 5   | 4   | 4   | 4   | 3   |        44 |        46 |
+| 15  | chapel wedding bali           | 100–1K      | 5   | 4   | 4   | 3   | 3   |        42 |        44 |
+| 16  | outdoor wedding rain plan     | belum dicek | 5   | 3   | 3   | 4   | 5   |        43 |        43 |
+| 14  | string quartet wedding songs  | 100–1K      | 5   | 3   | 4   | 3   | 4   |        40 |        42 |
+| 17  | signing of the register songs | 100–1K      | 5   | 2   | 4   | 4   | 4   |        39 |        41 |
+| 19  | piano first dance songs       | 10–100      | 5   | 2   | 4   | 4   | 4   |        39 |        41 |
+| 18  | wedding music timeline        | belum dicek | 5   | 2   | 3   | 3   | 4   |        37 |        37 |
+| 20  | wedding dinner music          | 100–1K      | 4   | 2   | 4   | 3   | 3   |        33 |        35 |
+| 21  | violin wedding songs          | **1K–10K**  | 4   | 2   | 4   | 3   | 3   |        33 |        35 |
+
+Rumus skill menilai **bukti** demand, bukan besarnya volume — jadi item 21 tetap di bawah walau
+volumenya terbesar di batch ini. Catatan untuk owner: bila tujuan jangka pendek adalah traffic,
+item 21 layak dimajukan (dan `piano first dance songs` 10–100 bisa diperluas ke
+`piano wedding songs` 1K–10K — lihat § 8.4). Urutan backlog **tidak** diubah tanpa persetujuan owner.
+
+### 8.4 Rekomendasi aksi
+
+**A. Perkuat existing (dampak terbesar, tanpa artikel baru):**
+
+| Halaman                                           | Tambahkan secondary / section                                                                                                                           | Rentang GKP      |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| `/journal/wedding-processional-recessional-songs` | bridal processional songs, wedding party processional songs, bride entrance songs, walking down the aisle songs, wedding exit songs, upbeat recessional | 10K–100K, 1K–10K |
+| `/journal/wedding-prelude-music`                  | prelude songs for wedding ceremony, prelude song for wedding (+ definisi "Prelude adalah…" di versi ID, § 6)                                            | 1K–10K           |
+| `/journal/wedding-ceremony-piano-music`           | piano wedding songs, wedding piano music, piano songs for wedding ceremony, wedding march piano                                                         | 1K–10K, 100–1K   |
+| `/journal/wedding-pianist-bali` + `/packages`     | wedding pianist, piano player for wedding, pianist for hire                                                                                             | 1K–10K, 100–1K   |
+| `/journal/string-quartet-bali-wedding`            | wedding string quartet, string quartet for wedding ceremony, string quartet wedding music                                                               | 1K–10K, 100–1K   |
+| `/journal/wedding-music-budget-bali`              | string quartet wedding cost, wedding pianist cost, violinist for wedding cost, wedding in bali cost (faktor biaya, tanpa angka)                         | 100–1K           |
+| `/journal/cliffside-wedding-uluwatu`              | uluwatu wedding venues, bali wedding venues uluwatu                                                                                                     | 100–1K           |
+| `/journal/beach-wedding-music-bali`               | beach wedding bali, beachfront wedding bali                                                                                                             | 100–1K           |
+| `/journal/villa-wedding-live-music-bali`          | bali villa wedding, bali wedding villas                                                                                                                 | 100–1K           |
+
+**B. Kandidat artikel baru (belum masuk backlog — butuh persetujuan owner):**
+
+| Kandidat                                                                       | Pillar           | Rentang GKP                           | Catatan anti-cannibalization                                                                                            |
+| ------------------------------------------------------------------------------ | ---------------- | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| instrumental wedding songs (+ wedding instrumental music, bridal instrumental) | piano-repertoire | 1K–10K                                | Belum ada targetKeyword ini. Beda intent dari item 14/21 (lintas instrumen, bukan per formasi)                          |
+| classical music for wedding ceremony (+ classical wedding entrance music)      | piano-repertoire | 100–1K                                | Cek tumpang tindih dengan `classical-vs-contemporary` — itu perbandingan gaya, ini daftar lagu                          |
+| ubud wedding (live music for Ubud jungle/rice-field weddings)                  | bali-venues      | 100–1K                                | Area tanpa artikel. Hanya layak bila isinya benar-benar spesifik (akustik outdoor, kelembapan, akses) — hindari doorway |
+| cello wedding songs                                                            | piano-repertoire | 10–100 (+ cello wedding music 100–1K) | Supporting. Bisa digabung ke item 14 sebagai section                                                                    |
+
+### 8.5 Pertanyaan untuk owner
+
+1. Lokasi apa yang dipilih saat menjalankan Keyword Planner — apakah Indonesia ikut? (menentukan
+   seberapa besar angka keyword Bali mencerminkan pasangan internasional).
+2. Mau jalankan daftar § 7.3 (Get search volume and forecasts) supaya `targetKeyword` artikel live
+   dan item 16/18 punya angka?
+3. Setuju item 21 (`violin wedding songs`) dimajukan dan kandidat § 8.4 B ditulis ke
+   `docs/JOURNAL-BACKLOG.md` sebagai `proposed`?
+
+### 8.6 Keputusan owner (2026-09-24)
+
+- **Item 14 ↔ 21 ditukar** di `docs/JOURNAL-BACKLOG.md` (sesama pillar `piano-repertoire`, jadi
+  rotasi pillar tetap): `violin-wedding-songs` sekarang **#14**, `string-quartet-wedding-songs`
+  sekarang **#21**. Nomor item di § 3, § 4 dan § 8.3 di atas mencatat urutan sebelum penukaran.
+- Kandidat § 8.4 B ditulis ke backlog sebagai **item 22–25 berstatus `proposed`**:
+  `instrumental-wedding-songs`, `ubud-wedding-live-music`, `classical-wedding-ceremony-music`,
+  `cello-wedding-music`. Owner mengubah `proposed` → `todo` setelah review.

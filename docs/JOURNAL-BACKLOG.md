@@ -23,29 +23,33 @@
 
 ## Status
 
-| #   | status | slug                                    | pillar           | title (working)                                                              | publishedDate |
-| --- | ------ | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
-| 1   | done   | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
-| 2   | done   | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
-| 3   | done   | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
-| 4   | done   | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
-| 5   | done   | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
-| 6   | done   | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
-| 7   | done   | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
-| 8   | done   | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
-| 9   | done   | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
-| 10  | done   | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
-| 11  | done   | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
-| 12  | todo   | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
-| 13  | todo   | vow-renewal-live-music-bali             | planning         | Live Music for a Vow Renewal in Bali — Allegra Chamber Bali                  |               |
-| 14  | todo   | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
-| 15  | todo   | chapel-wedding-music-bali               | bali-venues      | Live Music for a Chapel Wedding in Bali — Allegra Chamber Bali               |               |
-| 16  | todo   | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      |               |
-| 17  | todo   | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        |               |
-| 18  | todo   | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         |               |
-| 19  | todo   | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
-| 20  | todo   | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
-| 21  | todo   | violin-wedding-songs                    | piano-repertoire | Violin Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali        |               |
+| #   | status   | slug                                    | pillar           | title (working)                                                              | publishedDate |
+| --- | -------- | --------------------------------------- | ---------------- | ---------------------------------------------------------------------------- | ------------- |
+| 1   | done     | intimate-wedding-music-bali             | planning         | Music for an Intimate Wedding in Bali — Allegra Chamber Bali                 | 2026-08-30    |
+| 2   | done     | custom-wedding-music-arrangement        | piano-repertoire | How a Custom Wedding Music Arrangement Is Made — Allegra Chamber Bali        | 2026-08-31    |
+| 3   | done     | balinese-wedding-ceremony-music         | bali-venues      | Live Music for a Balinese-Influenced Wedding Ceremony — Allegra Chamber Bali | 2026-09-04    |
+| 4   | done     | tech-rider-live-wedding-music           | for-planners     | Tech Rider Basics for Live Wedding Music — Allegra Chamber Bali              | 2026-09-07    |
+| 5   | done     | wedding-ceremony-song-count             | planning         | How Many Songs for a Wedding Ceremony? — Allegra Chamber Bali                | 2026-09-09    |
+| 6   | done     | cocktail-hour-wedding-piano-music       | piano-repertoire | Cocktail Hour Piano Music for Weddings — Allegra Chamber Bali                | 2026-09-11    |
+| 7   | done     | villa-wedding-live-music-bali           | bali-venues      | Live Music for a Private Villa Wedding in Bali — Allegra Chamber Bali        | 2026-09-14    |
+| 8   | done     | why-planners-recommend-live-music-bali  | for-planners     | Why Planners Recommend Live Music for Bali Ceremonies — Allegra Chamber Bali | 2026-09-16    |
+| 9   | done     | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
+| 10  | done     | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
+| 11  | done     | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
+| 12  | todo     | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
+| 13  | todo     | vow-renewal-live-music-bali             | planning         | Live Music for a Vow Renewal in Bali — Allegra Chamber Bali                  |               |
+| 14  | todo     | violin-wedding-songs                    | piano-repertoire | Violin Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali        |               |
+| 15  | todo     | chapel-wedding-music-bali               | bali-venues      | Live Music for a Chapel Wedding in Bali — Allegra Chamber Bali               |               |
+| 16  | todo     | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      |               |
+| 17  | todo     | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        |               |
+| 18  | todo     | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         |               |
+| 19  | todo     | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
+| 20  | todo     | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
+| 21  | todo     | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
+| 22  | proposed | instrumental-wedding-songs              | piano-repertoire | Instrumental Wedding Songs for Your Ceremony — Allegra Chamber Bali          |               |
+| 23  | proposed | ubud-wedding-live-music                 | bali-venues      | Live Music for an Ubud Wedding — Allegra Chamber Bali                        |               |
+| 24  | proposed | classical-wedding-ceremony-music        | piano-repertoire | Classical Music for Your Wedding Ceremony — Allegra Chamber Bali             |               |
+| 25  | proposed | cello-wedding-music                     | piano-repertoire | Cello Wedding Music for the Aisle and Beyond — Allegra Chamber Bali          |               |
 
 ## Item Details
 
@@ -460,32 +464,32 @@ GSC + Google Autocomplete + SERP Firecrawl). Disetujui owner 2026-09-24 → `tod
 - **cover image prompt:** "two gold wedding rings resting on an open piano score beside a
   frangipani flower, warm afternoon light" (object only)
 
-### Item 14 — string-quartet-wedding-songs (piano-repertoire)
+### Item 14 — violin-wedding-songs (piano-repertoire)
 
-- **heading:** String Quartet Wedding Songs, From Classical to Modern
-- **targetKeyword:** string quartet wedding songs
-- **description seed:** String quartet wedding songs for every ceremony moment — classical
-  favourites, modern pop covers, and how piano changes the sound of a quartet.
-- **excerpt seed:** Classical standards and modern covers for a string quartet wedding, grouped by
-  the ceremony moment they fit best.
+- **heading:** Violin Wedding Songs for Every Ceremony Moment
+- **targetKeyword:** violin wedding songs
+- **description seed:** Violin wedding songs for the aisle, signing, and recessional — classical
+  standards, modern covers, and when to pair violin with piano.
+- **excerpt seed:** Violin leads the melody in many ceremony favourites. Song ideas for each
+  moment, solo or with piano.
 - **outline (H2s):**
-  1. Classical Pieces That Work for String Quartet
-  2. Modern and Pop Songs Arranged for Strings
-  3. Songs by Moment: Prelude, Aisle, Signing, Recessional
-  4. How Piano Changes a String Quartet's Sound
-  5. Requesting a Song That Isn't on the List
+  1. Why Violin Carries a Ceremony Melody
+  2. Classical Violin Pieces for the Aisle
+  3. Modern Songs Arranged for Violin
+  4. Solo Violin or Violin With Piano
+  5. Choosing Songs by Ceremony Moment
 - **FAQ candidates:**
-  1. Q: Can a string quartet play pop songs at a wedding? A: yes — arranged for strings and piano.
-  2. Q: What classical pieces are most popular for a string quartet wedding? A: list from
-     `/repertoire` only — don't invent titles not in the repertoire data.
-  3. Q: Does your string quartet include piano? A: yes, piano is standard in our String Quartet
-     (5 musicians).
-  4. Q: Can we request our own song? A: yes, custom arrangements included.
+  1. Q: Can a solo violinist play our whole ceremony? A: yes — Solo formation; mention piano duo
+     option.
+  2. Q: What are popular violin songs to walk down the aisle? A: from `/repertoire` only.
+  3. Q: Can violin play pop songs? A: yes, arranged.
+  4. Q: Does a solo violin need amplification outdoors? A: Allegra doesn't bring a PA/sound
+     system — when amplification is needed it comes from the venue's or planner's sound provider
+     (owner-confirmed 2026-09-14); share the tech rider in advance.
 - **outboundLinkTarget:** `/repertoire/` and `/packages/`
-- **inboundLinkSource:** `src/content/articles/string-quartet-bali-wedding.md` (different intent:
-  that one = formation/booking, this one = song list — link both ways, don't merge)
-- **cover image prompt:** "a violin, viola, and cello resting on chairs in a semicircle beside a
-  grand piano, soft window light" (object only)
+- **inboundLinkSource:** `src/content/articles/wedding-processional-recessional-songs.md`
+- **cover image prompt:** "a violin and bow resting on an open score on a garden chair, frangipani
+  petals, morning light" (object only)
 
 ### Item 15 — chapel-wedding-music-bali (bali-venues)
 
@@ -654,27 +658,158 @@ chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi.
 - **cover image prompt:** "a candlelit long reception table with a cello resting nearby, tropical
   garden at dusk" (no people)
 
-### Item 21 — violin-wedding-songs (piano-repertoire)
+### Item 21 — string-quartet-wedding-songs (piano-repertoire)
 
-- **heading:** Violin Wedding Songs for Every Ceremony Moment
-- **targetKeyword:** violin wedding songs
-- **description seed:** Violin wedding songs for the aisle, signing, and recessional — classical
-  standards, modern covers, and when to pair violin with piano.
-- **excerpt seed:** Violin leads the melody in many ceremony favourites. Song ideas for each
-  moment, solo or with piano.
+- **heading:** String Quartet Wedding Songs, From Classical to Modern
+- **targetKeyword:** string quartet wedding songs
+- **description seed:** String quartet wedding songs for every ceremony moment — classical
+  favourites, modern pop covers, and how piano changes the sound of a quartet.
+- **excerpt seed:** Classical standards and modern covers for a string quartet wedding, grouped by
+  the ceremony moment they fit best.
 - **outline (H2s):**
-  1. Why Violin Carries a Ceremony Melody
-  2. Classical Violin Pieces for the Aisle
-  3. Modern Songs Arranged for Violin
-  4. Solo Violin or Violin With Piano
-  5. Choosing Songs by Ceremony Moment
+  1. Classical Pieces That Work for String Quartet
+  2. Modern and Pop Songs Arranged for Strings
+  3. Songs by Moment: Prelude, Aisle, Signing, Recessional
+  4. How Piano Changes a String Quartet's Sound
+  5. Requesting a Song That Isn't on the List
 - **FAQ candidates:**
-  1. Q: Can a solo violinist play our whole ceremony? A: yes — Solo formation; mention piano duo
-     option.
-  2. Q: What are popular violin songs to walk down the aisle? A: from `/repertoire` only.
-  3. Q: Can violin play pop songs? A: yes, arranged.
-  4. Q: Does a solo violin need amplification outdoors? A: [confirm]
+  1. Q: Can a string quartet play pop songs at a wedding? A: yes — arranged for strings and piano.
+  2. Q: What classical pieces are most popular for a string quartet wedding? A: list from
+     `/repertoire` only — don't invent titles not in the repertoire data.
+  3. Q: Does your string quartet include piano? A: yes, piano is standard in our String Quartet
+     (5 musicians).
+  4. Q: Can we request our own song? A: yes, custom arrangements included.
+- **outboundLinkTarget:** `/repertoire/` and `/packages/`
+- **inboundLinkSource:** `src/content/articles/string-quartet-bali-wedding.md` (different intent:
+  that one = formation/booking, this one = song list — link both ways, don't merge)
+- **cover image prompt:** "a violin, viola, and cello resting on chairs in a semicircle beside a
+  grand piano, soft window light" (object only)
+
+### Item 22 — instrumental-wedding-songs (piano-repertoire)
+
+<!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: instrumental wedding
+songs 1K–10K, wedding instrumental music 1K–10K, bridal instrumental music 1K–10K). Angle = songs
+WITH lyrics played without vocals, across instruments — distinct from item 14 (violin), item 21
+(string quartet) and wedding-processional-recessional-songs (moment-led). -->
+
+- **heading:** Instrumental Wedding Songs: Your Favourite Songs Without the Vocals
+- **targetKeyword:** instrumental wedding songs
+- **description seed:** Instrumental wedding songs for the ceremony — pop, film, and classical
+  pieces played live on piano and strings, and how your own song becomes an instrumental.
+- **excerpt seed:** Many couples want a song they love, just without the vocals. How instrumental
+  versions work for each ceremony moment.
+- **outline (H2s):**
+  1. Why Instrumental Versions Suit a Ceremony
+  2. Pop and Film Songs, Arranged Without Vocals
+  3. Classical Instrumental Standards
+  4. Piano, Strings, or Both: How the Sound Changes
+  5. Turning Your Own Song Into an Instrumental
+- **FAQ candidates:**
+  1. Q: Can any song be played as an instrumental? A: yes — custom arrangements of the couple's
+     songs are included in every booking (owner-confirmed 2026-09-14).
+  2. Q: Which instrumental songs are popular for walking down the aisle? A: titles from
+     `/repertoire` only — don't invent titles not in the repertoire data.
+  3. Q: Does an instrumental version need a singer? A: no — piano or violin carries the melody.
+     Whether a vocalist can be added: [confirm real process]
+  4. Q: Which formation suits instrumental versions best? A: describe by formation; piano is
+     standard in Duo/Trio/String Quartet.
 - **outboundLinkTarget:** `/repertoire/` and `/packages/`
 - **inboundLinkSource:** `src/content/articles/wedding-processional-recessional-songs.md`
-- **cover image prompt:** "a violin and bow resting on an open score on a garden chair, frangipani
-  petals, morning light" (object only)
+- **cover image prompt:** "a grand piano lid open beside a violin on a chair, printed song sheets on
+  the music stand, soft evening light" (object only)
+
+### Item 23 — ubud-wedding-live-music (bali-venues)
+
+<!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: ubud wedding
+100–1K, bali ubud wedding 100–1K). First area without a /journal article. Doorway-page risk: only
+publish if the body is genuinely Ubud-specific (outdoor jungle/rice-field acoustics, humidity,
+access & load-in, rain) — not a copy of the villa/cliffside articles with the place name swapped.
+Do NOT name specific Ubud venues as places Allegra has performed (CLAUDE.md rule 9). -->
+
+- **heading:** Live Music for an Ubud Wedding: Jungle, Rice Field, and Riverside Settings
+- **targetKeyword:** ubud wedding
+- **description seed:** Planning live music for an Ubud wedding — how jungle, rice-field, and
+  riverside settings shape the sound, the formation, and the day's logistics.
+- **excerpt seed:** Ubud's green, open-air settings shape how live music sounds. What to plan for
+  before choosing a formation.
+- **outline (H2s):**
+  1. How Ubud's Open-Air Settings Shape the Sound
+  2. Choosing a Formation for a Jungle or Rice-Field Ceremony
+  3. Humidity, Shade, and Caring for the Instruments
+  4. Access, Load-In, and Timing on the Day
+  5. A Rain Plan for an Ubud Ceremony
+- **FAQ candidates:**
+  1. Q: Do you perform at weddings in Ubud? A: [confirm real process — travel area / travel fee
+     wording, no prices]
+  2. Q: Does humidity affect the instruments? A: [confirm real process]
+  3. Q: What happens if it rains? A: musicians and instruments move to a covered, sheltered spot
+     agreed in advance with the planner/venue; safety first (owner-confirmed 2026-09-14).
+  4. Q: Do we need a sound system outdoors? A: Allegra doesn't bring a PA — the venue's or planner's
+     sound provider handles amplification when needed (owner-confirmed 2026-09-14).
+- **outboundLinkTarget:** `/packages/` and `/for-planners/`
+- **inboundLinkSource:** `src/content/articles/villa-wedding-live-music-bali.md`
+- **cover image prompt:** "a cello resting against a carved stone wall beside green rice terraces,
+  morning mist, frangipani petals" (object only)
+
+### Item 24 — classical-wedding-ceremony-music (piano-repertoire)
+
+<!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: classical music for
+wedding ceremony 100–1K, classical wedding entrance music 100–1K, classical music for wedding
+recessional 100–1K). Anti-cannibalization: classical-vs-contemporary-wedding-music (item 10) = a
+style comparison; this = a classical piece list by ceremony moment. Link both ways, don't repeat
+item 10's comparison sections. -->
+
+- **heading:** Classical Music for Your Wedding Ceremony, Moment by Moment
+- **targetKeyword:** classical music for wedding ceremony
+- **description seed:** Classical music for your wedding ceremony — pieces for the prelude, aisle,
+  signing, and recessional, played live on piano and strings in Bali.
+- **excerpt seed:** Classical pieces that suit each part of the ceremony, and how piano and strings
+  bring them to an outdoor setting.
+- **outline (H2s):**
+  1. Classical Pieces for the Prelude
+  2. Classical Processional Music
+  3. Music for the Vows and the Signing
+  4. Classical Recessional Pieces
+  5. Pairing Classical Pieces With One Modern Song
+- **FAQ candidates:**
+  1. Q: What is the most popular classical piece for walking down the aisle? A: from
+     `/repertoire` only — don't invent titles not in the repertoire data.
+  2. Q: Can we mix classical and modern songs? A: yes — link item 10 for the full comparison.
+  3. Q: Does classical music need a full string quartet? A: no — Solo, Duo, and Trio also work;
+     piano is standard in Duo/Trio/String Quartet.
+  4. Q: Can a church or chapel restrict classical pieces? A: music is adapted to each church's own
+     rules (owner-confirmed 2026-09-24) — don't state specific rules as fact.
+- **outboundLinkTarget:** `/repertoire/` and `/packages/`
+- **inboundLinkSource:** `src/content/articles/classical-vs-contemporary-wedding-music.md`
+- **cover image prompt:** "an open classical score on a piano music stand, a violin bow laid
+  across it, warm candlelight" (object only)
+
+### Item 25 — cello-wedding-music (piano-repertoire)
+
+<!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: cello wedding music
+100–1K, cello wedding songs 10–100). Supporting item. Alternative for the owner: instead of a
+standalone article, fold it into item 21 (string-quartet-wedding-songs) as one H2 section. -->
+
+- **heading:** Cello Wedding Music for the Aisle and Beyond
+- **targetKeyword:** cello wedding music
+- **description seed:** Cello wedding music for the aisle, signing, and recessional — solo cello,
+  cello with piano, and songs that suit the cello's warm, low voice.
+- **excerpt seed:** The cello's low, warm voice suits quieter ceremony moments. Song ideas, solo or
+  paired with piano and violin.
+- **outline (H2s):**
+  1. What the Cello Brings to a Ceremony
+  2. Cello Songs for Walking Down the Aisle
+  3. Solo Cello, or Cello With Piano and Violin
+  4. Cello for the Signing and Recessional
+  5. Requesting Your Own Song on Cello
+- **FAQ candidates:**
+  1. Q: Can a solo cellist play our ceremony? A: yes — cello is a Solo formation option; mention
+     the Duo (violin + cello + piano) as the next step up.
+  2. Q: What are popular cello songs to walk down the aisle? A: from `/repertoire` only.
+  3. Q: Can the cello play pop songs? A: yes — custom arrangements included.
+  4. Q: Does a solo cello need amplification outdoors? A: Allegra doesn't bring a PA — venue's or
+     planner's sound provider (owner-confirmed 2026-09-14).
+- **outboundLinkTarget:** `/repertoire/` and `/packages/`
+- **inboundLinkSource:** `src/content/articles/string-quartet-bali-wedding.md`
+- **cover image prompt:** "a cello and bow leaning against a white chair on a garden lawn, soft
+  late-afternoon light" (object only)
