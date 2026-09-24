@@ -1,11 +1,12 @@
 ---
-title: 'What Does a Wedding Pianist Play? A Ceremony Music Guide — Allegra Chamber Bali'
-heading: 'What Does a Wedding Pianist Play at a Wedding Ceremony?'
-description: 'A guide to what a wedding pianist plays at each ceremony moment — prelude, processional, signing, recessional — and how to plan the music around your day.'
+title: 'Piano Wedding Songs: What a Pianist Plays at Your Ceremony — Allegra Chamber Bali'
+heading: 'Piano Wedding Songs: What a Wedding Pianist Plays at Your Ceremony'
+description: 'Piano wedding songs for each ceremony moment: prelude, processional, signing, and recessional, plus the wedding march on piano and how to plan your music.'
 excerpt: 'From prelude to recessional, here is what a wedding pianist covers at each ceremony moment — and how to choose the right music for your day.'
 pillar: 'piano-repertoire'
 targetKeyword: 'piano wedding ceremony'
 pubDate: 2026-06-29
+updatedDate: 2026-09-24
 ogImage: '/images/og-wedding-ceremony-piano-music.jpg'
 faq:
   - question: 'What does a wedding pianist play during the processional?'
@@ -60,6 +61,12 @@ Wedding ceremony piano music falls into three categories, and all three can coex
 **Your own song** — a piece specific to your relationship. This is what couples most often request on inquiry: a first-dance song, something from a place that matters to you, or a piece with a particular memory attached. Custom arrangements are taken on with enough notice and confirmed at booking.
 
 A common approach: classical pieces for the prelude, a contemporary arrangement for the processional, and a custom arrangement of your song for the recessional. The mix is yours to shape — our [classical vs. contemporary guide](/journal/classical-vs-contemporary-wedding-music/) covers how to decide between the two in more depth.
+
+## The Wedding March on Piano
+
+"The wedding march" usually means one of two classical pieces, both written for the orchestra and long associated with the church organ — and both translate naturally to solo piano. Wagner's Bridal Chorus, from the opera _Lohengrin_, is the melody most people know as "Here Comes the Bride" and is traditionally played for the entrance. Mendelssohn's Wedding March, from his music for _A Midsummer Night's Dream_, is the bright, fanfare-like piece traditionally played as the couple walks out.
+
+On solo piano, both keep their familiar shape with a lighter, more intimate sound, which suits an open-air ceremony where the setting already carries much of the moment. With strings added — piano is standard in our Duo, Trio, and String Quartet — the same pieces regain their full, ceremonial weight. If you would rather not use a traditional march at all, our [processional and recessional song guide](/journal/wedding-processional-recessional-songs/) lists alternatives for both moments, and every piece we arrange is on our [repertoire page](/repertoire/).
 
 ## Solo Piano or Piano With Strings?
 

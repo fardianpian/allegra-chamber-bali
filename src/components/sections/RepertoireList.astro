@@ -52,13 +52,35 @@ const filterBtnBase =
 			</div>
 		</div>
 
-		<div class="reveal mx-auto mt-10 max-w-2xl" id="song-list">
+		<div class="mx-auto mt-10 max-w-2xl" id="song-list">
 			{
-				songs.map((song) => (
-					<div class="song-row" data-moment={song.data.moment} data-genre={song.data.genre}>
-						<AudioSample title={song.data.title} composer={song.data.composer} src={song.data.audioSample} />
-					</div>
-				))
+				moments.map((m) => {
+					const momentSongs = songs.filter((song) => song.data.moment === m)
+					if (momentSongs.length === 0) return null
+					return (
+						<section
+							class="moment-group reveal mt-12 first:mt-0"
+							data-moment-group={m}
+							aria-labelledby={`moment-${m}`}
+						>
+							<h2 id={`moment-${m}`} class="font-display text-2xl md:text-3xl">
+								{repertoire.momentSections[m].heading}
+							</h2>
+							<p class="mt-3 text-ink/75">{repertoire.momentSections[m].intro}</p>
+							<div class="mt-4">
+								{momentSongs.map((song) => (
+									<div class="song-row" data-moment={song.data.moment} data-genre={song.data.genre}>
+										<AudioSample
+											title={song.data.title}
+											composer={song.data.composer}
+											src={song.data.audioSample}
+										/>
+									</div>
+								))}
+							</div>
+						</section>
+					)
+				})
 			}
 		</div>
 		<p class="reveal mx-auto mt-6 max-w-2xl text-center text-sm text-taupe" id="no-results" hidden>
@@ -74,6 +96,7 @@ const filterBtnBase =
 <script>
 	const groups = document.querySelectorAll<HTMLElement>('[data-filter-group]')
 	const rows = document.querySelectorAll<HTMLElement>('.song-row')
+	const sections = document.querySelectorAll<HTMLElement>('.moment-group')
 	const noResults = document.getElementById('no-results')
 	const selected: Record<string, string> = { moment: 'all', genre: 'all' }
 
@@ -85,6 +108,10 @@ const filterBtnBase =
 			const visible = matchesMoment && matchesGenre
 			row.hidden = !visible
 			if (visible) visibleCount++
+		})
+		// Hide a moment's heading + intro when none of its songs match the active filters.
+		sections.forEach((section) => {
+			section.hidden = !section.querySelector('.song-row:not([hidden])')
 		})
 		if (noResults) noResults.hidden = visibleCount > 0
 	}

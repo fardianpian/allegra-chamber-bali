@@ -14,12 +14,13 @@ const { title, composer, src, class: className = '' } = Astro.props
 		{composer && <p class="text-sm text-taupe">{composer}</p>}
 	</div>
 	{
-		src ? (
+		/* No placeholder label when a song has no sample yet — 53 "coming soon" labels read as an unfinished page. */
+	}
+	{
+		src && (
 			<audio controls preload="none" class="h-9 w-44 md:w-56">
 				<source src={src} type="audio/mpeg" />
 			</audio>
-		) : (
-			<span class="text-xs uppercase tracking-[0.1em] text-taupe">Sample coming soon</span>
 		)
 	}
 </div>

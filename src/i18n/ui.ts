@@ -338,6 +338,34 @@ export const ui = {
 				film: 'Film',
 				indonesian: 'Indonesian',
 			},
+			// Rendered as crawlable H2 + intro above each moment's song list (2026-09-24, keyword map § 9.2).
+			momentSections: {
+				processional: {
+					heading: 'Processional Songs for Walking Down the Aisle',
+					intro:
+						'Music for the bridal party and the couple walking in — usually one continuous piece that covers the full length of the aisle, played at a measured pace on piano, strings, or both.',
+				},
+				signing: {
+					heading: 'Music for the Signing of the Register',
+					intro:
+						'Gentle pieces for the quiet minutes while the register is signed — music that fills the pause without drawing attention away from it.',
+				},
+				recessional: {
+					heading: 'Recessional Songs for Your Exit',
+					intro:
+						'Brighter, faster pieces for the moment you walk out as a married couple — shorter than the processional and usually the most celebratory music of the ceremony.',
+				},
+				cocktail: {
+					heading: 'Cocktail Hour Music',
+					intro:
+						'Relaxed piano and string music for the hour after the ceremony, while guests gather, talk, and take photos.',
+				},
+				reception: {
+					heading: 'Reception and First Dance Songs',
+					intro:
+						'Contemporary songs arranged for piano and strings — for the reception, dinner, and a first dance played live.',
+				},
+			},
 			noResults: 'No songs match this filter yet — ask us for a custom arrangement.',
 			customNote: "Don't see your song? We take custom arrangement requests.",
 			customCta: 'Request a custom arrangement',
@@ -994,6 +1022,33 @@ export const ui = {
 				pop: 'Pop',
 				film: 'Film',
 				indonesian: 'Indonesia',
+			},
+			momentSections: {
+				processional: {
+					heading: 'Lagu Processional untuk Berjalan Menuju Altar',
+					intro:
+						'Musik untuk rombongan pengantin dan pasangan saat memasuki upacara — biasanya satu lagu utuh yang cukup untuk seluruh panjang lorong, dimainkan dengan tempo tenang oleh piano, gesek, atau keduanya.',
+				},
+				signing: {
+					heading: 'Musik untuk Penandatanganan Dokumen Pernikahan',
+					intro:
+						'Lagu-lagu lembut untuk beberapa menit hening saat dokumen pernikahan ditandatangani — mengisi jeda tanpa mengalihkan perhatian darinya.',
+				},
+				recessional: {
+					heading: 'Lagu Recessional untuk Momen Keluar',
+					intro:
+						'Lagu yang lebih cerah dan cepat untuk saat Anda berjalan keluar sebagai pasangan suami istri — lebih singkat dari processional dan biasanya bagian paling meriah dari upacara.',
+				},
+				cocktail: {
+					heading: 'Musik Cocktail Hour',
+					intro:
+						'Musik piano dan gesek yang santai untuk satu jam setelah upacara, saat tamu berkumpul, berbincang, dan berfoto.',
+				},
+				reception: {
+					heading: 'Lagu Resepsi dan Tarian Pertama',
+					intro:
+						'Lagu-lagu kontemporer yang diaransemen untuk piano dan gesek — untuk resepsi, makan malam, dan tarian pertama yang dimainkan langsung.',
+				},
 			},
 			noResults: 'Belum ada lagu yang cocok dengan filter ini — minta aransemen khusus dari kami.',
 			customNote: 'Tidak menemukan lagu Anda? Kami menerima permintaan aransemen khusus.',
