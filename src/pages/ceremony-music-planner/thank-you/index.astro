@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+import Button from '../../../components/ui/Button.astro'
+import WhatsAppCTA from '../../../components/media/WhatsAppCTA.astro'
+import Eyebrow from '../../../components/ui/Eyebrow.astro'
+import { useTranslations } from '../../../i18n/utils'
+import { ceremonyPlannerPdf, ceremonyPlannerThankYouPath } from '../../../lib/lead-magnets'
+
+const lang = 'en'
+const otherLang = 'id'
+const t = useTranslations(lang)
+const planner = t('ceremonyPlanner')
+---
+
+<BaseLayout
+	lang={lang}
+	title={`${planner.thankYouHeading} — Allegra Chamber Bali`}
+	description={planner.thankYouSubhead}
+	path={ceremonyPlannerThankYouPath[lang]}
+	noindex
+>
+	<section class="section flex min-h-[60vh] items-center bg-ivory pt-32 md:pt-40">
+		<div class="container-max reveal flex flex-col items-center text-center">
+			<Eyebrow>{planner.thankYouEyebrow}</Eyebrow>
+			<h1 class="mt-3 max-w-2xl text-4xl md:text-5xl">{planner.thankYouHeading}</h1>
+			<p class="mt-4 max-w-xl text-taupe">{planner.thankYouSubhead}</p>
+			<div class="mt-8 flex flex-wrap justify-center gap-4">
+				<Button href={ceremonyPlannerPdf[lang]} variant="primary" data-planner-download={lang}>
+					{planner.download}
+				</Button>
+				<WhatsAppCTA
+					location="ceremony_planner_thank_you"
+					message={planner.whatsappMessage}
+					label={planner.ctaWhatsapp}
+					variant="outline"
+				/>
+			</div>
+			<a
+				href={ceremonyPlannerPdf[otherLang]}
+				class="mt-6 text-sm text-ink underline decoration-gold underline-offset-2 hover:text-gold"
+			>
+				{planner.otherLanguage}
+			</a>
+		</div>
+	</section>
+	{
+		/*
+		GA4 key event, same guard as /thank-you: only on a fresh navigation arriving from the form
+		redirect (?form=ceremony_planner), so direct visits and reloads don't count as leads.
+	*/
+	}
+	<script
+		is:inline
+		set:html={`(function () {
+			var formType = new URLSearchParams(location.search).get('form');
+			var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+			if (!formType || (nav && nav.type !== 'navigate')) return;
+			gtag('event', 'generate_lead', { form_type: formType });
+		})();`}
+	/>
+</BaseLayout>
