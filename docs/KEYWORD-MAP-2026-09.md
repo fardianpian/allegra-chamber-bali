@@ -134,3 +134,122 @@ mengeksekusinya tanpa langkah tambahan.
   Seed tambahan untuk putaran berikutnya: area (Nusa Dua, Ubud, Canggu), "sunset ceremony"
   (validasi SERP ulang), dan topik B2B planner (repertoire sheet, stage plot).
 - Cluster `cello wedding songs` punya autocomplete kuat — belum dicek SERP-nya.
+
+## 7. Seed untuk Google Keyword Planner (menjawab pertanyaan owner #4)
+
+> Disusun 2026-09-24 dari GSC (2026-06-24 → 2026-09-23), Google Autocomplete (`gl=au`, 30 seed
+> baru) dan cluster di § 3. Tujuan: owner menjalankan Keyword Planner → ekspor CSV → skor Demand
+> cluster naik dari 3 ke 4 dan urutan prioritas bisa dikoreksi dengan rentang volume nyata.
+
+### 7.1 Setelan Keyword Planner
+
+- **Lokasi:** Australia, United Kingdom, United States, Singapore (satu run gabungan). Opsional:
+  run kedua khusus Australia untuk membandingkan pasar terdekat.
+- **Bahasa:** English · **Jaringan:** Google · **Rentang:** 12 bulan terakhir (lihat musiman).
+- Akun tanpa kampanye aktif hanya menampilkan **rentang** volume (mis. 100–1K) — cukup untuk skor
+  Demand 4. Jangan buat/aktifkan kampanye berbayar hanya demi angka pasti.
+- Ekspor: **Download keyword ideas → CSV**, simpan ke `docs/data/gkp-2026-09-<nama-run>.csv`.
+
+### 7.2 "Discover new keywords" — 6 run, maks. 10 seed per run
+
+**Run A — Vendor / transaksional** (target: `/`, `/packages`, `/for-planners`)
+
+```text
+wedding string quartet, wedding pianist, string quartet bali, wedding entertainment bali, wedding ceremony musicians, hire string quartet for wedding, hire pianist for wedding, piano and violin wedding, wedding string trio, live wedding music
+```
+
+**Run B — Biaya** (target: `/journal/wedding-music-budget-bali`, tanpa angka di situs)
+
+```text
+string quartet wedding cost, wedding pianist cost, wedding musician cost, string quartet cost per hour, how much do wedding pianists charge, destination wedding bali cost, how much does it cost to get married in bali
+```
+
+**Run C — Repertoire per formasi** (pillar `piano-repertoire`, `/repertoire`)
+
+```text
+piano wedding songs, string quartet wedding songs, violin wedding songs, cello wedding songs, piano and cello wedding songs, piano and violin wedding songs, classical music for wedding ceremony, instrumental wedding songs, string quartet pop covers, piano first dance songs
+```
+
+**Run D — Momen upacara & resepsi** (pillar `planning` / `piano-repertoire`)
+
+```text
+wedding processional songs, wedding recessional songs, wedding prelude music, signing of the register songs, cocktail hour music, wedding dinner music, bride entrance songs, wedding exit songs, wedding ceremony order of entrance, wedding music timeline
+```
+
+**Run E — Area & venue Bali** (pillar `bali-venues`)
+
+```text
+uluwatu wedding venues, canggu wedding venues, seminyak wedding venues, nusa dua wedding venues, ubud wedding, bali wedding venues, beach wedding bali, uluwatu wedding chapel, bali villa wedding, sunset wedding ceremony
+```
+
+**Run F — Jenis acara & audiens** (pillar `for-planners` / `bali-venues`)
+
+```text
+destination wedding bali, bali elopement, vow renewal bali, bali wedding planner, chapel wedding bali, church wedding bali, intimate wedding bali, indian destination wedding bali, proposal violinist, bali wedding packages
+```
+
+Tambahan: tab **"Start with a website"** → masukkan `allegra.indonesiaistimewastudio.id` (seluruh
+situs) untuk melihat keyword yang Google anggap relevan dengan konten kita.
+
+### 7.3 "Get search volume and forecasts" — validasi keyword yang sudah dipakai
+
+Tempel satu blok ini (targetKeyword artikel live + primary backlog 13–21 + query GSC nyata):
+
+```text
+wedding pianist
+piano wedding ceremony
+wedding prelude music
+wedding processional songs
+wedding recessional songs
+cocktail hour wedding music
+how many songs for wedding ceremony
+wedding band vs dj
+string quartet bali wedding
+villa wedding live music bali
+live music cliffside wedding uluwatu
+beach wedding music
+garden wedding ceremony
+resort wedding live music bali
+intimate wedding music bali
+balinese wedding ceremony music
+custom wedding music arrangement
+classical vs contemporary wedding music
+how to budget for wedding music
+when to book wedding musicians
+musician for wedding ceremony
+tech rider live wedding music
+wedding venue live music requirements
+vow renewal bali
+string quartet wedding songs
+chapel wedding bali
+outdoor wedding rain plan
+signing of the register songs
+wedding music timeline
+piano first dance songs
+wedding dinner music
+violin wedding songs
+piano music for wedding cocktail hour
+piano player for wedding ceremony
+what is a wedding prelude
+```
+
+### 7.4 Jebakan saat membaca hasil
+
+- **"wedding band bali" jangan dipakai sebagai seed.** Autocomplete-nya bercampur dengan cincin
+  (`wedding ring bali`, `difference between wedding ring and band`) — volume di Keyword Planner
+  akan tercemar intent perhiasan. Pakai `wedding entertainment bali` / `wedding string quartet`.
+- Buang ide yang jelas di luar pasar: nama kota AS/UK (`… charlotte`, `… raleigh`), `hindi`,
+  `mp3 download`, `sheet music`, `near me` (lokasi pencari bukan Bali).
+- Kolom **"Top of page bid"** tinggi = sinyal intent komersial, bukan alasan memasang iklan.
+- Keyword biaya (Run B) tetap dipetakan ke artikel faktor biaya — situs tidak menampilkan harga.
+- Seed tanpa autocomplete sama sekali (`wedding pianist bali`, `live music wedding bali`,
+  `wedding music ubud`, `gala dinner entertainment bali`, `corporate event music bali`) kemungkinan
+  besar muncul sebagai "—" / 0–10 di Keyword Planner; itu wajar untuk niche ini.
+
+### 7.5 Opsional — pasar Indonesia
+
+GSC menunjukkan satu-satunya demand ID nyata bersifat definisi (`prelude adalah` 21 impresi,
+`prelude artinya`, `apa itu prelude`, `preludium adalah`). Bila ingin dicek: lokasi Indonesia,
+bahasa Indonesian, seed `prelude adalah, apa itu prelude, musik pernikahan, pemain piano
+pernikahan, string quartet pernikahan`. Hasilnya untuk memperkuat artikel `/id/` existing, bukan
+membuat artikel ID terpisah.
