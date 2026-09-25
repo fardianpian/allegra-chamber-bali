@@ -6,6 +6,7 @@ excerpt: "Live music doesn't operate in isolation on the wedding day — how it 
 pillar: 'for-planners'
 targetKeyword: 'wedding vendor coordination live music'
 pubDate: 2026-09-25
+ogImage: '/images/og-live-music-vendor-coordination-bali.jpg'
 faq:
   - question: 'Does live music need to coordinate with the photographer or videographer?'
     answer: 'Yes. The run-of-show we confirm in advance gives your photography team the same cue points musicians work from — processional start, vow exchange, recessional — so they can be in position before each moment begins, not reacting to it. If a videographer needs anything beyond that, such as an audio feed, flag it early so it can be confirmed as part of the tech rider.'

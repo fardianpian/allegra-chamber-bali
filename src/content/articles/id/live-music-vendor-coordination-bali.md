@@ -6,6 +6,7 @@ excerpt: 'Musik live tidak berdiri sendiri di hari pernikahan — begini cara mu
 pillar: 'for-planners'
 targetKeyword: 'wedding vendor coordination live music'
 pubDate: 2026-09-25
+ogImage: '/images/og-live-music-vendor-coordination-bali.jpg'
 faq:
   - question: 'Apakah musik live perlu berkoordinasi dengan fotografer atau videografer?'
     answer: 'Ya. Run-of-show yang kami konfirmasi sebelumnya memberi tim fotografi Anda titik cue yang sama dengan yang dipakai musisi — awal prosesi, pertukaran sumpah, resesi — sehingga mereka bisa berada di posisi sebelum momen itu terjadi, bukan bereaksi setelahnya. Kalau videografer butuh sesuatu di luar itu, misalnya feed audio, sampaikan lebih awal supaya bisa dikonfirmasi sebagai bagian dari tech rider.'
