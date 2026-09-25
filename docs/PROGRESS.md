@@ -7,6 +7,37 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Session — 2026-09-25
+
+**Journal article CTA centered ([PR #22](https://github.com/fardianpian/allegra-chamber-bali/pull/22), `7a1afb3`):**
+the end-of-article CTA block ("Have a date in mind?" + WhatsApp **Check Your Date** + outline
+**Packages**) was `items-start` (left-aligned) under the centered FAQ heading. It is now
+`items-center text-center` in both `src/pages/journal/[slug].astro` and
+`src/pages/id/journal/[slug].astro`. Verified with lint/build and a Playwright measurement at EN
+375px, EN 1280px, and ID 375px; button center matched block center (<0.01px). Cloudflare Pages check
+green before merge.
+
+**Routine learnings recorded ([PR #23](https://github.com/fardianpian/allegra-chamber-bali/pull/23), `6350185`):**
+`.claude/skills/journal-article-publisher/SKILL.md` now has:
+
+- a Step 2 rule: never write a closing CTA in the article body, because the template renders it;
+- a Step 9 note: identify CI checks by name, not check-run id, because the `Cloudflare Pages` run id
+  changed between polls on #22;
+- a new "Catatan pembelajaran" section: the CTA lives in the `[slug].astro` templates, article PRs
+  must never modify templates (report layout issues to Slack instead), plus the tested
+  visual-check setup for the cloud sandbox.
+
+**Sandbox gotcha (tested):** don't stop the preview server with `pkill -f`. In this session it
+killed the calling shell twice (exit 144), and one of those silently skipped a `git commit` in the
+same command. Killing the `npx astro preview` PID also leaves the server running. What works:
+`./node_modules/.bin/astro preview --port <p> & echo $!`, then `kill <pid>`.
+
+**Routine prompt tidied (owner edited it in the claude.ai UI; agents can't update `http_api`-created
+routines):** `allegra-journal-publisher` (`trig_01JKkuH8qSJTB37cTbWChZDz`) no longer says "this is
+the FIRST run". It now tells the routine to read SKILL.md's "Catatan pembelajaran" before drafting,
+and it keeps an explicit FAILURE HANDLING paragraph. Schedule, Slack connector, and notifications
+are unchanged; verified via `get_trigger`.
+
 ## Session — 2026-09-14
 
 **SEO/technical fix (`0c632fa`):** `/thank-you` (+ `/id/`) now `noindex`; `Moments.astro` cards on
@@ -431,7 +462,9 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    added `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` (Workers AI - Read) as GitHub Actions
    repo secrets 2026-09-24; a throwaway smoke-test run (Actions run 36005558985) generated a
    1200x630 JPEG with them end to end. Token expires ~2027-09 — renew it then. Still to verify: a
-   `github-actions[bot]` cover commit on the next real routine PR.
+   `github-actions[bot]` cover commit on the next real routine PR. The 2026-09-28 run is also the
+   first with the updated prompt and learnings (see 2026-09-25 session): confirm the article has a
+   single centered CTA at the end and that its PR touches no page template.
 2. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
    before pitching any outlet (Tier C: Jakarta Post, NOW! Bali are pitchable now, no styled shoot
    needed).
