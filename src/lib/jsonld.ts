@@ -1,6 +1,28 @@
 import { site, withTrailingSlash } from './site'
 import type { Lang } from '../i18n/languages'
 
+/** Stable, language-independent `@id`s so every page's JSON-LD (home MusicGroup/LocalBusiness,
+ * Article author/publisher) resolves to one brand entity instead of a new anonymous Organization
+ * per page — squirrelscan `schema/entity-identity` flagged 104 un-linked occurrences 2026-09-25. */
+const organizationId = () => new URL('/#organization', site.url).toString()
+const localBusinessId = () => new URL('/#localbusiness', site.url).toString()
+
+/** Brand entity reference for Article author/publisher. MusicGroup is an Organization subtype, so
+ * this shares the home page MusicGroup's `@id`. */
+function organizationRef() {
+	return {
+		'@type': 'Organization',
+		'@id': organizationId(),
+		name: 'Allegra Chamber Bali',
+		url: new URL('/', site.url).toString(),
+		logo: {
+			'@type': 'ImageObject',
+			url: new URL('/favicon.svg', site.url).toString(),
+		},
+		sameAs: [site.instagram],
+	}
+}
+
 /** MusicGroup + LocalBusiness JSON-LD for the homepage, per CLAUDE.md §5. */
 export function getHomeJsonLd(lang: Lang) {
 	const path = lang === 'en' ? '/' : '/id/'
@@ -17,8 +39,9 @@ export function getHomeJsonLd(lang: Lang) {
 		{
 			'@context': 'https://schema.org',
 			'@type': 'MusicGroup',
+			'@id': organizationId(),
 			name: 'Allegra Chamber Bali',
-			url,
+			url: new URL('/', site.url).toString(),
 			image,
 			logo,
 			genre: ['Classical', 'Chamber Music', 'Wedding Music'],
@@ -28,7 +51,7 @@ export function getHomeJsonLd(lang: Lang) {
 		{
 			'@context': 'https://schema.org',
 			'@type': 'LocalBusiness',
-			'@id': url,
+			'@id': localBusinessId(),
 			name: 'Allegra Chamber Bali',
 			url,
 			image,
@@ -107,21 +130,8 @@ export function getArticleJsonLd(
 		dateModified: (article.updatedDate ?? article.pubDate).toISOString(),
 		inLanguage: lang,
 		mainEntityOfPage: url,
-		author: {
-			'@type': 'Organization',
-			name: 'Allegra Chamber Bali',
-			url: site.url,
-		},
-		publisher: {
-			'@type': 'Organization',
-			name: 'Allegra Chamber Bali',
-			url: site.url,
-			logo: {
-				'@type': 'ImageObject',
-				url: new URL('/favicon.svg', site.url).toString(),
-			},
-			sameAs: [site.instagram],
-		},
+		author: organizationRef(),
+		publisher: organizationRef(),
 	}
 }
 

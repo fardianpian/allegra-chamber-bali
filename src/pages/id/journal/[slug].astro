@@ -64,10 +64,18 @@ const jsonLd = [
 			<h1 class="reveal mt-2 text-4xl md:text-5xl">{source.data.heading}</h1>
 			<p class="reveal mt-4 text-xs uppercase tracking-[0.1em] text-taupe">
 				{journal.publishedLabel}
-				{dateFormatter.format(source.data.pubDate)}
+				<time datetime={source.data.pubDate.toISOString().slice(0, 10)}>
+					{dateFormatter.format(source.data.pubDate)}
+				</time>
 				{
 					source.data.updatedDate && (
-						<> · {`${journal.updatedLabel} ${dateFormatter.format(source.data.updatedDate)}`}</>
+						<>
+							{' · '}
+							{journal.updatedLabel}{' '}
+							<time datetime={source.data.updatedDate.toISOString().slice(0, 10)}>
+								{dateFormatter.format(source.data.updatedDate)}
+							</time>
+						</>
 					)
 				}
 			</p>

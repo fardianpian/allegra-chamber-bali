@@ -41,12 +41,12 @@ const labelClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
 		<label class={labelClass}>
 			{planner.formName}
 			<span class="text-gold" aria-hidden="true">*</span>
-			<input type="text" name="name" required autocomplete="name" class={fieldClass} />
+			<input type="text" name="name" required autocomplete="name" enterkeyhint="next" class={fieldClass} />
 		</label>
 		<label class={labelClass}>
 			{planner.formEmail}
 			<span class="text-gold" aria-hidden="true">*</span>
-			<input type="email" name="email" required autocomplete="email" class={fieldClass} />
+			<input type="email" name="email" required autocomplete="email" enterkeyhint="next" class={fieldClass} />
 		</label>
 	</div>
 
@@ -57,7 +57,7 @@ const labelClass = 'text-xs uppercase tracking-[0.1em] text-taupe'
 		</label>
 		<label class={labelClass}>
 			{planner.formVenue}
-			<input type="text" name="venue" class={fieldClass} />
+			<input type="text" name="venue" enterkeyhint="send" class={fieldClass} />
 		</label>
 	</div>
 
