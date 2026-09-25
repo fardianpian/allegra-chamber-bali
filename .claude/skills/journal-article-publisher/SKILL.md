@@ -103,6 +103,9 @@ Ikuti struktur di `.claude/article-seo-geo-aeo-guidelines.md` § Article Structu
   sebagai add-on berbayar — piano adalah flagship instrument, sudah termasuk standar.
 - Ikuti tabel Avoid → Prefer di `brand-voice-guidelines.md` — tanpa tanda seru, tanpa "best in
   Bali"/"world-class", tanpa pembuka klise AI.
+- **Jangan tulis blok CTA penutup sendiri di body** (tombol/link "Check Your Date", "Packages",
+  "Have a date in mind?") — blok itu sudah dirender otomatis oleh template di bawah FAQ (lihat
+  "Catatan pembelajaran" di akhir file). Menulisnya lagi di markdown = CTA dobel di halaman.
 
 ## Step 3 — Draft terjemahan ID (`src/content/articles/id/<slug>.md`)
 
@@ -280,6 +283,11 @@ manual owner — jangan skip atau anggap opsional.
    terbaru** sudah selesai dan hijau, dan tidak ada run `Cover image` yang masih berjalan. Jangan
    `git push` lagi ke branch ini setelah Step 8 (commit bot bisa bentrok dengan push kamu).
 
+   Identifikasi check berdasarkan **nama** (`Cloudflare Pages`, `Cover image / cover`), bukan ID
+   check run: di PR #22 (2026-09-25) run `Cloudflare Pages` pertama terbaca `in_progress`, lalu
+   polling berikutnya menampilkan run dengan ID berbeda yang sudah `completed/success`. Ambil
+   status terbaru per nama di head terbaru, jangan menunggu ID run lama selesai.
+
    Sebelum merge, cek frontmatter `src/content/articles/<slug>.md` di head terbaru (baca via GitHub
    MCP `get_file_contents` dengan ref branch PR): kalau `ogImage` terisi → cover berhasil; kalau
    tidak (secret belum di-set / API error — lihat log run `Cover image`) → tetap merge, cover
@@ -305,6 +313,34 @@ manual owner — jangan skip atau anggap opsional.
    setelah ~10 menit — cek manual, mungkin perlu merge manual kalau CI ternyata sudah hijau." Stop
    routine dengan status sukses (artikel & PR sudah ada, cuma merge yang tertunda — bukan
    kegagalan routine).
+
+## Catatan pembelajaran
+
+**2026-09-25 — CTA akhir artikel ([PR #22](https://github.com/fardianpian/allegra-chamber-bali/pull/22))**
+
+- Blok CTA di akhir setiap artikel (heading `journal.ctaHeading` + `journal.ctaNote` dari
+  `src/i18n/ui.ts`, tombol WhatsApp "Check Your Date"/"Cek Tanggal Anda", tombol outline
+  "Packages"/"Paket") ada di **template**, bukan di markdown: `src/pages/journal/[slug].astro` dan
+  `src/pages/id/journal/[slug].astro`. Sejak PR #22 blok ini rata tengah
+  (`flex flex-col items-center ... text-center`), sejajar dengan heading FAQ yang juga rata tengah.
+  Sebelumnya `items-start` (rata kiri) — owner menilainya tidak seimbang.
+- Karena itu: jangan menambahkan CTA penutup di body artikel (lihat Step 2), dan **jangan mengubah
+  template halaman artikel di PR `journal/<slug>`** — PR artikel hanya berisi konten + backlog +
+  inbound link (Step 7). Kalau melihat masalah layout, laporkan di Slack `#allegra-updates`
+  sebagai temuan terpisah, jangan diperbaiki di PR artikel yang di-auto-merge.
+- Kalau perlu verifikasi visual di sandbox cloud (opsional, bukan gerbang wajib): Chromium ada di
+  `/opt/pw-browsers/` (`chromium-*/chrome-linux/chrome`). Install `playwright-core` di folder
+  scratchpad (jangan tambahkan devDependency ke `package.json`), jalankan preview server setelah
+  build, `newContext({ reducedMotion: 'reduce' })` supaya elemen `.reveal` tidak transparan, dan
+  ukur posisi elemen dengan `getBoundingClientRect()`, jangan hanya mengandalkan mata.
+- **Jangan hentikan server dengan `pkill -f`** — di sesi ini dua kali shell ikut terbunuh
+  (exit 144) karena command line shell itu sendiri mengandung teks yang cocok dengan pola (bahkan
+  pola `[a]stro preview` pun kena kalau di perintah yang sama ada teks `astro preview` biasa), dan
+  `git commit` di perintah yang sama diam-diam tidak jalan. `kill` ke PID `npx astro preview` juga
+  **tidak** menghentikan server (proses anaknya tetap hidup — sudah diuji). Cara yang sudah diuji
+  berhasil: jalankan binary langsung
+  `./node_modules/.bin/astro preview --port <port> >/dev/null 2>&1 & echo $! > preview.pid`, lalu
+  `kill $(cat preview.pid)`. Selalu cek `git log -1` setelah commit.
 
 ## Aturan keras (wajib, tidak bisa dinegosiasi)
 
