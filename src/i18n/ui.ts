@@ -626,7 +626,7 @@ export const ui = {
 				'How Allegra Chamber Bali collects, uses, and protects the information you share through our contact form, partnership inquiries, and WhatsApp.',
 			eyebrow: 'Legal',
 			heading: 'Privacy Policy',
-			subhead: 'Last updated 24 September 2026 — how we handle the information you share with us.',
+			subhead: 'Last updated 26 September 2026 — how we handle the information you share with us.',
 			intro:
 				'Allegra Chamber Bali ("we", "us") respects your privacy. This policy explains what information we collect when you inquire about booking us for your wedding or event, how we use it, and who we share it with.',
 			sections: [
@@ -657,13 +657,16 @@ export const ui = {
 						'Web3Forms: our contact, partnership, and planner download forms are processed by Web3Forms, a third-party form delivery service, which forwards your submission to our email. See their privacy policy for how they handle data in transit.',
 						"WhatsApp (Meta): messages sent via our WhatsApp link are handled according to WhatsApp's own privacy policy, not ours.",
 						'Hosting: this website is hosted on Cloudflare Pages — standard server logs (e.g. IP address, browser type) may be retained briefly for security purposes. Domain registration, DNS, and email remain with Hostinger.',
+						'Google Analytics (GA4): we use Google Analytics to understand how visitors use this site — for example, which pages are viewed and how often the WhatsApp button is tapped. Google processes this usage data under its own privacy policy. We do not use any advertising or remarketing scripts.',
+						"YouTube (Google): the video on our home page is embedded from YouTube. Its preview image loads from YouTube's servers, and the video itself only loads when you press play, in YouTube's privacy-enhanced mode (youtube-nocookie.com). Google's privacy policy applies to that playback.",
 					],
 				},
 				{
 					heading: 'Cookies',
 					type: 'paragraphs',
 					items: [
-						'Google Analytics (GA4): we use Google Analytics to understand how visitors use this site — for example, which pages are viewed. This sets cookies and sends anonymized usage data to Google. See Google’s privacy policy for how they handle this data. We do not use any other tracking or advertising scripts.',
+						'Google Analytics sets its own cookies (such as _ga) so it can count visits and tell returning visitors apart; Google states that Google Analytics 4 does not log or store IP addresses. If you play the YouTube video, YouTube may also set cookies. We do not use cookies for advertising.',
+						'You can block or delete cookies at any time in your browser settings — the site still works without them.',
 					],
 				},
 				{
@@ -1356,7 +1359,7 @@ export const ui = {
 			eyebrow: 'Legal',
 			heading: 'Kebijakan Privasi',
 			subhead:
-				'Terakhir diperbarui 24 September 2026 — bagaimana kami menangani informasi yang Anda bagikan kepada kami.',
+				'Terakhir diperbarui 26 September 2026 — bagaimana kami menangani informasi yang Anda bagikan kepada kami.',
 			intro:
 				'Allegra Chamber Bali ("kami") menghargai privasi Anda. Kebijakan ini menjelaskan informasi apa yang kami kumpulkan saat Anda bertanya soal booking kami untuk pernikahan atau acara Anda, bagaimana kami menggunakannya, dan dengan siapa kami membagikannya.',
 			sections: [
@@ -1387,13 +1390,16 @@ export const ui = {
 						'Web3Forms: form kontak, partnership, dan unduhan planner kami diproses oleh Web3Forms, layanan pengiriman form pihak ketiga, yang meneruskan submission Anda ke email kami. Lihat kebijakan privasi mereka untuk cara mereka menangani data saat transit.',
 						'WhatsApp (Meta): pesan yang dikirim via tautan WhatsApp kami ditangani sesuai kebijakan privasi WhatsApp sendiri, bukan kebijakan kami.',
 						'Hosting: website ini dihosting di Cloudflare Pages — log server standar (misalnya alamat IP, jenis browser) mungkin disimpan sebentar untuk keperluan keamanan. Registrasi domain, DNS, dan email kami tetap berada di Hostinger.',
+						'Google Analytics (GA4): kami menggunakan Google Analytics untuk memahami bagaimana pengunjung menggunakan website ini — misalnya, halaman mana yang dilihat dan seberapa sering tombol WhatsApp diketuk. Google memproses data penggunaan ini sesuai kebijakan privasinya sendiri. Kami tidak menggunakan script iklan atau remarketing apa pun.',
+						'YouTube (Google): video di halaman utama kami di-embed dari YouTube. Gambar pratinjaunya dimuat dari server YouTube, dan videonya baru dimuat saat Anda menekan play, dalam mode privasi yang ditingkatkan dari YouTube (youtube-nocookie.com). Kebijakan privasi Google berlaku untuk pemutaran tersebut.',
 					],
 				},
 				{
 					heading: 'Cookies',
 					type: 'paragraphs',
 					items: [
-						'Google Analytics (GA4): kami menggunakan Google Analytics untuk memahami bagaimana pengunjung menggunakan website ini — misalnya, halaman mana yang dilihat. Ini menyimpan cookies dan mengirim data penggunaan yang dianonimkan ke Google. Lihat kebijakan privasi Google untuk cara mereka menangani data ini. Kami tidak menggunakan script tracking atau iklan lainnya.',
+						'Google Analytics menyimpan cookies-nya sendiri (misalnya _ga) untuk menghitung kunjungan dan membedakan pengunjung yang kembali; menurut Google, Google Analytics 4 tidak mencatat atau menyimpan alamat IP. Jika Anda memutar video YouTube, YouTube juga dapat menyimpan cookies. Kami tidak menggunakan cookies untuk iklan.',
+						'Anda dapat memblokir atau menghapus cookies kapan saja lewat pengaturan browser Anda — website ini tetap berfungsi tanpanya.',
 					],
 				},
 				{

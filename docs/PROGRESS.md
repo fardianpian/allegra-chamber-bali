@@ -7,6 +7,39 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Session — 2026-09-26
+
+**squirrelscan audit fixes, batch 1 ([PR #26](https://github.com/fardianpian/allegra-chamber-bali/pull/26), `6eae8f1`):**
+
+- `src/lib/site.ts` trims `PUBLIC_*` env values — a trailing newline in `PUBLIC_SITE_URL` was
+  leaking into Article JSON-LD `author`/`publisher` `url` fields.
+- Article JSON-LD gets `publisher.logo` (ImageObject).
+- `FormationFinder.astro` server-renders its default result, so its links are never empty /
+  `href="#"` before the client script runs (a11y command-name error).
+- `VideoEmbed.astro` YouTube facade thumbnail has explicit `width`/`height` (CLS).
+- `public/_headers` adds `Strict-Transport-Security`.
+
+**squirrelscan audit fixes, batch 2 ([PR #27](https://github.com/fardianpian/allegra-chamber-bali/pull/27), `9a0feb1`):**
+
+- The brand entity has a stable `@id` (`/#organization`) shared by the home `MusicGroup` and every
+  Article `author`/`publisher`; `LocalBusiness` is `/#localbusiness` (schema entity-identity error).
+- Journal published/updated dates are wrapped in `<time datetime>` (EN + ID `[slug].astro`) so
+  parsers can match them to `datePublished`/`dateModified`.
+- Contact, partnership and ceremony-planner form fields have `autocomplete` tokens
+  (name/email/tel/organization) and `enterkeyhint`.
+
+**Google Keyword Planner API scripts committed:** `scripts/gkp.mjs` (`npm run gkp`) and
+`scripts/gkp-auth.mjs` (`npm run gkp:auth`, writes `GOOGLE_ADS_REFRESH_TOKEN` into `.env`), plain
+`fetch` against Google Ads REST v25, no new dependency. `.env.example` documents the `GOOGLE_ADS_*`
+vars; the `keyword-research-expansion` skill lists the API as a demand-evidence source. **Not usable
+yet:** the Cloud project owning the OAuth client is on Test access, and Keyword Planner needs
+**Basic** (owner action: OAuth brand verification, then apply). Until then keep using UI CSV exports.
+
+**Privacy Policy updated for GA4 + YouTube (`/privacy`, `/id/privacy`):** GA4 and the YouTube embed
+(`youtube-nocookie.com`, preview image from `i.ytimg.com`) are now listed under Third-Party
+Services. The Cookies section no longer claims "anonymized" data — it names the `_ga` cookies and
+Google's own statement that GA4 doesn't log/store IP addresses. Last-updated date → 26 September 2026. Still a good-faith draft, not lawyer-reviewed.
+
 ## Session — 2026-09-25
 
 **Journal article CTA centered ([PR #22](https://github.com/fardianpian/allegra-chamber-bali/pull/22), `7a1afb3`):**
@@ -483,12 +516,15 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    Also still needed: real event photography for non-piano venue types (beach/chapel/ballroom —
    only cliffside/garden have real photos so far). All owner-supplied, don't invent.
 6. **Legal review before launch**: the Privacy Policy (`/privacy`) is a good-faith draft, not
-   reviewed by a lawyer yet. Its "Third-Party Services" section also needs updating now that GA4
-   is actually live in production (shipped 2026-09-14, see Session note above).
-7. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
+   reviewed by a lawyer yet. GA4 + YouTube are now listed under Third-Party Services (2026-09-26);
+   if any new third-party script/embed is added, update both `privacyPage` blocks in
+   `src/i18n/ui.ts` in the same PR.
+7. **Google Keyword Planner API — owner action**: get the Cloud project to **Basic** access (OAuth
+   brand verification first). Scripts are ready (`npm run gkp`); see the 2026-09-26 session note.
+8. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
    100/100/100/100 as of the last check, but real images (replacing the CSS-gradient `Placeholder`
    component) plus the new GA4 script are the two things most likely to move Performance/CLS.
-8. Housekeeping, no urgency:
+9. Housekeeping, no urgency:
    - Delete the orphaned manual-deploy leftovers on the old Hostinger document root
      (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any stray files
      from the one-time zip upload; DNS no longer points there so nothing serves them, but they're
