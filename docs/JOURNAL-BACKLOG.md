@@ -36,7 +36,7 @@
 | 9   | done     | when-to-book-wedding-musicians-bali     | planning         | When to Book Live Wedding Musicians in Bali — Allegra Chamber Bali           | 2026-09-18    |
 | 10  | done     | classical-vs-contemporary-wedding-music | piano-repertoire | Classical or Contemporary Wedding Ceremony Music — Allegra Chamber Bali      | 2026-09-21    |
 | 11  | done     | resort-ballroom-wedding-live-music-bali | bali-venues      | Live Music for a Resort or Ballroom Wedding in Bali — Allegra Chamber Bali   | 2026-09-23    |
-| 12  | todo     | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       |               |
+| 12  | done     | live-music-vendor-coordination-bali     | for-planners     | Coordinating Live Music With Your Other Vendors — Allegra Chamber Bali       | 2026-09-25    |
 | 13  | todo     | vow-renewal-live-music-bali             | planning         | Live Music for a Vow Renewal in Bali — Allegra Chamber Bali                  |               |
 | 14  | todo     | violin-wedding-songs                    | piano-repertoire | Violin Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali        |               |
 | 15  | todo     | chapel-wedding-music-bali               | bali-venues      | Live Music for a Chapel Wedding in Bali — Allegra Chamber Bali               |               |
