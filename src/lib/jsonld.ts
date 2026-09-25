@@ -116,6 +116,10 @@ export function getArticleJsonLd(
 			'@type': 'Organization',
 			name: 'Allegra Chamber Bali',
 			url: site.url,
+			logo: {
+				'@type': 'ImageObject',
+				url: new URL('/favicon.svg', site.url).toString(),
+			},
 			sameAs: [site.instagram],
 		},
 	}
