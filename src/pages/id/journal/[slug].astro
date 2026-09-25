@@ -67,10 +67,7 @@ const jsonLd = [
 				{dateFormatter.format(source.data.pubDate)}
 				{
 					source.data.updatedDate && (
-						<>
-							{' '}
-							· {journal.updatedLabel} {dateFormatter.format(source.data.updatedDate)}
-						</>
+						<> · {`${journal.updatedLabel} ${dateFormatter.format(source.data.updatedDate)}`}</>
 					)
 				}
 			</p>

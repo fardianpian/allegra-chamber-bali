@@ -20,6 +20,9 @@
 > 6. Status `proposed` = usulan dari riset keyword (`docs/KEYWORD-MAP-*.md`) yang BELUM disetujui
 >    owner. Routine mengabaikannya sama seperti `done` — jangan pernah mengeksekusi atau mengubah
 >    baris `proposed`. Hanya owner yang mengubah `proposed` → `todo`.
+> 7. Status `deferred` = diturunkan prioritasnya oleh owner (demand terlalu kecil menurut data
+>    keyword); status `merged` = topiknya sudah digabung ke artikel lain, lihat catatan di Item
+>    Details. Routine mengabaikan keduanya sama seperti `done` — jangan eksekusi, jangan ubah.
 
 ## Status
 
@@ -43,13 +46,15 @@
 | 16  | todo     | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      |               |
 | 17  | todo     | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        |               |
 | 18  | todo     | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         |               |
-| 19  | todo     | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
+| 19  | todo     | wedding-recessional-songs               | piano-repertoire | Wedding Recessional Songs for Your Ceremony Exit — Allegra Chamber Bali      |               |
 | 20  | todo     | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
 | 21  | todo     | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
 | 22  | proposed | instrumental-wedding-songs              | piano-repertoire | Instrumental Wedding Songs for Your Ceremony — Allegra Chamber Bali          |               |
 | 23  | proposed | ubud-wedding-live-music                 | bali-venues      | Live Music for an Ubud Wedding — Allegra Chamber Bali                        |               |
-| 24  | proposed | classical-wedding-ceremony-music        | piano-repertoire | Classical Music for Your Wedding Ceremony — Allegra Chamber Bali             |               |
-| 25  | proposed | cello-wedding-music                     | piano-repertoire | Cello Wedding Music for the Aisle and Beyond — Allegra Chamber Bali          |               |
+| 24  | merged   | classical-wedding-ceremony-music        | piano-repertoire | Classical Music for Your Wedding Ceremony — Allegra Chamber Bali             |               |
+| 25  | merged   | cello-wedding-music                     | piano-repertoire | Cello Wedding Music for the Aisle and Beyond — Allegra Chamber Bali          |               |
+| 26  | todo     | reception-entrance-songs                | piano-repertoire | Reception Entrance Songs, Played Live — Allegra Chamber Bali                 |               |
+| 27  | deferred | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
 
 ## Item Details
 
@@ -496,6 +501,11 @@ GSC + Google Autocomplete + SERP Firecrawl). Disetujui owner 2026-09-24 → `tod
 <!-- Owner confirmed 2026-09-24: church/chapel music is adapted to each church's own rules —
 no single fixed policy; don't state specific liturgical rules as fact. Jangan sebut nama
 chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi. -->
+<!-- Diperluas 2026-09-25 (docs/KEYWORD-MAP-2026-09.md § 10): cluster musik gereja/Katolik di
+Keyword Planner = 133 keyword, kompetisi ~0 — church wedding entrance songs, church wedding exit
+music, catholic church wedding processional songs, catholic church wedding recessional songs
+(masing-masing 100–1K). Tambah H2 #3b di bawah. Judul lagu hanya dari `/repertoire` (Ave Maria,
+Jesu Joy of Man's Desiring, Bridal Chorus, Wedding March, Canon in D, Air on the G String). -->
 
 - **heading:** Live Music for a Chapel Wedding in Bali
 - **targetKeyword:** chapel wedding bali
@@ -507,8 +517,12 @@ chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi.
   1. How Chapel Acoustics Shape Live Piano and Strings
   2. Where the Musicians Stand in a Small Chapel
   3. Church and Catholic Ceremonies: Music Rules to Ask About Early
-  4. Choosing a Formation for Chapel Size
-  5. Moving From Chapel Ceremony to Reception
+  4. Church Wedding Entrance and Exit Songs (secondary: church wedding entrance songs, church
+     wedding exit music, catholic wedding processional/recessional songs) — kalimat pertama =
+     jawaban langsung + daftar dari `/repertoire`, dengan catatan bahwa pilihan akhir disesuaikan
+     dengan aturan gereja masing-masing
+  5. Choosing a Formation for Chapel Size
+  6. Moving From Chapel Ceremony to Reception
 - **FAQ candidates:**
   1. Q: Do we need amplification in a chapel? A: usually not for acoustic piano and strings in a
      small chapel; Allegra doesn't bring a PA — venue/planner sound provider if needed.
@@ -602,31 +616,55 @@ chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi.
 - **cover image prompt:** "a handwritten wedding day timeline card beside a violin bow and a
   vintage wristwatch, warm light" (object only)
 
-### Item 19 — piano-first-dance-songs (piano-repertoire)
+### Item 19 — wedding-recessional-songs (piano-repertoire)
 
-- **heading:** Piano First Dance Songs for Your Wedding
-- **targetKeyword:** piano first dance songs
-- **description seed:** First dance songs that sound beautiful on live piano — romantic classics,
-  modern covers, and how a custom arrangement fits your song to the moment.
-- **excerpt seed:** Live piano gives a first dance room to breathe. Song ideas and how arranging
-  your own song works.
-- **outline (H2s):**
-  1. Why Live Piano Suits a First Dance
-  2. Romantic Classics on Piano
-  3. Modern Songs Arranged for Piano
-  4. Adding Strings to Your First Dance
-  5. Arranging Your Own Song and Setting the Length
+<!-- Added 2026-09-25 (docs/KEYWORD-MAP-2026-09.md § 10), menggantikan piano-first-dance-songs yang
+dipindah ke item 27 `deferred`. Keyword Planner: cluster recessional/exit = 527 keyword; 10K–100K:
+wedding recessional songs, recessional songs for wedding ceremony, bridal recessional songs, wedding
+party recessional songs, music for wedding recessional; 1K–10K: wedding exit songs, upbeat
+recessional songs, best recessional songs for a wedding. SERP (Firecrawl 2026-09-25): The Knot,
+Brides, Paperlust, Tuscan Oaks semuanya halaman KHUSUS recessional — bukan gabungan dengan
+processional. Anti-cannibalization: wedding-processional-recessional-songs tetap target
+`wedding processional songs`. Setelah item ini publish, follow-up MANUAL (bukan tugas routine):
+ringkas H2 "Recessional and Wedding Exit Songs" di artikel processional jadi 2–3 kalimat + link
+ke artikel ini, dan fokuskan title/description artikel processional ke processional. -->
+
+- **heading:** Wedding Recessional Songs: Music for Your Ceremony Exit
+- **targetKeyword:** wedding recessional songs
+- **description seed:** Wedding recessional songs for your ceremony exit — classical and upbeat
+  modern picks played live on piano and strings, how long the exit lasts, and how to choose.
+- **excerpt seed:** The recessional is the first music you hear as a married couple. Classical and
+  upbeat choices, and how to time the exit.
+- **outline (H2s):** — tiap H2 dibuka dengan 1–2 kalimat jawaban langsung (AEO), daftar lagu
+  sebagai bullet list
+  1. What Is a Wedding Recessional, and How Long Does It Last? (1–2 menit — sama dengan FAQ
+     artikel processional yang sudah live, jangan kontradiksi)
+  2. Classical Recessional Songs — dari `/repertoire` saja: Wedding March (Mendelssohn), Spring
+     from The Four Seasons (Vivaldi), Eine Kleine Nachtmusik — Allegro (Mozart)
+  3. Upbeat and Modern Recessional Songs, Arranged for Piano and Strings — dari `/repertoire`
+     saja (mis. L.O.V.E., Marry You, Love Story, Golden Hour); lagu lain = "send us your song",
+     custom arrangements included
+  4. Wedding Party Recessional: Who Walks Out When (secondary: wedding party recessional songs)
+  5. Church Wedding Exit Music — disesuaikan dengan aturan gereja masing-masing, jangan sebut aturan
+     spesifik sebagai fakta
+  6. Timing the Exit: Why Live Musicians Follow Your Pace
 - **FAQ candidates:**
-  1. Q: Can you play our first dance song on piano? A: yes — custom arrangements included in every
-     booking.
-  2. Q: Can the first dance be shortened? A: yes, arranged to the length you want.
-  3. Q: Solo piano or piano with strings? A: link wedding-pianist-bali.
-  4. Q: How early should we send our song? A: early — arrangements need lead time.
+  1. Q: What are the best recessional songs for a wedding? A: 3–5 judul dari `/repertoire`, klasik
+     - modern, lalu "or send us your own song — arrangements are included".
+  2. Q: How long should a wedding recessional song be? A: 1–2 minutes; live musicians end it
+     when you reach the end of the aisle.
+  3. Q: Should the recessional be upbeat? A: usually brighter than the processional, but it
+     follows the mood you want.
+  4. Q: Can the processional and recessional be the same song? A: reuse wording artikel
+     song-count (softer for the entrance, fuller or faster for the exit).
+  5. Q: Can a pop song be played live for the recessional? A: yes — custom arrangements included
+     in every booking.
 - **outboundLinkTarget:** `/repertoire/` and `/packages/`
-- **inboundLinkSource:** `src/content/articles/wedding-pianist-bali.md` and
-  `src/content/articles/custom-wedding-music-arrangement.md`
-- **cover image prompt:** "a grand piano under warm string lights on an empty reception floor,
-  evening" (no people)
+- **inboundLinkSource:** `src/content/articles/wedding-processional-recessional-songs.md` (H2
+  "Recessional and Wedding Exit Songs") and `src/content/articles/wedding-ceremony-song-count.md`
+- **cover image prompt:** "a scattered trail of white flower petals down an empty outdoor aisle
+  toward the ocean, a violin resting on a chair at the end, bright late-afternoon light" (no
+  people)
 
 ### Item 20 — wedding-reception-dinner-music (planning)
 
@@ -671,7 +709,10 @@ chapel/venue spesifik sebagai tempat Allegra pernah tampil kecuali dikonfirmasi.
   2. Modern and Pop Songs Arranged for Strings
   3. Songs by Moment: Prelude, Aisle, Signing, Recessional
   4. How Piano Changes a String Quartet's Sound
-  5. Requesting a Song That Isn't on the List
+  5. The Cello's Part: Solo Cello and Cello With Piano (digabung dari item 25, 2026-09-25 —
+     secondary: cello wedding music 100–1K, cello wedding songs 10–100; cello = opsi Solo,
+     Duo = violin + cello + piano)
+  6. Requesting a Song That Isn't on the List
 - **FAQ candidates:**
   1. Q: Can a string quartet play pop songs at a wedding? A: yes — arranged for strings and piano.
   2. Q: What classical pieces are most popular for a string quartet wedding? A: list from
@@ -753,6 +794,11 @@ Do NOT name specific Ubud venues as places Allegra has performed (CLAUDE.md rule
 
 ### Item 24 — classical-wedding-ceremony-music (piano-repertoire)
 
+<!-- MERGED 2026-09-25 (owner, docs/KEYWORD-MAP-2026-09.md § 10): tidak ditulis sebagai artikel
+terpisah untuk menghindari cannibalization. Isinya jadi H2 "Classical Music for a Wedding Ceremony,
+Moment by Moment" (tabel per momen + FAQ) di classical-vs-contemporary-wedding-music (EN + ID).
+Brief di bawah disimpan hanya sebagai arsip. -->
+
 <!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: classical music for
 wedding ceremony 100–1K, classical wedding entrance music 100–1K, classical music for wedding
 recessional 100–1K). Anti-cannibalization: classical-vs-contemporary-wedding-music (item 10) = a
@@ -786,6 +832,10 @@ item 10's comparison sections. -->
 
 ### Item 25 — cello-wedding-music (piano-repertoire)
 
+<!-- MERGED 2026-09-25 (owner, docs/KEYWORD-MAP-2026-09.md § 10): demand terlalu kecil untuk
+artikel sendiri (seluruh cluster cello ±36 keyword, hanya 1 di 100–1K). Dijadikan H2 #5 di item
+21 (string-quartet-wedding-songs). Brief di bawah disimpan hanya sebagai arsip. -->
+
 <!-- proposed 2026-09-24 from docs/KEYWORD-MAP-2026-09.md § 8 (Keyword Planner: cello wedding music
 100–1K, cello wedding songs 10–100). Supporting item. Alternative for the owner: instead of a
 standalone article, fold it into item 21 (string-quartet-wedding-songs) as one H2 section. -->
@@ -813,3 +863,73 @@ standalone article, fold it into item 21 (string-quartet-wedding-songs) as one H
 - **inboundLinkSource:** `src/content/articles/string-quartet-bali-wedding.md`
 - **cover image prompt:** "a cello and bow leaning against a white chair on a garden lawn, soft
   late-afternoon light" (object only)
+
+### Item 26 — reception-entrance-songs (piano-repertoire)
+
+<!-- Added 2026-09-25 (docs/KEYWORD-MAP-2026-09.md § 10). Keyword Planner: cluster reception
+entrance = 275 keyword; 10K–100K: bridal party wedding entrance songs; 1K–10K: bride and groom
+entrance songs, wedding reception bride and groom entrance songs, bridesmaid entrance songs, fun
+bridal party entrance songs, best bridal party entrance song. SERP didominasi daftar DJ/pop (The
+Knot, Brides, blog DJ) — sudut pembeda: lagu pop yang sama dimainkan LIVE oleh piano dan strings.
+Ini momen resepsi, bukan upacara: jangan bertumpang tindih dengan item 19 (recessional) atau
+artikel processional. Brand voice: hindari framing "DJ vs live" yang hype, dan kata "band". -->
+
+- **heading:** Reception Entrance Songs, Played Live on Piano and Strings
+- **targetKeyword:** bride and groom entrance songs
+- **description seed:** Reception entrance songs for the bride and groom and the bridal party —
+  upbeat pop picks played live on piano and strings, and how to time your grand entrance.
+- **excerpt seed:** Your entrance into the reception sets the tone for the party. Song ideas played
+  live, and how the ensemble times it to your walk in.
+- **outline (H2s):** — tiap H2 dibuka dengan jawaban langsung (AEO)
+  1. What Makes a Good Reception Entrance Song?
+  2. Bride and Groom Entrance Songs — dari `/repertoire` saja (mis. Marry You, Love Story,
+     Lover, Golden Hour, Die with a Smile)
+  3. Bridal Party Entrance Songs (secondary: bridal party wedding entrance songs, bridesmaid
+     entrance songs)
+  4. How a Live Ensemble Times Your Entrance (cue dari MC/planner — [confirm real process])
+  5. Turning Your Own Song Into a Live Entrance — custom arrangements included
+- **FAQ candidates:**
+  1. Q: Can a live string ensemble play upbeat pop songs for our entrance? A: yes — custom
+     arrangements of your songs are included in every booking.
+  2. Q: Should the bridal party and the couple enter to different songs? A: [confirm real
+     practice]
+  3. Q: Do we need a sound system for the reception entrance? A: Allegra doesn't bring a PA —
+     venue's or planner's sound provider (owner-confirmed 2026-09-14).
+  4. Q: Which formation suits a reception entrance? A: describe by formation; piano is standard
+     in Duo/Trio/String Quartet/Large Ensemble.
+- **outboundLinkTarget:** `/repertoire/` and `/packages/`
+- **inboundLinkSource:** `src/content/articles/custom-wedding-music-arrangement.md` (H2 "Pop Songs
+  on Strings and Piano", which already mentions the reception entrance) and
+  `src/content/articles/cocktail-hour-wedding-piano-music.md`
+- **cover image prompt:** "a grand piano and a violin on a stand at the edge of an empty
+  candle-lit reception floor, open doors to a tropical garden at dusk" (no people)
+
+### Item 27 — piano-first-dance-songs (piano-repertoire)
+
+<!-- DEFERRED 2026-09-25 (owner, docs/KEYWORD-MAP-2026-09.md § 10): seluruh cluster first dance di
+Keyword Planner hanya 2 keyword, masing-masing 10–100/bulan. Dipindah dari item 19 (slotnya diisi
+wedding-recessional-songs). Brief tetap utuh — owner bisa mengubah ke `todo` kapan saja. -->
+
+- **heading:** Piano First Dance Songs for Your Wedding
+- **targetKeyword:** piano first dance songs
+- **description seed:** First dance songs that sound beautiful on live piano — romantic classics,
+  modern covers, and how a custom arrangement fits your song to the moment.
+- **excerpt seed:** Live piano gives a first dance room to breathe. Song ideas and how arranging
+  your own song works.
+- **outline (H2s):**
+  1. Why Live Piano Suits a First Dance
+  2. Romantic Classics on Piano
+  3. Modern Songs Arranged for Piano
+  4. Adding Strings to Your First Dance
+  5. Arranging Your Own Song and Setting the Length
+- **FAQ candidates:**
+  1. Q: Can you play our first dance song on piano? A: yes — custom arrangements included in every
+     booking.
+  2. Q: Can the first dance be shortened? A: yes, arranged to the length you want.
+  3. Q: Solo piano or piano with strings? A: link wedding-pianist-bali.
+  4. Q: How early should we send our song? A: early — arrangements need lead time.
+- **outboundLinkTarget:** `/repertoire/` and `/packages/`
+- **inboundLinkSource:** `src/content/articles/wedding-pianist-bali.md` and
+  `src/content/articles/custom-wedding-music-arrangement.md`
+- **cover image prompt:** "a grand piano under warm string lights on an empty reception floor,
+  evening" (no people)

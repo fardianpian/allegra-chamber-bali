@@ -1,11 +1,12 @@
 ---
 title: 'Classical or Contemporary Wedding Ceremony Music? — Allegra Chamber Bali'
 heading: 'Classical or Contemporary: Choosing the Right Style for Your Ceremony Music'
-description: 'Classical or contemporary music for your wedding ceremony — how each style feels, when each fits best, and why most couples blend both across the day.'
+description: 'Classical or contemporary music for your wedding ceremony — classical pieces for each moment, when a contemporary song fits better, and how to blend both.'
 excerpt: 'Classical pieces, movie themes, or a favorite pop song reimagined for strings and piano — how to choose a style that fits your ceremony.'
 pillar: 'piano-repertoire'
 targetKeyword: 'classical vs contemporary wedding music'
 pubDate: 2026-09-21
+updatedDate: 2026-09-25
 ogImage: '/images/og-classical-vs-contemporary-wedding-music.jpg'
 faq:
   - question: 'Do you only play classical music at weddings?'
@@ -16,6 +17,8 @@ faq:
     answer: "Yes, when the arrangement suits the setting. A contemporary song arranged for piano and strings can sound just as considered as a classical piece — formality comes from the arrangement and pacing, not from the song's original genre."
   - question: 'Can classical and contemporary music be mixed within the same ceremony?'
     answer: 'Yes — it is the most common approach. Many couples open with a classical prelude, use a contemporary arrangement for the processional, and choose either style for the recessional depending on the mood they want.'
+  - question: 'What classical music is played at a wedding ceremony?'
+    answer: "Common choices are Pachelbel's Canon in D, Bach's Air on the G String, or Wagner's Bridal Chorus for the processional; Schubert's Ave Maria for the signing; and Mendelssohn's Wedding March or Vivaldi's Spring for the recessional. All of them are written for the instruments a chamber ensemble plays, so they need no rearranging."
 ---
 
 Choosing between classical and contemporary music for your ceremony can feel like picking a side before you've even started planning. In practice, the two work together more often than not — here's how each style sounds on chamber instruments, when each one fits, and how to describe what you're picturing so we can build the right program with you.
@@ -31,6 +34,19 @@ Classical pieces tend to fit best for the prelude and processional — moments w
 ## When Contemporary Arrangements Fit Best
 
 Contemporary arrangements tend to fit best where you want the music to say something specific about you as a couple — the processional, the recessional, or a moment built around a song that means something to your relationship. A first-dance song, a film theme from something you watched together, or a pop track arranged for strings and piano carries a different kind of meaning than a classical standard: guests who know the original recognise it immediately, and the arrangement makes it sound like it was always meant for a wedding ceremony. Recessionals in particular lean contemporary more often, since the mood after the vows tends to be brighter and more celebratory than the prelude.
+
+## Classical Music for a Wedding Ceremony, Moment by Moment
+
+The classical pieces in our repertoire map neatly onto the ceremony's moments, so a fully classical program is easy to build:
+
+| Moment                    | Classical pieces                                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Prelude and cocktail hour | Clair de Lune (Debussy), Salut d'Amour (Elgar), Le Cygne (Saint-Saëns)                               |
+| Processional              | Canon in D (Pachelbel), Air on the G String (Bach), Bridal Chorus (Wagner)                           |
+| Signing or vow exchange   | Ave Maria (Schubert), Jesu, Joy of Man's Desiring (Bach)                                             |
+| Recessional               | Wedding March (Mendelssohn), Spring from The Four Seasons (Vivaldi), Eine Kleine Nachtmusik (Mozart) |
+
+The Bridal Chorus and Mendelssohn's Wedding March are the traditional pair for walking in and walking out; if you want something less expected, Air on the G String and Vivaldi's Spring play the same roles with a different character. The full list, grouped by moment, is on our [repertoire page](/repertoire/).
 
 ## Why Most Ceremonies Mix Both Across Prelude, Processional, and Recessional
 

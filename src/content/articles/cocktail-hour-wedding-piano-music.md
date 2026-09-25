@@ -1,10 +1,10 @@
 ---
-title: 'Cocktail Hour Piano Music: What to Play After the Ceremony — Allegra Chamber Bali'
+title: 'Wedding Cocktail Hour Music: What to Play After the Ceremony — Allegra Chamber Bali'
 heading: 'Cocktail Hour Piano Music: What to Play After the Ceremony'
-description: 'What changes musically once your ceremony ends and cocktail hour begins — formation, repertoire mood, and set length, so you can plan it into your booking.'
+description: 'Wedding cocktail hour music on piano and strings — what changes once the ceremony ends, from formation and song mood to set length, so you can plan ahead.'
 excerpt: 'The mood shifts the moment guests move to cocktails — what changes in the music, and how to plan for it alongside your ceremony booking.'
 pillar: 'piano-repertoire'
-targetKeyword: 'cocktail hour wedding music'
+targetKeyword: 'wedding cocktail hour music'
 pubDate: 2026-09-11
 ogImage: '/images/og-cocktail-hour-wedding-piano-music-v2.jpg'
 faq:

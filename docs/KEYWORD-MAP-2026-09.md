@@ -450,3 +450,94 @@ processional songs` (100–1K). Belum ada ESP, jadi: form Web3Forms singkat (nam
 - **Google Ads search tidak disarankan saat ini**: keyword bermodifier Bali untuk musisi hanya
   10–100/bulan; keyword generik (`wedding string quartet`) didominasi pencari yang ingin vendor lokal
   di negaranya sendiri.
+
+## 10. Peluang SEO / GEO / AEO lanjutan dari data Keyword Planner (2026-09-25)
+
+> Analisis ulang 6 CSV `docs/data/gkp-2026-09-*.csv` (3.362 keyword unik), di-cluster per tema
+> dengan volume dijumlah memakai nilai bucket (50 / 500 / 5000 / 50000). Dicocokkan dengan GSC
+> query × page (2026-06-25 → 2026-09-24) dan SERP Firecrawl untuk dua keputusan. Yang sudah
+> dikerjakan dari § 9 (perluasan artikel processional, H2 per momen di `/repertoire`, retarget
+> artikel piano, lead magnet Ceremony Music Planner) tidak diulang di sini. Owner menyetujui semua
+> aksi di bawah pada 2026-09-25, **kecuali** topik pernikahan India (`indian wedding planner bali`
+> dkk.) — tidak dikejar.
+
+### 10.1 Cluster tema (jumlah nilai bucket)
+
+| Cluster                                    | Keyword | Jumlah bucket | Status di situs (2026-09-25)                                         |
+| ------------------------------------------ | ------: | ------------: | -------------------------------------------------------------------- |
+| Processional / walk down the aisle         |   1.067 |      ±862.000 | Dilayani `wedding-processional-recessional-songs`                    |
+| Recessional / exit                         |     527 |      ±437.000 | Hanya 1 H2 di artikel processional → **artikel baru, item 19**       |
+| Reception entrance (couple & bridal party) |     275 |      ±236.000 | Belum ada → **artikel baru, item 26**                                |
+| Instrumental                               |     300 |       ±54.000 | Item 22 (`proposed`)                                                 |
+| Piano                                      |     197 |       ±51.000 | Artikel piano (sudah di-retarget § 9)                                |
+| String quartet                             |     150 |       ±24.000 | `string-quartet-bali-wedding` + item 21                              |
+| Biaya (cost / price / how much)            |     109 |       ±23.000 | `wedding-music-budget-bali` → **diperluas § 10.3**                   |
+| Violin                                     |     119 |       ±23.000 | Item 14                                                              |
+| Pop / modern / non-traditional             |     183 |       ±22.000 | → **section baru di `custom-wedding-music-arrangement`**             |
+| Gereja / Katolik / Kristen                 |     133 |       ±17.000 | → **diperluas ke item 15** (`chapel-wedding-music-bali`)             |
+| Signing of the register                    |      67 |       ±13.000 | Item 17                                                              |
+| Cocktail hour                              |      74 |        ±8.900 | `cocktail-hour-wedding-piano-music` → **judul di-retarget**          |
+| Classical                                  |      65 |        ±7.300 | → **section baru di `classical-vs-contemporary`** (item 24 `merged`) |
+| Cello                                      |      36 |        ±2.250 | → H2 di item 21 (item 25 `merged`)                                   |
+| First dance                                |       2 |          ±100 | Item 19 lama → dipindah ke item 27 `deferred`                        |
+
+### 10.2 Bukti untuk dua keputusan utama
+
+- **Recessional dipisah** — SERP `wedding recessional songs` (Firecrawl 2026-09-25): The Knot,
+  Brides, Paperlust, Tuscan Oaks, Mike Staff semuanya halaman **khusus recessional**; tidak ada
+  yang menggabungkan dengan processional. Artikel gabungan kita memakai title yang dipimpin
+  "Processional", jadi hampir mustahil bersaing untuk cluster ±437K ini.
+- **Reception entrance** — SERP `bride and groom entrance songs reception` didominasi The Knot,
+  Brides, dan blog DJ (lagu pop upbeat). Sudut Allegra: lagu pop yang sama dimainkan live oleh piano
+  dan strings (aransemen custom sudah termasuk). Fit konversi lebih rendah dibanding momen upacara,
+  tapi volumenya terbesar ketiga di seluruh data.
+- **Temuan SERP tambahan:** playlist **Spotify** ada di posisi #1 di kedua SERP, dan Reddit
+  `r/weddingplanning` masuk top 3 — lihat § 10.5.
+
+### 10.3 Yang dikerjakan 2026-09-25 (EN + ID)
+
+| File                                      | Perubahan                                                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `public/llms.txt`                         | **Fakta salah diperbaiki**: Large Ensemble tertulis "string quartet + piano + double bass" dan masih menyebut upgrade "Piano +" (keduanya sudah diganti sejak 2026-07-09). Ditambah daftar 5 formasi + jumlah musisi, service facts (aransemen termasuk, balasan 24 jam, tanpa PA, rain plan, vow renewal, musik gereja), dan daftar semua artikel Journal per kelompok |
+| `live-music-bali-wedding-guide`           | Title/H1/description/hook → `wedding ceremony musicians` (1K–10K, competition index 7 — terendah di antara keyword vendor 1K+). `targetKeyword` lama (`musician for wedding ceremony`) tidak ada di data GKP                                                                                                                                                            |
+| `wedding-music-budget-bali`               | Title/H1 → "Live Wedding Music Cost in Bali"; `targetKeyword` → `string quartet wedding cost`; H2 baru _What Affects the Cost of a Wedding String Quartet or Pianist?_ + tabel pembanding quote (piano termasuk, aransemen tidak ditagih terpisah, tanpa sound system); FAQ baru soal biaya — **tanpa angka**                                                           |
+| `cocktail-hour-wedding-piano-music`       | Title/description → `wedding cocktail hour music`; H1 tetap menyebut piano                                                                                                                                                                                                                                                                                              |
+| `id/wedding-prelude-music`                | Title → "Prelude Adalah: Musik Sebelum Upacara Pernikahan". Alasan: `prelude adalah` = query dengan impresi terbanyak di GSC situs (21 impresi, posisi 10,1, 0 klik) + `prelude artinya`, `apa itu prelude`                                                                                                                                                             |
+| `wedding-ceremony-song-count`             | Hook answer-first: kalimat pertama langsung menyebut "empat hingga enam lagu" beserta rinciannya. GSC: ±10 variasi "how many songs…" di posisi 22–43                                                                                                                                                                                                                    |
+| `custom-wedding-music-arrangement`        | H2 baru _Pop Songs on Strings and Piano_ + FAQ Vitamin String Quartet (3 keyword VSQ-wedding 100–1K, kompetisi 0; `pop songs to walk down the aisle` 100–1K). VSQ hanya disebut sebagai referensi gaya                                                                                                                                                                  |
+| `classical-vs-contemporary-wedding-music` | H2 baru _Classical Music for a Wedding Ceremony, Moment by Moment_ (tabel per momen, judul hanya dari `/repertoire`) + FAQ `What classical music is played at a wedding ceremony?`. Menggantikan item 24 agar tidak kanibal                                                                                                                                             |
+| `docs/JOURNAL-BACKLOG.md`                 | #19 = `wedding-recessional-songs` (`todo`); #26 `reception-entrance-songs` (`todo`); #27 `piano-first-dance-songs` (`deferred`); #24 dan #25 `merged`; item 15 ditambah H2 musik gereja/Katolik; item 21 ditambah H2 cello; status baru `deferred`/`merged` didokumentasikan di header (instruksi #7)                                                                   |
+
+Koreksi atas analisis sebelumnya: dugaan bahwa JSON-LD `Article.headline` memakai `title` (dengan
+suffix brand) **keliru** — `[slug].astro` sudah mengoper `heading` sebagai `title` ke
+`getArticleJsonLd`. Tidak ada perubahan.
+
+### 10.4 Follow-up manual (bukan tugas routine)
+
+1. **Setelah item 19 publish:** ringkas H2 _Recessional and Wedding Exit Songs_ di
+   `wedding-processional-recessional-songs` (EN + ID) jadi 2–3 kalimat + link ke artikel
+   recessional, lalu fokuskan title/description ke processional. Tanpa langkah ini dua halaman
+   bersaing untuk `wedding recessional songs`.
+2. **`llms.txt` tidak diperbarui otomatis** oleh routine `journal-article-publisher`. Tambahkan
+   artikel baru ke daftar Journal-nya secara berkala (atau tambahkan langkah itu ke SKILL.md).
+3. **Repertoire recessional tipis** — hanya 4 judul `moment: recessional` di
+   `src/content/repertoire/`. Item 19 hanya boleh memakai judul dari `/repertoire`, jadi menambah
+   2–4 judul recessional upbeat yang memang dimainkan Allegra akan memperkuat artikel itu (butuh
+   daftar dari owner).
+4. Description di bawah 150 karakter (sudah ada sebelumnya, tidak disentuh):
+   `id/beach-wedding-music-bali` (146), `id/cliffside-wedding-uluwatu` (147),
+   `id/wedding-band-vs-dj` (134), `id/wedding-venue-live-music-bali` (140).
+
+### 10.5 Aksi owner (di luar situs / butuh data owner)
+
+- **Playlist Spotify publik atas nama Allegra** per momen (Processional, Recessional, Reception
+  Entrance — versi piano & strings), judulnya memakai keyword, deskripsinya menaut ke artikel
+  terkait. Spotify menempati #1 di dua SERP yang dicek; ini juga sumber yang sering dikutip jawaban
+  AI.
+- **Author `Person` di Article JSON-LD** (musisi / music director sungguhan) untuk E-E-A-T. Butuh
+  nama + persetujuan owner. Saat ini guideline artikel menetapkan author = Organization, jadi
+  guideline itu juga perlu diubah bila owner setuju.
+- **Keterlibatan di `r/weddingplanning`** (Reddit top 3 untuk recessional dan reception entrance) —
+  menjawab pertanyaan, bukan promosi; selaras dengan `docs/COMMUNITY-MARKETING-PLAN.md`.
+- **Sampel audio** untuk judul yang paling dicari (§ 9.3 #1) tetap menjadi pengungkit konversi
+  terbesar di `/repertoire`.

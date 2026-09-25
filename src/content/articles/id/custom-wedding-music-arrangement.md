@@ -6,6 +6,7 @@ excerpt: 'Lagu favorit Anda mungkin belum tersedia dalam format ansambel gesek �
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
 pubDate: 2026-08-31
+updatedDate: 2026-09-25
 ogImage: '/images/og-custom-wedding-music-arrangement.jpg'
 faq:
   - question: 'Bisakah Allegra mengaransemen lagu apa pun yang kami minta untuk upacara?'
@@ -16,6 +17,8 @@ faq:
     answer: 'Semakin awal semakin baik. Konfirmasikan pilihan lagu saat memesan — atau begitu sudah ditentukan — agar ada waktu cukup untuk proses aransemen dan revisi jika diperlukan. Jika tanggal Anda sudah dekat, tetap hubungi kami dan kami akan membahas apa yang realistis untuk jadwal Anda.'
   - question: 'Apakah aransemen kustom dikenakan biaya tambahan?'
     answer: 'Tidak. Aransemen kustom untuk lagu Anda sudah termasuk di setiap booking, tidak dikenakan biaya terpisah. Kirim pesan ke WhatsApp kami dengan tanggal, venue, dan lagu yang Anda inginkan, dan kami membalas dalam 24 jam.'
+  - question: 'Bisakah lagu pop dimainkan dengan gesek, seperti cover Vitamin String Quartet?'
+    answer: 'Bisa. Lagu pop yang diaransemen untuk piano dan gesek termasuk dalam aransemen kustom. Kirim rekaman yang Anda sukai sebagai referensi — versi Vitamin String Quartet adalah contoh yang baik — dan kami mengaransemen lagu itu untuk formasi Anda, dengan piano sebagai bagian dari suaranya.'
 ---
 
 Banyak pasangan sudah tahu lagu yang mereka inginkan untuk prosesi jauh sebelum memahami bagaimana lagu itu bisa tampil secara live oleh ansambel kamar. Jawabannya adalah aransemen kustom — dan prosesnya lebih mudah dari yang terlihat, begitu Anda tahu apa yang perlu dikirimkan dan kapan harus memintanya.
@@ -55,6 +58,18 @@ Piano sudah termasuk secara standar dalam setiap formasi mulai dari Duo ke atas 
 Mengonfirmasikan pilihan lagu sejak awal — idealnya saat memesan — memberi waktu paling banyak untuk proses aransemen dan revisi sebelum hari pernikahan. Aransemen perlu diselesaikan dan dilatih sebelum upacara, artinya lagu yang dikonfirmasi beberapa bulan sebelumnya lebih fleksibel untuk penyesuaian dibanding yang diminta mendekati hari H.
 
 Jika Anda sudah merencanakan beberapa bulan ke depan, sekarang adalah saat yang tepat untuk bertanya: sampaikan tanggal, ide lagu, dan formasi Anda melalui [halaman kontak kami](/id/contact/), dan kami akan memberikan gambaran realistis tentang jadwal yang bisa diakomodasi.
+
+## Lagu Pop dengan Gesek dan Piano
+
+Bisa — lagu pop yang dimainkan dengan gesek dan piano rutin kami aransemen, dan memang untuk itulah aransemen kustom dibuat. Jika Anda pernah mendengar cover lagu pop dari proyek rekaman seperti Vitamin String Quartet, suara seperti itulah yang dihasilkan aransemen live — ditulis untuk formasi Anda, bukan disalin dari rekaman.
+
+Beberapa hal yang membantu lagu pop bekerja dengan baik secara live di upacara:
+
+- **Sesuaikan lagu dengan momennya.** Lagu yang lebih lambat dan mengutamakan melodi cocok untuk prosesi; lagu yang lebih ceria cocok untuk resesional atau saat Anda memasuki resepsi.
+- **Kirim versi yang Anda sukai.** Cover gesek yang sering Anda dengarkan adalah rekaman referensi yang berguna — dari situ kami tahu suasana yang Anda inginkan sebelum mulai.
+- **Piano menjadi bagian dari suaranya.** Di setiap formasi mulai dari Duo, piano menjaga harmoni dan ritme sementara biola dan cello membawakan melodi, sehingga aransemennya terdengar lebih penuh dibanding gesek saja.
+
+Untuk urutan lagu sepanjang upacara, [panduan lagu prosesi dan resesional](/id/journal/wedding-processional-recessional-songs/) kami membahas setiap momennya.
 
 ## Apakah Semua Lagu Bisa Diaransemen untuk Ansambel Kamar?
 
