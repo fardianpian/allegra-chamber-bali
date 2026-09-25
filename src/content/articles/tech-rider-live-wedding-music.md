@@ -58,4 +58,4 @@ Most restrictions can be worked around if we know about them in advance — a po
 
 If your venue has a known limitation, [contact us](/contact/) as early as possible with the details. We respond to planner and venue inquiries within 24 hours through one point of contact, so you're not chasing different people for the same answer — and for the full list of questions worth asking any live music vendor before you book them, see [What to Ask a Live Music Vendor Before You Book Them](/journal/live-music-vendor-questions/).
 
-For more on how we work with your planning team day to day, visit [For Planners & Venues](/for-planners/).
+For more on how we work with your planning team day to day, visit [For Planners & Venues](/for-planners/). Once your tech rider is settled, the next thing worth confirming is how live music lines up with your other vendors — photographer, officiant, and the handoff to your DJ or MC — see [How Live Music Coordinates With Your Other Wedding Day Vendors](/journal/live-music-vendor-coordination-bali/).
