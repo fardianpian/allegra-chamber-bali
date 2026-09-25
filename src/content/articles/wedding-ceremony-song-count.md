@@ -6,6 +6,7 @@ excerpt: "From prelude to recessional, here's a practical breakdown of how many 
 pillar: 'planning'
 targetKeyword: 'how many songs for wedding ceremony'
 pubDate: 2026-09-09
+updatedDate: 2026-09-25
 ogImage: '/images/og-wedding-ceremony-song-count.jpg'
 faq:
   - question: 'How many songs does a wedding ceremony need?'
@@ -18,7 +19,7 @@ faq:
     answer: "It's collaborative. You share your ceremony structure and any songs you'd like included, and we build the full program — prelude, processional, ceremony music, and recessional — around that from there."
 ---
 
-Couples booking live music often aren't sure how many songs a ceremony needs — too few and the program feels thin, too many and the day feels rushed. Ceremony music breaks into a few defined moments, each with its own role — know the structure, and you can plan a program that fits your day.
+Most wedding ceremonies need four to six songs: two or three prelude pieces as guests arrive, one processional, an optional piece during the vows or signing, and one recessional. Couples booking live music are often unsure of that number — too few and the program feels thin, too many and the day feels rushed. Here is what each moment needs, so you can plan a program that fits your day.
 
 ## What Counts as "Ceremony Music"?
 

@@ -1,11 +1,12 @@
 ---
 title: 'Musik Klasik atau Kontemporer untuk Upacara Pernikahan? — Allegra Chamber Bali'
 heading: 'Klasik atau Kontemporer: Memilih Gaya yang Tepat untuk Musik Upacara Anda'
-description: 'Musik klasik atau kontemporer untuk upacara pernikahan — bagaimana tiap gaya terasa, kapan masing-masing cocok, dan mengapa pasangan sering memadukan keduanya.'
+description: 'Musik klasik atau kontemporer untuk upacara pernikahan — karya klasik untuk tiap momen, kapan lagu kontemporer lebih cocok, dan cara memadukan keduanya.'
 excerpt: 'Karya klasik, tema film, atau lagu pop favorit yang diaransemen ulang untuk gesek dan piano — cara memilih gaya yang tepat untuk upacara Anda.'
 pillar: 'piano-repertoire'
 targetKeyword: 'classical vs contemporary wedding music'
 pubDate: 2026-09-21
+updatedDate: 2026-09-25
 ogImage: '/images/og-classical-vs-contemporary-wedding-music.jpg'
 faq:
   - question: 'Apakah Allegra hanya membawakan musik klasik di pernikahan?'
@@ -16,6 +17,8 @@ faq:
     answer: 'Ya, selama aransemennya sesuai dengan suasana acara. Lagu kontemporer yang diaransemen untuk piano dan gesek bisa terdengar sama khidmatnya dengan karya klasik — kesan formal datang dari aransemen dan tempo, bukan dari genre asli lagunya.'
   - question: 'Bisakah musik klasik dan kontemporer dipadukan dalam satu upacara?'
     answer: 'Bisa — ini justru pendekatan yang paling umum. Banyak pasangan membuka dengan prelude klasik, memakai aransemen kontemporer untuk prosesi, lalu memilih gaya klasik atau kontemporer untuk resesional sesuai suasana yang mereka inginkan.'
+  - question: 'Musik klasik apa yang biasa dimainkan di upacara pernikahan?'
+    answer: 'Pilihan yang umum adalah Canon in D karya Pachelbel, Air on the G String karya Bach, atau Bridal Chorus karya Wagner untuk prosesi; Ave Maria karya Schubert untuk penandatanganan; serta Wedding March karya Mendelssohn atau Spring karya Vivaldi untuk resesional. Semuanya ditulis untuk instrumen yang dimainkan ansambel kamar, jadi tidak perlu diaransemen ulang.'
 ---
 
 Memilih antara musik klasik dan kontemporer untuk upacara Anda bisa terasa seperti harus memilih satu sisi sebelum mulai merencanakan apa pun. Pada praktiknya, keduanya justru lebih sering bekerja bersama daripada saling bersaing — berikut bagaimana masing-masing gaya terdengar di instrumen kamar, kapan masing-masing paling cocok, dan cara menyampaikan gambaran Anda supaya kami bisa menyusun program yang tepat bersama Anda.
@@ -31,6 +34,19 @@ Karya klasik cenderung paling cocok untuk prelude dan prosesi — momen di mana 
 ## Kapan Aransemen Kontemporer Paling Cocok
 
 Aransemen kontemporer cenderung paling cocok saat Anda ingin musik menyampaikan sesuatu yang spesifik tentang Anda sebagai pasangan — prosesi, resesional, atau momen yang dibangun di sekitar lagu yang bermakna bagi hubungan Anda. Lagu first dance, tema film dari sesuatu yang pernah Anda tonton bersama, atau lagu pop yang diaransemen untuk gesek dan piano membawa makna yang berbeda dari karya klasik standar: tamu yang mengenal versi aslinya langsung mengenalinya, dan aransemennya membuat lagu itu terasa memang dibuat untuk upacara pernikahan. Resesional khususnya lebih sering condong ke gaya kontemporer, karena suasana setelah pengucapan janji cenderung lebih cerah dan meriah dibanding prelude.
+
+## Musik Klasik untuk Upacara Pernikahan, Momen demi Momen
+
+Karya klasik dalam repertoar kami terpetakan dengan rapi ke momen-momen upacara, sehingga program yang sepenuhnya klasik mudah disusun:
+
+| Momen                      | Karya klasik                                                                                         |
+| -------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Prelude dan cocktail hour  | Clair de Lune (Debussy), Salut d'Amour (Elgar), Le Cygne (Saint-Saëns)                               |
+| Prosesi                    | Canon in D (Pachelbel), Air on the G String (Bach), Bridal Chorus (Wagner)                           |
+| Penandatanganan atau janji | Ave Maria (Schubert), Jesu, Joy of Man's Desiring (Bach)                                             |
+| Resesional                 | Wedding March (Mendelssohn), Spring dari The Four Seasons (Vivaldi), Eine Kleine Nachtmusik (Mozart) |
+
+Bridal Chorus dan Wedding March karya Mendelssohn adalah pasangan tradisional untuk masuk dan keluar; jika Anda ingin sesuatu yang kurang terduga, Air on the G String dan Spring karya Vivaldi mengisi peran yang sama dengan karakter berbeda. Daftar lengkapnya, dikelompokkan per momen, ada di [halaman repertoar](/id/repertoire/) kami.
 
 ## Mengapa Kebanyakan Upacara Memadukan Keduanya di Prelude, Prosesi, dan Resesional
 

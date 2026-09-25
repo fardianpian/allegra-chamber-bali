@@ -1,13 +1,16 @@
 ---
-title: 'How to Budget for Live Wedding Music in Bali — Allegra Chamber Bali'
-heading: 'How to Budget for Live Wedding Music in Bali'
-description: 'A planning framework for budgeting live wedding music in Bali — what actually changes the cost, what to ask vendors, and when to request a custom quote.'
+title: 'Live Wedding Music Cost in Bali: How to Budget for It — Allegra Chamber Bali'
+heading: 'Live Wedding Music Cost in Bali: How to Budget for It'
+description: 'What shapes live wedding music cost in Bali — string quartet and wedding pianist cost factors, how it compares to a band or DJ, and when to ask for a quote.'
 excerpt: "Live music doesn't have one price you can look up — here's what actually changes the cost, and what to ask before you request a quote."
 pillar: 'planning'
-targetKeyword: 'how to budget for wedding music'
+targetKeyword: 'string quartet wedding cost'
 pubDate: 2026-08-26
+updatedDate: 2026-09-25
 ogImage: '/images/og-wedding-music-budget-bali.jpg'
 faq:
+  - question: 'How much does a wedding string quartet or pianist cost in Bali?'
+    answer: 'There is no flat rate — the cost depends on the formation, your travel area within Bali, your date, and which moments you want covered. Custom arrangements of your songs are always included. Send your date and venue on WhatsApp or through the inquiry form and we reply within 24 hours with a quote.'
   - question: 'What actually changes the cost of live wedding music?'
     answer: "Mainly four things: how many musicians are in the formation, how much of the day you want covered (ceremony only, versus ceremony plus cocktail hour, versus a longer stretch), performance duration, and venue logistics. That's why quotes are built per couple rather than published as a flat rate — two weddings with the same formation can still cost differently depending on scope."
   - question: 'Is live music more expensive than a DJ or a band?'
@@ -27,6 +30,21 @@ Four factors do most of the work: how many musicians are in the formation, how m
 ## How Does Ensemble Size Affect the Budget?
 
 More musicians generally means a higher cost, simply because more people are performing and traveling to your venue. But bigger isn't automatically better for your day — an intimate garden ceremony for 30 guests doesn't need the same formation as a beachfront wedding for 200, and matching size to your actual venue and guest count is a bigger factor in the right fit than chasing the largest option available. See [Packages](/packages/) for how each formation — Solo, Duo, Trio, String Quartet, and Large Ensemble — scales, and what each one suits.
+
+## What Affects the Cost of a Wedding String Quartet or Pianist?
+
+The same factors apply, but it helps to see what a quote for each formation actually includes. A wedding pianist booked as a Solo is one musician; our String Quartet is five, because piano is included as standard alongside two violins, viola, and cello. Beyond musician count, a quote reflects your travel area within Bali, your date, and how many moments you want covered — prelude and processional only, or the full ceremony through cocktail hour.
+
+When you compare quotes from different vendors, check that they cover the same things:
+
+| Question to ask                             | How it works with Allegra                                                         |
+| ------------------------------------------- | --------------------------------------------------------------------------------- |
+| Is piano part of the formation?             | Yes — included as standard in Duo, Trio, String Quartet, and Large Ensemble       |
+| Are custom arrangements charged separately? | No — arrangements of your own songs are always included                           |
+| Is a sound system included?                 | No — amplification comes from your venue's or planner's sound provider, if needed |
+| Which moments does the quote cover?         | Set per couple, based on the moments you tell us you want                         |
+
+The sound system line is the one most often missed in a budget: if your venue is large or outdoors and needs amplification, that sits with your venue or planner, so ask them early. Our [tech rider guide](/journal/tech-rider-live-wedding-music/) explains what they will need.
 
 ## Does Live Music Cost More Than a DJ or a Band?
 

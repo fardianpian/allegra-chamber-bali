@@ -6,6 +6,7 @@ excerpt: 'Your favourite song may not exist as sheet music for a chamber ensembl
 pillar: 'piano-repertoire'
 targetKeyword: 'custom wedding music arrangement'
 pubDate: 2026-08-31
+updatedDate: 2026-09-25
 ogImage: '/images/og-custom-wedding-music-arrangement.jpg'
 faq:
   - question: 'Can Allegra arrange any song we request for our ceremony?'
@@ -16,6 +17,8 @@ faq:
     answer: 'The earlier the better. Confirming your song choices when you book — or as soon as they are settled — gives the most time for arrangement and any revisions. If your date is already close, reach out and we can discuss what is realistic for your timeline.'
   - question: 'Does a custom arrangement cost more?'
     answer: 'No. Custom arrangements of your songs are included in every booking, not charged separately. Message us on WhatsApp with your date, venue, and the song you have in mind, and we reply within 24 hours.'
+  - question: 'Can you play pop songs on strings, like a Vitamin String Quartet cover?'
+    answer: 'Yes. Pop songs arranged for piano and strings are part of what a custom arrangement covers. Send the recording you love as your reference — a Vitamin String Quartet version is a good one — and we arrange the song for your formation, with piano as part of the sound.'
 ---
 
 Most couples know which song they want for their processional long before they understand how it gets from a playlist to a live chamber ensemble. The answer is a custom arrangement — and the process is more straightforward than it might seem once you know what to send and when to ask.
@@ -55,6 +58,18 @@ Piano is part of the standard lineup in every formation from Duo upward — not 
 Confirming your song choices early — ideally when you book — gives the most time for arrangement and any back-and-forth if you want adjustments before the day. The arrangement needs to be completed and rehearsed before the ceremony, which means songs confirmed months ahead have more flexibility than those requested close to the date.
 
 If you are already planning a few months out, the right time to ask is now: let us know your date, your song ideas, and your formation via our [contact page](/contact/), and we can give you a realistic picture of the timeline.
+
+## Pop Songs on Strings and Piano
+
+Yes — pop songs played on strings and piano are something we arrange regularly, and they are exactly what a custom arrangement is for. If you have heard pop covers by recording projects such as Vitamin String Quartet, that is the kind of sound a live arrangement produces, written for your formation rather than copied from a record.
+
+A few things help a pop song work live at a ceremony:
+
+- **Match the song to the moment.** A slower, melody-led song suits the processional; an upbeat one suits the recessional or your entrance into the reception.
+- **Send the version you love.** A string cover you have been listening to is a useful reference recording — it tells us the mood you want before we start.
+- **Expect piano in the sound.** In every formation from Duo upward, piano holds the harmony and rhythm while violin and cello carry the melody, so the arrangement sounds fuller than strings alone.
+
+For the order of songs across your ceremony, our [processional and recessional song guide](/journal/wedding-processional-recessional-songs/) walks through each moment.
 
 ## Can Any Song Be Arranged for a Chamber Ensemble?
 

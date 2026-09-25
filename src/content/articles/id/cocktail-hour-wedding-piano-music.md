@@ -1,10 +1,10 @@
 ---
-title: 'Musik Piano Cocktail Hour: Apa yang Dimainkan Setelah Upacara — Allegra Chamber Bali'
+title: 'Musik Cocktail Hour Pernikahan: Apa yang Dimainkan Setelah Upacara — Allegra Chamber Bali'
 heading: 'Musik Piano Cocktail Hour: Apa yang Dimainkan Setelah Upacara'
 description: 'Apa yang berubah begitu upacara selesai dan cocktail hour dimulai — formasi, suasana repertoar, dan durasi set, agar Anda bisa merencanakannya sejak awal.'
 excerpt: 'Suasana berubah begitu tamu berpindah ke sesi cocktail — apa yang berubah dalam musiknya, dan cara merencanakannya bersama pemesanan upacara Anda.'
 pillar: 'piano-repertoire'
-targetKeyword: 'cocktail hour wedding music'
+targetKeyword: 'wedding cocktail hour music'
 pubDate: 2026-09-11
 ogImage: '/images/og-cocktail-hour-wedding-piano-music-v2.jpg'
 faq:

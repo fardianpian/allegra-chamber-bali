@@ -6,6 +6,7 @@ excerpt: 'Dari prelude hingga resesional, inilah gambaran praktis berapa banyak 
 pillar: 'planning'
 targetKeyword: 'how many songs for wedding ceremony'
 pubDate: 2026-09-09
+updatedDate: 2026-09-25
 ogImage: '/images/og-wedding-ceremony-song-count.jpg'
 faq:
   - question: 'Berapa banyak lagu yang dibutuhkan sebuah upacara pernikahan?'
@@ -18,7 +19,7 @@ faq:
     answer: 'Prosesnya kolaboratif. Anda menyampaikan struktur upacara dan lagu-lagu yang ingin disertakan, lalu kami menyusun program lengkapnya — prelude, prosesi, musik upacara, dan resesional — berdasarkan itu.'
 ---
 
-Pasangan yang memesan musik live sering tidak yakin berapa banyak lagu yang dibutuhkan sebuah upacara — terlalu sedikit terasa kosong, terlalu banyak membuat hari terasa terburu-buru. Musik upacara terbagi ke dalam beberapa momen yang jelas, masing-masing dengan perannya sendiri — pahami strukturnya, dan Anda bisa menyusun program yang pas untuk hari Anda.
+Sebagian besar upacara pernikahan membutuhkan empat hingga enam lagu: dua atau tiga lagu prelude saat tamu datang, satu lagu prosesi, satu lagu opsional saat pengucapan janji atau penandatanganan, dan satu resesional. Pasangan yang memesan musik live sering tidak yakin dengan angka itu — terlalu sedikit terasa kosong, terlalu banyak membuat hari terasa terburu-buru. Berikut kebutuhan tiap momen, agar Anda bisa menyusun program yang pas untuk hari Anda.
 
 ## Apa Saja yang Termasuk "Musik Upacara"?
 

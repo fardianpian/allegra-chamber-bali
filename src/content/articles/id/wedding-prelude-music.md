@@ -1,7 +1,7 @@
 ---
-title: 'Musik Prelude Pernikahan: Yang Didengar Tamu Sebelum Upacara — Allegra Chamber Bali'
+title: 'Prelude Adalah: Musik Sebelum Upacara Pernikahan — Allegra Chamber Bali'
 heading: 'Musik Prelude Pernikahan: Yang Didengar Tamu Sebelum Upacara'
-description: 'Apa itu musik prelude pernikahan, berapa lama berlangsung, dan cara memilih lagu piano atau gesek yang membangun suasana sebelum upacara di Bali.'
+description: 'Prelude adalah musik yang dimainkan saat tamu datang sebelum upacara pernikahan — berapa lama berlangsung, dan cara memilih lagu piano atau gesek di Bali.'
 excerpt: 'Musik yang didengar tamu sebelum Anda muncul — apa yang dicakup prelude pernikahan, berapa lama berlangsung, dan cara memilihnya.'
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding prelude music'

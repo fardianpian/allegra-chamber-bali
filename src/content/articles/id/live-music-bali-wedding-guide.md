@@ -1,10 +1,10 @@
 ---
-title: 'Cara Merencanakan Musik Live untuk Pernikahan di Bali — Allegra Chamber Bali'
-heading: 'Cara Merencanakan Musik Live untuk Pernikahan di Bali'
-description: 'Panduan 2026 merencanakan musik pernikahan live di Bali — kapan memesan, musik live vs DJ, memilih formasi, dan faktor yang memengaruhi biaya.'
+title: 'Musisi Upacara Pernikahan di Bali: Panduan Perencanaan — Allegra Chamber Bali'
+heading: 'Musisi Upacara Pernikahan di Bali: Cara Merencanakan Musik Live'
+description: 'Panduan 2026 memilih musisi upacara pernikahan di Bali — kapan memesan, musik live atau DJ, cara memilih formasi, dan faktor yang memengaruhi biayanya.'
 excerpt: 'Kapan memesan, musik live vs DJ, memilih formasi, dan faktor yang memengaruhi biaya — panduan lengkap 2026 untuk musik pernikahan live di Bali.'
 pillar: 'planning'
-targetKeyword: 'musician for wedding ceremony'
+targetKeyword: 'wedding ceremony musicians'
 pubDate: 2026-06-23
 ogImage: '/images/og-live-music-bali-wedding-guide.jpg'
 faq:
@@ -19,7 +19,7 @@ faq:
 ---
 
 Merencanakan pernikahan di Bali tahun 2026 biasanya berarti menimbang formasi, gaya venue, dan
-belasan pertanyaan logistik sebelum Anda sempat memilih satu lagu pun — mudah ditunda ketika setiap
+belasan pertanyaan logistik sebelum Anda sempat memilih musisi untuk upacara pernikahan — mudah ditunda ketika setiap
 vendor lain juga memperebutkan perhatian yang sama. Panduan ini membahas apa yang perlu diputuskan
 dan kapan, sehingga musik live menjadi bagian dari linimasa perencanaan Anda, bukan sekadar
 renungan belakangan.

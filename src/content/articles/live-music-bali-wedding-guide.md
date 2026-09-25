@@ -1,10 +1,10 @@
 ---
-title: 'How to Plan Live Music for a Bali Wedding — Allegra Chamber Bali'
-heading: 'How to Plan Live Music for a Bali Wedding'
-description: 'A 2026 guide to planning live wedding music for your Bali wedding — when to book, live music vs. a DJ, choosing a formation, and what shapes the cost.'
+title: 'Wedding Ceremony Musicians in Bali: A Planning Guide — Allegra Chamber Bali'
+heading: 'Wedding Ceremony Musicians in Bali: How to Plan Live Music'
+description: 'A 2026 guide to hiring wedding ceremony musicians for your Bali wedding — when to book, live music vs. a DJ, choosing a formation, and what shapes the cost.'
 excerpt: 'When to book, live music vs. a DJ, choosing a formation, and what shapes the cost — a complete 2026 planning guide for live wedding music in Bali.'
 pillar: 'planning'
-targetKeyword: 'musician for wedding ceremony'
+targetKeyword: 'wedding ceremony musicians'
 pubDate: 2026-06-23
 ogImage: '/images/og-live-music-bali-wedding-guide.jpg'
 faq:
@@ -19,7 +19,7 @@ faq:
 ---
 
 Planning a 2026 Bali wedding usually means weighing formations, venue styles, and a dozen logistics
-questions before you've even picked a song — easy to put off when every other vendor is competing
+questions before you've even picked your wedding ceremony musicians — easy to put off when every other vendor is competing
 for the same attention. This guide walks through what to decide and when, so live music becomes
 part of your planning timeline instead of an afterthought.
 
