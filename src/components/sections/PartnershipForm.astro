@@ -49,12 +49,26 @@ const roleOptions = [
 					<label class={labelClass}>
 						{page.formName}
 						<span class="text-gold" aria-hidden="true">*</span>
-						<input type="text" name="name" required class={fieldClass} />
+						<input
+							type="text"
+							name="name"
+							required
+							autocomplete="name"
+							enterkeyhint="next"
+							class={fieldClass}
+						/>
 					</label>
 					<label class={labelClass}>
 						{page.formCompany}
 						<span class="text-gold" aria-hidden="true">*</span>
-						<input type="text" name="company" required class={fieldClass} />
+						<input
+							type="text"
+							name="company"
+							required
+							autocomplete="organization"
+							enterkeyhint="next"
+							class={fieldClass}
+						/>
 					</label>
 				</div>
 
@@ -62,11 +76,18 @@ const roleOptions = [
 					<label class={labelClass}>
 						{page.formEmail}
 						<span class="text-gold" aria-hidden="true">*</span>
-						<input type="email" name="email" required class={fieldClass} />
+						<input
+							type="email"
+							name="email"
+							required
+							autocomplete="email"
+							enterkeyhint="next"
+							class={fieldClass}
+						/>
 					</label>
 					<label class={labelClass}>
 						{page.formPhone}
-						<input type="tel" name="phone" class={fieldClass} />
+						<input type="tel" name="phone" autocomplete="tel" enterkeyhint="next" class={fieldClass} />
 					</label>
 				</div>
 

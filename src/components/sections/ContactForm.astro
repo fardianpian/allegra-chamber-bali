@@ -48,19 +48,33 @@ const formationOptions = [
 				<label class={labelClass}>
 					{contact.formName}
 					<span class="text-gold" aria-hidden="true">*</span>
-					<input type="text" name="name" required class={fieldClass} />
+					<input
+						type="text"
+						name="name"
+						required
+						autocomplete="name"
+						enterkeyhint="next"
+						class={fieldClass}
+					/>
 				</label>
 				<label class={labelClass}>
 					{contact.formEmail}
 					<span class="text-gold" aria-hidden="true">*</span>
-					<input type="email" name="email" required class={fieldClass} />
+					<input
+						type="email"
+						name="email"
+						required
+						autocomplete="email"
+						enterkeyhint="next"
+						class={fieldClass}
+					/>
 				</label>
 			</div>
 
 			<div class="grid gap-6 sm:grid-cols-2">
 				<label class={labelClass}>
 					{contact.formPhone}
-					<input type="tel" name="phone" class={fieldClass} />
+					<input type="tel" name="phone" autocomplete="tel" enterkeyhint="next" class={fieldClass} />
 				</label>
 				<label class={labelClass}>
 					{contact.formDate}
@@ -71,7 +85,7 @@ const formationOptions = [
 			<div class="grid gap-6 sm:grid-cols-2">
 				<label class={labelClass}>
 					{contact.formVenue}
-					<input type="text" name="venue_area" class={fieldClass} />
+					<input type="text" name="venue_area" enterkeyhint="next" class={fieldClass} />
 				</label>
 				<label class={labelClass}>
 					{contact.formFormation}
@@ -98,11 +112,18 @@ const formationOptions = [
 			<div class="grid gap-6 sm:grid-cols-2">
 				<label class={labelClass}>
 					{contact.formGuests}
-					<input type="number" name="guest_count" min="1" inputmode="numeric" class={fieldClass} />
+					<input
+						type="number"
+						name="guest_count"
+						min="1"
+						inputmode="numeric"
+						enterkeyhint="next"
+						class={fieldClass}
+					/>
 				</label>
 				<label class={labelClass}>
 					{contact.formSong}
-					<input type="text" name="song_request" class={fieldClass} />
+					<input type="text" name="song_request" enterkeyhint="next" class={fieldClass} />
 				</label>
 			</div>
 
