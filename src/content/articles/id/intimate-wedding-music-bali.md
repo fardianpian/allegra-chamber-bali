@@ -69,3 +69,5 @@ Ini adalah titik awal, bukan aturan — setiap venue berbeda. Saat Anda menghubu
 Perubahan formasi sebelum hari pernikahan dimungkinkan tergantung ketersediaan musisi — semakin awal Anda menghubungi kami, semakin banyak fleksibilitas yang tersedia. Jika Anda tahu rencana masih belum pasti, sampaikan hal itu saat pertama kali menghubungi kami dan kami dapat mendiskusikan pilihan yang tersedia.
 
 Tanggal-tanggal populer di Bali biasanya dipesan 6–12 bulan sebelumnya. Mengamankan tanggal Anda dengan satu formasi dan meninjau kembali nanti umumnya lebih mudah daripada membiarkan pemesanan terbuka sementara Anda masih memutuskan.
+
+Panduan Solo dan Duo yang sama juga berlaku untuk pembaruan janji pernikahan yang kecil dan hanya untuk keluarga — lihat [Musik Live untuk Pembaruan Janji Pernikahan di Bali](/id/journal/vow-renewal-live-music-bali/) untuk perbedaannya dari pernikahan pertama.

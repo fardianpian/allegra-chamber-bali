@@ -69,3 +69,5 @@ These are starting points, not rules — every venue is different. When you inqu
 Formation changes before the wedding day are possible depending on musician availability — the earlier you reach out, the more flexibility there is. If you know your plans are still uncertain, flag that when you first inquire and we can talk through what options are available.
 
 Popular dates in Bali typically book 6–12 months ahead. Securing your date with one formation and revisiting later is generally easier than leaving the booking open while you decide.
+
+The same Solo and Duo guidance applies to a small, family-only vow renewal — see [Live Music for a Vow Renewal in Bali](/journal/vow-renewal-live-music-bali/) for how that occasion differs from a first wedding.
