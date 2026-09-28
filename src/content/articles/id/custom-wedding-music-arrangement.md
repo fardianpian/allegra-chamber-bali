@@ -76,3 +76,5 @@ Untuk urutan lagu sepanjang upacara, [panduan lagu prosesi dan resesional](/id/j
 Sebagian besar bisa, dan cakupannya lebih luas dari yang banyak pasangan bayangkan — karya klasik, lagu pop kontemporer, musik film dan televisi, lagu tradisional, hingga komposisi orisinal semuanya pernah diaransemen untuk berbagai formasi kamar.
 
 Ada yang lebih mudah ditransfer dibandingkan yang lain. Lagu dengan melodi yang menonjol dan pergerakan harmoni yang jelas umumnya lebih mudah diaransemen dibanding yang mengandalkan tekstur elektronik sebagai elemen utamanya. Jawaban jujurnya adalah: bagikan lagu yang Anda pikirkan saat menghubungi kami, dan kami akan menyampaikan langsung apakah lagu tersebut cocok untuk format ini dan bagaimana kami akan mendekatinya. Jarang ada kejutan begitu Anda menjelaskan apa yang Anda bayangkan.
+
+Proses yang sama ini juga berlaku saat kami mengaransemen ulang lagu pernikahan pasangan untuk [pembaruan janji pernikahan](/id/journal/vow-renewal-live-music-bali/) bertahun-tahun kemudian — proses permintaannya sama, hanya dengan lagu yang sudah membawa kenangan.

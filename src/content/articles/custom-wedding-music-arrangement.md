@@ -76,3 +76,5 @@ For the order of songs across your ceremony, our [processional and recessional s
 Most songs can, and the range is wider than many couples expect — classical pieces, contemporary pop, film and television scores, traditional songs, and original compositions have all been arranged for chamber formations.
 
 Some translate more naturally than others. A melody-forward track with clear harmonic movement is generally easier to arrange than a piece that relies primarily on electronic texture for its effect. The honest answer is: share the song you have in mind when you reach out, and we will tell you directly whether it suits the format and how we would approach it. There are rarely surprises once you tell us what you are picturing.
+
+This is also how we approach re-arranging a couple's original wedding song for a [vow renewal](/journal/vow-renewal-live-music-bali/) years later — the same request process, just with a song that already carries meaning.
