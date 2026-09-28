@@ -6,6 +6,7 @@ excerpt: 'Pembaruan janji pernikahan membawa kenangan bertahun-tahun. Begini car
 pillar: 'planning'
 targetKeyword: 'vow renewal bali'
 pubDate: 2026-09-28
+ogImage: '/images/og-vow-renewal-live-music-bali.jpg'
 faq:
   - question: 'Bisakah kami memakai musik live untuk pembaruan janji pernikahan di Bali?'
     answer: 'Bisa — pembaruan janji pernikahan memakai formasi dan proses pemesanan yang sama seperti upacara pernikahan Allegra lainnya, dari Solo hingga Large Ensemble. Tidak ada layanan terpisah atau pilihan yang dibatasi untuk momen ini.'

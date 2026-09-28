@@ -6,6 +6,7 @@ excerpt: "A vow renewal carries years of shared history. Here's how live music c
 pillar: 'planning'
 targetKeyword: 'vow renewal bali'
 pubDate: 2026-09-28
+ogImage: '/images/og-vow-renewal-live-music-bali.jpg'
 faq:
   - question: 'Can we have live music for a vow renewal in Bali?'
     answer: 'Yes — a vow renewal uses the same formations and booking process as any Allegra wedding ceremony, from Solo through our Large Ensemble. There is no separate service or restricted option list for a renewal.'
