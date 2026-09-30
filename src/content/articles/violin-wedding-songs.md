@@ -6,6 +6,7 @@ excerpt: 'Violin leads the melody in many ceremony favourites. Song ideas for ea
 pillar: 'piano-repertoire'
 targetKeyword: 'violin wedding songs'
 pubDate: 2026-09-30
+ogImage: '/images/og-violin-wedding-songs.jpg'
 faq:
   - question: 'Can a solo violinist play our whole ceremony?'
     answer: 'Yes — Solo is a single musician on violin, cello, or piano, and solo violin covers a full ceremony for many couples. If you want a fuller sound without adding a full ensemble, Duo pairs violin with cello and piano, included as standard rather than as an add-on.'

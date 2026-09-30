@@ -6,6 +6,7 @@ excerpt: 'Biola membawakan melodi di banyak lagu favorit upacara. Ide lagu untuk
 pillar: 'piano-repertoire'
 targetKeyword: 'violin wedding songs'
 pubDate: 2026-09-30
+ogImage: '/images/og-violin-wedding-songs.jpg'
 faq:
   - question: 'Bisakah pemain biola solo membawakan seluruh upacara kami?'
     answer: 'Bisa — Solo adalah satu musisi dengan biola, cello, atau piano, dan biola solo sudah cukup untuk seluruh upacara bagi banyak pasangan. Jika ingin suara yang lebih penuh tanpa menambah ansambel besar, Duo memadukan biola dengan cello dan piano, sudah termasuk standar, bukan tambahan berbayar.'
