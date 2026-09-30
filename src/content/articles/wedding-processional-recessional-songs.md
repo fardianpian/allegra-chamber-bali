@@ -53,7 +53,7 @@ A processional works best as one continuous piece, so it needs to comfortably co
 | Isn't She Lovely    | Stevie Wonder    | A warmer, joyful entrance for a less formal ceremony        |
 | Canon in D          | Johann Pachelbel | Classical and familiar, a common choice for a measured pace |
 
-Classical pieces tend to suit a slower, more traditional entrance, while a warmer contemporary arrangement — like Isn't She Lovely — reads as personal without losing the formality of the moment. Either direction is available across our formations, from a solo pianist to a full string quartet.
+Classical pieces tend to suit a slower, more traditional entrance, while a warmer contemporary arrangement — like Isn't She Lovely — reads as personal without losing the formality of the moment. Either direction is available across our formations, from a solo pianist to a full string quartet. If violin is the instrument carrying your entrance, our [guide to violin wedding songs](/journal/violin-wedding-songs/) breaks down classical and modern choices by ceremony moment.
 
 ## Bridal Party Processional Songs
 
