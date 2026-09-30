@@ -53,7 +53,7 @@ Prosesi bekerja paling baik sebagai satu lagu yang mengalir terus-menerus, sehin
 | Isn't She Lovely    | Stevie Wonder    | Entrance yang lebih hangat dan ceria untuk upacara yang tidak terlalu formal |
 | Canon in D          | Johann Pachelbel | Klasik dan familiar, pilihan umum untuk tempo yang terukur                   |
 
-Karya klasik cenderung cocok untuk entrance yang lebih pelan dan tradisional, sementara aransemen kontemporer yang lebih hangat — seperti Isn't She Lovely — terasa personal tanpa kehilangan formalitas momen tersebut. Kedua arah ini tersedia di semua formasi kami, dari pianis solo hingga string quartet penuh.
+Karya klasik cenderung cocok untuk entrance yang lebih pelan dan tradisional, sementara aransemen kontemporer yang lebih hangat — seperti Isn't She Lovely — terasa personal tanpa kehilangan formalitas momen tersebut. Kedua arah ini tersedia di semua formasi kami, dari pianis solo hingga string quartet penuh. Jika biola yang membawakan momen masuk Anda, [panduan lagu biola pernikahan](/id/journal/violin-wedding-songs/) kami membahas pilihan klasik dan modern berdasarkan momen upacara.
 
 ## Lagu Prosesi untuk Rombongan Pengantin
 
