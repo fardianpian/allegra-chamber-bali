@@ -6,6 +6,7 @@ excerpt: 'Kapel mengubah cara musik live terdengar dan di mana musisi bisa berdi
 pillar: 'bali-venues'
 targetKeyword: 'chapel wedding bali'
 pubDate: 2026-10-02
+ogImage: '/images/og-chapel-wedding-music-bali.jpg'
 faq:
   - question: 'Apakah kami butuh amplifikasi untuk musik live di kapel?'
     answer: 'Biasanya tidak — dinding dan atap kapel kecil sudah melakukan sebagian besar kerja akustik, sehingga piano akustik dan string terdengar jelas tanpa bantuan. Allegra tidak membawa PA atau sound system sendiri; kalau kapel yang lebih besar ternyata membutuhkan penguat suara, itu diatur melalui penyedia sound dari venue atau planner Anda.'

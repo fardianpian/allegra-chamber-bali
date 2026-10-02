@@ -6,6 +6,7 @@ excerpt: 'Chapels change how live music sounds and where musicians can stand. Wh
 pillar: 'bali-venues'
 targetKeyword: 'chapel wedding bali'
 pubDate: 2026-10-02
+ogImage: '/images/og-chapel-wedding-music-bali.jpg'
 faq:
   - question: 'Do we need amplification for live music in a chapel?'
     answer: "Usually not — a small chapel's walls and ceiling already do most of the acoustic work, so acoustic piano and strings carry clearly without help. Allegra doesn't bring a PA or sound system; if a larger chapel ever needs reinforcement, it's arranged through your venue's or planner's sound provider."
