@@ -49,7 +49,8 @@ instruments need a covered, weather-protected spot away from direct sand and sea
 beach ceremony we typically bring a high-quality digital piano — it holds tuning in humidity and
 salt air the same way it does for any outdoor Bali ceremony, while still carrying the same
 flagship role in the formation. Strings are set up under shade on a stable, sand-free surface, the
-same baseline we use for any open-air venue.
+same baseline we use for any open-air venue. For what heat, humidity, and rain actually do to wooden
+instruments, see [Keeping Live Wedding Instruments Safe From Bali's Heat and Rain](/journal/wedding-instruments-heat-rain-bali/).
 
 ## What Formation Works Best for a Beach Wedding in Bali?
 
