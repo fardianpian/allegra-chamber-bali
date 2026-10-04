@@ -52,7 +52,8 @@ percikan air laut secara langsung, sehingga untuk upacara di pantai kami biasany
 digital berkualitas tinggi — tetap stabil dalam kelembapan dan udara asin sebagaimana halnya pada
 upacara outdoor Bali mana pun, sambil tetap memegang peran unggulan yang sama dalam formasi.
 String disiapkan di bawah tempat teduh di atas permukaan yang stabil dan bebas pasir, standar yang
-sama yang kami gunakan untuk venue outdoor mana pun.
+sama yang kami gunakan untuk venue outdoor mana pun. Untuk penjelasan tentang dampak panas, kelembapan,
+dan hujan pada instrumen kayu, lihat [Menjaga Keamanan Alat Musik Pernikahan dari Panas dan Hujan Bali](/id/journal/wedding-instruments-heat-rain-bali/).
 
 ## Formasi Apa yang Terbaik untuk Pernikahan di Pantai di Bali?
 

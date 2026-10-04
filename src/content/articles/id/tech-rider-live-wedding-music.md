@@ -44,7 +44,7 @@ Besaran daya dan jumlah stopkontak yang pasti bergantung pada instrumen spesifik
 
 ## Kebutuhan Ruang dan Lantai untuk Setup
 
-Setiap formasi membutuhkan ruang lantai yang rata dan stabil di dekat titik upacara untuk setiap musisi, instrumen, dan music stand mereka — bukan sekadar di mana pun kursi tamu berakhir. Piano atau keyboard membutuhkan permukaan rata tersendiri, dan formasi mana pun yang setup di bawah sinar matahari langsung untuk soundcheck dan penampilan yang cukup lama membutuhkan peneduh untuk melindungi instrumen sekaligus musisi.
+Setiap formasi membutuhkan ruang lantai yang rata dan stabil di dekat titik upacara untuk setiap musisi, instrumen, dan music stand mereka — bukan sekadar di mana pun kursi tamu berakhir. Piano atau keyboard membutuhkan permukaan rata tersendiri, dan formasi mana pun yang setup di bawah sinar matahari langsung untuk soundcheck dan penampilan yang cukup lama membutuhkan peneduh untuk melindungi instrumen sekaligus musisi. Alasannya bagi kayu, lem, dan senar dijelaskan dalam [Menjaga Keamanan Alat Musik Pernikahan dari Panas dan Hujan Bali](/id/journal/wedding-instruments-heat-rain-bali/).
 
 Formasi yang lebih besar tentu membutuhkan ruang lebih luas agar semua orang bisa duduk tanpa berdesakan dengan bow dan kotak instrumen, dan stage plot untuk booking spesifik Anda mencantumkan berapa besar ruang itu. Tinjau langsung area setup yang sebenarnya bersama venue Anda — bukan hanya tata letak kursi tamu, karena keduanya tidak selalu berada di titik yang sama.
 

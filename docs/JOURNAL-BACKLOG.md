@@ -55,6 +55,7 @@
 | 25  | merged   | cello-wedding-music                     | piano-repertoire | Cello Wedding Music for the Aisle and Beyond — Allegra Chamber Bali          |               |
 | 26  | todo     | reception-entrance-songs                | piano-repertoire | Reception Entrance Songs, Played Live — Allegra Chamber Bali                 |               |
 | 27  | deferred | piano-first-dance-songs                 | piano-repertoire | Piano First Dance Songs for Your Wedding — Allegra Chamber Bali              |               |
+| 28  | done     | wedding-instruments-heat-rain-bali      | for-planners     | Keeping Wedding Instruments Safe From Heat and Rain — Allegra Chamber Bali   | 2026-10-04    |
 
 ## Item Details
 
@@ -548,17 +549,21 @@ Jesu Joy of Man's Desiring, Bridal Chorus, Wedding March, Canon in D, Air on the
   1. Why Live Instruments Need Their Own Rain Plan
   2. Choosing a Covered Spot With the Venue in Advance
   3. Who Makes the Weather Call, and When
-  4. Heat, Humidity, and Wind: The Other Weather Risks
+  4. Wind: The Other Weather Risk (heat and humidity are covered by item 28 — summarise in one or
+     two sentences and link `/journal/wedding-instruments-heat-rain-bali/`, don't re-explain)
   5. What to Put in the Rain Plan Section of Your Run Sheet
 - **FAQ candidates:**
   1. Q: What happens if it rains during an outdoor ceremony? A: reuse approved FAQ wording —
      musicians move to a covered spot agreed in advance; safety of musicians and instruments first.
-  2. Q: Can string instruments be played outdoors in humidity? A: [confirm real practice]
+  2. Q: Who arranges the covered backup spot? A: planner/venue with musicians, agreed before the
+     date (approved FAQ wording). Humidity/heat FAQ already lives in item 28 — don't duplicate it.
   3. Q: Who decides to move the ceremony? A: [confirm — planner/venue with musicians]
   4. Q: Does a rain plan change the formation? A: [confirm]
-- **outboundLinkTarget:** `/for-planners/` and `/faq/`
-- **inboundLinkSource:** `src/content/articles/tech-rider-live-wedding-music.md` and
-  `src/content/articles/beach-wedding-music-bali.md`
+- **outboundLinkTarget:** `/for-planners/` and `/faq/`, plus `/journal/wedding-instruments-heat-rain-bali/`
+  (item 28) for the instrument-damage detail
+- **inboundLinkSource:** `src/content/articles/wedding-instruments-heat-rain-bali.md` (H2 "Why Rain
+  Means Moving, Not Playing On" — add the link there + `id/` twin), `src/content/articles/tech-rider-live-wedding-music.md`
+  and `src/content/articles/beach-wedding-music-bali.md`
 - **cover image prompt:** "a cello case under a covered bale pavilion with rain falling on tropical
   leaves outside, soft grey light" (object only)
 
@@ -933,3 +938,27 @@ wedding-recessional-songs). Brief tetap utuh — owner bisa mengubah ke `todo` k
   `src/content/articles/custom-wedding-music-arrangement.md`
 - **cover image prompt:** "a grand piano under warm string lights on an empty reception floor,
   evening" (no people)
+
+### Item 28 — wedding-instruments-heat-rain-bali (for-planners)
+
+<!-- Added 2026-10-04 at the owner's direct request (published the same day, outside the routine
+schedule). Angle = the instruments themselves (wood, animal glue, varnish, strings, piano
+soundboard) and what heat, humidity, and rain do to them. Item 16 was narrowed on the same day to
+rain-plan logistics so the two don't cannibalise each other. Sources cited in the article:
+The Strad "Ask the Experts: protecting your instrument in hot and humid temperatures" and the
+Piano Technicians Guild Piano Care FAQs. -->
+
+- **heading:** Keeping Live Wedding Instruments Safe From Bali's Heat and Rain
+- **targetKeyword:** protect musical instruments outdoor wedding (net-new bet; only autocomplete
+  signal found was "ideal humidity for string instruments")
+- **outline (H2s):**
+  1. Why Do Wooden Instruments React to Bali's Weather?
+  2. What Direct Sun Does to Varnish, Glue, and Strings
+  3. Why Rain Means Moving, Not Playing On
+  4. What About the Piano at an Outdoor Ceremony?
+  5. A Planner's Checklist for Protecting the Instruments
+- **outboundLinkTarget:** `/for-planners/`, `/faq/`, `/journal/tech-rider-live-wedding-music/`
+- **inboundLinkSource:** `src/content/articles/tech-rider-live-wedding-music.md` and
+  `src/content/articles/beach-wedding-music-bali.md` (+ `id/` twins)
+- **cover image prompt:** "a violin and a cello case resting in the shade of a white canopy on a
+  tropical garden lawn, bright sun beyond the shade, soft warm light" (no people)

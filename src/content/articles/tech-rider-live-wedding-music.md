@@ -44,7 +44,7 @@ The exact power draw and outlet count depend on the specific instrument and any 
 
 ## Space and Floor Requirements for Setup
 
-Every formation needs flat, stable floor space near the ceremony spot for each musician, their instrument, and a stand — not wherever guest seating happens to end. A piano or keyboard needs its own level surface, and any formation setting up under direct sun for an extended soundcheck and performance needs shade to protect both instruments and musicians.
+Every formation needs flat, stable floor space near the ceremony spot for each musician, their instrument, and a stand — not wherever guest seating happens to end. A piano or keyboard needs its own level surface, and any formation setting up under direct sun for an extended soundcheck and performance needs shade to protect both instruments and musicians. Why that matters for wood, glue, and strings is covered in [Keeping Live Wedding Instruments Safe From Bali's Heat and Rain](/journal/wedding-instruments-heat-rain-bali/).
 
 Larger formations naturally need more room to seat everyone without crowding bows and instrument cases, and the stage plot for your specific booking lays out how much. Walk the exact setup area with your venue ahead of time, not just the guest seating layout — the two aren't always the same spot.
 
