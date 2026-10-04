@@ -6,6 +6,7 @@ excerpt: "Wood, glue, and strings don't mix with direct sun or a sudden shower. 
 pillar: 'for-planners'
 targetKeyword: 'protect musical instruments outdoor wedding'
 pubDate: 2026-10-04
+ogImage: '/images/og-wedding-instruments-heat-rain-bali.jpg'
 faq:
   - question: 'Can string instruments be played in direct sun at an outdoor wedding?'
     answer: "Not safely for long. Direct sun can soften a string instrument's varnish and weaken the glue that holds its seams together, so we ask for shade over the whole playing area, from soundcheck through the final piece, at any open-air ceremony."

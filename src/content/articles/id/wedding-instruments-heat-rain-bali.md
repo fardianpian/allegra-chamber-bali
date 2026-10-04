@@ -6,6 +6,7 @@ excerpt: 'Kayu, lem, dan senar tidak cocok dengan terik matahari atau hujan mend
 pillar: 'for-planners'
 targetKeyword: 'protect musical instruments outdoor wedding'
 pubDate: 2026-10-04
+ogImage: '/images/og-wedding-instruments-heat-rain-bali.jpg'
 faq:
   - question: 'Apakah alat musik gesek bisa dimainkan di bawah terik matahari saat pernikahan outdoor?'
     answer: 'Tidak aman untuk waktu lama. Sinar matahari langsung bisa melunakkan pernis alat musik gesek dan melemahkan lem yang menyatukan sambungan badannya, jadi di setiap upacara terbuka kami meminta peneduh untuk seluruh area bermain, dari soundcheck hingga lagu terakhir.'
