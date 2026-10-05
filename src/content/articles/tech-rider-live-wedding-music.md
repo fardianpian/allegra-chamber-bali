@@ -48,6 +48,8 @@ Every formation needs flat, stable floor space near the ceremony spot for each m
 
 Larger formations naturally need more room to seat everyone without crowding bows and instrument cases, and the stage plot for your specific booking lays out how much. Walk the exact setup area with your venue ahead of time, not just the guest seating layout — the two aren't always the same spot.
 
+For an outdoor ceremony, that same setup area needs a covered backup spot agreed on before the date, since piano and strings can't play through rain. [A Rain Plan for Live Music at an Outdoor Wedding](/journal/outdoor-wedding-rain-plan-live-music/) covers what to put in that part of your run sheet.
+
 ## Load-In Timing and Access
 
 Our musicians arrive early enough that setup is finished before your first guest is seated, not still underway. The exact call time depends on travel distance to the venue and how straightforward site access is — a cliffside or beach ceremony with a longer walk-in for equipment needs more lead time than a ballroom with direct loading access. We confirm the specific timing with you once your venue and ceremony schedule are locked in.

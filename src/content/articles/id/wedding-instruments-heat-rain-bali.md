@@ -42,7 +42,7 @@ Peneduh melindungi musisi sama besarnya dengan melindungi instrumen. Pemain yang
 
 ## Mengapa Hujan Berarti Pindah, Bukan Terus Bermain
 
-Hujan adalah batas yang tegas, bukan soal pertimbangan. Piano dan instrumen gesek tidak bisa dimainkan di bawah hujan, dan keselamatan musisi serta instrumennya menjadi prioritas. Sebelum hari H, kami menyepakati tempat yang teduh dan terlindung bersama Anda atau venue; jika hujan turun, ensemble pindah ke sana agar penampilan tetap berjalan dengan aman.
+Hujan adalah batas yang tegas, bukan soal pertimbangan. Piano dan instrumen gesek tidak bisa dimainkan di bawah hujan, dan keselamatan musisi serta instrumennya menjadi prioritas. Sebelum hari H, kami menyepakati tempat yang teduh dan terlindung bersama Anda atau venue; jika hujan turun, ensemble pindah ke sana agar penampilan tetap berjalan dengan aman. [Rencana Hujan untuk Musik Live di Pernikahan Outdoor](/id/journal/outdoor-wedding-rain-plan-live-music/) membahas cara memilih tempat itu dan siapa yang memutuskan di hari H.
 
 Gerimis pun termasuk. Air pada pernis dan kayu adalah jenis kelembapan yang justru harus dihindari instrumen ini, dan piano digital menambahkan komponen elektronik serta sambungan listrik ke dalam daftar risiko. Karena hujan bisa datang hampir tanpa tanda, tempat cadangan harus dikonfirmasi lebih awal, bukan dipilih saat awan mulai datang.
 

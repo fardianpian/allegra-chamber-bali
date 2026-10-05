@@ -42,7 +42,7 @@ Shade protects the musicians as much as the instruments. A player sitting in ful
 
 ## Why Rain Means Moving, Not Playing On
 
-Rain is a firm stop, not a judgment call. Piano and string instruments can't be played in the rain, and the safety of the musicians and their instruments comes first. Before your date, we agree on a covered, sheltered spot with you or the venue; if rain arrives, the ensemble moves there so the performance can continue safely.
+Rain is a firm stop, not a judgment call. Piano and string instruments can't be played in the rain, and the safety of the musicians and their instruments comes first. Before your date, we agree on a covered, sheltered spot with you or the venue; if rain arrives, the ensemble moves there so the performance can continue safely. [A Rain Plan for Live Music at an Outdoor Wedding](/journal/outdoor-wedding-rain-plan-live-music/) walks through how to choose that spot and who makes the call on the day.
 
 A light drizzle counts. Water on varnish and bare wood is exactly the moisture these instruments are built to avoid, and a digital piano adds electronics and a power connection to the list. Because a shower can arrive with little warning, the backup spot needs to be confirmed in advance, not chosen as the clouds arrive.
 
