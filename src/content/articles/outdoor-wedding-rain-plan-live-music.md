@@ -6,6 +6,7 @@ excerpt: "Piano and strings can't play in the rain. What to agree with your venu
 pillar: 'for-planners'
 targetKeyword: 'outdoor wedding rain plan'
 pubDate: 2026-10-05
+ogImage: '/images/og-outdoor-wedding-rain-plan-live-music.jpg'
 faq:
   - question: 'What happens if it rains during an outdoor wedding ceremony?'
     answer: "The music moves, not stops. Piano and string instruments can't be played in the rain, so before your date we agree on a covered, sheltered spot with your planner or venue — if rain arrives, the ensemble relocates there and the ceremony continues."

@@ -6,6 +6,7 @@ excerpt: 'Piano dan alat gesek tidak bisa dimainkan di bawah hujan. Yang perlu d
 pillar: 'for-planners'
 targetKeyword: 'outdoor wedding rain plan'
 pubDate: 2026-10-05
+ogImage: '/images/og-outdoor-wedding-rain-plan-live-music.jpg'
 faq:
   - question: 'Apa yang terjadi jika hujan saat upacara pernikahan outdoor?'
     answer: 'Musiknya pindah, bukan berhenti. Piano dan instrumen gesek tidak bisa dimainkan di bawah hujan, jadi sebelum hari H kami menyepakati tempat yang teduh dan terlindung bersama planner atau venue Anda — jika hujan turun, ensemble pindah ke sana dan upacara tetap berlanjut.'
