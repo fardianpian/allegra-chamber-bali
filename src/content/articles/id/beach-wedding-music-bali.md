@@ -93,7 +93,8 @@ perencanaan bersama Anda sejak awal, bukan mencarinya di hari H. Ini adalah bagi
 setiap pemesanan upacara outdoor bersama kami, bukan sesuatu yang hanya ditambahkan untuk tanggal
 rawan cuaca. Jika Anda mengoordinasikan logistik sebagai wedding planner atau venue, lihat
 [Untuk Wedding Planner](/id/for-planners/) untuk dasar tech rider dan cara kami menangani setup
-suara outdoor.
+suara outdoor, dan [Rencana Hujan untuk Musik Live di Pernikahan Outdoor](/id/journal/outdoor-wedding-rain-plan-live-music/)
+untuk apa yang perlu masuk ke bagian rencana hujan di run sheet Anda.
 
 ## Kapan Sebaiknya Booking Musik Live untuk Pernikahan di Pantai di Bali?
 

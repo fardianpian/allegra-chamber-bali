@@ -48,6 +48,8 @@ Setiap formasi membutuhkan ruang lantai yang rata dan stabil di dekat titik upac
 
 Formasi yang lebih besar tentu membutuhkan ruang lebih luas agar semua orang bisa duduk tanpa berdesakan dengan bow dan kotak instrumen, dan stage plot untuk booking spesifik Anda mencantumkan berapa besar ruang itu. Tinjau langsung area setup yang sebenarnya bersama venue Anda — bukan hanya tata letak kursi tamu, karena keduanya tidak selalu berada di titik yang sama.
 
+Untuk upacara outdoor, area setup yang sama itu membutuhkan tempat cadangan yang terlindung dan disepakati sebelum hari H, karena piano dan alat gesek tidak bisa dimainkan saat hujan. [Rencana Hujan untuk Musik Live di Pernikahan Outdoor](/id/journal/outdoor-wedding-rain-plan-live-music/) membahas apa yang perlu masuk ke bagian itu di run sheet Anda.
+
 ## Waktu dan Akses Load-In
 
 Musisi kami datang cukup awal sehingga setup sudah selesai sebelum tamu pertama duduk, bukan masih berlangsung. Waktu kedatangan pastinya bergantung pada jarak tempuh ke venue dan seberapa mudah akses lokasinya — upacara di tebing atau pantai dengan jalur masuk peralatan yang lebih jauh membutuhkan waktu persiapan lebih panjang dibanding ballroom dengan akses loading langsung. Kami konfirmasi waktu spesifiknya bersama Anda setelah venue dan jadwal upacara Anda terkunci.

@@ -87,7 +87,9 @@ have a nearby covered deck, tent, or indoor room for exactly this reason, and we
 fallback into our planning conversation with you ahead of time rather than figuring it out on the
 day. This is a standard part of booking any open-air ceremony with us, not something added only
 for weather-prone dates. If you're coordinating logistics as a planner or venue, see
-[For Planners](/for-planners/) for tech rider basics and how we handle outdoor sound setup.
+[For Planners](/for-planners/) for tech rider basics and how we handle outdoor sound setup, and
+[A Rain Plan for Live Music at an Outdoor Wedding](/journal/outdoor-wedding-rain-plan-live-music/)
+for what to put in the rain plan section of your run sheet.
 
 ## When Should You Book Live Music for a Beach Wedding in Bali?
 
