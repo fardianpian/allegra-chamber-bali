@@ -1,6 +1,6 @@
 # Allegra Chamber Bali — Website
 
-Live chamber & string ensemble for weddings in Bali. Static website built with **Astro** (SSG), deployed via **Cloudflare Pages** at the sub-domain `allegra.indonesiaistimewastudio.id` (domain/DNS/email stay on Hostinger). Sub-brand of Indonesia Istimewa Studio.
+Live chamber & string ensemble for weddings in Bali. Static website built with **Astro** (SSG), deployed via **Cloudflare Pages** at `allegrachamberbali.com` (the old sub-domain `allegra.indonesiaistimewastudio.id` 301-redirects to it). Sub-brand of Indonesia Istimewa Studio.
 
 > **This repository is a STARTER KIT prepared for implementation by Claude Code.**
 > Read [`CLAUDE.md`](./CLAUDE.md) first, then [`docs/BRIEF.md`](./docs/BRIEF.md) for the full specification.
@@ -39,9 +39,10 @@ See `docs/BRIEF.md` §13 for the full target tree. Key folders:
 Project `allegra-chamber-bali` is git-connected (Cloudflare GitHub App) to this repo's `main`
 branch. Build command `npm run build`, output directory `dist`. Push to `main` → Cloudflare
 builds and deploys automatically, no manual step and no GitHub Actions involved. Custom domain
-`allegra.indonesiaistimewastudio.id` points at the Pages project via a CNAME record in
-Hostinger's DNS zone (domain registration, DNS, and email stay on Hostinger — only hosting
-moved). See `docs/PROGRESS.md` (2026-06-19 entry) for why this replaced the original
+`allegrachamberbali.com` (apex, on a Cloudflare DNS zone) is attached to the Pages project. The
+old sub-domain `allegra.indonesiaistimewastudio.id` stays attached too (CNAME in Hostinger's DNS
+zone) but only serves a 301 to the new domain via an account-level Bulk Redirect. The Pages env
+var `PUBLIC_SITE_URL` must match the live domain — it overrides the fallback in `src/lib/site.ts`. See `docs/PROGRESS.md` (2026-06-19 entry) for why this replaced the original
 Hostinger-FTP plan.
 
 ## Environment

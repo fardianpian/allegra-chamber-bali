@@ -13,9 +13,9 @@ const translatedJournalSlugs = fs
 
 // https://astro.build/config
 export default defineConfig({
-	// CRITICAL: static output for Hostinger shared hosting (no Node SSR/serverless).
+	// CRITICAL: static output for Cloudflare Pages (no Node SSR/serverless).
 	output: 'static',
-	site: 'https://allegra.indonesiaistimewastudio.id',
+	site: 'https://allegrachamberbali.com',
 	trailingSlash: 'ignore',
 	build: {
 		// Emit /page/index.html so clean URLs work behind LiteSpeed/Apache.

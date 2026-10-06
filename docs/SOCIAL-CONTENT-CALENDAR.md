@@ -77,7 +77,7 @@ _(Single post, foto stage setup)_
 
 > Tech rider ready. Stage plot on request. Repertoire sheet built around the couple's songs.
 >
-> Planning a destination wedding with live music? allegra.indonesiaistimewastudio.id/for-planners
+> Planning a destination wedding with live music? allegrachamberbali.com/for-planners
 >
 > `#BaliWeddingPlanner #DestinationWeddingBali #LiveWeddingMusic`
 

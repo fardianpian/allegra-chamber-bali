@@ -181,7 +181,7 @@ diandalkan untuk seeding pertanyaan sendiri seperti praktik lama.
 | **A**lamat   | Tidak ditampilkan publik (service-area business, lihat §2.3)         | Fix secara desain, bukan placeholder               |
 | **P**hone    | `+62 857-0824-7611` (WhatsApp, dari `.env` `PUBLIC_WHATSAPP_NUMBER`) | **Sudah ada, tinggal salin**                       |
 | Email        | `allegrachamberbali@gmail.com`                                       | **Sudah ada, tinggal salin**                       |
-| Website      | `https://allegra.indonesiaistimewastudio.id`                         | **Sudah ada, tinggal salin**                       |
+| Website      | `https://allegrachamberbali.com`                                     | **Sudah ada, tinggal salin**                       |
 | Instagram    | `https://www.instagram.com/allegrachamber.bali`                      | **Sudah ada, tinggal salin**                       |
 | Service area | Bali + 6 area (lihat §2.3)                                           | Sudah ditentukan di brief ini, owner tinggal input |
 
@@ -442,7 +442,7 @@ aktif adalah sinyal yang dilihat algoritma local-pack.
       **The Knot**, **Yelp for Business**, **Facebook Business Page**, **Here Comes The Guide**,
       **Hotfrog/Manta** — semua harus pakai NAP identik: nama bisnis, nomor WA dalam format
       konsisten (`+62 857-0824-7611`, jangan campur format `0857...` di listing lain), email
-      `allegrachamberbali@gmail.com`, website `https://allegra.indonesiaistimewastudio.id`.
+      `allegrachamberbali@gmail.com`, website `https://allegrachamberbali.com`.
 - [ ] Setelah GBP live, **catat tanggal & kategori final yang dipilih** di sini agar listing
       berikutnya bisa menyalin kategori yang sama persis (mis. jika GBP akhirnya pakai "Wedding
       service" sebagai primary, Bing Places sebaiknya juga pakai kategori paralel yang sama).

@@ -1,4 +1,4 @@
-# Project: allegra.indonesiaistimewastudio.id
+# Project: allegrachamberbali.com
 
 > Persistent context for Claude Code. Read this first. `docs/BRIEF.md` has the full original
 > spec (sitemap detail, acceptance criteria, asset checklist) — read it only on-demand, see
@@ -41,11 +41,16 @@ Languages: **English (primary) + Indonesian (secondary)**.
 
 ## Confirmed decisions (locked)
 
-- Sub-domain (final): `allegra.indonesiaistimewastudio.id`
+- Domain (revised 2026-10-07): **`allegrachamberbali.com`** (apex, canonical). Replaces the old
+  sub-domain `allegra.indonesiaistimewastudio.id`, which now only 301-redirects (path + query
+  preserved) to the new domain via a Cloudflare Bulk Redirect — never serve content on it again.
+  Apex custom domains on Pages require the domain's nameservers to be on Cloudflare.
 - Hosting (revised 2026-06-18): **Cloudflare Pages**, git-connected to `fardianpian/allegra-chamber-bali`
-  (push to `main` → auto build & deploy). Domain registration, DNS zone, and email
-  (`allegra@indonesiaistimewastudio.id`) stay on **Hostinger** — only the `allegra` subdomain's
-  DNS record was changed to a CNAME pointing at `allegra-chamber-bali.pages.dev`. Switched away
+  (push to `main` → auto build & deploy). The Pages env var `PUBLIC_SITE_URL` overrides the
+  `src/lib/site.ts` fallback — keep it in sync with the domain. The parent `indonesiaistimewastudio.id`
+  registration, DNS zone, and email (`allegra@indonesiaistimewastudio.id`) stay on **Hostinger**;
+  its `allegra` CNAME → `allegra-chamber-bali.pages.dev` must stay in place so the old-domain
+  redirect keeps working. Switched away
   from the original Hostinger-FTP plan because it had no working CI deploy path (Hostinger
   blocked GitHub Actions' runner IPs on every available FTP/FTPS/SFTP port) — full incident
   history in `docs/PROGRESS-ARCHIVE.md`. Still **static-only (Astro SSG)**. No Node SSR, no serverless.

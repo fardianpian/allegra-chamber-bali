@@ -8,7 +8,7 @@
 // Usage:
 //   npm run gkp -- --name a-vendor --seeds "wedding string quartet, wedding pianist bali"
 //   npm run gkp -- --name venues --seeds-file seeds.txt --geo 2360 --lang 1000
-//   npm run gkp -- --name site --url https://allegra.indonesiaistimewastudio.id/packages
+//   npm run gkp -- --name site --url https://allegrachamberbali.com/packages
 //   npm run gkp -- --name check --mode metrics --seeds-file keywords.txt
 //
 // Modes:
