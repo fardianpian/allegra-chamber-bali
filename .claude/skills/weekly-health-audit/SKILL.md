@@ -11,7 +11,8 @@ Laporan ini bersifat informatif — owner yang menentukan tindak lanjut secara m
 - Website: `https://allegrachamberbali.com`
 - Repository: `fardianpian/allegra-chamber-bali`
 - GA4 Property ID: `542419294`
-- GSC: domain property covering seluruh `indonesiaistimewastudio.id`
+- GSC: domain property `sc-domain:allegrachamberbali.com` (sejak pindah domain 2026-10-07; data
+  sebelum tanggal itu ada di properti lama `sc-domain:allegra.indonesiaistimewastudio.id`)
 
 ## Langkah Eksekusi
 
@@ -24,7 +25,7 @@ routine run (hanya Slack, Semrush, Ahrefs, Firecrawl yang terhubung), jadi ini k
 normal/permanen untuk run terjadwal, bukan error transient yang perlu di-retry:
 
 - **Jika `mcp__google-search-console__get_performance_overview` tersedia** (run lokal):
-  gunakan dengan siteUrl `sc-domain:indonesiaistimewastudio.id`, startDate 7 hari lalu,
+  gunakan dengan siteUrl `sc-domain:allegrachamberbali.com`, startDate 7 hari lalu,
   endDate hari ini. Ekstrak: total clicks, total impressions, avg CTR, avg position,
   top 5 halaman by clicks.
 - **Jika tidak tersedia** (cloud routine run): gunakan `semrush organic_research` untuk
