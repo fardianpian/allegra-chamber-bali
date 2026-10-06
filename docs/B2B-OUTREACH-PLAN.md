@@ -101,7 +101,7 @@ in Bali, performing ceremonies and receptions for destination weddings — solo 
 
 We work directly with planners and venues on logistics: stage plot, tech rider, and a
 repertoire sheet built around the couple's own songs. If it's useful, our planner-facing page
-has the details: https://allegra.indonesiaistimewastudio.id/for-planners
+has the details: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or set up a quick call if you have couples looking for live
 music this season.
@@ -130,7 +130,7 @@ in Bali, performing ceremonies and receptions for destination weddings — solo 
 
 We work directly with planners and venues on logistics: stage plot, tech rider, and a
 repertoire sheet built around the couple's own songs. If it's useful, our planner-facing page
-has the details: https://allegra.indonesiaistimewastudio.id/for-planners
+has the details: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or set up a quick call if you have couples looking for live
 music this season.
@@ -150,7 +150,7 @@ Hi! We're Allegra Chamber Bali — live piano & strings ensemble for weddings he
 Since you work across English, German, and Indonesian-speaking couples, our live ensemble
 might be a useful option to have on hand — no language barrier, just the music. Would love to
 connect for any couples you're working with this season. Planner info:
-allegra.indonesiaistimewastudio.id/for-planners — happy to send our repertoire sheet too.
+allegrachamberbali.com/for-planners — happy to send our repertoire sheet too.
 ```
 
 ### 4. The Edge Bali
@@ -171,7 +171,7 @@ in Bali, performing ceremonies and receptions for destination weddings — solo 
 
 We work directly with planners and venues on logistics: stage plot, tech rider, and a
 repertoire sheet built around the couple's own songs. If it's useful, our planner-facing page
-has the details: https://allegra.indonesiaistimewastudio.id/for-planners
+has the details: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or set up a quick call if you have couples looking for live
 music this season.
@@ -191,7 +191,7 @@ Hi! We're Allegra Chamber Bali — live piano & strings ensemble for weddings he
 the range of ceremonies your team styles and coordinates — wanted to introduce ourselves
 directly as a live-music option for the ceremony/reception sound. Would love to connect for
 any couples you're working with this season. Planner info:
-allegra.indonesiaistimewastudio.id/for-planners — happy to send our repertoire sheet too.
+allegrachamberbali.com/for-planners — happy to send our repertoire sheet too.
 ```
 
 ### 6. Global Weddings (AU)
@@ -213,7 +213,7 @@ in Bali, performing ceremonies and receptions for destination weddings — solo 
 
 We work directly with planners and venues on logistics: stage plot, tech rider, and a
 repertoire sheet built around the couple's own songs. If it's useful, our planner-facing page
-has the details: https://allegra.indonesiaistimewastudio.id/for-planners
+has the details: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or set up a quick call if you have couples looking for live
 music this season.
@@ -240,7 +240,7 @@ Hi! 2,000+ couples is a lot of ceremony logistics to have coordinated well — w
 introduce Allegra Chamber Bali as a live music option for yours. We're a piano & strings
 ensemble here in Bali performing ceremonies and receptions for destination weddings, solo
 through to a 6-piece formation. We come with a stage plot, tech rider, and repertoire sheet
-already prepared — planner info: allegra.indonesiaistimewastudio.id/for-planners. Would love
+already prepared — planner info: allegrachamberbali.com/for-planners. Would love
 to connect for this season.
 ```
 
@@ -261,7 +261,7 @@ in Bali, performing ceremonies and receptions for destination weddings — solo 
 6-piece formation with piano, strings, and double bass.
 
 We work directly with planners on logistics: stage plot, tech rider, and a repertoire sheet
-built around each couple's own songs. If it's useful: https://allegra.indonesiaistimewastudio.id/for-planners
+built around each couple's own songs. If it's useful: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or connect for any couples you're coordinating this season.
 
@@ -280,7 +280,7 @@ Hi! With 300+ luxury weddings in Bali since 2015, you'd know better than most wh
 music can make or break on the day. Wanted to introduce Allegra Chamber Bali to your vendor
 network — live piano & strings ensemble for destination wedding ceremonies and receptions,
 solo through to a 6-piece formation. We come with stage plot, tech rider, and custom
-arrangements ready. Planner info: allegra.indonesiaistimewastudio.id/for-planners — happy
+arrangements ready. Planner info: allegrachamberbali.com/for-planners — happy
 to connect for any couples this season.
 ```
 
@@ -301,7 +301,7 @@ destination wedding ceremonies and receptions across Bali — solo through to a 
 formation with piano, strings, and double bass.
 
 In case it's useful to have on file for couples asking about live music, our planner page has
-the logistics detail: https://allegra.indonesiaistimewastudio.id/for-planners
+the logistics detail: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or connect directly.
 
@@ -325,7 +325,7 @@ performing ceremonies and receptions for destination weddings in Bali, solo thro
 6-piece formation with piano, strings, and double bass.
 
 We work directly with planners and venues on logistics: stage plot, tech rider, repertoire
-sheet. Planner-facing info: https://allegra.indonesiaistimewastudio.id/for-planners
+sheet. Planner-facing info: https://allegrachamberbali.com/for-planners
 
 If you have couples looking for live music this season, happy to connect — or reach us
 directly on WhatsApp: +62 857-0824-7611.
@@ -352,7 +352,7 @@ performing ceremonies and receptions for destination weddings — solo through t
 formation with piano, strings, and double bass.
 
 We work directly with planners on logistics: stage plot, tech rider, and a repertoire sheet
-built around the couple's own songs. Planner info: https://allegra.indonesiaistimewastudio.id/for-planners
+built around the couple's own songs. Planner info: https://allegrachamberbali.com/for-planners
 
 Happy to share our repertoire list or connect for any couples you're working with this season.
 
@@ -381,7 +381,7 @@ Wanted to follow up briefly on my note last week about Allegra Chamber Bali — 
 
 If the timing isn't right or you're already covered for live music, no worries at all. If
 you do have couples asking about it, our planner page is the quickest way to see what we
-offer: https://allegra.indonesiaistimewastudio.id/for-planners
+offer: https://allegrachamberbali.com/for-planners
 
 Happy to send our repertoire sheet directly too — just reply here or reach me on WhatsApp:
 +62 857-0824-7611.
@@ -395,7 +395,7 @@ Allegra Chamber Bali
 ```
 Hi again! Just following up on my note about Allegra Chamber Bali — no pressure at all, just
 wanted to make sure it didn't get buried. Planner info's here if useful:
-allegra.indonesiaistimewastudio.id/for-planners
+allegrachamberbali.com/for-planners
 ```
 
 ---

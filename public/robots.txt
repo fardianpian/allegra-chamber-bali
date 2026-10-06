@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://allegra.indonesiaistimewastudio.id/sitemap-index.xml
+Sitemap: https://allegrachamberbali.com/sitemap-index.xml

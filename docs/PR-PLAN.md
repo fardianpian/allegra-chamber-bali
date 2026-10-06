@@ -77,7 +77,7 @@
 >
 > Fardian
 > Allegra Chamber Bali
-> allegra.indonesiaistimewastudio.id
+> allegrachamberbali.com
 
 ---
 
@@ -123,7 +123,7 @@ Requirements to submit to Junebug Weddings / The Lane / Green Wedding Shoes:
 ## Owned Media — Build `/press` Page Before Any Pitch
 
 ```
-allegra.indonesiaistimewastudio.id/press
+allegrachamberbali.com/press
 ```
 
 Contents:

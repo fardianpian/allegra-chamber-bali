@@ -8,7 +8,7 @@ Laporan ini bersifat informatif — owner yang menentukan tindak lanjut secara m
 
 ## Konteks Proyek
 
-- Website: `https://allegra.indonesiaistimewastudio.id`
+- Website: `https://allegrachamberbali.com`
 - Repository: `fardianpian/allegra-chamber-bali`
 - GA4 Property ID: `542419294`
 - GSC: domain property covering seluruh `indonesiaistimewastudio.id`
@@ -28,7 +28,7 @@ normal/permanen untuk run terjadwal, bukan error transient yang perlu di-retry:
   endDate hari ini. Ekstrak: total clicks, total impressions, avg CTR, avg position,
   top 5 halaman by clicks.
 - **Jika tidak tersedia** (cloud routine run): gunakan `semrush organic_research` untuk
-  domain `allegra.indonesiaistimewastudio.id` (estimasi traffic organik + top keywords)
+  domain `allegrachamberbali.com` (estimasi traffic organik + top keywords)
   dan `mcp__claude_ai_Ahrefs__site-explorer-metrics` untuk metrik traffic tambahan.
   Tandai hasil di laporan sebagai "estimasi (Semrush/Ahrefs, bukan data GSC langsung)".
 
@@ -48,25 +48,25 @@ cuma false positive dari URL yang salah bentuk — dikonfirmasi via `curl -sIL` 
 2 batch:
 
 ```
-https://allegra.indonesiaistimewastudio.id/
-https://allegra.indonesiaistimewastudio.id/journal/wedding-pianist-bali/
-https://allegra.indonesiaistimewastudio.id/journal/live-music-bali-wedding-guide/
-https://allegra.indonesiaistimewastudio.id/journal/string-quartet-bali-wedding/
-https://allegra.indonesiaistimewastudio.id/journal/cliffside-wedding-uluwatu/
-https://allegra.indonesiaistimewastudio.id/journal/live-music-vendor-questions/
-https://allegra.indonesiaistimewastudio.id/journal/vendor-partnership-logistics-bali/
-https://allegra.indonesiaistimewastudio.id/journal/wedding-ceremony-piano-music/
-https://allegra.indonesiaistimewastudio.id/packages/
-https://allegra.indonesiaistimewastudio.id/about/
+https://allegrachamberbali.com/
+https://allegrachamberbali.com/journal/wedding-pianist-bali/
+https://allegrachamberbali.com/journal/live-music-bali-wedding-guide/
+https://allegrachamberbali.com/journal/string-quartet-bali-wedding/
+https://allegrachamberbali.com/journal/cliffside-wedding-uluwatu/
+https://allegrachamberbali.com/journal/live-music-vendor-questions/
+https://allegrachamberbali.com/journal/vendor-partnership-logistics-bali/
+https://allegrachamberbali.com/journal/wedding-ceremony-piano-music/
+https://allegrachamberbali.com/packages/
+https://allegrachamberbali.com/about/
 --- batch 2 ---
-https://allegra.indonesiaistimewastudio.id/id/journal/wedding-pianist-bali/
-https://allegra.indonesiaistimewastudio.id/id/journal/live-music-bali-wedding-guide/
-https://allegra.indonesiaistimewastudio.id/id/journal/string-quartet-bali-wedding/
-https://allegra.indonesiaistimewastudio.id/id/journal/cliffside-wedding-uluwatu/
-https://allegra.indonesiaistimewastudio.id/id/journal/live-music-vendor-questions/
-https://allegra.indonesiaistimewastudio.id/id/journal/vendor-partnership-logistics-bali/
-https://allegra.indonesiaistimewastudio.id/id/journal/wedding-ceremony-piano-music/
-https://allegra.indonesiaistimewastudio.id/faq/
+https://allegrachamberbali.com/id/journal/wedding-pianist-bali/
+https://allegrachamberbali.com/id/journal/live-music-bali-wedding-guide/
+https://allegrachamberbali.com/id/journal/string-quartet-bali-wedding/
+https://allegrachamberbali.com/id/journal/cliffside-wedding-uluwatu/
+https://allegrachamberbali.com/id/journal/live-music-vendor-questions/
+https://allegrachamberbali.com/id/journal/vendor-partnership-logistics-bali/
+https://allegrachamberbali.com/id/journal/wedding-ceremony-piano-music/
+https://allegrachamberbali.com/faq/
 ```
 
 Tambahkan URL artikel baru yang mungkin sudah ditambahkan sejak run terakhir
@@ -98,7 +98,7 @@ Catat: ✅ Clean atau ❌ Error (sertakan pesan error singkat jika ada).
 
 **B2. SEO Audit (skill):**
 Jalankan skill `seo-audit` untuk full-site technical SEO check pada:
-`https://allegra.indonesiaistimewastudio.id`
+`https://allegrachamberbali.com`
 
 Ekstrak skor utama dan top 3 issues jika ada.
 

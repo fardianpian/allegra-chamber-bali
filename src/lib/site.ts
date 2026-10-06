@@ -5,7 +5,7 @@
 const env = (value: string | undefined) => value?.trim() || undefined
 
 export const site = {
-	url: env(import.meta.env.PUBLIC_SITE_URL) || 'https://allegra.indonesiaistimewastudio.id',
+	url: env(import.meta.env.PUBLIC_SITE_URL) || 'https://allegrachamberbali.com',
 	whatsappNumber: env(import.meta.env.PUBLIC_WHATSAPP_NUMBER) || '62XXXXXXXXXXX',
 	contactEmail: env(import.meta.env.PUBLIC_CONTACT_EMAIL) || 'allegrachamberbali@gmail.com',
 	instagram: env(import.meta.env.PUBLIC_INSTAGRAM) || 'https://instagram.com',

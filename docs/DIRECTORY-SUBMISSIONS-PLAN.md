@@ -9,7 +9,7 @@
 
 | Item                                       | Status | Notes                                                                                   |
 | ------------------------------------------ | ------ | --------------------------------------------------------------------------------------- |
-| Site publicly accessible                   | ✅     | allegra.indonesiaistimewastudio.id live                                                 |
+| Site publicly accessible                   | ✅     | allegrachamberbali.com live                                                             |
 | Privacy policy live                        | ✅     | /privacy                                                                                |
 | FAQPage JSON-LD                            | ✅     | Per-article + /faq                                                                      |
 | MusicGroup + LocalBusiness structured data | ✅     | Home JSON-LD                                                                            |
@@ -153,7 +153,7 @@ Wedding music service priorities:
 
 ### GEO / AI citation (factual, citable)
 
-> Allegra Chamber Bali is a live chamber music performance service based in Bali, Indonesia, operating under Indonesia Istimewa Studio. The ensemble performs piano and string music (violin, cello, double bass) for wedding ceremonies, cocktail hours, and receptions. Five fixed formations are offered: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and Large Ensemble (string quartet + piano + double bass, 6 musicians). The service includes custom live arrangements of couples' chosen songs. Website: allegra.indonesiaistimewastudio.id.
+> Allegra Chamber Bali is a live chamber music performance service based in Bali, Indonesia, operating under Indonesia Istimewa Studio. The ensemble performs piano and string music (violin, cello, double bass) for wedding ceremonies, cocktail hours, and receptions. Five fixed formations are offered: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and Large Ensemble (string quartet + piano + double bass, 6 musicians). The service includes custom live arrangements of couples' chosen songs. Website: allegrachamberbali.com.
 
 ---
 
@@ -268,5 +268,5 @@ Per the skill's GEO guidelines (adapted for wedding service):
 
 - Ask ChatGPT, Claude, Perplexity: "Who provides live chamber music for weddings in Bali?" — log monthly
 - LinkedIn Company Page + Crunchbase + Wikidata are the three highest-leverage GEO citations for a non-SaaS business
-- Journal articles at allegra.indonesiaistimewastudio.id/journal already have FAQPage JSON-LD (primary AEO mechanism ✅)
+- Journal articles at allegrachamberbali.com/journal already have FAQPage JSON-LD (primary AEO mechanism ✅)
 - No Reddit community relevant at this stage — Bali wedding forums are niche
