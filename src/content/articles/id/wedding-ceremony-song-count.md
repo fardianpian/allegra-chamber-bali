@@ -23,7 +23,7 @@ Sebagian besar upacara pernikahan membutuhkan empat hingga enam lagu: dua atau t
 
 ## Apa Saja yang Termasuk "Musik Upacara"?
 
-Musik upacara mencakup empat momen berbeda, bukan hanya lagu untuk berjalan di lorong: prelude saat tamu berdatangan dan duduk, prosesi saat iring-iringan dan pasangan masuk, musik opsional saat pengucapan janji atau penandatanganan, dan resesional saat Anda keluar. Setiap momen punya perannya masing-masing — prelude membangun suasana sebelum sepatah kata pun diucapkan, sementara prosesi dan resesional justru menyita perhatian paling besar meski durasinya paling singkat.
+Musik upacara mencakup empat momen berbeda, bukan hanya lagu untuk berjalan di lorong: prelude saat tamu berdatangan dan duduk, prosesi saat iring-iringan dan pasangan masuk, musik opsional saat pengucapan janji atau penandatanganan, dan resesional saat Anda keluar. Setiap momen punya perannya masing-masing — prelude membangun suasana sebelum sepatah kata pun diucapkan, sementara prosesi dan resesional justru menyita perhatian paling besar meski durasinya paling singkat. Momen penandatanganan khususnya tidak punya durasi pasti, sehingga perlu direncanakan secara khusus — lihat [panduan kami tentang musik untuk penandatanganan buku nikah](/id/journal/signing-of-the-register-music/) untuk ide lagu dan bagaimana musisi live menangani durasinya yang tidak pasti.
 
 ## Seberapa Panjang Upacara Umumnya, dan Apa Artinya untuk Jumlah Lagu?
 

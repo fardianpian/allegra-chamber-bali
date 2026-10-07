@@ -23,7 +23,7 @@ Most wedding ceremonies need four to six songs: two or three prelude pieces as g
 
 ## What Counts as "Ceremony Music"?
 
-Ceremony music covers four distinct moments, not just the walk down the aisle: the prelude as guests arrive and are seated, the processional as the bridal party and couple enter, optional music during the vow exchange or signing, and the recessional as you exit. Each moment has a different job — the prelude sets the atmosphere before a word is spoken, while the processional and recessional carry the most attention despite being the shortest.
+Ceremony music covers four distinct moments, not just the walk down the aisle: the prelude as guests arrive and are seated, the processional as the bridal party and couple enter, optional music during the vow exchange or signing, and the recessional as you exit. Each moment has a different job — the prelude sets the atmosphere before a word is spoken, while the processional and recessional carry the most attention despite being the shortest. The signing in particular has no fixed length, which is why it's worth planning on its own — see our [guide to music for signing the register](/journal/signing-of-the-register-music/) for song ideas and how live musicians handle its unpredictable timing.
 
 ## How Long Is a Typical Ceremony, and What Does That Mean for Song Count?
 
