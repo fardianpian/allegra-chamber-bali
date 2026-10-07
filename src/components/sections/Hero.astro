@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { getImage } from 'astro:assets'
 import Eyebrow from '../ui/Eyebrow.astro'
 import Button from '../ui/Button.astro'
 import WhatsAppCTA from '../media/WhatsAppCTA.astro'
@@ -25,25 +25,52 @@ const whatsappMessage = t('whatsappMessage')
 const slides = [slide1, slide2, slide3, slide4, slide5, slide6]
 const SLOT_SECONDS = 6
 const CYCLE_SECONDS = slides.length * SLOT_SECONDS
+
+// Responsive srcset so phones don't download the 1920px source for the LCP image.
+const HERO_WIDTHS = [640, 1024, 1600, 1920]
+const optimizedSlides = await Promise.all(
+	slides.map((src) =>
+		getImage({ src, width: 1920, height: 1080, widths: HERO_WIDTHS, format: 'avif', quality: 70 }),
+	),
+)
+// Slides 2–6 sit inside the viewport (absolute inset-0), so loading="lazy" never actually defers
+// them and they compete with the LCP slide for bandwidth. They start on a 1×1 placeholder and get
+// their real src after window load (see script below).
+const PLACEHOLDER_SRC = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 ---
 
 <section class="relative flex min-h-[88vh] items-end overflow-hidden">
 	<div class="absolute inset-0 h-full w-full" style={`--hero-cycle: ${CYCLE_SECONDS}s`}>
 		{
-			slides.map((slide, i) => (
-				<Image
-					src={slide}
-					alt=""
-					width={1920}
-					height={1080}
-					format="avif"
-					quality={70}
-					loading={i === 0 ? 'eager' : 'lazy'}
-					fetchpriority={i === 0 ? 'high' : 'auto'}
-					class="hero-slide absolute inset-0 h-full w-full object-cover"
-					style={`animation-delay: ${i * SLOT_SECONDS}s`}
-				/>
-			))
+			optimizedSlides.map((img, i) =>
+				i === 0 ? (
+					<img
+						src={img.src}
+						srcset={img.srcSet.attribute}
+						sizes="100vw"
+						alt=""
+						width={1920}
+						height={1080}
+						fetchpriority="high"
+						decoding="async"
+						class="hero-slide absolute inset-0 h-full w-full object-cover"
+						style={`animation-delay: ${i * SLOT_SECONDS}s`}
+					/>
+				) : (
+					<img
+						src={PLACEHOLDER_SRC}
+						data-hero-src={img.src}
+						data-hero-srcset={img.srcSet.attribute}
+						sizes="100vw"
+						alt=""
+						width={1920}
+						height={1080}
+						decoding="async"
+						class="hero-slide absolute inset-0 h-full w-full object-cover"
+						style={`animation-delay: ${i * SLOT_SECONDS}s`}
+					/>
+				),
+			)
 		}
 	</div>
 	<div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/15"></div>
@@ -52,10 +79,9 @@ const CYCLE_SECONDS = slides.length * SLOT_SECONDS
 		<Eyebrow class="reveal text-ivory/80">{hero.eyebrow}</Eyebrow>
 		<h1 class="reveal mt-4 max-w-3xl text-6xl md:text-7xl lg:max-w-none lg:text-8xl">
 			{hero.titleTagline}
-			<span class="font-body mt-2 block text-xl font-normal text-ivory/80 md:text-2xl">
-				{hero.title}
-			</span>
 		</h1>
+		{/* Brand name kept outside the H1 so the heading reads as one keyword phrase. */}
+		<p class="reveal font-body mt-2 text-xl text-ivory/80 md:text-2xl">{hero.title}</p>
 		<p class="reveal mt-6 max-w-xl text-lg text-ivory/85 md:text-xl">{hero.subhead}</p>
 		<div class="reveal mt-9 flex flex-wrap gap-4">
 			<WhatsAppCTA location="hero" message={whatsappMessage} label={hero.ctaPrimary} variant="gold" />
@@ -63,6 +89,21 @@ const CYCLE_SECONDS = slides.length * SLOT_SECONDS
 		</div>
 	</div>
 </section>
+
+<script>
+	// Reduced-motion visitors only ever see slide 1 (see styles below), so the other slides never
+	// need to download for them.
+	if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		const loadDeferredSlides = () => {
+			document.querySelectorAll<HTMLImageElement>('img[data-hero-src]').forEach((img) => {
+				img.srcset = img.dataset.heroSrcset ?? ''
+				img.src = img.dataset.heroSrc ?? img.src
+			})
+		}
+		if (document.readyState === 'complete') loadDeferredSlides()
+		else window.addEventListener('load', loadDeferredSlides, { once: true })
+	}
+</script>
 
 <style>
 	/* Static fallback: first slide visible, rest hidden — also the reduced-motion state. */

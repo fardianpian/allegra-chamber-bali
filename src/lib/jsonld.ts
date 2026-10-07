@@ -5,7 +5,11 @@ import type { Lang } from '../i18n/languages'
  * Article author/publisher) resolves to one brand entity instead of a new anonymous Organization
  * per page — squirrelscan `schema/entity-identity` flagged 104 un-linked occurrences 2026-09-25. */
 const organizationId = () => new URL('/#organization', site.url).toString()
-const localBusinessId = () => new URL('/#localbusiness', site.url).toString()
+const websiteId = () => new URL('/#website', site.url).toString()
+
+/** Raster logo for Organization `logo` — Google's logo guidelines want a crawlable bitmap of at
+ * least 112×112px, which the SVG favicon isn't. Resized from the press-kit charcoal PNG. */
+const logoUrl = () => new URL('/images/logo-allegra-chamber-bali.png', site.url).toString()
 
 /** Brand entity reference for Article author/publisher. MusicGroup is an Organization subtype, so
  * this shares the home page MusicGroup's `@id`. */
@@ -17,45 +21,43 @@ function organizationRef() {
 		url: new URL('/', site.url).toString(),
 		logo: {
 			'@type': 'ImageObject',
-			url: new URL('/favicon.svg', site.url).toString(),
+			url: logoUrl(),
 		},
 		sameAs: [site.instagram],
 	}
 }
 
-/** MusicGroup + LocalBusiness JSON-LD for the homepage, per CLAUDE.md §5. */
+/** WebSite + brand entity JSON-LD for the homepage, per CLAUDE.md §5. The brand is a single node
+ * typed both MusicGroup and LocalBusiness (it used to be two nodes with separate `@id`s describing
+ * the same business); WebSite `name` is what Google uses for the site name shown in results. */
 export function getHomeJsonLd(lang: Lang) {
-	const path = lang === 'en' ? '/' : '/id/'
-	const url = new URL(path, site.url).toString()
+	const homeUrl = new URL('/', site.url).toString()
 	const description =
 		lang === 'en'
 			? 'Live chamber and string ensemble performing at weddings across Bali — solo, duo, trio, string quartet, and large ensemble formations.'
 			: 'Ensemble chamber dan string live untuk pernikahan di seluruh Bali — formasi solo, duo, trio, string quartet, dan large ensemble.'
 
 	const image = new URL('/images/og-cliffside-uluwatu.jpg', site.url).toString()
-	const logo = new URL('/favicon.svg', site.url).toString()
 
 	return [
 		{
 			'@context': 'https://schema.org',
-			'@type': 'MusicGroup',
-			'@id': organizationId(),
+			'@type': 'WebSite',
+			'@id': websiteId(),
 			name: 'Allegra Chamber Bali',
-			url: new URL('/', site.url).toString(),
-			image,
-			logo,
-			genre: ['Classical', 'Chamber Music', 'Wedding Music'],
-			description,
-			sameAs: [site.instagram],
+			url: homeUrl,
+			inLanguage: ['en', 'id'],
+			publisher: { '@id': organizationId() },
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'LocalBusiness',
-			'@id': localBusinessId(),
+			'@type': ['MusicGroup', 'LocalBusiness'],
+			'@id': organizationId(),
 			name: 'Allegra Chamber Bali',
-			url,
+			url: homeUrl,
 			image,
-			logo,
+			logo: logoUrl(),
+			genre: ['Classical', 'Chamber Music', 'Wedding Music'],
 			description,
 			email: site.contactEmail,
 			telephone: `+${site.whatsappNumber}`,
