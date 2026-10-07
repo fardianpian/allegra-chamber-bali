@@ -74,6 +74,9 @@ const links = [
 		class="container-max flex flex-col gap-2 border-t border-ivory/10 py-6 text-xs text-ivory/50 md:flex-row md:justify-between"
 	>
 		<p>&copy; {year} Allegra Chamber Bali. {footer.rights}</p>
-		<a href={`${prefix}/privacy/`} class="hover:text-gold">{footer.privacyLink}</a>
+		<div class="flex gap-6">
+			<a href={`${prefix}/press/`} class="hover:text-gold">{footer.pressLink}</a>
+			<a href={`${prefix}/privacy/`} class="hover:text-gold">{footer.privacyLink}</a>
+		</div>
 	</div>
 </footer>
