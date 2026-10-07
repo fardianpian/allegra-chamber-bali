@@ -20,6 +20,10 @@ const t = useTranslations(lang)
 const hero = t('hero')
 const whatsappMessage = t('whatsappMessage')
 
+// Hero copy deliberately has no .reveal class: .reveal holds text at opacity 0 until the
+// IntersectionObserver fires, and the H1 is the page's LCP element (Lighthouse measured 1.4–1.8s
+// of render delay from it, 2026-10-07).
+
 // Decorative slideshow — the H1/subhead already convey the content, so slides use
 // alt="" rather than competing descriptions for screen readers.
 const slides = [slide1, slide2, slide3, slide4, slide5, slide6]
@@ -76,14 +80,14 @@ const PLACEHOLDER_SRC = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAA
 	<div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/15"></div>
 
 	<div class="container-max relative z-10 pb-20 pt-36 text-ivory">
-		<Eyebrow class="reveal text-ivory/80">{hero.eyebrow}</Eyebrow>
-		<h1 class="reveal mt-4 max-w-3xl text-6xl md:text-7xl lg:max-w-none lg:text-8xl">
+		<Eyebrow class="text-ivory/80">{hero.eyebrow}</Eyebrow>
+		<h1 class="mt-4 max-w-3xl text-6xl md:text-7xl lg:max-w-none lg:text-8xl">
 			{hero.titleTagline}
 		</h1>
 		{/* Brand name kept outside the H1 so the heading reads as one keyword phrase. */}
-		<p class="reveal font-body mt-2 text-xl text-ivory/80 md:text-2xl">{hero.title}</p>
-		<p class="reveal mt-6 max-w-xl text-lg text-ivory/85 md:text-xl">{hero.subhead}</p>
-		<div class="reveal mt-9 flex flex-wrap gap-4">
+		<p class="font-body mt-2 text-xl text-ivory/80 md:text-2xl">{hero.title}</p>
+		<p class="mt-6 max-w-xl text-lg text-ivory/85 md:text-xl">{hero.subhead}</p>
+		<div class="mt-9 flex flex-wrap gap-4">
 			<WhatsAppCTA location="hero" message={whatsappMessage} label={hero.ctaPrimary} variant="gold" />
 			<Button href="#featured-audio" variant="ghost">{hero.ctaSecondary}</Button>
 		</div>
