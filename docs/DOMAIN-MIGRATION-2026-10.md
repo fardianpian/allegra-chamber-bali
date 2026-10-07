@@ -10,16 +10,16 @@ returned no NS records). Owner approved the name on 2026-10-07 and is buying it 
 
 ## Progress
 
-| #   | Step                                                     | Who            | Status                                                                                                                   |
-| --- | -------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| 0   | Code + docs prepared on branch                           | Claude         | done                                                                                                                     |
-| 1   | Register `allegrachamberbali.com`                        | Owner          | done (Cloudflare Registrar, NS lennon/vida.ns.cloudflare.com)                                                            |
-| 2   | Attach apex + `www` to Pages                             | Owner          | done                                                                                                                     |
-| 3   | Verify new domain serves 200                             | Claude         | done (200, Google Trust Services cert)                                                                                   |
-| 4   | Set `PUBLIC_SITE_URL`, then merge the branch             | Owner + Claude | done (PR #34, d476740; live verified)                                                                                    |
-| 5   | Bulk Redirects (old sub-domain, pages.dev, www) + verify | Owner + Claude | done (list 748ed115…, ruleset 90eddc10…; curl verified)                                                                  |
-| 6   | GSC/GA4/Web3Forms + skill property swap                  | Owner + Claude | GSC done (property + Change of Address 2026-10-07, sitemap submitted, skills swapped); GA4 stream URL + GSC link pending |
-| 7   | Off-site link updates                                    | Owner          | pending                                                                                                                  |
+| #   | Step                                                     | Who            | Status                                                                                                                                                                                    |
+| --- | -------------------------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | Code + docs prepared on branch                           | Claude         | done                                                                                                                                                                                      |
+| 1   | Register `allegrachamberbali.com`                        | Owner          | done (Cloudflare Registrar, NS lennon/vida.ns.cloudflare.com)                                                                                                                             |
+| 2   | Attach apex + `www` to Pages                             | Owner          | done                                                                                                                                                                                      |
+| 3   | Verify new domain serves 200                             | Claude         | done (200, Google Trust Services cert)                                                                                                                                                    |
+| 4   | Set `PUBLIC_SITE_URL`, then merge the branch             | Owner + Claude | done (PR #34, d476740; live verified)                                                                                                                                                     |
+| 5   | Bulk Redirects (old sub-domain, pages.dev, www) + verify | Owner + Claude | done (list 748ed115…, ruleset 90eddc10…; curl verified)                                                                                                                                   |
+| 6   | GSC/GA4/Web3Forms + skill property swap                  | Owner + Claude | GSC done (property + Change of Address 2026-10-07, sitemap submitted, skills swapped); GA4 stream URL + GSC link done; tag verified on new host (G-BN64LSJGQV, dl=allegrachamberbali.com) |
+| 7   | Off-site link updates                                    | Owner          | pending                                                                                                                                                                                   |
 
 After each owner step, tell Claude — steps 3, 4 and 5 are verified with `curl` from the repo.
 
