@@ -1,7 +1,7 @@
 ---
-title: 'Piano Wedding Songs: What a Pianist Plays at Your Ceremony — Allegra Chamber Bali'
+title: 'Piano Wedding Songs for Every Ceremony Moment — Allegra Chamber Bali'
 heading: 'Piano Wedding Songs: What a Wedding Pianist Plays at Your Ceremony'
-description: 'Piano wedding songs for each ceremony moment: prelude, processional, signing, and recessional, plus the wedding march on piano and how to plan your music.'
+description: 'Canon in D, Clair de Lune, or your own song? What a wedding pianist plays from prelude to recessional, how long each moment runs, and how to plan the set.'
 excerpt: 'From prelude to recessional, here is what a wedding pianist covers at each ceremony moment — and how to choose the right music for your day.'
 pillar: 'piano-repertoire'
 targetKeyword: 'piano wedding ceremony'

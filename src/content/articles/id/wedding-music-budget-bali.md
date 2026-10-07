@@ -1,7 +1,7 @@
 ---
-title: 'Biaya Musik Live Pernikahan di Bali: Cara Mengatur Budget — Allegra Chamber Bali'
+title: 'Berapa Biaya Musik Live Pernikahan di Bali? — Allegra Chamber Bali'
 heading: 'Biaya Musik Live Pernikahan di Bali: Cara Mengatur Budgetnya'
-description: 'Apa yang menentukan biaya musik live pernikahan di Bali — faktor biaya kuartet gesek dan pianis, perbandingan dengan band atau DJ, dan kapan meminta quote.'
+description: 'Apa yang menentukan biaya kuartet gesek atau pianis pernikahan di Bali: formasi, durasi, area perjalanan, dan tanggal. Aransemen khusus selalu sudah termasuk.'
 excerpt: 'Musik live tidak punya satu harga yang bisa dicek langsung — berikut yang benar-benar mengubah biayanya, dan apa yang perlu ditanyakan sebelum meminta quote.'
 pillar: 'planning'
 targetKeyword: 'string quartet wedding cost'
