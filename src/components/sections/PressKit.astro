@@ -1,0 +1,209 @@
+---
+import { Image } from 'astro:assets'
+import SectionHeading from '../ui/SectionHeading.astro'
+import Button from '../ui/Button.astro'
+import { useTranslations } from '../../i18n/utils'
+import type { Lang } from '../../i18n/languages'
+import { site } from '../../lib/site'
+import pianistGarden from '../../assets/gallery/pianist-garden-daytime-white-piano-bali.jpg'
+import stringEnsemble from '../../assets/gallery/string-ensemble-musicians-wedding-bali.jpg'
+import pianoReception from '../../assets/gallery/piano-garden-reception-night.jpg'
+import stringQuartet from '../../assets/gallery/string-quartet-cello-garden-ceremony-bali.jpg'
+
+interface Props {
+	lang: Lang
+}
+const { lang } = Astro.props
+const t = useTranslations(lang)
+const page = t('pressPage')
+
+// Downloads live in public/press/ and are produced by scripts/generate-press-kit.mjs —
+// keep `file` + `size` in sync with that script's PHOTOS list and its console output.
+const photos = {
+	'pianist-garden': {
+		src: pianistGarden,
+		file: '/press/photos/allegra-chamber-bali-pianist-garden-ceremony.jpg',
+		size: '2250 × 3000',
+	},
+	'string-ensemble': {
+		src: stringEnsemble,
+		file: '/press/photos/allegra-chamber-bali-string-ensemble.jpg',
+		size: '2250 × 3000',
+	},
+	'piano-reception': {
+		src: pianoReception,
+		file: '/press/photos/allegra-chamber-bali-piano-garden-reception.jpg',
+		size: '1688 × 3000',
+	},
+	'string-quartet': {
+		src: stringQuartet,
+		file: '/press/photos/allegra-chamber-bali-string-quartet-garden.jpg',
+		size: '1614 × 2868',
+	},
+} as const
+
+const logos = [
+	{ variant: 'charcoal', panel: 'bg-ivory border border-ink/10' },
+	{ variant: 'ivory', panel: 'bg-ink' },
+] as const
+
+const boilerplates = [
+	{ id: 'short', label: page.boilerplateShortLabel, text: page.boilerplateShort },
+	{ id: 'long', label: page.boilerplateLongLabel, text: page.boilerplateLong },
+]
+
+const linkClass = 'text-ink underline decoration-gold underline-offset-2 hover:text-gold'
+const mailto = `mailto:${site.contactEmail}?subject=${encodeURIComponent(page.contactSubject)}`
+---
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading heading={page.factsHeading} />
+		<dl class="reveal mt-8 divide-y divide-ink/10 border-y border-ink/10">
+			{
+				page.facts.map((fact) => (
+					<div class="grid gap-1 py-4 md:grid-cols-[12rem_1fr] md:gap-8">
+						<dt class="text-xs uppercase tracking-[0.1em] text-taupe md:pt-1">{fact.label}</dt>
+						<dd>{fact.value}</dd>
+					</div>
+				))
+			}
+			<div class="grid gap-1 py-4 md:grid-cols-[12rem_1fr] md:gap-8">
+				<dt class="text-xs uppercase tracking-[0.1em] text-taupe md:pt-1">Web</dt>
+				<dd>
+					<a href={lang === 'en' ? '/' : '/id/'} class={linkClass}>{site.url.replace(/^https?:\/\//, '')}</a>
+				</dd>
+			</div>
+		</dl>
+	</div>
+</section>
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading heading={page.boilerplateHeading} subhead={page.boilerplateSubhead} />
+		<div class="mt-8 grid items-start gap-6 md:grid-cols-2">
+			{
+				boilerplates.map((item) => (
+					<div class="reveal flex flex-col border border-ink/10 p-6 md:p-8">
+						<p class="text-xs uppercase tracking-[0.1em] text-taupe">{item.label}</p>
+						<p id={`boilerplate-${item.id}`} class="mt-4 flex-1">
+							{item.text}
+						</p>
+						<button
+							type="button"
+							class="copy-btn mt-6 self-start border border-ink/20 px-4 py-3 text-xs uppercase tracking-[0.1em] text-ink/70 transition-colors hover:border-gold hover:text-ink"
+							data-copy-target={`boilerplate-${item.id}`}
+							data-copied-label={page.copiedLabel}
+						>
+							{page.copyLabel}
+						</button>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading heading={page.photosHeading} subhead={page.photosSubhead} />
+		<ul class="mt-8 grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+			{
+				page.photos.map((item) => {
+					const photo = photos[item.photo]
+					return (
+						<li class="reveal">
+							<Image
+								src={photo.src}
+								alt={item.caption}
+								width={600}
+								height={800}
+								format="avif"
+								quality={70}
+								loading="lazy"
+								class="aspect-[3/4] w-full object-cover"
+							/>
+							<p class="mt-3 text-sm">{item.caption}</p>
+							<p class="mt-1 text-xs text-taupe">JPG · {photo.size} px</p>
+							<a href={photo.file} download class:list={['mt-2 inline-block py-1 text-sm', linkClass]}>
+								{page.photoDownloadLabel}
+							</a>
+						</li>
+					)
+				})
+			}
+		</ul>
+		<div class="reveal mt-8 flex flex-col items-start gap-4">
+			<Button href="/press/allegra-chamber-bali-press-photos.zip" variant="outline" download>
+				{page.photosDownloadAll}
+			</Button>
+			<p class="max-w-2xl text-sm text-taupe">{page.photosNote}</p>
+		</div>
+	</div>
+</section>
+
+<section class="section bg-ivory pt-0">
+	<div class="container-max">
+		<SectionHeading heading={page.logoHeading} subhead={page.logoSubhead} />
+		<div class="mt-8 grid gap-6 md:grid-cols-2">
+			{
+				logos.map((logo) => (
+					<div class="reveal">
+						<div class:list={['flex aspect-[16/9] items-center justify-center p-10', logo.panel]}>
+							<img
+								src={`/press/allegra-chamber-bali-logo-${logo.variant}.svg`}
+								alt="Allegra Chamber Bali"
+								width="1392"
+								height="660"
+								loading="lazy"
+								class="h-auto w-3/5"
+							/>
+						</div>
+						<p class="mt-3 text-sm">{page.logoVariants[logo.variant]}</p>
+						<p class="mt-1 flex gap-4 text-sm">
+							<a href={`/press/allegra-chamber-bali-logo-${logo.variant}.svg`} download class={linkClass}>
+								SVG
+							</a>
+							<a href={`/press/allegra-chamber-bali-logo-${logo.variant}.png`} download class={linkClass}>
+								PNG
+							</a>
+						</p>
+					</div>
+				))
+			}
+		</div>
+		<div class="reveal mt-8">
+			<Button href="/press/allegra-chamber-bali-logo-pack.zip" variant="outline" download>
+				{page.logoDownloadAll}
+			</Button>
+		</div>
+	</div>
+</section>
+
+<section class="section bg-ink text-ivory">
+	<div class="container-max reveal flex flex-col items-center text-center">
+		<h2 class="text-4xl md:text-5xl">{page.contactHeading}</h2>
+		<p class="mt-4 max-w-xl text-ivory/85">{page.contactBody}</p>
+		<p class="mt-2 text-ivory/85">{site.contactEmail}</p>
+		<Button href={mailto} variant="gold" class="mt-8" data-cta-location="press_contact">
+			{page.contactCta}
+		</Button>
+	</div>
+</section>
+
+<script>
+	document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach((btn) => {
+		const original = btn.textContent
+		btn.addEventListener('click', async () => {
+			const target = document.getElementById(btn.dataset.copyTarget ?? '')
+			if (!target) return
+			try {
+				await navigator.clipboard.writeText(target.textContent?.trim() ?? '')
+				btn.textContent = btn.dataset.copiedLabel ?? original
+				setTimeout(() => (btn.textContent = original), 2000)
+			} catch {
+				// Clipboard blocked (e.g. insecure context) — the text stays selectable by hand.
+			}
+		})
+	})
+</script>

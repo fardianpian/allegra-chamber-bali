@@ -12,7 +12,7 @@
 | Real photos (cliffside, garden, pianist) | ✅                                                    |
 | Demo video                               | ⚠️ Pending owner                                      |
 | Press contact email                      | ✅ allegrachamberbali@gmail.com                       |
-| Press page `/press` on site              | ❌ **Build first before any pitch**                   |
+| Press page `/press` on site              | ✅ Live 2026-10-07 (EN + `/id/press`)                 |
 | Styled shoot                             | ❌ Required for Tier A editorial                      |
 | Real couple willing to speak on record   | ❌ Waiting on testimonial form replies                |
 
@@ -143,7 +143,7 @@ Cost: 2–3 hours dev time. Saves 10 minutes per pitch conversation.
 
 ### Juli 2026 — Foundation
 
-- [ ] Build `/press` page (dev task — ask Claude Code)
+- [x] Build `/press` page (dev task — ask Claude Code) — done 2026-10-07
 - [ ] Pitch Angle 2 → The Jakarta Post + NOW! Bali + Bali Advertiser (Tier C, quickest)
 - [ ] Pitch Angle 2 → Harper's Bazaar Indonesia + DEWI (Bahasa Indonesia version)
 - [ ] Identify 1–2 Bali photographers published on Junebug/The Lane

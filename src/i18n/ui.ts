@@ -237,6 +237,7 @@ export const ui = {
 			rights: 'All rights reserved.',
 			privacyLink: 'Privacy Policy',
 			plannerLink: 'Free Ceremony Planner',
+			pressLink: 'Press Kit',
 		},
 		whatsappMessage: "Hi Allegra Chamber Bali, I'd like to check availability for my wedding date.",
 		floatingWhatsappLabel: 'Ask on WhatsApp',
@@ -502,9 +503,10 @@ export const ui = {
 				{ name: 'Tech Rider', format: 'PDF' },
 				{ name: 'Stage Plot', format: 'PDF' },
 				{ name: 'Repertoire Sheet', format: 'PDF' },
-				{ name: 'High-Res Logo Pack', format: 'ZIP' },
+				{ name: 'High-Res Logo Pack', format: 'ZIP', href: '/press/allegra-chamber-bali-logo-pack.zip' },
 			],
 			downloadComingSoon: 'On request',
+			downloadLabel: 'Download',
 			downloadsNote:
 				'These documents are available on request — message us on WhatsApp and we’ll send them over.',
 			downloadsCta: 'Request via WhatsApp',
@@ -728,6 +730,75 @@ export const ui = {
 			faqHeading: 'Frequently Asked',
 			ctaHeading: 'Have a date in mind?',
 			ctaNote: "Message us on WhatsApp with your date and venue — we'll help you choose a formation.",
+		},
+		pressPage: {
+			title: 'Press Kit — Live Wedding Music in Bali — Allegra Chamber Bali',
+			description:
+				'Press kit for Allegra Chamber Bali, a live piano and string ensemble for Bali weddings: fact sheet, approved descriptions, high-resolution photos, and logos.',
+			eyebrow: 'Press & Media',
+			heading: 'Press Kit',
+			subhead:
+				'Facts, approved descriptions, photos, and logos for writing about Allegra Chamber Bali. For anything not here, email us — we reply within 24 hours.',
+			factsHeading: 'At a Glance',
+			facts: [
+				{ label: 'Name', value: 'Allegra Chamber Bali' },
+				{ label: 'What', value: 'Live piano and string ensemble for weddings' },
+				{
+					label: 'Based in',
+					value:
+						'Bali, Indonesia — performing across the island, including Uluwatu, Ubud, Nusa Dua, Canggu, and Seminyak',
+				},
+				{
+					label: 'Formations',
+					value: 'Solo, Duo, Trio, String Quartet, and Large Ensemble — from 1 to 10 musicians by default',
+				},
+				{ label: 'Instruments', value: 'Piano, violin, viola, cello, and double bass' },
+				{
+					label: 'Signature',
+					value:
+						"Piano is included as standard in every ensemble formation, and every booking includes custom arrangements of the couple's own songs",
+				},
+				{ label: 'Occasions', value: 'Wedding ceremonies, cocktail hours, receptions, and vow renewals' },
+				{ label: 'Languages', value: 'English and Indonesian' },
+				{ label: 'Part of', value: 'Indonesia Istimewa Studio' },
+			],
+			boilerplateHeading: 'About Allegra Chamber Bali',
+			boilerplateSubhead: 'Approved descriptions — use as written, or trim to fit.',
+			boilerplateShortLabel: 'Short · ~40 words',
+			boilerplateShort:
+				"Allegra Chamber Bali is a live piano and string ensemble for weddings across Bali. Conservatory-trained musicians perform in five formations, from solo piano to a ten-piece ensemble, with custom arrangements of each couple's own songs. An Indonesia Istimewa Studio ensemble.",
+			boilerplateLongLabel: 'Long · ~100 words',
+			boilerplateLong:
+				"Allegra Chamber Bali brings live chamber music to weddings across Bali, from intimate cliffside ceremonies in Uluwatu to garden receptions in Ubud. Its conservatory-trained musicians perform in five formations: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and a ten-piece Large Ensemble. Piano is part of every ensemble formation as standard — it holds the harmony and rhythm while violin and cello carry the melody. Every booking includes custom arrangements of the couple's own songs, from the processional to the first dance. The ensemble works in English and Indonesian and is part of Indonesia Istimewa Studio.",
+			copyLabel: 'Copy text',
+			copiedLabel: 'Copied',
+			photosHeading: 'Press Photos',
+			photosSubhead: 'High-resolution photos from real Allegra performances in Bali.',
+			photos: [
+				{ photo: 'pianist-garden', caption: 'Pianist at a daytime garden wedding ceremony, Bali' },
+				{
+					photo: 'string-ensemble',
+					caption: 'Allegra Chamber Bali musicians at a garden wedding venue, Bali',
+				},
+				{ photo: 'piano-reception', caption: 'Live piano at an evening garden reception, Bali' },
+				{ photo: 'string-quartet', caption: 'Strings performing at a garden wedding ceremony, Bali' },
+			],
+			photoDownloadLabel: 'Download JPG',
+			photosDownloadAll: 'Download all photos (ZIP)',
+			photosNote:
+				'Photos are provided for editorial coverage of Allegra Chamber Bali. Please credit "Courtesy of Allegra Chamber Bali". Need a different shot or orientation? Just ask.',
+			logoHeading: 'Logo',
+			logoSubhead:
+				'The wordmark in charcoal for light backgrounds and ivory for dark ones, as vector SVG and transparent PNG.',
+			logoVariants: {
+				charcoal: 'Charcoal — for light backgrounds',
+				ivory: 'Ivory — for dark backgrounds',
+			},
+			logoDownloadAll: 'Download logo pack (ZIP)',
+			contactHeading: 'Press Contact',
+			contactBody: 'For interviews, images, or fact-checking, email us — we reply within 24 hours.',
+			contactCta: 'Email us',
+			contactSubject: 'Press inquiry — Allegra Chamber Bali',
 		},
 	},
 	id: {
@@ -968,6 +1039,7 @@ export const ui = {
 			rights: 'Hak cipta dilindungi.',
 			privacyLink: 'Kebijakan Privasi',
 			plannerLink: 'Planner Upacara Gratis',
+			pressLink: 'Press Kit',
 		},
 		whatsappMessage: 'Hai Allegra Chamber Bali, saya ingin cek ketersediaan untuk tanggal pernikahan saya.',
 		floatingWhatsappLabel: 'Tanya via WhatsApp',
@@ -1234,9 +1306,14 @@ export const ui = {
 				{ name: 'Tech Rider', format: 'PDF' },
 				{ name: 'Stage Plot', format: 'PDF' },
 				{ name: 'Repertoire Sheet', format: 'PDF' },
-				{ name: 'Paket Logo Resolusi Tinggi', format: 'ZIP' },
+				{
+					name: 'Paket Logo Resolusi Tinggi',
+					format: 'ZIP',
+					href: '/press/allegra-chamber-bali-logo-pack.zip',
+				},
 			],
 			downloadComingSoon: 'Sesuai permintaan',
+			downloadLabel: 'Unduh',
 			downloadsNote:
 				'Dokumen ini tersedia sesuai permintaan — hubungi kami via WhatsApp dan kami akan kirimkan.',
 			downloadsCta: 'Minta via WhatsApp',
@@ -1462,6 +1539,72 @@ export const ui = {
 			faqHeading: 'Pertanyaan Umum',
 			ctaHeading: 'Sudah punya tanggal?',
 			ctaNote: 'Kirim pesan WhatsApp dengan tanggal dan venue Anda — kami bantu pilih formasi yang tepat.',
+		},
+		pressPage: {
+			title: 'Press Kit — Musik Pernikahan Live di Bali — Allegra Chamber Bali',
+			description:
+				'Press kit Allegra Chamber Bali, ansambel piano dan gesek live untuk pernikahan di Bali: fakta singkat, deskripsi resmi, foto resolusi tinggi, dan logo.',
+			eyebrow: 'Pers & Media',
+			heading: 'Press Kit',
+			subhead:
+				'Fakta, deskripsi resmi, foto, dan logo untuk menulis tentang Allegra Chamber Bali. Jika ada yang belum tersedia di sini, email kami — kami membalas dalam 24 jam.',
+			factsHeading: 'Sekilas',
+			facts: [
+				{ label: 'Nama', value: 'Allegra Chamber Bali' },
+				{ label: 'Layanan', value: 'Ansambel piano dan gesek live untuk pernikahan' },
+				{
+					label: 'Berbasis di',
+					value:
+						'Bali, Indonesia — tampil di seluruh pulau, termasuk Uluwatu, Ubud, Nusa Dua, Canggu, dan Seminyak',
+				},
+				{
+					label: 'Formasi',
+					value: 'Solo, Duo, Trio, String Quartet, dan Large Ensemble — 1 hingga 10 musisi secara default',
+				},
+				{ label: 'Instrumen', value: 'Piano, biola, viola, cello, dan double bass' },
+				{
+					label: 'Ciri khas',
+					value:
+						'Piano sudah termasuk di setiap formasi ansambel, dan setiap booking mendapat aransemen khusus lagu pilihan pasangan',
+				},
+				{ label: 'Acara', value: 'Upacara pernikahan, cocktail hour, resepsi, dan pembaruan janji nikah' },
+				{ label: 'Bahasa', value: 'Inggris dan Indonesia' },
+				{ label: 'Bagian dari', value: 'Indonesia Istimewa Studio' },
+			],
+			boilerplateHeading: 'Tentang Allegra Chamber Bali',
+			boilerplateSubhead: 'Deskripsi resmi — gunakan apa adanya, atau ringkas sesuai kebutuhan.',
+			boilerplateShortLabel: 'Pendek · ±40 kata',
+			boilerplateShort:
+				'Allegra Chamber Bali adalah ansambel piano dan gesek live untuk pernikahan di seluruh Bali. Musisi terlatih konservatori tampil dalam lima formasi, dari piano solo hingga ansambel sepuluh musisi, dengan aransemen khusus lagu pilihan setiap pasangan. Sebuah ansambel dari Indonesia Istimewa Studio.',
+			boilerplateLongLabel: 'Panjang · ±90 kata',
+			boilerplateLong:
+				'Allegra Chamber Bali menghadirkan musik kamar live untuk pernikahan di seluruh Bali, dari upacara intim di tebing Uluwatu hingga resepsi taman di Ubud. Musisi terlatih konservatorinya tampil dalam lima formasi: Solo (biola, cello, atau piano), Duo, Trio, String Quartet, dan Large Ensemble sepuluh musisi. Piano sudah termasuk di setiap formasi ansambel — piano menjaga harmoni dan ritme, sementara biola dan cello membawakan melodi. Setiap booking sudah termasuk aransemen khusus lagu pilihan pasangan, dari prosesi hingga tarian pertama. Ansambel ini melayani dalam bahasa Inggris dan Indonesia, dan merupakan bagian dari Indonesia Istimewa Studio.',
+			copyLabel: 'Salin teks',
+			copiedLabel: 'Tersalin',
+			photosHeading: 'Foto Pers',
+			photosSubhead: 'Foto resolusi tinggi dari penampilan nyata Allegra di Bali.',
+			photos: [
+				{ photo: 'pianist-garden', caption: 'Pianis di upacara pernikahan taman siang hari, Bali' },
+				{ photo: 'string-ensemble', caption: 'Musisi Allegra Chamber Bali di venue pernikahan taman, Bali' },
+				{ photo: 'piano-reception', caption: 'Piano live di resepsi taman malam hari, Bali' },
+				{ photo: 'string-quartet', caption: 'Pemain gesek tampil di upacara pernikahan taman, Bali' },
+			],
+			photoDownloadLabel: 'Unduh JPG',
+			photosDownloadAll: 'Unduh semua foto (ZIP)',
+			photosNote:
+				'Foto disediakan untuk liputan editorial tentang Allegra Chamber Bali. Mohon cantumkan kredit "Courtesy of Allegra Chamber Bali". Butuh foto atau orientasi lain? Silakan tanyakan.',
+			logoHeading: 'Logo',
+			logoSubhead:
+				'Wordmark versi charcoal untuk latar terang dan ivory untuk latar gelap, dalam format SVG vektor dan PNG transparan.',
+			logoVariants: {
+				charcoal: 'Charcoal — untuk latar terang',
+				ivory: 'Ivory — untuk latar gelap',
+			},
+			logoDownloadAll: 'Unduh paket logo (ZIP)',
+			contactHeading: 'Kontak Pers',
+			contactBody: 'Untuk wawancara, foto, atau pengecekan fakta, email kami — kami membalas dalam 24 jam.',
+			contactCta: 'Email kami',
+			contactSubject: 'Pertanyaan media — Allegra Chamber Bali',
 		},
 	},
 } as const

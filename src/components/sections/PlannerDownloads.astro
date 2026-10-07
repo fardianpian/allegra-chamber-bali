@@ -29,7 +29,17 @@ const page = t('forPlannersPage')
 							<p class="font-display text-lg">{item.name}</p>
 							<p class="text-xs uppercase tracking-[0.1em] text-taupe">{item.format}</p>
 						</div>
-						<span class="text-xs uppercase tracking-[0.1em] text-taupe">{page.downloadComingSoon}</span>
+						{'href' in item ? (
+							<a
+								href={item.href}
+								download
+								class="py-2 text-xs uppercase tracking-[0.1em] text-ink underline decoration-gold underline-offset-4 hover:text-gold"
+							>
+								{page.downloadLabel}
+							</a>
+						) : (
+							<span class="text-xs uppercase tracking-[0.1em] text-taupe">{page.downloadComingSoon}</span>
+						)}
 					</div>
 				))
 			}
