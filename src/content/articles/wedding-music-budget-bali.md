@@ -1,7 +1,7 @@
 ---
-title: 'Live Wedding Music Cost in Bali: How to Budget for It — Allegra Chamber Bali'
+title: 'How Much Does Live Wedding Music Cost in Bali? — Allegra Chamber Bali'
 heading: 'Live Wedding Music Cost in Bali: How to Budget for It'
-description: 'What shapes live wedding music cost in Bali — string quartet and wedding pianist cost factors, how it compares to a band or DJ, and when to ask for a quote.'
+description: 'What sets the cost of a string quartet or wedding pianist in Bali: formation, hours covered, travel area, and date. Custom arrangements are always included.'
 excerpt: "Live music doesn't have one price you can look up — here's what actually changes the cost, and what to ask before you request a quote."
 pillar: 'planning'
 targetKeyword: 'string quartet wedding cost'

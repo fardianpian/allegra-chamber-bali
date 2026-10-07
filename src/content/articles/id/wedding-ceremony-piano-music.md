@@ -1,7 +1,7 @@
 ---
-title: 'Lagu Pernikahan Piano: Apa yang Dimainkan Pianis di Upacara — Allegra Chamber Bali'
+title: 'Lagu Piano Pernikahan untuk Tiap Momen Upacara — Allegra Chamber Bali'
 heading: 'Lagu Pernikahan Piano: Apa yang Dimainkan Pianis di Upacara Anda'
-description: 'Lagu pernikahan piano untuk tiap momen upacara: prelude, prosesi, penandatanganan, dan resesional, plus wedding march di piano dan cara merencanakannya.'
+description: 'Canon in D, Clair de Lune, atau lagu Anda sendiri? Lagu yang dimainkan pianis dari prelude hingga resesional, durasi tiap momen, dan cara merencanakannya.'
 excerpt: 'Dari prelude hingga resesional, inilah yang dimainkan pianis di setiap momen upacara — dan cara memilih musik yang tepat untuk hari istimewa Anda.'
 pillar: 'piano-repertoire'
 targetKeyword: 'piano upacara pernikahan'
