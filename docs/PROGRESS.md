@@ -494,10 +494,11 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    branch before the routine auto-merges (SKILL.md Step 4 + Step 9 updated to wait for it). Owner
    added `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_API_TOKEN` (Workers AI - Read) as GitHub Actions
    repo secrets 2026-09-24; a throwaway smoke-test run (Actions run 36005558985) generated a
-   1200x630 JPEG with them end to end. Token expires ~2027-09 — renew it then. Still to verify: a
-   `github-actions[bot]` cover commit on the next real routine PR. The 2026-09-28 run is also the
-   first with the updated prompt and learnings (see 2026-09-25 session): confirm the article has a
-   single centered CTA at the end and that its PR touches no page template.
+   1200x630 JPEG with them end to end. Token expires ~2027-09 — renew it then. Verified
+   2026-10-07 on routine PR #36 (`signing-of-the-register-music`): `github-actions[bot]` cover
+   commit a08d0bc landed, one article-specific CTA at the end, no page template touched, and the
+   page is live on `allegrachamberbali.com` with correct canonical/hreflang/og:image (old-domain
+   URL 301s to it).
 2. **Build `/press` page** — still not built, and is the stated prerequisite in `docs/PR-PLAN.md`
    before pitching any outlet (Tier C: Jakarta Post, NOW! Bali are pitchable now, no styled shoot
    needed).
