@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content'
 import SectionHeading from '../ui/SectionHeading.astro'
 import { useTranslations, getLocalizedPath } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
 import { site } from '../../lib/site'
+import { getPackages } from '../../lib/packages'
 
 interface Props {
 	lang: Lang
@@ -15,7 +15,7 @@ const finder = pkg.finder
 
 // Keyed by formation id so the client script never depends on collection order.
 const formations = Object.fromEntries(
-	(await getCollection('packages')).map((p) => [
+	(await getPackages(lang)).map((p) => [
 		p.data.formation,
 		{ name: p.data.name, musicians: p.data.musicians, summary: p.data.summary },
 	]),

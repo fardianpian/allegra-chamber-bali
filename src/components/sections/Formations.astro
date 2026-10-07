@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets'
-import { getCollection } from 'astro:content'
 import SectionHeading from '../ui/SectionHeading.astro'
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
+import { getPackages } from '../../lib/packages'
 import solo from '../../assets/formations/solo.jpg'
 import duo from '../../assets/formations/duo.jpg'
 import trio from '../../assets/formations/trio.jpg'
@@ -21,7 +21,7 @@ const aboutHref = lang === 'en' ? '/about/' : '/id/about/'
 const pkg = t('packagesPage')
 // Musician counts live on the packages collection (single source), keyed by formation id.
 const musicianCounts: Record<string, number> = Object.fromEntries(
-	(await getCollection('packages')).map((p) => [p.data.formation, p.data.musicians]),
+	(await getPackages(lang)).map((p) => [p.data.formation, p.data.musicians]),
 )
 
 const formationPhotos = {

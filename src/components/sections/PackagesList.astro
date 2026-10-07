@@ -1,8 +1,9 @@
 ---
-import { getCollection, render } from 'astro:content'
+import { render } from 'astro:content'
 import { Image } from 'astro:assets'
 import WhatsAppCTA from '../media/WhatsAppCTA.astro'
 import { useTranslations } from '../../i18n/utils'
+import { getPackages } from '../../lib/packages'
 import type { Lang } from '../../i18n/languages'
 
 interface Props {
@@ -12,8 +13,7 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const pkg = t('packagesPage')
 
-const all = await getCollection('packages')
-const items = all.sort((a, b) => a.data.order - b.data.order)
+const items = await getPackages(lang)
 const rendered = await Promise.all(
 	items.map(async (item) => ({ item, Content: (await render(item)).Content })),
 )
@@ -67,7 +67,7 @@ const rendered = await Promise.all(
 						<WhatsAppCTA
 							location="packages_card"
 							formation={item.data.formation}
-							message={`Hi Allegra Chamber Bali, I'd like to inquire about the ${item.data.name} package for my wedding.`}
+							message={pkg.waInquire.replace('{name}', item.data.name)}
 							label={pkg.ctaInquire}
 							variant="outline"
 							class="mt-7"
