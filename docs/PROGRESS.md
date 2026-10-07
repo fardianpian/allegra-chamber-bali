@@ -7,6 +7,47 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Session — 2026-10-08
+
+**Semrush Site Audit (free account, crawl 2026-10-07, 99 URLs) triaged.** The free account can't
+export per-issue URL lists, so the detail checks were reproduced with a local crawl of all 104 live
+URLs. Results:
+
+- **Fixed: 90 "broken internal links" + 1 "4xx error".** Every one pointed to
+  `/cdn-cgi/l/email-protection` (404). Cause: Cloudflare **Email Address Obfuscation** (Security →
+  Settings → Client side abuse). It switched on by default when the apex domain moved to Cloudflare
+  nameservers on 2026-10-07. It rewrote the footer/contact `mailto:` into that link and served
+  `[email protected]` to no-JS crawlers, so AI assistants (ChatGPT is the best-converting source)
+  couldn't read the email. The owner turned it **OFF** 2026-10-08; verified gone from live HTML. Don't
+  re-enable it.
+- **Fixed: "Hreflang language mismatch" on `/id/packages/`
+  ([PR #41](https://github.com/fardianpian/allegra-chamber-bali/pull/41), `6de86c0`).** The
+  `packages` collection was EN-only, so the ID page rendered English formation copy and an English
+  WhatsApp message. Added `src/content/packages/id/*.md` (same `id/` pattern as articles) plus
+  `getPackages(lang)` in `src/lib/packages.ts`. `PackagesList`, `FormationFinder` and `Formations`
+  now filter by locale. **Any `getCollection('packages')` call must go through `getPackages(lang)`,
+  or every formation renders twice.** WhatsApp inquiry text moved to `packagesPage.waInquire` in
+  `ui.ts`. The live stopword ratio on `/id/packages/` went from EN 131 / ID 59 to EN 2 / ID 159.
+  When editing a formation's facts, update both `packages/<file>.md` and `packages/id/<file>.md`.
+- **False positives, left as-is:**
+  - Broken external links (121): `wa.me` and Instagram block bots, and the 2 article citations
+    return 200 to a real browser.
+  - Hreflang conflicts (12), pages with only one internal link (10), and part of low word
+    count/low text-HTML ratio: all are `/ceremony-music-planner/?from=…` attribution variants.
+    These canonicalise to the clean URL.
+  - Resources formatted as page links (12): the intentional `/press/` downloads.
+  - No HSTS (1/2): apex already sends HSTS; the failed check is `www`/http.
+- **Accepted, low priority:**
+  - Low word count/ratio on `/gallery/`, `/contact/`, `/ceremony-music-planner/`: normal for
+    form/gallery pages.
+  - Titles > 70 chars (about 30 pages, mostly journal; only the " — Allegra Chamber Bali" suffix
+    truncates).
+
+**Lighthouse (local) is unreliable right now.** After obfuscation was turned off, local mobile runs
+gave prod 72–74 and production `allegra-chamber-bali.pages.dev` 68–69. Both origins scored low, so
+obfuscation wasn't the paint-delay cause, and local runs can't be trusted for perf. PSI quota was
+exhausted 2026-10-08; use PSI from Google's servers for the next perf check.
+
 ## Session — 2026-09-26
 
 **squirrelscan audit fixes, batch 1 ([PR #26](https://github.com/fardianpian/allegra-chamber-bali/pull/26), `6eae8f1`):**
@@ -528,7 +569,11 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
    brand verification first). Scripts are ready (`npm run gkp`); see the 2026-09-26 session note.
 8. Re-run the full Lighthouse mobile audit once real photography/testimonials land — clean at
    100/100/100/100 as of the last check, but real images (replacing the CSS-gradient `Placeholder`
-   component) plus the new GA4 script are the two things most likely to move Performance/CLS.
+   component) plus the new GA4 script are the two things most likely to move Performance/CLS. Use
+   **PSI** (Google's servers), not local Lighthouse — local runs scored both prod and `pages.dev`
+   ~70 on 2026-10-08 (see that session note).
+   Also re-run the **Semrush Site Audit** to confirm broken internal links (90) and hreflang
+   language mismatch (1) are cleared after the 2026-10-08 fixes.
 9. Housekeeping, no urgency:
    - Delete the orphaned manual-deploy leftovers on the old Hostinger document root
      (`domains/indonesiaistimewastudio.id/public_html/allegra/` — `test.html` and any stray files
