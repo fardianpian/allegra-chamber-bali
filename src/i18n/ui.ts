@@ -3,9 +3,11 @@
 export const ui = {
 	en: {
 		meta: {
-			title: 'Wedding Musicians for Hire in Bali — Allegra Chamber Bali',
+			// Home targets the brand + "live piano & strings" category; "string quartet / wedding
+			// pianist for hire" is owned by /packages (packages.title) — don't duplicate it here.
+			title: 'Live Piano & Strings for Bali Weddings — Allegra Chamber Bali',
 			description:
-				'Live piano and strings for Bali weddings — from an intimate cliffside ceremony to a full string quartet reception, arranged around your story.',
+				'Conservatory-trained pianist and string ensemble for Bali weddings — from an intimate Uluwatu cliffside ceremony to a full string quartet reception.',
 		},
 		nav: {
 			home: 'Home',
@@ -20,9 +22,9 @@ export const ui = {
 			checkDate: 'Check Your Date',
 		},
 		hero: {
-			eyebrow: 'Live Piano & Strings · Bali Weddings',
+			eyebrow: 'Intimate · Timeless · Unforgettable',
 			title: 'Allegra Chamber Bali',
-			titleTagline: 'Wedding Musicians for Hire in Bali',
+			titleTagline: 'Live Piano & Strings for Bali Weddings',
 			subhead:
 				'Conservatory-trained wedding musicians performing live piano and strings across Bali — from an intimate Uluwatu cliffside ceremony to a full string quartet reception, arranged around your story.',
 			ctaPrimary: 'Check Your Date',
@@ -803,7 +805,7 @@ export const ui = {
 	},
 	id: {
 		meta: {
-			title: 'Allegra Chamber Bali — Musik Live untuk Pernikahan di Bali',
+			title: 'Piano & Gesek Live untuk Pernikahan di Bali — Allegra Chamber Bali',
 			description:
 				'Piano dan gesek live untuk pernikahan di Bali — dari upacara intim di tebing Uluwatu hingga resepsi string quartet, diaransemen mengikuti cerita Anda.',
 		},
@@ -820,9 +822,9 @@ export const ui = {
 			checkDate: 'Cek Tanggal Anda',
 		},
 		hero: {
-			eyebrow: 'Piano & Gesek Live · Pernikahan Bali',
+			eyebrow: 'Intim · Abadi · Tak Terlupakan',
 			title: 'Allegra Chamber Bali',
-			titleTagline: 'Musisi Pernikahan & Kuartet Gesek',
+			titleTagline: 'Piano & Gesek Live untuk Pernikahan di Bali',
 			subhead:
 				'Musisi terlatih membawakan musik piano dan gesek secara live untuk pernikahan di seluruh Bali — dari upacara intim di tebing hingga string quartet untuk resepsi, diaransemen khusus untuk momen Anda.',
 			ctaPrimary: 'Cek Tanggal Anda',
