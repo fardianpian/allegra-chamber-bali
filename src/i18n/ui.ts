@@ -101,6 +101,7 @@ export const ui = {
 			setLengthLabel: 'Set length',
 			setLengthTbd: 'Confirmed after inquiry',
 			ctaInquire: 'Inquire about this formation',
+			waInquire: "Hi Allegra Chamber Bali, I'd like to inquire about the {name} package for my wedding.",
 			musicianSingular: 'musician',
 			musicianPlural: 'musicians',
 			pricingNote:
@@ -903,6 +904,7 @@ export const ui = {
 			setLengthLabel: 'Durasi set',
 			setLengthTbd: 'Dikonfirmasi setelah tanya',
 			ctaInquire: 'Tanyakan formasi ini',
+			waInquire: 'Hai Allegra Chamber Bali, saya ingin menanyakan paket {name} untuk pernikahan saya.',
 			musicianSingular: 'musisi',
 			musicianPlural: 'musisi',
 			pricingNote:
