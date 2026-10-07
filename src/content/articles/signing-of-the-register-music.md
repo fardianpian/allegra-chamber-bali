@@ -6,6 +6,7 @@ excerpt: "The signing is a quiet pause in the ceremony — here's how to choose 
 pillar: 'piano-repertoire'
 targetKeyword: 'signing of the register songs'
 pubDate: 2026-10-07
+ogImage: '/images/og-signing-of-the-register-music.jpg'
 faq:
   - question: 'How many songs do we need for the signing?'
     answer: 'Usually one piece is enough — the signing itself generally runs two to five minutes. If it runs a little longer than expected, your musicians extend the same piece rather than switching to a second one.'

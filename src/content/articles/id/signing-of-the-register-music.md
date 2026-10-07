@@ -6,6 +6,7 @@ excerpt: 'Penandatanganan adalah jeda tenang dalam upacara — berikut cara memi
 pillar: 'piano-repertoire'
 targetKeyword: 'signing of the register songs'
 pubDate: 2026-10-07
+ogImage: '/images/og-signing-of-the-register-music.jpg'
 faq:
   - question: 'Berapa banyak lagu yang kami butuhkan untuk momen penandatanganan?'
     answer: 'Biasanya satu lagu sudah cukup — momen penandatanganan umumnya berlangsung dua hingga lima menit. Jika berjalan sedikit lebih lama dari perkiraan, musisi akan memperpanjang lagu yang sama, bukan berganti ke lagu kedua.'
