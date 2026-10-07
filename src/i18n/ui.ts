@@ -734,7 +734,7 @@ export const ui = {
 		pressPage: {
 			title: 'Press Kit — Live Wedding Music in Bali — Allegra Chamber Bali',
 			description:
-				'Press kit for Allegra Chamber Bali, a live piano and string ensemble for Bali weddings: fact sheet, approved descriptions, venue credits, photos, and logos.',
+				'Press kit for Allegra Chamber Bali, a live piano and string ensemble for Bali weddings: fact sheet, approved descriptions, high-resolution photos, and logos.',
 			eyebrow: 'Press & Media',
 			heading: 'Press Kit',
 			subhead:
@@ -767,12 +767,11 @@ export const ui = {
 			boilerplateShortLabel: 'Short · ~40 words',
 			boilerplateShort:
 				"Allegra Chamber Bali is a live piano and string ensemble for weddings across Bali. Conservatory-trained musicians perform in five formations, from solo piano to a ten-piece ensemble, with custom arrangements of each couple's own songs. An Indonesia Istimewa Studio ensemble.",
-			boilerplateLongLabel: 'Long · ~110 words',
+			boilerplateLongLabel: 'Long · ~100 words',
 			boilerplateLong:
-				"Allegra Chamber Bali brings live chamber music to weddings across Bali, from intimate cliffside ceremonies in Uluwatu to garden receptions in Ubud. Its conservatory-trained musicians perform in five formations: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and a ten-piece Large Ensemble. Piano is part of every ensemble formation as standard — it holds the harmony and rhythm while violin and cello carry the melody. Every booking includes custom arrangements of the couple's own songs, from the processional to the first dance. The ensemble has performed at venues including Alila Villas Uluwatu, Bvlgari Resort Bali, and Stone Villas Uluwatu, works in English and Indonesian, and is part of Indonesia Istimewa Studio.",
+				"Allegra Chamber Bali brings live chamber music to weddings across Bali, from intimate cliffside ceremonies in Uluwatu to garden receptions in Ubud. Its conservatory-trained musicians perform in five formations: Solo (violin, cello, or piano), Duo, Trio, String Quartet, and a ten-piece Large Ensemble. Piano is part of every ensemble formation as standard — it holds the harmony and rhythm while violin and cello carry the melody. Every booking includes custom arrangements of the couple's own songs, from the processional to the first dance. The ensemble works in English and Indonesian and is part of Indonesia Istimewa Studio.",
 			copyLabel: 'Copy text',
 			copiedLabel: 'Copied',
-			venuesHeading: 'Venue Credits',
 			photosHeading: 'Press Photos',
 			photosSubhead: 'High-resolution photos from real Allegra performances in Bali.',
 			photos: [
@@ -1544,7 +1543,7 @@ export const ui = {
 		pressPage: {
 			title: 'Press Kit — Musik Pernikahan Live di Bali — Allegra Chamber Bali',
 			description:
-				'Press kit Allegra Chamber Bali, ansambel piano dan gesek live untuk pernikahan di Bali: fakta singkat, deskripsi resmi, kredit venue, foto pers, dan logo.',
+				'Press kit Allegra Chamber Bali, ansambel piano dan gesek live untuk pernikahan di Bali: fakta singkat, deskripsi resmi, foto resolusi tinggi, dan logo.',
 			eyebrow: 'Pers & Media',
 			heading: 'Press Kit',
 			subhead:
@@ -1577,12 +1576,11 @@ export const ui = {
 			boilerplateShortLabel: 'Pendek · ±40 kata',
 			boilerplateShort:
 				'Allegra Chamber Bali adalah ansambel piano dan gesek live untuk pernikahan di seluruh Bali. Musisi terlatih konservatori tampil dalam lima formasi, dari piano solo hingga ansambel sepuluh musisi, dengan aransemen khusus lagu pilihan setiap pasangan. Sebuah ansambel dari Indonesia Istimewa Studio.',
-			boilerplateLongLabel: 'Panjang · ±110 kata',
+			boilerplateLongLabel: 'Panjang · ±90 kata',
 			boilerplateLong:
-				'Allegra Chamber Bali menghadirkan musik kamar live untuk pernikahan di seluruh Bali, dari upacara intim di tebing Uluwatu hingga resepsi taman di Ubud. Musisi terlatih konservatorinya tampil dalam lima formasi: Solo (biola, cello, atau piano), Duo, Trio, String Quartet, dan Large Ensemble sepuluh musisi. Piano sudah termasuk di setiap formasi ansambel — piano menjaga harmoni dan ritme, sementara biola dan cello membawakan melodi. Setiap booking sudah termasuk aransemen khusus lagu pilihan pasangan, dari prosesi hingga tarian pertama. Ansambel ini pernah tampil di venue seperti Alila Villas Uluwatu, Bvlgari Resort Bali, dan Stone Villas Uluwatu, melayani dalam bahasa Inggris dan Indonesia, dan merupakan bagian dari Indonesia Istimewa Studio.',
+				'Allegra Chamber Bali menghadirkan musik kamar live untuk pernikahan di seluruh Bali, dari upacara intim di tebing Uluwatu hingga resepsi taman di Ubud. Musisi terlatih konservatorinya tampil dalam lima formasi: Solo (biola, cello, atau piano), Duo, Trio, String Quartet, dan Large Ensemble sepuluh musisi. Piano sudah termasuk di setiap formasi ansambel — piano menjaga harmoni dan ritme, sementara biola dan cello membawakan melodi. Setiap booking sudah termasuk aransemen khusus lagu pilihan pasangan, dari prosesi hingga tarian pertama. Ansambel ini melayani dalam bahasa Inggris dan Indonesia, dan merupakan bagian dari Indonesia Istimewa Studio.',
 			copyLabel: 'Salin teks',
 			copiedLabel: 'Tersalin',
-			venuesHeading: 'Kredit Venue',
 			photosHeading: 'Foto Pers',
 			photosSubhead: 'Foto resolusi tinggi dari penampilan nyata Allegra di Bali.',
 			photos: [

@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets'
-import { getCollection } from 'astro:content'
 import SectionHeading from '../ui/SectionHeading.astro'
 import Button from '../ui/Button.astro'
 import { useTranslations } from '../../i18n/utils'
@@ -17,7 +16,6 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const page = t('pressPage')
-const venues = await getCollection('venues')
 
 // Downloads live in public/press/ and are produced by scripts/generate-press-kit.mjs —
 // keep `file` + `size` in sync with that script's PHOTOS list and its console output.
@@ -70,10 +68,6 @@ const mailto = `mailto:${site.contactEmail}?subject=${encodeURIComponent(page.co
 					</div>
 				))
 			}
-			<div class="grid gap-1 py-4 md:grid-cols-[12rem_1fr] md:gap-8">
-				<dt class="text-xs uppercase tracking-[0.1em] text-taupe md:pt-1">{page.venuesHeading}</dt>
-				<dd>{venues.map((v) => `${v.data.name}`).join(' · ')}</dd>
-			</div>
 			<div class="grid gap-1 py-4 md:grid-cols-[12rem_1fr] md:gap-8">
 				<dt class="text-xs uppercase tracking-[0.1em] text-taupe md:pt-1">Web</dt>
 				<dd>
