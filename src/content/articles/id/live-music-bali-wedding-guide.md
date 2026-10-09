@@ -87,7 +87,8 @@ pemberkatan atau pertukaran sumpah, dan resesi saat Anda meninggalkan altar. Dal
 Anda bisa memilih repertoar klasik, aransemen film atau pop, atau versi khusus dari lagu yang
 bermakna bagi cerita Anda — tarian pertama yang diaransemen untuk string adalah permintaan khusus
 yang umum. Jelajahi [Repertoar](/id/repertoire/) untuk inspirasi, atau kirimkan daftar lagu Anda
-sendiri setelah formasi ditentukan.
+sendiri setelah formasi ditentukan. Untuk melihat bagaimana momen-momen upacara ini berurutan
+dengan cocktail hour, resepsi, dan sisa hari Anda, lihat [linimasa musik pernikahan](/id/journal/wedding-music-timeline/) kami.
 
 ## Logistik Venue Outdoor di Bali: Tebing, Pantai, Taman, dan Kapel
 

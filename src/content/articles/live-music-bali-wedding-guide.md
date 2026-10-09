@@ -85,7 +85,8 @@ during the signing or vow exchange, and the recessional as you leave. Within tha
 can choose classical repertoire, a film or pop arrangement, or a custom version of a song specific
 to your story — a first dance arranged for strings is a common custom request.
 Browse [Repertoire](/repertoire/) for ideas, or send your own list once you've settled on a
-formation.
+formation. For how these ceremony moments line up against cocktail hour, reception, and the rest
+of your day, see our [wedding music timeline](/journal/wedding-music-timeline/).
 
 ## Outdoor Venue Logistics in Bali: Cliffside, Beach, Garden, and Chapel
 
