@@ -6,6 +6,7 @@ excerpt: 'Setiap momen musikal di hari pernikahan, berurutan, lengkap dengan per
 pillar: 'planning'
 targetKeyword: 'wedding music timeline'
 pubDate: 2026-10-09
+ogImage: '/images/og-wedding-music-timeline.jpg'
 faq:
   - question: 'Berapa banyak musik upacara yang kami butuhkan untuk hari pernikahan?'
     answer: 'Sebagian besar upacara membutuhkan sekitar 15 hingga 20 menit musik untuk prelude, prosesi, penandatanganan, dan resesional. Cocktail hour dan sesi resepsi biasanya dipesan terpisah, dalam blok waktu yang lebih panjang dan berkelanjutan.'

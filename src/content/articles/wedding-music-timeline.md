@@ -6,6 +6,7 @@ excerpt: 'Every musical moment of the wedding day in order, and how long each on
 pillar: 'planning'
 targetKeyword: 'wedding music timeline'
 pubDate: 2026-10-09
+ogImage: '/images/og-wedding-music-timeline.jpg'
 faq:
   - question: 'How much ceremony music do we need for our wedding day?'
     answer: 'Most ceremonies need about 15 to 20 minutes of music across the prelude, processional, signing, and recessional. Cocktail hour and reception sets are usually booked separately, in longer continuous blocks.'
