@@ -165,6 +165,7 @@ musician on stage):
    replace.
 2. **Travel fee per Bali zone** — explicitly still TBC per `CLAUDE.md`; don't invent a number.
 3. **Deposit policy** — also still TBC per `CLAUDE.md` § Open questions.
+   Research + draft options (2026-10-09, not owner-approved): `docs/PAYMENT-TERMS-RESEARCH-2026-10.md`.
 4. **Owner sign-off** — once 1–3 are resolved, decide whether/when to lift the site-wide pricing
    hide (currently intentional, locked decision) vs. keep this as B2B-quote-only material
    indefinitely (which is what every direct Bali competitor researched here actually does).
