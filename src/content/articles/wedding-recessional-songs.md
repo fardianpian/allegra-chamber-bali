@@ -6,6 +6,7 @@ excerpt: 'The recessional is the first music you hear as a married couple — cl
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding recessional songs'
 pubDate: 2026-10-12
+ogImage: '/images/og-wedding-recessional-songs.jpg'
 faq:
   - question: 'What are the best recessional songs for a wedding?'
     answer: "Classical choices include Mendelssohn's Wedding March, Vivaldi's Spring — Allegro, and Mozart's Eine Kleine Nachtmusik — Allegro; for something more upbeat, L.O.V.E. by Nat King Cole, Marry You by Bruno Mars, and Love Story by Taylor Swift all work well arranged for piano and strings. Or send us your own song — custom arrangements are included in every booking."

@@ -6,6 +6,7 @@ excerpt: 'Recessional adalah musik pertama yang Anda dengar sebagai pasangan sua
 pillar: 'piano-repertoire'
 targetKeyword: 'wedding recessional songs'
 pubDate: 2026-10-12
+ogImage: '/images/og-wedding-recessional-songs.jpg'
 faq:
   - question: 'Apa lagu recessional terbaik untuk pernikahan?'
     answer: 'Pilihan klasik antara lain Wedding March karya Mendelssohn, Spring — Allegro karya Vivaldi, dan Eine Kleine Nachtmusik — Allegro karya Mozart; untuk sesuatu yang lebih upbeat, L.O.V.E. dari Nat King Cole, Marry You dari Bruno Mars, dan Love Story dari Taylor Swift semuanya cocok diaransemen untuk piano dan gesek. Atau kirim lagu pilihan Anda sendiri — aransemen khusus sudah termasuk di setiap booking.'
