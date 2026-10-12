@@ -46,7 +46,7 @@
 | 16  | done     | outdoor-wedding-rain-plan-live-music    | for-planners     | A Rain Plan for Live Music at an Outdoor Wedding — Allegra Chamber Bali      | 2026-10-05    |
 | 17  | done     | signing-of-the-register-music           | piano-repertoire | Music for Signing the Register — Allegra Chamber Bali                        | 2026-10-07    |
 | 18  | done     | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         | 2026-10-09    |
-| 19  | todo     | wedding-recessional-songs               | piano-repertoire | Wedding Recessional Songs for Your Ceremony Exit — Allegra Chamber Bali      |               |
+| 19  | done     | wedding-recessional-songs               | piano-repertoire | Wedding Recessional Songs for Your Ceremony Exit — Allegra Chamber Bali      | 2026-10-12    |
 | 20  | todo     | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          |               |
 | 21  | todo     | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
 | 22  | proposed | instrumental-wedding-songs              | piano-repertoire | Instrumental Wedding Songs for Your Ceremony — Allegra Chamber Bali          |               |
