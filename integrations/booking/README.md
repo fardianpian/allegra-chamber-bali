@@ -201,7 +201,37 @@ both places until that script is retired.
   day. Each Booking Terms run creates 2 temporary Docs.
 - Spam protection: the link is private, the page is `noindex` and not in the sitemap, and the form
   has a honeypot field. Values that start with `=`, `+`, `-` or `@` are written as text, never as
-  spreadsheet formulas.
+  spreadsheet formulas. The `/exec` URL itself is public, so `doPost` also refuses:
+  - a **repeat** of an open request (same email + wedding date, status Held / Pending review /
+    Confirmed / Paid in full). The couple is told their reference is in the earlier email and to
+    use WhatsApp for changes. No row, no email.
+  - anything past the **daily caps** in `CONFIG`: `MAX_SUBMISSIONS_PER_DAY` (15) and
+    `MAX_SUBMISSIONS_PER_EMAIL_PER_DAY` (3), counted from today's `Submitted at` rows. The couple
+    is asked to message on WhatsApp, and Allegra gets **one** alert email (at most every 6 hours).
+    Refused submissions add no row, so they never count. Fake rows: set them to `Cancelled`; the
+    form opens again the next day.
+  - with **Cloudflare Turnstile** switched on (below), a submission without a valid Turnstile token.
+
+### Cloudflare Turnstile (optional, recommended)
+
+A free, invisible-in-most-cases "are you human" check. Off until both keys are set; set them in
+this order so the live form never breaks:
+
+1. Cloudflare dashboard → **Turnstile → Add widget**. Name `Allegra Lock Your Date`, hostnames
+   `allegrachamberbali.com` and `allegra-chamber-bali.pages.dev` (preview builds), mode
+   **Managed**. Copy the **Site key** and the **Secret key**.
+2. Cloudflare Pages → Settings → Environment variables → add `PUBLIC_TURNSTILE_SITE_KEY` = the site
+   key, for **Production and Preview**, then redeploy (or push any commit). The form now shows the
+   widget; the script still ignores the token.
+3. Apps Script → paste the current `Code.gs` → **Project Settings → Script properties** → add
+   `TURNSTILE_SECRET` = the secret key. In the editor, run `setup` once and allow the new
+   "connect to an external service" permission (the check calls Cloudflare), then **Deploy →
+   Manage deployments → Edit → New version**.
+4. Test from a real browser on the live page (an automated browser may be blocked by the check).
+
+To switch it off, delete the `TURNSTILE_SECRET` property first, then the Pages env var. A secret
+without the site key on the page makes every submission fail with "complete the security check".
+
 - Personal data stays in the Allegra Google account. The privacy policy (`/privacy`, EN + ID)
   covers this form. The consent checkbox and its timestamp are recorded in the `Consent` column
   (UU 27/2022 PDP: consent must be explicit and recorded).

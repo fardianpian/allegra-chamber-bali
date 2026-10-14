@@ -226,6 +226,19 @@ const sessions = [
 							</span>
 						</label>
 
+						{site.turnstileSiteKey && (
+							<>
+								<div
+									class="cf-turnstile"
+									data-sitekey={site.turnstileSiteKey}
+									data-language={lang}
+									data-theme="light"
+									data-size="flexible"
+								/>
+								<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
+							</>
+						)}
+
 						<p data-form-error class="hidden text-sm text-[#9b3b2a]" role="alert" />
 
 						<button
@@ -302,9 +315,15 @@ const sessions = [
 				errorBox.classList.remove('hidden')
 				return
 			}
+			const data = new FormData(form)
+			// Turnstile (when enabled) adds its token to the form once the check passes.
+			if (form.querySelector('.cf-turnstile') && !data.get('cf-turnstile-response')) {
+				errorBox.textContent = errors.verify
+				errorBox.classList.remove('hidden')
+				return
+			}
 			button.disabled = true
 			button.textContent = button.dataset.sending || label
-			const data = new FormData(form)
 			data.append('mode', 'js')
 			try {
 				const res = await fetch(form.action, { method: 'POST', body: data })
@@ -329,6 +348,8 @@ const sessions = [
 				errorBox.classList.remove('hidden')
 				button.disabled = false
 				button.textContent = label
+				// A Turnstile token works once; get a fresh one for the next try.
+				;(window as unknown as { turnstile?: { reset: () => void } }).turnstile?.reset()
 			}
 		})
 	}

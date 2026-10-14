@@ -458,6 +458,10 @@ export const ui = {
 				consent: 'Please tick the consent box to continue.',
 				terms: 'Please confirm that you agree to the booking terms.',
 				server: 'Something went wrong on our side. Please try again, or message us on WhatsApp.',
+				verify: 'Please complete the security check above the button, then send again.',
+				duplicate:
+					'We already have your request for this date, and your reference is in our confirmation email. To change any details, please message us on WhatsApp.',
+				busy: 'We cannot take more online requests today. Please message us on WhatsApp, and Yessica will hold your date for you.',
 			},
 			ctaWhatsapp: 'Message Us on WhatsApp',
 			unavailable:
@@ -805,6 +809,7 @@ export const ui = {
 					items: [
 						'Web3Forms: our contact, partnership, and planner download forms are processed by Web3Forms, a third-party form delivery service, which forwards your submission to our email. See their privacy policy for how they handle data in transit.',
 						'Google (Sheets & Gmail): the Lock Your Date form is processed by a Google Apps Script owned by Allegra Chamber Bali, which records your details in our private Google Sheet and sends your confirmation email from our Gmail account. Google processes this data under its own privacy policy.',
+						'Cloudflare Turnstile: the Lock Your Date form may use Cloudflare Turnstile to check that a request comes from a person, not an automated script. For this check Cloudflare processes limited technical data, such as your IP address and browser details, under its own privacy policy.',
 						"WhatsApp (Meta): messages sent via our WhatsApp link are handled according to WhatsApp's own privacy policy, not ours.",
 						'Hosting: this website is hosted on Cloudflare Pages — standard server logs (e.g. IP address, browser type) may be retained briefly for security purposes. Domain registration, DNS, and email remain with Hostinger.',
 						'Google Analytics (GA4): we use Google Analytics to understand how visitors use this site — for example, which pages are viewed and how often the WhatsApp button is tapped. Google processes this usage data under its own privacy policy. We do not use any advertising or remarketing scripts.',
@@ -1400,6 +1405,10 @@ export const ui = {
 				consent: 'Mohon centang kotak persetujuan untuk melanjutkan.',
 				terms: 'Mohon konfirmasi bahwa Anda menyetujui ketentuan booking.',
 				server: 'Terjadi kendala di sistem kami. Silakan coba lagi, atau kirim pesan via WhatsApp.',
+				verify: 'Mohon selesaikan pemeriksaan keamanan di atas tombol, lalu kirim kembali.',
+				duplicate:
+					'Permintaan Anda untuk tanggal ini sudah kami terima, dan nomor referensinya ada di email konfirmasi kami. Untuk mengubah data, silakan kirim pesan via WhatsApp.',
+				busy: 'Hari ini kami tidak dapat menerima permintaan online lagi. Silakan kirim pesan via WhatsApp, dan Yessica akan menahan tanggal Anda.',
 			},
 			ctaWhatsapp: 'Kirim Pesan via WhatsApp',
 			unavailable:
@@ -1752,6 +1761,7 @@ export const ui = {
 					items: [
 						'Web3Forms: form kontak, partnership, dan unduhan planner kami diproses oleh Web3Forms, layanan pengiriman form pihak ketiga, yang meneruskan submission Anda ke email kami. Lihat kebijakan privasi mereka untuk cara mereka menangani data saat transit.',
 						'Google (Sheets & Gmail): formulir Kunci Tanggal diproses oleh Google Apps Script milik Allegra Chamber Bali, yang mencatat data Anda di Google Sheet privat kami dan mengirim email konfirmasi dari akun Gmail kami. Google memproses data ini sesuai kebijakan privasinya sendiri.',
+						'Cloudflare Turnstile: formulir Kunci Tanggal dapat menggunakan Cloudflare Turnstile untuk memastikan permintaan dikirim oleh manusia, bukan script otomatis. Untuk pemeriksaan ini Cloudflare memproses data teknis terbatas, seperti alamat IP dan detail browser Anda, sesuai kebijakan privasinya sendiri.',
 						'WhatsApp (Meta): pesan yang dikirim via tautan WhatsApp kami ditangani sesuai kebijakan privasi WhatsApp sendiri, bukan kebijakan kami.',
 						'Hosting: website ini dihosting di Cloudflare Pages — log server standar (misalnya alamat IP, jenis browser) mungkin disimpan sebentar untuk keperluan keamanan. Registrasi domain, DNS, dan email kami tetap berada di Hostinger.',
 						'Google Analytics (GA4): kami menggunakan Google Analytics untuk memahami bagaimana pengunjung menggunakan website ini — misalnya, halaman mana yang dilihat dan seberapa sering tombol WhatsApp diketuk. Google memproses data penggunaan ini sesuai kebijakan privasinya sendiri. Kami tidak menggunakan script iklan atau remarketing apa pun.',
