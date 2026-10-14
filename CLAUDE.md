@@ -39,6 +39,22 @@ Languages: **English (primary) + Indonesian (secondary)**.
 - No ESP/CRM exists yet — WhatsApp is the only live comms channel, so output from `emails`/`sms`
   skills is draft-only until an ESP/CRM is chosen.
 
+## Business PRD
+
+- The owner's business PRD (segments, offer, inquiry→booking flow, P0/P1/P2 requirements, KPIs,
+  roadmap to the 2027 season, open decisions) lives **only in Notion**: "PRD Bisnis — Allegra
+  Chamber Bali", page id `a5e98a2832d24deba3d3c45e922dff97` (under "Allegra Chamber Bali —
+  Business Hub"). Read it via the Notion MCP `notion-fetch` tool, on-demand only, when a task
+  touches business priorities, KPIs, or which requirement to work on next.
+- **Never copy it into this repo** — the repo is public, and the PRD holds internal gaps, risks,
+  commission/capacity questions, and KPI targets. Code-facing PRD items are tracked as normal
+  entries in `docs/PROGRESS.md` "Next steps", citing the PRD requirement id (e.g. D4, F1).
+- Authority split: this CLAUDE.md wins on technical state (domain, hosting, what the site shows);
+  the PRD wins on business priorities. If they drift (as v1.0 did on the domain migration, custom
+  arrangements, form email, and pricing visibility), flag it to the owner and offer to update the
+  Notion page, don't silently follow the stale side. The PRD's "show prices on the site" question
+  is an open decision there — the no-prices rule below still applies until the owner decides.
+
 ## Confirmed decisions (locked)
 
 - Domain (revised 2026-10-07): **`allegrachamberbali.com`** (apex, canonical). Replaces the old
