@@ -39,3 +39,5 @@ Bisa — menggabungkan upacara dan cocktail hour menjadi satu pemesanan berkesin
 ## Apa yang Perlu Anda Sampaikan Soal Setup Cocktail Hour Anda
 
 Beberapa detail membantu kami merencanakan musik cocktail hour bersama upacara Anda: apakah lokasinya sama dengan upacara atau area terpisah, kira-kira berapa lama durasi yang Anda inginkan, dan lagu atau suasana tertentu yang ingin Anda sertakan di luar pilihan standar kami. Jika cocktail hour berpindah ke area venue yang berbeda — taman atau teras yang terpisah dari area upacara — beri tahu kami agar kami bisa merencanakan setup dan akses untuk lokasi kedua tersebut. Sampaikan detail ini saat Anda [menghubungi kami](/id/contact/) atau sertakan dalam pertanyaan pemesanan Anda, dan kami akan memastikan cakupan serta struktur sesi bersama.
+
+Cocktail hour bukan satu-satunya bagian resepsi yang butuh rencana musiknya sendiri — begitu tamu duduk untuk makan, [panduan musik live untuk makan malam resepsi pernikahan Anda](/id/journal/wedding-reception-dinner-music/) kami membahas bagaimana volume dan repertoar berubah lagi untuk makan malam.

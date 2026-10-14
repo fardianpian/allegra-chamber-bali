@@ -46,7 +46,7 @@ That said, when it's the most efficient way to confirm a detail — an outlet lo
 
 ## What This Means for Formation and Repertoire Choices
 
-A resort ballroom's fuller, more contained sound suits a fuller formation well: a String Quartet or our Large Ensemble fills a larger reception room without needing amplification in most setups, while a Duo or Trio still works comfortably for a smaller indoor ceremony space. Repertoire choices don't need to change just because you've moved indoors — the same custom arrangements and song requests apply.
+A resort ballroom's fuller, more contained sound suits a fuller formation well: a String Quartet or our Large Ensemble fills a larger reception room without needing amplification in most setups, while a Duo or Trio still works comfortably for a smaller indoor ceremony space. Repertoire choices don't need to change just because you've moved indoors — the same custom arrangements and song requests apply. If your ballroom booking continues into the reception itself, our [guide to live music for your wedding reception dinner](/journal/wedding-reception-dinner-music/) covers how volume and repertoire shift once dinner starts.
 
 | Ballroom Element                     | What It Changes                             | What We Adjust                                  |
 | ------------------------------------ | ------------------------------------------- | ----------------------------------------------- |

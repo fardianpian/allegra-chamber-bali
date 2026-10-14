@@ -46,7 +46,7 @@ Meski begitu, saat itu menjadi cara paling efisien untuk mengonfirmasi suatu det
 
 ## Apa Artinya Ini untuk Pilihan Formasi dan Repertoar
 
-Suara ballroom resort yang lebih penuh dan lebih tertahan cocok dengan formasi yang lebih penuh: String Quartet atau Large Ensemble kami mengisi ruang resepsi yang lebih besar tanpa membutuhkan amplifikasi di sebagian besar setup, sementara Duo atau Trio tetap nyaman untuk ruang upacara indoor yang lebih kecil. Pilihan repertoar tidak perlu berubah hanya karena Anda pindah ke dalam ruangan — aransemen khusus dan permintaan lagu yang sama tetap berlaku.
+Suara ballroom resort yang lebih penuh dan lebih tertahan cocok dengan formasi yang lebih penuh: String Quartet atau Large Ensemble kami mengisi ruang resepsi yang lebih besar tanpa membutuhkan amplifikasi di sebagian besar setup, sementara Duo atau Trio tetap nyaman untuk ruang upacara indoor yang lebih kecil. Pilihan repertoar tidak perlu berubah hanya karena Anda pindah ke dalam ruangan — aransemen khusus dan permintaan lagu yang sama tetap berlaku. Kalau booking ballroom Anda berlanjut sampai resepsi, [panduan musik live untuk makan malam resepsi pernikahan Anda](/id/journal/wedding-reception-dinner-music/) kami membahas bagaimana volume dan repertoar berubah begitu makan malam dimulai.
 
 | Elemen Ballroom                          | Yang Berubah                                   | Yang Kami Sesuaikan                         |
 | ---------------------------------------- | ---------------------------------------------- | ------------------------------------------- |
