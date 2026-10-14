@@ -35,7 +35,8 @@ After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has 
 1. ~~Create the Sheet and deploy the Apps Script~~ — done 2026-10-14. The Sheet "Allegra Booking
    Register" is owned by allegrachamberbali@gmail.com; the Web App is deployed with access
    "Anyone"; its `/exec` URL is the fallback in `src/lib/site.ts`.
-2. Do a real browser and inbox test.
+2. ~~Do a real browser and inbox test~~. Done 2026-10-14 by the owner on the preview: the row was
+   recorded in the Sheet and the email arrived.
 3. Fill in the bank details.
 4. Have a lawyer review the terms.
 
