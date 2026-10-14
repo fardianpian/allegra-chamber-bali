@@ -26,7 +26,7 @@ the owner's go-ahead, Claude updated the Notion page to v1.1 to match the repo, 
 - The hidden page `/lock-your-date/` (EN + ID, noindex, not in the sitemap). Couples hold their date
   with no payment.
 - `integrations/booking/Code.gs`: a Google Apps Script bound to the booking-register Sheet. It
-  records each couple, emails them as Yessica (hold deadline and dated terms), notifies Allegra,
+  records each couple, emails them as Yessica (hold deadline and booking details; full terms go in the PDF), notifies Allegra,
   and runs a daily reminder/expiry check.
 
 After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has drifted.

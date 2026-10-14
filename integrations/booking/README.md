@@ -7,8 +7,10 @@ payment. It does three things:
 1. Adds a row to the **Allegra Booking Register** (a Google Sheet) with status `Held`, or
    `Pending review` if the date already has an active booking.
 2. Emails the couple from the Allegra Gmail account, signed by Yessica. The email says how long the
-   date is held (7 days), the deadline to pay the deposit, and summarises the booking terms with
-   real calendar dates.
+   date is held (7 days), the deadline to pay the deposit, the booking details, and that the quote
+   and full booking terms follow within 24 hours. It is short on purpose: the first live test landed
+   in Gmail Spam, and payment/bank wording from a new sender reads like phishing. The terms and bank
+   details travel in the Booking Terms PDF instead.
 3. Emails `allegrachamberbali@gmail.com` a notification about the new submission.
 
 Each morning at 09:00 WITA a daily job runs. It sends the couple **one** reminder 2 days before

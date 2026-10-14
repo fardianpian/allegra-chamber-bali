@@ -284,8 +284,8 @@ sengketa) sengaja belum dimasukkan — tunggu review advokat/notaris.
 
 **Update 2026-10-14 (feat/lock-your-date):** langkah 1–2 di atas kini bisa lewat formulir
 privat `/lock-your-date/`. Pasangan mengisi nama dan detail acara, lalu Apps Script mencatatnya di
-Booking Register (Google Sheet) dan mengirim email dari Yessica berisi batas masa tahan dan ringkasan
-ketentuan. PDF Booking Terms (dengan nominal dan rekening) tetap dikirim manual. Setup ada di
+Booking Register (Google Sheet) dan mengirim email dari Yessica berisi batas masa tahan dan detail booking
+(diringkas 2026-10-14 karena uji pertama masuk Spam; ketentuan lengkap ada di PDF). PDF Booking Terms (dengan nominal dan rekening) tetap dikirim manual. Setup ada di
 `integrations/booking/README.md`. Nilai `TERMS` kini disimpan di `src/data/booking-terms.json`.
 
 ## 9. Sumber

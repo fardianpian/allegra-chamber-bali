@@ -5,7 +5,7 @@
  * Web App. The static site's /lock-your-date/ form posts here. For each submission it:
  *   1. records the couple in the "Bookings" sheet (no payment is taken),
  *   2. emails the couple, signed by the correspondent: date held until when, the deadline to
- *      complete the booking, and a summary of the booking terms with real calendar dates,
+ *      complete the booking and the booking details (the full terms follow in the PDF with the quote),
  *   3. notifies Allegra, flagging a clash with another booking on the same date.
  * A daily trigger sends one gentle reminder before the hold ends, and tells Allegra when a hold
  * has expired — the date is never released automatically; the correspondent decides.
@@ -522,134 +522,44 @@ function coupleEmail_(b, plan) {
 	]
 	if (b.planner) details.push([id ? 'Planner / WO' : 'Planner', b.planner])
 
-	const keep = (t) =>
-		t.keepPct === 100
-			? id
-				? 'Total penuh'
-				: 'The full total'
-			: t.keepPct
-				? id
-					? `${t.keepPct}% dari total`
-					: `${t.keepPct}% of the total`
-				: (id ? `Deposit (${TERMS.depositPct}%)` : `The deposit (${TERMS.depositPct}%)`) +
-					(t.credit
-						? id
-							? ` — atau seluruh deposit menjadi kredit untuk tanggal baru sebelum ${f.date(plan.creditUntil)}`
-							: ` — or the full deposit kept as credit for a new date before ${f.date(plan.creditUntil)}`
-						: '')
-	const when = (t) =>
-		!t.from
-			? `${id ? 'Sampai' : 'Up to'} ${f.date(t.to)}`
-			: !t.to
-				? `${id ? 'Mulai' : 'From'} ${f.date(t.from)}`
-				: `${f.date(t.from)} – ${f.date(t.to)}`
-
-	const schedule = plan.shortNotice
-		? [[id ? 'Pembayaran penuh' : 'Full payment', `${id ? 'paling lambat' : 'by'} ${f.date(plan.holdUntil)}`]]
-		: [
-				[
-					id
-						? `Deposit booking (${TERMS.depositPct}% dari total)`
-						: `Booking deposit (${TERMS.depositPct}% of your total)`,
-					`${id ? 'paling lambat' : 'by'} ${f.date(plan.holdUntil)}`,
-				],
-				[
-					id ? `Pelunasan (${100 - TERMS.depositPct}%)` : `Balance (${100 - TERMS.depositPct}%)`,
-					`${id ? 'paling lambat' : 'by'} ${f.date(plan.balanceDue)}`,
-				],
-			]
-
-	const changes = []
-	if (plan.coolingOff)
-		changes.push(
-			id
-				? `Berubah pikiran? Dalam ${TERMS.coolingOffHours} jam setelah membayar deposit, deposit kami kembalikan penuh (dikurangi biaya transfer bank, bila ada).`
-				: `Change of heart? Within ${TERMS.coolingOffHours} hours of paying your deposit, we refund it in full (less any bank transfer fees).`,
-		)
-	changes.push(['table', plan.tiers.map((t) => [when(t), keep(t)])])
-	changes.push(
-		id
-			? 'Kelebihan dari jumlah yang sudah Anda bayar kami kembalikan. Jika tanggal Anda berhasil kami isi dengan pasangan lain, kami hanya menahan biaya yang sudah benar-benar keluar. Mengurangi formasi atau sesi diperlakukan sebagai pembatalan sebagian dengan jadwal yang sama.'
-			: 'Anything you have paid above this is refunded. If we are able to book your date with another couple, we keep only the costs already incurred. Reducing your formation or sessions is treated as a partial cancellation on the same schedule.',
-	)
-	if (plan.dateChangeBy)
-		changes.push(
-			id
-				? `Pindah tanggal: satu kali tanpa biaya bila diminta paling lambat ${f.date(plan.dateChangeBy)} dan tanggal baru tersedia; deposit pindah utuh.`
-				: `Changing your date: once, free of charge, if requested by ${f.date(plan.dateChangeBy)} and the new date is available; your deposit moves in full.`,
-		)
-	if (!plan.shortNotice)
-		changes.push(
-			id
-				? `Bila pelunasan belum kami terima hingga ${f.date(plan.lateCutoff)}, kami akan menghubungi Anda; setelah itu tanggal dapat kami lepas dan deposit ditahan sebagai biaya pembatalan.`
-				: `If the balance hasn't arrived by ${f.date(plan.lateCutoff)}, we'll reach out; after that we may release your date, and the deposit is kept as the cancellation charge.`,
-		)
-
+	// Kept short on purpose (owner direction 2026-10-14): the first test landed in Gmail Spam, and a
+	// long email from a new sender full of payment, bank and card wording reads like phishing. The
+	// payment schedule, cancellation table and bank details travel in the Booking Terms PDF that
+	// the correspondent sends with the quote (scripts/generate-booking-terms.mjs).
 	const intro = pending
 		? id
-			? `Terima kasih sudah meluangkan waktu mengisi formulir. Kami sudah menerima permintaan Anda untuk ${f.long(plan.wedding)} dengan referensi ${b.reference}. Tanggal ini sudah memiliki permintaan booking lain, jadi saya sedang mengecek apakah kami juga dapat menahannya untuk Anda. Saya akan mengonfirmasi dalam 24 jam. Belum ada pembayaran yang diminta.`
-			: `Thank you for taking a moment to fill in the form. We've received your request for ${f.long(plan.wedding)} under reference ${b.reference}. We already have another booking request for this date, so I'm checking whether we can hold it for you as well, and I'll confirm within 24 hours. No payment has been taken.`
+			? `Terima kasih sudah meluangkan waktu mengisi formulir. Kami sudah menerima permintaan Anda untuk ${f.long(plan.wedding)} dengan referensi ${b.reference}. Tanggal ini sudah memiliki permintaan booking lain, jadi saya sedang mengecek apakah kami juga dapat menahannya untuk Anda. Saya akan mengonfirmasi dalam 24 jam.`
+			: `Thank you for taking a moment to fill in the form. We've received your request for ${f.long(plan.wedding)} under reference ${b.reference}. We already have another booking request for this date, so I'm checking whether we can hold it for you as well, and I'll confirm within 24 hours.`
 		: id
-			? `Terima kasih sudah meluangkan waktu mengisi formulir. Tanggal pernikahan Anda, ${f.long(plan.wedding)}, kini kami tahan atas nama Anda dengan referensi ${b.reference}. Belum ada pembayaran yang diminta.`
-			: `Thank you for taking a moment to fill in the form. Your wedding date, ${f.long(plan.wedding)}, is now held for you under reference ${b.reference}. No payment has been taken.`
+			? `Terima kasih sudah meluangkan waktu mengisi formulir. Tanggal pernikahan Anda, ${f.long(plan.wedding)}, kini kami tahan atas nama Anda dengan referensi ${b.reference}.`
+			: `Thank you for taking a moment to fill in the form. Your wedding date, ${f.long(plan.wedding)}, is now held for you under reference ${b.reference}.`
 
 	const sections = [
 		['', [intro]],
 		[
-			id ? 'Kapan booking perlu diselesaikan' : 'When to complete your booking',
+			id ? 'Langkah selanjutnya' : 'What happens next',
 			pending
 				? [
 						id
-							? 'Bila tanggal dapat kami tahan, saya kirim konfirmasinya beserta quote dan detail pembayaran. Booking selesai setelah deposit diterima.'
-							: "If we can hold the date, I'll send the confirmation with your quote and payment details. Your booking is complete once the deposit arrives.",
+							? 'Bila tanggal dapat kami tahan, saya kirim konfirmasinya beserta quote dan ketentuan booking lengkap.'
+							: "If we can hold the date, I'll send the confirmation together with your quote and full booking terms.",
 					]
 				: [
 						id
-							? `Tanggal Anda kami tahan hingga ${f.long(plan.holdUntil)}. Untuk menyelesaikan booking, deposit perlu kami terima paling lambat tanggal tersebut.`
-							: `Your date is held until ${f.long(plan.holdUntil)}. To complete your booking, the deposit needs to arrive by then.`,
+							? `Tanggal Anda kami tahan hingga ${f.long(plan.holdUntil)}. Booking selesai setelah deposit kami terima paling lambat tanggal tersebut.`
+							: `Your date is held until ${f.long(plan.holdUntil)}. Your booking is complete once the deposit arrives by then.`,
 						id
-							? 'Dalam 24 jam saya kirim quote, Ketentuan Booking lengkap (dengan nominal dan detail rekening), dan cara pembayaran lewat WhatsApp atau email.'
-							: "Within 24 hours I'll send your quote, your full Booking Terms (with the amounts and our bank details) and how to pay, on WhatsApp or by email.",
+							? 'Dalam 24 jam saya kirim quote dan ketentuan booking lengkap Anda lewat WhatsApp atau email.'
+							: "Within 24 hours I'll send your quote and full booking terms on WhatsApp or by email.",
 					],
 		],
 		[id ? 'Detail booking Anda' : 'Your booking details', [['table', details]]],
 		[
-			id ? 'Jadwal pembayaran' : 'Payment schedule',
+			'',
 			[
-				['table', schedule],
 				id
-					? 'Semua nominal dalam Rupiah (IDR). Pembayaran dapat dilakukan lewat transfer bank di Indonesia, Wise, atau transfer bank internasional (SWIFT).'
-					: 'All amounts are in Indonesian Rupiah (IDR). You can pay by bank transfer within Indonesia, by Wise, or by international bank transfer (SWIFT).',
-			],
-		],
-		[id ? 'Jika rencana Anda berubah' : 'If your plans change', changes],
-		[
-			id ? 'Ketentuan lainnya' : 'Other terms',
-			[
-				[
-					'list',
-					id
-						? [
-								'Aransemen khusus lagu pilihan Anda sudah termasuk, tanpa biaya tambahan.',
-								'Sound system tidak termasuk; amplifikasi, bila diperlukan, disediakan oleh penyedia sound venue atau planner Anda.',
-								`Bila kami membatalkan karena sebab di pihak kami, seluruh pembayaran Anda kami kembalikan dalam ${TERMS.refundWorkingDays} hari kerja.`,
-								'Hujan: musisi dan instrumen pindah ke area teduh yang disepakati lebih awal dengan planner atau venue. Hujan bukan alasan pembatalan.',
-								`Keadaan memaksa (bencana alam, penutupan resmi bandara atau akses, larangan acara oleh pemerintah, epidemi, kerusuhan): seluruh pembayaran menjadi kredit penuh untuk tanggal baru hingga ${f.date(plan.creditUntil)}, tanpa biaya.`,
-							]
-						: [
-								'Custom arrangements of your own songs are included, never a separate charge.',
-								"Sound system not included; amplification, when needed, comes from your venue's or planner's sound provider.",
-								`If we cancel for any reason on our side, everything you have paid is refunded within ${TERMS.refundWorkingDays} working days.`,
-								'Rain: musicians and instruments move to a covered spot agreed in advance with your planner or venue. Rain is not a reason to cancel.',
-								`Force majeure (natural disaster, official closure of the airport or access, a government restriction on events, epidemic, civil unrest): everything you have paid becomes full credit for a new date until ${f.date(plan.creditUntil)}, at no charge.`,
-							],
-				],
-				id
-					? 'Kami tidak pernah meminta data kartu, dan tidak pernah mengganti detail rekening lewat pesan. Jika Anda menerima detail pembayaran yang berbeda, hubungi kami dulu sebelum membayar.'
-					: 'We never ask for card details, and we never change our bank details by message. If you ever receive different payment details, contact us before paying.',
-				id
-					? `Ketentuan versi ${TERMS.version}. Bila ada yang kurang jelas, cukup balas email ini.`
-					: `Terms version ${TERMS.version}. If anything is unclear, simply reply to this email.`,
+					? 'Bila ada yang ingin ditanyakan, cukup balas email ini.'
+					: 'If you have any questions, simply reply to this email.',
 			],
 		],
 	]
