@@ -59,6 +59,12 @@ now: deposit or credit until H-91, the deposit from H-90 to H-15, the full total
 the deposit now equals 50%, the old separate 50% tier was merged into the deposit tier.
 `docs/PAYMENT-TERMS-RESEARCH-2026-10.md` still holds the 30% analysis; see its §8 update note.
 
+**Quotes dropdown + price list (owner, 2026-10-15).** A new `Items` sheet holds the price list.
+`setup` fills it once with 5 formations × 3 sessions plus the extra Large Ensemble musician, taken
+from `docs/Allegra-Chamber-Bali-Pricing.html` (July 2026). `Quotes` → `Item (EN)` is a dropdown of it.
+An `onEdit` simple trigger fills `Item (ID)` and `Amount` when an item is picked. A new `Agreed
+price (IDR)` column adds the "Special rate" line automatically, so a reduction is one row.
+
 **Terms before the form (owner, 2026-10-14).** `/lock-your-date/` now shows the booking terms first,
 generated from `booking-terms.json` with no couple-specific data. The form moved to
 `/lock-your-date/form/`. It needs a "we agree to the booking terms" tick, which arrives pre-ticked

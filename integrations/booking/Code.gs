@@ -113,11 +113,37 @@ const SESSIONS = {
 	dinner: { en: 'Dinner / Reception', id: 'Makan malam / Resepsi' },
 }
 
-// One row per price line: the reference it belongs to, the line in EN and ID, and the amount in
-// rupiah. A special rate is its own row with a negative amount, so the PDF shows the regular price,
-// the reduction and the agreed total.
+// One row per price line: the reference it belongs to, the line in EN and ID, the regular amount in
+// rupiah and, for a special rate, the agreed price. The PDF then shows the regular price, the
+// reduction and the agreed total. A negative-amount row ("Special rate", -1000000) also still works.
 const QUOTES_SHEET = 'Quotes'
-const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)']
+const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)', 'Agreed price (IDR)']
+
+// The price list Yessica picks from in Quotes. `setup` fills it once, from the owner's pricing sheet
+// (docs/Allegra-Chamber-Bali-Pricing.html, "Final pricing as of July 2026", durations from its table
+// note). After that the Items sheet is the source: edit, add or remove rows there, not here.
+const ITEMS_SHEET = 'Items'
+const ITEM_HEADERS = ['Item (EN)', 'Item (ID)', 'Default price (IDR)']
+const CATALOG_SESSIONS = [
+	{ en: 'ceremony (≈ 45 min)', id: 'upacara (≈ 45 menit)' },
+	{ en: 'cocktail hour (≈ 1 hr)', id: 'cocktail (≈ 1 jam)' },
+	{ en: 'dinner / reception (≈ 1.5 hrs)', id: 'makan malam / resepsi (≈ 1,5 jam)' },
+]
+// Ceremony, cocktail, dinner — in rupiah.
+const CATALOG_PRICES = {
+	solo: [3500000, 3500000, 4500000],
+	duo: [6500000, 6500000, 8000000],
+	trio: [8000000, 8000000, 10000000],
+	quartet: [9500000, 10500000, 12000000],
+	'large-ensemble': [18000000, 19000000, 22500000],
+}
+const CATALOG_EXTRAS = [
+	[
+		'Additional musician (Large Ensemble), per session',
+		'Musisi tambahan (Large Ensemble), per sesi',
+		2500000,
+	],
+]
 // Bank details live in Project Settings → Script properties, never in this file: the repo is public.
 const BANK_PROPS = {
 	bankName: 'BANK_NAME',
@@ -144,11 +170,39 @@ function setup() {
 		.build()
 	sheet.getRange(2, COL['Status'] + 1, sheet.getMaxRows() - 1, 1).setDataValidation(statusRule)
 
+	const items = ss.getSheetByName(ITEMS_SHEET) || ss.insertSheet(ITEMS_SHEET)
+	items.getRange(1, 1, 1, ITEM_HEADERS.length).setValues([ITEM_HEADERS]).setFontWeight('bold')
+	items.setFrozenRows(1)
+	items.getRange(2, 1, items.getMaxRows() - 1, 2).setNumberFormat('@')
+	items.getRange(2, 3, items.getMaxRows() - 1, 1).setNumberFormat('#,##0')
+	if (items.getLastRow() < 2) {
+		const rows = catalog_()
+		items.getRange(2, 1, rows.length, ITEM_HEADERS.length).setValues(rows)
+	}
+
 	const quotes = ss.getSheetByName(QUOTES_SHEET) || ss.insertSheet(QUOTES_SHEET)
 	const quoteRows = quotes.getMaxRows() - 1
 	quotes.getRange(1, 1, 1, QUOTE_HEADERS.length).setValues([QUOTE_HEADERS]).setFontWeight('bold')
 	quotes.setFrozenRows(1)
 	quotes.getRange(2, 1, quoteRows, 3).setNumberFormat('@')
+	// A dropdown of the Items sheet; typing something else is still allowed (with a warning) for a
+	// one-off line such as "Solo piano, ceremony".
+	quotes.getRange(2, 2, quoteRows, 1).setDataValidation(
+		SpreadsheetApp.newDataValidation()
+			.requireValueInRange(items.getRange(2, 1, items.getMaxRows() - 1, 1), true)
+			.setAllowInvalid(true)
+			.build(),
+	)
+	quotes
+		.getRange(2, 5, quoteRows, 1)
+		.setNumberFormat('#,##0')
+		.setDataValidation(
+			SpreadsheetApp.newDataValidation()
+				.requireNumberGreaterThan(0)
+				.setAllowInvalid(false)
+				.setHelpText('Optional. The price agreed with the couple, if lower than the regular amount.')
+				.build(),
+		)
 	quotes.getRange(2, 1, quoteRows, 1).setDataValidation(
 		SpreadsheetApp.newDataValidation()
 			.requireValueInRange(sheet.getRange(2, 1, sheet.getMaxRows() - 1, 1), true)
@@ -435,24 +489,76 @@ function termsInput_(v, items, bank, todayIso) {
 function quoteItems_(ss, reference) {
 	const sheet = ss.getSheetByName(QUOTES_SHEET)
 	if (!sheet) throw userError_(`Run setup() first. The ${QUOTES_SHEET} sheet does not exist.`)
-	const items = sheet
+	const items = []
+	sheet
 		.getDataRange()
 		.getValues()
 		.slice(1)
 		.filter((r) => String(r[0]).trim() === reference)
-		.map((r) => ({
-			en: String(r[1]).trim(),
-			id: String(r[2]).trim() || String(r[1]).trim(),
-			amount: amount_(r[3]),
-		}))
+		.forEach((r) => {
+			const it = {
+				en: String(r[1]).trim(),
+				id: String(r[2]).trim() || String(r[1]).trim(),
+				amount: amount_(r[3]),
+			}
+			if (!it.en) throw userError_(`A ${QUOTES_SHEET} row for ${reference} has no item name.`)
+			if (!Number.isFinite(it.amount) || it.amount === 0) {
+				throw userError_(`"${it.en}" needs an amount in rupiah other than 0.`)
+			}
+			items.push(it)
+			if (r[4] === '' || r[4] == null) return
+			const agreed = amount_(r[4])
+			if (!Number.isFinite(agreed) || agreed <= 0) {
+				throw userError_(`The agreed price for "${it.en}" must be a positive amount in rupiah.`)
+			}
+			if (agreed > it.amount) {
+				throw userError_(
+					`The agreed price for "${it.en}" is higher than its amount. Change the amount instead.`,
+				)
+			}
+			if (agreed < it.amount)
+				items.push({ en: 'Special rate', id: 'Harga khusus', amount: agreed - it.amount })
+		})
 	if (!items.length) throw userError_(`Add the prices for ${reference} in the ${QUOTES_SHEET} sheet first.`)
-	items.forEach((it) => {
-		if (!it.en) throw userError_(`A ${QUOTES_SHEET} row for ${reference} has no item name.`)
-		if (!Number.isFinite(it.amount) || it.amount === 0) {
-			throw userError_(`"${it.en}" needs an amount in rupiah other than 0.`)
-		}
-	})
 	return items
+}
+
+/** Item rows for the Items sheet: every formation × session from the pricing sheet, then the extras. */
+function catalog_() {
+	const rows = []
+	Object.keys(CATALOG_PRICES).forEach((key) =>
+		CATALOG_SESSIONS.forEach((session, i) =>
+			rows.push([
+				`${FORMATIONS[key].en}, ${session.en}`,
+				`${FORMATIONS[key].id}, ${session.id}`,
+				CATALOG_PRICES[key][i],
+			]),
+		),
+	)
+	return rows.concat(CATALOG_EXTRAS)
+}
+
+/**
+ * Simple trigger: picking an item in Quotes fills in its Indonesian name and regular price from the
+ * Items sheet. Both stay editable. Lines typed by hand (not in Items) are left as they are.
+ */
+function onEdit(e) {
+	const range = e && e.range
+	if (!range || range.getSheet().getName() !== QUOTES_SHEET) return
+	if (range.getColumn() > 2 || range.getLastColumn() < 2 || range.getLastRow() < 2) return
+	const items = e.source.getSheetByName(ITEMS_SHEET)
+	if (!items) return
+	const byName = {}
+	items
+		.getDataRange()
+		.getValues()
+		.slice(1)
+		.forEach((r) => (byName[String(r[0]).trim()] = r))
+	const sheet = range.getSheet()
+	for (let row = Math.max(range.getRow(), 2); row <= range.getLastRow(); row++) {
+		const match = byName[String(sheet.getRange(row, 2).getValue()).trim()]
+		if (match) sheet.getRange(row, 3, 1, 2).setValues([[match[1], match[2]]])
+	}
 }
 
 // Reads 2500000, "2.500.000", "Rp 2,500,000" or "-1.000.000" (any dash before the digits = negative).
