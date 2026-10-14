@@ -10,6 +10,9 @@ export const site = {
 	contactEmail: env(import.meta.env.PUBLIC_CONTACT_EMAIL) || 'allegrachamberbali@gmail.com',
 	instagram: env(import.meta.env.PUBLIC_INSTAGRAM) || 'https://instagram.com',
 	web3formsKey: env(import.meta.env.PUBLIC_WEB3FORMS_KEY) || '',
+	// Google Apps Script Web App URL for the hidden /lock-your-date/ form (integrations/booking/).
+	// Empty → the page shows a WhatsApp fallback instead of the form.
+	bookingEndpoint: env(import.meta.env.PUBLIC_BOOKING_ENDPOINT) || '',
 	ga4Id: env(import.meta.env.PUBLIC_GA4_ID) || 'G-BN64LSJGQV',
 }
 

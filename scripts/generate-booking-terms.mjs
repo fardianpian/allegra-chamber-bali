@@ -12,9 +12,9 @@
 // Output: private/booking-terms/<reference>-<lang>.pdf. `private/` is gitignored on purpose —
 // couples' names, dates and bank details must never be committed (the repo deploys publicly).
 //
-// The policy values in TERMS come from docs/PAYMENT-TERMS-RESEARCH-2026-10.md (draft, owner
-// direction 2026-10-14 to use them). Change them here, not in the copy, so every future document
-// stays consistent. Without bank details the PDF is stamped "DRAFT — not for sending".
+// The policy values come from src/data/booking-terms.json (see docs/PAYMENT-TERMS-RESEARCH-2026-10.md,
+// owner direction 2026-10-14 to use them). Change them there, not in the copy, so every document and
+// email stays consistent. Without bank details the PDF is stamped "DRAFT — not for sending".
 
 import { mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
@@ -22,26 +22,10 @@ import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { createRequire } from 'node:module'
 
-const TERMS = {
-	version: '2026-10',
-	depositPct: 30,
-	balanceDaysBefore: 30, // balance due date = wedding − 30 days
-	holdDays: 7, // date held this long after names are recorded, while the deposit is paid
-	coolingOffHours: 48,
-	coolingOffMinDays: 60, // cooling-off applies only if the wedding is more than this many days away
-	freeDateChangeDaysBefore: 60,
-	creditMonths: 12, // credit valid until this many months after the original wedding date
-	lateGraceDays: 7,
-	refundWorkingDays: 7,
-	// Cancellation schedule. `untilDaysBefore`: the row applies while the wedding is at least this
-	// many days away. `keepPct` of the total, or 'deposit'.
-	tiers: [
-		{ untilDaysBefore: 91, keep: 'deposit', credit: true },
-		{ untilDaysBefore: 31, keep: 'deposit' },
-		{ untilDaysBefore: 15, keepPct: 50 },
-		{ untilDaysBefore: 0, keepPct: 100 },
-	],
-}
+// Shared with the Lock Your Date flow (src/pages/lock-your-date, integrations/booking/Code.gs).
+// `tiers[].untilDaysBefore`: the row applies while the wedding is at least this many days away;
+// it keeps `keepPct` of the total, or the deposit. Run `npm run booking:sync` after editing.
+const TERMS = JSON.parse(readFileSync(new URL('../src/data/booking-terms.json', import.meta.url), 'utf8'))
 
 const root = resolve(import.meta.dirname, '..')
 const fontDir = pathToFileURL(join(root, 'node_modules', '@fontsource')).href
@@ -92,7 +76,8 @@ const coolingOff = leadDays > TERMS.coolingOffMinDays
 // Cancellation rows with real date ranges; rows that ended before the date was recorded are dropped.
 const rows = TERMS.tiers
 	.map((t, i) => {
-		const from = i === 0 ? null : addDays(wedding, -TERMS.tiers[i - 1].untilDaysBefore + 1)
+		const start = i === 0 ? null : addDays(wedding, -TERMS.tiers[i - 1].untilDaysBefore + 1)
+		const from = start && start < recorded ? recorded : start
 		const to = t.untilDaysBefore === 0 ? null : addDays(wedding, -t.untilDaysBefore)
 		const keep = t.keep === 'deposit' ? deposit : roundRp((total * t.keepPct) / 100)
 		return { ...t, from, to, keep }
