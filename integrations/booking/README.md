@@ -96,7 +96,7 @@ do not appear in the Google Sheets mobile app
 1. Paste the new `Code.gs` into the Apps Script editor, save, and run `setup` again. It adds the
    `Musicians`, `Terms PDF` and `Balance reminder sent` columns at the end of `Bookings` (existing
    rows keep their place), the
-   `Quotes` sheet, and a Drive folder `Allegra Booking Terms`. Google asks for new permissions (Google
+   `Quotes` and `Items` sheets, and a Drive folder `Allegra Booking Terms`. Google asks for new permissions (Google
    Docs and Drive) because the script now creates documents. Allow them.
 2. **Project Settings → Script properties → Add script property**, one per line:
 
@@ -115,14 +115,25 @@ do not appear in the Google Sheets mobile app
 3. **Deploy → Manage deployments → Edit → New version**. The form URL stays the same.
 4. Reload the Sheet. An **Allegra** menu appears next to Help.
 
+### The price list (`Items` sheet)
+
+`setup` fills `Items` once with every formation × session and the extra-musician line. Prices and
+durations come from the owner's pricing sheet, `docs/Allegra-Chamber-Bali-Pricing.html` ("Final
+pricing as of July 2026"). From then on, **`Items` is the price list**: edit a price, add a line or
+remove one there. The `Quotes` dropdown follows it. Running `setup` again never overwrites it.
+Overtime is not in the list because its rate is not set yet.
+
 ### Making a PDF
 
-1. In `Quotes`, add one row per price line for the booking's reference: `Item (EN)`, `Item (ID)`
-   (optional; the EN text is used when it is empty) and `Amount (IDR)`.
-   - **Special rate:** add the regular price as usual, then a separate row such as
-     `Special rate` / `Harga khusus` with a **negative** amount (e.g. `-1000000`). The PDF lists the
-     reduction and the agreed total. The deposit, balance and cancellation amounts are all worked out
-     from the agreed total.
+1. In `Quotes`, add one row per price line for the booking's reference:
+   - **Reference** and **Item (EN)** are dropdowns. Picking an item fills in `Item (ID)` and
+     `Amount (IDR)` from the `Items` sheet. Both stay editable. You can also type an item that is
+     not in the list, for example `Solo piano, ceremony (≈ 45 min)`; the sheet shows a warning but
+     keeps it.
+   - **Special rate:** type the price agreed with the couple in `Agreed price (IDR)` on the same
+     row. The PDF lists the regular price, a `Special rate / Harga khusus` line with the reduction,
+     and the agreed total. The deposit, balance and cancellation amounts are all worked out from the
+     agreed total. A separate `Special rate` row with a negative amount still works too.
 2. In `Bookings`, check the row: status `Held` or `Confirmed`, a real formation (not "Not decided
    yet"), and a `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the
    default lineup (Solo 1, Duo 3, Trio 4, String Quartet 5, Large Ensemble 10).
