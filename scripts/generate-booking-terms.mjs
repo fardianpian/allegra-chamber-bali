@@ -12,6 +12,9 @@
 // Optional `bank.note` (string or { en, id }) prints under the bank table, e.g. when the account is
 // held by a person on behalf of Allegra.
 //
+// The everyday route is the Sheet menu (integrations/booking/Code.gs → "Allegra → Create Booking Terms
+// PDF"); this script is the fallback and uses the same wording. Change both together.
+//
 // Output: private/booking-terms/<reference>-<lang>.pdf. `private/` is gitignored on purpose —
 // couples' names, dates and bank details must never be committed (the repo deploys publicly).
 //
@@ -65,7 +68,10 @@ const recorded = day(b.recordedDate)
 const leadDays = daysBetween(recorded, wedding)
 if (leadDays < 1) throw new Error('recordedDate must be before weddingDate')
 
+// A special rate is its own item with a negative price, so the PDF shows the regular price, the
+// reduction and the agreed total. Every percentage below is taken from the agreed total.
 const total = b.items.reduce((sum, it) => sum + it.price, 0)
+if (!(total > 0)) throw new Error('the item prices must add up to more than 0')
 const shortNotice = leadDays <= TERMS.balanceDaysBefore
 const deposit = shortNotice ? total : roundRp((total * TERMS.depositPct) / 100)
 const balance = total - deposit
@@ -109,7 +115,11 @@ const fmt = (lang) => {
 		timeZone: 'UTC',
 	})
 	const num = new Intl.NumberFormat(lang === 'id' ? 'id-ID' : 'en-US')
-	return { long: (d) => long.format(d), date: (d) => short.format(d), rp: (n) => `Rp ${num.format(n)}` }
+	return {
+		long: (d) => long.format(d),
+		date: (d) => short.format(d),
+		rp: (n) => `${n < 0 ? '− ' : ''}Rp ${num.format(Math.abs(n))}`,
+	}
 }
 
 function copy(lang) {

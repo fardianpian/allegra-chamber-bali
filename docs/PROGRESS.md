@@ -38,8 +38,22 @@ After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has 
 2. ~~Do a real browser and inbox test~~. Done 2026-10-14 by the owner on the preview: the row was
    recorded in the Sheet. The first email landed in Gmail Spam; after the couple email was shortened
    (no payment/bank wording) and redeployed as a New version, it arrived in the Inbox.
-3. Fill in the bank details.
+3. Fill in the bank details. Done for the PDF: they are in the Script properties (Sheet button) and in
+   `private/bookings/<ref>.json` (fallback script), never in the repo.
 4. Have a lawyer review the terms.
+5. Install the Sheet button (feat/booking-terms-sheet-button): paste the new `Code.gs`, run `setup`,
+   add the bank Script properties, redeploy as a New version, then test on ACB-20261031-F. Steps
+   are in `integrations/booking/README.md` § Booking Terms PDF.
+
+**Booking Terms PDF from the Sheet.** The owner chose a Sheet menu over the command-line script, so
+Yessica can make the PDF herself on a laptop. Custom menus and clickable drawings do not run in the
+Sheets mobile app. She types the prices in a `Quotes` sheet. A special rate is its own row with a
+negative amount, labelled "Special rate / Harga khusus", with no extra conditions (owner, 2026-10-14).
+Deposit, balance and cancellation amounts are all taken from the agreed total. The script builds the PDF
+through a temporary Google Doc. Apps Script's HTML-to-PDF converter drops flexbox, `@page` and web
+fonts, so it was not used. The PDF does not email itself. `scripts/generate-booking-terms.mjs` stays as
+the fallback with the same wording. Retire it once the button has worked on 2–3 real bookings, so the
+copy lives in one place.
 
 ## Session — 2026-10-08
 
