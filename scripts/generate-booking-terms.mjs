@@ -9,6 +9,9 @@
 //   CHROME_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
 //   node scripts/generate-booking-terms.mjs private/bookings/<ref>.json
 //
+// Optional `bank.note` (string or { en, id }) prints under the bank table, e.g. when the account is
+// held by a person on behalf of Allegra.
+//
 // Output: private/booking-terms/<reference>-<lang>.pdf. `private/` is gitignored on purpose —
 // couples' names, dates and bank details must never be committed (the repo deploys publicly).
 //
@@ -135,7 +138,7 @@ function copy(lang) {
 				'Overtime di luar durasi yang dipesan dapat diminta, tergantung ketersediaan musisi, dan dikonfirmasi serta ditagih terpisah.',
 			],
 			s2: 'Jadwal pembayaran',
-			hold: `Tanggal Anda kami tahan hingga ${f.long(holdUntil)} sementara Anda membaca ketentuan ini. Tanggal terkonfirmasi setelah deposit kami terima.`,
+			hold: `Tanggal Anda kami tahan hingga ${f.long(holdUntil)} sementara Anda membaca ketentuan ini. Tanggal terkonfirmasi setelah ${shortNotice ? 'pembayaran' : 'deposit'} kami terima.`,
 			payRows: shortNotice
 				? [[`Pembayaran penuh`, `paling lambat ${f.date(holdUntil)}`, f.rp(total)]]
 				: [
@@ -190,8 +193,7 @@ function copy(lang) {
 			rain: 'Hujan: musisi dan instrumen pindah ke area teduh yang disepakati lebih awal dengan planner atau venue Anda — keselamatan musisi dan instrumen diutamakan. Hujan bukan alasan pembatalan.',
 			fm: `Keadaan memaksa (bencana alam, penutupan resmi bandara atau akses, larangan acara oleh pemerintah, epidemi, kerusuhan): seluruh pembayaran menjadi kredit penuh untuk tanggal baru hingga ${f.date(creditUntil)}, tanpa biaya. Bila tidak ada tanggal yang cocok, kami kembalikan pembayaran dikurangi biaya yang sudah keluar dan tidak dapat ditarik kembali.`,
 			s7: 'Persetujuan',
-			agree:
-				'Balas di WhatsApp: "Kami setuju dengan ketentuan booking" — atau tanda tangani di bawah — lalu transfer deposit.',
+			agree: `Balas di WhatsApp: "Kami setuju dengan ketentuan booking" — atau tanda tangani di bawah — lalu transfer ${shortNotice ? 'pembayaran' : 'deposit'}.`,
 			signCouple: 'Pasangan',
 			signUs: 'Allegra Chamber Bali',
 			signDate: 'Tanggal',
@@ -209,10 +211,10 @@ function copy(lang) {
 			['Venue', tr(b.venue, lang)],
 			['Booking reference', reference],
 		],
-		intro: `Thank you, ${names}. Your date was recorded under your names on ${f.date(recorded)}. Everything you need to know before paying is on these pages, in plain language. If anything is unclear, ask us before you pay.`,
+		intro: `Thank you, ${names}. Your date was recorded under your name on ${f.date(recorded)}. Everything you need to know before paying is on these pages, in plain language. If anything is unclear, ask us before you pay.`,
 		s1: 'Your booking',
 		formationLabel: 'Formation',
-		formation: `${tr(b.formation, lang)} · ${b.musicians} musicians`,
+		formation: `${tr(b.formation, lang)} · ${b.musicians} ${b.musicians === 1 ? 'musician' : 'musicians'}`,
 		totalLabel: 'Total',
 		included: [
 			'Custom arrangements of your own songs are included, never a separate charge.',
@@ -220,7 +222,7 @@ function copy(lang) {
 			'Overtime beyond your booked coverage is available on request, subject to musician availability, and is confirmed and billed separately.',
 		],
 		s2: 'Payment schedule',
-		hold: `Your date is held until ${f.long(holdUntil)} while you read these terms. It is confirmed once your deposit arrives.`,
+		hold: `Your date is held until ${f.long(holdUntil)} while you read these terms. It is confirmed once your ${shortNotice ? 'payment' : 'deposit'} arrives.`,
 		payRows: shortNotice
 			? [['Full payment', `by ${f.date(holdUntil)}`, f.rp(total)]]
 			: [
@@ -275,7 +277,7 @@ function copy(lang) {
 		rain: 'Rain: musicians and instruments move to a covered spot agreed in advance with your planner or venue — the safety of musicians and instruments comes first. Rain is not a reason to cancel.',
 		fm: `Force majeure (natural disaster, official closure of the airport or access, a government restriction on events, epidemic, civil unrest): everything you have paid becomes full credit for a new date until ${f.date(creditUntil)}, at no charge. If no suitable date works, we refund your payments less costs already incurred that cannot be recovered.`,
 		s7: 'Agreement',
-		agree: 'Reply on WhatsApp: “We agree to the booking terms” — or sign below — then transfer your deposit.',
+		agree: `Reply on WhatsApp: “We agree to the booking terms” — or sign below — then transfer your ${shortNotice ? 'payment' : 'deposit'}.`,
 		signCouple: 'Couple',
 		signUs: 'Allegra Chamber Bali',
 		signDate: 'Date',
@@ -361,6 +363,7 @@ function html(c) {
 	<h2><span class="n">3</span>${esc(c.s3)}</h2>
 	<p>${esc(c.currency)}</p>
 	<table class="keep"><tbody>${bankRows.map(([k, v]) => `<tr><td class="muted" style="width:42mm">${esc(k)}</td><td>${esc(v)}</td></tr>`).join('')}</tbody></table>
+	${bank.note ? `<p class="muted">${esc(tr(bank.note, c.lang))}</p>` : ''}
 	<dl class="how">${c.howTo.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
 	<p>${esc(c.receipt)}</p>
 	<p class="box">${esc(c.safety)}</p>
