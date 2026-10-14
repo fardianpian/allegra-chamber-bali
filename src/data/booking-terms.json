@@ -1,9 +1,11 @@
 {
-	"version": "2026-10",
-	"depositPct": 30,
+	"version": "2026-10.2",
+	"depositPct": 50,
 	"balanceDaysBefore": 30,
-	"holdDays": 7,
+	"holdDays": 14,
+	"shortNoticeHoldDays": 7,
 	"holdReminderDaysBefore": 2,
+	"balanceInvoiceDaysBefore": 14,
 	"coolingOffHours": 48,
 	"coolingOffMinDays": 60,
 	"freeDateChangeDaysBefore": 60,
@@ -12,8 +14,7 @@
 	"refundWorkingDays": 7,
 	"tiers": [
 		{ "untilDaysBefore": 91, "keep": "deposit", "credit": true },
-		{ "untilDaysBefore": 31, "keep": "deposit" },
-		{ "untilDaysBefore": 15, "keepPct": 50 },
+		{ "untilDaysBefore": 15, "keep": "deposit" },
 		{ "untilDaysBefore": 0, "keepPct": 100 }
 	]
 }

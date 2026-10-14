@@ -288,6 +288,20 @@ Booking Register (Google Sheet) dan mengirim email dari Yessica berisi batas mas
 (diringkas 2026-10-14 karena uji pertama masuk Spam; ketentuan lengkap ada di PDF). PDF Booking Terms (dengan nominal dan rekening) tetap dikirim manual. Setup ada di
 `integrations/booking/README.md`. Nilai `TERMS` kini disimpan di `src/data/booking-terms.json`.
 
+> **Update 2026-10-14 (owner decision, terms version `2026-10.2`).** The owner changed the defaults
+> recommended above:
+>
+> - **Deposit 50%** (not 30%), within a **14-day** hold (not 7).
+> - **Balance by H-30**, unchanged. Yessica sends the balance invoice **by hand on WhatsApp**, never by
+>   automatic email.
+> - Bookings 44 days or less before the wedding pay in full within 7 days.
+> - The H-30 to H-15 "50%" tier now equals the deposit, so it was merged into the deposit tier.
+>
+> Fairness note: §3.2 (CMA #1) treats a deposit as fairer when it is a _small_ percentage. At 50%,
+> Allegra matches Moira (§2). The credit option before H-91 and the mitigation clause (refund when the
+> date is resold) carry more weight now. Have the lawyer review (owner to-do 4) look at this point.
+> A no-deposit variant (15% at H-30, balance at H-15) was considered and dropped the same day.
+
 ## 9. Sumber
 
 **Internal:** `CLAUDE.md`; `docs/PRICING-STRATEGY.md` §5, §8, §10, §11;

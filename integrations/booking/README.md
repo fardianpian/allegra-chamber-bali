@@ -7,15 +7,27 @@ payment. It does three things:
 1. Adds a row to the **Allegra Booking Register** (a Google Sheet) with status `Held`, or
    `Pending review` if the date already has an active booking.
 2. Emails the couple from the Allegra Gmail account, signed by Yessica. The email says how long the
-   date is held (7 days), the deadline to pay the deposit, the booking details, and that the quote
+   date is held (14 days, or 7 when the wedding is 44 days away or less), the deadline to pay, the
+   booking details, and that the quote
    and full booking terms follow within 24 hours. It is short on purpose: the first live test landed
    in Gmail Spam, and payment/bank wording from a new sender reads like phishing. The terms and bank
    details travel in the Booking Terms PDF instead.
 3. Emails `allegrachamberbali@gmail.com` a notification about the new submission.
 
-Each morning at 09:00 WITA a daily job runs. It sends the couple **one** reminder 2 days before
-their hold ends, and tells Allegra when a hold has expired. The date is **never** released
-automatically. Yessica changes the status by hand.
+Payment terms (owner direction 2026-10-14, `src/data/booking-terms.json`): a **50% deposit** within
+the 14-day hold, and the **balance by 30 days before the wedding**. When the wedding is 44 days away
+or less, there is one full payment within a 7-day hold instead (or by the day before the wedding,
+if that comes sooner).
+
+Each morning at 09:00 WITA a daily job runs. It does three things:
+
+- Sends the couple **one** reminder 2 days before their hold ends.
+- Tells Allegra when a hold has expired. The date is **never** released automatically. Yessica
+  changes the status by hand.
+- For a `Confirmed` booking, emails Allegra **14 days before the balance is due**, with the balance
+  amount (from the `Quotes` sheet) and the couple's WhatsApp number. Yessica then sends the balance
+  invoice **by hand on WhatsApp**. The couple never gets an automatic payment email.
+  `Balance reminder sent` records the date, so it goes out only once.
 
 The site stays static. The form posts to Google Apps Script, an external service like Web3Forms;
 no SSR or serverless code runs on Cloudflare Pages.
@@ -77,7 +89,8 @@ do not appear in the Google Sheets mobile app
 ### One-time install (after the first setup above)
 
 1. Paste the new `Code.gs` into the Apps Script editor, save, and run `setup` again. It adds the
-   `Musicians` and `Terms PDF` columns at the end of `Bookings` (existing rows keep their place), the
+   `Musicians`, `Terms PDF` and `Balance reminder sent` columns at the end of `Bookings` (existing
+   rows keep their place), the
    `Quotes` sheet, and a Drive folder `Allegra Booking Terms`. Google asks for new permissions (Google
    Docs and Drive) because the script now creates documents. Allow them.
 2. **Project Settings → Script properties → Add script property**, one per line:

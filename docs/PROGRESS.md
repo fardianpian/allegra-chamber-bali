@@ -45,6 +45,20 @@ After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has 
    add the bank Script properties, redeploy as a New version, then test on ACB-20261031-F. Steps
    are in `integrations/booking/README.md` § Booking Terms PDF.
 
+**Payment terms changed (owner, 2026-10-14, terms version `2026-10.2`).** The owner first considered no
+deposit (15% at H-30, balance at H-15). After weighing the risks (free cancellation until H-31,
+musician fees of 58% of the total, and a 50% cancellation tier that could not be collected), they
+chose instead:
+
+- a **50% deposit** within a **14-day hold**;
+- the **balance by H-30**, invoiced **by hand on WhatsApp** by Yessica. The daily job emails Allegra
+  14 days before it is due.
+
+Bookings 44 days or less before the wedding pay in full within 7 days. The cancellation tiers are
+now: deposit or credit until H-91, the deposit from H-90 to H-15, the full total from H-14. Because
+the deposit now equals 50%, the old separate 50% tier was merged into the deposit tier.
+`docs/PAYMENT-TERMS-RESEARCH-2026-10.md` still holds the 30% analysis; see its §8 update note.
+
 **Booking Terms PDF from the Sheet.** The owner chose a Sheet menu over the command-line script, so
 Yessica can make the PDF herself on a laptop. Custom menus and clickable drawings do not run in the
 Sheets mobile app. She types the prices in a `Quotes` sheet. A special rate is its own row with a

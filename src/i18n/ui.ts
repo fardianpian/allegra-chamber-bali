@@ -334,7 +334,7 @@ export const ui = {
 				'Dear couple — may we take a moment of your time? Please complete this short form so your musicians are held for the wedding date you have booked.',
 			stepsHeading: 'What happens next',
 			steps: [
-				'We record your date under your name and hold it for {days} days. You will receive a confirmation email with the date your hold ends.',
+				'We record your date under your name and hold it for up to {days} days. You will receive a confirmation email with the date your hold ends.',
 				'Within 24 hours, Yessica sends your quote and full booking terms.',
 				'Your date is confirmed once your deposit arrives.',
 			],
@@ -1202,7 +1202,7 @@ export const ui = {
 				'Kepada pasangan yang kami hormati — kami mohon waktu Anda sebentar untuk mengisi formulir ini, agar jadwal musisi Anda terkunci di tanggal acara yang Anda pesan.',
 			stepsHeading: 'Langkah selanjutnya',
 			steps: [
-				'Tanggal Anda kami catat atas nama Anda dan kami tahan selama {days} hari. Anda akan menerima email konfirmasi berisi tanggal berakhirnya masa tahan.',
+				'Tanggal Anda kami catat atas nama Anda dan kami tahan hingga {days} hari. Anda akan menerima email konfirmasi berisi tanggal berakhirnya masa tahan.',
 				'Dalam 24 jam, Yessica mengirimkan quote dan ketentuan booking lengkap.',
 				'Tanggal Anda terkonfirmasi setelah deposit kami terima.',
 			],

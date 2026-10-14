@@ -9,8 +9,9 @@
  *   3. notifies Allegra, flagging a clash with another booking on the same date.
  * In the Sheet, the "Allegra" menu turns a booking row plus its prices in the "Quotes" sheet into the
  * Booking Terms PDF (EN + ID) in Google Drive, ready for the correspondent to check and send.
- * A daily trigger sends one gentle reminder before the hold ends, and tells Allegra when a hold
- * has expired — the date is never released automatically; the correspondent decides.
+ * A daily trigger sends one gentle reminder before the hold ends, tells Allegra when a hold has
+ * expired (the date is never released automatically; the correspondent decides), and reminds Allegra
+ * to send the balance invoice on WhatsApp before it is due.
  *
  * Setup and deploy steps: integrations/booking/README.md. After editing src/data/booking-terms.json
  * run `npm run booking:sync`, then paste this file into the Apps Script editor again and redeploy.
@@ -32,11 +33,13 @@ const CONFIG = {
 
 // <terms> — generated from src/data/booking-terms.json by `npm run booking:sync`; do not edit by hand.
 const TERMS = {
-	version: '2026-10',
-	depositPct: 30,
+	version: '2026-10.2',
+	depositPct: 50,
 	balanceDaysBefore: 30,
-	holdDays: 7,
+	holdDays: 14,
+	shortNoticeHoldDays: 7,
 	holdReminderDaysBefore: 2,
+	balanceInvoiceDaysBefore: 14,
 	coolingOffHours: 48,
 	coolingOffMinDays: 60,
 	freeDateChangeDaysBefore: 60,
@@ -50,12 +53,8 @@ const TERMS = {
 			credit: true,
 		},
 		{
-			untilDaysBefore: 31,
-			keep: 'deposit',
-		},
-		{
 			untilDaysBefore: 15,
-			keepPct: 50,
+			keep: 'deposit',
 		},
 		{
 			untilDaysBefore: 0,
@@ -95,6 +94,7 @@ const HEADERS = [
 	// Added 2026-10-14 for the Booking Terms PDF. New columns go at the end so existing rows keep their place.
 	'Musicians',
 	'Terms PDF',
+	'Balance reminder sent',
 ]
 const COL = HEADERS.reduce((acc, h, i) => ((acc[h] = i), acc), {})
 
@@ -212,6 +212,7 @@ function doPost(e) {
 		row[COL['Expiry reported']] = ''
 		row[COL['Musicians']] = ''
 		row[COL['Terms PDF']] = ''
+		row[COL['Balance reminder sent']] = ''
 		sheet.appendRow(row.map(cell_))
 
 		const booking = { ...d, reference, status }
@@ -263,7 +264,12 @@ function dailyCheck() {
 	const today = day_(today_())
 	for (let r = 1; r < values.length; r++) {
 		const v = values[r]
-		if (String(v[COL['Status']]) !== STATUS.HELD) continue
+		const status = String(v[COL['Status']])
+		if (status === STATUS.CONFIRMED) {
+			balanceReminder_(sheet, r, v, today)
+			continue
+		}
+		if (status !== STATUS.HELD) continue
 		const holdUntil = day_(str_(v[COL['Hold until']]))
 		const daysLeft = daysBetween_(today, holdUntil)
 		const booking = {
@@ -272,6 +278,7 @@ function dailyCheck() {
 			email: String(v[COL['Email']]),
 			weddingDate: str_(v[COL['Wedding date']]),
 			lang: String(v[COL['Language']]) === 'id' ? 'id' : 'en',
+			shortNotice: plan_(str_(v[COL['Wedding date']]), str_(v[COL['Submitted at']]).slice(0, 10)).shortNotice,
 		}
 		if (!v[COL['Reminder sent']] && daysLeft >= 0 && daysLeft <= TERMS.holdReminderDaysBefore) {
 			const mail = reminderEmail_(booking, holdUntil)
@@ -298,6 +305,37 @@ function dailyCheck() {
 			sheet.getRange(r + 1, COL['Expiry reported'] + 1).setValue(iso_(today))
 		}
 	}
+}
+
+// The balance invoice goes to the couple by hand on WhatsApp (owner direction 2026-10-14): this only
+// tells Allegra when to send it, once per booking.
+function balanceReminder_(sheet, r, v, today) {
+	if (v[COL['Balance reminder sent']]) return
+	const weddingDate = str_(v[COL['Wedding date']])
+	const plan = plan_(weddingDate, str_(v[COL['Submitted at']]).slice(0, 10))
+	const daysToDue = daysBetween_(today, plan.balanceDue)
+	if (plan.shortNotice || daysToDue > TERMS.balanceInvoiceDaysBefore || today >= plan.wedding) return
+	const reference = String(v[COL['Reference']])
+	let amount = 'see the Booking Terms PDF'
+	try {
+		const total = quoteItems_(SpreadsheetApp.getActiveSpreadsheet(), reference).reduce(
+			(s, it) => s + it.amount,
+			0,
+		)
+		amount = fmt_('en').rp(total - roundRp_((total * TERMS.depositPct) / 100))
+	} catch (err) {
+		// No prices in the Quotes sheet yet: the reminder still goes out without the amount.
+	}
+	notify_(
+		`Send the balance invoice: ${weddingDate} · ${v[COL['Booker / couple']]}`,
+		[
+			`Reference: ${reference}`,
+			`Balance (${100 - TERMS.depositPct}%): ${amount}, due by ${iso_(plan.balanceDue)}.`,
+			`Send the balance invoice to the couple on WhatsApp: ${v[COL['WhatsApp']]}`,
+			`Register: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,
+		].join('\n'),
+	)
+	sheet.getRange(r + 1, COL['Balance reminder sent'] + 1).setValue(iso_(today))
 }
 
 // ---------- Booking Terms PDF (Sheet menu) ----------
@@ -522,6 +560,8 @@ function validate_(p, multi) {
 }
 
 // ---------- dates (calendar days, UTC midnight — same math as scripts/generate-booking-terms.mjs) ----------
+// `tiers[].untilDaysBefore`: a tier applies while the wedding is at least that many days away; it keeps
+// the deposit or `keepPct` of the total.
 
 function today_() {
 	return Utilities.formatDate(new Date(), CONFIG.TIMEZONE, 'yyyy-MM-dd')
@@ -554,7 +594,14 @@ function plan_(weddingIso, recordedIso) {
 	const wedding = day_(weddingIso)
 	const recorded = day_(recordedIso)
 	const leadDays = daysBetween_(recorded, wedding)
-	const shortNotice = leadDays <= TERMS.balanceDaysBefore
+	const balanceDue = addDays_(wedding, -TERMS.balanceDaysBefore)
+	// One payment instead of deposit + balance when the deposit deadline would not come before the
+	// balance is due. Those bookings get a shorter hold, so the date is not held open close to the day.
+	const shortNotice = leadDays <= TERMS.balanceDaysBefore + TERMS.holdDays
+	const holdUntil = addDays_(
+		recorded,
+		shortNotice ? Math.min(TERMS.shortNoticeHoldDays, leadDays - 1) : TERMS.holdDays,
+	)
 	const tiers = TERMS.tiers
 		.map((t, i) => ({
 			...t,
@@ -567,8 +614,8 @@ function plan_(weddingIso, recordedIso) {
 		wedding,
 		recorded,
 		shortNotice,
-		holdUntil: addDays_(recorded, Math.min(TERMS.holdDays, leadDays - 1)),
-		balanceDue: addDays_(wedding, -TERMS.balanceDaysBefore),
+		holdUntil,
+		balanceDue,
 		lateCutoff: addDays_(wedding, -TERMS.balanceDaysBefore + TERMS.lateGraceDays),
 		dateChangeBy: dateChangeBy >= recorded ? dateChangeBy : null,
 		creditUntil: addMonths_(wedding, TERMS.creditMonths),
@@ -784,8 +831,8 @@ function coupleEmail_(b, plan) {
 					]
 				: [
 						id
-							? `Tanggal Anda kami tahan hingga ${f.long(plan.holdUntil)}. Booking selesai setelah deposit kami terima paling lambat tanggal tersebut.`
-							: `Your date is held until ${f.long(plan.holdUntil)}. Your booking is complete once the deposit arrives by then.`,
+							? `Tanggal Anda kami tahan hingga ${f.long(plan.holdUntil)}. Booking selesai setelah ${plan.shortNotice ? 'pembayaran' : 'deposit'} kami terima paling lambat tanggal tersebut.`
+							: `Your date is held until ${f.long(plan.holdUntil)}. Your booking is complete once the ${plan.shortNotice ? 'payment' : 'deposit'} arrives by then.`,
 						id
 							? 'Dalam 24 jam saya kirim quote dan ketentuan booking lengkap Anda lewat WhatsApp atau email.'
 							: "Within 24 hours I'll send your quote and full booking terms on WhatsApp or by email.",
@@ -823,8 +870,8 @@ function reminderEmail_(b, holdUntil) {
 				'',
 				[
 					id
-						? `Sekadar pengingat: tanggal pernikahan Anda, ${f.long(wedding)} (referensi ${b.reference}), kami tahan hingga ${f.long(holdUntil)}. Untuk menyelesaikan booking, deposit perlu kami terima paling lambat tanggal tersebut.`
-						: `A gentle note: your wedding date, ${f.long(wedding)} (reference ${b.reference}), is held until ${f.long(holdUntil)}. To complete your booking, the deposit needs to arrive by then.`,
+						? `Sekadar pengingat: tanggal pernikahan Anda, ${f.long(wedding)} (referensi ${b.reference}), kami tahan hingga ${f.long(holdUntil)}. Untuk menyelesaikan booking, ${b.shortNotice ? 'pembayaran' : 'deposit'} perlu kami terima paling lambat tanggal tersebut.`
+						: `A gentle note: your wedding date, ${f.long(wedding)} (reference ${b.reference}), is held until ${f.long(holdUntil)}. To complete your booking, the ${b.shortNotice ? 'payment' : 'deposit'} needs to arrive by then.`,
 					id
 						? 'Bila rencana Anda berubah, cukup balas email ini — tidak ada biaya apa pun.'
 						: 'If your plans have changed, simply reply to this email — there is no charge.',
@@ -851,10 +898,12 @@ function termsContent_(t, lang) {
 	const p = t.plan
 	const names = t.name
 	const payWord = p.shortNotice ? L('payment', 'pembayaran') : 'deposit'
-	const tiers = p.tiers.map((tier) => ({
-		...tier,
-		keep: tier.keep === 'deposit' ? t.deposit : roundRp_((t.total * tier.keepPct) / 100),
-	}))
+	// A one-payment booking has no separate deposit: a "deposit" row keeps the deposit share instead.
+	const tiers = p.tiers.map((tier) => {
+		const keepPct = tier.keep === 'deposit' && p.shortNotice ? TERMS.depositPct : tier.keepPct
+		const keep = tier.keep === 'deposit' && !p.shortNotice ? t.deposit : roundRp_((t.total * keepPct) / 100)
+		return { ...tier, keepPct, keep }
+	})
 	const when = (r) =>
 		!r.from
 			? `${L('Up to', 'Sampai')} ${f.date(r.to)}`
@@ -958,12 +1007,12 @@ function termsContent_(t, lang) {
 			'muted',
 			p.shortNotice
 				? L(
-						'As your wedding is less than 30 days away, payment is made in full.',
-						'Karena pernikahan Anda tinggal kurang dari 30 hari, pembayaran dilakukan sekaligus.',
+						'As your wedding is close, payment is made in full in one transfer.',
+						'Karena tanggal pernikahan Anda sudah dekat, pembayaran dilakukan sekaligus.',
 					)
 				: L(
-						'Your deposit reserves your date and begins the arrangement of your songs. We send a gentle reminder about two weeks before the balance is due.',
-						'Deposit mengunci tanggal Anda dan memulai pengerjaan aransemen lagu Anda. Kami mengirim pengingat sekitar dua minggu sebelum pelunasan jatuh tempo.',
+						`Your deposit reserves your date and begins the arrangement of your songs. About ${TERMS.balanceInvoiceDaysBefore} days before the balance is due, we send you the balance invoice on WhatsApp.`,
+						`Deposit mengunci tanggal Anda dan memulai pengerjaan aransemen lagu Anda. Sekitar ${TERMS.balanceInvoiceDaysBefore} hari sebelum pelunasan jatuh tempo, kami mengirim tagihan pelunasan lewat WhatsApp.`,
 					),
 		],
 
