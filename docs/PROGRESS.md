@@ -546,10 +546,14 @@ screenshots (desktop nav fits 8 links, listing/filter/article render correctly).
      sheet, hi-res logo, one-pager. Blocked on the owner supplying the final tech rider and stage
      plot content; don't invent technical specs. Reuse the logo pack in `public/press/` and
      `docs/B2B-One-Pager.*`.
-   - **D7 (P1):** the PRD wants the journal routine to reject any price not taken from the Pricing
-     Guide, any travel-fee figure, and real venue/client names used without permission. The
-     checklist in `.claude/skills/journal-article-publisher/SKILL.md` Step 6 only rejects
-     _fabricated_ prices/stats/testimonials/venue names. Tighten it in its own PR.
+   - **D7 (P1) — done 2026-10-14.** `.claude/skills/journal-article-publisher/SKILL.md` (Step 2,
+     Step 6a, hard rule 2) and `.claude/article-seo-geo-aeo-guidelines.md` hard rule 1 now go
+     beyond "nothing fabricated". Articles may carry no commercial figure at all, real or not
+     (price, travel fee, deposit, overtime), and Step 6a adds two `grep -E` checks for this. Venue
+     and client names are limited to an allow-list: `src/content/venues/*.json` plus
+     `featuredVideo` in `src/i18n/ui.ts`. All 35 published articles (EN + ID) passed both greps
+     when the rule was added. To allow a new venue name, add a `src/content/venues/<slug>.json` (it also shows in the home `TrustStrip`)
+     entry once the owner confirms permission.
    - **D6 (P1):** re-measure mobile Lighthouse/CWV on the new domain with PSI (same run as item 9).
    - **A6 (P2):** already met on the site. Each formation shows its full composition in `summary`
      plus the musician-count badge; only the owner's quote template is left.
