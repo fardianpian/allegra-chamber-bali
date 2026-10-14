@@ -6,6 +6,9 @@
 > pricing sheet, FAQ, atau ke klien** sebelum owner memilih dan menyetujuinya
 > (`.claude/brand-voice-guidelines.md`: "Never fabricate ... deposit terms").
 >
+> **Update 2026-10-14:** owner meminta nilai §4 dipakai untuk dokumen Booking Terms per pasangan
+> (§8, `scripts/generate-booking-terms.mjs`). Situs, pricing sheet, dan FAQ tetap belum diubah.
+>
 > Bukan nasihat hukum. Draf klausul final sebaiknya dicek oleh advokat/notaris di Bali.
 
 Riset: 2026-10-09. Sumber internal + eksternal dicantumkan di §8.
@@ -206,7 +209,80 @@ kurs, tetapi tahu persis nominalnya sejak awal. Jangan mengubah harga Rupiah men
 5. Metode pembayaran yang dibuka (rekomendasi: transfer IDR + Wise; PayPal tidak).
 6. Review draf klausul oleh advokat/notaris sebelum dipakai di kontrak.
 
-## 8. Sumber
+## 8. Alur booking & dokumen Booking Terms (owner direction 2026-10-14)
+
+Owner memilih memakai ketentuan draf di §4 untuk alur berikut. Nilai-nilainya tersimpan di satu
+tempat, objek `TERMS` di `scripts/generate-booking-terms.mjs` — ubah di sana, bukan di copy.
+
+| #   | Langkah                                                                                                  | Siapa              | Hasil                                            |
+| --- | -------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------ |
+| 1   | Tanggal dicek tersedia → minta nama lengkap kedua mempelai + venue                                       | Allegra (WhatsApp) | —                                                |
+| 2   | Pasangan mengirim nama → tanggal dicatat atas nama mereka (lock)                                         | Allegra            | Tanggal ditahan 7 hari                           |
+| 3   | Isi `private/bookings/<ref>.json` (contoh: `scripts/booking-terms.example.json`) lalu jalankan generator | Allegra            | `private/booking-terms/<ref>-en.pdf` + `-id.pdf` |
+| 4   | Kirim **satu file** Booking Terms (EN atau ID)                                                           | Allegra (WhatsApp) | Pasangan membaca syarat + cara bayar             |
+| 5   | Pasangan membalas "We agree to the booking terms" lalu transfer deposit                                  | Pasangan           | Simpan screenshot persetujuan                    |
+| 6   | Deposit masuk → kuitansi + "tanggal terkonfirmasi"                                                       | Allegra            | —                                                |
+| 7   | ±2 minggu sebelum pelunasan → pengingat; pelunasan masuk → kuitansi                                      | Allegra            | —                                                |
+
+File PDF berisi: detail booking & total, jadwal bayar dengan **tanggal kalender nyata**, rekening
+
+- cara bayar (transfer lokal, Wise, SWIFT "OUR"), tabel pembatalan bertanggal, pindah tanggal,
+  pelunasan terlambat, jika Allegra batal, hujan & force majeure, dan baris persetujuan. Tanpa detail
+  rekening, PDF otomatis bercap "DRAFT — not for sending". `private/` di-gitignore: nama pasangan,
+  tanggal, dan rekening tidak pernah masuk repo.
+
+**Template WhatsApp (EN)**
+
+Langkah 1 — minta nama:
+
+```
+Hi [Name], thank you — [Monday 27 September 2027] is still open for us.
+To record the date under your names, could you share both your full
+names as you'd like them on the booking, and your venue? We'll then
+hold the date for 7 days and send our booking terms with payment details.
+```
+
+Langkah 4 — kirim file:
+
+```
+Thank you, [Names]. Your date is now held under your names until
+[16 October 2026]. Attached are your booking terms — your payment
+schedule, how to pay, and what happens if plans change, all in one file.
+When you're ready, reply "We agree to the booking terms" and transfer
+the deposit of Rp [6,450,000]. We'll send a receipt as soon as it arrives.
+```
+
+**Template WhatsApp (ID)**
+
+Langkah 1:
+
+```
+Halo [Nama], terima kasih — [Senin, 27 September 2027] masih tersedia.
+Agar tanggal ini kami catat atas nama Anda, boleh kami minta nama lengkap
+kedua mempelai seperti yang ingin dicantumkan, serta venue-nya? Setelah
+itu tanggal kami tahan 7 hari dan kami kirim ketentuan booking beserta
+cara pembayaran.
+```
+
+Langkah 4:
+
+```
+Terima kasih, [Nama]. Tanggal Anda sudah kami tahan atas nama Anda hingga
+[16 Oktober 2026]. Terlampir ketentuan booking Anda — jadwal pembayaran,
+cara membayar, dan ketentuan bila rencana berubah, dalam satu file.
+Bila sudah siap, balas "Kami setuju dengan ketentuan booking" lalu
+transfer deposit sebesar Rp [6.450.000]. Kuitansi kami kirim begitu
+dana masuk.
+```
+
+**Pilihan default yang ditambahkan saat membuat dokumen (konfirmasi owner):** masa tahan tanggal 7
+hari; kredit reschedule/force majeure berlaku hingga 12 bulan setelah tanggal pernikahan semula;
+pelunasan terlambat → setelah 7 hari tanggal dapat dilepas dan **hanya deposit** yang ditahan;
+refund bila Allegra batal dalam 7 hari kerja; pernyataan "kami tidak pernah mengganti detail
+rekening lewat pesan" (pencegahan penipuan). Klausul hukum (hukum yang berlaku, penyelesaian
+sengketa) sengaja belum dimasukkan — tunggu review advokat/notaris.
+
+## 9. Sumber
 
 **Internal:** `CLAUDE.md`; `docs/PRICING-STRATEGY.md` §5, §8, §10, §11;
 `docs/Allegra-Chamber-Bali-Pricing.html`; `competitor-profiles/moira-ensembles.md`;
