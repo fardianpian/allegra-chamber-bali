@@ -32,13 +32,12 @@ the owner's go-ahead, Claude updated the Notion page to v1.1 to match the repo, 
 After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has drifted.
 **Owner to-do before it is live:**
 
-1. Create the Sheet and deploy the Apps Script (`integrations/booking/README.md`).
-2. Set `PUBLIC_BOOKING_ENDPOINT` in Cloudflare Pages.
-3. Do a real browser and inbox test.
-4. Fill in the bank details.
-5. Have a lawyer review the terms.
-
-Until step 2 is done, the page shows a WhatsApp fallback.
+1. ~~Create the Sheet and deploy the Apps Script~~ — done 2026-10-14. The Sheet "Allegra Booking
+   Register" is owned by allegrachamberbali@gmail.com; the Web App is deployed with access
+   "Anyone"; its `/exec` URL is the fallback in `src/lib/site.ts`.
+2. Do a real browser and inbox test.
+3. Fill in the bank details.
+4. Have a lawyer review the terms.
 
 ## Session — 2026-10-08
 

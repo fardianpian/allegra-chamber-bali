@@ -35,9 +35,12 @@ no SSR or serverless code runs on Cloudflare Pages.
 
    Copy the **Web app URL** (ends in `/exec`).
 
-6. Cloudflare Pages → `allegra-chamber-bali` → Settings → Environment variables → add
-   `PUBLIC_BOOKING_ENDPOINT` = that URL (Production **and** Preview). Then redeploy. Until this
-   variable is set, the page shows a WhatsApp button instead of the form.
+6. Put that URL in `src/lib/site.ts` → `bookingEndpoint` (the fallback value), or set the
+   Cloudflare Pages env var `PUBLIC_BOOKING_ENDPOINT` (type **Text**, Production and Preview) and
+   redeploy. The URL is public by nature (it is the form's `action`). Done 2026-10-14: the live
+   `/exec` URL is the fallback in `site.ts`. If the endpoint is empty, the page shows a WhatsApp
+   button instead of the form. After any `Code.gs` change, redeploy with **New version** or the
+   old code keeps running.
 7. **Real test** (CLAUDE.md rules 19–20: delivery can only be proven in a real browser and inbox):
    fill in the form on the live page using your own email address. Then check that:
    - a new row appears in `Bookings`,
