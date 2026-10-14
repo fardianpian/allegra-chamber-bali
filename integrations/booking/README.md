@@ -33,6 +33,8 @@ Each morning at 09:00 WITA a daily job runs. It does three things:
   amount (from the `Quotes` sheet) and the couple's WhatsApp number. Yessica then sends the balance
   invoice **by hand on WhatsApp**. The couple never gets an automatic payment email.
   `Balance reminder sent` records the date, so it goes out only once.
+- For a `Confirmed` booking whose balance is still not marked as paid 7 days after it was due,
+  emails Allegra **once** (`Balance overdue reported`). The date is not released automatically.
 
 The site stays static. The form posts to Google Apps Script, an external service like Web3Forms;
 no SSR or serverless code runs on Cloudflare Pages.
@@ -70,13 +72,14 @@ no SSR or serverless code runs on Cloudflare Pages.
 
 ## Daily use (Yessica)
 
-| Status in the Sheet | Meaning                                               | Who sets it        |
-| ------------------- | ----------------------------------------------------- | ------------------ |
-| `Held`              | Date held, waiting for the deposit                    | Script (automatic) |
-| `Pending review`    | Date already has an active booking, needs a decision  | Script (automatic) |
-| `Confirmed`         | Deposit received                                      | Yessica            |
-| `Released`          | Hold ended with no deposit, or the date was not taken | Yessica            |
-| `Cancelled`         | Booking cancelled after confirmation                  | Yessica            |
+| Status in the Sheet | Meaning                                                 | Who sets it        |
+| ------------------- | ------------------------------------------------------- | ------------------ |
+| `Held`              | Date held, waiting for the deposit                      | Script (automatic) |
+| `Pending review`    | Date already has an active booking, needs a decision    | Script (automatic) |
+| `Confirmed`         | Deposit received (or the full payment, if short notice) | Yessica            |
+| `Paid in full`      | Balance received too                                    | Yessica            |
+| `Released`          | Hold ended with no deposit, or the date was not taken   | Yessica            |
+| `Cancelled`         | Booking cancelled after confirmation                    | Yessica            |
 
 - After a new `Held` notification, send the quote and the Booking Terms PDF **within 24 hours**. The
   email to the couple promises this. See [Booking Terms PDF](#booking-terms-pdf-sheet-menu) below.
@@ -94,8 +97,8 @@ do not appear in the Google Sheets mobile app
 ### One-time install (after the first setup above)
 
 1. Paste the new `Code.gs` into the Apps Script editor, save, and run `setup` again. It adds the
-   `Musicians`, `Terms PDF` and `Balance reminder sent` columns at the end of `Bookings` (existing
-   rows keep their place), the
+   `Musicians`, `Terms PDF`, `Balance reminder sent`, `Solo instrument` and `Balance overdue reported`
+   columns at the end of `Bookings` (existing rows keep their place), the
    `Quotes` and `Items` sheets, and a Drive folder `Allegra Booking Terms`. Google asks for new permissions (Google
    Docs and Drive) because the script now creates documents. Allow them.
 2. **Project Settings → Script properties → Add script property**, one per line:
@@ -125,7 +128,12 @@ Overtime is not in the list because its rate is not set yet.
 
 ### Making a PDF
 
-1. In `Quotes`, add one row per price line for the booking's reference:
+1. Check the booking's lines in `Quotes`. **They are added automatically when the form arrives**: one
+   line per booked session for the booked formation, priced from `Items`. The form requires at
+   least one session. If the couple chose "Not decided yet", no lines are added. If the formation or
+   sessions change after a conversation, update `Formation` and `Sessions` in `Bookings`, then select
+   the row → **Allegra → Fill quote from booking**. It asks before replacing the existing lines. Use
+   the same menu for bookings made before this existed. Then adjust:
    - **Reference** and **Item (EN)** are dropdowns. Picking an item fills in `Item (ID)` and
      `Amount (IDR)` from the `Items` sheet. Both stay editable. You can also type an item that is
      not in the list, for example `Solo piano, ceremony (≈ 45 min)`; the sheet shows a warning but
@@ -134,18 +142,31 @@ Overtime is not in the list because its rate is not set yet.
      row. The PDF lists the regular price, a `Special rate / Harga khusus` line with the reduction,
      and the agreed total. The deposit, balance and cancellation amounts are all worked out from the
      agreed total. A separate `Special rate` row with a negative amount still works too.
+   - **Extra musicians (Large Ensemble):** add the `Additional musician` line once per session, with
+     the number of musicians in `Qty` (e.g. `2`). Also set `Musicians` in `Bookings` to the full
+     lineup (e.g. 12); the menu asks for it otherwise.
 2. In `Bookings`, check the row: status `Held` or `Confirmed`, a real formation (not "Not decided
-   yet"; `Formation` is a dropdown, so change it there if the couple chose another one), and a `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the
-   default lineup (Solo 1, Duo 3, Trio 4, String Quartet 5, Large Ensemble 10).
+   yet"; `Formation` is a dropdown, so change it there if the couple chose another one), and a
+   `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the default
+   lineup (Solo 1, Duo 3, Trio 4, String Quartet 5, Large Ensemble 10). For Solo, `Solo instrument`
+   (violin, cello or piano, from the form) is printed next to the formation; it can be typed in later.
 3. Click any cell in that row → **Allegra → Create Booking Terms PDF (selected row)**.
 4. After a few seconds a window links to `<reference>-en.pdf` and `<reference>-id.pdf`, saved in
    `Allegra Booking Terms/<reference>/`. The `Terms PDF` column links to that folder.
 5. Open both, check them, then send the one in the couple's language on WhatsApp or as a reply to their
    email. The button never emails the couple, so the prices are always checked by a person first.
 
-The menu refuses a price line from `Items` whose formation differs from the booking's (for example a
-"String Quartet, ceremony" line on a Solo booking), so the PDF never shows one formation and charges
-for another. Lines typed by hand and "Special rate" lines are not checked.
+Before making the PDF, the menu checks the quote against the booking. It refuses:
+
+- a line from `Items` for another formation, for example "String Quartet, ceremony" on a Solo
+  booking;
+- a booked session with no line, or a quoted session the booking does not have (it points to
+  **Fill quote from booking**);
+- the same session quoted twice;
+- extra musicians with `Musicians` left empty.
+
+Lines typed by hand and "Special rate" lines are not checked. This way the PDF never shows one
+booking and charges for another.
 
 Running it again for the same booking replaces the earlier PDFs. If something is missing, the menu
 says what to fix instead of making a PDF.

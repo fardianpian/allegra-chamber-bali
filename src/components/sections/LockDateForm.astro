@@ -34,6 +34,12 @@ const formations = [
 	['large-ensemble', copy.formationOptions.largeEnsemble],
 	['unsure', copy.formationOptions.unsure],
 ]
+const soloInstruments = [
+	['', copy.soloInstrumentOptions.unsure],
+	['violin', copy.soloInstrumentOptions.violin],
+	['cello', copy.soloInstrumentOptions.cello],
+	['piano', copy.soloInstrumentOptions.piano],
+]
 const sessions = [
 	['ceremony', copy.sessionOptions.ceremony],
 	['cocktail', copy.sessionOptions.cocktail],
@@ -150,8 +156,13 @@ const sessions = [
 									))}
 								</select>
 							</label>
-							<fieldset>
-								<legend class={labelClass}>{copy.sessions}</legend>
+							<fieldset data-sessions>
+								<legend class={labelClass}>
+									{copy.sessions}
+									<span class="text-gold" aria-hidden="true">
+										*
+									</span>
+								</legend>
 								<div class="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink">
 									{sessions.map(([value, label]) => (
 										<label class="flex items-center gap-2">
@@ -162,6 +173,15 @@ const sessions = [
 								</div>
 							</fieldset>
 						</div>
+
+						<label class={labelClass} data-solo-instrument>
+							{copy.soloInstrument}
+							<select name="solo_instrument" class={fieldClass}>
+								{soloInstruments.map(([value, label]) => (
+									<option value={value}>{label}</option>
+								))}
+							</select>
+						</label>
 
 						<label class={labelClass}>
 							{copy.planner}
@@ -266,9 +286,22 @@ const sessions = [
 		const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!
 		const label = button.textContent
 
+		// The instrument only matters for Solo; hide it otherwise (it stays visible without JavaScript).
+		const formationSelect = form.querySelector<HTMLSelectElement>('select[name="formation"]')!
+		const soloField = form.querySelector<HTMLElement>('[data-solo-instrument]')!
+		const toggleSolo = () => soloField.classList.toggle('hidden', formationSelect.value !== 'solo')
+		formationSelect.addEventListener('change', toggleSolo)
+		toggleSolo()
+
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault()
 			errorBox.classList.add('hidden')
+			// Checkboxes cannot be "required as a group" in HTML; the script checks it too.
+			if (!form.querySelector('input[name="sessions"]:checked')) {
+				errorBox.textContent = errors.sessions
+				errorBox.classList.remove('hidden')
+				return
+			}
 			button.disabled = true
 			button.textContent = button.dataset.sending || label
 			const data = new FormData(form)
