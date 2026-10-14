@@ -214,22 +214,26 @@ both places until that script is retired.
 
 ### Cloudflare Turnstile (optional, recommended)
 
-A free, invisible-in-most-cases "are you human" check. Off until both keys are set; set them in
-this order so the live form never breaks:
+A free, invisible-in-most-cases "are you human" check. The widget was created on 2026-10-15, and
+its site key is the fallback in `src/lib/site.ts`, so the form shows it on every build (step 2 is
+done). The check itself stays off until `TURNSTILE_SECRET` is set (step 3). For a new widget, follow
+the steps in this order so the live form never breaks:
 
 1. Cloudflare dashboard → **Turnstile → Add widget**. Name `Allegra Lock Your Date`, hostnames
    `allegrachamberbali.com` and `allegra-chamber-bali.pages.dev` (preview builds), mode
    **Managed**. Copy the **Site key** and the **Secret key**.
-2. Cloudflare Pages → Settings → Environment variables → add `PUBLIC_TURNSTILE_SITE_KEY` = the site
-   key, for **Production and Preview**, then redeploy (or push any commit). The form now shows the
-   widget; the script still ignores the token.
+2. Put the site key in `src/lib/site.ts` → `turnstileSiteKey` (the fallback value) and merge, or
+   set the Pages env var `PUBLIC_TURNSTILE_SITE_KEY` (type **Text**, Production and Preview) and
+   redeploy. An env var only reaches the site on the next build. The form now shows the widget;
+   the script still ignores the token.
 3. Apps Script → paste the current `Code.gs` → **Project Settings → Script properties** → add
    `TURNSTILE_SECRET` = the secret key. In the editor, run `setup` once and allow the new
    "connect to an external service" permission (the check calls Cloudflare), then **Deploy →
    Manage deployments → Edit → New version**.
 4. Test from a real browser on the live page (an automated browser may be blocked by the check).
 
-To switch it off, delete the `TURNSTILE_SECRET` property first, then the Pages env var. A secret
+To switch it off, delete the `TURNSTILE_SECRET` property first, then the site key (fallback and
+env var). A secret
 without the site key on the page makes every submission fail with "complete the security check".
 
 - Personal data stays in the Allegra Google account. The privacy policy (`/privacy`, EN + ID)

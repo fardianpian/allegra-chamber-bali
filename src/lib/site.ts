@@ -16,9 +16,11 @@ export const site = {
 	bookingEndpoint:
 		env(import.meta.env.PUBLIC_BOOKING_ENDPOINT) ||
 		'https://script.google.com/macros/s/AKfycbyP76ZBWB6rj6MXqlLWc2x3JM8M-BxqDlP8ICPCAc11BcJ5nuksLt8BJ7j8ZrduQUVCDA/exec',
-	// Cloudflare Turnstile site key for the /lock-your-date/ form (public by nature). Empty = no widget;
-	// the Apps Script only checks the token once its TURNSTILE_SECRET Script property is set.
-	turnstileSiteKey: env(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY) || '',
+	// Cloudflare Turnstile site key for the /lock-your-date/ form (widget "Allegra Lock Your Date",
+	// created 2026-10-15). Public by nature — it ships in the page HTML — so it is safe as a fallback,
+	// like bookingEndpoint; PUBLIC_TURNSTILE_SITE_KEY overrides it. The Apps Script only checks the
+	// token once its TURNSTILE_SECRET Script property is set.
+	turnstileSiteKey: env(import.meta.env.PUBLIC_TURNSTILE_SITE_KEY) || '0x4AAAAAAFW_tMlFknkMp8tP',
 	ga4Id: env(import.meta.env.PUBLIC_GA4_ID) || 'G-BN64LSJGQV',
 }
 
