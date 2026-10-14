@@ -169,6 +169,16 @@ function setup() {
 		.requireValueInList(Object.values(STATUS), true)
 		.build()
 	sheet.getRange(2, COL['Status'] + 1, sheet.getMaxRows() - 1, 1).setDataValidation(statusRule)
+	// A dropdown, so the formation can be changed after a call without a typo breaking the PDF.
+	sheet.getRange(2, COL['Formation'] + 1, sheet.getMaxRows() - 1, 1).setDataValidation(
+		SpreadsheetApp.newDataValidation()
+			.requireValueInList(
+				Object.keys(FORMATIONS).map((k) => FORMATIONS[k].en),
+				true,
+			)
+			.setAllowInvalid(false)
+			.build(),
+	)
 
 	const items = ss.getSheetByName(ITEMS_SHEET) || ss.insertSheet(ITEMS_SHEET)
 	items.getRange(1, 1, 1, ITEM_HEADERS.length).setValues([ITEM_HEADERS]).setFontWeight('bold')
@@ -454,6 +464,16 @@ function termsInput_(v, items, bank, todayIso) {
 	if (!Number.isInteger(musicians) || musicians < 1) {
 		throw userError_('Musicians must be a whole number, or empty to use the formation default.')
 	}
+	// A price line from the Items list names its formation; it must match the booking's, or the PDF
+	// would show one formation and charge for another. Custom lines and "Special rate" are not checked.
+	items.forEach((it) => {
+		const itemFormation = itemFormation_(it.en)
+		if (itemFormation && itemFormation !== formation) {
+			throw userError_(
+				`"${it.en}" is for ${FORMATIONS[itemFormation].en}, but ${reference} is booked as ${FORMATIONS[formation].en}. Change the Formation in ${CONFIG.SHEET_NAME} or the item in ${QUOTES_SHEET} first.`,
+			)
+		}
+	})
 	const weddingDate = str_(v[COL['Wedding date']])
 	const recordedDate = str_(v[COL['Submitted at']]).slice(0, 10)
 	const holdIso = str_(v[COL['Hold until']])
@@ -521,6 +541,13 @@ function quoteItems_(ss, reference) {
 		})
 	if (!items.length) throw userError_(`Add the prices for ${reference} in the ${QUOTES_SHEET} sheet first.`)
 	return items
+}
+
+/** The formation an item from the Items list is for ("Duo, ceremony …" → duo), or null for other lines. */
+function itemFormation_(name) {
+	const key = Object.keys(CATALOG_PRICES).find((k) => name.startsWith(`${FORMATIONS[k].en},`))
+	if (key) return key
+	return /\(Large Ensemble\)/.test(name) ? 'large-ensemble' : null
 }
 
 /** Item rows for the Items sheet: every formation × session from the pricing sheet, then the extras. */

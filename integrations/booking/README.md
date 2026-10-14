@@ -135,13 +135,17 @@ Overtime is not in the list because its rate is not set yet.
      and the agreed total. The deposit, balance and cancellation amounts are all worked out from the
      agreed total. A separate `Special rate` row with a negative amount still works too.
 2. In `Bookings`, check the row: status `Held` or `Confirmed`, a real formation (not "Not decided
-   yet"), and a `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the
+   yet"; `Formation` is a dropdown, so change it there if the couple chose another one), and a `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the
    default lineup (Solo 1, Duo 3, Trio 4, String Quartet 5, Large Ensemble 10).
 3. Click any cell in that row → **Allegra → Create Booking Terms PDF (selected row)**.
 4. After a few seconds a window links to `<reference>-en.pdf` and `<reference>-id.pdf`, saved in
    `Allegra Booking Terms/<reference>/`. The `Terms PDF` column links to that folder.
 5. Open both, check them, then send the one in the couple's language on WhatsApp or as a reply to their
    email. The button never emails the couple, so the prices are always checked by a person first.
+
+The menu refuses a price line from `Items` whose formation differs from the booking's (for example a
+"String Quartet, ceremony" line on a Solo booking), so the PDF never shows one formation and charges
+for another. Lines typed by hand and "Special rate" lines are not checked.
 
 Running it again for the same booking replaces the earlier PDFs. If something is missing, the menu
 says what to fix instead of making a PDF.
