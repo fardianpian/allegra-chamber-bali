@@ -282,6 +282,12 @@ refund bila Allegra batal dalam 7 hari kerja; pernyataan "kami tidak pernah meng
 rekening lewat pesan" (pencegahan penipuan). Klausul hukum (hukum yang berlaku, penyelesaian
 sengketa) sengaja belum dimasukkan — tunggu review advokat/notaris.
 
+**Update 2026-10-14 (feat/lock-your-date):** langkah 1–2 di atas kini bisa lewat formulir
+privat `/lock-your-date/`. Pasangan mengisi nama dan detail acara, lalu Apps Script mencatatnya di
+Booking Register (Google Sheet) dan mengirim email dari Yessica berisi batas masa tahan dan ringkasan
+ketentuan. PDF Booking Terms (dengan nominal dan rekening) tetap dikirim manual. Setup ada di
+`integrations/booking/README.md`. Nilai `TERMS` kini disimpan di `src/data/booking-terms.json`.
+
 ## 9. Sumber
 
 **Internal:** `CLAUDE.md`; `docs/PRICING-STRATEGY.md` §5, §8, §10, §11;

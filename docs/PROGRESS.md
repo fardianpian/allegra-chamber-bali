@@ -17,6 +17,29 @@ the owner's go-ahead, Claude updated the Notion page to v1.1 to match the repo, 
 `pricing on site` open decision there. The PRD stays in Notion only: the repo is public, so
 `CLAUDE.md` § Business PRD just points to it, and its code-facing items are Next step #1 below.
 
+**Booking flow built (PRs #44 + feat/lock-your-date).** Payment terms were researched
+(`docs/PAYMENT-TERMS-RESEARCH-2026-10.md`), and the owner chose to use them. Their values now live in
+`src/data/booking-terms.json`, shared by three consumers:
+
+- `scripts/generate-booking-terms.mjs`: a per-couple Booking Terms PDF in EN + ID. Couple data and
+  output go in `private/`, which is gitignored.
+- The hidden page `/lock-your-date/` (EN + ID, noindex, not in the sitemap). Couples hold their date
+  with no payment.
+- `integrations/booking/Code.gs`: a Google Apps Script bound to the booking-register Sheet. It
+  records each couple, emails them as Yessica (hold deadline and dated terms), notifies Allegra,
+  and runs a daily reminder/expiry check.
+
+After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has drifted.
+**Owner to-do before it is live:**
+
+1. Create the Sheet and deploy the Apps Script (`integrations/booking/README.md`).
+2. Set `PUBLIC_BOOKING_ENDPOINT` in Cloudflare Pages.
+3. Do a real browser and inbox test.
+4. Fill in the bank details.
+5. Have a lawyer review the terms.
+
+Until step 2 is done, the page shows a WhatsApp fallback.
+
 ## Session — 2026-10-08
 
 **Semrush Site Audit (free account, crawl 2026-10-07, 99 URLs) triaged.** The free account can't

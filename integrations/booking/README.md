@@ -34,6 +34,7 @@ no SSR or serverless code runs on Cloudflare Pages.
      Sheet itself holds the data.
 
    Copy the **Web app URL** (ends in `/exec`).
+
 6. Cloudflare Pages → `allegra-chamber-bali` → Settings → Environment variables → add
    `PUBLIC_BOOKING_ENDPOINT` = that URL (Production **and** Preview). Then redeploy. Until this
    variable is set, the page shows a WhatsApp button instead of the form.
@@ -47,13 +48,13 @@ no SSR or serverless code runs on Cloudflare Pages.
 
 ## Daily use (Yessica)
 
-| Status in the Sheet | Meaning                                              | Who sets it                               |
-| ------------------- | ---------------------------------------------------- | ----------------------------------------- |
-| `Held`              | Date held, waiting for the deposit                   | Script (automatic)                        |
-| `Pending review`    | Date already has an active booking, needs a decision | Script (automatic)                        |
-| `Confirmed`         | Deposit received                                     | Yessica                                   |
-| `Released`          | Hold ended with no deposit, or the date was not taken | Yessica                                  |
-| `Cancelled`         | Booking cancelled after confirmation                 | Yessica                                   |
+| Status in the Sheet | Meaning                                               | Who sets it        |
+| ------------------- | ----------------------------------------------------- | ------------------ |
+| `Held`              | Date held, waiting for the deposit                    | Script (automatic) |
+| `Pending review`    | Date already has an active booking, needs a decision  | Script (automatic) |
+| `Confirmed`         | Deposit received                                      | Yessica            |
+| `Released`          | Hold ended with no deposit, or the date was not taken | Yessica            |
+| `Cancelled`         | Booking cancelled after confirmation                  | Yessica            |
 
 - After a new `Held` notification, send the quote and the Booking Terms PDF
   (`npm run booking:terms private/bookings/<ref>.json`) **within 24 hours**. The email to the couple
