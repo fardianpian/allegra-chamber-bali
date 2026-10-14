@@ -59,6 +59,14 @@ now: deposit or credit until H-91, the deposit from H-90 to H-15, the full total
 the deposit now equals 50%, the old separate 50% tier was merged into the deposit tier.
 `docs/PAYMENT-TERMS-RESEARCH-2026-10.md` still holds the 30% analysis; see its §8 update note.
 
+**Special rate moved to the booking (owner, 2026-10-15, option B).** A per-line "Agreed price" on a
+booking with 3 sessions left Yessica unsure which line to discount. Quotes now keeps every line at its
+regular price, and `Bookings` → `Agreed total (IDR)` holds the one agreed total. The PDF still
+itemises each session (useful for the "reducing sessions = partial cancellation" term), then shows
+one "Special rate" line and the agreed total. `setup` moves any old per-line agreed prices into
+`Agreed total` and deletes that column. The menus refuse to run until `setup` has been run on the
+new layout.
+
 **Booking flow gap review (owner, 2026-10-15).** The owner asked for a check of all gaps, so that the
 flow would not need repeated rounds of fixes. The changes:
 

@@ -138,10 +138,12 @@ Overtime is not in the list because its rate is not set yet.
      `Amount (IDR)` from the `Items` sheet. Both stay editable. You can also type an item that is
      not in the list, for example `Solo piano, ceremony (≈ 45 min)`; the sheet shows a warning but
      keeps it.
-   - **Special rate:** type the price agreed with the couple in `Agreed price (IDR)` on the same
-     row. The PDF lists the regular price, a `Special rate / Harga khusus` line with the reduction,
-     and the agreed total. The deposit, balance and cancellation amounts are all worked out from the
-     agreed total. A separate `Special rate` row with a negative amount still works too.
+   - **Special rate:** do not change the lines. Type the total agreed with the couple **once**, in
+     `Bookings` → `Agreed total (IDR)` on the booking's row (e.g. `28000000` for a String Quartet
+     with 3 sessions at Rp 32,000,000). The PDF lists every line at its regular price, then one
+     `Special rate / Harga khusus` line with the difference, and the agreed total. The deposit,
+     balance, cancellation amounts and the balance reminder all use the agreed total. An Agreed total
+     higher than the lines is refused.
    - **Extra musicians (Large Ensemble):** add the `Additional musician` line once per session, with
      the number of musicians in `Qty` (e.g. `2`). Also set `Musicians` in `Bookings` to the full
      lineup (e.g. 12); the menu asks for it otherwise.

@@ -99,6 +99,7 @@ const HEADERS = [
 	// Added 2026-10-15.
 	'Solo instrument',
 	'Balance overdue reported',
+	'Agreed total (IDR)',
 ]
 const COL = HEADERS.reduce((acc, h, i) => ((acc[h] = i), acc), {})
 
@@ -125,13 +126,15 @@ const SOLO_INSTRUMENTS = {
 	piano: { en: 'piano', id: 'piano' },
 }
 
-// One row per price line: the reference it belongs to, the line in EN and ID, the regular amount in
-// rupiah and, for a special rate, the agreed price. The PDF then shows the regular price, the
-// reduction and the agreed total. A negative-amount row ("Special rate", -1000000) also still works.
-// `Qty` (optional, 1 when empty) multiplies the amount, e.g. 2 extra musicians for one session; an
-// agreed price then applies to the whole line. New bookings get one line per booked session.
+// One row per price line at the regular price: the reference it belongs to, the line in EN and ID,
+// the amount in rupiah and `Qty` (optional, 1 when empty; e.g. 2 extra musicians for one session).
+// New bookings get one line per booked session. A special rate is not set here but once per booking,
+// in Bookings → "Agreed total (IDR)" (owner, 2026-10-15): the PDF lists every line at its regular
+// price, one "Special rate" line for the difference, and the agreed total.
 const QUOTES_SHEET = 'Quotes'
-const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)', 'Agreed price (IDR)', 'Qty']
+const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)', 'Qty']
+// Before 2026-10-15 a per-line "Agreed price (IDR)" column sat where Qty is now; setup moves it out.
+const OLD_AGREED_HEADER = 'Agreed price (IDR)'
 
 // The price list Yessica picks from in Quotes. `setup` fills it once, from the owner's pricing sheet
 // (docs/Allegra-Chamber-Bali-Pricing.html, "Final pricing as of July 2026", durations from its table
@@ -205,6 +208,7 @@ function setup() {
 	}
 
 	const quotes = ss.getSheetByName(QUOTES_SHEET) || ss.insertSheet(QUOTES_SHEET)
+	migrateAgreedPrices_(sheet, quotes)
 	const quoteRows = quotes.getMaxRows() - 1
 	quotes.getRange(1, 1, 1, QUOTE_HEADERS.length).setValues([QUOTE_HEADERS]).setFontWeight('bold')
 	quotes.setFrozenRows(1)
@@ -217,16 +221,6 @@ function setup() {
 			.setAllowInvalid(true)
 			.build(),
 	)
-	quotes
-		.getRange(2, 5, quoteRows, 1)
-		.setNumberFormat('#,##0')
-		.setDataValidation(
-			SpreadsheetApp.newDataValidation()
-				.requireNumberGreaterThan(0)
-				.setAllowInvalid(false)
-				.setHelpText('Optional. The price agreed with the couple, if lower than the regular amount.')
-				.build(),
-		)
 	quotes.getRange(2, 1, quoteRows, 1).setDataValidation(
 		SpreadsheetApp.newDataValidation()
 			.requireValueInRange(sheet.getRange(2, 1, sheet.getMaxRows() - 1, 1), true)
@@ -240,16 +234,26 @@ function setup() {
 			SpreadsheetApp.newDataValidation()
 				.requireNumberNotEqualTo(0)
 				.setAllowInvalid(false)
-				.setHelpText('Amount in rupiah. For a special rate, add a row with a negative amount, e.g. -1000000.')
+				.setHelpText('Regular amount in rupiah. A special rate goes in Bookings → Agreed total (IDR).')
 				.build(),
 		)
 	quotes
-		.getRange(2, 6, quoteRows, 1)
+		.getRange(2, 5, quoteRows, 1)
 		.setDataValidation(
 			SpreadsheetApp.newDataValidation()
 				.requireNumberGreaterThanOrEqualTo(1)
 				.setAllowInvalid(false)
 				.setHelpText('Optional. How many of this line, e.g. 2 extra musicians. Empty means 1.')
+				.build(),
+		)
+	sheet
+		.getRange(2, COL['Agreed total (IDR)'] + 1, sheet.getMaxRows() - 1, 1)
+		.setNumberFormat('#,##0')
+		.setDataValidation(
+			SpreadsheetApp.newDataValidation()
+				.requireNumberGreaterThan(0)
+				.setAllowInvalid(false)
+				.setHelpText('Optional. The total agreed with the couple, if lower than the sum of the Quotes lines.')
 				.build(),
 		)
 	termsFolder_()
@@ -422,9 +426,9 @@ function balanceReminder_(sheet, r, v, today) {
 	const reference = String(v[COL['Reference']])
 	let amount = 'see the Booking Terms PDF'
 	try {
-		const total = quoteItems_(SpreadsheetApp.getActiveSpreadsheet(), reference).reduce(
-			(s, it) => s + it.amount,
-			0,
+		const total = agreedTotal_(
+			v,
+			quoteItems_(SpreadsheetApp.getActiveSpreadsheet(), reference).reduce((s, it) => s + it.amount, 0),
 		)
 		amount = fmt_('en').rp(total - roundRp_((total * TERMS.depositPct) / 100))
 	} catch (err) {
@@ -505,7 +509,7 @@ function fillQuoteFromBooking() {
 		if (existing.length) {
 			const answer = ui.alert(
 				'Fill quote from booking',
-				`${reference} already has ${existing.length} line(s) in ${QUOTES_SHEET}. Replace them? Any special rate, extra musicians or custom lines must be added again.`,
+				`${reference} already has ${existing.length} line(s) in ${QUOTES_SHEET}. Replace them? Extra musicians or custom lines must be added again; the Agreed total in Bookings stays.`,
 				ui.ButtonSet.YES_NO,
 			)
 			if (answer !== ui.Button.YES) return
@@ -527,11 +531,48 @@ function fillQuoteFromBooking() {
 	}
 }
 
+/**
+ * One-off move from the per-line "Agreed price (IDR)" column to Bookings → "Agreed total (IDR)": each
+ * booking's agreed total becomes the sum of its lines with their agreed prices applied, then the old
+ * column is deleted so Qty takes its place. Does nothing once the old column is gone.
+ */
+function migrateAgreedPrices_(bookings, quotes) {
+	const header = quotes.getRange(1, 1, 1, Math.max(quotes.getLastColumn(), 1)).getValues()[0]
+	const col = header.indexOf(OLD_AGREED_HEADER)
+	if (col < 0) return
+	const regular = {}
+	const agreed = {}
+	quotes
+		.getDataRange()
+		.getValues()
+		.slice(1)
+		.forEach((r) => {
+			const ref = String(r[0]).trim()
+			const amount = amount_(r[3])
+			if (!ref || !Number.isFinite(amount)) return
+			const qtyCol = header.indexOf('Qty')
+			const qty = qtyCol < 0 || r[qtyCol] === '' ? 1 : Number(r[qtyCol]) || 1
+			const lineAgreed = r[col] === '' || r[col] == null ? NaN : amount_(r[col])
+			regular[ref] = (regular[ref] || 0) + amount * qty
+			agreed[ref] = (agreed[ref] || 0) + (Number.isFinite(lineAgreed) ? lineAgreed : amount * qty)
+		})
+	const values = bookings.getDataRange().getValues()
+	for (let r = 1; r < values.length; r++) {
+		const ref = String(values[r][COL['Reference']]).trim()
+		const existing = values[r][COL['Agreed total (IDR)']]
+		if (agreed[ref] < regular[ref] && (existing === '' || existing == null)) {
+			bookings.getRange(r + 1, COL['Agreed total (IDR)'] + 1).setValue(agreed[ref])
+		}
+	}
+	quotes.deleteColumn(col + 1)
+}
+
 /** Appends one Quotes line per booked session, priced from the Items sheet. Returns how many. */
 function addQuoteLines_(ss, reference, formation, sessions) {
 	if (!CATALOG_PRICES[formation] || !sessions.length) return 0
 	const quotes = ss.getSheetByName(QUOTES_SHEET)
 	if (!quotes) throw new Error(`the ${QUOTES_SHEET} sheet does not exist`)
+	checkQuoteLayout_(quotes)
 	const items = ss.getSheetByName(ITEMS_SHEET)
 	const byName = {}
 	if (items) {
@@ -552,7 +593,6 @@ function addQuoteLines_(ss, reference, formation, sessions) {
 			en,
 			match ? match[1] : `${FORMATIONS[formation].id}, ${CATALOG_SESSIONS[i].id}`,
 			match ? match[2] : '',
-			'',
 			'',
 		]
 	})
@@ -610,7 +650,8 @@ function createTermsPdf() {
 }
 
 /** Checks one Bookings row and its prices, and works out every amount and date the PDF states. */
-function termsInput_(v, items, bank, todayIso) {
+function termsInput_(v, quoteLines, bank, todayIso) {
+	let items = quoteLines
 	const reference = String(v[COL['Reference']])
 	const status = String(v[COL['Status']])
 	if (!ACTIVE.includes(status)) {
@@ -670,9 +711,13 @@ function termsInput_(v, items, bank, todayIso) {
 	if (status === STATUS.HELD && plan.holdUntil < day_(todayIso)) {
 		throw userError_(`The hold ended on ${holdIso}. Extend "Hold until" first, or release the date.`)
 	}
-	const total = items.reduce((sum, it) => sum + it.amount, 0)
-	if (total <= 0)
-		throw userError_(`The prices for ${reference} add up to ${total}. The total must be above 0.`)
+	const regular = items.reduce((sum, it) => sum + it.amount, 0)
+	if (regular <= 0)
+		throw userError_(`The prices for ${reference} add up to ${regular}. The total must be above 0.`)
+	const total = agreedTotal_(v, regular)
+	// A special rate is one line for the whole booking, after every line at its regular price.
+	if (total < regular)
+		items = items.concat([{ base: '', en: 'Special rate', id: 'Harga khusus', amount: total - regular }])
 	const deposit = plan.shortNotice ? total : roundRp_((total * TERMS.depositPct) / 100)
 	const instrument = String(v[COL['Solo instrument']] || '')
 		.trim()
@@ -693,9 +738,23 @@ function termsInput_(v, items, bank, todayIso) {
 	}
 }
 
+// The columns must be the current ones: after pasting a new Code.gs, setup has to run once.
+function checkQuoteLayout_(quotes) {
+	const header = quotes
+		.getRange(1, 1, 1, QUOTE_HEADERS.length)
+		.getValues()[0]
+		.map((h) => String(h).trim())
+	if (header.join('|') !== QUOTE_HEADERS.join('|')) {
+		throw userError_(
+			`The ${QUOTES_SHEET} columns are out of date. Run setup() once in the Apps Script editor.`,
+		)
+	}
+}
+
 function quoteItems_(ss, reference) {
 	const sheet = ss.getSheetByName(QUOTES_SHEET)
 	if (!sheet) throw userError_(`Run setup() first. The ${QUOTES_SHEET} sheet does not exist.`)
+	checkQuoteLayout_(sheet)
 	const items = []
 	sheet
 		.getDataRange()
@@ -704,7 +763,7 @@ function quoteItems_(ss, reference) {
 		.filter((r) => String(r[0]).trim() === reference && String(r[1]).trim() + String(r[3]).trim() !== '')
 		.forEach((r) => {
 			const base = String(r[1]).trim()
-			const qty = r[5] === '' || r[5] == null ? 1 : Number(r[5])
+			const qty = r[4] === '' || r[4] == null ? 1 : Number(r[4])
 			const unit = amount_(r[3])
 			if (!base) throw userError_(`A ${QUOTES_SHEET} row for ${reference} has no item name.`)
 			if (!Number.isFinite(unit) || unit === 0) {
@@ -714,21 +773,26 @@ function quoteItems_(ss, reference) {
 			const label = (name) => (qty > 1 ? `${name} × ${qty}` : name)
 			const it = { base, en: label(base), id: label(String(r[2]).trim() || base), amount: unit * qty }
 			items.push(it)
-			if (r[4] === '' || r[4] == null) return
-			const agreed = amount_(r[4])
-			if (!Number.isFinite(agreed) || agreed <= 0) {
-				throw userError_(`The agreed price for "${it.en}" must be a positive amount in rupiah.`)
-			}
-			if (agreed > it.amount) {
-				throw userError_(
-					`The agreed price for "${it.en}" is higher than its amount. Change the amount instead.`,
-				)
-			}
-			if (agreed < it.amount)
-				items.push({ base: '', en: 'Special rate', id: 'Harga khusus', amount: agreed - it.amount })
 		})
 	if (!items.length) throw userError_(`Add the prices for ${reference} in the ${QUOTES_SHEET} sheet first.`)
 	return items
+}
+
+/** Bookings → "Agreed total (IDR)" when set, else the regular total. Higher than regular is refused. */
+function agreedTotal_(v, regular) {
+	const cell = v[COL['Agreed total (IDR)']]
+	if (cell === '' || cell == null) return regular
+	const agreed = amount_(cell)
+	const reference = String(v[COL['Reference']])
+	if (!Number.isFinite(agreed) || agreed <= 0) {
+		throw userError_(`The Agreed total of ${reference} must be a positive amount in rupiah, or empty.`)
+	}
+	if (agreed > regular) {
+		throw userError_(
+			`The Agreed total of ${reference} (${agreed}) is higher than its ${QUOTES_SHEET} lines (${regular}). Add the missing line, or change the Agreed total.`,
+		)
+	}
+	return agreed
 }
 
 /** The formation an item from the Items list is for ("Duo, ceremony …" → duo), or null for other lines. */
