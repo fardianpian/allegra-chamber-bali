@@ -206,7 +206,8 @@ function doPost(e) {
 		row[COL['Planner / WO']] = d.planner
 		row[COL['Language']] = d.lang
 		row[COL['Notes']] = d.notes
-		row[COL['Consent']] = `yes · ${row[COL['Submitted at']]}`
+		// Both agreements, with the terms version the couple read on the terms page (UUPK Pasal 18 ayat 2).
+		row[COL['Consent']] = `privacy yes · terms ${d.termsVersion} agreed · ${row[COL['Submitted at']]}`
 		row[COL['Clashes with']] = clashes.join(', ')
 		row[COL['Reminder sent']] = ''
 		row[COL['Expiry reported']] = ''
@@ -234,6 +235,7 @@ function doPost(e) {
 				`Formation: ${FORMATIONS[d.formation].en} · Sessions: ${row[COL['Sessions']] || '—'}`,
 				`Email: ${d.email} · WhatsApp: ${d.whatsapp}`,
 				`Planner / WO: ${d.planner || '—'} · Language: ${d.lang}`,
+				`Booking terms agreed: version ${d.termsVersion}${d.termsVersion === TERMS.version ? '' : ` (current is ${TERMS.version})`}`,
 				`Notes: ${d.notes || '—'}`,
 				`Hold until: ${iso_(plan.holdUntil)}`,
 				'',
@@ -549,12 +551,14 @@ function validate_(p, multi) {
 		planner: text(p.planner, 160),
 		notes: text(p.notes, 2000),
 		lang: p.lang === 'id' ? 'id' : 'en',
+		termsVersion: text(p.terms_version, 20) || TERMS.version,
 	}
 	if (!d.name || !d.whatsapp || !d.venue) fail('missing')
 	if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) fail('email')
 	if (!/^\d{4}-\d{2}-\d{2}$/.test(d.weddingDate) || isNaN(day_(d.weddingDate))) fail('date')
 	if (daysBetween_(day_(today_()), day_(d.weddingDate)) < 1) fail('date')
 	if (!FORMATIONS[d.formation]) fail('formation')
+	if (p.terms_agreed !== 'yes') fail('terms')
 	if (p.consent !== 'yes') fail('consent')
 	return d
 }

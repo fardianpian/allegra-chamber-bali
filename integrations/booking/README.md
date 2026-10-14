@@ -1,11 +1,16 @@
 # Lock Your Date — booking register (Google Sheet + Apps Script)
 
 Couples open a private link, `allegrachamberbali.com/lock-your-date/` (or `/id/lock-your-date/`),
-that Yessica sends on WhatsApp once their date is available. Filling in the form takes no
-payment. It does three things:
+that Yessica sends on WhatsApp once their date is available. Owner direction 2026-10-14: the link
+opens the **booking terms first**, built from `src/data/booking-terms.json`. Couples can stop there,
+or ask on WhatsApp. If they wait, the date is not held and another couple may book it, and the page
+says so. Ticking "We have read and agree" opens the form at `/lock-your-date/form/`, with the terms
+box already ticked. The form records which terms version they agreed to. Filling in the form takes
+no payment. It does three things:
 
 1. Adds a row to the **Allegra Booking Register** (a Google Sheet) with status `Held`, or
-   `Pending review` if the date already has an active booking.
+   `Pending review` if the date already has an active booking. The `Consent` column records both
+   agreements and the terms version, e.g. `privacy yes · terms 2026-10.2 agreed · <time>`.
 2. Emails the couple from the Allegra Gmail account, signed by Yessica. The email says how long the
    date is held (14 days, or 7 when the wedding is 44 days away or less), the deadline to pay, the
    booking details, and that the quote

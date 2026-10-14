@@ -1,8 +1,8 @@
 ---
-// "Lock Your Date" form — posts to the Google Apps Script booking register
-// (integrations/booking/Code.gs), which records the couple and emails the booking terms. No payment
-// is taken here. With JavaScript the result is shown inline; without it the browser lands on the
-// script's plain confirmation page.
+// "Lock Your Date" form (step 2, after the terms page) — posts to the Google Apps Script booking
+// register (integrations/booking/Code.gs), which records the couple, the terms version they agreed
+// to, and emails a confirmation. No payment is taken here. With JavaScript the result is shown
+// inline; without it the browser lands on the script's plain confirmation page.
 import { useTranslations } from '../../i18n/utils'
 import type { Lang } from '../../i18n/languages'
 import { site, waLink } from '../../lib/site'
@@ -15,6 +15,7 @@ const { lang } = Astro.props
 const t = useTranslations(lang)
 const copy = t('lockDatePage')
 const privacyPath = lang === 'en' ? '/privacy/' : '/id/privacy/'
+const termsPath = lang === 'en' ? '/lock-your-date/' : '/id/lock-your-date/'
 const whatsapp = waLink(
 	lang === 'en'
 		? "Hi Allegra, I'd like to hold our wedding date."
@@ -60,6 +61,7 @@ const sessions = [
 						data-errors={JSON.stringify(copy.errors)}
 					>
 						<input type="hidden" name="lang" value={lang} />
+						<input type="hidden" name="terms_version" value={terms.version} />
 						<input
 							type="checkbox"
 							name="botcheck"
@@ -174,6 +176,23 @@ const sessions = [
 						<label class="flex items-start gap-3 text-sm text-ink">
 							<input
 								type="checkbox"
+								name="terms_agreed"
+								value="yes"
+								required
+								data-terms-version={terms.version}
+								class="mt-1 h-5 w-5 flex-shrink-0 border-ink/25 accent-gold"
+							/>
+							<span>
+								{copy.termsAgree}{' '}
+								<a href={termsPath} class="underline decoration-gold underline-offset-4">
+									{copy.termsLink}
+								</a>
+							</span>
+						</label>
+
+						<label class="flex items-start gap-3 text-sm text-ink">
+							<input
+								type="checkbox"
 								name="consent"
 								value="yes"
 								required
@@ -236,6 +255,11 @@ const sessions = [
 			const tomorrow = new Date()
 			tomorrow.setDate(tomorrow.getDate() + 1)
 			dateInput.min = tomorrow.toLocaleDateString('en-CA') // yyyy-mm-dd in the visitor's time zone
+		}
+		// Arriving from the terms page (?agree=<version>) means the couple already agreed to this version.
+		const termsBox = form.querySelector<HTMLInputElement>('input[name="terms_agreed"]')
+		if (termsBox && new URLSearchParams(location.search).get('agree') === termsBox.dataset.termsVersion) {
+			termsBox.checked = true
 		}
 		const errors: Record<string, string> = JSON.parse(form.dataset.errors || '{}')
 		const errorBox = form.querySelector<HTMLElement>('[data-form-error]')!

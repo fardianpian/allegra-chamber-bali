@@ -59,6 +59,13 @@ now: deposit or credit until H-91, the deposit from H-90 to H-15, the full total
 the deposit now equals 50%, the old separate 50% tier was merged into the deposit tier.
 `docs/PAYMENT-TERMS-RESEARCH-2026-10.md` still holds the 30% analysis; see its §8 update note.
 
+**Terms before the form (owner, 2026-10-14).** `/lock-your-date/` now shows the booking terms first,
+generated from `booking-terms.json` with no couple-specific data. The form moved to
+`/lock-your-date/form/`. It needs a "we agree to the booking terms" tick, which arrives pre-ticked
+from the terms page through `?agree=<version>`. `Code.gs` rejects a submission without it and records
+the version in `Consent`. Deploy order: merge first, then paste and redeploy `Code.gs`. The old
+script ignores the new fields, but the new script rejects the old form.
+
 **Booking Terms PDF from the Sheet.** The owner chose a Sheet menu over the command-line script, so
 Yessica can make the PDF herself on a laptop. Custom menus and clickable drawings do not run in the
 Sheets mobile app. She types the prices in a `Quotes` sheet. A special rate is its own row with a
