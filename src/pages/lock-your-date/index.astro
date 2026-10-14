@@ -1,15 +1,17 @@
 ---
+// Step 1 of Lock Your Date: the booking terms. The link Yessica sends opens here; the form is at
+// /lock-your-date/form/ after the couple agrees (owner direction 2026-10-14).
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import PageHeader from '../../components/sections/PageHeader.astro'
-import LockDateForm from '../../components/sections/LockDateForm.astro'
+import BookingTermsSummary from '../../components/sections/BookingTermsSummary.astro'
 import { useTranslations } from '../../i18n/utils'
 
 const lang = 'en'
 const t = useTranslations(lang)
-const page = t('lockDatePage')
+const page = t('bookingTermsPage')
 ---
 
 <BaseLayout lang={lang} title={page.title} description={page.description} path="/lock-your-date" noindex>
 	<PageHeader eyebrow={page.eyebrow} heading={page.heading} subhead={page.subhead} />
-	<LockDateForm lang={lang} />
+	<BookingTermsSummary lang={lang} />
 </BaseLayout>

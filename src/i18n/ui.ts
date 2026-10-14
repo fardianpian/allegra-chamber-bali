@@ -321,6 +321,73 @@ export const ui = {
 			cta: 'Back to Home',
 			ctaWhatsapp: 'Message Us on WhatsApp',
 		},
+		// Hidden "Booking Terms" page (owner direction 2026-10-14): the first page the /lock-your-date/
+		// link opens, so couples read the terms before they fill in the form, and can stop or ask first.
+		// `{placeholders}` are filled in by BookingTermsSummary.astro from src/data/booking-terms.json.
+		// Same wording as the Booking Terms PDF (integrations/booking/Code.gs → termsContent_).
+		bookingTermsPage: {
+			title: 'Booking Terms — Allegra Chamber Bali',
+			description:
+				'How booking works before you hold your wedding date: deposit, balance, changes and cancellation.',
+			eyebrow: 'Lock Your Date · Step 1 of 2',
+			heading: 'Before You Hold Your Date',
+			subhead:
+				"Dear couple — before you fill in the form, please take a moment to read how booking with us works, so you know exactly what you are agreeing to. If something doesn't suit you, you are welcome to ask us first, or simply not continue.",
+			availabilityHeading: 'About your date',
+			availability:
+				'Dates are held in the order the forms reach us. You are welcome to take your time, but until the form is submitted we cannot hold your date, and another couple may book it in the meantime.',
+			howHeading: 'How booking works',
+			how: [
+				'Fill in the short form on the next page. Your date is then held for {holdDays} days, at no cost.',
+				'Within 24 hours, Yessica sends your quote and your Booking Terms document, with your prices, exact payment dates and our bank details.',
+				'Deposit: {deposit}% of the total, paid within the {holdDays}-day hold. Your date is confirmed once it arrives.',
+				'Balance: the remaining {balancePct}%, due {balanceDays} days before your wedding. About {invoiceDays} days before it is due, we send you the balance invoice on WhatsApp.',
+				'If your wedding is {shortDays} days away or less, payment is made in full within {shortHoldDays} days.',
+			],
+			includedHeading: 'What is included',
+			included: [
+				'Custom arrangements of your own songs are included, never a separate charge.',
+				'Sound system not included; amplification, when needed, comes from your venue’s or planner’s sound provider. We share our tech rider in advance.',
+				'Overtime beyond your booked coverage is available on request, subject to musician availability, and is confirmed and billed separately.',
+			],
+			payHeading: 'How to pay',
+			pay: [
+				'All amounts are in Indonesian Rupiah (IDR), paid by bank transfer. From abroad, Wise or a bank transfer with “OUR” charges both work, so the full amount arrives.',
+				'Our bank details appear only in your Booking Terms document. We never ask for card details, and we never change our bank details by message.',
+			],
+			changeHeading: 'If your plans change',
+			coolingOff:
+				'Change of heart? Within {coolingHours} hours of paying your deposit, we refund it in full (less any bank transfer fees). This applies when your wedding is more than {coolingMinDays} days away.',
+			cancelHead: ['If you cancel', 'What we keep'],
+			tierFirst: '{from} days or more before your wedding',
+			tierMiddle: '{from} to {to} days before',
+			tierLast: '{to} days or less before',
+			keepDeposit: 'Your deposit',
+			keepDepositCredit:
+				'Your deposit — or the full deposit kept as credit for a new date within {creditMonths} months',
+			keepPct: '{pct}% of the total',
+			keepFull: 'The full total',
+			cancelNote:
+				'Anything you have paid above this is refunded. If we are able to book your date with another couple, we keep only the costs already incurred and refund the rest. Reducing your formation or sessions is treated as a partial cancellation on the same schedule.',
+			dateChange:
+				'Changing your date: once, free of charge, if requested at least {dateChangeDays} days before your wedding and the new date is available; your deposit moves in full.',
+			late: 'If the balance hasn’t arrived within {graceDays} days of its due date, we’ll reach out; after that we may release your date, and the deposit is kept as the cancellation charge.',
+			usHeading: 'If we cannot perform',
+			us: [
+				'If we cancel for any reason on our side, everything you have paid is refunded within {refundDays} working days.',
+				'If one musician is unwell, we bring an equivalent replacement and let you know. If the formation ends up smaller, the price difference is refunded.',
+			],
+			weatherHeading: 'Weather & events beyond anyone’s control',
+			weather: [
+				'Rain: musicians and instruments move to a covered spot agreed in advance with your planner or venue — the safety of musicians and instruments comes first. Rain is not a reason to cancel.',
+				'Force majeure (natural disaster, official closure of the airport or access, a government restriction on events, epidemic, civil unrest): everything you have paid becomes full credit for a new date within {creditMonths} months, at no charge. If no suitable date works, we refund your payments less costs already incurred that cannot be recovered.',
+			],
+			agree: 'We have read and agree to these booking terms.',
+			continue: 'Continue to the Form',
+			question: 'Have a question first?',
+			ctaWhatsapp: 'Message Us on WhatsApp',
+			version: 'Terms version {version}',
+		},
 		// Hidden "Lock Your Date" page (2026-10-14): the link is sent privately once a date is
 		// available. The form posts to integrations/booking/Code.gs (Google Apps Script), which records
 		// the couple in the booking register and emails the terms. `{days}`/`{email}` are filled in by
@@ -328,13 +395,13 @@ export const ui = {
 		lockDatePage: {
 			title: 'Lock Your Wedding Date — Allegra Chamber Bali',
 			description: 'A short form to hold your musicians for your wedding date. No payment is taken.',
-			eyebrow: 'Lock Your Date',
+			eyebrow: 'Lock Your Date · Step 2 of 2',
 			heading: 'Lock Your Wedding Date',
 			subhead:
 				'Dear couple — may we take a moment of your time? Please complete this short form so your musicians are held for the wedding date you have booked.',
 			stepsHeading: 'What happens next',
 			steps: [
-				'We record your date under your name and hold it for {days} days. You will receive a confirmation email with the date your hold ends.',
+				'We record your date under your name and hold it for up to {days} days. You will receive a confirmation email with the date your hold ends.',
 				'Within 24 hours, Yessica sends your quote and full booking terms.',
 				'Your date is confirmed once your deposit arrives.',
 			],
@@ -364,6 +431,8 @@ export const ui = {
 			consent:
 				'We agree that Allegra Chamber Bali records these details to hold our date and prepare our booking.',
 			privacyLink: 'Read the Privacy Policy',
+			termsAgree: 'We have read and agree to the booking terms.',
+			termsLink: 'Read the booking terms',
 			submit: 'Lock Our Date',
 			sending: 'Sending…',
 			referenceLabel: 'Your booking reference',
@@ -379,6 +448,7 @@ export const ui = {
 				date: 'Please choose a wedding date in the future.',
 				formation: 'Please choose a formation.',
 				consent: 'Please tick the consent box to continue.',
+				terms: 'Please confirm that you agree to the booking terms.',
 				server: 'Something went wrong on our side. Please try again, or message us on WhatsApp.',
 			},
 			ctaWhatsapp: 'Message Us on WhatsApp',
@@ -1192,17 +1262,80 @@ export const ui = {
 			cta: 'Kembali ke Beranda',
 			ctaWhatsapp: 'Kirim Pesan via WhatsApp',
 		},
+		bookingTermsPage: {
+			title: 'Ketentuan Booking — Allegra Chamber Bali',
+			description:
+				'Cara booking sebelum Anda menahan tanggal pernikahan: deposit, pelunasan, perubahan, dan pembatalan.',
+			eyebrow: 'Kunci Tanggal Anda · Langkah 1 dari 2',
+			heading: 'Sebelum Menahan Tanggal Anda',
+			subhead:
+				'Kepada pasangan yang kami hormati — sebelum mengisi formulir, mohon luangkan waktu sebentar untuk membaca cara booking bersama kami, agar Anda tahu persis apa yang Anda setujui. Bila ada yang kurang sesuai, Anda dipersilakan bertanya dulu kepada kami, atau tidak melanjutkan.',
+			availabilityHeading: 'Tentang tanggal Anda',
+			availability:
+				'Tanggal kami tahan sesuai urutan formulir yang masuk. Anda boleh meluangkan waktu, tetapi sebelum formulir dikirim kami belum dapat menahan tanggal Anda, dan pasangan lain mungkin memesannya lebih dulu.',
+			howHeading: 'Cara booking',
+			how: [
+				'Isi formulir singkat di halaman berikutnya. Tanggal Anda lalu kami tahan selama {holdDays} hari, tanpa biaya.',
+				'Dalam 24 jam, Yessica mengirimkan quote dan dokumen Ketentuan Booking Anda, berisi harga, tanggal pembayaran yang pasti, dan rekening bank kami.',
+				'Deposit: {deposit}% dari total, dibayar dalam masa tahan {holdDays} hari. Tanggal Anda terkonfirmasi setelah deposit kami terima.',
+				'Pelunasan: sisa {balancePct}%, paling lambat {balanceDays} hari sebelum pernikahan. Sekitar {invoiceDays} hari sebelum jatuh tempo, kami mengirim tagihan pelunasan lewat WhatsApp.',
+				'Bila pernikahan Anda tinggal {shortDays} hari lagi atau kurang, pembayaran dilakukan sekaligus dalam {shortHoldDays} hari.',
+			],
+			includedHeading: 'Yang sudah termasuk',
+			included: [
+				'Aransemen khusus lagu pilihan Anda sudah termasuk, tanpa biaya tambahan.',
+				'Sound system tidak termasuk; amplifikasi, bila diperlukan, disediakan oleh penyedia sound venue atau planner Anda. Tech rider kami kirim lebih awal.',
+				'Overtime di luar durasi yang dipesan dapat diminta, tergantung ketersediaan musisi, dan dikonfirmasi serta ditagih terpisah.',
+			],
+			payHeading: 'Cara membayar',
+			pay: [
+				'Semua nominal dalam Rupiah (IDR), dibayar lewat transfer bank. Dari luar negeri, Wise atau transfer bank dengan biaya "OUR" sama-sama bisa, agar nominal penuh yang sampai.',
+				'Rekening bank kami hanya tercantum di dokumen Ketentuan Booking Anda. Kami tidak pernah meminta data kartu, dan tidak pernah mengganti detail rekening lewat pesan.',
+			],
+			changeHeading: 'Jika rencana Anda berubah',
+			coolingOff:
+				'Berubah pikiran? Dalam {coolingHours} jam setelah membayar deposit, kami kembalikan deposit penuh (dikurangi biaya transfer bank, bila ada). Berlaku bila pernikahan Anda masih lebih dari {coolingMinDays} hari lagi.',
+			cancelHead: ['Jika Anda membatalkan', 'Yang kami tahan'],
+			tierFirst: '{from} hari atau lebih sebelum pernikahan',
+			tierMiddle: '{from} sampai {to} hari sebelumnya',
+			tierLast: '{to} hari atau kurang sebelumnya',
+			keepDeposit: 'Deposit Anda',
+			keepDepositCredit:
+				'Deposit Anda — atau seluruh deposit menjadi kredit untuk tanggal baru dalam {creditMonths} bulan',
+			keepPct: '{pct}% dari total',
+			keepFull: 'Total penuh',
+			cancelNote:
+				'Kelebihan dari jumlah yang sudah Anda bayar kami kembalikan. Jika tanggal Anda berhasil kami isi dengan pasangan lain, kami hanya menahan biaya yang sudah benar-benar keluar dan mengembalikan sisanya. Mengurangi formasi atau sesi diperlakukan sebagai pembatalan sebagian dengan jadwal yang sama.',
+			dateChange:
+				'Pindah tanggal: satu kali tanpa biaya bila diminta paling lambat {dateChangeDays} hari sebelum pernikahan dan tanggal baru tersedia; deposit pindah utuh.',
+			late: 'Bila pelunasan belum kami terima dalam {graceDays} hari setelah jatuh tempo, kami akan menghubungi Anda; setelah itu tanggal dapat kami lepas dan deposit ditahan sebagai biaya pembatalan.',
+			usHeading: 'Jika kami tidak dapat tampil',
+			us: [
+				'Bila kami membatalkan karena sebab di pihak kami, seluruh pembayaran Anda kami kembalikan dalam {refundDays} hari kerja.',
+				'Bila satu musisi berhalangan, kami menghadirkan pengganti yang setara dan memberi tahu Anda. Bila formasi akhirnya berkurang, selisih harganya kami kembalikan.',
+			],
+			weatherHeading: 'Cuaca & keadaan di luar kendali',
+			weather: [
+				'Hujan: musisi dan instrumen pindah ke area teduh yang disepakati lebih awal dengan planner atau venue Anda — keselamatan musisi dan instrumen diutamakan. Hujan bukan alasan pembatalan.',
+				'Keadaan memaksa (bencana alam, penutupan resmi bandara atau akses, larangan acara oleh pemerintah, epidemi, kerusuhan): seluruh pembayaran menjadi kredit penuh untuk tanggal baru dalam {creditMonths} bulan, tanpa biaya. Bila tidak ada tanggal yang cocok, kami kembalikan pembayaran dikurangi biaya yang sudah keluar dan tidak dapat ditarik kembali.',
+			],
+			agree: 'Kami sudah membaca dan menyetujui ketentuan booking ini.',
+			continue: 'Lanjut ke Formulir',
+			question: 'Ada yang ingin ditanyakan dulu?',
+			ctaWhatsapp: 'Kirim Pesan via WhatsApp',
+			version: 'Ketentuan versi {version}',
+		},
 		lockDatePage: {
 			title: 'Kunci Tanggal Pernikahan Anda — Allegra Chamber Bali',
 			description:
 				'Formulir singkat untuk menahan jadwal musisi di tanggal pernikahan Anda. Tidak ada pembayaran yang diminta.',
-			eyebrow: 'Kunci Tanggal Anda',
+			eyebrow: 'Kunci Tanggal Anda · Langkah 2 dari 2',
 			heading: 'Kunci Tanggal Pernikahan Anda',
 			subhead:
 				'Kepada pasangan yang kami hormati — kami mohon waktu Anda sebentar untuk mengisi formulir ini, agar jadwal musisi Anda terkunci di tanggal acara yang Anda pesan.',
 			stepsHeading: 'Langkah selanjutnya',
 			steps: [
-				'Tanggal Anda kami catat atas nama Anda dan kami tahan selama {days} hari. Anda akan menerima email konfirmasi berisi tanggal berakhirnya masa tahan.',
+				'Tanggal Anda kami catat atas nama Anda dan kami tahan hingga {days} hari. Anda akan menerima email konfirmasi berisi tanggal berakhirnya masa tahan.',
 				'Dalam 24 jam, Yessica mengirimkan quote dan ketentuan booking lengkap.',
 				'Tanggal Anda terkonfirmasi setelah deposit kami terima.',
 			],
@@ -1232,6 +1365,8 @@ export const ui = {
 			consent:
 				'Kami setuju Allegra Chamber Bali mencatat data ini untuk menahan tanggal dan menyiapkan booking kami.',
 			privacyLink: 'Baca Kebijakan Privasi',
+			termsAgree: 'Kami sudah membaca dan menyetujui ketentuan booking.',
+			termsLink: 'Baca ketentuan booking',
 			submit: 'Kunci Tanggal Kami',
 			sending: 'Mengirim…',
 			referenceLabel: 'Referensi booking Anda',
@@ -1247,6 +1382,7 @@ export const ui = {
 				date: 'Mohon pilih tanggal pernikahan di masa mendatang.',
 				formation: 'Mohon pilih formasi.',
 				consent: 'Mohon centang kotak persetujuan untuk melanjutkan.',
+				terms: 'Mohon konfirmasi bahwa Anda menyetujui ketentuan booking.',
 				server: 'Terjadi kendala di sistem kami. Silakan coba lagi, atau kirim pesan via WhatsApp.',
 			},
 			ctaWhatsapp: 'Kirim Pesan via WhatsApp',

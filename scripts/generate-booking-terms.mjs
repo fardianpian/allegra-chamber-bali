@@ -12,6 +12,9 @@
 // Optional `bank.note` (string or { en, id }) prints under the bank table, e.g. when the account is
 // held by a person on behalf of Allegra.
 //
+// The everyday route is the Sheet menu (integrations/booking/Code.gs → "Allegra → Create Booking Terms
+// PDF"); this script is the fallback and uses the same wording. Change both together.
+//
 // Output: private/booking-terms/<reference>-<lang>.pdf. `private/` is gitignored on purpose —
 // couples' names, dates and bank details must never be committed (the repo deploys publicly).
 //
@@ -65,12 +68,20 @@ const recorded = day(b.recordedDate)
 const leadDays = daysBetween(recorded, wedding)
 if (leadDays < 1) throw new Error('recordedDate must be before weddingDate')
 
+// A special rate is its own item with a negative price, so the PDF shows the regular price, the
+// reduction and the agreed total. Every percentage below is taken from the agreed total.
 const total = b.items.reduce((sum, it) => sum + it.price, 0)
-const shortNotice = leadDays <= TERMS.balanceDaysBefore
+if (!(total > 0)) throw new Error('the item prices must add up to more than 0')
+const balanceDue = addDays(wedding, -TERMS.balanceDaysBefore)
+// One payment instead of deposit + balance when the deposit deadline would not come before the
+// balance is due. Those bookings get a shorter hold. Same rule as plan_() in Code.gs.
+const shortNotice = leadDays <= TERMS.balanceDaysBefore + TERMS.holdDays
 const deposit = shortNotice ? total : roundRp((total * TERMS.depositPct) / 100)
 const balance = total - deposit
-const holdUntil = addDays(recorded, Math.min(TERMS.holdDays, leadDays - 1))
-const balanceDue = addDays(wedding, -TERMS.balanceDaysBefore)
+const holdUntil = addDays(
+	recorded,
+	shortNotice ? Math.min(TERMS.shortNoticeHoldDays, leadDays - 1) : TERMS.holdDays,
+)
 const lateCutoff = addDays(balanceDue, TERMS.lateGraceDays)
 const dateChangeBy = addDays(wedding, -TERMS.freeDateChangeDaysBefore)
 const creditUntil = addMonths(wedding, TERMS.creditMonths)
@@ -82,8 +93,10 @@ const rows = TERMS.tiers
 		const start = i === 0 ? null : addDays(wedding, -TERMS.tiers[i - 1].untilDaysBefore + 1)
 		const from = start && start < recorded ? recorded : start
 		const to = t.untilDaysBefore === 0 ? null : addDays(wedding, -t.untilDaysBefore)
-		const keep = t.keep === 'deposit' ? deposit : roundRp((total * t.keepPct) / 100)
-		return { ...t, from, to, keep }
+		// A one-payment booking has no separate deposit: a "deposit" row keeps the deposit share instead.
+		const keepPct = t.keep === 'deposit' && shortNotice ? TERMS.depositPct : t.keepPct
+		const keep = t.keep === 'deposit' && !shortNotice ? deposit : roundRp((total * keepPct) / 100)
+		return { ...t, keepPct, from, to, keep }
 	})
 	.filter((r) => !r.to || r.to >= recorded)
 
@@ -109,7 +122,11 @@ const fmt = (lang) => {
 		timeZone: 'UTC',
 	})
 	const num = new Intl.NumberFormat(lang === 'id' ? 'id-ID' : 'en-US')
-	return { long: (d) => long.format(d), date: (d) => short.format(d), rp: (n) => `Rp ${num.format(n)}` }
+	return {
+		long: (d) => long.format(d),
+		date: (d) => short.format(d),
+		rp: (n) => `${n < 0 ? '− ' : ''}Rp ${num.format(Math.abs(n))}`,
+	}
 }
 
 function copy(lang) {
@@ -146,8 +163,8 @@ function copy(lang) {
 						[`Pelunasan (${100 - TERMS.depositPct}%)`, `paling lambat ${f.date(balanceDue)}`, f.rp(balance)],
 					],
 			payNote: shortNotice
-				? 'Karena pernikahan Anda tinggal kurang dari 30 hari, pembayaran dilakukan sekaligus.'
-				: `Deposit mengunci tanggal Anda dan memulai pengerjaan aransemen lagu Anda. Kami mengirim pengingat sekitar dua minggu sebelum pelunasan jatuh tempo.`,
+				? 'Karena tanggal pernikahan Anda sudah dekat, pembayaran dilakukan sekaligus.'
+				: `Deposit mengunci tanggal Anda dan memulai pengerjaan aransemen lagu Anda. Sekitar ${TERMS.balanceInvoiceDaysBefore} hari sebelum pelunasan jatuh tempo, kami mengirim tagihan pelunasan lewat WhatsApp.`,
 			s3: 'Cara membayar',
 			currency: 'Semua nominal dalam Rupiah (IDR).',
 			bankLabels: ['Bank', 'Nama rekening', 'Nomor rekening', 'Kode SWIFT', 'Berita transfer'],
@@ -230,8 +247,8 @@ function copy(lang) {
 					[`Balance (${100 - TERMS.depositPct}%)`, `by ${f.date(balanceDue)}`, f.rp(balance)],
 				],
 		payNote: shortNotice
-			? 'As your wedding is less than 30 days away, payment is made in full.'
-			: 'Your deposit reserves your date and begins the arrangement of your songs. We send a gentle reminder about two weeks before the balance is due.',
+			? 'As your wedding is close, payment is made in full in one transfer.'
+			: `Your deposit reserves your date and begins the arrangement of your songs. About ${TERMS.balanceInvoiceDaysBefore} days before the balance is due, we send you the balance invoice on WhatsApp.`,
 		s3: 'How to pay',
 		currency: 'All amounts are in Indonesian Rupiah (IDR).',
 		bankLabels: ['Bank', 'Account name', 'Account number', 'SWIFT code', 'Payment reference'],

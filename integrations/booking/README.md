@@ -1,21 +1,38 @@
 # Lock Your Date — booking register (Google Sheet + Apps Script)
 
 Couples open a private link, `allegrachamberbali.com/lock-your-date/` (or `/id/lock-your-date/`),
-that Yessica sends on WhatsApp once their date is available. Filling in the form takes no
-payment. It does three things:
+that Yessica sends on WhatsApp once their date is available. Owner direction 2026-10-14: the link
+opens the **booking terms first**, built from `src/data/booking-terms.json`. Couples can stop there,
+or ask on WhatsApp. If they wait, the date is not held and another couple may book it, and the page
+says so. Ticking "We have read and agree" opens the form at `/lock-your-date/form/`, with the terms
+box already ticked. The form records which terms version they agreed to. Filling in the form takes
+no payment. It does three things:
 
 1. Adds a row to the **Allegra Booking Register** (a Google Sheet) with status `Held`, or
-   `Pending review` if the date already has an active booking.
+   `Pending review` if the date already has an active booking. The `Consent` column records both
+   agreements and the terms version, e.g. `privacy yes · terms 2026-10.2 agreed · <time>`.
 2. Emails the couple from the Allegra Gmail account, signed by Yessica. The email says how long the
-   date is held (7 days), the deadline to pay the deposit, the booking details, and that the quote
+   date is held (14 days, or 7 when the wedding is 44 days away or less), the deadline to pay, the
+   booking details, and that the quote
    and full booking terms follow within 24 hours. It is short on purpose: the first live test landed
    in Gmail Spam, and payment/bank wording from a new sender reads like phishing. The terms and bank
    details travel in the Booking Terms PDF instead.
 3. Emails `allegrachamberbali@gmail.com` a notification about the new submission.
 
-Each morning at 09:00 WITA a daily job runs. It sends the couple **one** reminder 2 days before
-their hold ends, and tells Allegra when a hold has expired. The date is **never** released
-automatically. Yessica changes the status by hand.
+Payment terms (owner direction 2026-10-14, `src/data/booking-terms.json`): a **50% deposit** within
+the 14-day hold, and the **balance by 30 days before the wedding**. When the wedding is 44 days away
+or less, there is one full payment within a 7-day hold instead (or by the day before the wedding,
+if that comes sooner).
+
+Each morning at 09:00 WITA a daily job runs. It does three things:
+
+- Sends the couple **one** reminder 2 days before their hold ends.
+- Tells Allegra when a hold has expired. The date is **never** released automatically. Yessica
+  changes the status by hand.
+- For a `Confirmed` booking, emails Allegra **14 days before the balance is due**, with the balance
+  amount (from the `Quotes` sheet) and the couple's WhatsApp number. Yessica then sends the balance
+  invoice **by hand on WhatsApp**. The couple never gets an automatic payment email.
+  `Balance reminder sent` records the date, so it goes out only once.
 
 The site stays static. The form posts to Google Apps Script, an external service like Web3Forms;
 no SSR or serverless code runs on Cloudflare Pages.
@@ -61,12 +78,68 @@ no SSR or serverless code runs on Cloudflare Pages.
 | `Released`          | Hold ended with no deposit, or the date was not taken | Yessica            |
 | `Cancelled`         | Booking cancelled after confirmation                  | Yessica            |
 
-- After a new `Held` notification, send the quote and the Booking Terms PDF
-  (`npm run booking:terms private/bookings/<ref>.json`) **within 24 hours**. The email to the couple
-  promises this.
+- After a new `Held` notification, send the quote and the Booking Terms PDF **within 24 hours**. The
+  email to the couple promises this. See [Booking Terms PDF](#booking-terms-pdf-sheet-menu) below.
 - `Pending review`: reply to the couple within 24 hours. If the date can be taken, change the
   status to `Held` and send the quote.
 - To extend a hold, edit the `Hold until` column (format `yyyy-mm-dd`).
+
+## Booking Terms PDF (Sheet menu)
+
+The PDF holds the prices, the payment schedule with real dates, the bank details and the cancellation
+terms, in EN and ID. Yessica makes it from the Sheet on a **laptop or desktop browser**. Custom menus
+do not appear in the Google Sheets mobile app
+([Google: custom menus](https://developers.google.com/apps-script/guides/menus)).
+
+### One-time install (after the first setup above)
+
+1. Paste the new `Code.gs` into the Apps Script editor, save, and run `setup` again. It adds the
+   `Musicians`, `Terms PDF` and `Balance reminder sent` columns at the end of `Bookings` (existing
+   rows keep their place), the
+   `Quotes` sheet, and a Drive folder `Allegra Booking Terms`. Google asks for new permissions (Google
+   Docs and Drive) because the script now creates documents. Allow them.
+2. **Project Settings → Script properties → Add script property**, one per line:
+
+   | Property              | Value                                                   | Required |
+   | --------------------- | ------------------------------------------------------- | -------- |
+   | `BANK_NAME`           | e.g. `BCA (Bank Central Asia)`                          | yes      |
+   | `BANK_ACCOUNT_NAME`   | the name on the account                                 | yes      |
+   | `BANK_ACCOUNT_NUMBER` | the account number                                      | yes      |
+   | `BANK_SWIFT`          | e.g. `CENAIDJA`, for transfers from abroad              | no       |
+   | `BANK_NOTE_EN`        | a line under the bank table, e.g. who holds the account | no       |
+   | `BANK_NOTE_ID`        | the same line in Indonesian                             | no       |
+
+   The bank details stay in the Allegra Google account. They are never written in `Code.gs`, because
+   this repository is public.
+
+3. **Deploy → Manage deployments → Edit → New version**. The form URL stays the same.
+4. Reload the Sheet. An **Allegra** menu appears next to Help.
+
+### Making a PDF
+
+1. In `Quotes`, add one row per price line for the booking's reference: `Item (EN)`, `Item (ID)`
+   (optional; the EN text is used when it is empty) and `Amount (IDR)`.
+   - **Special rate:** add the regular price as usual, then a separate row such as
+     `Special rate` / `Harga khusus` with a **negative** amount (e.g. `-1000000`). The PDF lists the
+     reduction and the agreed total. The deposit, balance and cancellation amounts are all worked out
+     from the agreed total.
+2. In `Bookings`, check the row: status `Held` or `Confirmed`, a real formation (not "Not decided
+   yet"), and a `Hold until` date that has not passed. `Musicians` is optional. Leave it empty for the
+   default lineup (Solo 1, Duo 3, Trio 4, String Quartet 5, Large Ensemble 10).
+3. Click any cell in that row → **Allegra → Create Booking Terms PDF (selected row)**.
+4. After a few seconds a window links to `<reference>-en.pdf` and `<reference>-id.pdf`, saved in
+   `Allegra Booking Terms/<reference>/`. The `Terms PDF` column links to that folder.
+5. Open both, check them, then send the one in the couple's language on WhatsApp or as a reply to their
+   email. The button never emails the couple, so the prices are always checked by a person first.
+
+Running it again for the same booking replaces the earlier PDFs. If something is missing, the menu
+says what to fix instead of making a PDF.
+
+The layout is built as a Google Doc and exported to PDF, because Apps Script's HTML-to-PDF converter
+does not support modern CSS. It uses Cormorant Garamond and Inter. If Google Docs refuses them, it
+falls back to Georgia and Arial. The command-line generator (`npm run booking:terms
+private/bookings/<ref>.json`) still works as a fallback and uses the same wording. Change the wording in
+both places until that script is retired.
 
 ## Changing things
 
@@ -79,12 +152,15 @@ no SSR or serverless code runs on Cloudflare Pages.
   becomes `Pending review`.
 - **Email wording**: `coupleEmail_` and `reminderEmail_` in `Code.gs` (EN + ID). Check
   `.claude/brand-voice-guidelines.md` before editing.
+- **Booking Terms PDF wording**: `termsContent_` in `Code.gs`, and the same text in
+  `scripts/generate-booking-terms.mjs` while that fallback exists. Layout: `renderDoc_`.
 
 ## Limits & safety
 
 - A free Gmail account can send email to 100 recipients per day through Apps Script
   ([Google quotas](https://developers.google.com/apps-script/guides/services/quotas)). Each
-  submission uses 2, which is plenty for wedding volume.
+  submission uses 2, which is plenty for wedding volume. The same page allows 250 new Google Docs a
+  day. Each Booking Terms run creates 2 temporary Docs.
 - Spam protection: the link is private, the page is `noindex` and not in the sitemap, and the form
   has a honeypot field. Values that start with `=`, `+`, `-` or `@` are written as text, never as
   spreadsheet formulas.
