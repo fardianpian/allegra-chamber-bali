@@ -149,6 +149,9 @@ const sessions = [
 									*
 								</span>
 								<select name="formation" required class={fieldClass}>
+									<option value="" disabled selected>
+										{copy.formationOptions.placeholder}
+									</option>
 									{formations.map(([value, label]) => (
 										<option value={value}>{label}</option>
 									))}
@@ -188,7 +191,7 @@ const sessions = [
 							<span>
 								{copy.consent}{' '}
 								<a href={privacyPath} class="underline decoration-gold underline-offset-4">
-									↗
+									{copy.privacyLink}
 								</a>
 							</span>
 						</label>

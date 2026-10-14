@@ -346,6 +346,7 @@ export const ui = {
 			venue: 'Venue',
 			formation: 'Formation',
 			formationOptions: {
+				placeholder: 'Choose a formation',
 				solo: 'Solo',
 				duo: 'Duo (with piano)',
 				trio: 'Trio (with piano)',
@@ -362,7 +363,8 @@ export const ui = {
 			planner: 'Wedding planner / organiser (optional)',
 			notes: 'Anything we should know (optional)',
 			consent:
-				'We agree that Allegra Chamber Bali records these details to hold our date and prepare our booking, as described in the Privacy Policy.',
+				'We agree that Allegra Chamber Bali records these details to hold our date and prepare our booking.',
+			privacyLink: 'Read the Privacy Policy',
 			submit: 'Lock Our Date',
 			sending: 'Sending…',
 			referenceLabel: 'Your booking reference',
@@ -1213,6 +1215,7 @@ export const ui = {
 			venue: 'Venue',
 			formation: 'Formasi',
 			formationOptions: {
+				placeholder: 'Pilih formasi',
 				solo: 'Solo',
 				duo: 'Duo (dengan piano)',
 				trio: 'Trio (dengan piano)',
@@ -1229,7 +1232,8 @@ export const ui = {
 			planner: 'Wedding planner / organizer (opsional)',
 			notes: 'Hal lain yang perlu kami ketahui (opsional)',
 			consent:
-				'Kami setuju Allegra Chamber Bali mencatat data ini untuk menahan tanggal dan menyiapkan booking kami, sesuai Kebijakan Privasi.',
+				'Kami setuju Allegra Chamber Bali mencatat data ini untuk menahan tanggal dan menyiapkan booking kami.',
+			privacyLink: 'Baca Kebijakan Privasi',
 			submit: 'Kunci Tanggal Kami',
 			sending: 'Mengirim…',
 			referenceLabel: 'Referensi booking Anda',
