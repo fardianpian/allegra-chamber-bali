@@ -7,6 +7,18 @@
 > you need the detailed story behind a past decision or incident. Default per-session read is just
 > this file.
 
+## Session — 2026-10-15
+
+**Booking endpoint spam guard (feat/booking-spam-guard).** A review of the cloud-built booking
+system (PRs #49–#55) found it safe, with one gap: the Apps Script `/exec` URL is public and only a
+honeypot stood between it and a script that could flood the Sheet (turning real couples' dates into
+`Pending review`) or send Allegra-branded emails to any address. `doPost` now refuses repeats of an
+open request (same email + date) and anything past daily caps (15 total, 3 per email), alerting
+Allegra once. Cloudflare Turnstile is wired in on both sides but **off until the owner adds the
+keys**. Privacy policy (EN + ID) mentions Turnstile. **Owner to-do:** paste the new `Code.gs` and
+redeploy as a New version (caps take effect then); optionally switch on Turnstile following
+`integrations/booking/README.md` § Cloudflare Turnstile (site key in Pages first, secret second).
+
 ## Session — 2026-10-14
 
 **Business PRD connected (docs only).** The owner wrote a business PRD in Notion ("PRD Bisnis —

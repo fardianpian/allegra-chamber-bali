@@ -27,6 +27,11 @@ const CONFIG = {
 	// How many active bookings (Held or Confirmed) one wedding date can take before a new
 	// submission is marked "Pending review" instead of "Held".
 	MAX_BOOKINGS_PER_DATE: 1,
+	// Spam guard: the /exec URL is public, so cap what one day of submissions can do. Over either
+	// cap the submission is refused (no row, no couple email), the couple is asked to use WhatsApp,
+	// and Allegra is told once. Real wedding volume is far below both.
+	MAX_SUBMISSIONS_PER_DAY: 15,
+	MAX_SUBMISSIONS_PER_EMAIL_PER_DAY: 3,
 	SHEET_NAME: 'Bookings',
 	TIMEZONE: 'Asia/Makassar', // Bali (WITA)
 }
@@ -170,6 +175,8 @@ const BANK_PROPS = {
 	noteEn: 'BANK_NOTE_EN',
 	noteId: 'BANK_NOTE_ID',
 }
+// Cloudflare Turnstile secret key (Script properties). While it is unset the check is skipped.
+const TURNSTILE_PROP = 'TURNSTILE_SECRET'
 const FOLDER_PROP = 'TERMS_FOLDER_ID'
 const FOLDER_NAME = 'Allegra Booking Terms'
 
@@ -271,12 +278,15 @@ function doPost(e) {
 	const wantsJson = p.mode === 'js'
 	if (p.botcheck) return respond_(wantsJson, { ok: true, reference: '', status: STATUS.HELD })
 
-	const lock = LockService.getScriptLock()
-	lock.waitLock(20000)
+	let lock
 	try {
 		const d = validate_(p, (e && e.parameters) || {})
+		verifyHuman_(p)
+		lock = LockService.getScriptLock()
+		lock.waitLock(20000)
 		const sheet = sheet_()
 		const recorded = today_()
+		guard_(sheet, d, recorded)
 		const plan = plan_(d.weddingDate, recorded)
 		const clashes = activeOn_(sheet, d.weddingDate)
 		const status = clashes.length >= CONFIG.MAX_BOOKINGS_PER_DATE ? STATUS.PENDING : STATUS.HELD
@@ -355,7 +365,7 @@ function doPost(e) {
 		if (!err.userError) console.error(err)
 		return respond_(wantsJson, { ok: false, error: err.userError || 'server' })
 	} finally {
-		lock.releaseLock()
+		if (lock) lock.releaseLock()
 	}
 }
 
@@ -957,6 +967,74 @@ function validate_(p, multi) {
 	return d
 }
 
+// ---------- spam guard ----------
+
+// Cloudflare Turnstile, checked only once TURNSTILE_SECRET is set in Script properties (the site
+// shows the widget once PUBLIC_TURNSTILE_SITE_KEY is set). Runs before the lock: it is a network call.
+function verifyHuman_(p) {
+	const secret = PropertiesService.getScriptProperties().getProperty(TURNSTILE_PROP)
+	if (!secret) return
+	const token = String(p['cf-turnstile-response'] || '')
+	if (!token) throw userError_('verify')
+	let ok = false
+	try {
+		const res = UrlFetchApp.fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+			method: 'post',
+			payload: { secret, response: token },
+			muteHttpExceptions: true,
+		})
+		ok = JSON.parse(res.getContentText()).success === true
+	} catch (err) {
+		console.error(err)
+	}
+	if (!ok) throw userError_('verify')
+}
+
+// Refuses a repeat of an open request (same email + wedding date) and anything past the daily caps.
+// The rows are the only state: a refused submission adds none, so it never counts towards a cap.
+function guard_(sheet, d, todayIso) {
+	const rows = sheet.getDataRange().getValues().slice(1)
+	const open = [STATUS.PENDING, ...ACTIVE]
+	const sameEmail = (v) => String(v[COL['Email']]).trim().toLowerCase() === d.email
+	if (
+		rows.some(
+			(v) =>
+				sameEmail(v) &&
+				str_(v[COL['Wedding date']]) === d.weddingDate &&
+				open.includes(String(v[COL['Status']])),
+		)
+	) {
+		throw userError_('duplicate')
+	}
+	const today = rows.filter((v) => str_(v[COL['Submitted at']]).slice(0, 10) === todayIso)
+	if (
+		today.length >= CONFIG.MAX_SUBMISSIONS_PER_DAY ||
+		today.filter(sameEmail).length >= CONFIG.MAX_SUBMISSIONS_PER_EMAIL_PER_DAY
+	) {
+		reportBusy_(todayIso, d)
+		throw userError_('busy')
+	}
+}
+
+// Tells Allegra the form is refusing submissions, at most once every 6 hours (the cache limit).
+function reportBusy_(todayIso, d) {
+	const cache = CacheService.getScriptCache()
+	const key = `busy-${todayIso}`
+	if (cache.get(key)) return
+	cache.put(key, '1', 21600)
+	notify_(
+		`Lock Your Date form is refusing submissions today (${todayIso})`,
+		[
+			`Today's limit was reached: ${CONFIG.MAX_SUBMISSIONS_PER_DAY} submissions in total, or ${CONFIG.MAX_SUBMISSIONS_PER_EMAIL_PER_DAY} from one email address.`,
+			'Refused submissions are not recorded and get no email; the form asks them to message on WhatsApp instead.',
+			'If the rows added today look fake, mark them Cancelled. The form opens again tomorrow.',
+			'',
+			`First refused submission: ${d.name} · ${d.email} · ${d.whatsapp} · wedding ${d.weddingDate}`,
+			`Register: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,
+		].join('\n'),
+	)
+}
+
 // ---------- dates (calendar days, UTC midnight — same math as scripts/generate-booking-terms.mjs) ----------
 // `tiers[].untilDaysBefore`: a tier applies while the wedding is at least that many days away; it keeps
 // the deposit or `keepPct` of the total.
@@ -1071,7 +1149,7 @@ function str_(v) {
 // or "2027-09-27" into a date (the text format set by setup did not prevent that on appendRow).
 function cell_(v) {
 	const s = String(v == null ? '' : v)
-	return /^[=+\-@]/.test(s) || /^[\d\s().:\/-]+$/.test(s) ? `'${s}` : s
+	return /^[=+\-@\t\r]/.test(s) || /^[\d\s().:\/-]+$/.test(s) ? `'${s}` : s
 }
 
 // ---------- responses ----------
