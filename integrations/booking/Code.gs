@@ -68,10 +68,11 @@ const STATUS = {
 	HELD: 'Held',
 	PENDING: 'Pending review',
 	CONFIRMED: 'Confirmed',
+	PAID: 'Paid in full',
 	RELEASED: 'Released',
 	CANCELLED: 'Cancelled',
 }
-const ACTIVE = [STATUS.HELD, STATUS.CONFIRMED]
+const ACTIVE = [STATUS.HELD, STATUS.CONFIRMED, STATUS.PAID]
 const HEADERS = [
 	'Reference',
 	'Status',
@@ -95,6 +96,9 @@ const HEADERS = [
 	'Musicians',
 	'Terms PDF',
 	'Balance reminder sent',
+	// Added 2026-10-15.
+	'Solo instrument',
+	'Balance overdue reported',
 ]
 const COL = HEADERS.reduce((acc, h, i) => ((acc[h] = i), acc), {})
 
@@ -112,12 +116,22 @@ const SESSIONS = {
 	cocktail: { en: 'Cocktail hour', id: 'Cocktail' },
 	dinner: { en: 'Dinner / Reception', id: 'Makan malam / Resepsi' },
 }
+// Same order as CATALOG_SESSIONS below.
+const SESSION_KEYS = Object.keys(SESSIONS)
+// Solo is the one formation where the couple picks the instrument; the price is the same for each.
+const SOLO_INSTRUMENTS = {
+	violin: { en: 'violin', id: 'biola' },
+	cello: { en: 'cello', id: 'cello' },
+	piano: { en: 'piano', id: 'piano' },
+}
 
 // One row per price line: the reference it belongs to, the line in EN and ID, the regular amount in
 // rupiah and, for a special rate, the agreed price. The PDF then shows the regular price, the
 // reduction and the agreed total. A negative-amount row ("Special rate", -1000000) also still works.
+// `Qty` (optional, 1 when empty) multiplies the amount, e.g. 2 extra musicians for one session; an
+// agreed price then applies to the whole line. New bookings get one line per booked session.
 const QUOTES_SHEET = 'Quotes'
-const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)', 'Agreed price (IDR)']
+const QUOTE_HEADERS = ['Reference', 'Item (EN)', 'Item (ID)', 'Amount (IDR)', 'Agreed price (IDR)', 'Qty']
 
 // The price list Yessica picks from in Quotes. `setup` fills it once, from the owner's pricing sheet
 // (docs/Allegra-Chamber-Bali-Pricing.html, "Final pricing as of July 2026", durations from its table
@@ -229,6 +243,15 @@ function setup() {
 				.setHelpText('Amount in rupiah. For a special rate, add a row with a negative amount, e.g. -1000000.')
 				.build(),
 		)
+	quotes
+		.getRange(2, 6, quoteRows, 1)
+		.setDataValidation(
+			SpreadsheetApp.newDataValidation()
+				.requireNumberGreaterThanOrEqualTo(1)
+				.setAllowInvalid(false)
+				.setHelpText('Optional. How many of this line, e.g. 2 extra musicians. Empty means 1.')
+				.build(),
+		)
 	termsFolder_()
 
 	ScriptApp.getProjectTriggers()
@@ -278,7 +301,21 @@ function doPost(e) {
 		row[COL['Musicians']] = ''
 		row[COL['Terms PDF']] = ''
 		row[COL['Balance reminder sent']] = ''
+		row[COL['Solo instrument']] =
+			d.formation === 'solo' && d.soloInstrument ? SOLO_INSTRUMENTS[d.soloInstrument].en : ''
+		row[COL['Balance overdue reported']] = ''
 		sheet.appendRow(row.map(cell_))
+		// The quote lines follow the booking; a problem here must not lose the booking or its email.
+		let quoteNote
+		try {
+			const added = addQuoteLines_(SpreadsheetApp.getActiveSpreadsheet(), reference, d.formation, d.sessions)
+			quoteNote = added
+				? `${added} quote line(s) were added to ${QUOTES_SHEET} from the booked formation and sessions. Check them (special rate, extra musicians), then select this row and use Allegra → Create Booking Terms PDF.`
+				: `No quote lines were added (formation not decided yet). Add them in ${QUOTES_SHEET} once it is.`
+		} catch (err) {
+			console.error(err)
+			quoteNote = `Quote lines could not be added automatically (${err.message}). Use Allegra → Fill quote from booking.`
+		}
 
 		const booking = { ...d, reference, status }
 		const mail = coupleEmail_(booking, plan)
@@ -296,7 +333,7 @@ function doPost(e) {
 				`Reference: ${reference}`,
 				`Status: ${status}${clashes.length ? ` — clashes with ${clashes.join(', ')}` : ''}`,
 				`Wedding date: ${d.weddingDate} · Venue: ${d.venue}`,
-				`Formation: ${FORMATIONS[d.formation].en} · Sessions: ${row[COL['Sessions']] || '—'}`,
+				`Formation: ${FORMATIONS[d.formation].en}${row[COL['Solo instrument']] ? ` (${row[COL['Solo instrument']]})` : ''} · Sessions: ${row[COL['Sessions']] || '—'}`,
 				`Email: ${d.email} · WhatsApp: ${d.whatsapp}`,
 				`Planner / WO: ${d.planner || '—'} · Language: ${d.lang}`,
 				`Booking terms agreed: version ${d.termsVersion}${d.termsVersion === TERMS.version ? '' : ` (current is ${TERMS.version})`}`,
@@ -305,7 +342,7 @@ function doPost(e) {
 				'',
 				status === STATUS.PENDING
 					? `This date already has an active booking. The couple was told you'll confirm within 24 hours.`
-					: `Next: add the prices in the Quotes sheet, then select this row and use Allegra → Create Booking Terms PDF.`,
+					: quoteNote,
 				`Register: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,
 			].join('\n'),
 		)
@@ -333,6 +370,7 @@ function dailyCheck() {
 		const status = String(v[COL['Status']])
 		if (status === STATUS.CONFIRMED) {
 			balanceReminder_(sheet, r, v, today)
+			balanceOverdue_(sheet, r, v, today)
 			continue
 		}
 		if (status !== STATUS.HELD) continue
@@ -398,10 +436,30 @@ function balanceReminder_(sheet, r, v, today) {
 			`Reference: ${reference}`,
 			`Balance (${100 - TERMS.depositPct}%): ${amount}, due by ${iso_(plan.balanceDue)}.`,
 			`Send the balance invoice to the couple on WhatsApp: ${v[COL['WhatsApp']]}`,
+			`When it arrives, set the status to "${STATUS.PAID}".`,
 			`Register: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,
 		].join('\n'),
 	)
 	sheet.getRange(r + 1, COL['Balance reminder sent'] + 1).setValue(iso_(today))
+}
+
+// Once per booking: the balance grace period has passed and the status is still "Confirmed" (deposit
+// only). The date is never released automatically; the terms let Allegra do so after contacting them.
+function balanceOverdue_(sheet, r, v, today) {
+	if (v[COL['Balance overdue reported']]) return
+	const weddingDate = str_(v[COL['Wedding date']])
+	const plan = plan_(weddingDate, str_(v[COL['Submitted at']]).slice(0, 10))
+	if (plan.shortNotice || today <= plan.lateCutoff || today >= plan.wedding) return
+	notify_(
+		`Balance overdue: ${weddingDate} · ${v[COL['Booker / couple']]}`,
+		[
+			`Reference: ${v[COL['Reference']]}`,
+			`The balance was due by ${iso_(plan.balanceDue)} and the status is still "${STATUS.CONFIRMED}".`,
+			`If it has arrived, set the status to "${STATUS.PAID}". If not, contact the couple on WhatsApp (${v[COL['WhatsApp']]}) before deciding; the terms allow releasing the date and keeping the deposit.`,
+			`Register: ${SpreadsheetApp.getActiveSpreadsheet().getUrl()}`,
+		].join('\n'),
+	)
+	sheet.getRange(r + 1, COL['Balance overdue reported'] + 1).setValue(iso_(today))
 }
 
 // ---------- Booking Terms PDF (Sheet menu) ----------
@@ -409,8 +467,113 @@ function balanceReminder_(sheet, r, v, today) {
 function onOpen() {
 	SpreadsheetApp.getUi()
 		.createMenu('Allegra')
+		.addItem('Fill quote from booking (selected row)', 'fillQuoteFromBooking')
 		.addItem('Create Booking Terms PDF (selected row)', 'createTermsPdf')
 		.addToUi()
+}
+
+/**
+ * Menu action: replaces the selected booking's Quotes lines with one line per booked session, from
+ * its current Formation and Sessions (after a change agreed with the couple, or for an older booking).
+ */
+function fillQuoteFromBooking() {
+	const ui = SpreadsheetApp.getUi()
+	try {
+		const ss = SpreadsheetApp.getActiveSpreadsheet()
+		const sheet = ss.getActiveSheet()
+		const row = sheet.getActiveRange().getRow()
+		if (sheet.getName() !== CONFIG.SHEET_NAME || row < 2) {
+			throw userError_(`Select a booking row in the ${CONFIG.SHEET_NAME} sheet first.`)
+		}
+		const v = sheet.getRange(row, 1, 1, HEADERS.length).getValues()[0]
+		const reference = String(v[COL['Reference']])
+		const formation = formationKey_(v[COL['Formation']])
+		const sessions = sessionKeys_(v[COL['Sessions']])
+		if (!formation || formation === 'unsure') {
+			throw userError_(`Set the Formation of ${reference} first.`)
+		}
+		if (!sessions.length) {
+			throw userError_(`Set the Sessions of ${reference} first, e.g. "Ceremony, Dinner / Reception".`)
+		}
+		const quotes = ss.getSheetByName(QUOTES_SHEET)
+		if (!quotes) throw userError_(`Run setup() first. The ${QUOTES_SHEET} sheet does not exist.`)
+		const existing = quotes
+			.getDataRange()
+			.getValues()
+			.map((r, i) => (i > 0 && String(r[0]).trim() === reference ? i + 1 : 0))
+			.filter(Boolean)
+		if (existing.length) {
+			const answer = ui.alert(
+				'Fill quote from booking',
+				`${reference} already has ${existing.length} line(s) in ${QUOTES_SHEET}. Replace them? Any special rate, extra musicians or custom lines must be added again.`,
+				ui.ButtonSet.YES_NO,
+			)
+			if (answer !== ui.Button.YES) return
+			existing.reverse().forEach((r) => quotes.deleteRow(r))
+		}
+		const added = addQuoteLines_(ss, reference, formation, sessions)
+		ui.alert(
+			'Fill quote from booking',
+			`Added ${added} line(s) for ${reference}: ${FORMATIONS[formation].en}, ${sessions.map((k) => SESSIONS[k].en).join(', ')}.`,
+			ui.ButtonSet.OK,
+		)
+	} catch (err) {
+		if (!err.userError) console.error(err)
+		ui.alert(
+			'Fill quote from booking',
+			err.userError || `Something went wrong: ${err.message}`,
+			ui.ButtonSet.OK,
+		)
+	}
+}
+
+/** Appends one Quotes line per booked session, priced from the Items sheet. Returns how many. */
+function addQuoteLines_(ss, reference, formation, sessions) {
+	if (!CATALOG_PRICES[formation] || !sessions.length) return 0
+	const quotes = ss.getSheetByName(QUOTES_SHEET)
+	if (!quotes) throw new Error(`the ${QUOTES_SHEET} sheet does not exist`)
+	const items = ss.getSheetByName(ITEMS_SHEET)
+	const byName = {}
+	if (items) {
+		items
+			.getDataRange()
+			.getValues()
+			.slice(1)
+			.forEach((r) => (byName[String(r[0]).trim()] = r))
+	}
+	// An item renamed or removed in Items still gets its line, with an empty amount: the PDF menu
+	// then asks for it instead of quietly leaving a session out.
+	const rows = SESSION_KEYS.filter((k) => sessions.includes(k)).map((k) => {
+		const i = SESSION_KEYS.indexOf(k)
+		const en = `${FORMATIONS[formation].en}, ${CATALOG_SESSIONS[i].en}`
+		const match = byName[en]
+		return [
+			reference,
+			en,
+			match ? match[1] : `${FORMATIONS[formation].id}, ${CATALOG_SESSIONS[i].id}`,
+			match ? match[2] : '',
+			'',
+			'',
+		]
+	})
+	quotes.getRange(quotes.getLastRow() + 1, 1, rows.length, QUOTE_HEADERS.length).setValues(rows)
+	return rows.length
+}
+
+function formationKey_(label) {
+	return Object.keys(FORMATIONS).find((k) => FORMATIONS[k].en === String(label).trim()) || null
+}
+
+// Reads the Sessions column leniently ("Ceremony, Dinner / Reception", or edited by hand in EN or ID).
+function sessionKeys_(text) {
+	const s = String(text || '').toLowerCase()
+	return SESSION_KEYS.filter((k) =>
+		({
+			ceremony: /ceremony|upacara/,
+			cocktail: /cocktail/,
+			dinner: /dinner|reception|resepsi|makan malam/,
+		})[k].test(s),
+	)
 }
 
 /** Menu action: builds the EN + ID Booking Terms PDFs for the selected Bookings row. Never emails them. */
@@ -453,7 +616,7 @@ function termsInput_(v, items, bank, todayIso) {
 	if (!ACTIVE.includes(status)) {
 		throw userError_(`${reference} has the status "${status}". Set it to Held or Confirmed first.`)
 	}
-	const formation = Object.keys(FORMATIONS).find((k) => FORMATIONS[k].en === String(v[COL['Formation']]))
+	const formation = formationKey_(v[COL['Formation']])
 	if (!formation || formation === 'unsure') {
 		throw userError_(
 			`Set the Formation of ${reference} to Solo, Duo, Trio, String Quartet or Large Ensemble first.`,
@@ -464,16 +627,36 @@ function termsInput_(v, items, bank, todayIso) {
 	if (!Number.isInteger(musicians) || musicians < 1) {
 		throw userError_('Musicians must be a whole number, or empty to use the formation default.')
 	}
-	// A price line from the Items list names its formation; it must match the booking's, or the PDF
-	// would show one formation and charge for another. Custom lines and "Special rate" are not checked.
+	// A price line from the Items list names its formation and session. The formation must match the
+	// booking's, each booked session must be quoted exactly once, and nothing else, or the PDF would
+	// show one booking and charge for another. Custom lines and "Special rate" are not checked.
+	const quoted = []
 	items.forEach((it) => {
-		const itemFormation = itemFormation_(it.en)
+		const itemFormation = itemFormation_(it.base)
 		if (itemFormation && itemFormation !== formation) {
 			throw userError_(
-				`"${it.en}" is for ${FORMATIONS[itemFormation].en}, but ${reference} is booked as ${FORMATIONS[formation].en}. Change the Formation in ${CONFIG.SHEET_NAME} or the item in ${QUOTES_SHEET} first.`,
+				`"${it.base}" is for ${FORMATIONS[itemFormation].en}, but ${reference} is booked as ${FORMATIONS[formation].en}. Change the Formation in ${CONFIG.SHEET_NAME} or the item in ${QUOTES_SHEET} first.`,
 			)
 		}
+		const session = itemSession_(it.base)
+		if (!session) return
+		if (quoted.includes(session)) {
+			throw userError_(`"${it.base}" is in ${QUOTES_SHEET} twice for ${reference}. Remove the extra line.`)
+		}
+		quoted.push(session)
 	})
+	const booked = sessionKeys_(v[COL['Sessions']])
+	const names = (keys) => keys.map((k) => SESSIONS[k].en).join(', ') || 'none'
+	if (booked.length && quoted.length && booked.slice().sort().join() !== quoted.slice().sort().join()) {
+		throw userError_(
+			`The quote covers ${names(SESSION_KEYS.filter((k) => quoted.includes(k)))}, but ${reference} is booked for ${names(booked)}. Use Allegra → Fill quote from booking, or change the Sessions in ${CONFIG.SHEET_NAME}.`,
+		)
+	}
+	if (items.some((it) => /^Additional musician/.test(it.base)) && !override) {
+		throw userError_(
+			`${reference} has extra musicians. Set Musicians in ${CONFIG.SHEET_NAME} to the full lineup (e.g. 12), so the PDF states it.`,
+		)
+	}
 	const weddingDate = str_(v[COL['Wedding date']])
 	const recordedDate = str_(v[COL['Submitted at']]).slice(0, 10)
 	const holdIso = str_(v[COL['Hold until']])
@@ -491,11 +674,15 @@ function termsInput_(v, items, bank, todayIso) {
 	if (total <= 0)
 		throw userError_(`The prices for ${reference} add up to ${total}. The total must be above 0.`)
 	const deposit = plan.shortNotice ? total : roundRp_((total * TERMS.depositPct) / 100)
+	const instrument = String(v[COL['Solo instrument']] || '')
+		.trim()
+		.toLowerCase()
 	return {
 		reference,
 		name: String(v[COL['Booker / couple']]),
 		venue: String(v[COL['Venue']]),
 		formation,
+		soloInstrument: formation === 'solo' && SOLO_INSTRUMENTS[instrument] ? instrument : '',
 		musicians,
 		items,
 		total,
@@ -514,17 +701,18 @@ function quoteItems_(ss, reference) {
 		.getDataRange()
 		.getValues()
 		.slice(1)
-		.filter((r) => String(r[0]).trim() === reference)
+		.filter((r) => String(r[0]).trim() === reference && String(r[1]).trim() + String(r[3]).trim() !== '')
 		.forEach((r) => {
-			const it = {
-				en: String(r[1]).trim(),
-				id: String(r[2]).trim() || String(r[1]).trim(),
-				amount: amount_(r[3]),
+			const base = String(r[1]).trim()
+			const qty = r[5] === '' || r[5] == null ? 1 : Number(r[5])
+			const unit = amount_(r[3])
+			if (!base) throw userError_(`A ${QUOTES_SHEET} row for ${reference} has no item name.`)
+			if (!Number.isFinite(unit) || unit === 0) {
+				throw userError_(`"${base}" needs an amount in rupiah other than 0.`)
 			}
-			if (!it.en) throw userError_(`A ${QUOTES_SHEET} row for ${reference} has no item name.`)
-			if (!Number.isFinite(it.amount) || it.amount === 0) {
-				throw userError_(`"${it.en}" needs an amount in rupiah other than 0.`)
-			}
+			if (!Number.isInteger(qty) || qty < 1) throw userError_(`The Qty of "${base}" must be a whole number.`)
+			const label = (name) => (qty > 1 ? `${name} × ${qty}` : name)
+			const it = { base, en: label(base), id: label(String(r[2]).trim() || base), amount: unit * qty }
 			items.push(it)
 			if (r[4] === '' || r[4] == null) return
 			const agreed = amount_(r[4])
@@ -537,7 +725,7 @@ function quoteItems_(ss, reference) {
 				)
 			}
 			if (agreed < it.amount)
-				items.push({ en: 'Special rate', id: 'Harga khusus', amount: agreed - it.amount })
+				items.push({ base: '', en: 'Special rate', id: 'Harga khusus', amount: agreed - it.amount })
 		})
 	if (!items.length) throw userError_(`Add the prices for ${reference} in the ${QUOTES_SHEET} sheet first.`)
 	return items
@@ -548,6 +736,13 @@ function itemFormation_(name) {
 	const key = Object.keys(CATALOG_PRICES).find((k) => name.startsWith(`${FORMATIONS[k].en},`))
 	if (key) return key
 	return /\(Large Ensemble\)/.test(name) ? 'large-ensemble' : null
+}
+
+/** The session an item from the Items list is for ("Duo, ceremony (≈ 45 min)" → ceremony), or null. */
+function itemSession_(name) {
+	if (!itemFormation_(name)) return null
+	const i = CATALOG_SESSIONS.findIndex((session) => name.endsWith(`, ${session.en}`))
+	return i < 0 ? null : SESSION_KEYS[i]
 }
 
 /** Item rows for the Items sheet: every formation × session from the pricing sheet, then the extras. */
@@ -685,12 +880,14 @@ function validate_(p, multi) {
 		notes: text(p.notes, 2000),
 		lang: p.lang === 'id' ? 'id' : 'en',
 		termsVersion: text(p.terms_version, 20) || TERMS.version,
+		soloInstrument: SOLO_INSTRUMENTS[p.solo_instrument] ? p.solo_instrument : '',
 	}
 	if (!d.name || !d.whatsapp || !d.venue) fail('missing')
 	if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) fail('email')
 	if (!/^\d{4}-\d{2}-\d{2}$/.test(d.weddingDate) || isNaN(day_(d.weddingDate))) fail('date')
 	if (daysBetween_(day_(today_()), day_(d.weddingDate)) < 1) fail('date')
 	if (!FORMATIONS[d.formation]) fail('formation')
+	if (!d.sessions.length) fail('sessions')
 	if (p.terms_agreed !== 'yes') fail('terms')
 	if (p.consent !== 'yes') fail('consent')
 	return d
@@ -805,10 +1002,12 @@ function str_(v) {
 	return v instanceof Date ? Utilities.formatDate(v, CONFIG.TIMEZONE, 'yyyy-MM-dd') : String(v)
 }
 
-// Stops a submitted value such as "=IMPORTXML(...)" from being run as a spreadsheet formula.
+// Writes every value as plain text. The leading apostrophe stops a submitted "=IMPORTXML(...)" from
+// running as a formula, and stops Sheets turning a WhatsApp number such as 0857… into the number 857…
+// or "2027-09-27" into a date (the text format set by setup did not prevent that on appendRow).
 function cell_(v) {
 	const s = String(v == null ? '' : v)
-	return /^[=+\-@]/.test(s) ? `'${s}` : s
+	return /^[=+\-@]/.test(s) || /^[\d\s().:\/-]+$/.test(s) ? `'${s}` : s
 }
 
 // ---------- responses ----------
@@ -1091,7 +1290,10 @@ function termsContent_(t, lang) {
 		],
 
 		['h2', '1', L('Your booking', 'Booking Anda')],
-		['p', `${L('Formation', 'Formasi')}: ${FORMATIONS[t.formation][lang]} · ${musicians}`],
+		[
+			'p',
+			`${L('Formation', 'Formasi')}: ${FORMATIONS[t.formation][lang]}${t.soloInstrument ? ` (${SOLO_INSTRUMENTS[t.soloInstrument][lang]})` : ''} · ${musicians}`,
+		],
 		['prices', t.items.map((it) => [it[lang], f.rp(it.amount)]), ['Total', f.rp(t.total)]],
 		[
 			'list',

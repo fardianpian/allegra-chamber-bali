@@ -59,6 +59,24 @@ now: deposit or credit until H-91, the deposit from H-90 to H-15, the full total
 the deposit now equals 50%, the old separate 50% tier was merged into the deposit tier.
 `docs/PAYMENT-TERMS-RESEARCH-2026-10.md` still holds the 30% analysis; see its §8 update note.
 
+**Booking flow gap review (owner, 2026-10-15).** The owner asked for a check of all gaps, so that the
+flow would not need repeated rounds of fixes. The changes:
+
+- **Quote lines.** They are now added automatically on submission, one per booked session, priced
+  from `Items`. A new menu, "Fill quote from booking", rebuilds them after a change.
+- **Checks before the PDF.** The menu refuses missing, extra or duplicate sessions, and extra
+  musicians with no `Musicians` count. A `Qty` column was added for extra musicians.
+- **Text cells.** Every value is written as plain text. Sheets had been turning `0857…` into the
+  number `857…` and dates into date cells.
+- **Form.** It now needs at least one session, and asks Solo couples which instrument they want.
+  The PDF prints the instrument.
+- **Payment status.** There is a new `Paid in full` status, and Allegra gets a one-off email when
+  the balance is 7 days overdue.
+- **Packages.** No multi-session package price exists: sessions add up (owner choice "a").
+
+Still open, not guessed: travel fees by area, the overtime rate, and whether Allegra can take more
+than one wedding per date (`MAX_BOOKINGS_PER_DATE`).
+
 **Quotes dropdown + price list (owner, 2026-10-15).** A new `Items` sheet holds the price list.
 `setup` fills it once with 5 formations × 3 sessions plus the extra Large Ensemble musician, taken
 from `docs/Allegra-Chamber-Bali-Pricing.html` (July 2026). `Quotes` → `Item (EN)` is a dropdown of it.
