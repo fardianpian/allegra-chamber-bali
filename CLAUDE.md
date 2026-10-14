@@ -125,13 +125,18 @@ Languages: **English (primary) + Indonesian (secondary)**.
   Hostinger-FTP workflow) is disabled — Cloudflare's own git integration builds and deploys
   on every push to `main`, no GitHub Actions step needed for deploy.
 - Forms via Web3Forms/Formspree (no Node backend). WhatsApp deep-link is the primary CTA.
+- Exception, owner-approved 2026-10-14: the hidden `/lock-your-date/` form posts to a Google
+  Apps Script Web App (`integrations/booking/`, runs on Google, not Cloudflare). Treat it as an external
+  form service like Web3Forms. The site itself stays static. Booking-terms values live only in
+  `src/data/booking-terms.json`; run `npm run booking:sync` after editing it.
 - Clean URLs, HTTPS redirect, custom 404.
 - Bilingual EN (default) + ID (`/id/`) with hreflang.
 
 ## Sitemap (v2)
 
 /, /repertoire, /packages, /gallery, /about, /for-planners, /faq, /journal, /journal/[slug],
-/contact, /thank-you, /privacy, /404
+/contact, /thank-you, /privacy, /404 — plus hidden noindex pages sent privately: /share-your-story,
+/lock-your-date
 
 `/journal` (added 2026-06-21) is the SEO/GEO/AEO content hub — an Astro content collection
 (`src/content/articles/`), not a hand-built page per article. See "Journal / Article Content"

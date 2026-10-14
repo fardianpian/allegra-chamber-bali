@@ -37,3 +37,6 @@ Thumbs.db
 # on-brand articles — see docs/JOURNAL-BACKLOG.md / .claude/skills/journal-article-publisher/.
 !.claude/article-seo-geo-aeo-guidelines.md
 !.claude/brand-voice-guidelines.md
+
+# per-couple booking data + generated Booking Terms PDFs (names, dates, bank details) — never commit
+private/

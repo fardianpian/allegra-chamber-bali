@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import PageHeader from '../../components/sections/PageHeader.astro'
+import LockDateForm from '../../components/sections/LockDateForm.astro'
+import { useTranslations } from '../../i18n/utils'
+
+const lang = 'en'
+const t = useTranslations(lang)
+const page = t('lockDatePage')
+---
+
+<BaseLayout lang={lang} title={page.title} description={page.description} path="/lock-your-date" noindex>
+	<PageHeader eyebrow={page.eyebrow} heading={page.heading} subhead={page.subhead} />
+	<LockDateForm lang={lang} />
+</BaseLayout>

@@ -17,6 +17,30 @@ the owner's go-ahead, Claude updated the Notion page to v1.1 to match the repo, 
 `pricing on site` open decision there. The PRD stays in Notion only: the repo is public, so
 `CLAUDE.md` § Business PRD just points to it, and its code-facing items are Next step #1 below.
 
+**Booking flow built (PRs #44 + feat/lock-your-date).** Payment terms were researched
+(`docs/PAYMENT-TERMS-RESEARCH-2026-10.md`), and the owner chose to use them. Their values now live in
+`src/data/booking-terms.json`, shared by three consumers:
+
+- `scripts/generate-booking-terms.mjs`: a per-couple Booking Terms PDF in EN + ID. Couple data and
+  output go in `private/`, which is gitignored.
+- The hidden page `/lock-your-date/` (EN + ID, noindex, not in the sitemap). Couples hold their date
+  with no payment.
+- `integrations/booking/Code.gs`: a Google Apps Script bound to the booking-register Sheet. It
+  records each couple, emails them as Yessica (hold deadline and booking details; full terms go in the PDF), notifies Allegra,
+  and runs a daily reminder/expiry check.
+
+After editing the JSON, run `npm run booking:sync`. Lint fails if `Code.gs` has drifted.
+**Owner to-do before it is live:**
+
+1. ~~Create the Sheet and deploy the Apps Script~~ — done 2026-10-14. The Sheet "Allegra Booking
+   Register" is owned by allegrachamberbali@gmail.com; the Web App is deployed with access
+   "Anyone"; its `/exec` URL is the fallback in `src/lib/site.ts`.
+2. ~~Do a real browser and inbox test~~. Done 2026-10-14 by the owner on the preview: the row was
+   recorded in the Sheet. The first email landed in Gmail Spam; after the couple email was shortened
+   (no payment/bank wording) and redeployed as a New version, it arrived in the Inbox.
+3. Fill in the bank details.
+4. Have a lawyer review the terms.
+
 ## Session — 2026-10-08
 
 **Semrush Site Audit (free account, crawl 2026-10-07, 99 URLs) triaged.** The free account can't

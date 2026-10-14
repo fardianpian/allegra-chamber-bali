@@ -1,0 +1,21 @@
+{
+	"couple": ["Partner One", "Partner Two"],
+	"weddingDate": "2027-09-27",
+	"recordedDate": "2026-10-09",
+	"venue": "Venue name, Uluwatu",
+	"formation": { "en": "String Quartet with piano", "id": "String Quartet dengan piano" },
+	"musicians": 5,
+	"items": [
+		{ "session": { "en": "Ceremony (≈ 45 min)", "id": "Upacara (≈ 45 menit)" }, "price": 9500000 },
+		{
+			"session": { "en": "Dinner / Reception (≈ 1.5 hrs)", "id": "Makan malam / Resepsi (≈ 1,5 jam)" },
+			"price": 12000000
+		}
+	],
+	"bank": {
+		"bankName": "",
+		"accountName": "",
+		"accountNumber": "",
+		"swift": ""
+	}
+}

@@ -10,6 +10,12 @@ export const site = {
 	contactEmail: env(import.meta.env.PUBLIC_CONTACT_EMAIL) || 'allegrachamberbali@gmail.com',
 	instagram: env(import.meta.env.PUBLIC_INSTAGRAM) || 'https://instagram.com',
 	web3formsKey: env(import.meta.env.PUBLIC_WEB3FORMS_KEY) || '',
+	// Google Apps Script Web App URL for the hidden /lock-your-date/ form (integrations/booking/,
+	// deployed from allegrachamberbali@gmail.com 2026-10-14). Public by nature — it is the form's
+	// action URL — so it is safe as a fallback; PUBLIC_BOOKING_ENDPOINT overrides it after a redeploy.
+	bookingEndpoint:
+		env(import.meta.env.PUBLIC_BOOKING_ENDPOINT) ||
+		'https://script.google.com/macros/s/AKfycbyP76ZBWB6rj6MXqlLWc2x3JM8M-BxqDlP8ICPCAc11BcJ5nuksLt8BJ7j8ZrduQUVCDA/exec',
 	ga4Id: env(import.meta.env.PUBLIC_GA4_ID) || 'G-BN64LSJGQV',
 }
 
