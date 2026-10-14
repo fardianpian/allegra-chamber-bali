@@ -70,29 +70,20 @@ const sessions = [
 							aria-label="Leave this field blank"
 						/>
 
-						<div class="grid gap-6 sm:grid-cols-2">
-							<label class={labelClass}>
-								{copy.partner1}
-								<span class="text-gold" aria-hidden="true">
-									*
-								</span>
-								<input
-									type="text"
-									name="partner1"
-									required
-									maxlength="120"
-									autocomplete="name"
-									class={fieldClass}
-								/>
-							</label>
-							<label class={labelClass}>
-								{copy.partner2}
-								<span class="text-gold" aria-hidden="true">
-									*
-								</span>
-								<input type="text" name="partner2" required maxlength="120" class={fieldClass} />
-							</label>
-						</div>
+						<label class={labelClass}>
+							{copy.name}
+							<span class="text-gold" aria-hidden="true">
+								*
+							</span>
+							<input
+								type="text"
+								name="name"
+								required
+								maxlength="160"
+								autocomplete="name"
+								class={fieldClass}
+							/>
+						</label>
 
 						<div class="grid gap-6 sm:grid-cols-2">
 							<label class={labelClass}>

@@ -77,8 +77,7 @@ const HEADERS = [
 	'Submitted at',
 	'Wedding date',
 	'Hold until',
-	'Partner 1',
-	'Partner 2',
+	'Booker / couple',
 	'Email',
 	'WhatsApp',
 	'Venue',
@@ -152,8 +151,7 @@ function doPost(e) {
 		row[COL['Submitted at']] = Utilities.formatDate(new Date(), CONFIG.TIMEZONE, 'yyyy-MM-dd HH:mm')
 		row[COL['Wedding date']] = d.weddingDate
 		row[COL['Hold until']] = iso_(plan.holdUntil)
-		row[COL['Partner 1']] = d.partner1
-		row[COL['Partner 2']] = d.partner2
+		row[COL['Booker / couple']] = d.name
 		row[COL['Email']] = d.email
 		row[COL['WhatsApp']] = d.whatsapp
 		row[COL['Venue']] = d.venue
@@ -179,7 +177,7 @@ function doPost(e) {
 			replyTo: CONFIG.REPLY_TO,
 		})
 		notify_(
-			`New date lock: ${d.weddingDate} · ${d.partner1} & ${d.partner2} · ${status}`,
+			`New date lock: ${d.weddingDate} · ${d.name} · ${status}`,
 			[
 				`Reference: ${reference}`,
 				`Status: ${status}${clashes.length ? ` — clashes with ${clashes.join(', ')}` : ''}`,
@@ -222,8 +220,7 @@ function dailyCheck() {
 		const daysLeft = daysBetween_(today, holdUntil)
 		const booking = {
 			reference: String(v[COL['Reference']]),
-			partner1: String(v[COL['Partner 1']]),
-			partner2: String(v[COL['Partner 2']]),
+			name: String(v[COL['Booker / couple']]),
 			email: String(v[COL['Email']]),
 			weddingDate: str_(v[COL['Wedding date']]),
 			lang: String(v[COL['Language']]) === 'id' ? 'id' : 'en',
@@ -242,7 +239,7 @@ function dailyCheck() {
 		}
 		if (!v[COL['Expiry reported']] && daysLeft < 0) {
 			notify_(
-				`Hold expired: ${booking.weddingDate} · ${booking.partner1} & ${booking.partner2}`,
+				`Hold expired: ${booking.weddingDate} · ${booking.name}`,
 				[
 					`Reference: ${booking.reference}`,
 					`The hold ended on ${iso_(holdUntil)} and the status is still "Held".`,
@@ -268,8 +265,7 @@ function validate_(p, multi) {
 		throw err
 	}
 	const d = {
-		partner1: text(p.partner1, 120),
-		partner2: text(p.partner2, 120),
+		name: text(p.name, 160),
 		email: text(p.email, 200).toLowerCase(),
 		whatsapp: text(p.whatsapp, 40),
 		weddingDate: text(p.wedding_date, 10),
@@ -283,7 +279,7 @@ function validate_(p, multi) {
 		notes: text(p.notes, 2000),
 		lang: p.lang === 'id' ? 'id' : 'en',
 	}
-	if (!d.partner1 || !d.partner2 || !d.whatsapp || !d.venue) fail('missing')
+	if (!d.name || !d.whatsapp || !d.venue) fail('missing')
 	if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) fail('email')
 	if (!/^\d{4}-\d{2}-\d{2}$/.test(d.weddingDate) || isNaN(day_(d.weddingDate))) fail('date')
 	if (daysBetween_(day_(today_()), day_(d.weddingDate)) < 1) fail('date')
@@ -363,8 +359,15 @@ function activeOn_(sheet, weddingIso) {
 }
 
 function reference_(sheet, d) {
-	const initial = (name) => (name.match(/[A-Za-z]/) || ['X'])[0].toUpperCase()
-	const base = `ACB-${d.weddingDate.replace(/-/g, '')}-${initial(d.partner1)}${initial(d.partner2)}`
+	// Initials of the first two words, e.g. "Sarah & James" → SJ, "Sarah" → S.
+	const initials =
+		d.name
+			.split(/\s+/)
+			.map((w) => (w.match(/[A-Za-z]/) || [''])[0])
+			.join('')
+			.slice(0, 2)
+			.toUpperCase() || 'X'
+	const base = `ACB-${d.weddingDate.replace(/-/g, '')}-${initials}`
 	const taken = new Set(
 		sheet
 			.getDataRange()
@@ -499,7 +502,7 @@ function render_(greeting, sections, signoff) {
 
 function coupleEmail_(b, plan) {
 	const f = fmt_(b.lang)
-	const names = `${b.partner1} & ${b.partner2}`
+	const names = b.name
 	const pending = b.status === STATUS.PENDING
 	const id = b.lang === 'id'
 	const signoff = [
@@ -666,7 +669,7 @@ function reminderEmail_(b, holdUntil) {
 	const id = b.lang === 'id'
 	const wedding = day_(b.weddingDate)
 	const mail = render_(
-		id ? `Kepada ${b.partner1} & ${b.partner2},` : `Dear ${b.partner1} & ${b.partner2},`,
+		id ? `Kepada ${b.name},` : `Dear ${b.name},`,
 		[
 			[
 				'',
