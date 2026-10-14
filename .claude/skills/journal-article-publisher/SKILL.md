@@ -101,6 +101,16 @@ Ikuti struktur di `.claude/article-seo-geo-aeo-guidelines.md` § Article Structu
 - Jangan pernah fabrikasi harga/statistik/testimoni/nama venue. Jangan pernah menggambarkan
   formasi yang sudah termasuk piano (Duo/Trio/Quartet) sebagai "just a string quartet" atau piano
   sebagai add-on berbayar — piano adalah flagship instrument, sudah termasuk standar.
+- **Tidak ada angka komersial sama sekali, termasuk yang asli.** Situs sengaja tidak menampilkan
+  harga (CLAUDE.md § Confirmed decisions), jadi artikel tidak boleh memuat harga, rentang harga,
+  travel fee, nominal/persentase deposit, atau tarif overtime dalam mata uang apa pun. Travel
+  fee, deposit, dan overtime belum ditetapkan owner. Kalau topiknya menyinggung biaya, jelaskan
+  secara kualitatif lalu arahkan ke WhatsApp untuk quote.
+- **Nama venue dan nama klien hanya dari daftar yang sudah diizinkan:** `name` di
+  `src/content/venues/*.json` (abaikan `_example.json`) dan blok `featuredVideo` di
+  `src/i18n/ui.ts` (pasangan dan venue di video itu). Venue atau pasangan asli lain tetap tidak
+  boleh disebut tanpa izin tertulis owner, walaupun tidak dikarang. Nama area (Uluwatu, Ubud,
+  Nusa Dua, dst.) dan tipe venue (cliffside, beach, garden, chapel) bebas dipakai.
 - Ikuti tabel Avoid → Prefer di `brand-voice-guidelines.md` — tanpa tanda seru, tanpa "best in
   Bali"/"world-class", tanpa pembuka klise AI.
 - **Jangan tulis blok CTA penutup sendiri di body** (tombol/link "Check Your Date", "Packages",
@@ -183,6 +193,24 @@ reviewer eksternal, bukan penulisnya):
       operasional yang dikarang (lead time, proses booking, dll — kalau ragu harus mengarah ke
       WhatsApp/contact, bukan angka pasti yang tidak ada sumbernya di repo).
 - [ ] Tidak ada harga, statistik, testimoni, atau nama venue yang dikarang di mana pun di body.
+- [ ] **Tidak ada angka komersial**, termasuk yang asli (lihat Step 2), di frontmatter maupun body,
+      EN dan ID. Jalankan dua perintah ini (pakai `grep -E` biasa):
+
+      ```bash
+      grep -nEi '(Rp\.?|IDR|USD|AUD|SGD|EUR|US\$|A\$|\$|€|£) ?[0-9]|[0-9][0-9.,]* ?(juta|jt|ribu|rupiah|dollars?|k)\b' \
+        src/content/articles/<slug>.md src/content/articles/id/<slug>.md
+      grep -nEi 'travel fee|biaya (perjalanan|transport)|deposit|overtime|lembur|uang muka' \
+        src/content/articles/<slug>.md src/content/articles/id/<slug>.md
+      ```
+
+      Perintah pertama harus kosong. Setiap hasil perintah kedua harus berupa kalimat kualitatif
+      tanpa angka, persentase, atau mata uang, dan mengarah ke WhatsApp/contact untuk detailnya.
+
+- [ ] **Nama venue/properti dan nama klien/pasangan** hanya yang ada di daftar izin (Step 2):
+      `name` di `src/content/venues/*.json` atau blok `featuredVideo` di `src/i18n/ui.ts`. Baca
+      ulang draf EN + ID, catat setiap nama properti (hotel, resort, villa, chapel, beach club) dan
+      setiap nama orang, lalu cocokkan satu per satu dengan daftar itu. Nama di luar daftar dihapus
+      atau diganti tipe venue/area, walaupun namanya asli.
 - [ ] Formasi yang sudah termasuk piano (Duo/Trio/Quartet) tidak pernah digambarkan sebagai "just a
       string quartet" atau piano sebagai add-on berbayar.
 - [ ] Semua link internal (EN maupun ID, termasuk yang ditambahkan ke `inboundLinkSource` di Step 5) menunjuk ke route yang benar-benar ada — cek dengan `ls` ke path `src/pages/...` atau
@@ -347,7 +375,10 @@ manual owner — jangan skip atau anggap opsional.
 1. Tidak pernah push ke `main` langsung — selalu lewat branch `journal/<slug>` + PR, dan PR hanya
    di-merge lewat Step 9 (setelah checklist Step 6a lolos DAN CI hijau) — tidak pernah merge
    sebelum kedua syarat itu terpenuhi.
-2. Tidak pernah fabrikasi harga, statistik, testimoni, atau nama venue.
+2. Tidak pernah fabrikasi harga, statistik, testimoni, atau nama venue. Tidak pernah menulis angka
+   komersial (harga, travel fee, deposit, overtime) walaupun asli, dan tidak pernah menyebut nama
+   venue atau klien di luar daftar izin (`src/content/venues/*.json`, `featuredVideo` di
+   `src/i18n/ui.ts`).
 3. `heading` tidak pernah mengandung nama brand; `title` selalu mengandung suffix brand.
 4. `faq` selalu berupa array `{question, answer}` yang valid untuk `FAQPage` JSON-LD.
 5. Setiap artikel EN WAJIB disertai padanan ID di commit yang sama — tidak ada "EN dulu, ID

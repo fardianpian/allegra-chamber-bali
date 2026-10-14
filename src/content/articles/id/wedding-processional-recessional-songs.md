@@ -85,7 +85,7 @@ Resesional adalah momen keluar Anda — lebih singkat dari prosesi dan biasanya 
 | Eine Kleine Nachtmusik — Allegro    | W.A. Mozart       | Ringan dan elegan, keluar yang lebih lembut          |
 | L.O.V.E.                            | Nat King Cole     | Alternatif kontemporer yang ceria dari keluar klasik |
 
-Untuk resesional yang lebih upbeat, lagu pop yang diaransemen dengan tempo lebih cerah bekerja dengan baik — Marry You dari Bruno Mars dan Love Story dari Taylor Swift adalah dua lagu yang kami aransemen untuk piano dan gesek. Momen keluar yang upbeat juga membawa tamu langsung ke perayaan berikutnya.
+Untuk resesional yang lebih upbeat, lagu pop yang diaransemen dengan tempo lebih cerah bekerja dengan baik — Marry You dari Bruno Mars dan Love Story dari Taylor Swift adalah dua lagu yang kami aransemen untuk piano dan gesek. Momen keluar yang upbeat juga membawa tamu langsung ke perayaan berikutnya. Untuk pilihan lagu recessional yang lebih lengkap dan cara mengatur waktu momen keluar, lihat [panduan lagu recessional pernikahan](/id/journal/wedding-recessional-songs/) kami.
 
 Daftar lengkap karya prosesi dan resesional, beserta semua yang kami aransemen untuk prelude dan upacara itu sendiri, ada di [halaman repertoar](/id/repertoire/) kami.
 

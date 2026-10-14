@@ -85,7 +85,7 @@ The recessional is your exit — shorter than the processional and usually playe
 | Eine Kleine Nachtmusik — Allegro    | W.A. Mozart       | Light and elegant, a gentler exit                        |
 | L.O.V.E.                            | Nat King Cole     | A cheerful, contemporary alternative to a classical exit |
 
-For an upbeat recessional, a pop song arranged at a brighter tempo works well — Marry You by Bruno Mars and Love Story by Taylor Swift are two we arrange for piano and strings. An upbeat exit also carries guests straight into the celebration that follows.
+For an upbeat recessional, a pop song arranged at a brighter tempo works well — Marry You by Bruno Mars and Love Story by Taylor Swift are two we arrange for piano and strings. An upbeat exit also carries guests straight into the celebration that follows. For more recessional-specific picks and a closer look at timing the exit, see our [guide to wedding recessional songs](/journal/wedding-recessional-songs/).
 
 A full list of processional and recessional pieces, along with everything we arrange for the prelude and ceremony itself, is on our [repertoire page](/repertoire/).
 

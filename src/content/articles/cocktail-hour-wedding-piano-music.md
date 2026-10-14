@@ -39,3 +39,5 @@ Yes — pairing ceremony and cocktail hour into one continuous booking is one of
 ## What to Tell Us About Your Cocktail Hour Setup
 
 A few details help us plan cocktail hour music alongside your ceremony: whether it's in the same location as your ceremony or a separate space, roughly how long you want it covered, and any songs or moods you'd like included beyond what we'd typically choose. If cocktail hour moves to a different area of the venue — a garden or terrace away from the ceremony space — let us know so we can plan setup and access for that second location. Share these details when you [reach out](/contact/) or send them with your booking inquiry, and we'll confirm scope and set structure together.
+
+Cocktail hour isn't the only stretch of the reception that needs its own musical plan — once guests sit down, our [guide to live music for your wedding reception dinner](/journal/wedding-reception-dinner-music/) covers how volume and repertoire shift again for dinner.

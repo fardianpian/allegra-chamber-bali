@@ -169,6 +169,10 @@ link to `/for-planners`. This pillar directly supports B2B outreach work (see
 1. Never fabricate prices, stats, testimonials, awards, or venue/property names (CLAUDE.md Work
    Rule #9; brand voice Hard Rule #1). If pricing comes up, redirect to WhatsApp inquiry — see the
    existing FAQ answer in `src/i18n/ui.ts` (`faqPage.items`) for the approved phrasing pattern.
+   This also covers real figures: no price, travel fee, deposit, or overtime amount in any
+   currency, since the site shows no pricing. Name only venues listed in
+   `src/content/venues/*.json` and the couple/venue in `featuredVideo` (`src/i18n/ui.ts`). Any
+   other real venue or client name needs the owner's written permission first.
 2. Follow `.claude/brand-voice-guidelines.md` vocabulary (Avoid → Prefer table) and tone rules —
    no exclamation marks, no "best in Bali"/"world-class," no AI-cliché openers.
 3. Piano is a flagship instrument, not an add-on — never imply "just a string quartet" when piano
