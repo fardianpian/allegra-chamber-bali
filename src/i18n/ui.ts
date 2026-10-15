@@ -569,6 +569,11 @@ export const ui = {
 			heading: 'Live Wedding Performances Across Bali',
 			subhead:
 				'Cliffside ceremonies in Uluwatu, garden settings in Ubud, and ballroom receptions — browse by venue type to find your setting.',
+			intro: [
+				'These photographs come from Allegra Chamber Bali performances at Bali weddings: a grand piano set up for a cliffside ceremony at sunset, a pianist playing along a garden pathway, a string quartet at a garden ceremony, and a reception laid out under string lights.',
+				'Use the filters to see how the music sits in each setting. Whatever you are planning, the formation and repertoire are arranged around your venue and your story, and piano comes as standard in our Duo, Trio, String Quartet, and Large Ensemble formations.',
+			],
+			introLink: 'See the formations',
 			filterAll: 'All',
 			typeLabels: {
 				cliffside: 'Cliffside',
@@ -1512,6 +1517,11 @@ export const ui = {
 			heading: 'Galeri Lengkap',
 			subhead:
 				'Upacara tebing di Uluwatu, taman di Ubud, dan resepsi ballroom — jelajahi berdasarkan tipe venue untuk menemukan setting yang mirip dengan Anda.',
+			intro: [
+				'Foto-foto ini berasal dari penampilan Allegra Chamber Bali di pernikahan di Bali: grand piano yang disiapkan untuk upacara di tebing saat matahari terbenam, seorang pianis di jalan setapak taman, kuartet gesek pada upacara di taman, dan resepsi yang ditata dengan lampu hias.',
+				'Gunakan filter untuk melihat bagaimana musiknya hadir di setiap suasana. Apa pun yang Anda rencanakan, formasi dan repertoarnya diatur menyesuaikan venue dan kisah Anda, dan piano menjadi bagian standar dari formasi Duo, Trio, String Quartet, dan Large Ensemble.',
+			],
+			introLink: 'Lihat formasi',
 			filterAll: 'Semua',
 			typeLabels: {
 				cliffside: 'Tebing',

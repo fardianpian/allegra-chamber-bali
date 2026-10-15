@@ -18,6 +18,7 @@ interface Props {
 const { lang } = Astro.props
 const t = useTranslations(lang)
 const gallery = t('galleryPage')
+const prefix = lang === 'en' ? '' : '/id'
 
 // Filter tags kept for all venue types the owner books, even ones without a photo yet —
 // clicking an empty tag shows the "no photos yet" message until new documentation comes in.
@@ -67,6 +68,15 @@ const filterBtnBase =
 
 <section class="section bg-ivory pt-0">
 	<div class="container-max">
+		<div class="reveal mx-auto mb-10 max-w-2xl space-y-4 text-center text-ink/85">
+			<p>{gallery.intro[0]}</p>
+			<p>
+				{gallery.intro[1]}
+				<a href={`${prefix}/packages/`} class="underline decoration-gold underline-offset-2 hover:text-gold">
+					{gallery.introLink}
+				</a>
+			</p>
+		</div>
 		<div class="reveal flex flex-wrap gap-2" data-filter-group="type">
 			<button
 				type="button"

@@ -1,5 +1,5 @@
 ---
-title: 'Musik Klasik atau Kontemporer untuk Upacara Pernikahan? — Allegra Chamber Bali'
+title: 'Musik Klasik atau Kontemporer untuk Pernikahan? — Allegra Chamber Bali'
 heading: 'Klasik atau Kontemporer: Memilih Gaya yang Tepat untuk Musik Upacara Anda'
 description: 'Musik klasik atau kontemporer untuk upacara pernikahan — karya klasik untuk tiap momen, kapan lagu kontemporer lebih cocok, dan cara memadukan keduanya.'
 excerpt: 'Karya klasik, tema film, atau lagu pop favorit yang diaransemen ulang untuk gesek dan piano — cara memilih gaya yang tepat untuk upacara Anda.'
