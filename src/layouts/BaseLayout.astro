@@ -128,7 +128,10 @@ const ogImageUrl = ogImage
 						}
 					}
 				},
-				{ rootMargin: '0px 0px -10% 0px', threshold: 0.1 },
+				// threshold 0, not a ratio: a `.reveal` element taller than ~10× the viewport (the
+				// 35-article /journal grid is ~17,000px) can never reach a 10% intersection ratio,
+				// so it stayed at opacity 0 forever.
+				{ rootMargin: '0px 0px -10% 0px', threshold: 0 },
 			)
 			els.forEach((el) => io.observe(el))
 		</script>
