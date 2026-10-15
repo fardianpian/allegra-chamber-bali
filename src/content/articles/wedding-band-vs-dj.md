@@ -1,5 +1,5 @@
 ---
-title: 'Wedding Band vs. DJ vs. Chamber Ensemble: How to Choose — Allegra Chamber Bali'
+title: 'Wedding Band vs. DJ vs. Chamber Ensemble — Allegra Chamber Bali'
 heading: 'Wedding Band vs. DJ vs. Chamber Ensemble: How to Choose'
 description: 'How a wedding band, a DJ, and a live chamber ensemble differ in sound and setup, and how to match one, or a mix, to your Bali wedding ceremony and reception.'
 excerpt: 'Not just live music vs. a DJ — where a chamber ensemble fits as its own option, and how to match sound to each part of your day.'

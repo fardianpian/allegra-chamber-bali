@@ -1,5 +1,5 @@
 ---
-title: 'Wedding Prelude Music: What Guests Hear Before the Ceremony — Allegra Chamber Bali'
+title: 'Wedding Prelude Music: What Guests Hear — Allegra Chamber Bali'
 heading: 'Wedding Prelude Music: What Guests Hear Before the Ceremony'
 description: 'What wedding prelude music is, how long it typically runs, and how to choose piano or string pieces that set the right tone before your Bali ceremony begins.'
 excerpt: 'The music guests hear before you even appear — what a wedding prelude covers, how long it runs, and how to choose it.'

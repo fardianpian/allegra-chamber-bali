@@ -6,6 +6,7 @@ excerpt: 'Musik makan malam harus membuat tamu tetap bisa berbincang sekaligus t
 pillar: 'planning'
 targetKeyword: 'wedding dinner music'
 pubDate: 2026-10-14
+ogImage: '/images/og-wedding-reception-dinner-music.jpg'
 faq:
   - question: 'Apakah Anda memainkan musik selama makan malam pernikahan?'
     answer: 'Ya — semua formasi kami bisa memainkan sesi makan malam sesuai permintaan, baik lanjut dari cocktail hour maupun dipesan sebagai blok tersendiri. Sampaikan ini saat Anda menghubungi kami dan kami akan memastikan cakupannya.'

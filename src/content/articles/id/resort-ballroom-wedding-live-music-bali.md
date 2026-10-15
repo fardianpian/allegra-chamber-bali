@@ -1,5 +1,5 @@
 ---
-title: 'Musik Live untuk Pernikahan Resort atau Ballroom di Bali — Allegra Chamber Bali'
+title: 'Musik Live Pernikahan Resort atau Ballroom di Bali — Allegra Chamber Bali'
 heading: 'Musik Live untuk Pernikahan Resort atau Ballroom di Bali'
 description: 'Bagaimana akustik indoor resort dan ballroom mengubah perencanaan musik live pernikahan di Bali, dari pantulan suara, setup, hingga amplifikasi dan formasi.'
 excerpt: 'Ballroom dan interior resort membawa suara secara berbeda dari ruang upacara outdoor Bali — apa artinya untuk setup, amplifikasi, dan pilihan formasi.'

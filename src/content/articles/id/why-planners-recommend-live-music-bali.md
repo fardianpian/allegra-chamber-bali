@@ -1,5 +1,5 @@
 ---
-title: 'Alasan Wedding Planner Merekomendasikan Musik Live untuk Upacara di Bali — Allegra Chamber Bali'
+title: 'Alasan Planner Menyarankan Musik Live di Bali — Allegra Chamber Bali'
 heading: 'Alasan Wedding Planner di Bali Merekomendasikan Musik Live Dibanding DJ untuk Upacara'
 description: 'Alasan wedding planner berpengalaman di Bali sering merekomendasikan musik kamar live dibanding DJ untuk upacara, dan cara menjelaskannya ke pasangan.'
 excerpt: 'Ketika pasangan bertanya apakah mereka benar-benar butuh musik live untuk upacara, inilah alasan yang biasa dipakai planner berpengalaman untuk menjawabnya dengan percaya diri.'
