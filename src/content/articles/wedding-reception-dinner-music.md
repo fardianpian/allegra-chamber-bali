@@ -6,6 +6,7 @@ excerpt: 'Dinner music should let guests talk while still feeling like part of t
 pillar: 'planning'
 targetKeyword: 'wedding dinner music'
 pubDate: 2026-10-14
+ogImage: '/images/og-wedding-reception-dinner-music.jpg'
 faq:
   - question: 'Do you play music during the wedding dinner?'
     answer: "Yes — any of our formations can play a dinner set by request, continuing straight from cocktail hour or booked as its own block. Tell us when you inquire and we'll confirm the scope."
