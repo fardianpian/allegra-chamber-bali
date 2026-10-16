@@ -48,7 +48,7 @@
 | 18  | done     | wedding-music-timeline                  | planning         | Your Wedding Music Timeline, Moment by Moment — Allegra Chamber Bali         | 2026-10-09    |
 | 19  | done     | wedding-recessional-songs               | piano-repertoire | Wedding Recessional Songs for Your Ceremony Exit — Allegra Chamber Bali      | 2026-10-12    |
 | 20  | done     | wedding-reception-dinner-music          | planning         | Live Music for Your Wedding Reception Dinner — Allegra Chamber Bali          | 2026-10-14    |
-| 21  | todo     | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     |               |
+| 21  | done     | string-quartet-wedding-songs            | piano-repertoire | String Quartet Wedding Songs, Classical to Modern — Allegra Chamber Bali     | 2026-10-16    |
 | 22  | proposed | instrumental-wedding-songs              | piano-repertoire | Instrumental Wedding Songs for Your Ceremony — Allegra Chamber Bali          |               |
 | 23  | proposed | ubud-wedding-live-music                 | bali-venues      | Live Music for an Ubud Wedding — Allegra Chamber Bali                        |               |
 | 24  | merged   | classical-wedding-ceremony-music        | piano-repertoire | Classical Music for Your Wedding Ceremony — Allegra Chamber Bali             |               |

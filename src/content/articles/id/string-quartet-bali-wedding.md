@@ -118,6 +118,10 @@ Untuk panduan lengkap tentang perencanaan musik live sepanjang hari pernikahan â
 pemesanan hingga logistik outdoor â€” [panduan musik live untuk pernikahan di Bali](/id/journal/live-music-bali-wedding-guide/)
 kami membahas proses perencanaan secara mendetail.
 
+Sudah menentukan formasi dan ingin bantuan memilih lagunya? Panduan
+[lagu pernikahan untuk string quartet](/id/journal/string-quartet-wedding-songs/) kami
+mengelompokkan pilihan klasik dan modern berdasarkan momen upacara.
+
 Penasaran formasi mana yang paling cocok untuk venue dan jumlah tamu Anda?
 [Jelajahi formasi dan paket kami](/id/packages/) atau kirimkan tanggal dan venue Anda melalui
 WhatsApp, dan kami akan membantu memilihkan formasi yang tepat.
