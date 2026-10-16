@@ -119,6 +119,10 @@ For more on how to plan live music across your full wedding day — from booking
 logistics — our [live music guide for Bali weddings](/journal/live-music-bali-wedding-guide/)
 covers the planning process in detail.
 
+Already settled on the formation and want help choosing the music itself? Our
+[guide to string quartet wedding songs](/journal/string-quartet-wedding-songs/) groups classical
+and modern picks by ceremony moment.
+
 Curious about which formation fits your venue and guest count? [Explore our formations and
 packages](/packages/) or send us your date and venue on WhatsApp and we will help you choose
 from there.
